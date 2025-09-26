@@ -33,8 +33,9 @@ language = 'en-ca'
 
 
   friends = false
-  bookmarks = true
+  bookmarks = false
   about_me = true
+
 
   # Last posts
   last_posts = true
