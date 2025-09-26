@@ -1,0 +1,72 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Cheezy World'
+theme = 'cleanwhite'
+language = 'en-ca'
+
+[pagination]
+  pagerSize = 5 # frontpage pagination
+
+
+[params]
+  header_image = "img/cheese_banner.png"
+  SEOTitle = "Cheezy's Blog"
+  description = "This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing."
+  keyword = "Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir"
+  slogan = "Eat more cheese"
+  upstreamAttribution = false
+
+  omit_categories = false
+
+  # leancloud storage for page view counter
+  page_view_counter = false
+  leancloud_app_id = ""
+  leancloud_app_key = ""
+
+
+  # Sidebar settings
+  sidebar_about_description = "Software Developer, Continuous Delivery Coach and AI Enthusiest"
+  sidebar_avatar = "img/CheezyOrange.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+  featured_tags = true 
+  featured_condition_size = 1 
+
+
+  friends = false
+  bookmarks = true
+  about_me = true
+
+  # Last posts
+  last_posts = true
+  #last_posts_title = "LAST POSTS"
+  #last_posts_count = 5
+
+  [params.social]
+  rss            = true 
+  email          = "cheezy@letstango.ca"
+  #facebook      = "full profile url in facebook"
+  #googleplus    = "full profile url in googleplus"
+  #twitter       = "full profile url in twitter"
+  linkedin       = "https://www.linkedin.com/in/jeffmorgan5/"
+  #stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
+  #instagram     = "full profile url in instagram"
+  github         = "https://github.com/cheezy"
+  #wechat         = "your wechat qr code image"
+  #medium        = "full profile url in medium"
+  #slack         = "full workspace url in slack"
+  #pinterest     = "full profile url in pinterest"
+  #reddit        = "full profile url in reddit"
+  #gitlab        = "full profile url in gitlab"
+  #mastodon      = "full profile url in mastodon"
+  #keybase       = "full profile url in keybase"
+  #xing          = "https://www.xing.com/profile/yourxingid"
+  #git           = "full profile url for git user"
+
+  [[params.additional_menus]]
+  title =  "ABOUT"
+  href =  "/about/"
+
+  [[params.bookmark_link]]
+  title =  "Martin Fowler"
+  href =  "https://martinfowler.com"
+
