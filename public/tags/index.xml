@@ -22,5 +22,12 @@
       <guid>http://localhost:1313/tags/continuous-delivery/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Elixir</title>
+      <link>http://localhost:1313/tags/elixir/</link>
+      <pubDate>Fri, 26 Sep 2025 07:43:32 -0400</pubDate>
+      <guid>http://localhost:1313/tags/elixir/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

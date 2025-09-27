@@ -2,9 +2,7 @@
 date: 2025-09-26T07:43:32-04:00
 draft: false
 title: "Hello world (again)!"
-tags:
-- AI
-- Continuous Delivery
+tags: ["AI", "Continuous Delivery", "Elixir"]
 ---
 
 ## I'm back
