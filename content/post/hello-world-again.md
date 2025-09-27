@@ -8,7 +8,7 @@ tags: ["AI", "Continuous Delivery", "Elixir"]
 ## I'm back
 
 It has been a while since I've blogged. I had a blog named CheezyWorld.com
-for many years but stopped posting more than 12 years ago. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.
+for many years but stopped posting more than 12 years ago. At the time I was traveling for work as well as traveling around the world to speak at conferences. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.
 
 ### What's up?
 
