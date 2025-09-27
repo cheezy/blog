@@ -13,14 +13,14 @@
       <link>http://localhost:59863/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:59863/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and building my own applications. I hope you find some value in the things I write.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again)!</title>
       <link>http://localhost:59863/post/hello-world-again/</link>
       <pubDate>Fri, 26 Sep 2025 07:43:32 -0400</pubDate>
       <guid>http://localhost:59863/post/hello-world-again/</guid>
-      <description>&lt;h2 id=&#34;im-back&#34;&gt;I&amp;rsquo;m back&lt;/h2&gt;&#xA;&lt;p&gt;It has been a while since I&amp;rsquo;ve blogged. I had a blog named CheezyWorld.com&#xA;for many years but stopped posting many years ago due to life. I am super&#xA;excited to get back to sharing what I&amp;rsquo;ve been up to. Here are some of the topics I&amp;rsquo;ll explore.&lt;/p&gt;&#xA;&lt;h3 id=&#34;ai&#34;&gt;AI&lt;/h3&gt;&#xA;&lt;p&gt;Lately I have been spending my nights and weekends diving into AI. This is a topic that makes a lot of developers nervous as they fear it will replace them or they fear that it will produce low quality code that they will have to support. Through this blog I hope to explore how we can leverage AI to produce high quality code.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;im-back&#34;&gt;I&amp;rsquo;m back&lt;/h2&gt;&#xA;&lt;p&gt;It has been a while since I&amp;rsquo;ve blogged. I had a blog named CheezyWorld.com&#xA;for many years but stopped posting more than 12 years ago. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.&lt;/p&gt;&#xA;&lt;h3 id=&#34;whats-up&#34;&gt;What&amp;rsquo;s up?&lt;/h3&gt;&#xA;&lt;p&gt;What will you see on this blog? I will be talking a lot about software delivery. For many years I have been working in that field with an emphasis on helping companies learn how to deliver software rapidly and learn from their users. This requires keeping the quality of everything we build very high and verifiable as well as driving any and all risk out of our systems and processes. I will have a lot to say about this.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

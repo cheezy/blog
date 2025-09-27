@@ -25,8 +25,8 @@ language = 'en-ca'
 
 
   # Sidebar settings
-  sidebar_about_description = "Software Developer, Continuous Delivery Coach and AI Enthusiest"
-  sidebar_avatar = "img/CheezyOrange.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
+  sidebar_about_description = "Software Developer, Continuous Delivery Coach, and AI Enthusiest"
+  sidebar_avatar = "img/CheezyOrange.jpg" 
 
   featured_tags = true 
   featured_condition_size = 0 
@@ -66,6 +66,10 @@ language = 'en-ca'
   [[params.additional_menus]]
   title =  "ABOUT"
   href =  "/about/"
+
+  [[params.bookmark_link]]
+  title =  "The CD Podcast"
+  href =  "https://continuousdeliverypodcast.buzzsprout.com"
 
   [[params.bookmark_link]]
   title =  "Elixir Programming Language"

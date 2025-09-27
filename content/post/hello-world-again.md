@@ -8,18 +8,16 @@ tags: ["AI", "Continuous Delivery", "Elixir"]
 ## I'm back
 
 It has been a while since I've blogged. I had a blog named CheezyWorld.com
-for many years but stopped posting many years ago due to life. I am super
-excited to get back to sharing what I've been up to. Here are some of the topics I'll explore.
+for many years but stopped posting more than 12 years ago. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.
 
-### AI
+### What's up?
 
-Lately I have been spending my nights and weekends diving into AI. This is a topic that makes a lot of developers nervous as they fear it will replace them or they fear that it will produce low quality code that they will have to support. Through this blog I hope to explore how we can leverage AI to produce high quality code.  
+What will you see on this blog? I will be talking a lot about software delivery. For many years I have been working in that field with an emphasis on helping companies learn how to deliver software rapidly and learn from their users. This requires keeping the quality of everything we build very high and verifiable as well as driving any and all risk out of our systems and processes. I will have a lot to say about this.
 
-### Continuous Delivery
+Once cannot talk about modern software development without dpeaking about AI. I have been spent a lot of time diving into the technologies and I believe I have been able to make it work for me. I know there are a lot of fears in the industry about this technology - fears that developers and others will lose thier jobs and fears that it will take over and lower the overall quality of software. IMO there is some truth in the first fear but the second fear is unfounded. I know many have tried to experiment with AI and have had mixed results. Throughout this blog I will share with you how I make it work. I'll share details of the tools I use, the process I follow, and show the results. Stay tuned as my first series will be about building an app using AI.
 
-I'm still spending most of my day hours helping companies learn how to deploy
-their software to production many times per day while keeping the quality high. This is my passion and I will have a lot to say on this blog about it.
+This blog will also have a lot to say about the Eliir programming language (and other languages as well) since it is what I use to build my personal applications. I personally believe it is the best language and ecosystem for building scalable secure web applications. Look forward to seeing a lot of code.
 
 ### In closing
 
-That is all I have to say for this first post. Expect more to come soon.
+That is all I have to say for this first post. Expect more soon including my first series on building a Kanban application using AI.
