@@ -11,6 +11,8 @@
             col-sm-12
             col-xs-12
             post-container">
+            <h1>{{ .Title }}</h1>
+
             {{ if eq (.Param "multilingual") true }}
                 {{ partial "multilingual-sel.html" . }}
 
@@ -19,7 +21,7 @@
                     {{$file :=  "/about/index-zh.md"}}
                     {{ $file | readFile | markdownify}}
                 </div>
-            
+
                 <!-- English Version -->
                 <div class="en post-container">
                     {{ .Content }}
