@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Cheezy World</title>
-    <link>http://localhost:1313/post/</link>
-    <description>Recent content in Posts on Cheezy World</description>
+    <title>Phoenix on Cheezy World</title>
+    <link>http://localhost:1313/tags/phoenix/</link>
+    <description>Recent content in Phoenix on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Sep 2025 09:52:02 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/phoenix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a LiveView app using AI - Part 1</title>
       <link>http://localhost:1313/post/ai-kanban-part1/</link>
       <pubDate>Sun, 28 Sep 2025 09:52:02 -0400</pubDate>
       <guid>http://localhost:1313/post/ai-kanban-part1/</guid>
       <description>&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;&#xA;&lt;p&gt;This is the first post in a series in which I will be building a Kanban board application using Phoenix and LiveView. I will be using AI to help me build the application. I will be sharing the tools I use, the workflow that works best for me, and the results.&lt;/p&gt;&#xA;&lt;p&gt;This post lays down the foundation of what tools I will be using and what things I will add to my application in order to make my LLM more effective.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hello world (again eh)!</title>
-      <link>http://localhost:1313/post/hello-world-again/</link>
-      <pubDate>Fri, 26 Sep 2025 07:43:32 -0400</pubDate>
-      <guid>http://localhost:1313/post/hello-world-again/</guid>
-      <description>&lt;h2 id=&#34;im-back&#34;&gt;I&amp;rsquo;m back&lt;/h2&gt;&#xA;&lt;p&gt;It has been a while since I&amp;rsquo;ve blogged. I had a blog named CheezyWorld.com&#xA;for many years but stopped posting more than 12 years ago. At the time I was traveling for work as well as traveling around the world to speak at conferences. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

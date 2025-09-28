@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Building a LiveView app using AI - Part 1" />
+    <meta property="og:title" content="Building a LiveView app using AI - Part 1" />
+    <meta property="twitter:title" content="Building a LiveView app using AI - Part 1" />
+    
+
+    
+    <meta name="description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing.">
+    <meta property="og:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/ai-kanban-part1/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Building a LiveView app using AI - Part 1 | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/ai-kanban-part1/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                    
+                    
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Eat more cheese</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            
+                <h1>Building a LiveView app using AI - Part 1</h1>
+                <h2 id="getting-started">Getting Started</h2>
+<p>This is the first post in a series in which I will be building a Kanban board application using Phoenix and LiveView. I will be using AI to help me build the application. I will be sharing the tools I use, the workflow that works best for me, and the results.</p>
+<p>This post lays down the foundation of what tools I will be using and what things I will add to my application in order to make my LLM more effective.</p>
+<h2 id="my-setup">My Setup</h2>
+<p>I want to start by giving a very brief overview of the tools I am using in case anybody wants to try to duplicate what I am doing or learn from my experience.</p>
+<h3 id="windsurf">Windsurf</h3>
+<p>First of all I am using <a href="https://windsurf.com">Windsurf</a> for my IDE. It is an excellent IDE for Elixir and Erlang. It has great support for Phoenix and LiveView. It also has great support for AI and LLMs. I am using a few plugins that help me with my workflow. These include:</p>
+<ul>
+<li>Phoenix Framework</li>
+<li>Credo (Elixir Linter)</li>
+<li>Lexical (Elixir Language Server) - followed <a href="https://github.com/elixir-lang/expert/blob/main/pages/installation.md">these</a>  instructions.</li>
+<li>GitHub Actions</li>
+<li>Markdownlint</li>
+<li>Claude Code for VS Code</li>
+</ul>
+<h3 id="claude-code">Claude Code</h3>
+<p>I am using <a href="https://claude.com/product/claude-code">Claude Code</a> as my AI agent. This agent combined with a few mcps (discussed next), directions in my AGENTS.md file (discussed later) and the workflow I have come to through trial and error gives me the best outcomes.</p>
+<h3 id="mcp-servers">MCP Servers</h3>
+<p>MCP Servers work with LLMs by providing tool, data, or function specific information. Adding the right ones can greatly improve the LLM&rsquo;s ability to perform tasks. I will walk you through the process to install them later in this post as I get my project setup but here is the list:</p>
+<ul>
+<li>tidewave mcp server</li>
+<li>hexdoc mcp server</li>
+<li>filesystem mcp server</li>
+<li>github mcp server</li>
+<li>sequential-thinking mcp server</li>
+<li>knowledge-graph mcp server</li>
+<li>postgres mcp server</li>
+</ul>
+<h2 id="setting-up-the-project">Setting up the Project</h2>
+<p>So I generated my application using <code>mix phx.new kanban</code> and then ran <code>mix setup</code> to create the database and build the assets. I can now run the applicaion and see a beautiful (not really) site.</p>
+<p>
+  <img src="/img/new_phoenix_app.png" alt="Image of newly generated phoenix application">
+
+</p>
+<p>Before I begin development there are still a few things I need to do.</p>
+<h3 id="setup-for-quality-and-security">Setup for Quality and Security</h3>
+<p>It is important to be able to verify the quality of the application at any given moment. To this end I setup some things that help Claude maintain this quality. These are related to testing, code quality, and security.</p>
+<h4 id="testing">Testing</h4>
+<p>If I run the tests that were created during the initial project generation with the <code>--cover</code> flag I get the following results:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Running ExUnit with seed: 335709, max_cases: <span style="color:#bd93f9">16</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.....
+</span></span><span style="display:flex;"><span>Finished in 0.06 seconds <span style="color:#ff79c6">(</span>0.02s async, 0.04s sync<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bd93f9">5</span> tests, <span style="color:#bd93f9">0</span> failures
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Generating cover results ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Percentage | Module
+</span></span><span style="display:flex;"><span>-----------|--------------------------
+</span></span><span style="display:flex;"><span>     0.00% | KanbanWeb.PageHTML
+</span></span><span style="display:flex;"><span>    18.42% | KanbanWeb.CoreComponents
+</span></span><span style="display:flex;"><span>    25.00% | Kanban.DataCase
+</span></span><span style="display:flex;"><span>    50.00% | Kanban.Repo
+</span></span><span style="display:flex;"><span>    50.00% | KanbanWeb.ErrorHTML
+</span></span><span style="display:flex;"><span>    75.00% | KanbanWeb.Layouts
+</span></span><span style="display:flex;"><span>    75.00% | KanbanWeb.Router
+</span></span><span style="display:flex;"><span>    80.00% | Kanban.Application
+</span></span><span style="display:flex;"><span>    80.00% | KanbanWeb.Telemetry
+</span></span><span style="display:flex;"><span>   100.00% | Kanban
+</span></span><span style="display:flex;"><span>   100.00% | Kanban.Mailer
+</span></span><span style="display:flex;"><span>   100.00% | KanbanWeb
+</span></span><span style="display:flex;"><span>   100.00% | KanbanWeb.ConnCase
+</span></span><span style="display:flex;"><span>   100.00% | KanbanWeb.Endpoint
+</span></span><span style="display:flex;"><span>   100.00% | KanbanWeb.ErrorJSON
+</span></span><span style="display:flex;"><span>   100.00% | KanbanWeb.Gettext
+</span></span><span style="display:flex;"><span>   100.00% | KanbanWeb.PageController
+</span></span><span style="display:flex;"><span>-----------|--------------------------
+</span></span><span style="display:flex;"><span>    37.99% | Total
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Coverage <span style="color:#8be9fd;font-style:italic">test</span> failed, threshold not met:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Coverage:   37.99%
+</span></span><span style="display:flex;"><span>    Threshold:  90.00%
+</span></span></code></pre></div><p>There is a lot of generated code here that I really do not want to be included in my test coverage as I have no intention of ever changing it. I do this by adding the following code to the <code>project</code> function in <code>mix.exs</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>  <span style="color:#8be9fd;font-style:italic">def</span> project <span style="color:#ff79c6">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>      <span style="color:#f1fa8c">app</span>: <span style="color:#f1fa8c">:kanban</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>      <span style="color:#f1fa8c">version</span>: <span style="color:#f1fa8c">&#34;0.1.0&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>      <span style="color:#f1fa8c">elixir</span>: <span style="color:#f1fa8c">&#34;~&gt; 1.15&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>      <span style="color:#f1fa8c">elixirc_paths</span>: elixirc_paths(<span style="color:#50fa7b">Mix</span><span style="color:#ff79c6">.</span>env()),
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>      <span style="color:#f1fa8c">start_permanent</span>: <span style="color:#50fa7b">Mix</span><span style="color:#ff79c6">.</span>env() <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">:prod</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>      <span style="color:#f1fa8c">aliases</span>: aliases(),
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>      <span style="color:#f1fa8c">deps</span>: deps(),
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>      <span style="color:#f1fa8c">compilers</span>: [<span style="color:#f1fa8c">:phoenix_live_view</span>] <span style="color:#ff79c6">++</span> <span style="color:#50fa7b">Mix</span><span style="color:#ff79c6">.</span>compilers(),
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>      <span style="color:#f1fa8c">listeners</span>: [<span style="color:#50fa7b">Phoenix.CodeReloader</span>],
+</span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>      <span style="color:#f1fa8c">test_coverage</span>: test_coverage()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>  <span style="color:#ff79c6">end</span>
+</span></span></code></pre></div><p>and then I add this function at the bottom of the file below the <code>deps</code> function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#8be9fd;font-style:italic">defp</span> test_coverage <span style="color:#ff79c6">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#f1fa8c">ignore_modules</span>: [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>      <span style="color:#50fa7b">Kanban.Application</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>      <span style="color:#50fa7b">Kanban.DataCase</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>      <span style="color:#50fa7b">Kanban.Repo</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>      <span style="color:#50fa7b">KanbanWeb.ConnCase</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>      <span style="color:#50fa7b">KanbanWeb.CoreComponents</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>      <span style="color:#50fa7b">KanbanWeb.ErrorHTML</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>      <span style="color:#50fa7b">KanbanWeb.ErrorJSON</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>      <span style="color:#50fa7b">KanbanWeb.Layouts</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>      <span style="color:#50fa7b">KanbanWeb.PageHTML</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>      <span style="color:#50fa7b">KanbanWeb.Router</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>      <span style="color:#50fa7b">KanbanWeb.Telemetry</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>  ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#ff79c6">end</span>
+</span></span></code></pre></div><p>Now my tests run clean without including generated files in my coverage report. I will be updating this new function throughout the development.</p>
+<h4 id="code-quality">Code Quality</h4>
+<p>We will be using <a href="https://hexdocs.pm/credo/overview.html">Credo</a> to ensure code quality. The setup is very simple. Add this line to your <code>mix.exs</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>{<span style="color:#f1fa8c">:credo</span>, <span style="color:#f1fa8c">&#34;~&gt; 1.7&#34;</span>, <span style="color:#f1fa8c">only</span>: [<span style="color:#f1fa8c">:dev</span>, <span style="color:#f1fa8c">:test</span>], <span style="color:#f1fa8c">runtime</span>: false},
+</span></span></code></pre></div><p>Credo is extremely flexible and has a lot of rules you can apply. You do this by creating a file named <code>.credo.exs</code> in the root directory of your project. When I initially ran it with my standard configuration it found two issues in the generated <code>data_case.ex</code> file and another issue in the <code>kanban_web.ex</code> file. I chose to fix the one in the <code>kanban_web.ex</code> file (order of aliases) and chose to ignore the one in the <code>data_case.ex</code> since I will not be changing that generated file. Here is my configuration but you might want to adjust it to your liking:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>%{
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">configs</span>: [
+</span></span><span style="display:flex;"><span>    %{
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">name</span>: <span style="color:#f1fa8c">&#34;default&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">strict</span>: true,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">checks</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># Additional and reconfigured checks</span>
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Design.AliasUsage</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f1fa8c">if_nested_deeper_than</span>: <span style="color:#bd93f9">3</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f1fa8c">if_called_more_often_than</span>: <span style="color:#bd93f9">1</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f1fa8c">files</span>: %{<span style="color:#f1fa8c">excluded</span>: [<span style="color:#f1fa8c">&#34;test/support/data_case.ex&#34;</span>]}},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Readability.AliasAs</span>, []},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Readability.MultiAlias</span>, []},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Readability.NestedFunctionCalls</span>, []},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Readability.SeparateAliasRequire</span>, []},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Readability.StrictModuleLayout</span>, []},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Readability.WithCustomTaggedTuple</span>, []},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Refactor.ABCSize</span>, []},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Warning.UnsafeToAtom</span>, []},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># Disabled checks</span>
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Design.TagFIXME</span>, false},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Design.TagTODO</span>, false},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Readability.ModuleDoc</span>, false},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Refactor.LongQuoteBlocks</span>, false},
+</span></span><span style="display:flex;"><span>        {<span style="color:#50fa7b">Credo.Check.Refactor.Nesting</span>, false}
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>When I run <code>mix credo --strict</code> I get the following output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Checking <span style="color:#bd93f9">21</span> <span style="color:#8be9fd;font-style:italic">source</span> files ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Please report incorrect results: https://github.com/rrrene/credo/issues
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Analysis took 0.1 seconds <span style="color:#ff79c6">(</span>0.02s to load, 0.1s running <span style="color:#bd93f9">70</span> checks on <span style="color:#bd93f9">21</span> files<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bd93f9">60</span> mods/funs, found no issues.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Use <span style="color:#f1fa8c">`</span>mix credo explain<span style="color:#f1fa8c">`</span> to explain issues, <span style="color:#f1fa8c">`</span>mix credo --help<span style="color:#f1fa8c">`</span> <span style="color:#ff79c6">for</span> options.
+</span></span></code></pre></div><p>All good. Now let&rsquo;s see what we need to do for security.</p>
+<h4 id="security">Security</h4>
+<p>Let me start by saying that what I am about to show you is in no way a comprehensive way to secure your application. What follows is my simple setup that I use during development to give me an early warning of any possible security issue. We will start by adding a few new hex packages to your dependencies in the <code>mix.exs</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>{<span style="color:#f1fa8c">:mix_audit</span>, <span style="color:#f1fa8c">&#34;~&gt; 2.1&#34;</span>, <span style="color:#f1fa8c">only</span>: [<span style="color:#f1fa8c">:dev</span>, <span style="color:#f1fa8c">:test</span>], <span style="color:#f1fa8c">runtime</span>: false},
+</span></span><span style="display:flex;"><span>{<span style="color:#f1fa8c">:sobelow</span>, <span style="color:#f1fa8c">&#34;~&gt; 0.13&#34;</span>, <span style="color:#f1fa8c">only</span>: [<span style="color:#f1fa8c">:dev</span>, <span style="color:#f1fa8c">:test</span>], <span style="color:#f1fa8c">runtime</span>: false}
+</span></span></code></pre></div><p><code>mix_audit</code> will scan your dependencies for security vulnerabilities while <code>sobelow</code> is a security focused static analysis tool. <code>sobelow</code> requires additional configuration. Here is mine:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>[<span style="color:#f1fa8c">verbose</span>: false, <span style="color:#f1fa8c">private</span>: false, <span style="color:#f1fa8c">skip</span>: false, <span style="color:#f1fa8c">router</span>: nil, <span style="color:#f1fa8c">exit</span>: false, <span style="color:#f1fa8c">format</span>: <span style="color:#f1fa8c">&#34;txt&#34;</span>, <span style="color:#f1fa8c">out</span>: nil, <span style="color:#f1fa8c">threshold</span>: <span style="color:#f1fa8c">:low</span>, <span style="color:#f1fa8c">ignore</span>: [<span style="color:#f1fa8c">&#34;Config.HTTPS&#34;</span>], <span style="color:#f1fa8c">ignore_files</span>: [], <span style="color:#f1fa8c">version</span>: false]
+</span></span></code></pre></div><p>With this in place we now have a few commands we can run - namely <code>mix deps.audit</code>, <code>mix hex.audit</code> and <code>mix sobelow --config</code>. When I ran the <code>sobelow</code> command it right away pointed out an issue in my router file. I fixed this by updating the <code>put_secure_browser_headers</code> plub to this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>    plug <span style="color:#f1fa8c">:put_secure_browser_headers</span>, %{<span style="color:#f1fa8c">&#34;content-security-policy&#34;</span> <span style="color:#ff79c6">=&gt;</span> <span style="color:#f1fa8c">&#34;default-src &#39;self&#39;; img-src &#39;self&#39; data:; style-src &#39;self&#39; &#39;unsafe-inline&#39;&#34;</span>}
+</span></span></code></pre></div><p>And with that I am starting in a secure place.</p>
+<h2 id="getting-ready-for-ai">Getting Ready for AI</h2>
+<p>The changes we have made so far are changes that I would make for any project. But there are still several things we can do in order to enhance our LLMs performance.</p>
+<h3 id="updating-the-agentsmd-file">Updating the AGENTS.md file</h3>
+<p>The generated pheonix project includes an <a href="https://agents.md">AGENTS.md</a> file. I strongly suggest taking a look at this file as it gives your LLM a lot of direction on how to perform tasks. We will be updating this file but before we do there is another hex package that we can add that helps us get additional instructions from our dependencies. It is called <code>usage_rules</code>. The way it works is it scans all of your dependencies and gathers their instructions to LLMs and adds them to your AGENTS.md file. In fact, if you look through the AGENTS.md file added by the generation you will see some tags for usage_rules are already there. Let&rsquo;s start by adding the dependency:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>{<span style="color:#f1fa8c">:usage_rules</span>, <span style="color:#f1fa8c">&#34;~&gt; 0.1.0&#34;</span>},
+</span></span></code></pre></div><p>You can now execute the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mix usage_rules.sync AGENTS.md --all --link-to-folder deps --inline usage_rules:all
+</span></span></code></pre></div><p>Running this initially will add additional information to your agents file and I would suggest executing this command whenever you update a dependency or when you add a new dependency.</p>
+<h3 id="making-our-entries-to-agentsmd-file">Making our entries to AGENTS.md file</h3>
+<p>Now it is time to make some of our entries to the <code>AGENTS.md</code> file. These entries are instructions on how we want to LLM to work. First of all I add the following two lines to the top ##General guidelines section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Use the HexDoc mcp server to read the documentation about project dependencies
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Use the TideWave mcp server to learn about and understand the running application
+</span></span></code></pre></div><p>After the General guidelines section I add the following two sections for Quality and Security:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">### Quality guidelines  
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task that has new functions write unit tests for the new function
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task that updates code make sure all existing unit tests pass and write new tests if needed
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Each time you write or update a unit tests run them with <span style="color:#f1fa8c">`mix test`</span> and ensure they pass
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task run <span style="color:#f1fa8c">`mix test --cover`</span> and ensure coverage is above the threshold
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task run <span style="color:#f1fa8c">`mix credo --strict`</span> to check for code quality issues and fix them
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">### Security guidelines
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you add or update a dependency run <span style="color:#f1fa8c">`mix deps.audit`</span> and <span style="color:#f1fa8c">`mix hex.audit`</span> to check for security issues
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you add or update a dependency run <span style="color:#f1fa8c">`mix hex.outdated`</span> to check for outdated dependencies
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> when you complete a task run <span style="color:#f1fa8c">`mix sobelow --config`</span> to check for security issues
+</span></span></code></pre></div><p>Now you can see how all of the work we have performed so far comes together.</p>
+<h3 id="installing-the-mcp-servers">Installing the MCP servers</h3>
+<p>Finally we get to use Claude Code. After starting the Claude Code plugin in Windsurf I provide my first prompt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; please refer to the AGENTS.md file <span style="color:#ff79c6">for</span> application specific instructions.
+</span></span></code></pre></div><p>This is more of a reminder as it already knew this from the AGENTS.md file. Now it is time to install the MCP servers. I give Claude the following prompts and work with it to install the servers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; install the HexDoc mcp server
+</span></span><span style="display:flex;"><span>&gt; install the TideWave mcp server
+</span></span><span style="display:flex;"><span>&gt; install the filesystem mcp server
+</span></span><span style="display:flex;"><span>&gt; install the github mcp server
+</span></span><span style="display:flex;"><span>&gt; install the sequential-thinking mcp server
+</span></span><span style="display:flex;"><span>&gt; install the knowledge-graph mcp server
+</span></span><span style="display:flex;"><span>&gt; install the postgres mcp server
+</span></span></code></pre></div><p>There will be some questions asked for each mcp server installation but it is safe to go with what claude ask you to do. When you are finished restart Claude Code and run the /mcp command. You should see all of the serers listed. If yo do not see one listed aske Claude Code to fix the installation.</p>
+<h2 id="we-are-ready">We are ready</h2>
+<p>What have we done so far? We have added a few dependencies to our project to make testing, code quality, and security easier to verify. We have added a dependency that will make it easier to update our AGENTS.md file going forward, we have added some of our standards to the AGENTS.md file, and finally we have installed several MCP servers. We are now ready to start building the application.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery Coach, and AI Enthusiest</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/ai-kanban-part1/">Building a LiveView app using AI - Part 1</a></li>
+        
+            <li><a href="/post/hello-world-again/">Hello world (again eh)!</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2025
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

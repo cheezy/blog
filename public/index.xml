@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Sep 2025 12:41:47 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 28 Sep 2025 09:52:02 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a LiveView app using AI - Part 1</title>
+      <link>http://localhost:1313/post/ai-kanban-part1/</link>
+      <pubDate>Sun, 28 Sep 2025 09:52:02 -0400</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part1/</guid>
+      <description>&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;&#xA;&lt;p&gt;This is the first post in a series in which I will be building a Kanban board application using Phoenix and LiveView. I will be using AI to help me build the application. I will be sharing the tools I use, the workflow that works best for me, and the results.&lt;/p&gt;&#xA;&lt;p&gt;This post lays down the foundation of what tools I will be using and what things I will add to my application in order to make my LLM more effective.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
