@@ -248,7 +248,7 @@ The changes we have made so far are changes that I would make for any project. B
 
 ### Updating the AGENTS.md file
 
-The generated pheonix project includes an [AGENTS.md](https://agents.md) file. I strongly suggest taking a look at this file and understanding what is there and how it works. It provides your LLM a lot of direction on how to perform tasks and interact with different dependencies. We will be updating this file later but before we do there is another hex package that we can add that helps us get additional instructions from our dependencies. It is called `usage_rules`. The way it works is that package maintainers put a file named `usage_rules.md` in the root of their project and the tool scans all of your dependencies and gathers their instructions inserting them into a marked section of your AGENTS.md file. In fact, if you look through the AGENTS.md file added by the generation you will see some tags for usage_rules are already there. Let's start by adding the dependency:
+The generated pheonix project includes an [AGENTS.md](https://agents.md) file. I strongly suggest taking a look at this file and understanding what is there and how it works. It provides your LLM a lot of direction on how to perform tasks and interact with different dependencies. We will be updating this file later but before we do there is another hex package that we can add that helps us get additional instructions from our dependencies. It is called [usage_rules](https://hexdocs.pm/usage_rules/readme.html). The way it works is that package maintainers put a file named `usage_rules.md` in the root of their project and the tool scans all of your dependencies and gathers their instructions inserting them into a marked section of your AGENTS.md file. In fact, if you look through the AGENTS.md file added by the generation you will see some tags for usage_rules are already there. Let's start by adding the dependency:
 
 ```elixir
 {:usage_rules, "~> 0.1.0"},
@@ -260,18 +260,19 @@ You can now execute the following command:
 mix usage_rules.sync AGENTS.md --all --link-to-folder deps --inline usage_rules:all
 ```
 
-Running this initially will add additional information to your agents file and I would suggest executing this command whenever you update a dependency or when you add a new dependency.
+Running this initially will add additional information to your agents file and I suggest executing this command whenever you update a dependency or when you add a new dependency. I think we should make an entry in our AGENTS.md file instructing the LLM to run this command. See how that works?
 
 ### Making our entries to AGENTS.md file
 
-Now it is time to make some of our entries to the `AGENTS.md` file. These entries are instructions on how we want to LLM to work. First of all I add the following two lines to the top ##General guidelines section:
+Now it is time to make some of our entries to the `AGENTS.md` file. These entries are instructions on how we want to LLM to work. First of all I add the following lines to the top ##Project guidelines section:
 
 ```markdown
 - Use the HexDoc mcp server to read the documentation about project dependencies
 - Use the TideWave mcp server to learn about and understand the running application
+- When you add a new dependency or update an existing dependency run `mix usage_rules.sync AGENTS.md --all --link-to-folder deps --inline usage_rules:all` to update the AGENTS.md file
 ```
 
-After the General guidelines section I add the following two sections for Quality and Security:
+After the Project guidelines section I add the following two sections for Quality and Security:
 
 ```markdown
 ### Quality guidelines  
@@ -289,7 +290,7 @@ After the General guidelines section I add the following two sections for Qualit
 - when you complete a task run `mix sobelow --config` to check for security issues
 ```
 
-Now you can see how all of the work we have performed so far comes together. 
+Now you can see how all of the changes we have made so far come together.
 
 ### Installing the MCP servers
 
