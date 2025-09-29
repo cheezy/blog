@@ -181,12 +181,12 @@
 
             
                 <h2 id="getting-started">Getting Started</h2>
-<p>This is the first post in a series in which I will be building a Kanban board application using Phoenix and LiveView. I will be using AI to help me build the application. I will be sharing the tools I use, the workflow that works best for me, and the results.</p>
-<p>This post lays down the foundation of what tools I will be using and what things I will add to my application in order to make my LLM more effective.</p>
+<p>This is the first post in a series in which I will be building a Kanban board application with <a href="https://www.phoenixframework.org">Phoenix</a> and <a href="https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html">LiveView</a>. What is different this about this series is that I will use AI to write the code and tests as well as come up with the design of the application.  I will be using a set of tools and workflow that I have worked out over the past several months to truly take advantage of the benefits of AI while producing quality code and a fully tested application.</p>
+<p>This first post in the series lays down the foundation of what tools I will be using and what things I add to my application in order to make my LLM more effective.</p>
 <h2 id="my-setup">My Setup</h2>
-<p>I want to start by giving a very brief overview of the tools I am using in case anybody wants to try to duplicate what I am doing or learn from my experience.</p>
+<p>I want to start by giving a very brief overview of the tools I am using in case anybody wants to try to duplicate what they see here.</p>
 <h3 id="windsurf">Windsurf</h3>
-<p>First of all I am using <a href="https://windsurf.com">Windsurf</a> for my IDE. It is an excellent IDE for Elixir and Erlang. It has great support for Phoenix and LiveView. It also has great support for AI and LLMs. I am using a few plugins that help me with my workflow. These include:</p>
+<p>I am using <a href="https://windsurf.com">Windsurf</a> for my IDE. It has excellent support for Phoenix and LiveView while also being built with AI in mind. It is a fork of the VS Code editor so all plugins and snippets that work with VS Code will also work in Windsurf. These are the plugins that I have installed for this series:</p>
 <ul>
 <li>Phoenix Framework</li>
 <li>Credo (Elixir Linter)</li>
@@ -196,17 +196,17 @@
 <li>Claude Code for VS Code</li>
 </ul>
 <h3 id="claude-code">Claude Code</h3>
-<p>I am using <a href="https://claude.com/product/claude-code">Claude Code</a> as my AI agent. This agent combined with a few mcps (discussed next), directions in my AGENTS.md file (discussed later) and the workflow I have come to through trial and error gives me the best outcomes.</p>
+<p>I am using <a href="https://claude.com/product/claude-code">Claude Code</a> as my AI agent. This agent combined with a few mcps (discussed next), directions in my AGENTS.md file (discussed later) and the workflow I will demonstrate throughout this series give me the best outcome I have eperienced to date.</p>
 <h3 id="mcp-servers">MCP Servers</h3>
 <p>MCP Servers work with LLMs by providing tool, data, or function specific information. Adding the right ones can greatly improve the LLM&rsquo;s ability to perform tasks. I will walk you through the process to install them later in this post as I get my project setup but here is the list:</p>
 <ul>
-<li>tidewave mcp server</li>
-<li>hexdoc mcp server</li>
-<li>filesystem mcp server</li>
-<li>github mcp server</li>
-<li>sequential-thinking mcp server</li>
-<li>knowledge-graph mcp server</li>
-<li>postgres mcp server</li>
+<li><a href="https://tidewave.ai">tidewave</a> mcp server</li>
+<li><a href="https://hexdocs.pm/hexdocs_mcp/readme.html">hexdoc</a> mcp server</li>
+<li><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem">filesystem</a> mcp server</li>
+<li><a href="https://github.com/github/github-mcp-server">github</a> mcp server</li>
+<li><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking">sequential-thinking</a> mcp server</li>
+<li><a href="https://github.com/shaneholloman/mcp-knowledge-graph">knowledge-graph</a> mcp server</li>
+<li><a href="https://www.pulsemcp.com/servers/modelcontextprotocol-postgres">postgres</a> mcp server</li>
 </ul>
 <h2 id="setting-up-the-project">Setting up the Project</h2>
 <p>So I generated my application using <code>mix phx.new kanban</code> and then ran <code>mix setup</code> to create the database and build the assets. I can now run the applicaion and see a beautiful (not really) site.</p>
@@ -370,7 +370,7 @@
 <h3 id="installing-the-mcp-servers">Installing the MCP servers</h3>
 <p>Finally we get to use Claude Code. After starting the Claude Code plugin in Windsurf I provide my first prompt:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; please refer to the AGENTS.md file <span style="color:#ff79c6">for</span> application specific instructions.
-</span></span></code></pre></div><p>This is more of a reminder as it already knew this from the AGENTS.md file. Now it is time to install the MCP servers. I give Claude the following prompts and work with it to install the servers:</p>
+</span></span></code></pre></div><p>This is more of a reminder as it already knew this from the AGENTS.md file. Now it is time to install the MCP servers. I ask Claude to install the mcp servers and work through all of the prompts to get them installed.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; install the HexDoc mcp server
 </span></span><span style="display:flex;"><span>&gt; install the TideWave mcp server
 </span></span><span style="display:flex;"><span>&gt; install the filesystem mcp server
@@ -378,7 +378,7 @@
 </span></span><span style="display:flex;"><span>&gt; install the sequential-thinking mcp server
 </span></span><span style="display:flex;"><span>&gt; install the knowledge-graph mcp server
 </span></span><span style="display:flex;"><span>&gt; install the postgres mcp server
-</span></span></code></pre></div><p>There will be some questions asked for each mcp server installation but it is safe to go with what claude ask you to do. When you are finished restart Claude Code and run the /mcp command. You should see all of the serers listed. If yo do not see one listed aske Claude Code to fix the installation.</p>
+</span></span></code></pre></div><p>There will be some questions asked for each mcp server installation but it is safe to go with what claude ask you to do. When you are finished restart Claude Code and run the /mcp command. You should see all of the serers listed. If you do not see one listed ask Claude Code to fix the installation.</p>
 <h2 id="we-are-ready">We are ready</h2>
 <p>What have we done so far? We have added a few dependencies to our project to make testing, code quality, and security easier to verify. We have added a dependency that will make it easier to update our AGENTS.md file going forward, we have added some of our standards to the AGENTS.md file, and finally we have installed several MCP servers. We are now ready to start building the application.</p>
 
