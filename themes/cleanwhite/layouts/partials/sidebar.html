@@ -7,10 +7,31 @@
     col-xs-12
     sidebar-container
 ">
+    <!-- Featured Tags -->
+    {{ if .Site.Params.featured_tags }}
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            {{ $featured_condition_size := .Site.Params.featured_condition_size }}
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+               {{ if gt (len $taxonomy.Pages) $featured_condition_size }}
+                    <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">
+                        {{ $name }}
+                    </a>
+               {{ end }}
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+
     <!-- Short About -->
 	{{ if .Site.Params.about_me }}
     <section class="visible-md visible-lg">
 	<!--<hr><h5><a href="{{ "/about" | relLangURL }}">ABOUT ME</a></h5>-->
+        <hr>
+        <h5>ABOUT ME</h5>
+
         <div class="short-about">
             {{ with .Site.Params.sidebar_avatar }}
             <a href="{{ "/about" | relLangURL }}">
@@ -216,23 +237,6 @@
             <li><a target="_blank" href="{{.href }}">{{.title}}</a></li>
             {{ end }}
         </ul>
-    </section>
-    {{ end }}
-    <!-- Featured Tags -->
-    {{ if .Site.Params.featured_tags }}
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-            {{ $featured_condition_size := .Site.Params.featured_condition_size }}
-            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-               {{ if gt (len $taxonomy.Pages) $featured_condition_size }}
-                    <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">
-                        {{ $name }}
-                    </a>
-               {{ end }}
-            {{ end }}
-        </div>
     </section>
     {{ end }}
 
