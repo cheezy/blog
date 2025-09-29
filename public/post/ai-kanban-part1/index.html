@@ -209,14 +209,14 @@
 <li><a href="https://www.pulsemcp.com/servers/modelcontextprotocol-postgres">postgres</a> mcp server</li>
 </ul>
 <h2 id="setting-up-the-project">Setting up the Project</h2>
-<p>So I generated my application using <code>mix phx.new kanban</code> and then ran <code>mix setup</code> to create the database and build the assets. I can now run the applicaion and see a beautiful (not really) site.</p>
+<p>I generated the application using <code>mix phx.new kanban</code> and then ran <code>mix setup</code> to create the database and build the assets. I can now run the applicaion and see a beautiful (not really) site.</p>
 <p>
   <img src="/img/new_phoenix_app.png" alt="Image of newly generated phoenix application">
 
 </p>
 <p>Before I begin development there are still a few things I need to do.</p>
 <h3 id="setup-for-quality-and-security">Setup for Quality and Security</h3>
-<p>It is important to be able to verify the quality of the application at any given moment. To this end I setup some things that help Claude maintain this quality. These are related to testing, code quality, and security.</p>
+<p>It is important to be able to verify the quality of the application at any given moment. To this end I setup some things that help Claude Code maintain this quality. These are related to testing, code quality, and security.</p>
 <h4 id="testing">Testing</h4>
 <p>If I run the tests that were created during the initial project generation with the <code>--cover</code> flag I get the following results:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Running ExUnit with seed: 335709, max_cases: <span style="color:#bd93f9">16</span>
@@ -253,7 +253,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    Coverage:   37.99%
 </span></span><span style="display:flex;"><span>    Threshold:  90.00%
-</span></span></code></pre></div><p>There is a lot of generated code here that I really do not want to be included in my test coverage as I have no intention of ever changing it. I do this by adding the following code to the <code>project</code> function in <code>mix.exs</code>:</p>
+</span></span></code></pre></div><p>There is a lot of generated code here that I really do not want to be included in my test coverage as I have no intention of ever changing it. In order to tell the test runner to ignore certail files for coverage calculations I can add  the following code to the <code>project</code> function in <code>mix.exs</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>  <span style="color:#8be9fd;font-style:italic">def</span> project <span style="color:#ff79c6">do</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    [
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>      <span style="color:#f1fa8c">app</span>: <span style="color:#f1fa8c">:kanban</span>,
@@ -268,7 +268,7 @@
 </span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>      <span style="color:#f1fa8c">test_coverage</span>: test_coverage()
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    ]
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>  <span style="color:#ff79c6">end</span>
-</span></span></code></pre></div><p>and then I add this function at the bottom of the file below the <code>deps</code> function:</p>
+</span></span></code></pre></div><p>and then add this function at the bottom of the file below the <code>deps</code> function:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#8be9fd;font-style:italic">defp</span> test_coverage <span style="color:#ff79c6">do</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  [
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#f1fa8c">ignore_modules</span>: [
@@ -286,11 +286,30 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    ]
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>  ]
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#ff79c6">end</span>
-</span></span></code></pre></div><p>Now my tests run clean without including generated files in my coverage report. I will be updating this new function throughout the development.</p>
+</span></span></code></pre></div><p>If I run the test again I get this output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Running ExUnit with seed: 883248, max_cases: <span style="color:#bd93f9">16</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.....
+</span></span><span style="display:flex;"><span>Finished in 0.04 seconds <span style="color:#ff79c6">(</span>0.01s async, 0.03s sync<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bd93f9">5</span> tests, <span style="color:#bd93f9">0</span> failures
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Generating cover results ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Percentage | Module
+</span></span><span style="display:flex;"><span>-----------|--------------------------
+</span></span><span style="display:flex;"><span>   100.00% | Kanban
+</span></span><span style="display:flex;"><span>   100.00% | Kanban.Mailer
+</span></span><span style="display:flex;"><span>   100.00% | KanbanWeb
+</span></span><span style="display:flex;"><span>   100.00% | KanbanWeb.Endpoint
+</span></span><span style="display:flex;"><span>   100.00% | KanbanWeb.Gettext
+</span></span><span style="display:flex;"><span>   100.00% | KanbanWeb.PageController
+</span></span><span style="display:flex;"><span>-----------|--------------------------
+</span></span><span style="display:flex;"><span>   100.00% | Total
+</span></span></code></pre></div><p>That looks like a good place to start. There are many additional configurations that could be placed in this <code>test_coverage</code> function. For example, if I wanted to change the 90% coverage threshold I could add <code>summary: [threshold: 80]</code> to change it to 80%. I&rsquo;ll let you explore all of the options you can add here. I will be revisiting this function as more tests and generated code are added to the project.</p>
 <h4 id="code-quality">Code Quality</h4>
-<p>We will be using <a href="https://hexdocs.pm/credo/overview.html">Credo</a> to ensure code quality. The setup is very simple. Add this line to your <code>mix.exs</code> file:</p>
+<p>We will be using <a href="https://hexdocs.pm/credo/overview.html">Credo</a> to ensure code quality. The setup is very simple. Add this line to your <code>mix.exs</code> file to add the dependency:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>{<span style="color:#f1fa8c">:credo</span>, <span style="color:#f1fa8c">&#34;~&gt; 1.7&#34;</span>, <span style="color:#f1fa8c">only</span>: [<span style="color:#f1fa8c">:dev</span>, <span style="color:#f1fa8c">:test</span>], <span style="color:#f1fa8c">runtime</span>: false},
-</span></span></code></pre></div><p>Credo is extremely flexible and has a lot of rules you can apply. You do this by creating a file named <code>.credo.exs</code> in the root directory of your project. When I initially ran it with my standard configuration it found two issues in the generated <code>data_case.ex</code> file and another issue in the <code>kanban_web.ex</code> file. I chose to fix the one in the <code>kanban_web.ex</code> file (order of aliases) and chose to ignore the one in the <code>data_case.ex</code> since I will not be changing that generated file. Here is my configuration but you might want to adjust it to your liking:</p>
+</span></span></code></pre></div><p>Credo is extremely flexible and has a lot of <a href="https://hexdocs.pm/credo/Credo.Check.html">rules</a> you can apply. You do this by creating a file named <code>.credo.exs</code> in the root directory of your project. When I initially ran it with my standard configuration it found two issues in the generated <code>data_case.ex</code> file and another issue in the <code>kanban_web.ex</code> file. I chose to fix the one in the <code>kanban_web.ex</code> file (order of aliases) and chose to ignore the one in the <code>data_case.ex</code> since I will not be changing that generated file. Here is my configuration but you might want to adjust it to your liking:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>%{
 </span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">configs</span>: [
 </span></span><span style="display:flex;"><span>    %{
@@ -332,7 +351,7 @@
 </span></span><span style="display:flex;"><span>Use <span style="color:#f1fa8c">`</span>mix credo explain<span style="color:#f1fa8c">`</span> to explain issues, <span style="color:#f1fa8c">`</span>mix credo --help<span style="color:#f1fa8c">`</span> <span style="color:#ff79c6">for</span> options.
 </span></span></code></pre></div><p>All good. Now let&rsquo;s see what we need to do for security.</p>
 <h4 id="security">Security</h4>
-<p>Let me start by saying that what I am about to show you is in no way a comprehensive way to secure your application. What follows is my simple setup that I use during development to give me an early warning of any possible security issue. We will start by adding a few new hex packages to your dependencies in the <code>mix.exs</code> file:</p>
+<p>Let me start by saying that what I am about to show you is in no way a comprehensive way to secure your application. What follows is my simple setup that I use during development to give me an early warning of any possible security issue. We will start by adding a few new hex packages (<a href="https://hexdocs.pm/hex/Mix.Tasks.Hex.Audit.html">mix_audit</a> and <a href="https://hexdocs.pm/sobelow/readme.html">sobelow</a>)to the dependencies in the <code>mix.exs</code> file:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>{<span style="color:#f1fa8c">:mix_audit</span>, <span style="color:#f1fa8c">&#34;~&gt; 2.1&#34;</span>, <span style="color:#f1fa8c">only</span>: [<span style="color:#f1fa8c">:dev</span>, <span style="color:#f1fa8c">:test</span>], <span style="color:#f1fa8c">runtime</span>: false},
 </span></span><span style="display:flex;"><span>{<span style="color:#f1fa8c">:sobelow</span>, <span style="color:#f1fa8c">&#34;~&gt; 0.13&#34;</span>, <span style="color:#f1fa8c">only</span>: [<span style="color:#f1fa8c">:dev</span>, <span style="color:#f1fa8c">:test</span>], <span style="color:#f1fa8c">runtime</span>: false}
 </span></span></code></pre></div><p><code>mix_audit</code> will scan your dependencies for security vulnerabilities while <code>sobelow</code> is a security focused static analysis tool. <code>sobelow</code> requires additional configuration. Here is mine:</p>

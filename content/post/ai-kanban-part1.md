@@ -44,7 +44,7 @@ MCP Servers work with LLMs by providing tool, data, or function specific informa
 
 ## Setting up the Project
 
-So I generated my application using `mix phx.new kanban` and then ran `mix setup` to create the database and build the assets. I can now run the applicaion and see a beautiful (not really) site.
+I generated the application using `mix phx.new kanban` and then ran `mix setup` to create the database and build the assets. I can now run the applicaion and see a beautiful (not really) site.
 
 ![Image of newly generated phoenix application](/img/new_phoenix_app.png)
 
@@ -52,7 +52,7 @@ Before I begin development there are still a few things I need to do.
 
 ### Setup for Quality and Security
 
-It is important to be able to verify the quality of the application at any given moment. To this end I setup some things that help Claude maintain this quality. These are related to testing, code quality, and security.
+It is important to be able to verify the quality of the application at any given moment. To this end I setup some things that help Claude Code maintain this quality. These are related to testing, code quality, and security.
 
 #### Testing
 
@@ -95,7 +95,7 @@ Coverage test failed, threshold not met:
     Threshold:  90.00%
 ```
 
-There is a lot of generated code here that I really do not want to be included in my test coverage as I have no intention of ever changing it. I do this by adding the following code to the `project` function in `mix.exs`:
+There is a lot of generated code here that I really do not want to be included in my test coverage as I have no intention of ever changing it. In order to tell the test runner to ignore certail files for coverage calculations I can add  the following code to the `project` function in `mix.exs`:
 
 ```elixir {linenos=inline hl_lines=[12]}
   def project do
@@ -114,7 +114,7 @@ There is a lot of generated code here that I really do not want to be included i
   end
 ```
 
-and then I add this function at the bottom of the file below the `deps` function:
+and then add this function at the bottom of the file below the `deps` function:
 
 ```elixir {linenos=inline}
 defp test_coverage do
@@ -136,17 +136,40 @@ defp test_coverage do
 end
 ```
 
-Now my tests run clean without including generated files in my coverage report. I will be updating this new function throughout the development.
+If I run the test again I get this output:
+
+```shell
+Running ExUnit with seed: 883248, max_cases: 16
+
+.....
+Finished in 0.04 seconds (0.01s async, 0.03s sync)
+5 tests, 0 failures
+
+Generating cover results ...
+
+Percentage | Module
+-----------|--------------------------
+   100.00% | Kanban
+   100.00% | Kanban.Mailer
+   100.00% | KanbanWeb
+   100.00% | KanbanWeb.Endpoint
+   100.00% | KanbanWeb.Gettext
+   100.00% | KanbanWeb.PageController
+-----------|--------------------------
+   100.00% | Total
+```
+
+That looks like a good place to start. There are many additional configurations that could be placed in this `test_coverage` function. For example, if I wanted to change the 90% coverage threshold I could add `summary: [threshold: 80]` to change it to 80%. I'll let you explore all of the options you can add here. I will be revisiting this function as more tests and generated code are added to the project.
 
 #### Code Quality
 
-We will be using [Credo](https://hexdocs.pm/credo/overview.html) to ensure code quality. The setup is very simple. Add this line to your `mix.exs` file:
+We will be using [Credo](https://hexdocs.pm/credo/overview.html) to ensure code quality. The setup is very simple. Add this line to your `mix.exs` file to add the dependency:
 
 ```elixir
 {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
 ```
 
-Credo is extremely flexible and has a lot of rules you can apply. You do this by creating a file named `.credo.exs` in the root directory of your project. When I initially ran it with my standard configuration it found two issues in the generated `data_case.ex` file and another issue in the `kanban_web.ex` file. I chose to fix the one in the `kanban_web.ex` file (order of aliases) and chose to ignore the one in the `data_case.ex` since I will not be changing that generated file. Here is my configuration but you might want to adjust it to your liking:
+Credo is extremely flexible and has a lot of [rules](https://hexdocs.pm/credo/Credo.Check.html) you can apply. You do this by creating a file named `.credo.exs` in the root directory of your project. When I initially ran it with my standard configuration it found two issues in the generated `data_case.ex` file and another issue in the `kanban_web.ex` file. I chose to fix the one in the `kanban_web.ex` file (order of aliases) and chose to ignore the one in the `data_case.ex` since I will not be changing that generated file. Here is my configuration but you might want to adjust it to your liking:
 
 ```elixir
 %{
@@ -198,7 +221,7 @@ All good. Now let's see what we need to do for security.
 
 #### Security
 
-Let me start by saying that what I am about to show you is in no way a comprehensive way to secure your application. What follows is my simple setup that I use during development to give me an early warning of any possible security issue. We will start by adding a few new hex packages to your dependencies in the `mix.exs` file:
+Let me start by saying that what I am about to show you is in no way a comprehensive way to secure your application. What follows is my simple setup that I use during development to give me an early warning of any possible security issue. We will start by adding a few new hex packages ([mix_audit](https://hexdocs.pm/hex/Mix.Tasks.Hex.Audit.html) and [sobelow](https://hexdocs.pm/sobelow/readme.html))to the dependencies in the `mix.exs` file:
 
 ```elixir
 {:mix_audit, "~> 2.1", only: [:dev, :test], runtime: false},
