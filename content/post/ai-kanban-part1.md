@@ -300,20 +300,18 @@ Finally we get to use Claude Code. After starting the Claude Code plugin in Wind
 > please refer to the AGENTS.md file for application specific instructions.
 ```
 
-This is more of a reminder as it already knew this from the AGENTS.md file. Now it is time to install the MCP servers. I ask Claude to install the mcp servers and work through all of the prompts to get them installed.
+This is more of a reminder as it already knows to use this file. Now we want to ask Claude Code to install the MCP servers.  You do this by simply entering the following prompt:
 
 ```shell
-> install the HexDoc mcp server
-> install the TideWave mcp server
-> install the filesystem mcp server
-> install the github mcp server
-> install the sequential-thinking mcp server
-> install the knowledge-graph mcp server
-> install the postgres mcp server
+> install the <insert name here> mcp server
 ```
 
-There will be some questions asked for each mcp server installation but it is safe to go with what claude ask you to do. When you are finished restart Claude Code and run the /mcp command. You should see all of the serers listed. If you do not see one listed ask Claude Code to fix the installation.
+Replace the `<insert name here>` section with the names of the mcp servers listed above. Claude will ask some questions about different installation steps. It is safe to go with what Claude ask you to do.
+
+Note that when installing the `Tidewave` mcp server Claude will need to make a few changes to the project configuration and source files. This is because the Tidewave mcp server will run inside of the running application when you start it locally in dev (and test) mode. This is what makes this tool unique.
+
+When you are finished installing all of the mcp servers restart Claude Code and run the /mcp command. You should see a list of all of the servers that are installed. If you do not see one listed ask Claude Code to fix the installation.
 
 ## We are ready
 
-What have we done so far? We have added a few dependencies to our project to make testing, code quality, and security easier to verify. We have added a dependency that will make it easier to update our AGENTS.md file going forward, we have added some of our standards to the AGENTS.md file, and finally we have installed several MCP servers. We are now ready to start building the application.
+What have we done so far? We have added a few dependencies and some configuration to our project to make testing, code quality, and security easier to verify. We have added a dependency that will make it easier to update our AGENTS.md file going forward. We have added some of our development standards to the AGENTS.md file. Finally we have installed several MCP servers. We are now ready to build the application.
