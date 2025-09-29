@@ -211,7 +211,7 @@ Let me start by saying that what I am about to show you is in no way a comprehen
 [verbose: false, private: false, skip: false, router: nil, exit: false, format: "txt", out: nil, threshold: :low, ignore: ["Config.HTTPS"], ignore_files: [], version: false]
 ```
 
-With this in place we now have a few commands we can run - namely `mix deps.audit`, `mix hex.audit` and `mix sobelow --config`. When I ran the `sobelow` command it right away pointed out an issue in my router file. I fixed this by updating the `put_secure_browser_headers` plub to this:
+With this in place we now have a few commands we can run - namely `mix deps.audit`, `mix hex.audit` and `mix sobelow --config`. When I ran the `sobelow` command it right away pointed out an issue in my router file. I fixed this by updating the `put_secure_browser_headers` plug to this:
 
 ```elixir
     plug :put_secure_browser_headers, %{"content-security-policy" => "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'"}
@@ -225,7 +225,7 @@ The changes we have made so far are changes that I would make for any project. B
 
 ### Updating the AGENTS.md file
 
-The generated pheonix project includes an [AGENTS.md](https://agents.md) file. I strongly suggest taking a look at this file as it gives your LLM a lot of direction on how to perform tasks. We will be updating this file but before we do there is another hex package that we can add that helps us get additional instructions from our dependencies. It is called `usage_rules`. The way it works is it scans all of your dependencies and gathers their instructions to LLMs and adds them to your AGENTS.md file. In fact, if you look through the AGENTS.md file added by the generation you will see some tags for usage_rules are already there. Let's start by adding the dependency:
+The generated pheonix project includes an [AGENTS.md](https://agents.md) file. I strongly suggest taking a look at this file and understanding what is there and how it works. It provides your LLM a lot of direction on how to perform tasks and interact with different dependencies. We will be updating this file later but before we do there is another hex package that we can add that helps us get additional instructions from our dependencies. It is called `usage_rules`. The way it works is that package maintainers put a file named `usage_rules.md` in the root of their project and the tool scans all of your dependencies and gathers their instructions inserting them into a marked section of your AGENTS.md file. In fact, if you look through the AGENTS.md file added by the generation you will see some tags for usage_rules are already there. Let's start by adding the dependency:
 
 ```elixir
 {:usage_rules, "~> 0.1.0"},
