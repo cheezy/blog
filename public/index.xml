@@ -13,7 +13,7 @@
       <link>http://localhost:1313/post/ai-kanban-part1/</link>
       <pubDate>Sun, 28 Sep 2025 09:52:02 -0400</pubDate>
       <guid>http://localhost:1313/post/ai-kanban-part1/</guid>
-      <description>&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;&#xA;&lt;p&gt;This is the first post in a series in which I will be building a Kanban board application with &lt;a href=&#34;https://www.phoenixframework.org&#34;&gt;Phoenix&lt;/a&gt; and &lt;a href=&#34;https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html&#34;&gt;LiveView&lt;/a&gt;. What is different this about this series is that I will use AI to write the code and tests as well as come up with the design of the application.  I will be using a set of tools and workflow that I have worked out over the past several months to truly take advantage of the benefits of AI while producing quality code and a fully tested application.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;&#xA;&lt;p&gt;This is the first post in a series in which I will be building a Kanban board application with &lt;a href=&#34;https://www.phoenixframework.org&#34;&gt;Phoenix&lt;/a&gt; and &lt;a href=&#34;https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html&#34;&gt;LiveView&lt;/a&gt;. What is different about this series is that I will use AI to write the code and tests as well as come up with the design of the application.  I will be using a set of tools and workflow that I have worked out over the past several months to truly take advantage of the benefits of AI while producing quality code and a fully tested application.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>

@@ -7,7 +7,7 @@ tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 
 ## Getting Started
 
-This is the first post in a series in which I will be building a Kanban board application with [Phoenix](https://www.phoenixframework.org) and [LiveView](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html). What is different this about this series is that I will use AI to write the code and tests as well as come up with the design of the application.  I will be using a set of tools and workflow that I have worked out over the past several months to truly take advantage of the benefits of AI while producing quality code and a fully tested application.
+This is the first post in a series in which I will be building a Kanban board application with [Phoenix](https://www.phoenixframework.org) and [LiveView](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html). What is different about this series is that I will use AI to write the code and tests as well as come up with the design of the application.  I will be using a set of tools and workflow that I have worked out over the past several months to truly take advantage of the benefits of AI while producing quality code and a fully tested application.
 
 This first post in the series lays down the foundation of what tools I will be using and what things I add to my application in order to make my LLM more effective.
 
