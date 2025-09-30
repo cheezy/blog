@@ -287,7 +287,7 @@ After the Project guidelines section I add the following two sections for Qualit
 
 - When you add or update a dependency run `mix deps.audit` and `mix hex.audit` to check for security issues
 - When you add or update a dependency run `mix hex.outdated` to check for outdated dependencies
-- when you complete a task run `mix sobelow --config` to check for security issues
+- when you complete a task run `mix sobelow --config` to check for security issues and fix any issue
 ```
 
 Now you can see how all of the changes we have made so far come together.
