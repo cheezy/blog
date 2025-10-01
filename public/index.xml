@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Sep 2025 09:52:02 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 01 Oct 2025 09:52:02 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a LiveView app using AI - Part 2</title>
+      <link>http://localhost:1313/post/ai-kanban-part2/</link>
+      <pubDate>Wed, 01 Oct 2025 09:52:02 -0400</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part2/</guid>
+      <description>&lt;h2 id=&#34;using-claude-code-to-create-the-plan&#34;&gt;Using Claude Code to create the plan&lt;/h2&gt;&#xA;&lt;p&gt;In Part 2 of this series I will be using Claude Code to generate a plan to build the Kanban Board application. It is very important to me that the plan take very small steps and include a lot of places where we check the quality along the way. Here is a video of the session. Following the video I include the prompts I used as well as the entire plan created by Claude.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>TDD With AI</title>
       <link>http://localhost:1313/post/tdd-with-ai/</link>

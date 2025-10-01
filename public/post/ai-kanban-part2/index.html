@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Building a LiveView app using AI - Part 2" />
+    <meta property="og:title" content="Building a LiveView app using AI - Part 2" />
+    <meta property="twitter:title" content="Building a LiveView app using AI - Part 2" />
+    
+
+    
+    <meta name="description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing.">
+    <meta property="og:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/ai-kanban-part2/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Building a LiveView app using AI - Part 2 | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/ai-kanban-part2/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Eat more cheese</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Building a LiveView app using AI - Part 2</h1>
+
+            
+                <h2 id="using-claude-code-to-create-the-plan">Using Claude Code to create the plan</h2>
+<p>In Part 2 of this series I will be using Claude Code to generate a plan to build the Kanban Board application. It is very important to me that the plan take very small steps and include a lot of places where we check the quality along the way. Here is a video of the session. Following the video I include the prompts I used as well as the entire plan created by Claude.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/_07ZxEppbAE?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h3 id="the-prompts">The Prompts</h3>
+<p>I actually added three prompts during this session. The first laid out the high level details of the application I want to build. The prompt is:</p>
+<p><em>I want to build a Kanban Board Application. Users should be able to create a new kanban board. User should be able to add columns to the board and provide a name for the columns. Users shuld be able to add tasks to the columns. users should be able to move tasks from one column to another. Users should have to authenticate in order to access their boards. Pleae create a plan and write it to a file named PLAN.md so we can keep track of our progress.</em></p>
+<p>Ones this prompt completed I asked Claude to add more details. Here&rsquo;s the prompt:</p>
+<p><em>I would like the plan to be more detailed. Please add a step after phase 1 to create the schemas. Also ensure you include the quality checks outlined in the AGENTS.md file.</em></p>
+<p>Finally I asked Claude to turn it into a checklist style plan. Here&rsquo;s the prompt:</p>
+<p><em>Please update the plan so that we can check off the tasks that we complete.</em></p>
+<h3 id="the-plan">The Plan</h3>
+<p>This is the entire plan that was generated by Claude Code. It is very long but I am including it so you can see how much details were added.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#6272a4"># Kanban Board Application - Implementation Plan</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">## Project Overview</span>
+</span></span><span style="display:flex;"><span>A web-based Kanban board application built with Phoenix/Elixir that allows users to create boards, manage columns, and organize tasks with authentication.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">## Core Features</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">### 1. User Authentication</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> User registration
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> User login/logout
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Password hashing and security
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Session management
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Protected routes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">### 2. Board Management</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create new boards
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> View list of user<span style="color:#f1fa8c">\&#39;</span>s boards
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> View individual board
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Update board details <span style="color:#ff79c6">(</span>name, description<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Delete boards
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">### 3. Column Management</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add columns to a board
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Name/rename columns
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Reorder columns
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Delete columns
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">### 4. Task Management</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create tasks within columns
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Edit task details <span style="color:#ff79c6">(</span>title, description<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Delete tasks
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Move tasks between columns
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Reorder tasks within a column
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">## Technical Architecture</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">### Database Schema</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>users
+</span></span><span style="display:flex;"><span>  - id
+</span></span><span style="display:flex;"><span>  - email
+</span></span><span style="display:flex;"><span>  - hashed_password
+</span></span><span style="display:flex;"><span>  - inserted_at
+</span></span><span style="display:flex;"><span>  - updated_at
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>boards
+</span></span><span style="display:flex;"><span>  - id
+</span></span><span style="display:flex;"><span>  - user_id <span style="color:#ff79c6">(</span>foreign key<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - name
+</span></span><span style="display:flex;"><span>  - description
+</span></span><span style="display:flex;"><span>  - inserted_at
+</span></span><span style="display:flex;"><span>  - updated_at
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>columns
+</span></span><span style="display:flex;"><span>  - id
+</span></span><span style="display:flex;"><span>  - board_id <span style="color:#ff79c6">(</span>foreign key<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - name
+</span></span><span style="display:flex;"><span>  - position <span style="color:#ff79c6">(</span>order<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - inserted_at
+</span></span><span style="display:flex;"><span>  - updated_at
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tasks
+</span></span><span style="display:flex;"><span>  - id
+</span></span><span style="display:flex;"><span>  - column_id <span style="color:#ff79c6">(</span>foreign key<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - title
+</span></span><span style="display:flex;"><span>  - description
+</span></span><span style="display:flex;"><span>  - position <span style="color:#ff79c6">(</span>order<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - inserted_at
+</span></span><span style="display:flex;"><span>  - updated_at
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">### Implementation Phases</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#### Phase 1: Project Setup &amp; Authentication</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Set up Phoenix project structure
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Configure database
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Implement user authentication
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Generate authentication scaffold with <span style="color:#f1fa8c">`</span>mix phx.gen.auth Accounts User users<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run migrations with <span style="color:#f1fa8c">`</span>mix ecto.migrate<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test user registration flow manually
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test user login/logout flow manually
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Verify protected routes work correctly
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Quality Checks <span style="color:#ff79c6">(</span>Phase 1<span style="color:#ff79c6">)</span>**:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span><span style="color:#f1fa8c">`</span> and ensure all tests pass
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix credo --strict<span style="color:#f1fa8c">`</span> and fix any issues
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix sobelow --config<span style="color:#f1fa8c">`</span> and fix any security issues
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#### Phase 2: Database Schema &amp; Context Setup</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Generate Board schema and migration**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create migration: <span style="color:#f1fa8c">`</span>mix ecto.gen.migration create_boards<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Define <span style="color:#f1fa8c">`</span>boards<span style="color:#f1fa8c">`</span> table with fields: name <span style="color:#ff79c6">(</span>string<span style="color:#ff79c6">)</span>, description <span style="color:#ff79c6">(</span>text<span style="color:#ff79c6">)</span>, user_id <span style="color:#ff79c6">(</span>references :users<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add foreign key constraint with <span style="color:#f1fa8c">`</span>on_delete: :delete_all<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add index on user_id
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run migration: <span style="color:#f1fa8c">`</span>mix ecto.migrate<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create Board schema**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban/boards/board.ex<span style="color:#f1fa8c">`</span> with Ecto schema
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Define fields: <span style="color:#f1fa8c">`</span>:name<span style="color:#f1fa8c">`</span>, <span style="color:#f1fa8c">`</span>:description<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add <span style="color:#f1fa8c">`</span>belongs_to :user, Kanban.Accounts.User<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add <span style="color:#f1fa8c">`</span>has_many :columns, Kanban.Columns.Column<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create changeset <span style="color:#ff79c6">function</span> with validations
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Generate Column schema and migration**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create migration: <span style="color:#f1fa8c">`</span>mix ecto.gen.migration create_columns<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Define <span style="color:#f1fa8c">`</span>columns<span style="color:#f1fa8c">`</span> table with fields: name <span style="color:#ff79c6">(</span>string<span style="color:#ff79c6">)</span>, position <span style="color:#ff79c6">(</span>integer<span style="color:#ff79c6">)</span>, board_id <span style="color:#ff79c6">(</span>references :boards<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add foreign key constraint with <span style="color:#f1fa8c">`</span>on_delete: :delete_all<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add index on board_id
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add unique constraint on <span style="color:#ff79c6">(</span>board_id, position<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run migration: <span style="color:#f1fa8c">`</span>mix ecto.migrate<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create Column schema**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban/columns/column.ex<span style="color:#f1fa8c">`</span> with Ecto schema
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Define fields: <span style="color:#f1fa8c">`</span>:name<span style="color:#f1fa8c">`</span>, <span style="color:#f1fa8c">`</span>:position<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add <span style="color:#f1fa8c">`</span>belongs_to :board, Kanban.Boards.Board<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add <span style="color:#f1fa8c">`</span>has_many :tasks, Kanban.Tasks.Task<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create changeset <span style="color:#ff79c6">function</span> with validations
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Generate Task schema and migration**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create migration: <span style="color:#f1fa8c">`</span>mix ecto.gen.migration create_tasks<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Define <span style="color:#f1fa8c">`</span>tasks<span style="color:#f1fa8c">`</span> table with fields: title <span style="color:#ff79c6">(</span>string<span style="color:#ff79c6">)</span>, description <span style="color:#ff79c6">(</span>text<span style="color:#ff79c6">)</span>, position <span style="color:#ff79c6">(</span>integer<span style="color:#ff79c6">)</span>, column_id <span style="color:#ff79c6">(</span>references :columns<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add foreign key constraint with <span style="color:#f1fa8c">`</span>on_delete: :delete_all<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add index on column_id
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add unique constraint on <span style="color:#ff79c6">(</span>column_id, position<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run migration: <span style="color:#f1fa8c">`</span>mix ecto.migrate<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create Task schema**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban/tasks/task.ex<span style="color:#f1fa8c">`</span> with Ecto schema
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Define fields: <span style="color:#f1fa8c">`</span>:title<span style="color:#f1fa8c">`</span>, <span style="color:#f1fa8c">`</span>:description<span style="color:#f1fa8c">`</span>, <span style="color:#f1fa8c">`</span>:position<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add <span style="color:#f1fa8c">`</span>belongs_to :column, Kanban.Columns.Column<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create changeset <span style="color:#ff79c6">function</span> with validations
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create context modules with functions**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban/boards.ex<span style="color:#f1fa8c">`</span> context with:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>list_boards<span style="color:#ff79c6">(</span>user<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - list all boards <span style="color:#ff79c6">for</span> a user
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>get_board!<span style="color:#ff79c6">(</span>id, user<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - get board with authorization check
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>create_board<span style="color:#ff79c6">(</span>user, attrs<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - create board <span style="color:#ff79c6">for</span> user
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>update_board<span style="color:#ff79c6">(</span>board, attrs<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - update board
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>delete_board<span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - delete board
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban/columns.ex<span style="color:#f1fa8c">`</span> context with:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>list_columns<span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - list columns <span style="color:#ff79c6">for</span> a board
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>get_column!<span style="color:#ff79c6">(</span>id<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - get column by id
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>create_column<span style="color:#ff79c6">(</span>board, attrs<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - create column with auto position
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>update_column<span style="color:#ff79c6">(</span>column, attrs<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - update column
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>delete_column<span style="color:#ff79c6">(</span>column<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - delete column and reorder remaining
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>reorder_columns<span style="color:#ff79c6">(</span>board, column_ids<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - reorder columns
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban/tasks.ex<span style="color:#f1fa8c">`</span> context with:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>list_tasks<span style="color:#ff79c6">(</span>column<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - list tasks <span style="color:#ff79c6">for</span> a column
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>get_task!<span style="color:#ff79c6">(</span>id<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - get task by id
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>create_task<span style="color:#ff79c6">(</span>column, attrs<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - create task with auto position
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>update_task<span style="color:#ff79c6">(</span>task, attrs<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - update task
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>delete_task<span style="color:#ff79c6">(</span>task<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - delete task and reorder remaining
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>move_task<span style="color:#ff79c6">(</span>task, new_column, new_position<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - move task to different column
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>reorder_tasks<span style="color:#ff79c6">(</span>column, task_ids<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> - reorder tasks within column
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Write comprehensive unit tests**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>test/kanban/boards_test.exs<span style="color:#f1fa8c">`</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test all CRUD operations
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test user scoping <span style="color:#ff79c6">(</span>users can<span style="color:#f1fa8c">&#39;t access other users&#39;</span> boards<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test cascade deletion <span style="color:#ff79c6">(</span>deleting board deletes columns and tasks<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>test/kanban/columns_test.exs<span style="color:#f1fa8c">`</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test all CRUD operations
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test automatic position assignment
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test position reordering
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test cascade deletion <span style="color:#ff79c6">(</span>deleting column deletes tasks<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>test/kanban/tasks_test.exs<span style="color:#f1fa8c">`</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test all CRUD operations
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test automatic position assignment
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test moving tasks between columns
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test position reordering within column
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test position updates when task deleted
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Quality Checks <span style="color:#ff79c6">(</span>Phase 2<span style="color:#ff79c6">)</span>**:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span><span style="color:#f1fa8c">`</span> and ensure all tests pass
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span> --cover<span style="color:#f1fa8c">`</span> and verify coverage meets threshold
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix credo --strict<span style="color:#f1fa8c">`</span> and fix any issues
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix sobelow --config<span style="color:#f1fa8c">`</span> and fix any security issues
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#### Phase 3: Board Management UI</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create board list LiveView**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban_web/live/board_live/index.ex<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Implement <span style="color:#f1fa8c">`</span>mount/3<span style="color:#f1fa8c">`</span> to load user<span style="color:#f1fa8c">\&#39;</span>s boards
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Use streams <span style="color:#ff79c6">for</span> board collection
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create template with board cards
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add <span style="color:#f1fa8c">&#34;New Board&#34;</span> button
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add edit/delete actions <span style="color:#ff79c6">for</span> each board
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create board show LiveView**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban_web/live/board_live/show.ex<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Load board with preloaded columns and tasks
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Display board name and description
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Show all columns with their tasks
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add <span style="color:#f1fa8c">&#34;New Column&#34;</span> button
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create board form component**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban_web/live/board_live/form_component.ex<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Build form <span style="color:#ff79c6">for</span> creating/editing boards
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add validation and error display
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Handle form submission
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Add routes**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add routes in <span style="color:#f1fa8c">`</span>lib/kanban_web/router.ex<span style="color:#f1fa8c">`</span> under authenticated scope
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>live <span style="color:#f1fa8c">&#34;/boards&#34;</span>, BoardLive.Index, :index<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>live <span style="color:#f1fa8c">&#34;/boards/new&#34;</span>, BoardLive.Index, :new<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>live <span style="color:#f1fa8c">&#34;/boards/:id/edit&#34;</span>, BoardLive.Index, :edit<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> <span style="color:#f1fa8c">`</span>live <span style="color:#f1fa8c">&#34;/boards/:id&#34;</span>, BoardLive.Show, :show<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Write LiveView tests**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>test/kanban_web/live/board_live_test.exs<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test board list rendering
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test creating new board
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test editing board
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test deleting board
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test authorization <span style="color:#ff79c6">(</span>can<span style="color:#f1fa8c">&#39;t access other users&#39;</span> boards<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Quality Checks <span style="color:#ff79c6">(</span>Phase 3<span style="color:#ff79c6">)</span>**:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span><span style="color:#f1fa8c">`</span> and ensure all tests pass
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span> --cover<span style="color:#f1fa8c">`</span> and verify coverage meets threshold
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix credo --strict<span style="color:#f1fa8c">`</span> and fix any issues
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix sobelow --config<span style="color:#f1fa8c">`</span> and fix any security issues
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#### Phase 4: Column Management UI</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Add column creation to board show view**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add inline form or modal <span style="color:#ff79c6">for</span> new columns
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Display columns in order by position
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Show column name and task count
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create column form component**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban_web/live/column_live/form_component.ex<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Build form <span style="color:#ff79c6">for</span> creating/editing columns
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Handle form submission
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Add column actions**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add edit column name inline or via modal
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add delete column with confirmation
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Ensure tasks are deleted when column deleted
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Write LiveView tests**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test column creation
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test column editing
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test column deletion
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test column ordering
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Quality Checks <span style="color:#ff79c6">(</span>Phase 4<span style="color:#ff79c6">)</span>**:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span><span style="color:#f1fa8c">`</span> and ensure all tests pass
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span> --cover<span style="color:#f1fa8c">`</span> and verify coverage meets threshold
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix credo --strict<span style="color:#f1fa8c">`</span> and fix any issues
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#### Phase 5: Task Management UI</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Add task display to columns**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Use streams to display tasks within each column
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Show task title and description
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Display in order by position
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create task form component**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban_web/live/task_live/form_component.ex<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Build form <span style="color:#ff79c6">for</span> creating/editing tasks
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Handle form submission
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Add task actions**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add <span style="color:#f1fa8c">&#34;New Task&#34;</span> button in each column
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add edit task button
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add delete task with confirmation
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Write LiveView tests**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test task creation
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test task editing
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test task deletion
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test task display in correct column
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Quality Checks <span style="color:#ff79c6">(</span>Phase 5<span style="color:#ff79c6">)</span>**:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span><span style="color:#f1fa8c">`</span> and ensure all tests pass
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span> --cover<span style="color:#f1fa8c">`</span> and verify coverage meets threshold
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix credo --strict<span style="color:#f1fa8c">`</span> and fix any issues
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#### Phase 6: Drag &amp; Drop Functionality</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Install drag-and-drop library**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add Sortable.js or use native HTML5 drag-and-drop
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Configure in <span style="color:#f1fa8c">`</span>assets/js/app.js<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create LiveView hooks <span style="color:#ff79c6">for</span> drag-and-drop**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create hook in <span style="color:#f1fa8c">`</span>assets/js/hooks.js<span style="color:#f1fa8c">`</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Handle drag start, drag over, and drop events
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Send events to LiveView
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Implement server-side move handlers**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add <span style="color:#f1fa8c">`</span>handle_event<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;move_task&#34;</span>, ...<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">`</span> to board show LiveView
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Call <span style="color:#f1fa8c">`</span>Tasks.move_task/3<span style="color:#f1fa8c">`</span> context <span style="color:#ff79c6">function</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Update UI with new task positions
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Add visual feedback**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add drag handle to tasks
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Show placeholder when dragging
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Highlight drop zones
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Write LiveView tests**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test moving task within same column
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test moving task to different column
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Test position updates after move
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Quality Checks <span style="color:#ff79c6">(</span>Phase 6<span style="color:#ff79c6">)</span>**:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span><span style="color:#f1fa8c">`</span> and ensure all tests pass
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span> --cover<span style="color:#f1fa8c">`</span> and verify coverage meets threshold
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix credo --strict<span style="color:#f1fa8c">`</span> and fix any issues
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#### Phase 7: Polish &amp; Enhancement</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **UI/UX improvements**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Design beautiful board cards with Tailwind CSS
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add hover effects and transitions
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Improve spacing and typography
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add loading states <span style="color:#ff79c6">for</span> async actions
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add empty states <span style="color:#ff79c6">for</span> boards without columns/tasks
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Add notifications**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Use Phoenix LiveView flash messages <span style="color:#ff79c6">for</span> success/error
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Style flash messages with Tailwind CSS
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Add confirmation dialogs**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add confirmation <span style="color:#ff79c6">for</span> board deletion
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add confirmation <span style="color:#ff79c6">for</span> column deletion <span style="color:#ff79c6">(</span>mention tasks will be deleted<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add confirmation <span style="color:#ff79c6">for</span> task deletion
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Error handling**
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add proper error messages <span style="color:#ff79c6">for</span> validation failures
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Handle edge cases <span style="color:#ff79c6">(</span>deleting last column, etc.<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Add <span style="color:#bd93f9">404</span> pages <span style="color:#ff79c6">for</span> missing resources
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Final Quality Checks**:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span><span style="color:#f1fa8c">`</span> and ensure all tests pass
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix <span style="color:#8be9fd;font-style:italic">test</span> --cover<span style="color:#f1fa8c">`</span> and verify coverage meets threshold
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix credo --strict<span style="color:#f1fa8c">`</span> and fix any issues
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix sobelow --config<span style="color:#f1fa8c">`</span> and fix any security issues
+</span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Run <span style="color:#f1fa8c">`</span>mix precommit<span style="color:#f1fa8c">`</span> to run all checks together
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">## Technology Stack</span>
+</span></span><span style="display:flex;"><span>- **Backend**: Phoenix Framework <span style="color:#ff79c6">(</span>Elixir<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>- **Database**: PostgreSQL
+</span></span><span style="display:flex;"><span>- **Frontend**: Phoenix LiveView
+</span></span><span style="display:flex;"><span>- **Authentication**: Phoenix built-in authentication
+</span></span><span style="display:flex;"><span>- **Styling**: TailwindCSS <span style="color:#ff79c6">(</span>default with Phoenix<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">## Current Status</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">]</span> Project initialized
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Ready to begin Phase <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">## Notes</span>
+</span></span><span style="display:flex;"><span>- Focus on core functionality first
+</span></span><span style="display:flex;"><span>- Use LiveView <span style="color:#ff79c6">for</span> real-time updates
+</span></span><span style="display:flex;"><span>- Keep UI simple and intuitive
+</span></span><span style="display:flex;"><span>- Ensure proper authorization <span style="color:#ff79c6">(</span>users can only access their own boards<span style="color:#ff79c6">)</span>
+</span></span></code></pre></div>
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery Coach, and AI Enthusiest</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/ai-kanban-part2/">Building a LiveView app using AI - Part 2</a></li>
+        
+            <li><a href="/post/tdd-with-ai/">TDD With AI</a></li>
+        
+            <li><a href="/post/ai-kanban-part1/">Building a LiveView app using AI - Part 1</a></li>
+        
+            <li><a href="/post/hello-world-again/">Hello world (again eh)!</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2025
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
