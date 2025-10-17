@@ -19,4 +19,4 @@ And the final step in this post is to add multi-language support and the French 
 
 {{< youtube i7035PrnC-4 >}}
 
-Thanks for watching.
+Thanks for watching
