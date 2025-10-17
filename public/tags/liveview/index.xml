@@ -6,8 +6,29 @@
     <description>Recent content in LiveView on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Sep 2025 09:52:02 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 17 Oct 2025 10:00:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/liveview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a LiveView app using AI - Part 4</title>
+      <link>http://localhost:1313/post/ai-kanban-part4/</link>
+      <pubDate>Fri, 17 Oct 2025 10:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Building a LiveView app using AI - Part 3</title>
+      <link>http://localhost:1313/post/ai-kanban-part3/</link>
+      <pubDate>Sun, 05 Oct 2025 11:18:02 -0400</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part3/</guid>
+      <description>&lt;h2 id=&#34;using-claude-code-to-write-the-authentication-code&#34;&gt;Using Claude Code to write the Authentication Code&lt;/h2&gt;&#xA;&lt;p&gt;In Part 3 of this series we are finally ready to allow Claude Code to wite some code. We have our system configured properly, we have created a plan to take small steps, and now it is time to get started. I will be using Claude Code to build the Authentication for our Kanban Board application. There are a few times where I had to ask Claude to do something different. It is always important to pay attention. After the video was complete It took the time to verify everything and look at the code. Everything was good as I expected. You can see the prompts and output in the video.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building a LiveView app using AI - Part 2</title>
+      <link>http://localhost:1313/post/ai-kanban-part2/</link>
+      <pubDate>Wed, 01 Oct 2025 09:52:02 -0400</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part2/</guid>
+      <description>&lt;h2 id=&#34;using-claude-code-to-create-the-plan&#34;&gt;Using Claude Code to create the plan&lt;/h2&gt;&#xA;&lt;p&gt;In Part 2 of this series I will be using Claude Code to generate a plan to build the Kanban Board application. It is very important to me that the plan take very small steps and include a lot of places where we check the quality along the way. Here is a video of the session. Following the video I include the prompts I used as well as the entire plan created by Claude.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 1</title>
       <link>http://localhost:1313/post/ai-kanban-part1/</link>
