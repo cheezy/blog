@@ -13,7 +13,7 @@ I decided to change the plan a little and take care of a couple of user facing i
 
 So we have a new plan. I will be making the site pretty (and responsive) and I will be adding internationalization including the French language support for all existing pages. Should I trust Claude to come up with my design? What should I expect out of an LLM? Let's see the results of the first part of this revised plan.
 
-{{< youtube HRPfkudvu28 >}}
+{{< youtube 8h5vtjqJ-bg >}}
 
 And the final step in this post is to add multi-language support and the French translation. The switches is too simple for me to add additional languages in the future but I'll address that in time.
 
