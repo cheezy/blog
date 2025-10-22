@@ -9,7 +9,7 @@ tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 
 I decided to change the plan a little and take care of a couple of user facing issues. Let's see how that goes.
 
-{{< youtube uRwOkTFssaA >}}
+{{< youtube qA-ALhMOabc >}}
 
 So we have a new plan. I will be making the site pretty (and responsive) and I will be adding internationalization including the French language support for all existing pages. Should I trust Claude to come up with my design? What should I expect out of an LLM? Let's see the results of the first part of this revised plan.
 
