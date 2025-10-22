@@ -34,7 +34,7 @@
       <link>http://localhost:1313/post/ai-kanban-part2/</link>
       <pubDate>Wed, 01 Oct 2025 09:52:02 -0400</pubDate>
       <guid>http://localhost:1313/post/ai-kanban-part2/</guid>
-      <description>&lt;h2 id=&#34;using-claude-code-to-create-the-plan&#34;&gt;Using Claude Code to create the plan&lt;/h2&gt;&#xA;&lt;p&gt;In Part 2 of this series I will be using Claude Code to generate a plan to build the Kanban Board application. It is very important to me that the plan take very small steps and include a lot of places where we check the quality along the way. Here is a video of the session. Following the video I include the prompts I used as well as the entire plan created by Claude.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;using-claude-code-to-create-the-plan&#34;&gt;Using Claude Code to create the plan&lt;/h2&gt;&#xA;&lt;p&gt;In Part 2 of this series I will be using Claude Code to generate a plan to build the Kanban Board application. It is very important to me that the plan take very small steps and include a lot of places where we check the quality along the way. Here is a video of the session.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/nipOWuKmI8Q?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;h3 id=&#34;the-plan&#34;&gt;The Plan&lt;/h3&gt;&#xA;&lt;p&gt;So you can see what Claude Code produced, I am including the entire plan here.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TDD With AI</title>
@@ -55,7 +55,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>
