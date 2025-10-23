@@ -15,8 +15,8 @@ So we have a new plan. I will be making the site pretty (and responsive) and I w
 
 {{< youtube 8h5vtjqJ-bg >}}
 
-And the final step in this post is to add multi-language support and the French translation. The switches is too simple for me to add additional languages in the future but I'll address that in time.
+And the final step in this post is to add multi-language support and the French translation. The language selector that Claude created is too simple for me to add additional languages in the future but I'll address that in time.
 
-{{< youtube i7035PrnC-4 >}}
+{{< youtube 6HD9nsUp7lg >}}
 
-Thanks for watching
+At this point we have a site that has a complete authentication system, a beautiful design that is responsive, and internationalization with French and English. Not bad for spending _about an hour_ on it. 
