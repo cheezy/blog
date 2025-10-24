@@ -7,15 +7,15 @@ tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 
 ## Follow up for the French Translations
 
-After the last recording I started manually looking at the translatons. I quickly noticed that the authentication pages were not translated. This is why I take very small steps and verify after each one. LLMs cannot read your mind and they do not always do what you think they should do. Small steps allow us to make adjustments or revert when this happens. I asked Claude to translate them and it did.
+After the last recording I started manually looking at the translatons. I quickly noticed that the authentication pages were not translated. This is why I take very small steps and verify after each one. LLMs cannot read your mind and they do not always do what you think they should. Small steps allow us to make adjustments or revert when it does the wrong thing. I asked Claude to translate the authentication pages and it did.
 
-I also noticed that the language selector was not working on the authenticaion pages. I asked Claude to investigate and it reported that the main page is a phoenix page that has a phoenix controller but the authenticaion page was a liveview so the original fix didn't work. I asked Claude to fix that issue and it did.
+I also noticed that the language selector was not working on the authentication pages. I asked Claude to investigate and it reported that the main page is a phoenix page that has a phoenix controller but the authentication page was a liveview so the original fix didn't work. I asked Claude to fix that issue and it did.
 
 ## There is someting not quite right about the design
 
-There is one thing about the design that bother me. It is not the actual design but instead it is the way that Claude decided to implement the design. Claude placed all of the tailwind css directly in the template files. This made reading the templates difficult. I would typically create classes in the `app.css` file and then use them in the templates. I asked Tidewave to do this.
+There is one thing about the design that bother me. It is not the actual design but instead it is the way that Claude decided to implement the design. Claude placed all of the tailwind css directly in the template files. This made reading the templates difficult. I would typically create classes in the `app.css` file and then use them in the templates. I asked **Tidewave** to do this.
 
-Why did I ask Tidewave and not Claude? In my opinion, Tidewave has more insight into how some things should work in Phoenix/Live than Claude. When I asked Tidewave to do this it informed me that starting with Tailwind 4 the `@apply` directive does not work. Instead, Tidewave suggested creating function components and hiding the tidewave details there. This ended up being a better solution. Here is an example of a portion of a template before this change and after.
+Why did I ask Tidewave and not Claude? In my opinion, Tidewave has more insight into how some things should work in Phoenix / LiveView than Claude. When I asked Tidewave to do this it informed me that starting with Tailwind 4 the `@apply` directive is no longer supported. Instead, Tidewave suggested creating function components and hiding the tailwind details there. This ended up being a better solution. Here is an example of a portion of a template before and after this change.
 
 Before:
 
@@ -43,11 +43,11 @@ This is a huge improvement. I know feel like I can understand the changes to the
 
 ## Deployment pipeline
 
-Oh - and I added a deployment pipeline to deploy all code to an environment I call `review` each time I push to main. I'll share the url so you can go check it out once I have a little more of the application in place.
+Oh - and I added a deployment pipeline to deploy all code to an environment I call _review_ each time I push to main. I'll share the url so you can go check it out when I have a little more of the application in place.
 
 ## On to the next step
 
-Looking at the remaining plan there is something that bothers me. Phase 3 is `Database Schema & Context Setup`. This is creating the schema and context for the entirity of the application. The next four Phases are focused on creating the UI. I am not comfortable with this approach because we are making a lot of assumptions up front. This is not the way I would implement the changes if I were doing the coding. I like to work in small vertical slices with a running app each step.
+Looking at the remaining plan there is something that bothers me. Phase 3 is `Database Schema & Context Setup`. This is creating the schema and context for the entirity of the application. The next four Phases are focused on creating the UI. I know this is what I asked Claude to do when I was making the plan but now that I think about it I am having doubts. I am not comfortable with this approach because we are making a lot of assumptions up front. This is not the way I would implement the changes if I were doing the coding. I like to work in small vertical slices with a running app each step.
 
 ### A change of plans
 
@@ -116,10 +116,10 @@ I asked Claude to restructure the plan so we are incrementally creating the sche
   - [ ] Run `mix sobelow --config` and fix any security issues
 ```
 
-I am happy with this. These are small steps that are verifyable. This is in line with the small steps I would be taking.
+I am happy with this. These are small steps that are verifiable. This is in line with the small steps I would be taking.
 
 ## Let's start to implement phase 3
 
 This video is short and sweet. We ask Claude to start on phase 3 and claude creates the database table for the boards, the schema to represent the data in the table, and the context to perform the CRUD actions. Finally it tests everything to make sure it all works.
 
-{{< youtube Eww7Z4RXa4w >}}
+{{< youtube DSSFUCyfBrU >}}
