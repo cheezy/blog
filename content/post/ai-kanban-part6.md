@@ -33,4 +33,10 @@ What remains in Phase 3 of our plan is to build out the UI for creating, editing
 
 When reviewing the UI for the boards I noticed that Claude forgot to add the French translation for the pages. I also noticed that when a user logs into the system they are taken to the home page for the application instead of the page containing their boards. I asked Claude to fix these issues. Let's see how  that goes.
 
-{{< youtube EtndvtgCdzU >}}
+{{< youtube 98q8VfpwNQk >}}
+
+I added this line to my AGENTS.md file to remind my LLMs to always add the French translations in the future:
+
+```markdown
+- Always provide a French translation of all text that is visible in the UI
+```
