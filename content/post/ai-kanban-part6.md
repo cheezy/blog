@@ -40,3 +40,9 @@ I added this line to my AGENTS.md file to remind my LLMs to always add the Frenc
 ```markdown
 - Always provide a French translation of all text that is visible in the UI
 ```
+
+## Let's take a look at the results
+
+After all of this work (actually Claude did all of the work) it is finally time to see the results. In this video we look at the UI and make a minor change to the page that lists the boards. What is different this time around is that we ask Tidewave to make this change instead of Claude. Let's see how that goes.
+
+{{< youtube atQQ2dZJe1U >}}
