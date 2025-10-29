@@ -17,3 +17,8 @@ Now on to adding columns to our Kanban application. In the first video we ask Cl
 
 {{< youtube uXPUp7xQtm8 >}}
 
+## Making the Column UI
+
+Now that we have all of the backend code necessary for our columns we can start to build the UI. I am gaining a lot of confidence in Claude so I have him build out the entire UI without asking for my approval. Since there is almost no interaction on my part, I speed up a lot of the video to make it more interesting to watch.
+
+{{< youtube whtPkBE9rlM >}}
