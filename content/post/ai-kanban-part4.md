@@ -20,3 +20,5 @@ And the final step in this post is to add multi-language support and the French 
 {{< youtube 6HD9nsUp7lg >}}
 
 At this point we have a site that has a complete authentication system, a beautiful design that is responsive, and internationalization with French and English. Not bad for spending _about an hour_ on it.
+
+[Continue on to part five](/post/ai-kanban-part5)

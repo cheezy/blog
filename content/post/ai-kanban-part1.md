@@ -317,3 +317,5 @@ When you are finished installing all of the mcp servers restart Claude Code and 
 ## We are ready
 
 What have we done so far? We have added a few dependencies and some configuration to our project to make testing, code quality, and security easier to verify. We have added a dependency that will make it easier to update our AGENTS.md file going forward. We have added some of our development standards to the AGENTS.md file. Finally we have installed several MCP servers. We are now ready to build the application.
+
+[Continue on to part two](/post/ai-kanban-part2)

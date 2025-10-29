@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Oct 2025 10:41:11 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 26 Oct 2025 14:53:21 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a LiveView app using AI - Part 7</title>
+      <link>http://localhost:1313/post/ai-kanban-part7/</link>
+      <pubDate>Sun, 26 Oct 2025 14:53:21 -0400</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part7/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 6</title>
       <link>http://localhost:1313/post/ai-kanban-part6/</link>

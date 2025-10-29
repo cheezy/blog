@@ -123,3 +123,5 @@ I am happy with this. These are small steps that are verifiable. This is in line
 This video is short and sweet. We ask Claude to start on phase 3 and claude creates the database table for the boards, the schema to represent the data in the table, and the context to perform the CRUD actions. Finally it tests everything to make sure it all works.
 
 {{< youtube DSSFUCyfBrU >}}
+
+[Continue on to part six](/post/ai-kanban-part6)

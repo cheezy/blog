@@ -337,3 +337,5 @@ tasks
 - Keep UI simple and intuitive
 - Ensure proper authorization (users can only access their own boards)
 ```
+
+[Continue on to part three](/post/ai-kanban-part3)
