@@ -13,7 +13,7 @@
       <link>http://localhost:1313/post/ai-kanban-part7/</link>
       <pubDate>Sun, 26 Oct 2025 14:53:21 -0400</pubDate>
       <guid>http://localhost:1313/post/ai-kanban-part7/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;wip-limits&#34;&gt;WIP Limits&lt;/h2&gt;&#xA;&lt;p&gt;Before we start building out the columns I asked Claude to update the plan in order to add WIP limits to the columns. I was suprised by the number of changes that were required. You can see the details here in the first video of this post.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h2 id=&#34;adding-the-columns&#34;&gt;Adding the columns&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 6</title>
