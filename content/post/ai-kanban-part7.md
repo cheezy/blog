@@ -22,3 +22,7 @@ Now on to adding columns to our Kanban application. In the first video we ask Cl
 Now that we have all of the backend code necessary for our columns we can start to build the UI. I am gaining a lot of confidence in Claude so I have him build out the entire UI without asking for my approval. Since there is almost no interaction on my part, I speed up a lot of the video to make it more interesting to watch.
 
 {{< youtube whtPkBE9rlM >}}
+
+## Review the board
+
+I had expected Claude to not get the board and column interaction correct or to have made some UI decisions that I did not agree with. After recording the last video I spent some time looking at the UI and testing the functionality. I have to be hones - I am pleased with everything. There are no changes I want to make to it at this time.
