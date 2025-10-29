@@ -9,6 +9,6 @@ tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 
 Before we start building out the columns I asked Claude to update the plan in order to add WIP limits to the columns. I was suprised by the number of changes that were required. You can see the details here in the first video of this post.
 
-{{< youtube >}}
+{{< youtube qrUxEm1e1GA >}}
 
 ## Adding the columns
