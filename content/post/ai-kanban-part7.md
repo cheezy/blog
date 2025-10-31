@@ -26,3 +26,10 @@ Now that we have all of the backend code necessary for our columns we can start 
 ## Review the board
 
 I had expected Claude to not get the board and column interaction correct or to have made some UI decisions that I did not agree with. After recording the last video I spent some time looking at the UI and testing the functionality. I have to be hones - I am pleased with everything. There are no changes I want to make to it at this time.
+
+After we complete the next phase (which adds tasks) I will go through a full UI review on video so you can see everything created so far.
+
+But for those of you who can't wait, here's a picture of an example board with columns:
+
+![Image of board with columns](/img/columns.png)
+

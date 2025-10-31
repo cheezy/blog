@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Development on Cheezy World</title>
+    <link>http://localhost:1313/tags/software-development/</link>
+    <description>Recent content in Software Development on Cheezy World</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Oct 2025 15:28:45 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Is Agile compatible with AI?</title>
+      <link>http://localhost:1313/post/agile-and-ai/</link>
+      <pubDate>Wed, 29 Oct 2025 15:28:45 -0400</pubDate>
+      <guid>http://localhost:1313/post/agile-and-ai/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
