@@ -15,7 +15,7 @@ There is a major change coming to the software development field and in my opini
 
 I have studied AI over the past year and have spent a significant amount of time working hands-on with the tools over the past six months. I have worked with several LLMs in several languages and have developed a few applications. In the past two months I have seen dramatic improvements in these tools. What I am seeing is shocking to me. Already AI has the possibility to completely rewrite the way we build software and it will only improve over time.
 
-This has caused me to do a lot of sole searching. Will the processes and practices that I have used so successfully for a few decades work with this new paradigm? Is Agile compatible with AI or do we need to look for something different?
+This has caused me to do a lot of soul searching. Will the processes and practices that I have used so successfully for a few decades work with this new paradigm? Is Agile compatible with AI or do we need to look for something different?
 
 ## Agile Processes are not compatible with AI
 
