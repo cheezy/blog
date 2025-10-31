@@ -1,6 +1,6 @@
 ---
 date: '2025-10-29T15:28:45-04:00'
-draft: true
+draft: false
 title: 'Is Agile compatible with AI?'
 tags: ["AI", "Agile", "Software Development"]
 ---
