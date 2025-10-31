@@ -31,6 +31,8 @@ I do not see the need of having somebody on the team with the role of tester. AI
 
 With the team eliminating the majority of the meetings (ceremonies) associated with Agile processes I do not see the need for a Scrum Master. There is literally nothing for them to do.
 
+Do we need a designer? I can tell you from experience that it is possible to point an LLM at a design system like Figma and it can retrieve the designs. Better yet, you can point it to an existing application, tell it to imitate the design and it can do it. I see designers taking more of a global role within an organization by setting design standards and AI taking those standards and imitating them.
+
 A product owner is needed but it is essential that it be a person that is an expert in the domain (does not need to consult outside of the team) and has fully authority (does not need to reach out to other stakeholders) to make decisions. This person will need to sit with the developers and review the changes every few minutes to make decisions about the next steps and course correct as needed.
 
 Finally, I do not think we need as many developers on the team. Two to three developers will be able to deliver many times more tasks than six to eight developers have been able to do in the past. The developers are there simply to guide the LLM, review and accept the changes as they appear, and continue to refine AI's approach as the project matures.
@@ -41,11 +43,11 @@ I have had conversations with people who have stated that the Agile Values still
 
 ### Individuals and interactions over process and tools
 
-Valuing individuals and interactions made a lot of sense, especially when you team size was 8, 10, or 12 people. Collaborating and working together is essential in a traditional Agile team. But when your team size drops to three or four people and they must be in an ongoing conversation all day in order to ensure they are delivering the correct thing you might think it becomes even more important. The fact is that the tools are what is driving the new pace and a lot of the interaction is with the tools. The tools become elevated and the developers become simply a conduit through with the product owner interacts with the tools. This value statement seems to be focused on a different world.
+Valuing individuals and interactions made a lot of sense, especially when your team size was 8, 10, or 12 people. Collaborating and working together is essential in a traditional Agile team. But when your team size drops to three or four people and they must be in an ongoing conversation all day in order to ensure they are delivering the correct thing you might think it becomes even more important. The fact is that the tools are what is driving the new pace and a lot of the interaction is with the tools. The tools become elevated and the developers become simply a conduit through with the product owner interacts with the tools. This value statement seems to be focused on a different world.
 
 ### Working software over comprehensive documentation
 
-When working with AI is is totally possible to have both. There is no need to include this value statement.
+When working with AI it is totally possible to have both. There is no need to include this value statement.
 
 ### Customer collaboration over contract negotiation
 
@@ -57,9 +59,9 @@ I think this one still applies. Course correction as we learn is still important
 
 ## So what will work?
 
-I have been looking at a lot of the lighter weight processes out there to see if any of them come close to what I envision as working with AI. I looked at [FaST](https://www.fastagile.io) and think it is too heavy although it could possibly be adapted. I looked at [Programmer Anarchy](https://martinjeeblog.com/2012/11/20/what-is-programmer-anarchy-and-does-it-have-a-future/) and think it comes closer but I do think the daily checkin with the product owner is an artifact of the slower pase of the past.
+I have been looking at a lot of the lighter weight processes out there to see if any of them come close to what I envision as working with AI. I looked at [FaST](https://www.fastagile.io) and think it is too heavy although it could possibly be adapted. I looked at [Programmer Anarchy](https://martinjeeblog.com/2012/11/20/what-is-programmer-anarchy-and-does-it-have-a-future/) and think it comes closer but I do think the daily checkin with the product owner is an artifact of the slower pace of the past.
 
-I am currently working through an idea of a three person team - one product owner and two developers. The product owner is describing the next steps and the developers are working with the LLMs to implement them. Commits and deployments to a review environment are happening ever 10 to 20 minutes. The product owner is reviewing those changes and if there is a fundamential change they are talking to the developers to make those changes. If the desired change is a simple UI change then the produce owner will use a UI based AI tool like [Tidewave](https://tidewave.ai) to make those changes. Once the product owner is happy with what they see in the review environment they ask their LLM to move those changes to production. This is a very light weight collaborative conversation to code process.
+I am currently working through an idea of a three person team - one product owner and two developers. The product owner is describing the next steps and the developers are working with the LLMs to implement them. Commits and deployments to a review environment are happening ever 10 to 20 minutes. The product owner is reviewing those changes and if there is a fundamental change they are talking to the developers to make those changes. If the desired change is a simple UI change then the produce owner will use a UI based AI tool like [Tidewave](https://tidewave.ai) to make those changes. Once the product owner is happy with what they see in the review environment they ask their LLM to move those changes to production. This is a very light weight collaborative conversation to code process.
 
 ## Conclusion
 
