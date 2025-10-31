@@ -11,7 +11,7 @@ Agile has gone through many changes over my career. A few of the major ones that
 
 ## Here comes AI
 
-There is a major change coming to the software development field and in my opinion its’ impact will be larger than any of the previous changes I have experienced. This change is not coming from the Agile community but instead it is coming from the Tech community. It will undoubtedly change so much of what we do and how we do it.
+There is a major change coming to the software development field and in my opinion its impact will be larger than any of the previous changes I have experienced. This change is not coming from the Agile community but instead it is coming from the Tech community. It will undoubtedly change so much of what we do and how we do it.
 
 I have studied AI over the past year and have spent a significant amount of time working hands-on with the tools over the past six months. I have worked with several LLMs in several languages and have developed a few applications. In the past two months I have seen dramatic improvements in these tools. What I am seeing is shocking to me. Already AI has the possibility to completely rewrite the way we build software and it will only improve over time.
 
