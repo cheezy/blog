@@ -51,7 +51,7 @@ When working with AI is is totally possible to have both. There is no need to in
 
 ### Customer collaboration over contract negotiation
 
-It is always important to get feedback from customers but how should one go about doing this? The best way to do this for a long time has been to orchastrate your application and to learn how your users use the system. Continuous Delivery combined with product experimentation has yielded the best products. I do not see this changing. I think this will coninue with AI. To state it clearly, there is no contract negotiation and customer collaboration comes from learning how they use the system instead of direct collaboration.
+It is always important to get feedback from customers but how should one go about doing this? The best way to do this for a long time has been to orchastrate your application and to learn how your users use the system. Lean Startup and Continuous Delivery combined with product experimentation has yielded the best products. I do not see this changing. I think this will coninue with AI. To state it clearly, there is no contract negotiation and customer collaboration comes from learning how they use the system instead of direct collaboration.
 
 ### Responding to change over following a plan
 
