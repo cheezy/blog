@@ -23,13 +23,13 @@ I have come to the conclusion that the Agile processes I am familiar with when a
 
 By Agile processes I am refering to the forms of Agile were a Product Owner maintains a backlog of tasks to complete and they are delivered to a team in value order. The teams works the tasks to completion. The team will have a dialy meeting usually called a stand-up and they will have meetings to do planning, elaborate the tasks, and review the progress. Scrum is an example of this type of Agile but most teams using Kanban follow a simular pattern.
 
-In the world of AI this approach quickly becomes a drag on progress. In this new world a developer will finish more in an hour or two than he would have typically completed in a week with a much higher quality output and more automated tests. It becomes impossible for a Product Owner to build out a backlog fast enough. At this new pace a once-a-day meeting (stand-up) seems hardly adequate. Elaboration of the tasks needs to happen in real time in collaboration with a LLM. Reviews of work needs to happen on an hour by hour basis and not every two weeks.
+In the world of AI this approach quickly becomes a drag on progress. In this new world a developer will finish more in an hour or two than what would have taken them a week with a much higher quality output and more automated tests. It becomes impossible for a Product Owner to build out a backlog fast enough. At this new pace a once-a-day meeting (stand-up) seems hardly adequate. Elaboration of the tasks needs to happen in real time in collaboration with a LLM. Reviews of work needs to happen on an hour by hour basis and not every two weeks.
 
 ### The traditional team structure also makes no sense with AI
 
 I do not see the need of having somebody on the team with the role of tester. AI builds and maintains a thorough set of unit tests that test every aspect of the application and also completes integration type tests with each tiny increment. Other concerns (i.e. security, accessibility, etc.) can be added to your agents file making the LLM responsible for ensuring compliance as it makes changes. I honestly cannot figure out what a tester on this team would actually do.
 
-With the team eliminating the majority of the meetings (serimonies) associated with Agile processes I do not see the need for a Scrum Master. There is literally nothing for them to do.
+With the team eliminating the majority of the meetings (ceremonies) associated with Agile processes I do not see the need for a Scrum Master. There is literally nothing for them to do.
 
 A product owner is needed but it is essential that it be a person that is an expert in the domain (does not need to consult outside of the team) and has fully authority (does not need to reach out to other stakeholders) to make decisions. This person will need to sit with the developers and review the changes every few minutes to make decisions about the next steps and course correct as needed.
 
