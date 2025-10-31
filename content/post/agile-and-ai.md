@@ -43,7 +43,7 @@ I have had conversations with people who have stated that the Agile Values still
 
 ### Individuals and interactions over process and tools
 
-Valuing individuals and interactions made a lot of sense, especially when your team size was 8, 10, or 12 people. Collaborating and working together is essential in a traditional Agile team. But when your team size drops to three or four people and they must be in an ongoing conversation all day in order to ensure they are delivering the correct thing you might think it becomes even more important. The fact is that the tools are what is driving the new pace and a lot of the interaction is with the tools. The tools become elevated and the developers become simply a conduit through with the product owner interacts with the tools.
+Valuing individuals and interactions made a lot of sense, especially when your team size was 8, 10, or 12 people. Collaborating and working together is essential in a traditional Agile team. But when your team size drops to three or four people and they must be in an ongoing conversation all day in order to ensure they are delivering the correct thing you might think it becomes even more important. The fact is that the tools are what is driving the new pace and a lot of the interaction is with the tools. The tools become elevated and the developers become simply a conduit through which the product owner interacts with the tools.
 
 ### Working software over comprehensive documentation
 
