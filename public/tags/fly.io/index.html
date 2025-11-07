@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="TDD With AI" />
-    <meta property="og:title" content="TDD With AI" />
-    <meta property="twitter:title" content="TDD With AI" />
+    <meta name="title" content="" />
+    <meta property="og:title" content="" />
+    <meta property="twitter:title" content="" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/tdd-with-ai/" />
+    <meta property="og:url" content="http://localhost:1313/tags/fly.io/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>TDD With AI | Cheezy&#39;s Blog</title>
+    <title>Fly.io | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/tdd-with-ai/">
+    <link rel="canonical" href="/tags/fly.io/">
 
     
 
@@ -170,70 +170,52 @@
 
 
 
-
-<article>
-    <div class="container">
-        <div class="row">
-            
-            <div class="
+  
+<div data-pagefind-ignore="all" class="container">
+    <div class="row">
+        
+        
+   	    <div class="
             col-lg-8 col-lg-offset-1
             col-md-8 col-md-offset-1
             col-sm-12
             col-xs-12
-            post-container">
-            <h1>TDD With AI</h1>
-
+            post-container
+        ">
             
-                <h2 id="im-a-tdd-guy">I&rsquo;m a TDD guy</h2>
-<p>I have been writing code using Test Driven Development for about 25 years. I am a huge believer in the benefits of this practice. I have spoken about it at conferences around the world and have taught many workshops on the subject. As I started to dig into AI the first thing I tried to do is see how it would fit into my TDD workflow. I tried numerous approaches and they all felt unnatural. I watched videos of others try to do the same and didn&rsquo;t feel like they were successful.</p>
-<p>What was wrong? Why wouldn&rsquo;t AI work with my TDD workflow? I felt very frustrated and thought to myself &ldquo;AI will not really work for Craftsmen like myself&rdquo;. And yet the popularity of AI continued to grow and the tools became more powerful and capable.</p>
-<h2 id="why-am-i-a-tdd-guy">Why am I a TDD guy?</h2>
-<p>I am a TDD guy because it is the best way I know to produce code that is thoroughly tested and well factored. Throughout the years this practice has served me well. At the same time I continue to work with AI and see the benefits. My son and I have created applications in a half day that would take a week or two to write without AI.</p>
-<p>It was through this process (and growing) that I realized that TDD was simply a practice. It is a practice that achieves a desired outcome. The outcome - as I said earlier - is to produce code that is thoroughly tested and well factored. What if I could achieve the same outcome using AI? What if I was able to create code that was nearly identical to what I would procude using TDD?</p>
-<p>I have spent a lot of time experimenting with different tools, different configurations, different workflows. Throughout the months I have also seen the AI development tools mature which has helped make my desired outcome easier to achieve. I now believe I can use AI to build an application while ensuring the code is fully tested and well factored. What follows is a very high-level overview of what works for me.</p>
-<h2 id="what-works-for-me">What works for me</h2>
-<h3 id="make-important-things-easy">Make important things easy</h3>
-<p>The first thing that I believe a developer needs to do is make it very easy within their IDE to do the things that are important to them. Here is my list:</p>
-<ul>
-<li>make it easy and fast to run tests</li>
-<li>make it easy to get code coverage infomation when the tests run</li>
-<li>make it easy to run static code analysis that you configure to check for the things you think are important</li>
-<li>make it easy to run security analysis on both the code as well as dependencies of the application</li>
-</ul>
-<h3 id="educate-your-llm">Educate your LLM</h3>
-<p>Once you make it easy to perform these tasks you need to let your LLM know how to run these commands. You would typically do this by adding these commands to your <code>AGENTS.md</code> file. This is a file that exists at the root of the project and your LLMs will read this to learn information about the project. Here are a few of the entries from this file in an Elixir project I am currently working on:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">### Quality guidelines  
-</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task that has new functions write unit tests for the new function
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task that updates code make sure all existing unit tests pass and write new tests if needed
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Each time you write or update a unit tests run them with <span style="color:#f1fa8c">`mix test`</span> and ensure they pass
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task run <span style="color:#f1fa8c">`mix test --cover`</span> and ensure coverage is above the threshold.
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task run <span style="color:#f1fa8c">`mix credo --strict`</span> to check for code quality issues and fix them
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">### Security guidelines
-</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you add or update a dependency run <span style="color:#f1fa8c">`mix deps.audit`</span> and <span style="color:#f1fa8c">`mix hex.audit`</span> to check for security issues
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you add or update a dependency run <span style="color:#f1fa8c">`mix hex.outdated`</span> to check for outdated dependencies
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> when you complete a task run <span style="color:#f1fa8c">`mix sobelow --config`</span> to check for security issues and fix any issue
-</span></span></code></pre></div><p>You can also add entries in this file to tell the LLM how to use some of the dependencies and even where to find documentation about your projects dependencies.</p>
-<p>Now that we have made it easy to test, check for quality, and perform security check and we have shown our LLM how to do this it is time to move to a workflow that works given this setup.</p>
-<h3 id="workflow">Workflow</h3>
-<p>Now that we have our environment setup and our LLM understanding what is important to us, we can start to write code. I like to start by asking the LLM to write a PLAN for the next task. I explain what the task is, tell it to divide the task into small steps, and then ask it to write the plan to a file that we can use to track progress. I also remind it to follow the guidelines I have in my AGENTS.md file (although it should already know this). If the plan seems too complicated I ask the LLM to rewrite all or portions of the plan breaking it into smaller steps.</p>
-<p>Next I work with the LLM to execute the plan. I simply ask the LLM to perform the next step. This usually takes a few minutes and once it is finished I am able to review the code it has created. There is no need for me to run the tests as the LLM has already done that for me. There is no need for me to run the static code analysis as the LLM has already done that for me. There is no need to perform security analysis as the LLM has already done that for me. I just take a quick look at the product code. If there is something that I think needs improvement I have the choice to do it myself or ask the LLM to do it. When I am content with the step I commit the code.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>This is the process I follow when I am writing code using my LLM. I am not doing TDD but I am achieving the same outcome I would expect had I been doing TDD. And I am producing in an hour what it would take me all day to produce. Am I still a believer in TDD? Yes. Will I still do TDD? Yes. But due to the productivity boost, I spend most of my time these days writing code using AI.</p>
+<div data-pagefind-ignore="all">
 
+<div class="post-preview">
+    <a href="http://localhost:1313/post/upgrade-elixir-and-fly/">
+        <h2 class="post-title">
+            Upgrade Elixir and Fly.io to use Elixir 1.19
+        </h2>
+	
+        <div class="post-content-preview">
+	
             
-             
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Friday, November 7, 2025
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+</div>
+
             
 
 
 
-
-            
-            </div>
-            
-            
+       	</div>
+        
 
 <div class="
     col-lg-3 col-lg-offset-0
@@ -275,6 +257,12 @@
                
             
                
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
                     <a href="/tags/liveview" title="liveview">
                         liveview
                     </a>
@@ -289,18 +277,6 @@
                
                     <a href="/tags/software-development" title="software development">
                         software development
-                    </a>
-               
-            
-               
-                    <a href="/tags/tag1" title="tag1">
-                        tag1
-                    </a>
-               
-            
-               
-                    <a href="/tags/tag2" title="tag2">
-                        tag2
                     </a>
                
             
@@ -409,6 +385,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/upgrade-elixir-and-fly/">Upgrade Elixir and Fly.io to use Elixir 1.19</a></li>
+        
             <li><a href="/post/ai-kanban-part8/">Building a LiveView app using AI - Part 8</a></li>
         
             <li><a href="/post/agile-and-ai/">Is Agile compatible with AI?</a></li>
@@ -417,16 +395,14 @@
         
             <li><a href="/post/ai-kanban-part6/">Building a LiveView app using AI - Part 6</a></li>
         
-            <li><a href="/post/ai-kanban-part5/">Building a LiveView app using AI - Part 5</a></li>
-        
         </ul>
     </section>
     
 </div>
 
-        </div>
-    </div>
-</article>
+	</div>
+</div>
+
 
 
 
@@ -486,7 +462,7 @@
             
            
                    <li>
-                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                       <a href='/tags/fly.io/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

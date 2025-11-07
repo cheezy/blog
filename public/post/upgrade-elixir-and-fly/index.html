@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="TDD With AI" />
-    <meta property="og:title" content="TDD With AI" />
-    <meta property="twitter:title" content="TDD With AI" />
+    <meta name="title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
+    <meta property="og:title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
+    <meta property="twitter:title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/tdd-with-ai/" />
+    <meta property="og:url" content="http://localhost:1313/post/upgrade-elixir-and-fly/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>TDD With AI | Cheezy&#39;s Blog</title>
+    <title>Upgrade Elixir and Fly.io to use Elixir 1.19 | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/tdd-with-ai/">
+    <link rel="canonical" href="/post/upgrade-elixir-and-fly/">
 
     
 
@@ -181,47 +181,34 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>TDD With AI</h1>
+            <h1>Upgrade Elixir and Fly.io to use Elixir 1.19</h1>
 
             
-                <h2 id="im-a-tdd-guy">I&rsquo;m a TDD guy</h2>
-<p>I have been writing code using Test Driven Development for about 25 years. I am a huge believer in the benefits of this practice. I have spoken about it at conferences around the world and have taught many workshops on the subject. As I started to dig into AI the first thing I tried to do is see how it would fit into my TDD workflow. I tried numerous approaches and they all felt unnatural. I watched videos of others try to do the same and didn&rsquo;t feel like they were successful.</p>
-<p>What was wrong? Why wouldn&rsquo;t AI work with my TDD workflow? I felt very frustrated and thought to myself &ldquo;AI will not really work for Craftsmen like myself&rdquo;. And yet the popularity of AI continued to grow and the tools became more powerful and capable.</p>
-<h2 id="why-am-i-a-tdd-guy">Why am I a TDD guy?</h2>
-<p>I am a TDD guy because it is the best way I know to produce code that is thoroughly tested and well factored. Throughout the years this practice has served me well. At the same time I continue to work with AI and see the benefits. My son and I have created applications in a half day that would take a week or two to write without AI.</p>
-<p>It was through this process (and growing) that I realized that TDD was simply a practice. It is a practice that achieves a desired outcome. The outcome - as I said earlier - is to produce code that is thoroughly tested and well factored. What if I could achieve the same outcome using AI? What if I was able to create code that was nearly identical to what I would procude using TDD?</p>
-<p>I have spent a lot of time experimenting with different tools, different configurations, different workflows. Throughout the months I have also seen the AI development tools mature which has helped make my desired outcome easier to achieve. I now believe I can use AI to build an application while ensuring the code is fully tested and well factored. What follows is a very high-level overview of what works for me.</p>
-<h2 id="what-works-for-me">What works for me</h2>
-<h3 id="make-important-things-easy">Make important things easy</h3>
-<p>The first thing that I believe a developer needs to do is make it very easy within their IDE to do the things that are important to them. Here is my list:</p>
-<ul>
-<li>make it easy and fast to run tests</li>
-<li>make it easy to get code coverage infomation when the tests run</li>
-<li>make it easy to run static code analysis that you configure to check for the things you think are important</li>
-<li>make it easy to run security analysis on both the code as well as dependencies of the application</li>
-</ul>
-<h3 id="educate-your-llm">Educate your LLM</h3>
-<p>Once you make it easy to perform these tasks you need to let your LLM know how to run these commands. You would typically do this by adding these commands to your <code>AGENTS.md</code> file. This is a file that exists at the root of the project and your LLMs will read this to learn information about the project. Here are a few of the entries from this file in an Elixir project I am currently working on:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">### Quality guidelines  
-</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task that has new functions write unit tests for the new function
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task that updates code make sure all existing unit tests pass and write new tests if needed
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Each time you write or update a unit tests run them with <span style="color:#f1fa8c">`mix test`</span> and ensure they pass
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task run <span style="color:#f1fa8c">`mix test --cover`</span> and ensure coverage is above the threshold.
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task run <span style="color:#f1fa8c">`mix credo --strict`</span> to check for code quality issues and fix them
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">### Security guidelines
-</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you add or update a dependency run <span style="color:#f1fa8c">`mix deps.audit`</span> and <span style="color:#f1fa8c">`mix hex.audit`</span> to check for security issues
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you add or update a dependency run <span style="color:#f1fa8c">`mix hex.outdated`</span> to check for outdated dependencies
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> when you complete a task run <span style="color:#f1fa8c">`mix sobelow --config`</span> to check for security issues and fix any issue
-</span></span></code></pre></div><p>You can also add entries in this file to tell the LLM how to use some of the dependencies and even where to find documentation about your projects dependencies.</p>
-<p>Now that we have made it easy to test, check for quality, and perform security check and we have shown our LLM how to do this it is time to move to a workflow that works given this setup.</p>
-<h3 id="workflow">Workflow</h3>
-<p>Now that we have our environment setup and our LLM understanding what is important to us, we can start to write code. I like to start by asking the LLM to write a PLAN for the next task. I explain what the task is, tell it to divide the task into small steps, and then ask it to write the plan to a file that we can use to track progress. I also remind it to follow the guidelines I have in my AGENTS.md file (although it should already know this). If the plan seems too complicated I ask the LLM to rewrite all or portions of the plan breaking it into smaller steps.</p>
-<p>Next I work with the LLM to execute the plan. I simply ask the LLM to perform the next step. This usually takes a few minutes and once it is finished I am able to review the code it has created. There is no need for me to run the tests as the LLM has already done that for me. There is no need for me to run the static code analysis as the LLM has already done that for me. There is no need to perform security analysis as the LLM has already done that for me. I just take a quick look at the product code. If there is something that I think needs improvement I have the choice to do it myself or ask the LLM to do it. When I am content with the step I commit the code.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>This is the process I follow when I am writing code using my LLM. I am not doing TDD but I am achieving the same outcome I would expect had I been doing TDD. And I am producing in an hour what it would take me all day to produce. Am I still a believer in TDD? Yes. Will I still do TDD? Yes. But due to the productivity boost, I spend most of my time these days writing code using AI.</p>
+                <p>Elixir finally reached version 1.19.2 so I feel the 1.19 is stable enough to give it a try. This short blog post is about my process to update Elixir and to also update my Fly.io deployment to the latest version of elixir and OTP.</p>
+<h2 id="update-the-application">Update the application</h2>
+<p>To begin with I needed to get the latest elixir and otp version. That was easy with <code>asdf</code> and so I installed <code>elixir 1.19.2-otp-28</code> and <code>erlang 28.1.1</code>. These are the latest versions at the time of this writing. To ensure I always use these version I updated my <code>.tool-versions</code> file in the root of my project:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>elixir 1.19.2-otp-28
+</span></span><span style="display:flex;"><span>erlang 28.1.1
+</span></span></code></pre></div><p>I also updated my <code>mix.exs</code> file to use the latest version of elixir:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f1fa8c">version</span>: <span style="color:#f1fa8c">&#34;1.1.0&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f1fa8c">elixir</span>: <span style="color:#f1fa8c">&#34;~&gt; 1.19&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f1fa8c">elixirc_paths</span>: elixirc_paths(<span style="color:#50fa7b">Mix</span><span style="color:#ff79c6">.</span>env()),
+</span></span></code></pre></div><p>With these two changes I was able to run the application with the latest version of elixir and erlang otp. It was easy and seamless. Now on to getting my pipeline and deployment infrastructure updated.</p>
+<h2 id="pipeline-and-deployment">Pipeline and deployment</h2>
+<p>My application runs on <a href="https://fly.io">Fly.io</a>. It is a simple platform that gives me everything I need. I use GitHub Actions for my CI/CD pipeline. Here are the changes I had to make to get everything working with the latest Elixir.</p>
+<p>First of al I made this simple change to my GitHub Actionspipeline script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>matrix:
+</span></span><span style="display:flex;"><span>  otp: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;28.1.1&#39;</span><span style="color:#ff79c6">]</span>       <span style="color:#6272a4"># Define the OTP version [required]</span>
+</span></span><span style="display:flex;"><span>  elixir: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;1.19.2&#39;</span><span style="color:#ff79c6">]</span>    <span style="color:#6272a4"># Define the elixir version [required]</span>
+</span></span></code></pre></div><p>I also had to make some changes to my <code>Dockerfile</code>. First of all I simply updated the version of elixir and erlang specified which also caused me to update the version of debian:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">ELIXIR_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>.19.2
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">OTP_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">28</span>.1.1
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">DEBIAN_VERSION</span><span style="color:#ff79c6">=</span>trixie-20251103-slim
+</span></span></code></pre></div><p>When I pushed this code the pipeline failed complaining about a missing package: <code>Unable to locate package libncurses5</code>. After a little research I learned that this is an older version of the library and newer version of debian no long use that. I had to make one additional change to my Dockerfile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">RUN</span> apt-get update <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f1fa8c"></span>  <span style="color:#ff79c6">&amp;&amp;</span> apt-get install -y --no-install-recommends libstdc++6 openssl libncurses6 locales ca-certificates <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f1fa8c"></span>  <span style="color:#ff79c6">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+</span></span></code></pre></div><p>Notice on line 2 that I updated the library to use <code>libncurses6</code>. With this change everything worked and the pipeline passed.</p>
 
             
              
@@ -275,6 +262,12 @@
                
             
                
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
                     <a href="/tags/liveview" title="liveview">
                         liveview
                     </a>
@@ -287,20 +280,14 @@
                
             
                
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
                     <a href="/tags/software-development" title="software development">
                         software development
-                    </a>
-               
-            
-               
-                    <a href="/tags/tag1" title="tag1">
-                        tag1
-                    </a>
-               
-            
-               
-                    <a href="/tags/tag2" title="tag2">
-                        tag2
                     </a>
                
             
@@ -409,6 +396,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/upgrade-elixir-and-fly/">Upgrade Elixir and Fly.io to use Elixir 1.19</a></li>
+        
             <li><a href="/post/ai-kanban-part8/">Building a LiveView app using AI - Part 8</a></li>
         
             <li><a href="/post/agile-and-ai/">Is Agile compatible with AI?</a></li>
@@ -416,8 +405,6 @@
             <li><a href="/post/ai-kanban-part7/">Building a LiveView app using AI - Part 7</a></li>
         
             <li><a href="/post/ai-kanban-part6/">Building a LiveView app using AI - Part 6</a></li>
-        
-            <li><a href="/post/ai-kanban-part5/">Building a LiveView app using AI - Part 5</a></li>
         
         </ul>
     </section>

@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Nov 2025 18:35:14 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 07 Nov 2025 15:41:11 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Upgrade Elixir and Fly.io to use Elixir 1.19</title>
+      <link>http://localhost:1313/post/upgrade-elixir-and-fly/</link>
+      <pubDate>Fri, 07 Nov 2025 15:41:11 -0500</pubDate>
+      <guid>http://localhost:1313/post/upgrade-elixir-and-fly/</guid>
+      <description>&lt;p&gt;Elixir finally reached version 1.19.2 so I feel the 1.19 is stable enough to give it a try. This short blog post is about my process to update Elixir and to also update my Fly.io deployment to the latest version of elixir and OTP.&lt;/p&gt;&#xA;&lt;h2 id=&#34;update-the-application&#34;&gt;Update the application&lt;/h2&gt;&#xA;&lt;p&gt;To begin with I needed to get the latest elixir and otp version. That was easy with &lt;code&gt;asdf&lt;/code&gt; and so I installed &lt;code&gt;elixir 1.19.2-otp-28&lt;/code&gt; and &lt;code&gt;erlang 28.1.1&lt;/code&gt;. These are the latest versions at the time of this writing. To ensure I always use these version I updated my &lt;code&gt;.tool-versions&lt;/code&gt; file in the root of my project:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 8</title>
       <link>http://localhost:1313/post/ai-kanban-part8/</link>
