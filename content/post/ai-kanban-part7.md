@@ -32,3 +32,5 @@ After we complete the next phase (which adds tasks) I will go through a full UI 
 But for those of you who can't wait, here's a picture of an example board with columns:
 
 ![Image of board with columns](/img/columns.png)
+
+[Continue on to part eight](/post/ai-kanban-part8)

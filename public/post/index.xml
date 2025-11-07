@@ -6,14 +6,28 @@
     <description>Recent content in Posts on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Oct 2025 14:53:21 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 02 Nov 2025 18:35:14 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a LiveView app using AI - Part 8</title>
+      <link>http://localhost:1313/post/ai-kanban-part8/</link>
+      <pubDate>Sun, 02 Nov 2025 18:35:14 -0500</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part8/</guid>
+      <description>&lt;p&gt;Before getting started adding tasks to our Kanban Board I decided to do a little maintenance. A couple of the dependencies had updates so I decided to go ahead and update the project. Also, the latest version of Elixir finally reached 1.19.2. To me that signals that the 1.19 versions are stable enough to update so I did. I&amp;rsquo;ll have a separate blog post of what I had to do to update the application as well as update my deployment scripts and Dockerfile.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Is Agile compatible with AI?</title>
+      <link>http://localhost:1313/post/agile-and-ai/</link>
+      <pubDate>Wed, 29 Oct 2025 15:28:45 -0400</pubDate>
+      <guid>http://localhost:1313/post/agile-and-ai/</guid>
+      <description>&lt;p&gt;I have made my living as an Agile coach since 2003. I have worked as a coach for clients around the world, taught many courses in various topics, and spoken at too many conferences to count. I have dedicated more than a third of my life to these concepts and truly believe they have been the best way to deliver software.&lt;/p&gt;&#xA;&lt;p&gt;Agile has gone through many changes over my career. A few of the major ones that I feel have had the most impact are the introduction of Lean Startup, practices like BDD and Acceptance Test Driven Development, and my favourite which is Continuous Delivery. Most of these changes have come from within the Agile community and have pushed us forward in our understanding of how to deliver more value quicker. I have stayed current and in some cases have been on the forefront for many of these changes.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 7</title>
       <link>http://localhost:1313/post/ai-kanban-part7/</link>
       <pubDate>Sun, 26 Oct 2025 14:53:21 -0400</pubDate>
       <guid>http://localhost:1313/post/ai-kanban-part7/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;wip-limits&#34;&gt;WIP Limits&lt;/h2&gt;&#xA;&lt;p&gt;Before we start building out the columns I asked Claude to update the plan in order to add WIP limits. I was suprised by the number of changes that were required. You can see the details here in the first video of this post.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/qrUxEm1e1GA?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;adding-the-columns&#34;&gt;Adding the columns&lt;/h2&gt;&#xA;&lt;p&gt;Now on to adding columns to our Kanban application. In the first video we ask Claude to finish all of the non-UI work which includes adding a column table to the database, create the relationship to board, create the schema to hold the data from the database, create the context to perform the basic CRUD functions, and finally create the tests for all of this.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 6</title>

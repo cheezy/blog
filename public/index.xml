@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Oct 2025 15:28:45 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 02 Nov 2025 18:35:14 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a LiveView app using AI - Part 8</title>
+      <link>http://localhost:1313/post/ai-kanban-part8/</link>
+      <pubDate>Sun, 02 Nov 2025 18:35:14 -0500</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part8/</guid>
+      <description>&lt;p&gt;Before getting started adding tasks to our Kanban Board I decided to do a little maintenance. A couple of the dependencies had updates so I decided to go ahead and update the project. Also, the latest version of Elixir finally reached 1.19.2. To me that signals that the 1.19 versions are stable enough to update so I did. I&amp;rsquo;ll have a separate blog post of what I had to do to update the application as well as update my deployment scripts and Dockerfile.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Is Agile compatible with AI?</title>
       <link>http://localhost:1313/post/agile-and-ai/</link>
