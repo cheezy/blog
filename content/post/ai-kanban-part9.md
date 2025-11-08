@@ -82,7 +82,7 @@ The link to add a new task was originally placed at the bottom of the column. If
 
 ## And I have a name
 
-My marketing manager (my wife) has decided that the application shall be named Stride. I asked Tidewave to update the home page to use the new application name.
+My marketing manager (my wife) has decided that the application shall be named Stride. I asked Tidewave to update the home page to use the new application name. Once that was finished I asked Claude to present me with a list of possible logos. We have selected one but you'll have to wait to see it. Stay tuned!
 
 ## What's next?
 
