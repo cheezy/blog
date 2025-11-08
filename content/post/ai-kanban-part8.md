@@ -9,7 +9,7 @@ Before getting started adding tasks to our Kanban Board I decided to do a little
 
 ## Adding Tasks to the Kanban Board
 
-The next two videos will seem very familiar. They mimic the activity we did in order to add columns - but this time we are adding tasks. There was very little interaction from me and I do not have much to say about them other than Claude is really cranking on the functionality. 
+The next two videos will seem very familiar. They mimic the activity we did in order to add columns - but this time we are adding tasks. There was very little interaction from me and I do not have much to say about them other than Claude is really cranking on the functionality.
 
 Here's the video for adding the backend (database table, schema, context, tests)
 
@@ -22,3 +22,5 @@ Here's the video for building the UI to suppor the creation of tasks as well as 
 ### What's next?
 
 We have completed the first five phases of our plan. Phase six is focused on adding drag-and-drop functionality to the board to allow us to move tasks between columns. After we complete this next phase we will be doing a deep dive into the UI that has been created so far. Stay tuned!
+
+[Continue on to part nine](/post/ai-kanban-part9)
