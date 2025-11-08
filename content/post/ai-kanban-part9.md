@@ -76,9 +76,13 @@ I asked Claude to move the add task form to a modal popup and to make things con
 
 ## Adding a new task
 
-The linke to add a new task was originally placed at the bottom of the column. If you have a lot of tasks this link will scroll off of the page and will not be easy to see. I asked Tidewave to move it to a plus icon in the column header. This was an easy task for Tidewave and I'm happy with the results.
+The link to add a new task was originally placed at the bottom of the column. If you have a lot of tasks this link will scroll off of the page and will not be easy to see. I asked Tidewave to move it to a plus icon in the column header. This was an easy task for Tidewave and I'm happy with the results.
 
 ![Image of the add task icon](/img/kanban_add_task.png)
+
+## And I have a name
+
+My marketing manager (my wife) has decided that the application shall be named Stride. I asked Tidewave to update the home page to use the new application name.
 
 ## What's next?
 
