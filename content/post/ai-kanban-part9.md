@@ -89,3 +89,5 @@ My marketing manager (my wife) has decided that the application shall be named S
 ## What's next?
 
 With these small tweaks of the UI out of the way I think we are ready to complete the final two phases. I have also already dreamed up other features but I want to release the MVP prior to adding them.
+
+[Continue on to part ten](/post/ai-kanban-part10)

@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Nov 2025 18:36:42 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 12 Nov 2025 12:22:22 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a LiveView app using AI - Part 11</title>
+      <link>http://localhost:1313/post/ai-kanban-part11/</link>
+      <pubDate>Wed, 12 Nov 2025 12:22:22 -0500</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part11/</guid>
+      <description>&lt;h2 id=&#34;tasked-with-improving-tasks&#34;&gt;Tasked with improving Tasks&lt;/h2&gt;&#xA;&lt;p&gt;The final phase of our plan is focused on visual cleanup and better error handling. Before I focused on the visual cleanup I wanted to fill in some of the gaps that exist in our plan. I&amp;rsquo;m starting with Tasks. There are several missing features that I wanted to add to Tasks to make them more useful. This post includes those changes.&lt;/p&gt;&#xA;&lt;h3 id=&#34;rounding-out-tasks&#34;&gt;Rounding out Tasks&lt;/h3&gt;&#xA;&lt;p&gt;At this time Tasks only have a title, description, and their position in the column. This really is not enough for a serious Kanban application. I asked Claude to add the following fields:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 10</title>
       <link>http://localhost:1313/post/ai-kanban-part10/</link>
