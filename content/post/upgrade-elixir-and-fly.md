@@ -38,7 +38,7 @@ matrix:
   elixir: ['1.19.2']    # Define the elixir version [required]
 ```
 
-I also had to make some changes to my `Dockerfile`. First of all I simply updated the version of elixir and erlang specified which also caused me to update the version of debian:
+I also had to make some changes to my `Dockerfile`. First of all I simply updated the version of elixir and erlang specified which also caused me to update the version of debian. Finding the right version of debian was a bit of a challenge. I eventually settled on the version below:
 
 ```dockerfile
 ARG ELIXIR_VERSION=1.19.2

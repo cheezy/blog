@@ -5,6 +5,8 @@ title: 'Building a LiveView app using AI - Part 8'
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 
+## Adding tasks
+
 Before getting started adding tasks to our Kanban Board I decided to do a little maintenance. A couple of the dependencies had updates so I decided to go ahead and update the project. Also, the latest version of Elixir finally reached 1.19.2. To me that signals that the 1.19 versions are stable enough to update so I did. I'll have a separate blog post of what I had to do to update the application as well as update my deployment scripts and Dockerfile.
 
 ## Adding Tasks to the Kanban Board

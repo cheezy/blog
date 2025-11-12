@@ -184,7 +184,8 @@
             <h1>Building a LiveView app using AI - Part 9</h1>
 
             
-                <p>This post is a cleanup post. After Part 8 I spent some time testing all aspects of the application and decided to make a few small changes beofre moving to the next phase. I noticed that flash messages (the message that shows in the upper right corner) stays there until I dismiss it. I think it becomes anoying to have to do that repeatedly when adding multiple tasks so I decide to make it automatically fade away after 5 seconds. I could ask Claude to do this but thought it was a very easy task so I set about to do it myself. Here is what I came up with.</p>
+                <h2 id="doing-a-little-cleanup">Doing a little cleanup</h2>
+<p>This post is a cleanup post. After Part 8 I spent some time testing all aspects of the application and decided to make a few small changes beofre moving to the next phase. I noticed that flash messages (the message that shows in the upper right corner) stays there until I dismiss it. I think it becomes anoying to have to do that repeatedly when adding multiple tasks so I decide to make it automatically fade away after 5 seconds. I could ask Claude to do this but thought it was a very easy task so I set about to do it myself. Here is what I came up with.</p>
 <h2 id="auto-dismiss-flash">Auto Dismiss Flash</h2>
 <p>The first think I needed to do was create a hook that could dismiss (in this case click) the flash. I created the file named <code>assets/js/hooks/auto-dismiss-flash.js</code> and this is what I came up with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> {
@@ -435,6 +436,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/ai-kanban-part10/">Building a LiveView app using AI - Part 10</a></li>
+        
             <li><a href="/post/ai-kanban-part9/">Building a LiveView app using AI - Part 9</a></li>
         
             <li><a href="/post/upgrade-elixir-and-fly/">Upgrade Elixir and Fly.io to use Elixir 1.19</a></li>
@@ -442,8 +445,6 @@
             <li><a href="/post/ai-kanban-part8/">Building a LiveView app using AI - Part 8</a></li>
         
             <li><a href="/post/agile-and-ai/">Is Agile compatible with AI?</a></li>
-        
-            <li><a href="/post/ai-kanban-part7/">Building a LiveView app using AI - Part 7</a></li>
         
         </ul>
     </section>

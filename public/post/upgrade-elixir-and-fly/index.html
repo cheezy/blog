@@ -200,7 +200,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>matrix:
 </span></span><span style="display:flex;"><span>  otp: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;28.1.1&#39;</span><span style="color:#ff79c6">]</span>       <span style="color:#6272a4"># Define the OTP version [required]</span>
 </span></span><span style="display:flex;"><span>  elixir: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;1.19.2&#39;</span><span style="color:#ff79c6">]</span>    <span style="color:#6272a4"># Define the elixir version [required]</span>
-</span></span></code></pre></div><p>I also had to make some changes to my <code>Dockerfile</code>. First of all I simply updated the version of elixir and erlang specified which also caused me to update the version of debian:</p>
+</span></span></code></pre></div><p>I also had to make some changes to my <code>Dockerfile</code>. First of all I simply updated the version of elixir and erlang specified which also caused me to update the version of debian. Finding the right version of debian was a bit of a challenge. I eventually settled on the version below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">ELIXIR_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>.19.2
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">OTP_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">28</span>.1.1
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">DEBIAN_VERSION</span><span style="color:#ff79c6">=</span>trixie-20251103-slim
@@ -396,6 +396,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/ai-kanban-part10/">Building a LiveView app using AI - Part 10</a></li>
+        
             <li><a href="/post/ai-kanban-part9/">Building a LiveView app using AI - Part 9</a></li>
         
             <li><a href="/post/upgrade-elixir-and-fly/">Upgrade Elixir and Fly.io to use Elixir 1.19</a></li>
@@ -403,8 +405,6 @@
             <li><a href="/post/ai-kanban-part8/">Building a LiveView app using AI - Part 8</a></li>
         
             <li><a href="/post/agile-and-ai/">Is Agile compatible with AI?</a></li>
-        
-            <li><a href="/post/ai-kanban-part7/">Building a LiveView app using AI - Part 7</a></li>
         
         </ul>
     </section>

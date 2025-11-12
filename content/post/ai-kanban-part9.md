@@ -5,6 +5,8 @@ title: 'Building a LiveView app using AI - Part 9'
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 
+## Doing a little cleanup
+
 This post is a cleanup post. After Part 8 I spent some time testing all aspects of the application and decided to make a few small changes beofre moving to the next phase. I noticed that flash messages (the message that shows in the upper right corner) stays there until I dismiss it. I think it becomes anoying to have to do that repeatedly when adding multiple tasks so I decide to make it automatically fade away after 5 seconds. I could ask Claude to do this but thought it was a very easy task so I set about to do it myself. Here is what I came up with.
 
 ## Auto Dismiss Flash
