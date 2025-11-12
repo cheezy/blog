@@ -1,6 +1,6 @@
 ---
 date: '2025-11-08T18:36:42-05:00'
-draft: true
+draft: false
 title: 'Building a LiveView app using AI - Part 10'
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
