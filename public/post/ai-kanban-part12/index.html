@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
-    <meta property="og:title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
-    <meta property="twitter:title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
+    <meta name="title" content="Building a LiveView app using AI - Part 12" />
+    <meta property="og:title" content="Building a LiveView app using AI - Part 12" />
+    <meta property="twitter:title" content="Building a LiveView app using AI - Part 12" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/upgrade-elixir-and-fly/" />
+    <meta property="og:url" content="http://localhost:1313/post/ai-kanban-part12/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Upgrade Elixir and Fly.io to use Elixir 1.19 | Cheezy&#39;s Blog</title>
+    <title>Building a LiveView app using AI - Part 12 | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/upgrade-elixir-and-fly/">
+    <link rel="canonical" href="/post/ai-kanban-part12/">
 
     
 
@@ -181,34 +181,52 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>Upgrade Elixir and Fly.io to use Elixir 1.19</h1>
+            <h1>Building a LiveView app using AI - Part 12</h1>
 
             
-                <p>Elixir finally reached version 1.19.2 so I feel the 1.19 is stable enough to give it a try. This short blog post is about my process to update Elixir and to also update my Fly.io deployment to the latest version of elixir and OTP.</p>
-<h2 id="update-the-application">Update the application</h2>
-<p>To begin with I needed to get the latest elixir and otp version. That was easy with <code>asdf</code> and so I installed <code>elixir 1.19.2-otp-28</code> and <code>erlang 28.1.1</code>. These are the latest versions at the time of this writing. To ensure I always use these version I updated my <code>.tool-versions</code> file in the root of my project:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>elixir 1.19.2-otp-28
-</span></span><span style="display:flex;"><span>erlang 28.1.1
-</span></span></code></pre></div><p>I also updated my <code>mix.exs</code> file to use the latest version of elixir:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f1fa8c">version</span>: <span style="color:#f1fa8c">&#34;1.1.0&#34;</span>,
-</span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f1fa8c">elixir</span>: <span style="color:#f1fa8c">&#34;~&gt; 1.19&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f1fa8c">elixirc_paths</span>: elixirc_paths(<span style="color:#50fa7b">Mix</span><span style="color:#ff79c6">.</span>env()),
-</span></span></code></pre></div><p>With these two changes I was able to run the application with the latest version of elixir and erlang otp. It was easy and seamless. Now on to getting my pipeline and deployment infrastructure updated.</p>
-<h2 id="pipeline-and-deployment">Pipeline and deployment</h2>
-<p>My application runs on <a href="https://fly.io">Fly.io</a>. It is a simple platform that gives me everything I need. I use GitHub Actions for my CI/CD pipeline. Here are the changes I had to make to get everything working with the latest Elixir.</p>
-<p>First of al I made this simple change to my GitHub Actionspipeline script:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>matrix:
-</span></span><span style="display:flex;"><span>  otp: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;28.1.1&#39;</span><span style="color:#ff79c6">]</span>       <span style="color:#6272a4"># Define the OTP version [required]</span>
-</span></span><span style="display:flex;"><span>  elixir: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;1.19.2&#39;</span><span style="color:#ff79c6">]</span>    <span style="color:#6272a4"># Define the elixir version [required]</span>
-</span></span></code></pre></div><p>I also had to make some changes to my <code>Dockerfile</code>. First of all I simply updated the version of elixir and erlang specified which also caused me to update the version of debian. Finding the right version of debian was a bit of a challenge. I eventually settled on the version below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">ELIXIR_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>.19.2
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">OTP_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">28</span>.1.1
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">DEBIAN_VERSION</span><span style="color:#ff79c6">=</span>trixie-20251103-slim
-</span></span></code></pre></div><p>When I pushed this code the pipeline failed complaining about a missing package: <code>Unable to locate package libncurses5</code>. After a little research I learned that this is an older version of the library and newer version of debian no long use that. I had to make one additional change to my Dockerfile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">RUN</span> apt-get update <span style="color:#f1fa8c">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f1fa8c"></span>  <span style="color:#ff79c6">&amp;&amp;</span> apt-get install -y --no-install-recommends libstdc++6 openssl libncurses6 locales ca-certificates <span style="color:#f1fa8c">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f1fa8c"></span>  <span style="color:#ff79c6">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
-</span></span></code></pre></div><p>Notice on line 2 that I updated the library to use <code>libncurses6</code>. With this change everything worked and the pipeline passed.</p>
+                <h2 id="adding-users-to-boards-and-tasks">Adding users to boards and tasks</h2>
+<p>Since the <a href="https://tidewave.ai/blog/claude-code-codex">announcement</a> of Claude Code running inside of Tidewave I have been extremely happy about this combo. For now I am using it for nearly all of my changes to the codebase. I have even given it a name - <strong>ClaudeWave</strong>. All of the changes in this post were done using ClaudeWave.</p>
+<p>So far our boards only have an owner. I want an owner to have the ability to add other users to a board and also assign tasks to one of those users. Let&rsquo;s get started.</p>
+<h2 id="fixing-the-relationships">Fixing the relationships</h2>
+<p>Currently the database structure for the application has a one to many relationship between users and boards. A board has an owner and a user can have many boards. All of the queries use this relationship. I need to change this relationship to a many to many relationship. I also want the relationship to store the user&rsquo;s role on the board. Valid values should be Owner, ReadOnly, and Modify which are the permissions they will have on the board.</p>
+<p>I asked ClaudeWave to do this and before you know it this was done. Next I asked ClaudeWave to make sure the &ldquo;My Boards&rdquo; link on the top of the page works for all types of users - if you are ReadOnly you should still be able to see it on your boards page. ClaudeWave reported that it works. The final thing I asked ClaudeWave to do is to add an icon to a Board card to identify a users role for that board. Here&rsquo;s what it looks like:</p>
+<p>
+  <img src="/img/board_card_with_user_role.png" alt="Board card with user role">
+
+</p>
+<p>Now that the relationship and queries are updated to allow multiple users for a board it is time to actually implement the ability to add users to a board.</p>
+<h2 id="adding-users-to-a-board">Adding users to a board</h2>
+<p>To start I asked ClaudeWave to create a few users that I can use to test this feature we are about to add. A few seconds later and I was ready to start adding the UI for this feature.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/elLu_hoJLWk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>I was not happy with the fact that ClaudeWave added a new form with a different style than the rest of the application. After I spent some time testing the changes I asked it to update my <code>AGENTS.md</code> file to make sure it is following the same style as the rest of the application. Here is what it added:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">### UI/UX guidelines
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **Always follow existing application styles and patterns** when adding new UI elements
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Before creating custom styles, check <span style="color:#f1fa8c">`core_components.ex`</span> for existing components like <span style="color:#f1fa8c">`&lt;.input&gt;`</span>, <span style="color:#f1fa8c">`&lt;.button&gt;`</span>, <span style="color:#f1fa8c">`&lt;.form&gt;`</span>, etc.
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When adding form fields, use the standard component structure with <span style="color:#f1fa8c">`fieldset`</span>, <span style="color:#f1fa8c">`label`</span>, and <span style="color:#f1fa8c">`span.label`</span> classes to match existing forms
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> New buttons should use the <span style="color:#f1fa8c">`&lt;.button&gt;`</span> component without custom classes unless specifically requested
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Maintain consistency with existing color schemes, spacing, and typography throughout the application
+</span></span></code></pre></div><p>After testing everything I asked ClaudeWave to add a message to let users know that they had to be registered and this is the final result:</p>
+<p>
+  <img src="/img/add_users_to_boards.png" alt="Edit board page">
+
+</p>
+<h2 id="adding-users-to-tasks">Adding users to tasks</h2>
+<p>For our next task we ask TideWave to update the task form to allow us to assign a user to a task. We also ask TideWave to add a person icon to the tasks so you can see if one is assigned.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/xKyD3jZEmf4?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>I will not include a picture here as I review the changes in the video and you can see everything there.</p>
+<h2 id="one-final-thing">One final thing</h2>
+<p>If you add a new column to a board it always adds the column to the end of the board. I asked TideWave to add the ability to drag and drop columns so I can reorder them as I wish. It was an easy task for TideWave.</p>
+<p>
+  <img src="/img/drag_and_drop_columns.png" alt="Drag and drop columns">
+
+</p>
 
             
              

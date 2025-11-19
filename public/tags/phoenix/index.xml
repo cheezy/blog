@@ -6,14 +6,42 @@
     <description>Recent content in Phoenix on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Nov 2025 18:35:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 12 Nov 2025 15:22:47 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/phoenix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a LiveView app using AI - Part 12</title>
+      <link>http://localhost:1313/post/ai-kanban-part12/</link>
+      <pubDate>Wed, 12 Nov 2025 15:22:47 -0500</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part12/</guid>
+      <description>&lt;h2 id=&#34;adding-users-to-boards-and-tasks&#34;&gt;Adding users to boards and tasks&lt;/h2&gt;&#xA;&lt;p&gt;Since the &lt;a href=&#34;https://tidewave.ai/blog/claude-code-codex&#34;&gt;announcement&lt;/a&gt; of Claude Code running inside of Tidewave I have been extremely happy about this combo. For now I am using it for nearly all of my changes to the codebase. I have even given it a name - &lt;strong&gt;ClaudeWave&lt;/strong&gt;. All of the changes in this post were done using ClaudeWave.&lt;/p&gt;&#xA;&lt;p&gt;So far our boards only have an owner. I want an owner to have the ability to add other users to a board and also assign tasks to one of those users. Let&amp;rsquo;s get started.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building a LiveView app using AI - Part 11</title>
+      <link>http://localhost:1313/post/ai-kanban-part11/</link>
+      <pubDate>Wed, 12 Nov 2025 12:22:22 -0500</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part11/</guid>
+      <description>&lt;h2 id=&#34;tasked-with-improving-tasks&#34;&gt;Tasked with improving Tasks&lt;/h2&gt;&#xA;&lt;p&gt;The final phase of our plan is focused on visual cleanup and better error handling. Before I focused on the visual cleanup I wanted to fill in some of the gaps that exist in our plan. I&amp;rsquo;m starting with Tasks. There are several missing features that I wanted to add to Tasks to make them more useful. This post includes those changes.&lt;/p&gt;&#xA;&lt;h3 id=&#34;rounding-out-tasks&#34;&gt;Rounding out Tasks&lt;/h3&gt;&#xA;&lt;p&gt;At this time Tasks only have a title, description, and their position in the column. This really is not enough for a serious Kanban application. I asked Claude to add the following fields:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building a LiveView app using AI - Part 10</title>
+      <link>http://localhost:1313/post/ai-kanban-part10/</link>
+      <pubDate>Sat, 08 Nov 2025 18:36:42 -0500</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part10/</guid>
+      <description>&lt;h2 id=&#34;adding-drag-and-drop&#34;&gt;Adding Drag and Drop&lt;/h2&gt;&#xA;&lt;p&gt;We asked Claude to finish phase six which was adding drag and drop functionality to the board. Claude did this quickly but when I tested it I found that it was more complex that expected. Claude got a few things wrong. First of all let&amp;rsquo;s watch the video of phase six.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/aM6Rt3fuC9Q?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;always-test-everything&#34;&gt;Always test everything&lt;/h2&gt;&#xA;&lt;p&gt;At the end of the video it seems like everything was okay. One might be tempted to commit the code and move on. I think a very important step is to test everything that AI creates. Occasionally AI will make a mistake and it is important to catch it right away while it still has the entire context available.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building a LiveView app using AI - Part 9</title>
+      <link>http://localhost:1313/post/ai-kanban-part9/</link>
+      <pubDate>Sat, 08 Nov 2025 14:04:14 -0500</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part9/</guid>
+      <description>&lt;h2 id=&#34;doing-a-little-cleanup&#34;&gt;Doing a little cleanup&lt;/h2&gt;&#xA;&lt;p&gt;This post is a cleanup post. After Part 8 I spent some time testing all aspects of the application and decided to make a few small changes beofre moving to the next phase. I noticed that flash messages (the message that shows in the upper right corner) stays there until I dismiss it. I think it becomes anoying to have to do that repeatedly when adding multiple tasks so I decide to make it automatically fade away after 5 seconds. I could ask Claude to do this but thought it was a very easy task so I set about to do it myself. Here is what I came up with.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 8</title>
       <link>http://localhost:1313/post/ai-kanban-part8/</link>
       <pubDate>Sun, 02 Nov 2025 18:35:14 -0500</pubDate>
       <guid>http://localhost:1313/post/ai-kanban-part8/</guid>
-      <description>&lt;p&gt;Before getting started adding tasks to our Kanban Board I decided to do a little maintenance. A couple of the dependencies had updates so I decided to go ahead and update the project. Also, the latest version of Elixir finally reached 1.19.2. To me that signals that the 1.19 versions are stable enough to update so I did. I&amp;rsquo;ll have a separate blog post of what I had to do to update the application as well as update my deployment scripts and Dockerfile.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;adding-tasks&#34;&gt;Adding tasks&lt;/h2&gt;&#xA;&lt;p&gt;Before getting started adding tasks to our Kanban Board I decided to do a little maintenance. A couple of the dependencies had updates so I decided to go ahead and update the project. Also, the latest version of Elixir finally reached 1.19.2. To me that signals that the 1.19 versions are stable enough to update so I did. I&amp;rsquo;ll have a separate blog post of what I had to do to update the application as well as update my deployment scripts and Dockerfile.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 7</title>

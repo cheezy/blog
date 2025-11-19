@@ -47,4 +47,8 @@ After all of this work (actually Claude did all of the work) it is finally time 
 
 {{< youtube atQQ2dZJe1U >}}
 
+And here is what an empty board looks like at this time:
+
+![Empty board](/img/empty_board.png)
+
 [Continue on to part seven](/post/ai-kanban-part7)

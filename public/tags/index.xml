@@ -6,34 +6,48 @@
     <description>Recent content in Tags on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Nov 2025 18:35:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 12 Nov 2025 15:22:47 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI</title>
       <link>http://localhost:1313/tags/ai/</link>
-      <pubDate>Sun, 02 Nov 2025 18:35:14 -0500</pubDate>
+      <pubDate>Wed, 12 Nov 2025 15:22:47 -0500</pubDate>
       <guid>http://localhost:1313/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Elixir</title>
       <link>http://localhost:1313/tags/elixir/</link>
-      <pubDate>Sun, 02 Nov 2025 18:35:14 -0500</pubDate>
+      <pubDate>Wed, 12 Nov 2025 15:22:47 -0500</pubDate>
       <guid>http://localhost:1313/tags/elixir/</guid>
       <description></description>
     </item>
     <item>
       <title>LiveView</title>
       <link>http://localhost:1313/tags/liveview/</link>
-      <pubDate>Sun, 02 Nov 2025 18:35:14 -0500</pubDate>
+      <pubDate>Wed, 12 Nov 2025 15:22:47 -0500</pubDate>
       <guid>http://localhost:1313/tags/liveview/</guid>
       <description></description>
     </item>
     <item>
       <title>Phoenix</title>
       <link>http://localhost:1313/tags/phoenix/</link>
-      <pubDate>Sun, 02 Nov 2025 18:35:14 -0500</pubDate>
+      <pubDate>Wed, 12 Nov 2025 15:22:47 -0500</pubDate>
       <guid>http://localhost:1313/tags/phoenix/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fly.io</title>
+      <link>http://localhost:1313/tags/fly.io/</link>
+      <pubDate>Fri, 07 Nov 2025 15:41:11 -0500</pubDate>
+      <guid>http://localhost:1313/tags/fly.io/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pipeline</title>
+      <link>http://localhost:1313/tags/pipeline/</link>
+      <pubDate>Fri, 07 Nov 2025 15:41:11 -0500</pubDate>
+      <guid>http://localhost:1313/tags/pipeline/</guid>
       <description></description>
     </item>
     <item>

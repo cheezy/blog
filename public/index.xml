@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Nov 2025 12:22:22 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 12 Nov 2025 15:22:47 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a LiveView app using AI - Part 12</title>
+      <link>http://localhost:1313/post/ai-kanban-part12/</link>
+      <pubDate>Wed, 12 Nov 2025 15:22:47 -0500</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part12/</guid>
+      <description>&lt;h2 id=&#34;adding-users-to-boards-and-tasks&#34;&gt;Adding users to boards and tasks&lt;/h2&gt;&#xA;&lt;p&gt;Since the &lt;a href=&#34;https://tidewave.ai/blog/claude-code-codex&#34;&gt;announcement&lt;/a&gt; of Claude Code running inside of Tidewave I have been extremely happy about this combo. For now I am using it for nearly all of my changes to the codebase. I have even given it a name - &lt;strong&gt;ClaudeWave&lt;/strong&gt;. All of the changes in this post were done using ClaudeWave.&lt;/p&gt;&#xA;&lt;p&gt;So far our boards only have an owner. I want an owner to have the ability to add other users to a board and also assign tasks to one of those users. Let&amp;rsquo;s get started.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 11</title>
       <link>http://localhost:1313/post/ai-kanban-part11/</link>
@@ -111,7 +118,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>

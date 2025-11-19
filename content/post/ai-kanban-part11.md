@@ -54,3 +54,5 @@ When A users logs into the system they are directed to their boards. But if they
 ## More cleanup to come
 
 There is some more cleanup I plan to do before moving on to Task 7. Stay tuned for more fun.
+
+[Continue on to part twelve](/post/ai-kanban-part12)
