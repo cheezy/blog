@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Nov 2025 15:22:47 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 21 Nov 2025 07:05:12 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a LiveView app using AI - Part 13</title>
+      <link>http://localhost:1313/post/ai-kanban-part13/</link>
+      <pubDate>Fri, 21 Nov 2025 07:05:12 -0500</pubDate>
+      <guid>http://localhost:1313/post/ai-kanban-part13/</guid>
+      <description>&lt;h2 id=&#34;setting-permissions-for-users&#34;&gt;Setting permissions for users&lt;/h2&gt;&#xA;&lt;p&gt;Currently every user can do everything in the application. A read only user can delete a board or make any type of change they want. Let&amp;rsquo;s fix that.&lt;/p&gt;&#xA;&lt;h3 id=&#34;focus-on-owners-first&#34;&gt;Focus on Owners first&lt;/h3&gt;&#xA;&lt;p&gt;First I want to focus on ensuring the board owner can do board-level actions and other users cannot. Let me start by listing out the things that only owners can do:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Edit and delete their boards&lt;/li&gt;&#xA;&lt;li&gt;Add new columns to a board&lt;/li&gt;&#xA;&lt;li&gt;Edit or delete columns from their boards&lt;/li&gt;&#xA;&lt;li&gt;Reorder columns (including drag-and-drop)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I think this is a good list. Let&amp;rsquo;s ask TideWave to make these changes.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 12</title>
       <link>http://localhost:1313/post/ai-kanban-part12/</link>

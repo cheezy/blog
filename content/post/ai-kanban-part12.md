@@ -56,3 +56,5 @@ I will not include a picture here as I review the changes in the video and you c
 If you add a new column to a board it always adds the column to the end of the board. I asked TideWave to add the ability to drag and drop columns so I can reorder them as I wish. It was an easy task for TideWave.
 
 ![Drag and drop columns](/img/drag_and_drop_columns.png)
+
+[Continue on to part thirteen](/post/ai-kanban-part13)
