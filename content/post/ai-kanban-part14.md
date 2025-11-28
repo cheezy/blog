@@ -40,5 +40,3 @@ I added a few new links to the top of the page that are displayed based on your 
 Finally, I also asked TideWave to update the language toggle to make it a dropdown menu. This is to allow me to add more languages in the future.
 
 ![Top level links](/img/root_links.png)
-
-
