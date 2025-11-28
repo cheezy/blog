@@ -39,7 +39,7 @@ Finally I wanted users to be able to add comments to a task. I asked Claude to a
 
 ## One more thing
 
-For this session I am finished making update to Tasks. There was one more thing I wanted to do but first of I needed to do a tool update.
+For this session I am finished making update to Tasks. There was one more thing I wanted to do but first of all I wanted to do a tool update.
 
 ### Claude inside Tidewave
 
