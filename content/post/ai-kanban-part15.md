@@ -42,3 +42,30 @@ It is finally time to get back and finish phase 7 of our plan. Here is what rema
 We start by asking TideWave to complete the first two tasks under UI/UX improvements. Less than five minutes later we have some sparkle.
 
 {{< youtube iooNURwm9zM >}}
+
+### Finishing up the UI/UX improvements
+
+Feeling confident with the first two task easily under our belt I decide to ask TideWave to take a larger step and complete all of the remaining tasks in the UI/UX improvements section. 
+
+{{< youtube SabuWMij59Q >}}
+
+I noticed while making the video that some of the layout was not correct. There were icons that were not always visible. I made a mental note and continued with the plan.
+
+### Taking the big leap
+
+The first tasks in phase 7 have gone extremely well. I decided to ask TideWave to take a larger step and complete all of the remaining task from phase 7. This took nearly eight minutes but after the video I reviewed the changes and was glad that I take this step. 
+
+{{< youtube JiUQNr_-Ybc >}}
+
+### Fixing the layout for Tasks
+
+During the second video of part 15 I noticed that the layout of tasks was not correct. Some of the links were not fully visible. Before I say the UI/UX improvements are done I want to fix this issue.
+
+{{< youtube GtzE8w59m_o >}}
+
+I think the solution TideWave came up with is very elegant. 
+
+## What's next?
+
+There are still many small tasks left to complete to get this application to a place where I can release it to the public. Stay tuned to see what remains.
+
