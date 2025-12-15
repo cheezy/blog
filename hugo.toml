@@ -25,7 +25,7 @@ language = 'en-ca'
 
 
   # Sidebar settings
-  sidebar_about_description = "Software Developer, Continuous Delivery Coach, and AI Enthusiest"
+  sidebar_about_description = "Software Developer, Continuous Delivery and AI Coach"
   sidebar_avatar = "img/CheezyOrange.jpg" 
 
   featured_tags = true 

@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Building a LiveView app using AI - Part 9" />
-    <meta property="og:title" content="Building a LiveView app using AI - Part 9" />
-    <meta property="twitter:title" content="Building a LiveView app using AI - Part 9" />
+    <meta name="title" content="Tensions with AI" />
+    <meta property="og:title" content="Tensions with AI" />
+    <meta property="twitter:title" content="Tensions with AI" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/ai-kanban-part9/" />
+    <meta property="og:url" content="http://localhost:1313/post/ai-tensions/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Building a LiveView app using AI - Part 9 | Cheezy&#39;s Blog</title>
+    <title>Tensions with AI | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/ai-kanban-part9/">
+    <link rel="canonical" href="/post/ai-tensions/">
 
     
 
@@ -181,75 +181,27 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>Building a LiveView app using AI - Part 9</h1>
+            <h1>Tensions with AI</h1>
 
             
-                <h2 id="doing-a-little-cleanup">Doing a little cleanup</h2>
-<p>This post is a cleanup post. After Part 8 I spent some time testing all aspects of the application and decided to make a few small changes beofre moving to the next phase. I noticed that flash messages (the message that shows in the upper right corner) stays there until I dismiss it. I think it becomes anoying to have to do that repeatedly when adding multiple tasks so I decide to make it automatically fade away after 5 seconds. I could ask Claude to do this but thought it was a very easy task so I set about to do it myself. Here is what I came up with.</p>
-<h2 id="auto-dismiss-flash">Auto Dismiss Flash</h2>
-<p>The first think I needed to do was create a hook that could dismiss (in this case click) the flash. I created the file named <code>assets/js/hooks/auto-dismiss-flash.js</code> and this is what I came up with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> {
-</span></span><span style="display:flex;"><span>  mounted() {
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">this</span>.timer <span style="color:#ff79c6">=</span> setTimeout(() =&gt; {
-</span></span><span style="display:flex;"><span>      <span style="color:#6272a4">// Simulate a click to trigger the existing phx-click handler
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>      <span style="color:#6272a4">// which properly clears the flash and hides the element
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>      <span style="color:#ff79c6">this</span>.el.click();
-</span></span><span style="display:flex;"><span>    }, <span style="color:#bd93f9">5000</span>); <span style="color:#6272a4">// Wait 5 seconds before auto-dismissing
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  },
-</span></span><span style="display:flex;"><span>  destroyed() {
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">this</span>.timer) {
-</span></span><span style="display:flex;"><span>      clearTimeout(<span style="color:#ff79c6">this</span>.timer);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>};
-</span></span></code></pre></div><p>The code is simple enough. I waits five seconds and then clicks the element. Next I needed to register the hook and I do this in my <code>app.js</code> file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">import</span> {Socket} from <span style="color:#f1fa8c">&#34;phoenix&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">import</span> {LiveSocket} from <span style="color:#f1fa8c">&#34;phoenix_live_view&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#ff79c6">import</span> {hooks as colocatedHooks} from <span style="color:#f1fa8c">&#34;phoenix-colocated/kanban&#34;</span>
-</span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#ff79c6">import</span> AutoDismissFlash from <span style="color:#f1fa8c">&#34;./hooks/auto-dismiss-flash&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#ff79c6">import</span> topbar from <span style="color:#f1fa8c">&#34;../vendor/topbar&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
-</span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#ff79c6">const</span> MyHooks <span style="color:#ff79c6">=</span> {
-</span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  AutoDismissFlash,
-</span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>}
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#ff79c6">const</span> csrfToken <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.querySelector(<span style="color:#f1fa8c">&#34;meta[name=&#39;csrf-token&#39;]&#34;</span>).getAttribute(<span style="color:#f1fa8c">&#34;content&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#ff79c6">const</span> liveSocket <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> LiveSocket(<span style="color:#f1fa8c">&#34;/live&#34;</span>, Socket, {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>  longPollFallbackMs<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">2500</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>  params<span style="color:#ff79c6">:</span> {_csrf_token<span style="color:#ff79c6">:</span> csrfToken},
-</span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>  hooks<span style="color:#ff79c6">:</span> {...colocatedHooks, ...MyHooks},
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>})
-</span></span></code></pre></div><p>The final step was to modify the flash componet. In the <code>core_components.ex</code> file I modified the flash component to register my hook viw the <code>phx-hook</code> attribute:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>  <span style="color:#8be9fd;font-style:italic">def</span> flash(assigns) <span style="color:#ff79c6">do</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    assigns <span style="color:#ff79c6">=</span> assign_new(assigns, <span style="color:#f1fa8c">:id</span>, <span style="color:#ff79c6">fn</span> <span style="color:#ff79c6">-&gt;</span> <span style="color:#f1fa8c">&#34;flash-</span><span style="color:#f1fa8c">#{</span>assigns<span style="color:#ff79c6">.</span>kind<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#ff79c6">end</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#f1fa8c">~H</span><span style="color:#f1fa8c">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#f1fa8c">    &lt;div
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#f1fa8c">      :if={msg = render_slot(@inner_block) || Phoenix.Flash.get(@flash, @kind)}
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#f1fa8c">      id={@id}
-</span></span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#f1fa8c">      phx-hook=&#34;AutoDismissFlash&#34;
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#f1fa8c">      phx-click={JS.push(&#34;lv:clear-flash&#34;, value: %{key: @kind}) |&gt; hide(&#34;##{@id}&#34;)}
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#f1fa8c">      role=&#34;alert&#34;
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#f1fa8c">      class=&#34;toast toast-top toast-end z-50&#34;
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#f1fa8c">      {@rest}
-</span></span></span></code></pre></div><h2 id="position-of-edit-tasks">Position of Edit Tasks</h2>
-<p>Again, while testing the task functionality I noticed that when you try to edit a task it opens up a form at the bottom of the page. If you have a lot of tasks the form can be below the bottom of the screen and you have to scroll to see it. I decided to let Claude perform this cleanup.</p>
-<p>I asked Claude to move the add task form to a modal popup and to make things consistent I asked him to also move the form for colunns to a modal popup as well. Here&rsquo;s a picture of the result:</p>
-<p>
-  <img src="/img/kanban_edit_tasks.png" alt="Image of Edit Task modal">
-
-</p>
-<h2 id="adding-a-new-task">Adding a new task</h2>
-<p>The link to add a new task was originally placed at the bottom of the column. If you have a lot of tasks this link will scroll off of the page and will not be easy to see. I asked Tidewave to move it to a plus icon in the column header. This was an easy task for Tidewave and I&rsquo;m happy with the results.</p>
-<p>
-  <img src="/img/kanban_add_task.png" alt="Image of the add task icon">
-
-</p>
-<h2 id="and-i-have-a-name">And I have a name</h2>
-<p>My marketing manager (my wife) has decided that the application shall be named Stride. I asked Tidewave to update the home page to use the new application name. Once that was finished I asked Claude to present me with a list of possible logos. We have selected one but you&rsquo;ll have to wait to see it. Stay tuned!</p>
-<h2 id="whats-next">What&rsquo;s next?</h2>
-<p>With these small tweaks of the UI out of the way I think we are ready to complete the final two phases. I have also already dreamed up other features but I want to release the MVP prior to adding them.</p>
-<p><a href="/post/ai-kanban-part10">Continue on to part ten</a></p>
+                <h2 id="bringing-ai-into-your-organization">Bringing AI into your organization</h2>
+<p>I have now worked with multiple teams that have introduced an AI driven development into their development workflow and I have seen a pattern emerge. When AI, and more specifically Vibe Coding, is introduced into a traditional software development organization that are following an Agile process there are three tensions that quickly arise. All three of these tensions are due to the rapid pace of development.</p>
+<h3 id="the-testing-tension">The Testing Tension</h3>
+<p>The first tension I will discuss is testing. If you have testers at the end of your process verifying the accuracy of the changes made by developers (or AI in this case) then be assured that they will be unable to keep up. It’s not even close. Tasks will be developed in minutes instead of days and they will rapidly queue up waiting for testing.</p>
+<p>Furthermore, once you have your model working well with your code you will be changing from a current place where developers sort-of write a few unit tests to where AI will write comprehensive tests for all functionality. AI will even open a browser and test behaviours from a user perspective. I have seen multiple teams go through this transition and after a while the testers find incredibly few defects.</p>
+<p>In my opinion, testing will ultimately shift from these human testers to AI. I am sure you can think of how this tension might work itself out.</p>
+<h3 id="the-development-tension">The Development Tension</h3>
+<p>A more interesting tension is in development. If you have multiple developers working on the same codebase you will have greater code conflicts due to the rapid pace of development. The agents make the changes but also tend to improve the code by refactoring. This is desired but it also increases the pace of change of the code. This makes code merges more complex.</p>
+<p>A second development issue that arrises is code reviews. If you have a PR process where developers review the changing code then it will also become a bottleneck. You will quickly find that you are spending much more time reviewing the code than the agent spent writing it.</p>
+<p>Over time this will become less of a problem. In the months I&rsquo;ve been working with AI to build applications I have seen it dramatically improve. This will continue to a point where we will be able to rely on AI to write quality code that needs little to no review. Even so, most organizations will still want developers to look at the changes.</p>
+<h3 id="the-requirements-tension">The Requirements Tension</h3>
+<p>The traditional requirements process where a product owner works with stakeholders to understand what changes to make and then turns those into user stories that are brought to a team to refine and eventually placed on a kanban or sprint board will quickly fall apart once AI driven developemnt is introduced.</p>
+<p>On more than one occasion I have seen developers blast through an entire Sprints worth of work in a couple of days. Not having enough refined stories quickly brings development to a halt. Throwing more people at the requirements process does not solve this problem.</p>
+<p>Another tension that exists in requirements is that the form and details captured in a traditional Agile story is not modeled after what is best for AI. Instead, they are structured to facilitate human communication and collaboration. If we are turning our development over to AI we need to rethink the form and details of our requirements.</p>
+<h2 id="is-there-a-solution-to-these-tensions">Is there a solution to these tensions?</h2>
+<p>So far this post might feel like doom and gloom. With all of these challenges why would an organization want to use AI in their development process? Instead of doom I want you to feel a sense of optimism and see this all as an opportunity to grow our way forward. By throwing off the constrants of traditional processes many of us are seeing an amazing shift in our development efforts. We are able to deliver higher quality more rapidly that we ever thought possible.</p>
+<p>In a more enterprise setting these tensions are going to be even more pronounced. The tools that are available now to help us overcome some of these tensions will be unacceptable to most corporations. The good news is that along with this new era of software development will come new tools and processes to help us overcome these tensions.</p>
+<p>In a few weeks I will detail one such tool that will help with some of the tensions outlined in this post. Stay tuned.</p>
 
             
              
