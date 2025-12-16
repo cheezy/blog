@@ -45,7 +45,7 @@ We start by asking TideWave to complete the first two tasks under UI/UX improvem
 
 ### Finishing up the UI/UX improvements
 
-Feeling confident with the first two task easily under our belt I decide to ask TideWave to take a larger step and complete all of the remaining tasks in the UI/UX improvements section. 
+Feeling confident with the first two task easily under our belt I decide to ask TideWave to take a larger step and complete all of the remaining tasks in the UI/UX improvements section.
 
 {{< youtube SabuWMij59Q >}}
 
@@ -53,7 +53,7 @@ I noticed while making the video that some of the layout was not correct. There 
 
 ### Taking the big leap
 
-The first tasks in phase 7 have gone extremely well. I decided to ask TideWave to take a larger step and complete all of the remaining task from phase 7. This took nearly eight minutes but after the video I reviewed the changes and was glad that I take this step. 
+The first tasks in phase 7 have gone extremely well. I decided to ask TideWave to take a larger step and complete all of the remaining task from phase 7. This took nearly eight minutes but after the video I reviewed the changes and was glad that I take this step.
 
 {{< youtube JiUQNr_-Ybc >}}
 
@@ -63,9 +63,8 @@ During the second video of part 15 I noticed that the layout of tasks was not co
 
 {{< youtube GtzE8w59m_o >}}
 
-I think the solution TideWave came up with is very elegant. 
+I think the solution TideWave came up with is very elegant.
 
 ## What's next?
 
 There are still many small tasks left to complete to get this application to a place where I can release it to the public. Stay tuned to see what remains.
-
