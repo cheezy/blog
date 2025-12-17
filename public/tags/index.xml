@@ -6,8 +6,36 @@
     <description>Recent content in Tags on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Dec 2025 06:38:22 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 17 Dec 2025 08:23:02 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/tags/ai/</link>
+      <pubDate>Wed, 17 Dec 2025 08:23:02 -0500</pubDate>
+      <guid>http://localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Elixir</title>
+      <link>http://localhost:1313/tags/elixir/</link>
+      <pubDate>Wed, 17 Dec 2025 08:23:02 -0500</pubDate>
+      <guid>http://localhost:1313/tags/elixir/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LiveView</title>
+      <link>http://localhost:1313/tags/liveview/</link>
+      <pubDate>Wed, 17 Dec 2025 08:23:02 -0500</pubDate>
+      <guid>http://localhost:1313/tags/liveview/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Phoenix</title>
+      <link>http://localhost:1313/tags/phoenix/</link>
+      <pubDate>Wed, 17 Dec 2025 08:23:02 -0500</pubDate>
+      <guid>http://localhost:1313/tags/phoenix/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Agile</title>
       <link>http://localhost:1313/tags/agile/</link>
@@ -16,38 +44,10 @@
       <description></description>
     </item>
     <item>
-      <title>AI</title>
-      <link>http://localhost:1313/tags/ai/</link>
-      <pubDate>Mon, 15 Dec 2025 06:38:22 -0500</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Continuous Delivery</title>
       <link>http://localhost:1313/tags/continuous-delivery/</link>
       <pubDate>Mon, 15 Dec 2025 06:38:22 -0500</pubDate>
       <guid>http://localhost:1313/tags/continuous-delivery/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Elixir</title>
-      <link>http://localhost:1313/tags/elixir/</link>
-      <pubDate>Sun, 30 Nov 2025 15:21:44 -0500</pubDate>
-      <guid>http://localhost:1313/tags/elixir/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LiveView</title>
-      <link>http://localhost:1313/tags/liveview/</link>
-      <pubDate>Sun, 30 Nov 2025 15:21:44 -0500</pubDate>
-      <guid>http://localhost:1313/tags/liveview/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Phoenix</title>
-      <link>http://localhost:1313/tags/phoenix/</link>
-      <pubDate>Sun, 30 Nov 2025 15:21:44 -0500</pubDate>
-      <guid>http://localhost:1313/tags/phoenix/</guid>
       <description></description>
     </item>
     <item>

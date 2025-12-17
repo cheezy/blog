@@ -68,3 +68,5 @@ I think the solution TideWave came up with is very elegant.
 ## What's next?
 
 There are still many small tasks left to complete to get this application to a place where I can release it to the public. Stay tuned to see what remains.
+
+[Continue on to part sixteen](/post/ai-kanban-part16)
