@@ -6,14 +6,21 @@
     <description>Recent content in Posts on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Dec 2025 08:23:02 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 19 Dec 2025 08:32:51 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stride goes full AI</title>
+      <link>http://localhost:1313/post/stride-next/</link>
+      <pubDate>Fri, 19 Dec 2025 08:32:51 -0500</pubDate>
+      <guid>http://localhost:1313/post/stride-next/</guid>
+      <description>&lt;h2 id=&#34;building-an-ai-optimized-kanban-system-a-human-ai-collaboration-experiment&#34;&gt;Building an AI-Optimized Kanban System: A Human-AI Collaboration Experiment&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m embarking on an experiment to build a Kanban task management system specifically designed for AI-human collaboration. This isn&amp;rsquo;t just another project management tool—it&amp;rsquo;s a system where AI agents and humans work together as peers on software development tasks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-vision&#34;&gt;The Vision&lt;/h2&gt;&#xA;&lt;p&gt;Most task management tools treat tasks as simple items with a title and description. But when you&amp;rsquo;re working with AI agents (like Claude, GPT-4, or custom agents), they need much more context to be effective. They need to understand:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 16</title>
       <link>http://localhost:1313/post/ai-kanban-part16/</link>
       <pubDate>Wed, 17 Dec 2025 08:23:02 -0500</pubDate>
       <guid>http://localhost:1313/post/ai-kanban-part16/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;a-million-small-things---on-to-version-10&#34;&gt;A million small things - on to Version 1.0&lt;/h2&gt;&#xA;&lt;p&gt;This is the final post in this series. There were many things that needed to be done that were not on the original plan so I worked with my trusty AI tools to complete them. This post simply lists them and provides a some details where I thought it was interesting.&lt;/p&gt;&#xA;&lt;p&gt;Do not worry about this being the end of the series. See the What&amp;rsquo;s Next section at the bottom of this post to see where this is all going. What&amp;rsquo;s next is very exciting and I hope you stay with me on this.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tensions with AI</title>

@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Dec 2025 08:23:02 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 19 Dec 2025 08:32:51 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stride goes full AI</title>
+      <link>http://localhost:1313/post/stride-next/</link>
+      <pubDate>Fri, 19 Dec 2025 08:32:51 -0500</pubDate>
+      <guid>http://localhost:1313/post/stride-next/</guid>
+      <description>&lt;h2 id=&#34;building-an-ai-optimized-kanban-system-a-human-ai-collaboration-experiment&#34;&gt;Building an AI-Optimized Kanban System: A Human-AI Collaboration Experiment&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m embarking on an experiment to build a Kanban task management system specifically designed for AI-human collaboration. This isn&amp;rsquo;t just another project management tool—it&amp;rsquo;s a system where AI agents and humans work together as peers on software development tasks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-vision&#34;&gt;The Vision&lt;/h2&gt;&#xA;&lt;p&gt;Most task management tools treat tasks as simple items with a title and description. But when you&amp;rsquo;re working with AI agents (like Claude, GPT-4, or custom agents), they need much more context to be effective. They need to understand:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 16</title>
       <link>http://localhost:1313/post/ai-kanban-part16/</link>
@@ -153,7 +160,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>

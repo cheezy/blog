@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Stride goes full AI" />
+    <meta property="og:title" content="Stride goes full AI" />
+    <meta property="twitter:title" content="Stride goes full AI" />
+    
+
+    
+    <meta name="description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing.">
+    <meta property="og:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/stride-next/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Stride goes full AI | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/stride-next/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Eat more cheese</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Stride goes full AI</h1>
+
+            
+                <h2 id="building-an-ai-optimized-kanban-system-a-human-ai-collaboration-experiment">Building an AI-Optimized Kanban System: A Human-AI Collaboration Experiment</h2>
+<p>I&rsquo;m embarking on an experiment to build a Kanban task management system specifically designed for AI-human collaboration. This isn&rsquo;t just another project management tool—it&rsquo;s a system where AI agents and humans work together as peers on software development tasks.</p>
+<h2 id="the-vision">The Vision</h2>
+<p>Most task management tools treat tasks as simple items with a title and description. But when you&rsquo;re working with AI agents (like Claude, GPT-4, or custom agents), they need much more context to be effective. They need to understand:</p>
+<ul>
+<li><strong>Why</strong> the work matters (the problem being solved)</li>
+<li><strong>What</strong> specifically needs to be built</li>
+<li><strong>Where</strong> in the codebase to make changes</li>
+<li><strong>How</strong> to verify their work is correct</li>
+<li><strong>What</strong> common pitfalls to avoid</li>
+</ul>
+<p>My goal is to create a Kanban system that provides this rich context in a structured format that both humans and AI can understand and act upon. In fact the entire system was designed by asking AI what wold be the best way to delivery tasks for it to complete. This is what is becoming know as AI UX - creating the user experience targeting AI.</p>
+<h2 id="the-core-concept-tasks-as-rich-metadata">The Core Concept: Tasks as Rich Metadata</h2>
+<p>Traditional task: &ldquo;Add user authentication&rdquo;</p>
+<p>AI-optimized task includes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;identifier&#34;</span>: <span style="color:#f1fa8c">&#34;W42&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Add user authentication&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;work&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;complexity&#34;</span>: <span style="color:#f1fa8c">&#34;large&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;estimated_files&#34;</span>: <span style="color:#f1fa8c">&#34;5-6&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;priority&#34;</span>: <span style="color:#bd93f9">1</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;status&#34;</span>: <span style="color:#f1fa8c">&#34;open&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;why&#34;</span>: <span style="color:#f1fa8c">&#34;Users need secure login to access personalized features&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;what&#34;</span>: <span style="color:#f1fa8c">&#34;Implement email/password auth with session management&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;where_context&#34;</span>: <span style="color:#f1fa8c">&#34;Authentication system, user module&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;patterns_to_follow&#34;</span>: <span style="color:#f1fa8c">&#34;Follow existing Guardian JWT pattern in lib/app/auth&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;database_changes&#34;</span>: <span style="color:#f1fa8c">&#34;Add users table, sessions table with indexes&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;key_files&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;path&#34;</span>: <span style="color:#f1fa8c">&#34;lib/app/auth.ex&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;note&#34;</span>: <span style="color:#f1fa8c">&#34;Main auth logic&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;path&#34;</span>: <span style="color:#f1fa8c">&#34;lib/app_web/controllers/session_controller.ex&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;note&#34;</span>: <span style="color:#f1fa8c">&#34;Login/logout endpoints&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">2</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;path&#34;</span>: <span style="color:#f1fa8c">&#34;lib/app/schemas/user.ex&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;note&#34;</span>: <span style="color:#f1fa8c">&#34;User schema with password hashing&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">3</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;verification_steps&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;command&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;mix test test/app/auth_test.exs&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;expected_result&#34;</span>: <span style="color:#f1fa8c">&#34;All auth tests pass&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;command&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;mix credo --strict&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;expected_result&#34;</span>: <span style="color:#f1fa8c">&#34;No warnings&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">2</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;manual&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Test login flow in browser&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;expected_result&#34;</span>: <span style="color:#f1fa8c">&#34;User can login, logout, and session persists&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">3</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;telemetry_event&#34;</span>: <span style="color:#f1fa8c">&#34;[:app, :auth, :login_success]&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;metrics_to_track&#34;</span>: [<span style="color:#f1fa8c">&#34;Login attempts&#34;</span>, <span style="color:#f1fa8c">&#34;Failed logins&#34;</span>, <span style="color:#f1fa8c">&#34;Session duration&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;logging_requirements&#34;</span>: <span style="color:#f1fa8c">&#34;Log all login attempts with user ID and IP&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;error_user_message&#34;</span>: <span style="color:#f1fa8c">&#34;Login failed. Please check your credentials.&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;error_on_failure&#34;</span>: <span style="color:#f1fa8c">&#34;Return 401 Unauthorized, log attempt&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;validation_rules&#34;</span>: <span style="color:#f1fa8c">&#34;Email must be valid format, password minimum 8 characters&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;pitfalls&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Don&#39;t store passwords in plain text - use bcrypt&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Remember to handle session timeout (60 minutes)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">2</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Avoid exposing user existence in error messages&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">3</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;out_of_scope&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;OAuth integration (separate task W43)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Two-factor authentication (future enhancement)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">2</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Password reset flow (follow-up task)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#bd93f9">3</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;technology_requirements&#34;</span>: <span style="color:#f1fa8c">&#34;Phoenix Guardian for JWT\nBcrypt for password hashing\nPhoenix LiveView for UI&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;required_capabilities&#34;</span>: [<span style="color:#f1fa8c">&#34;code_generation&#34;</span>, <span style="color:#f1fa8c">&#34;testing&#34;</span>, <span style="color:#f1fa8c">&#34;database_design&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;dependencies&#34;</span>: [<span style="color:#f1fa8c">&#34;W15&#34;</span>, <span style="color:#f1fa8c">&#34;W22&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;needs_review&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This structure gives AI agents everything they need to complete the task autonomously while providing humans with clear guidance about scope and expectations.</p>
+<h2 id="the-features">The Features</h2>
+<h3 id="phase-1-database-schema-foundation">Phase 1: Database Schema Foundation</h3>
+<p>First, I&rsquo;m extending the database to store 18 categories of task information:</p>
+<ul>
+<li><strong>Core fields</strong>: title, description, type, complexity, priority</li>
+<li><strong>Context fields</strong>: why, what, where, patterns to follow</li>
+<li><strong>Technology fields</strong>: key files, verification steps, database changes</li>
+<li><strong>Observability</strong>: telemetry events, metrics, logging requirements</li>
+<li><strong>Error handling</strong>: validation rules, user messages, failure scenarios</li>
+<li><strong>Guidance</strong>: pitfalls to avoid, out-of-scope items</li>
+<li><strong>Lifecycle tracking</strong>: who created/completed, when, actual vs estimated effort</li>
+<li><strong>Dependencies</strong>: task relationships and blocking chains</li>
+</ul>
+<h3 id="phase-2-rich-task-ui">Phase 2: Rich Task UI</h3>
+<p>Building a comprehensive UI that:</p>
+<ul>
+<li>Displays all task metadata in an organized, readable format</li>
+<li>Provides a detailed task creation form</li>
+<li>Includes board-level field visibility toggles (so you can hide fields you don&rsquo;t need)</li>
+<li>Shows AI vs human badges (track who created/completed each task)</li>
+</ul>
+<h3 id="phase-3-ai-agent-api">Phase 3: AI Agent API</h3>
+<p>The heart of the system—a RESTful JSON API that enables AI agents to:</p>
+<p><strong>Authentication:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GET /api/tasks/next
+</span></span><span style="display:flex;"><span>Authorization: Bearer kan_dev_abc123xyz...
+</span></span></code></pre></div><p><strong>Task Discovery:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GET /api/tasks/next
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Returns the next task you&#39;re capable of completing</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Filters by capabilities, dependencies, and availability</span>
+</span></span></code></pre></div><p><strong>Atomic Task Claiming:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>POST /api/tasks/:id/claim
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Atomically claims a task with 60-minute timeout</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Auto-releases if not completed within timeout</span>
+</span></span></code></pre></div><p><strong>Task Completion with Rich Summary:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PATCH /api/tasks/:id/complete
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;completed_by&#34;</span>: <span style="color:#f1fa8c">&#34;ai_agent:claude-sonnet-4.5&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;actual_complexity&#34;</span>: <span style="color:#f1fa8c">&#34;large&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;actual_files_changed&#34;</span>: 8,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;time_spent_minutes&#34;</span>: 45,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;completion_summary&#34;</span>: <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;files_changed&#34;</span>: <span style="color:#ff79c6">[</span>...<span style="color:#ff79c6">]</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;tests_added&#34;</span>: <span style="color:#ff79c6">[</span>...<span style="color:#ff79c6">]</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;verification_results&#34;</span>: <span style="color:#ff79c6">{</span>...<span style="color:#ff79c6">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;estimation_feedback&#34;</span>: <span style="color:#ff79c6">{</span>...<span style="color:#ff79c6">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;follow_up_tasks&#34;</span>: <span style="color:#ff79c6">[</span>...<span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p><strong>Bulk Task Upload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>POST /api/tasks/bulk
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;tasks&#34;</span>: <span style="color:#ff79c6">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Add user authentication&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;complexity&#34;</span>: <span style="color:#f1fa8c">&#34;large&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;why&#34;</span>: <span style="color:#f1fa8c">&#34;Users need secure login&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;what&#34;</span>: <span style="color:#f1fa8c">&#34;Implement email/password auth&#34;</span>,
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Add password reset&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;complexity&#34;</span>: <span style="color:#f1fa8c">&#34;medium&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;dependencies&#34;</span>: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#34;W42&#34;</span><span style="color:#ff79c6">]</span>,
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Creates multiple tasks in a single request</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Perfect for agents uploading entire feature breakdowns</span>
+</span></span></code></pre></div><p><strong>Agent Documentation Endpoint:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GET /api/agent/info
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Returns comprehensive JSON documentation about:</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># - System workflow</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># - API endpoints</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># - Hook system</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># - Best practices</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># - Common pitfalls</span>
+</span></span></code></pre></div><h3 id="phase-4-task-management--dependencies">Phase 4: Task Management &amp; Dependencies</h3>
+<ul>
+<li><strong>Dependency graphs</strong> with circular dependency detection</li>
+<li><strong>Automatic unblocking</strong> when prerequisite tasks complete</li>
+<li><strong>Hierarchical task trees</strong> (Epics → Features → Tasks)</li>
+<li><strong>Estimation feedback loop</strong> (track actual vs estimated complexity)</li>
+</ul>
+<h2 id="the-ai-human-collaboration-workflow">The AI-Human Collaboration Workflow</h2>
+<p>One of the most interesting aspects of this system is how AI agents and humans work together:</p>
+<h3 id="task-design-phase">Task Design Phase</h3>
+<ol>
+<li><strong>AI Designs Tasks</strong>: An AI agent analyzes a feature request and breaks it down into detailed tasks using the bulk upload API</li>
+<li><strong>Upload to Backlog</strong>: All tasks are created via <code>POST /api/tasks/bulk</code> and land in a &ldquo;Backlog&rdquo; column</li>
+<li><strong>Human Review</strong>: A human reviews the AI-generated task breakdown, checking:
+<ul>
+<li>Are the tasks well-defined?</li>
+<li>Are dependencies correct?</li>
+<li>Is the complexity estimation reasonable?</li>
+<li>Are any tasks missing or unnecessary?</li>
+</ul>
+</li>
+<li><strong>Move to Ready</strong>: The human moves approved tasks from &ldquo;Backlog&rdquo; to &ldquo;Ready&rdquo; column</li>
+<li><strong>AI Executes Work</strong>: Only tasks in &ldquo;Ready&rdquo; column are available via <code>GET /api/tasks/next</code> for agents to claim</li>
+</ol>
+<p>This creates a <strong>design-review-execute loop</strong> where:</p>
+<ul>
+<li>AI agents handle the tedious work of breaking down features into detailed tasks</li>
+<li>Humans provide oversight and approval before work begins</li>
+<li>AI agents execute the approved work autonomously</li>
+<li>Humans review completed work (if <code>needs_review=true</code>)</li>
+</ul>
+<h3 id="example-flow">Example Flow</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1. Human: &#34;We need user authentication&#34;
+</span></span><span style="display:flex;"><span>2. AI Agent: Designs 8 tasks → POST /api/tasks/bulk → Land in Backlog
+</span></span><span style="display:flex;"><span>3. Human: Reviews tasks → Moves 6 to Ready, edits 1, deletes 1
+</span></span><span style="display:flex;"><span>4. AI Agent: GET /api/tasks/next → Claims W42 from Ready
+</span></span><span style="display:flex;"><span>5. AI Agent: Completes W42 → Creates 2 follow-up tasks → Land in Backlog
+</span></span><span style="display:flex;"><span>6. Human: Reviews new tasks → Approves → Moves to Ready
+</span></span><span style="display:flex;"><span>7. Repeat...
+</span></span></code></pre></div><p>This workflow ensures humans stay in control while leveraging AI for the heavy lifting.</p>
+<h2 id="innovative-features">Innovative Features</h2>
+<h3 id="1-agent-workflow-hooks">1. Agent Workflow Hooks</h3>
+<p>AI agents can execute custom commands at workflow transition points via an <code>AGENTS.md</code> configuration file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold"># AGENTS.md
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">## agent:claude-sonnet-4.5
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>capabilities:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">-</span> code_generation
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">-</span> testing
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">-</span> documentation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hooks:
+</span></span><span style="display:flex;"><span>  after_claim:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">-</span> git checkout -b task-{TASK_ID}
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">-</span> git pull origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  before_complete:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">-</span> mix test
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">-</span> mix format --check-formatted
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">-</span> mix credo --strict
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  after_complete:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">-</span> git add .
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">-</span> git commit -m &#34;{TASK_TITLE}&#34;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">-</span> git push origin task-{TASK_ID}
+</span></span></code></pre></div><p>This enables agents to follow your team&rsquo;s workflow automatically.</p>
+<h3 id="2-optional-human-review">2. Optional Human Review</h3>
+<p>Tasks have a <code>needs_review</code> flag (defaults to <code>false</code>):</p>
+<ul>
+<li><strong>When false</strong>: Agent completes task → automatic quality checks run → task moves to Done</li>
+<li><strong>When true</strong>: Agent completes task → quality checks run → waits for human approval</li>
+</ul>
+<p>This lets you specify which tasks need human oversight and which can be fully autonomous.</p>
+<h3 id="3-real-time-pubsub-updates">3. Real-Time PubSub Updates</h3>
+<p>When an AI agent makes changes via API, all connected users see updates immediately via Phoenix PubSub:</p>
+<ul>
+<li>Task claimed → UI shows &ldquo;Claimed by claude-sonnet-4.5&rdquo;</li>
+<li>Task moved → UI reflects new column</li>
+<li>Task completed → UI updates status and shows completion summary</li>
+</ul>
+<p>No page refresh needed.</p>
+<h3 id="4-capability-matching">4. Capability Matching</h3>
+<p>Tasks specify required capabilities:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;required_capabilities&#34;</span>: [<span style="color:#f1fa8c">&#34;code_generation&#34;</span>, <span style="color:#f1fa8c">&#34;testing&#34;</span>, <span style="color:#f1fa8c">&#34;database_design&#34;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Agents declare their capabilities:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;capabilities&#34;</span>: [<span style="color:#f1fa8c">&#34;code_generation&#34;</span>, <span style="color:#f1fa8c">&#34;testing&#34;</span>, <span style="color:#f1fa8c">&#34;documentation&#34;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>GET /api/tasks/next</code> endpoint only returns tasks the agent is capable of completing.</p>
+<h3 id="5-follow-up-task-creation">5. Follow-Up Task Creation</h3>
+<p>When agents discover follow-up work during task completion, they don&rsquo;t just document it—they <strong>create new tasks</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Complete current task</span>
+</span></span><span style="display:flex;"><span>PATCH /api/tasks/42/complete
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;completion_summary&#34;</span>: <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;follow_up_tasks&#34;</span>: <span style="color:#ff79c6">[</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Add password reset flow&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Implement 2FA support&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Immediately create follow-up tasks</span>
+</span></span><span style="display:flex;"><span>POST /api/tasks
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Add password reset flow&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;why&#34;</span>: <span style="color:#f1fa8c">&#34;Follow-up from W42: Users need password reset capability&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;dependencies&#34;</span>: <span style="color:#ff79c6">[</span>42<span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>This ensures discovered work doesn&rsquo;t get lost.</p>
+<h2 id="scaling-with-multiple-agents-and-teams">Scaling with Multiple Agents and Teams</h2>
+<p>One of the most powerful aspects of this system is its ability to scale horizontally—multiple agents can work on the same backlog simultaneously, dramatically accelerating delivery.</p>
+<h3 id="multi-agent-collaboration">Multi-Agent Collaboration</h3>
+<p><strong>Single Backlog, Multiple Workers:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ready Column:
+</span></span><span style="display:flex;"><span>├── W42: Add user authentication
+</span></span><span style="display:flex;"><span>├── W43: Add password reset
+</span></span><span style="display:flex;"><span>├── W44: Implement logging
+</span></span><span style="display:flex;"><span>├── W45: Add API documentation
+</span></span><span style="display:flex;"><span>└── W46: Write integration tests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Agent 1 (Claude Sonnet): GET /api/tasks/next → Claims W42 (requires code_generation)
+</span></span><span style="display:flex;"><span>Agent 2 (Claude Opus):   GET /api/tasks/next → Claims W44 (requires code_generation)
+</span></span><span style="display:flex;"><span>Agent 3 (GPT-4):         GET /api/tasks/next → Claims W46 (requires testing)
+</span></span></code></pre></div><p><strong>How It Works:</strong></p>
+<ol>
+<li><strong>Atomic Claiming</strong>: The <code>POST /api/tasks/:id/claim</code> endpoint uses database-level locking to ensure only one agent can claim a task</li>
+<li><strong>Capability Filtering</strong>: Each agent only sees tasks matching their capabilities via <code>GET /api/tasks/next</code></li>
+<li><strong>Dependency Awareness</strong>: Agents can&rsquo;t claim tasks blocked by incomplete dependencies</li>
+<li><strong>60-Minute Timeout</strong>: If an agent gets stuck, the task auto-releases for another agent to try</li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li><strong>Parallel Execution</strong>: Independent tasks complete simultaneously</li>
+<li><strong>Specialization</strong>: Agents with different capabilities work on appropriate tasks (testing, documentation, database, etc.)</li>
+<li><strong>Resilience</strong>: If one agent fails, others continue; failed tasks become available for retry</li>
+<li><strong>Load Balancing</strong>: Work distributes automatically based on availability and capability</li>
+</ul>
+<h3 id="multi-team-collaboration">Multi-Team Collaboration</h3>
+<p><strong>Same backlog, different teams:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Scenario: Multiple teams (or companies) working on the same product
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Team A (Internal):
+</span></span><span style="display:flex;"><span>├── Agent 1: Full codebase access, all capabilities
+</span></span><span style="display:flex;"><span>├── Agent 2: Full codebase access, all capabilities
+</span></span><span style="display:flex;"><span>└── Human reviewers with domain knowledge
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Team B (Contractors):
+</span></span><span style="display:flex;"><span>├── Agent 3: Limited to documentation tasks
+</span></span><span style="display:flex;"><span>├── Agent 4: Limited to testing tasks
+</span></span><span style="display:flex;"><span>└── Human reviewers (external)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Shared Backlog:
+</span></span><span style="display:flex;"><span>├── Ready Column: Tasks available to all
+</span></span><span style="display:flex;"><span>├── Each agent claims based on capabilities
+</span></span><span style="display:flex;"><span>├── Each team reviews their agent&#39;s work
+</span></span><span style="display:flex;"><span>├── Real-time PubSub keeps everyone synchronized
+</span></span></code></pre></div><p><strong>Use Cases:</strong></p>
+<ol>
+<li><strong>Agency + Client</strong>: Agency AI agents handle implementation, client AI agents handle documentation</li>
+<li><strong>Distributed Teams</strong>: Multiple time zones, agents work 24/7 across all zones</li>
+<li><strong>Specialized Teams</strong>: Frontend team agents + Backend team agents + DevOps agents</li>
+<li><strong>Outsourced Work</strong>: Internal agents for core features, contractor agents for peripheral features</li>
+</ol>
+<p><strong>Coordination Features:</strong></p>
+<ul>
+<li><strong>Task Visibility</strong>: All teams see the same board in real-time via PubSub</li>
+<li><strong>Dependency Chains</strong>: Teams can&rsquo;t break dependencies (blocked tasks aren&rsquo;t claimable)</li>
+<li><strong>Capability-Based Segmentation</strong>: Limit certain agents to certain task types</li>
+<li><strong>Audit Trail</strong>: Track which agent/team completed which work via <code>completed_by_agent</code> field</li>
+</ul>
+<h3 id="example-3-agents-15-tasks-8-hours-vs-24-hours">Example: 3 Agents, 15 Tasks, 8 Hours vs 24 Hours</h3>
+<p><strong>Sequential (Single Agent):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Agent works alone:
+</span></span><span style="display:flex;"><span>- Hour 1-3:   Completes W42 (large)
+</span></span><span style="display:flex;"><span>- Hour 4-5:   Completes W43 (medium)
+</span></span><span style="display:flex;"><span>- Hour 6-7:   Completes W44 (medium)
+</span></span><span style="display:flex;"><span>- Hour 8-24:  Continues through remaining 12 tasks
+</span></span><span style="display:flex;"><span>Total: 24 hours
+</span></span></code></pre></div><p><strong>Parallel (Three Agents):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>All agents work simultaneously:
+</span></span><span style="display:flex;"><span>- Hour 1-3:   Agent 1: W42, Agent 2: W43, Agent 3: W44
+</span></span><span style="display:flex;"><span>- Hour 4-5:   Agent 1: W45, Agent 2: W46, Agent 3: W47
+</span></span><span style="display:flex;"><span>- Hour 6-8:   All agents continue claiming available tasks
+</span></span><span style="display:flex;"><span>Total: ~8 hours (3x faster)
+</span></span></code></pre></div><p><strong>Real-World Scenario:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Monday 9 AM: Human designer uploads 50 tasks to Backlog
+</span></span><span style="display:flex;"><span>Monday 9:30 AM: Human reviews, moves 30 tasks to Ready
+</span></span><span style="display:flex;"><span>Monday 10 AM: 5 agents start claiming tasks
+</span></span><span style="display:flex;"><span>Monday 6 PM: 25 tasks complete, 5 in progress
+</span></span><span style="display:flex;"><span>Tuesday 10 AM: All 30 tasks complete
+</span></span></code></pre></div><p>Instead of 5-7 days with a single agent, the work completes in ~1.5 days with parallel execution.</p>
+<h3 id="coordination-challenges-solved">Coordination Challenges Solved</h3>
+<p><strong>Problem: Two agents claim the same task</strong></p>
+<ul>
+<li><strong>Solution</strong>: Atomic locking at database level ensures only one succeeds</li>
+</ul>
+<p><strong>Problem: Agent A completes W42, but Agent B claimed W43 which depends on W42</strong></p>
+<ul>
+<li><strong>Solution</strong>: Dependency system automatically unblocks W43 when W42 completes</li>
+</ul>
+<p><strong>Problem: Agent gets stuck on a task</strong></p>
+<ul>
+<li><strong>Solution</strong>: 60-minute timeout auto-releases the task for another agent</li>
+</ul>
+<p><strong>Problem: How do humans track which agent did what?</strong></p>
+<ul>
+<li><strong>Solution</strong>: <code>completed_by_agent</code> field tracks every completion, visible in UI</li>
+</ul>
+<p><strong>Problem: Agents with different capabilities claim inappropriate tasks</strong></p>
+<ul>
+<li><strong>Solution</strong>: Capability matching ensures agents only see tasks they can complete</li>
+</ul>
+<h3 id="the-future-swarm-intelligence">The Future: Swarm Intelligence</h3>
+<p>Imagine a backlog of 100 tasks representing a major feature. Instead of:</p>
+<ul>
+<li><strong>Traditional</strong>: 1 developer, 4 weeks</li>
+<li><strong>AI-Assisted</strong>: 1 developer + 1 AI agent, 2 weeks</li>
+<li><strong>AI Swarm</strong>: 1 developer (oversight) + 10 AI agents, 3 days</li>
+</ul>
+<p>The system is designed for this future—where human developers focus on architecture and review while AI agents handle implementation at scale.</p>
+<h2 id="eating-our-own-dog-food">Eating Our Own Dog Food</h2>
+<p>Here&rsquo;s where it gets meta: <strong>I&rsquo;m using the system to build itself</strong>.</p>
+<p>The plan:</p>
+<ol>
+<li><strong>Tasks 01-06</strong>: Build manually (database, UI, authentication)</li>
+<li><strong>Task 07</strong>: Implement the CRUD API</li>
+<li><strong>Task 08+</strong>: Use the API to create and manage all remaining tasks</li>
+</ol>
+<p>Once the database is created, I will import all of the tasks for this project into that new structure.</p>
+<p>From there I will be constructing the UI. As I build the UI, I will be simulating the overall workflow in the system.</p>
+<p>The API work is next. Once the API is functional, I&rsquo;ll use it exclusively to:</p>
+<ul>
+<li>Create new tasks via <code>POST /api/tasks</code></li>
+<li>Claim tasks via <code>POST /api/tasks/claim</code></li>
+<li>Update status via <code>PATCH /api/tasks/:id</code></li>
+<li>Complete tasks via <code>PATCH /api/tasks/:id/complete</code></li>
+</ul>
+<p>This will validate that the API actually works for real-world task management and catch UX issues before AI agents encounter them.</p>
+<h2 id="why-this-matters">Why This Matters</h2>
+<p>Traditional project management tools are designed for humans to assign work to other humans. But we&rsquo;re entering an era where:</p>
+<ol>
+<li><strong>AI agents can complete meaningful work</strong> (write code, tests, documentation)</li>
+<li><strong>Agents need structured context</strong> to work effectively</li>
+<li><strong>Humans and agents collaborate</strong> as peers on the same team</li>
+<li><strong>Transparency is critical</strong> (who did what, when, and how well)</li>
+</ol>
+<p>This system is my attempt to build infrastructure for that future. A Kanban board where an AI agent can:</p>
+<ul>
+<li>Understand what needs to be done</li>
+<li>Claim tasks it&rsquo;s capable of completing</li>
+<li>Execute work following team conventions (via hooks)</li>
+<li>Report back with detailed completion summaries</li>
+<li>Create follow-up tasks when needed</li>
+<li>All while humans track progress in real-time</li>
+</ul>
+<h2 id="what-im-learning">What I&rsquo;m Learning</h2>
+<p>As I build this, I&rsquo;m discovering:</p>
+<ul>
+<li><strong>Rich metadata helps humans too</strong>: Even without AI agents, having structured verification steps and key files makes tasks clearer</li>
+<li><strong>The API-first approach forces clarity</strong>: If you can&rsquo;t explain a task to an API consumer, you haven&rsquo;t defined it well enough</li>
+<li><strong>Estimation feedback is valuable</strong>: Tracking actual vs estimated complexity creates a learning loop</li>
+<li><strong>Hooks are powerful</strong>: Being able to customize agent behavior at workflow points enables team-specific conventions</li>
+</ul>
+<h2 id="following-along">Following Along</h2>
+<p>I&rsquo;m documenting this journey openly. The codebase and all design documents will be available at [github.com/cheezy/kanban] (when I push it).</p>
+<p>The epic is broken down into digestible tasks with clear acceptance criteria, verification steps, and examples. Each task has:</p>
+<ul>
+<li><strong>WHY</strong>: The problem being solved</li>
+<li><strong>WHAT</strong>: The specific implementation</li>
+<li><strong>WHERE</strong>: The code areas affected</li>
+<li><strong>HOW</strong>: Verification commands to run</li>
+</ul>
+<p>You can follow the same format for your own AI-optimized tasks.</p>
+<h2 id="the-bigger-picture">The Bigger Picture</h2>
+<p>This isn&rsquo;t just about building a better Kanban board. It&rsquo;s about exploring what software development looks like when AI agents are first-class team members.</p>
+<p>Some questions I&rsquo;m trying to answer:</p>
+<ul>
+<li>What information do AI agents need to work autonomously?</li>
+<li>How do we balance autonomy with human oversight?</li>
+<li>How do we track and learn from agent performance?</li>
+<li>What workflow conventions enable effective human-AI collaboration?</li>
+</ul>
+<p>I don&rsquo;t have all the answers yet. But I&rsquo;m building a system flexible enough to experiment and learn.</p>
+<h2 id="want-to-try-it">Want to Try It?</h2>
+<p>Stride is live and is a usable kanban application. You can visit it at <a href="https://stridelikeaboss.com">stride.cheezy.dev</a>. Changes will show up every day or so. Be sure to check out the changelog which you can assess via the About page.</p>
+<p>If you&rsquo;re interested in AI-human collaboration for software development, stay tuned. This is going to be an interesting experiment.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/stride-next/">Stride goes full AI</a></li>
+        
+            <li><a href="/post/ai-kanban-part16/">Building a LiveView app using AI - Part 16</a></li>
+        
+            <li><a href="/post/ai-tensions/">Tensions with AI</a></li>
+        
+            <li><a href="/post/ai-kanban-part15/">Building a LiveView app using AI - Part 15</a></li>
+        
+            <li><a href="/post/ai-kanban-part14/">Building a LiveView app using AI - Part 14</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2025
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

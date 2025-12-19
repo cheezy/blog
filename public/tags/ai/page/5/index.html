@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Building a LiveView app using AI - Part 16" />
-    <meta property="og:title" content="Building a LiveView app using AI - Part 16" />
-    <meta property="twitter:title" content="Building a LiveView app using AI - Part 16" />
+    <meta name="title" content="" />
+    <meta property="og:title" content="" />
+    <meta property="twitter:title" content="" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/ai-kanban-part16/" />
+    <meta property="og:url" content="http://localhost:1313/tags/ai/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Building a LiveView app using AI - Part 16 | Cheezy&#39;s Blog</title>
+    <title>AI | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/ai-kanban-part16/">
+    <link rel="canonical" href="/tags/ai/">
 
     
 
@@ -170,119 +170,63 @@
 
 
 
-
-<article>
-    <div class="container">
-        <div class="row">
-            
-            <div class="
+  
+<div data-pagefind-ignore="all" class="container">
+    <div class="row">
+        
+        
+   	    <div class="
             col-lg-8 col-lg-offset-1
             col-md-8 col-md-offset-1
             col-sm-12
             col-xs-12
-            post-container">
-            <h1>Building a LiveView app using AI - Part 16</h1>
+            post-container
+        ">
+            
+<div data-pagefind-ignore="all">
+
+<div class="post-preview">
+    <a href="http://localhost:1313/post/hello-world-again/">
+        <h2 class="post-title">
+            Hello world (again eh)!
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <h2 id="im-back">I&rsquo;m back</h2>
+<p>It has been a while since I&rsquo;ve blogged. I had a blog named CheezyWorld.com
+for many years but stopped posting more than 12 years ago. At the time I was traveling for work as well as traveling around the world to speak at conferences. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Friday, September 26, 2025
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+</div>
 
             
-                <h2 id="a-million-small-things---on-to-version-10">A million small things - on to Version 1.0</h2>
-<p>This is the final post in this series. There were many things that needed to be done that were not on the original plan so I worked with my trusty AI tools to complete them. This post simply lists them and provides a some details where I thought it was interesting.</p>
-<p>Do not worry about this being the end of the series. See the What&rsquo;s Next section at the bottom of this post to see where this is all going. What&rsquo;s next is very exciting and I hope you stay with me on this.</p>
-<h3 id="the-list">The List</h3>
-<ul>
-<li>
-<p>Updated the text when adding a user to a board from &ldquo;Add with Modify Access&rdquo; to &ldquo;Add with Edit Access&rdquo; and the Board Card for users from &ldquo;Can Modify&rdquo; to &ldquo;Can Edit&rdquo;.</p>
-</li>
-<li>
-<p>Added translations for the following languages:</p>
-<p>
-  <img src="/img/language_selector.png" alt="Language Selector">
 
-</p>
-<p>I am unsure if the translations are correct but there is a way for you to submit corrections and I will turn them around quickly. See below for how to do that. I also updated my <code>AGENTS.md</code> file to have it provide all translations for changes in the future.</p>
-</li>
-<li>
-<p>Added the <a href="https://hex.pm/packages/error_tracker">Error Tracker</a> hex package to make it easy to see errors that occurr in production and have a way to understand what has been resolved and what hasn&rsquo;t.</p>
-</li>
-<li>
-<p>Updated the column edit/delete links so they only show when you hover over the column header. This is simular behaviour to tasks and I think it improved the user experience.</p>
-</li>
-<li>
-<p>Updated to add a Task History when a task priority changes.</p>
-</li>
-<li>
-<p>Updated to add a Task History when a person is assigned to an existing task or when the person assigned changes.</p>
-</li>
-<li>
-<p>Updated to use the users name instead of their email in Task History.</p>
-</li>
-<li>
-<p>Added a form to the About page for users to easily submit issues they find with the system. This form creates issues in the github issues tracker. Also added a link so users can go see what issues are currently open.</p>
-</li>
-<li>
-<p>Created my production environment, pipeline updates, and Dockerfile. Production is live.</p>
-</li>
-<li>
-<p>Updated password edit fields so they have an eye icon to show/hide the password.</p>
-<p>
-  <img src="/img/password_field.png" alt="Password fields">
 
-</p>
-</li>
-<li>
-<p>Added a page to describe my company - purly marketing on my part. You can access it from the About page.</p>
-</li>
-<li>
-<p>Added a green highlight to tasks that belong to the signed in user. This makes it easy to see the tasks that are assigned to you.</p>
-<p>
-  <img src="/img/green_task_highlight.png" alt="Task Highlight">
-
-</p>
-</li>
-<li>
-<p>Added a yellow highlight to tasks that are not currently assigned to a user. This makes it easy to see tasks that are not assigned.</p>
-<p>
-  <img src="/img/yellow_task_highlight.png" alt="Task Highlight">
-
-</p>
-</li>
-<li>
-<p>Added telemetry to capture events like users registering, boards and tasks being created, etc. This information will show up in reports and make it easy for me to understand how users are using the system.</p>
-</li>
-<li>
-<p>Used TideWave to address all Accessibility issues.</p>
-</li>
-<li>
-<p>Added an Acceptance Criteria field to Tasks.</p>
-</li>
-<li>
-<p>Updated the Project README to not only show what is currently in the system but to also list what is planned.</p>
-</li>
-<li>
-<p>Updated system to automatically show updates across all users on a board. When one user moves or updates a task, all users see the change.</p>
-</li>
-<li>
-<p>Added a CHANGELOG.md file to the project. Also added a ChangeLog page to the application that can be viewed from the About page. Please keep an eye here as there are a lot of updates coming.</p>
-</li>
-<li>
-<p>Added &ldquo;forgot password&rdquo; functionality to the application.</p>
-</li>
+<ul class="pager" data-pagefind-ignore="all">
+    
+    <li class="previous">
+        <a href="/tags/ai/page/4/">&larr; Newer Posts</a>
+    </li>
+    
+    
 </ul>
-<h3 id="version-10">Version 1.0</h3>
-<p>We are live. We named the application Stride and have the URL <a href="https://StrideLikeABoss.com">https://StrideLikeABoss.com</a>. Please check out the application and let me know if you find any issues. There wil be a lot of updates to the application over the coming weeks.</p>
-<h2 id="whats-next">What&rsquo;s next?</h2>
-<p>I started this project over three months ago with the goal to really understand AI and Vibe Coding. I have learned a lot and have passed what I have learned on to my clients. The potential is mind-blowing but there are issues that arrise when you try to scale this to a team. One of the issues is that it becomes difficult to maintain a backlog of work that can stay ahead of the agents. They are able to work too fast. Another issue is that the way we typically document tasks (user stories) is not really ideal for AI. I have been experimenting a lot on these two issues and over time I will evolve Stride to address them.  Stay tuned!</p>
-
-            
-             
-            
 
 
-
-
-            
-            </div>
-            
-            
+       	</div>
+        
 
 <div class="
     col-lg-3 col-lg-offset-0
@@ -473,9 +417,9 @@
     
 </div>
 
-        </div>
-    </div>
-</article>
+	</div>
+</div>
+
 
 
 
@@ -535,7 +479,7 @@
             
            
                    <li>
-                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                       <a href='/tags/ai/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

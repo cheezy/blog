@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/ai/</loc>
-    <lastmod>2025-12-17T08:23:02-05:00</lastmod>
+    <loc>http://localhost:1313/tags/agile/</loc>
+    <lastmod>2025-12-19T08:32:51-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/ai-kanban-part16/</loc>
-    <lastmod>2025-12-17T08:23:02-05:00</lastmod>
+    <loc>http://localhost:1313/tags/ai/</loc>
+    <lastmod>2025-12-19T08:32:51-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-12-19T08:32:51-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/continuous-delivery/</loc>
+    <lastmod>2025-12-19T08:32:51-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2025-12-19T08:32:51-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/stride-next/</loc>
+    <lastmod>2025-12-19T08:32:51-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-12-19T08:32:51-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/ai-kanban-part16/</loc>
     <lastmod>2025-12-17T08:23:02-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/elixir/</loc>
@@ -19,18 +34,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/phoenix/</loc>
     <lastmod>2025-12-17T08:23:02-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2025-12-17T08:23:02-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-12-17T08:23:02-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/agile/</loc>
-    <lastmod>2025-12-15T06:38:22-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/continuous-delivery/</loc>
-    <lastmod>2025-12-15T06:38:22-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/ai-tensions/</loc>
     <lastmod>2025-12-15T06:38:22-05:00</lastmod>
