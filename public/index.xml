@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jan 2026 09:03:25 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 06 Jan 2026 08:05:52 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Stride Workflow</title>
+      <link>http://localhost:1313/post/stride_workflow/</link>
+      <pubDate>Tue, 06 Jan 2026 08:05:52 -0500</pubDate>
+      <guid>http://localhost:1313/post/stride_workflow/</guid>
+      <description>&lt;h2 id=&#34;how-do-i-work-with-stride-to-get-work-done&#34;&gt;How do I work with Stride to get work done?&lt;/h2&gt;&#xA;&lt;p&gt;It starts with a Backlog - a list of Tasks in the Backlog column. If you are not sure how to build out your backlog, check out the &lt;a href=&#34;http://localhost:1313/post/getting_started_with_stride/&#34;&gt;Getting Started with Stride&lt;/a&gt; post.&lt;/p&gt;&#xA;&lt;p&gt;Once you have some tasks in your backlog that are ready to be worked on, you can move them to the &amp;ldquo;Ready&amp;rdquo; column. This is where Stride will look for work to assign to agents. This is where the human lets go for a while to let the agents work.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Getting Started with Stride</title>
       <link>http://localhost:1313/post/getting_started_with_stride/</link>

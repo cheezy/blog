@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Building a LiveView app using AI - Part 16" />
-    <meta property="og:title" content="Building a LiveView app using AI - Part 16" />
-    <meta property="twitter:title" content="Building a LiveView app using AI - Part 16" />
+    <meta name="title" content="The Stride Workflow" />
+    <meta property="og:title" content="The Stride Workflow" />
+    <meta property="twitter:title" content="The Stride Workflow" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/ai-kanban-part16/" />
+    <meta property="og:url" content="http://localhost:1313/post/stride_workflow/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Building a LiveView app using AI - Part 16 | Cheezy&#39;s Blog</title>
+    <title>The Stride Workflow | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/ai-kanban-part16/">
+    <link rel="canonical" href="/post/stride_workflow/">
 
     
 
@@ -181,96 +181,151 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>Building a LiveView app using AI - Part 16</h1>
+            <h1>The Stride Workflow</h1>
 
             
-                <h2 id="a-million-small-things---on-to-version-10">A million small things - on to Version 1.0</h2>
-<p>This is the final post in this series. There were many things that needed to be done that were not on the original plan so I worked with my trusty AI tools to complete them. This post simply lists them and provides a some details where I thought it was interesting.</p>
-<p>Do not worry about this being the end of the series. See the What&rsquo;s Next section at the bottom of this post to see where this is all going. What&rsquo;s next is very exciting and I hope you stay with me on this.</p>
-<h3 id="the-list">The List</h3>
+                <h2 id="how-do-i-work-with-stride-to-get-work-done">How do I work with Stride to get work done?</h2>
+<p>It starts with a Backlog - a list of Tasks in the Backlog column. If you are not sure how to build out your backlog, check out the <a href="/post/getting_started_with_stride/">Getting Started with Stride</a> post.</p>
+<p>Once you have some tasks in your backlog that are ready to be worked on, you can move them to the &ldquo;Ready&rdquo; column. This is where Stride will look for work to assign to agents. This is where the human lets go for a while to let the agents work.</p>
+<h3 id="the-ai-workflow">The AI Workflow</h3>
+<p>You can start the workflow by simply asking your agile to work on the next task in Stride. This is what happens:</p>
+<ol>
+<li>
+<p>The Agent discovers the next task available for work - Call GET /api/tasks/next to find available tasks</p>
+</li>
+<li>
+<p>The Agent can claim a task - Call POST /api/tasks/claim</p>
 <ul>
-<li>
-<p>Updated the text when adding a user to a board from &ldquo;Add with Modify Access&rdquo; to &ldquo;Add with Edit Access&rdquo; and the Board Card for users from &ldquo;Can Modify&rdquo; to &ldquo;Can Edit&rdquo;.</p>
+<li>Receives before_doing hook metadata</li>
+<li>Task moves to Doing column</li>
+</ul>
 </li>
 <li>
-<p>Added translations for the following languages:</p>
-<p>
-  <img src="/img/language_selector.png" alt="Language Selector">
-
-</p>
-<p>I am unsure if the translations are correct but there is a way for you to submit corrections and I will turn them around quickly. See below for how to do that. I also updated my <code>AGENTS.md</code> file to have it provide all translations for changes in the future.</p>
+<p>The Agent executes the before_doing hook (blocking, 60s timeout)</p>
+<ul>
+<li>Example: Pull latest code, setup workspace</li>
+</ul>
 </li>
 <li>
-<p>Added the <a href="https://hex.pm/packages/error_tracker">Error Tracker</a> hex package to make it easy to see errors that occurr in production and have a way to understand what has been resolved and what hasn&rsquo;t.</p>
+<p>The Agent works on the task - Implement changes, write code, run tests</p>
+<ul>
+<li>Do the actual implementation work</li>
+<li>Write tests, fix bugs, add features</li>
+</ul>
 </li>
 <li>
-<p>Updated the column edit/delete links so they only show when you hover over the column header. This is simular behaviour to tasks and I think it improved the user experience.</p>
+<p>The Agent executes the after_doing hook (blocking, 120s timeout)</p>
+<ul>
+<li>Example: Run tests, build project, lint code</li>
+<li>If this fails the Agent attempts to fix the issues</li>
+<li>This validates your work is ready for completion</li>
+</ul>
 </li>
 <li>
-<p>Updated to add a Task History when a task priority changes.</p>
+<p>The Agent completes the task - Call PATCH /api/tasks/:id/complete</p>
+<ul>
+<li>Receives before_review and optionally after_review hooks in response</li>
+<li>Task moves to Review column (or Done if needs_review=false)</li>
+</ul>
 </li>
 <li>
-<p>Updated to add a Task History when a person is assigned to an existing task or when the person assigned changes.</p>
+<p>Execute before_review hook (non-blocking, 60s timeout)</p>
+<ul>
+<li>Example: Create PR, generate documentation</li>
+<li>Execute this after /complete succeeds</li>
+</ul>
 </li>
 <li>
-<p>Updated to use the users name instead of their email in Task History.</p>
+<p>The Agent Stops Here if needs_review=true</p>
+<ul>
+<li>It does not execute after_review hook yet!</li>
+<li>It waits for human reviewer to approve/reject the task</li>
+<li>Human reviewer sets review_status through the UI or API</li>
+<li>The process proceeds to step 9 only when notified of approval by Human</li>
+</ul>
 </li>
 <li>
-<p>Added a form to the About page for users to easily submit issues they find with the system. This form creates issues in the github issues tracker. Also added a link so users can go see what issues are currently open.</p>
+<p>The Agent finalizes the review - Call PATCH /api/tasks/:id/mark_reviewed</p>
+<ul>
+<li>This is called after receiving human approval (if needs_review=true)</li>
+<li>Or called immediately after step 7 (if needs_review=false)</li>
+<li>If approved: receives after_review hook, task moves to Done</li>
+<li>If changes requested: task returns to Doing, repeat from step 4</li>
+</ul>
 </li>
 <li>
-<p>Created my production environment, pipeline updates, and Dockerfile. Production is live.</p>
+<p>The Agent executes the after_review hook (non-blocking, 60s timeout)</p>
+<ul>
+<li>Example: Deploy to production, notify stakeholders</li>
+<li>This executes ONLY after /mark_reviewed returns approved status</li>
+<li>Or executes immediately after step 7 if needs_review=false</li>
+</ul>
 </li>
 <li>
-<p>Updated password edit fields so they have an eye icon to show/hide the password.</p>
-<p>
-  <img src="/img/password_field.png" alt="Password fields">
-
-</p>
+<p>Dependencies automatically unblock - Next tasks become available</p>
+</li>
+</ol>
+<p>This may seem like a very long complex workflow but you will be amazed at how fast the Agents will complete tasks! Also, the workflow is designed to allow the Human to control how things progress. The <a href="https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md">Hooks</a> allow the developer to specify what happens at critical points in the workflow. Also, specifying that a Task needs review allows the Human to review all of the work performed by an Agent before having it move on to the next Task.</p>
+<h3 id="deciding-whats-next">Deciding What&rsquo;s Next</h3>
+<p>Making decisions on what tasks to work on next is part of the magic of Stride. At first this process might seem complex but it is designed to allow work to flow smoothly and avoid conflicts that might arrise. Here are the steps Stride takes to decide what task to offer an Agent:</p>
+<ol>
+<li>
+<p>Only tasks in the &ldquo;Ready&rdquo; column are considered</p>
 </li>
 <li>
-<p>Added a page to describe my company - purly marketing on my part. You can access it from the About page.</p>
-</li>
-<li>
-<p>Added a green highlight to tasks that belong to the signed in user. This makes it easy to see the tasks that are assigned to you.</p>
-<p>
-  <img src="/img/green_task_highlight.png" alt="Task Highlight">
-
-</p>
-</li>
-<li>
-<p>Added a yellow highlight to tasks that are not currently assigned to a user. This makes it easy to see tasks that are not assigned.</p>
-<p>
-  <img src="/img/yellow_task_highlight.png" alt="Task Highlight">
-
-</p>
-</li>
-<li>
-<p>Added telemetry to capture events like users registering, boards and tasks being created, etc. This information will show up in reports and make it easy for me to understand how users are using the system.</p>
-</li>
-<li>
-<p>Used TideWave to address all Accessibility issues.</p>
-</li>
-<li>
-<p>Added an Acceptance Criteria field to Tasks.</p>
-</li>
-<li>
-<p>Updated the Project README to not only show what is currently in the system but to also list what is planned.</p>
-</li>
-<li>
-<p>Updated system to automatically show updates across all users on a board. When one user moves or updates a task, all users see the change.</p>
-</li>
-<li>
-<p>Added a CHANGELOG.md file to the project. Also added a ChangeLog page to the application that can be viewed from the About page. Please keep an eye here as there are a lot of updates coming.</p>
-</li>
-<li>
-<p>Added &ldquo;forgot password&rdquo; functionality to the application.</p>
+<p>Status Filtering</p>
+<ul>
+<li>Task status must be either:
+<ul>
+<li>:open (never claimed), OR</li>
+<li>:in_progress with an expired claim (claim_expires_at &lt; now)</li>
+</ul>
 </li>
 </ul>
-<h3 id="version-10">Version 1.0</h3>
-<p>We are live. We named the application Stride and have the URL <a href="https://StrideLikeABoss.com">https://StrideLikeABoss.com</a>. Please check out the application and let me know if you find any issues. There wil be a lot of updates to the application over the coming weeks.</p>
-<h2 id="whats-next">What&rsquo;s next?</h2>
-<p>I started this project over three months ago with the goal to really understand AI and Vibe Coding. I have learned a lot and have passed what I have learned on to my clients. The potential is mind-blowing but there are issues that arrise when you try to scale this to a team. One of the issues is that it becomes difficult to maintain a backlog of work that can stay ahead of the agents. They are able to work too fast. Another issue is that the way we typically document tasks (user stories) is not really ideal for AI. I have been experimenting a lot on these two issues and over time I will evolve Stride to address them.  Stay tuned!</p>
+</li>
+<li>
+<p><a href="https://github.com/cheezy/kanban/blob/main/docs/AGENT-CAPABILITIES.md">Capability</a> Matching</p>
+<ul>
+<li>The task&rsquo;s required_capabilities must match the agent&rsquo;s capabilities</li>
+<li>Logic: Either the task has NO required capabilities, OR the agent&rsquo;s capabilities include ALL of the task&rsquo;s required capabilities</li>
+</ul>
+</li>
+<li>
+<p>Dependency Checking</p>
+<ul>
+<li>The task&rsquo;s dependencies must be satisfied</li>
+<li>Logic: Either the task has NO dependencies, OR ALL dependency tasks are completed</li>
+</ul>
+</li>
+<li>
+<p>Key File Conflict Detection - When an Agent creates tasks it adds the files it expects to change in the course of the work. This information is used for this step.</p>
+<ul>
+<li>Checks for file conflicts with tasks currently in &ldquo;Doing&rdquo; or &ldquo;Review&rdquo; columns</li>
+<li>If the task has key_files, ensures none of those files are being worked on by other in-progress tasks</li>
+<li>This prevents multiple agents from working on the same files simultaneously</li>
+</ul>
+</li>
+<li>
+<p>Sorting Priority</p>
+<ul>
+<li>Tasks are ordered by:
+<ul>
+<li>Priority (descending: Critical &gt; High &gt; Medium &gt; Low)</li>
+<li>Position in the Ready column (ascending: top of column first)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="summary">Summary</h4>
+<p>The claim endpoint prioritizes tasks by priority first, then position, while ensuring:</p>
+<ul>
+<li>The Agent has the required capabilities</li>
+<li>All dependencies are complete</li>
+<li>No file conflicts with in-progress work</li>
+<li>The task is available (not currently claimed or claim has expired)</li>
+</ul>
+<p>This ensures agents get the most important, ready-to-work task that they&rsquo;re capable of handling and won&rsquo;t create conflicts with other ongoing work.</p>
 
             
              
@@ -350,18 +405,6 @@
                
                     <a href="/tags/software-development" title="software development">
                         software development
-                    </a>
-               
-            
-               
-                    <a href="/tags/tag1" title="tag1">
-                        tag1
-                    </a>
-               
-            
-               
-                    <a href="/tags/tag2" title="tag2">
-                        tag2
                     </a>
                
             
@@ -470,6 +513,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride_workflow/">The Stride Workflow</a></li>
+        
             <li><a href="/post/getting_started_with_stride/">Getting Started with Stride</a></li>
         
             <li><a href="/post/stride-next/">Stride goes full AI</a></li>
@@ -477,8 +522,6 @@
             <li><a href="/post/ai-kanban-part16/">Building a LiveView app using AI - Part 16</a></li>
         
             <li><a href="/post/ai-tensions/">Tensions with AI</a></li>
-        
-            <li><a href="/post/ai-kanban-part15/">Building a LiveView app using AI - Part 15</a></li>
         
         </ul>
     </section>
