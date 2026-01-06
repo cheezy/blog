@@ -15,8 +15,9 @@ Once you have some tasks in your backlog that are ready to be worked on, you can
 
 You can start the workflow by simply asking your agile to work on the next task in Stride. This is what happens:
 
-1. The Agent discovers the next task available for work - Call GET /api/tasks/next to find available tasks
-2. The Agent can claim a task - Call POST /api/tasks/claim
+1. The Agent [discovers the next task](https://github.com/cheezy/kanban/blob/main/docs/api/get_tasks_next.md) available for work - Call GET /api/tasks/next to find available tasks
+
+2. The Agent can [claim the task](https://github.com/cheezy/kanban/blob/main/docs/api/post_tasks_claim.md) - Call POST /api/tasks/claim
 
    - Receives before_doing hook metadata
    - Task moves to Doing column
@@ -36,7 +37,7 @@ You can start the workflow by simply asking your agile to work on the next task 
     - If this fails the Agent attempts to fix the issues
     - This validates your work is ready for completion
 
-6. The Agent completes the task - Call PATCH /api/tasks/:id/complete
+6. The Agent [completes the task](https://github.com/cheezy/kanban/blob/main/docs/api/patch_tasks_id_complete.md) - Call PATCH /api/tasks/:id/complete
 
     - Receives before_review and optionally after_review hooks in response
     - Task moves to Review column (or Done if needs_review=false)
@@ -53,7 +54,7 @@ You can start the workflow by simply asking your agile to work on the next task 
     - Human reviewer sets review_status through the UI or API
     - The process proceeds to step 9 only when notified of approval by Human
 
-9. The Agent finalizes the review - Call PATCH /api/tasks/:id/mark_reviewed
+9. The Agent [finalizes the review](https://github.com/cheezy/kanban/blob/main/docs/api/patch_tasks_id_mark_reviewed.md) - Call PATCH /api/tasks/:id/mark_reviewed
 
     - This is called after receiving human approval (if needs_review=true)
     - Or called immediately after step 7 (if needs_review=false)

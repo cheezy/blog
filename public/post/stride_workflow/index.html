@@ -191,10 +191,10 @@
 <p>You can start the workflow by simply asking your agile to work on the next task in Stride. This is what happens:</p>
 <ol>
 <li>
-<p>The Agent discovers the next task available for work - Call GET /api/tasks/next to find available tasks</p>
+<p>The Agent <a href="https://github.com/cheezy/kanban/blob/main/docs/api/get_tasks_next.md">discovers the next task</a> available for work - Call GET /api/tasks/next to find available tasks</p>
 </li>
 <li>
-<p>The Agent can claim a task - Call POST /api/tasks/claim</p>
+<p>The Agent can <a href="https://github.com/cheezy/kanban/blob/main/docs/api/post_tasks_claim.md">claim the task</a> - Call POST /api/tasks/claim</p>
 <ul>
 <li>Receives before_doing hook metadata</li>
 <li>Task moves to Doing column</li>
@@ -222,7 +222,7 @@
 </ul>
 </li>
 <li>
-<p>The Agent completes the task - Call PATCH /api/tasks/:id/complete</p>
+<p>The Agent <a href="https://github.com/cheezy/kanban/blob/main/docs/api/patch_tasks_id_complete.md">completes the task</a> - Call PATCH /api/tasks/:id/complete</p>
 <ul>
 <li>Receives before_review and optionally after_review hooks in response</li>
 <li>Task moves to Review column (or Done if needs_review=false)</li>
@@ -245,7 +245,7 @@
 </ul>
 </li>
 <li>
-<p>The Agent finalizes the review - Call PATCH /api/tasks/:id/mark_reviewed</p>
+<p>The Agent <a href="https://github.com/cheezy/kanban/blob/main/docs/api/patch_tasks_id_mark_reviewed.md">finalizes the review</a> - Call PATCH /api/tasks/:id/mark_reviewed</p>
 <ul>
 <li>This is called after receiving human approval (if needs_review=true)</li>
 <li>Or called immediately after step 7 (if needs_review=false)</li>
