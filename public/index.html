@@ -194,9 +194,14 @@
 	
         <div class="post-content-preview">
 	
-            <h2 id="how-do-i-work-with-stride-to-get-work-done">How do I work with Stride to get work done?</h2>
-<p>It starts with a Backlog - a list of Tasks in the Backlog column. If you are not sure how to build out your backlog, check out the <a href="/post/getting_started_with_stride/">Getting Started with Stride</a> post.</p>
-<p>Once you have some tasks in your backlog that are ready to be worked on, you can move them to the &ldquo;Ready&rdquo; column. This is where Stride will look for work to assign to agents. This is where the human lets go for a while to let the agents work.</p>
+            <h2 id="how-do-humas-collaborate-with-ai">How do Humas collaborate with AI?</h2>
+<p>When I started to make Stride a Human-AI collaboration tool I spent some time thinking about when and how Humans would want to interject themselves into the worflow. I came up with three points:</p>
+<ol>
+<li>Humans might want to look at a set of Tasks before AI worked on them. This way they could make adjustments to the Tasks or provide additional context.</li>
+<li>Humans might want to specify that certain things happen at different points in the worflow. For example, before starting a new Task the Agent should ensure they are working on the latest code. This is done through <a href="https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md">hooks</a>.</li>
+<li>In some cases Humans will want to look at the work completed by an Agent before it moves on to the next Task. You would specify which ones you want to review during the backlog refinement process.</li>
+</ol>
+<p>The workflow that emerged from this thinking is what is embodied in the Stride Workflow.</p>
        
         </div>
     </a>

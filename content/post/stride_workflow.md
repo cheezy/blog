@@ -5,77 +5,86 @@ title: 'The Stride Workflow'
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 
-## How do I work with Stride to get work done?
+## How do Humas collaborate with AI?
 
-It starts with a Backlog - a list of Tasks in the Backlog column. If you are not sure how to build out your backlog, check out the [Getting Started with Stride](/post/getting_started_with_stride/) post.
+When I started to make Stride a Human-AI collaboration tool I spent some time thinking about when and how Humans would want to interject themselves into the worflow. I came up with three points:
 
-Once you have some tasks in your backlog that are ready to be worked on, you can move them to the "Ready" column. This is where Stride will look for work to assign to agents. This is where the human lets go for a while to let the agents work.
+1. Humans might want to look at a set of Tasks before AI worked on them. This way they could make adjustments to the Tasks or provide additional context.
+2. Humans might want to specify that certain things happen at different points in the worflow. For example, before starting a new Task the Agent should ensure they are working on the latest code. This is done through [hooks](https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md).
+3. In some cases Humans will want to look at the work completed by an Agent before it moves on to the next Task. You would specify which ones you want to review during the backlog refinement process.
+
+The workflow that emerged from this thinking is what is embodied in the Stride Workflow.
+
+## What is the Stride Workflow and how do I work with Stride to complete Tasks?
+
+It starts with a Backlog - a list of Tasks in the Backlog column. If you are not sure how to build out your backlog, check out the [Getting Started with Stride](/post/getting_started_with_stride/) post. You should work with the Agent continuously refining Tasks. An important part of reviewing the Tasks is deciding which Tasks you want to _review_ after the Agent completes them. You identify these Tasks by checking the Needs Review checkbox.
+
+![Needs Review Checkbox](/img/needs_review.png)
+
+Once you have some Tasks in your backlog that are ready to be worked on, you can move them to the "Ready" column. This is where Stride will look for work to assign to Agents. This is where the human lets go for a while to let the Agents work.
 
 ### The AI Workflow
 
-You can start the workflow by simply asking your agile to work on the next task in Stride. This is what happens:
+You can start the workflow by simply asking your agile to work on the next Task in Stride. This is what happens:
 
-1. The Agent [discovers the next task](https://github.com/cheezy/kanban/blob/main/docs/api/get_tasks_next.md) available for work - Call GET /api/tasks/next to find available tasks
+1. The Agent [discovers the next Task](https://github.com/cheezy/kanban/blob/main/docs/api/get_tasks_next.md) available for work
 
-2. The Agent can [claim the task](https://github.com/cheezy/kanban/blob/main/docs/api/post_tasks_claim.md) - Call POST /api/tasks/claim
+2. The Agent can [claim the Task](https://github.com/cheezy/kanban/blob/main/docs/api/post_tasks_claim.md)
 
-   - Receives before_doing hook metadata
+   - Agent receives the `before_doing` hook metadata
    - Task moves to Doing column
 
-3. The Agent executes the before_doing hook (blocking, 60s timeout)
+3. The Agent executes the `before_doing` hook (blocking, 60s timeout)
 
     - Example: Pull latest code, setup workspace
 
-4. The Agent works on the task - Implement changes, write code, run tests
+4. The Agent works on the Task - Implement changes, write code, run tests
 
-    - Do the actual implementation work
-    - Write tests, fix bugs, add features
+5. The Agent executes the `after_doing` hook (blocking, 120s timeout)
 
-5. The Agent executes the after_doing hook (blocking, 120s timeout)
-
-    - Example: Run tests, build project, lint code
+    - Example: Run tests, static code analysis, lint code
     - If this fails the Agent attempts to fix the issues
     - This validates your work is ready for completion
 
-6. The Agent [completes the task](https://github.com/cheezy/kanban/blob/main/docs/api/patch_tasks_id_complete.md) - Call PATCH /api/tasks/:id/complete
+6. The Agent [completes the Task](https://github.com/cheezy/kanban/blob/main/docs/api/patch_tasks_id_complete.md)
 
-    - Receives before_review and optionally after_review hooks in response
+    - The Agent receives the `before_review` and optionally `after_review` hooks in response
     - Task moves to Review column (or Done if needs_review=false)
 
-7. Execute before_review hook (non-blocking, 60s timeout)
+7. The Agent executes the `before_review` hook (non-blocking, 60s timeout)
 
     - Example: Create PR, generate documentation
     - Execute this after /complete succeeds
 
 8. The Agent Stops Here if needs_review=true
 
-    - It does not execute after_review hook yet!
-    - It waits for human reviewer to approve/reject the task
+    - It does not execute `after_review` hook yet!
+    - It waits for human reviewer to approve or reject the Task
     - Human reviewer sets review_status through the UI or API
     - The process proceeds to step 9 only when notified of approval by Human
 
-9. The Agent [finalizes the review](https://github.com/cheezy/kanban/blob/main/docs/api/patch_tasks_id_mark_reviewed.md) - Call PATCH /api/tasks/:id/mark_reviewed
+9. The Agent [finalizes the review](https://github.com/cheezy/kanban/blob/main/docs/api/patch_tasks_id_mark_reviewed.md)
 
-    - This is called after receiving human approval (if needs_review=true)
-    - Or called immediately after step 7 (if needs_review=false)
-    - If approved: receives after_review hook, task moves to Done
-    - If changes requested: task returns to Doing, repeat from step 4
+    - This happens after the Agent receives human approval (if needs_review=true)
+    - Or it is called immediately after step 7 (if needs_review=false)
+    - If approved: the Agent receives `after_review` hook, Task moves to Done column
+    - If changes requested: Task returns to Doing column, repeat from step 4
 
-10. The Agent executes the after_review hook (non-blocking, 60s timeout)
+10. The Agent executes the `after_review` hook (non-blocking, 60s timeout)
 
     - Example: Deploy to production, notify stakeholders
     - This executes ONLY after /mark_reviewed returns approved status
     - Or executes immediately after step 7 if needs_review=false
 
-11. Dependencies automatically unblock - Next tasks become available
+11. Dependencies automatically unblock - Next Tasks become available
 
-This may seem like a very long complex workflow but you will be amazed at how fast the Agents will complete tasks! Also, the workflow is designed to allow the Human to control how things progress. The [Hooks](https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md) allow the developer to specify what happens at critical points in the workflow. Also, specifying that a Task needs review allows the Human to review all of the work performed by an Agent before having it move on to the next Task.
+This may seem like a very long workflow but most of these steps happen very quickly. Also, the workflow is designed to allow the Human to control how things progress. The [Hooks](https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md) allow the developer to specify what happens at critical points in the workflow. Also, specifying that a Task needs review allows the Human to review all of the work performed by an Agent before having it move on to the next Task.
 
 ### Deciding What's Next
 
-Making decisions on what tasks to work on next is part of the magic of Stride. At first this process might seem complex but it is designed to allow work to flow smoothly and avoid conflicts that might arrise. Here are the steps Stride takes to decide what task to offer an Agent:
+Making decisions on what Tasks to work on next is part of the magic of Stride. At first this process might seem complex but it is designed to allow work to flow smoothly and avoid conflicts that might arise. Here are the steps Stride takes to decide what Task to offer an Agent:
 
-1. Only tasks in the "Ready" column are considered
+1. Only Tasks in the "Ready" column are considered
 
 2. Status Filtering
 
@@ -85,19 +94,19 @@ Making decisions on what tasks to work on next is part of the magic of Stride. A
 
 3. [Capability](https://github.com/cheezy/kanban/blob/main/docs/AGENT-CAPABILITIES.md) Matching
 
-    - The task's required_capabilities must match the agent's capabilities
-    - Logic: Either the task has NO required capabilities, OR the agent's capabilities include ALL of the task's required capabilities
+    - The Task's required_capabilities must match the Agent's capabilities
+    - Logic: Either the Task has NO required capabilities, OR the Agent's capabilities include ALL of the Task's required capabilities
 
 4. Dependency Checking
 
-    - The task's dependencies must be satisfied
-    - Logic: Either the task has NO dependencies, OR ALL dependency tasks are completed
+    - The Task's dependencies must be satisfied
+    - Logic: Either the Task has NO dependencies, OR ALL dependency Tasks are completed
 
-5. Key File Conflict Detection - When an Agent creates tasks it adds the files it expects to change in the course of the work. This information is used for this step.
+5. Key File Conflict Detection - When an Agent creates Tasks it adds the files it expects to change in the course of the work. This information is used for this step.
 
-    - Checks for file conflicts with tasks currently in "Doing" or "Review" columns
-    - If the task has key_files, ensures none of those files are being worked on by other in-progress tasks
-    - This prevents multiple agents from working on the same files simultaneously
+    - Checks for file conflicts with Tasks currently in "Doing" or "Review" columns
+    - If the Task has key_files, ensures none of those files are being worked on by other in-progress Tasks
+    - This prevents multiple Agents from working on the same files simultaneously
 
 6. Sorting Priority
 
@@ -107,11 +116,11 @@ Making decisions on what tasks to work on next is part of the magic of Stride. A
 
 #### Summary
 
-The claim endpoint prioritizes tasks by priority first, then position, while ensuring:
+The claim endpoint prioritizes Tasks by priority first, then position, while ensuring:
 
 - The Agent has the required capabilities
 - All dependencies are complete
 - No file conflicts with in-progress work
-- The task is available (not currently claimed or claim has expired)
+- The Task is available (not currently claimed or claim has expired)
 
-This ensures agents get the most important, ready-to-work task that they're capable of handling and won't create conflicts with other ongoing work.
+This ensures Agents get the most important, ready-to-work Task that they're capable of handling and won't create conflicts with other ongoing work.
