@@ -206,8 +206,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">DEBIAN_VERSION</span><span style="color:#ff79c6">=</span>trixie-20251103-slim
 </span></span></code></pre></div><p>When I pushed this code the pipeline failed complaining about a missing package: <code>Unable to locate package libncurses5</code>. After a little research I learned that this is an older version of the library and newer version of debian no long use that. I had to make one additional change to my Dockerfile:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">RUN</span> apt-get update <span style="color:#f1fa8c">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f1fa8c"></span>  <span style="color:#ff79c6">&amp;&amp;</span> apt-get install -y --no-install-recommends libstdc++6 openssl libncurses6 locales ca-certificates <span style="color:#f1fa8c">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f1fa8c"></span>  <span style="color:#ff79c6">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#ff79c6">&amp;&amp;</span> apt-get install -y --no-install-recommends libstdc++6 openssl libncurses6 locales ca-certificates <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#ff79c6">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
 </span></span></code></pre></div><p>Notice on line 2 that I updated the library to use <code>libncurses6</code>. With this change everything worked and the pipeline passed.</p>
 
             
@@ -396,6 +396,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/getting_started_with_stride/">Getting Started with Stride</a></li>
+        
             <li><a href="/post/stride-next/">Stride goes full AI</a></li>
         
             <li><a href="/post/ai-kanban-part16/">Building a LiveView app using AI - Part 16</a></li>
@@ -403,8 +405,6 @@
             <li><a href="/post/ai-tensions/">Tensions with AI</a></li>
         
             <li><a href="/post/ai-kanban-part15/">Building a LiveView app using AI - Part 15</a></li>
-        
-            <li><a href="/post/ai-kanban-part14/">Building a LiveView app using AI - Part 14</a></li>
         
         </ul>
     </section>
@@ -483,7 +483,7 @@
             
              </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; Cheezy World 2025
+                    Copyright &copy; Cheezy World 2026
                     
                 </p>
             </div>
