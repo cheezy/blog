@@ -5,7 +5,7 @@ title: 'The Stride Workflow'
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 
-## How do Humas collaborate with AI?
+## How do Humans collaborate with AI?
 
 When I started to make Stride a Human-AI collaboration tool I spent some time thinking about when and how Humans would want to interject themselves into the worflow. I came up with three points:
 
