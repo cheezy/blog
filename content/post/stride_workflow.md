@@ -7,11 +7,11 @@ tags: ["AI", "Agile", "Continuous Delivery"]
 
 ## How do Humans collaborate with AI?
 
-When I started to make Stride a Human-AI collaboration tool I spent some time thinking about when and how Humans would want to interject themselves into the worflow. I came up with three points:
+When I started to make Stride a Human-AI collaboration tool I spent some time thinking about when and how Humans would want to interject themselves into the worflow. Those of you that know me know that I have spent a significant portion of my life helping teams optimize their work and achieve better flow. With AI in the mix it causes us to rethink some of what helps us achieve that flow. We have to be realistic about what Humans do best (at this time) and what AI does best and find a way to optimize around these things. At the same time, many Humans are not comfortable (at this time) with letting AI take over completely and they want to be involved in the process. This is what I came up with:
 
 1. Humans might want to look at a set of Tasks before AI worked on them. This way they could make adjustments to the Tasks or provide additional context.
-2. Humans might want to specify that certain things happen at different points in the worflow. For example, before starting a new Task the Agent should ensure they are working on the latest code. This is done through [hooks](https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md).
-3. In some cases Humans will want to look at the work completed by an Agent before it moves on to the next Task. You would specify which ones you want to review during the backlog refinement process.
+2. Humans might want to specify that certain things happen at different points in the worflow. For example, before starting a new Task the Agent should ensure they are working on the latest code or when an Agent finishes a Task they should run certain quality and security checks. This is done through [hooks](https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md).
+3. In some cases Humans will want to look at the work completed by an Agent before the Agent moves on to the next Task so they can make adjustments or provide feedback. The Human would specify which Tasks they want to review during the backlog refinement process.
 
 The workflow that emerged from this thinking is what is embodied in the Stride Workflow.
 
@@ -47,11 +47,10 @@ git rebase --autostash origin/main
 
 ```bash
 echo "Finished $TASK_IDENTIFIER"
-git add .
-git commit -m "Complete task $TASK_IDENTIFIER: $TASK_TITLE"
+git commit -a -m "Complete task $TASK_IDENTIFIER: $TASK_TITLE"
 ```
 
-Notice that I do not automatically push the changes with each task. Instead I specify that a Task that finishes what would be a deployable change needs review. This allows me to review the changes before they are pushed to the main branch and deployed to users.
+Notice that in my `after_review` hook I do not automatically push the changes with each task. Instead I specify that a Task that finishes what would be a deployable change _needs review_. This allows me to review the changes before they are pushed to the main branch and deployed to users. There is more information about the _needs review_ concept later in this post.
 
 VIDEO HERE
 
@@ -63,6 +62,8 @@ It starts with a Backlog - a list of Tasks in the Backlog column. If you are not
 ![Needs Review Checkbox](/img/needs_review.png)
 
 Once you have some Tasks in your backlog that are ready to be worked on, you can move them to the "Ready" column. This is where Stride will look for work to assign to Agents. This is where the human lets go for a while to let the Agents work.
+
+You will need a lot more tasks in the Ready column than you think. The Agents will work much faster than you have experienced with traditional development workflows. Also, when you consider multiple Agents (from multiple developers) will be requesting Tasks you will often see a backlog depleated quickly. Now imagine where each developer is running more than one Agent and you can start to see why we use the Agents to initially create the Tasks. We will need a lot of them.
 
 ### The AI Workflow
 

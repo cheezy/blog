@@ -58,3 +58,5 @@ All of the setup is complete so we are finally ready to get started generating t
 This process can take some time. You will want to review what is initially generated and make adjustments or additions as needed. Remember, you can always course correct and make changes later.
 
 {{< youtube 0KZuad9I2jE >}}
+
+It is important that we have a lot of tasks. Agents will burn through them very quickly and when you consider you will have at least one Agent (or possibly more) per developer you can start to see how quickly they will be consumed and completed.

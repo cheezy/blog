@@ -185,11 +185,11 @@
 
             
                 <h2 id="how-do-humans-collaborate-with-ai">How do Humans collaborate with AI?</h2>
-<p>When I started to make Stride a Human-AI collaboration tool I spent some time thinking about when and how Humans would want to interject themselves into the worflow. I came up with three points:</p>
+<p>When I started to make Stride a Human-AI collaboration tool I spent some time thinking about when and how Humans would want to interject themselves into the worflow. Those of you that know me know that I have spent a significant portion of my life helping teams optimize their work and achieve better flow. With AI in the mix it causes us to rethink some of what helps us achieve that flow. We have to be realistic about what Humans do best (at this time) and what AI does best and find a way to optimize around these things. At the same time, many Humans are not comfortable (at this time) with letting AI take over completely and they want to be involved in the process. This is what I came up with:</p>
 <ol>
 <li>Humans might want to look at a set of Tasks before AI worked on them. This way they could make adjustments to the Tasks or provide additional context.</li>
-<li>Humans might want to specify that certain things happen at different points in the worflow. For example, before starting a new Task the Agent should ensure they are working on the latest code. This is done through <a href="https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md">hooks</a>.</li>
-<li>In some cases Humans will want to look at the work completed by an Agent before it moves on to the next Task. You would specify which ones you want to review during the backlog refinement process.</li>
+<li>Humans might want to specify that certain things happen at different points in the worflow. For example, before starting a new Task the Agent should ensure they are working on the latest code or when an Agent finishes a Task they should run certain quality and security checks. This is done through <a href="https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md">hooks</a>.</li>
+<li>In some cases Humans will want to look at the work completed by an Agent before the Agent moves on to the next Task so they can make adjustments or provide feedback. The Human would specify which Tasks they want to review during the backlog refinement process.</li>
 </ol>
 <p>The workflow that emerged from this thinking is what is embodied in the Stride Workflow.</p>
 <h3 id="see-it-in-action">See it in action</h3>
@@ -208,9 +208,8 @@
 </span></span><span style="display:flex;"><span>git rebase --autostash origin/main
 </span></span></code></pre></div><h4 id="after_review">after_review</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Finished </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">&#34;</span>
-</span></span><span style="display:flex;"><span>git add .
-</span></span><span style="display:flex;"><span>git commit -m <span style="color:#f1fa8c">&#34;Complete task </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">: </span><span style="color:#8be9fd;font-style:italic">$TASK_TITLE</span><span style="color:#f1fa8c">&#34;</span>
-</span></span></code></pre></div><p>Notice that I do not automatically push the changes with each task. Instead I specify that a Task that finishes what would be a deployable change needs review. This allows me to review the changes before they are pushed to the main branch and deployed to users.</p>
+</span></span><span style="display:flex;"><span>git commit -a -m <span style="color:#f1fa8c">&#34;Complete task </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">: </span><span style="color:#8be9fd;font-style:italic">$TASK_TITLE</span><span style="color:#f1fa8c">&#34;</span>
+</span></span></code></pre></div><p>Notice that in my <code>after_review</code> hook I do not automatically push the changes with each task. Instead I specify that a Task that finishes what would be a deployable change <em>needs review</em>. This allows me to review the changes before they are pushed to the main branch and deployed to users. There is more information about the <em>needs review</em> concept later in this post.</p>
 <p>VIDEO HERE</p>
 <h2 id="what-is-the-stride-workflow-and-how-do-i-work-with-stride-to-complete-tasks">What is the Stride Workflow and how do I work with Stride to complete Tasks?</h2>
 <p>It starts with a Backlog - a list of Tasks in the Backlog column. If you are not sure how to build out your backlog, check out the <a href="/post/getting_started_with_stride/">Getting Started with Stride</a> post. You should work with the Agent continuously refining Tasks. An important part of reviewing the Tasks is deciding which Tasks you want to <em>review</em> after the Agent completes them. You identify these Tasks by checking the Needs Review checkbox.</p>
@@ -219,6 +218,7 @@
 
 </p>
 <p>Once you have some Tasks in your backlog that are ready to be worked on, you can move them to the &ldquo;Ready&rdquo; column. This is where Stride will look for work to assign to Agents. This is where the human lets go for a while to let the Agents work.</p>
+<p>You will need a lot more tasks in the Ready column than you think. The Agents will work much faster than you have experienced with traditional development workflows. Also, when you consider multiple Agents (from multiple developers) will be requesting Tasks you will often see a backlog depleated quickly. Now imagine where each developer is running more than one Agent and you can start to see why we use the Agents to initially create the Tasks. We will need a lot of them.</p>
 <h3 id="the-ai-workflow">The AI Workflow</h3>
 <p>You can start the workflow by simply asking your agile to work on the next Task in Stride. This is what happens:</p>
 <ol>
