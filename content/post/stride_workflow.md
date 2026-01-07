@@ -15,6 +15,47 @@ When I started to make Stride a Human-AI collaboration tool I spent some time th
 
 The workflow that emerged from this thinking is what is embodied in the Stride Workflow.
 
+### See it in action
+
+This video picks up where the Getting Started with Stride video left off. It shows the full workflow in action. It is kind of boring and I sped it up a lot so you can see it grabbing tasks and moving them across the board. Here are the hooks from my .stride.md file so you can see what the Agent is doing as it moves the Tasks:
+
+#### before_doing
+
+```bash
+echo "Starting task $TASK_IDENTIFIER: $TASK_TITLE"
+git pull origin main
+```
+
+#### after_doing
+
+```bash
+echo "Running quality checks for $TASK_IDENTIFIER"
+mix test --cover
+mix format --check-formatted
+mix credo --strict
+mix sobelow --config .sobelow_config.exs
+```
+
+#### before_review
+
+```bash
+echo "Rebasing code for $TASK_IDENTIFIER"
+git rebase --autostash origin/main
+```
+
+#### after_review
+
+```bash
+echo "Finished $TASK_IDENTIFIER"
+git add .
+git commit -m "Complete task $TASK_IDENTIFIER: $TASK_TITLE"
+```
+
+Notice that I do not automatically push the changes with each task. Instead I specify that a Task that finishes what would be a deployable change needs review. This allows me to review the changes before they are pushed to the main branch and deployed to users.
+
+VIDEO HERE
+
+
 ## What is the Stride Workflow and how do I work with Stride to complete Tasks?
 
 It starts with a Backlog - a list of Tasks in the Backlog column. If you are not sure how to build out your backlog, check out the [Getting Started with Stride](/post/getting_started_with_stride/) post. You should work with the Agent continuously refining Tasks. An important part of reviewing the Tasks is deciding which Tasks you want to _review_ after the Agent completes them. You identify these Tasks by checking the Needs Review checkbox.
