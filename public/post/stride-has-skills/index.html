@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Building a LiveView app using AI - Part 3" />
-    <meta property="og:title" content="Building a LiveView app using AI - Part 3" />
-    <meta property="twitter:title" content="Building a LiveView app using AI - Part 3" />
+    <meta name="title" content="Stride Has Skills" />
+    <meta property="og:title" content="Stride Has Skills" />
+    <meta property="twitter:title" content="Stride Has Skills" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/ai-kanban-part3/" />
+    <meta property="og:url" content="http://localhost:1313/post/stride-has-skills/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Building a LiveView app using AI - Part 3 | Cheezy&#39;s Blog</title>
+    <title>Stride Has Skills | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/ai-kanban-part3/">
+    <link rel="canonical" href="/post/stride-has-skills/">
 
     
 
@@ -181,16 +181,146 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>Building a LiveView app using AI - Part 3</h1>
+            <h1>Stride Has Skills</h1>
 
             
-                <h2 id="using-claude-code-to-write-the-authentication-code">Using Claude Code to write the Authentication Code</h2>
-<p>In Part 3 of this series we are finally ready to allow Claude Code to wite some code. We have our system configured properly, we have created a plan to take small steps, and now it is time to get started. I will be using Claude Code to build the Authentication for our Kanban Board application. There are a few times where I had to ask Claude to do something different. It is always important to pay attention. After the video was complete It took the time to verify everything and look at the code. Everything was good as I expected.</p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/iIQ1tR9Ppto?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-    </div>
-
-<p><a href="/post/ai-kanban-part4">Continue on to part four</a></p>
+                <p>I am excited to announce a major enhancement to Stride&rsquo;s AI agent workflow: <strong>Claude Code Skills</strong>. These skills enforce best practices and prevent common mistakes that waste hours of development time.</p>
+<h3 id="what-are-claude-code-skills">What Are Claude Code Skills?</h3>
+<p>Claude Code Skills are specialized instructions that guide AI agents through complex workflows. Think of them as expert advisors that activate at critical decision points, ensuring agents follow established patterns and avoid known pitfalls.</p>
+<p>Unlike traditional documentation that agents must search through and interpret, skills are:</p>
+<ul>
+<li><strong>Contextually triggered</strong> - Automatically invoked when relevant to the current task</li>
+<li><strong>Prescriptive</strong> - Provide step-by-step workflows, not just explanations</li>
+<li><strong>Preventative</strong> - Stop mistakes before they happen, not after</li>
+<li><strong>Self-contained</strong> - Include everything needed: workflows, examples, common mistakes, and quick references</li>
+</ul>
+<p>When properly configured, Claude Code automatically discovers and uses these skills, making them feel like native capabilities rather than external documentation.</p>
+<h2 id="the-four-stride-skills">The Four Stride Skills</h2>
+<p>We&rsquo;ve implemented four skills that cover the complete Stride workflow:</p>
+<h3 id="1-stride-claiming-tasks">1. stride-claiming-tasks</h3>
+<p><strong>Purpose:</strong> Ensures proper task claiming workflow with hook execution before claiming.</p>
+<p><strong>The Problem:</strong> Agents claiming tasks before executing the <code>before_doing</code> hook end up working with outdated code, missing dependencies, and facing merge conflicts.</p>
+<p><strong>The Solution:</strong> This skill enforces a strict claiming workflow:</p>
+<ol>
+<li>Verify <code>.stride_auth.md</code> and <code>.stride.md</code> files exist</li>
+<li>Find available tasks via <code>GET /api/tasks/next</code></li>
+<li>Review task details thoroughly</li>
+<li>Execute the <code>before_doing</code> hook (60s timeout, blocking)</li>
+<li>Only call <code>POST /api/tasks/claim</code> after the hook succeeds</li>
+<li>Begin implementation immediately after claiming</li>
+</ol>
+<p><strong>Impact:</strong> Setup time for a new task is reduced as the Agent is very clear on what is expected.</p>
+<h3 id="2-stride-completing-tasks">2. stride-completing-tasks</h3>
+<p><strong>Purpose:</strong> Ensures both <code>after_doing</code> and <code>before_review</code> hooks are executed before marking tasks complete.</p>
+<p><strong>The Problem:</strong> Agents calling the completion endpoint before running validation hooks bypass quality gates. Humans want to be sure that all quality gates and preparation for review have been completed before marking a task as complete. This Skill saves time as it instructs the Agent on the proper workflow and prevents post-completion rework.</p>
+<p><strong>The Solution:</strong> This skill enforces proper completion workflow:</p>
+<ol>
+<li>Execute <code>after_doing</code> hook (120s timeout, blocking) - runs tests, linters, build</li>
+<li>Execute <code>before_review</code> hook (60s timeout, blocking) - creates PR, generates docs</li>
+<li>Only call <code>PATCH /api/tasks/:id/complete</code> after both hooks succeed</li>
+<li>Include both hook results in the API request</li>
+<li>If <code>needs_review=true</code>, stop and wait for human approval</li>
+<li>If <code>needs_review=false</code>, execute <code>after_review</code> hook and continue</li>
+</ol>
+<p><strong>Impact:</strong> Reduction in post-completion rework and assurances from the Human that hooks workflow has been followed.</p>
+<h3 id="3-stride-creating-tasks">3. stride-creating-tasks</h3>
+<p><strong>Purpose:</strong> Requires comprehensive task specifications to prevent wasted time during implementation.</p>
+<p><strong>The Problem:</strong> Minimal task specifications force agents to spend hours discovering information that should have been provided upfront. Tasks like &ldquo;Add dark mode&rdquo; without context waste hours exploring which files to modify, what patterns to follow, and how to persist settings.</p>
+<p><strong>The Solution:</strong> This skill enforces a comprehensive task specification checklist including:</p>
+<ul>
+<li>Clear title format: <code>[Verb] [What] [Where]</code></li>
+<li>Complete description: WHY this matters and WHAT needs to be done</li>
+<li>Key files that will be modified (prevents merge conflicts)</li>
+<li>Verification steps as array of objects</li>
+<li>Testing strategy with unit, integration, and manual test arrays</li>
+<li>Acceptance criteria</li>
+<li>Patterns to follow with file references</li>
+<li>Pitfalls to avoid</li>
+</ul>
+<p><strong>Impact:</strong> Reduction in implementation time.</p>
+<h3 id="4-stride-creating-goals">4. stride-creating-goals</h3>
+<p><strong>Purpose:</strong> Enforces proper goal structure with nested tasks and correct batch format.</p>
+<p><strong>The Problem:</strong> Creating goals with incorrect structure causes API rejections (422 errors to date in Stride), silently ignored dependencies, and nested tasks without proper specifications. Although I have spent time improving the error messages on the upload APIs, Agents are still struggling with the correct format.</p>
+<p><strong>The Solution:</strong> This skill enforces:</p>
+<ul>
+<li>Correct batch format: root key must be <code>&quot;goals&quot;</code>, not <code>&quot;tasks&quot;</code></li>
+<li>Proper dependency patterns: indices for within-goal tasks, identifiers for existing tasks</li>
+<li>Never specify identifiers for new tasks (system auto-generates)</li>
+<li>Each nested task must follow the full stride-creating-tasks requirements</li>
+<li>Clear guidance on when to use goals vs. flat tasks (25+ hours = goal)</li>
+</ul>
+<p><strong>Impact:</strong> Reduction in format errors.</p>
+<h2 id="how-to-install-the-skills">How to Install the Skills</h2>
+<p>The skills are distributed automatically through Stride&rsquo;s onboarding endpoint and are <strong>automatically installed by AI agents</strong> when they fetch the onboarding data. This means Skills work exactly like the <code>.stride.md</code> and <code>.stride_auth.md</code> configuration files - agents create them automatically.</p>
+<h3 id="automatic-installation-recommended">Automatic Installation (Recommended)</h3>
+<p>When an AI agent (like Claude Code) calls the onboarding endpoint from their project root directory, it should automatically:</p>
+<ol>
+<li>Fetch the onboarding data: <code>GET https://www.stridelikeaboss.com/api/agent/onboarding</code></li>
+<li>Create <code>.stride_auth.md</code> from <code>file_templates.stride_auth_md</code></li>
+<li>Create <code>.stride.md</code> from <code>file_templates.stride_md</code></li>
+<li><strong>Create all 4 Skills</strong> from <code>claude_code_skills.available_skills</code> array</li>
+</ol>
+<p>The onboarding endpoint&rsquo;s <code>critical_first_steps</code> and <code>quick_start</code> sections now explicitly instruct agents to create all Skills automatically, just like they create the configuration files.</p>
+<h3 id="manual-installation-if-needed">Manual Installation (If Needed)</h3>
+<p>If you need to manually install the skills or update them:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Fetch onboarding data and extract all skills at once</span>
+</span></span><span style="display:flex;"><span>curl -s https://www.stridelikeaboss.com/api/agent/onboarding &gt; /tmp/onboarding.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Create directories</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/.claude/skills/<span style="color:#ff79c6">{</span>stride-claiming-tasks,stride-completing-tasks,stride-creating-tasks,stride-creating-goals<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Extract and save each skill</span>
+</span></span><span style="display:flex;"><span>jq -r <span style="color:#f1fa8c">&#39;.claude_code_skills.available_skills[0].content&#39;</span> /tmp/onboarding.json &gt; ~/.claude/skills/stride-claiming-tasks/SKILL.md
+</span></span><span style="display:flex;"><span>jq -r <span style="color:#f1fa8c">&#39;.claude_code_skills.available_skills[1].content&#39;</span> /tmp/onboarding.json &gt; ~/.claude/skills/stride-creating-tasks/SKILL.md
+</span></span><span style="display:flex;"><span>jq -r <span style="color:#f1fa8c">&#39;.claude_code_skills.available_skills[2].content&#39;</span> /tmp/onboarding.json &gt; ~/.claude/skills/stride-completing-tasks/SKILL.md
+</span></span><span style="display:flex;"><span>jq -r <span style="color:#f1fa8c">&#39;.claude_code_skills.available_skills[3].content&#39;</span> /tmp/onboarding.json &gt; ~/.claude/skills/stride-creating-goals/SKILL.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Clean up</span>
+</span></span><span style="display:flex;"><span>rm /tmp/onboarding.json
+</span></span></code></pre></div><h3 id="automatic-discovery">Automatic Discovery</h3>
+<p>Claude Code will automatically discover these skills when you start or restart a session. The skills will be invoked automatically when relevant:</p>
+<ul>
+<li><strong>stride-claiming-tasks</strong>: Before calling <code>POST /api/tasks/claim</code></li>
+<li><strong>stride-completing-tasks</strong>: Before calling <code>PATCH /api/tasks/:id/complete</code></li>
+<li><strong>stride-creating-tasks</strong>: Before calling <code>POST /api/tasks</code> for individual tasks</li>
+<li><strong>stride-creating-goals</strong>: Before calling <code>POST /api/tasks</code> or <code>POST /api/tasks/batch</code> for goals</li>
+</ul>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="reload-skills-with-each-session">Reload Skills with Each Session</h3>
+<p>Skills may be updated with bug fixes or improvements. At the start of each new Claude Code session:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Fetch latest skills</span>
+</span></span><span style="display:flex;"><span>curl -s https://www.stridelikeaboss.com/api/agent/onboarding | jq <span style="color:#f1fa8c">&#39;.claude_code_skills&#39;</span>
+</span></span></code></pre></div><p>Check if the skills have changed and update your local copies if needed.</p>
+<h3 id="let-the-skills-guide-you">Let the Skills Guide You</h3>
+<p>When a skill is invoked, follow its guidance:</p>
+<ul>
+<li>Read the &ldquo;Iron Law&rdquo; - the core principle that must never be violated</li>
+<li>Review &ldquo;The Critical Mistake&rdquo; - understand what you&rsquo;re preventing</li>
+<li>Follow the workflow step-by-step</li>
+<li>Check &ldquo;Red Flags&rdquo; if you&rsquo;re tempted to skip steps</li>
+<li>Use the Quick Reference Card for at-a-glance reminders</li>
+</ul>
+<h3 id="trust-the-process">Trust the Process</h3>
+<p>It may feel like skills add overhead initially. In reality, they save massive amounts of time by preventing mistakes and pay for themselves within the first task.</p>
+<h2 id="whats-next">What&rsquo;s Next</h2>
+<p>These four skills establish the foundation for disciplined AI agent workflows. Future enhancements may include:</p>
+<ul>
+<li>Skills for review workflows (approving, rejecting, requesting changes)</li>
+<li>Skills for dependency management</li>
+<li>Skills for unclaiming tasks properly</li>
+<li>Skills for handling blocked tasks</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>Ready to boost your agent productivity? Install the skills and start experiencing the difference:</p>
+<ol>
+<li>Visit the <a href="https://www.stridelikeaboss.com/api/agent/onboarding">onboarding endpoint</a></li>
+<li>Follow the installation instructions</li>
+<li>Start a new Claude Code session</li>
+<li>Watch the skills activate automatically</li>
+</ol>
+<p>For detailed documentation on each skill, see the <a href="https://www.stridelikeaboss.com/api/agent/onboarding">onboarding endpoint</a> or visit our <a href="https://www.stridelikeaboss.com/docs/GETTING-STARTED-WITH-AI.md">getting started guide</a>.</p>
+<h2 id="not-using-claude-code">Not using Claude Code?</h2>
+<p>Users of other Agents should not feel left out. We are planning to provide enhanced instructions for several other Agents in the near future including <em>GitHub Copilot</em>, <em>Cursor</em>, <em>Windsurf Cascade</em>, <em>Aider</em>, and <em>Continue.dev</em>. Stay tuned and keep an eye on my blog for updates.</p>
 
             
              
@@ -270,18 +400,6 @@
                
                     <a href="/tags/software-development" title="software development">
                         software development
-                    </a>
-               
-            
-               
-                    <a href="/tags/tag1" title="tag1">
-                        tag1
-                    </a>
-               
-            
-               
-                    <a href="/tags/tag2" title="tag2">
-                        tag2
                     </a>
                
             
@@ -390,6 +508,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-has-skills/">Stride Has Skills</a></li>
+        
             <li><a href="/post/stride_workflow/">The Stride Workflow</a></li>
         
             <li><a href="/post/getting_started_with_stride/">Getting Started with Stride</a></li>
@@ -397,8 +517,6 @@
             <li><a href="/post/stride-next/">Stride goes full AI</a></li>
         
             <li><a href="/post/ai-kanban-part16/">Building a LiveView app using AI - Part 16</a></li>
-        
-            <li><a href="/post/ai-tensions/">Tensions with AI</a></li>
         
         </ul>
     </section>

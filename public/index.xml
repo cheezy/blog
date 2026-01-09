@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Jan 2026 08:05:52 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jan 2026 07:08:31 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stride Has Skills</title>
+      <link>http://localhost:1313/post/stride-has-skills/</link>
+      <pubDate>Fri, 09 Jan 2026 07:08:31 -0500</pubDate>
+      <guid>http://localhost:1313/post/stride-has-skills/</guid>
+      <description>&lt;p&gt;I am excited to announce a major enhancement to Stride&amp;rsquo;s AI agent workflow: &lt;strong&gt;Claude Code Skills&lt;/strong&gt;. These skills enforce best practices and prevent common mistakes that waste hours of development time.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-are-claude-code-skills&#34;&gt;What Are Claude Code Skills?&lt;/h3&gt;&#xA;&lt;p&gt;Claude Code Skills are specialized instructions that guide AI agents through complex workflows. Think of them as expert advisors that activate at critical decision points, ensuring agents follow established patterns and avoid known pitfalls.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The Stride Workflow</title>
       <link>http://localhost:1313/post/stride_workflow/</link>
