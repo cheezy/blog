@@ -187,4 +187,4 @@ For detailed documentation on each skill, see the [onboarding endpoint](https://
 
 ## Not using Claude Code?
 
-Users of other Agents should not feel left out. We are planning to provide enhanced instructions for several other Agents in the near future including _GitHub Copilot_, _Cursor_, _Windsurf Cascade_, _Aider_, and _Continue.dev_. Stay tuned and keep an eye on my blog for updates.
+Users of other Agents should not feel left out. I am  planning to provide enhanced instructions for several other Agents in the near future including _GitHub Copilot_, _Cursor_, _Windsurf Cascade_, _Aider_, and _Continue.dev_. Stay tuned and keep an eye on my blog for updates.
