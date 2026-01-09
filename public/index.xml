@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jan 2026 07:08:31 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jan 2026 10:41:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stride Active Guidence</title>
+      <link>http://localhost:1313/post/stride-active-guidence/</link>
+      <pubDate>Fri, 09 Jan 2026 10:41:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/stride-active-guidence/</guid>
+      <description>&lt;h2 id=&#34;stride-now-supports-four-ai-assistants-with-always-active-guidance&#34;&gt;Stride Now Supports Four AI Assistants with Always-Active Guidance&lt;/h2&gt;&#xA;&lt;p&gt;What a day. Earlier today I rolled out &lt;a href=&#34;https://www.stridelikeaboss.com/blog/stride-has-skills&#34;&gt;Claude Code Skills for Stride&lt;/a&gt;. A couple of hours later I&amp;rsquo;m excited to announce that Stride now supports four popular AI coding assistants beyond Claude Code, with always-active instruction files that help developers avoid common mistakes and follow best practices when working with the Stride API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge-supporting-multiple-ai-assistants&#34;&gt;The Challenge: Supporting Multiple AI Assistants&lt;/h2&gt;&#xA;&lt;p&gt;I know that not all developers use Claude Code. Many companies are invested in tools like Copilot, Windsurf, etc. Developers in these companies should not feel left out when it comes to Stride. Because of that need, I have just added enhanced instructions for &lt;a href=&#34;https://github.com/features/copilot&#34;&gt;GitHub Copilot&lt;/a&gt;, &lt;a href=&#34;https://www.cursor.com/&#34;&gt;Cursor&lt;/a&gt;, &lt;a href=&#34;https://www.windsurfrules.com/&#34;&gt;Windsurf Cascade&lt;/a&gt;, and &lt;a href=&#34;https://continue.dev/&#34;&gt;Continue.dev&lt;/a&gt;. These assistants are excellent tools, but they needed help understanding Stride&amp;rsquo;s workflow requirements, especially around:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Stride Has Skills</title>
       <link>http://localhost:1313/post/stride-has-skills/</link>
