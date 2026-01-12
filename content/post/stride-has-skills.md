@@ -7,7 +7,7 @@ tags: ["AI", "Agile", "Continuous Delivery"]
 
 I am excited to announce a major enhancement to Stride's AI agent workflow: **Claude Code Skills**. These skills enforce best practices and prevent common mistakes that waste hours of development time.
 
-### What Are Claude Code Skills?
+## What Are Claude Code Skills?
 
 Claude Code Skills are specialized instructions that guide AI agents through complex workflows. Think of them as expert advisors that activate at critical decision points, ensuring agents follow established patterns and avoid known pitfalls.
 
@@ -28,7 +28,7 @@ We've implemented four skills that cover the complete Stride workflow:
 
 **Purpose:** Ensures proper task claiming workflow with hook execution before claiming.
 
-**The Problem:** Agents claiming tasks before executing the `before_doing` hook end up working with outdated code, missing dependencies, and facing merge conflicts. 
+**The Problem:** Agents claiming tasks before executing the `before_doing` hook end up working with outdated code, missing dependencies, and facing merge conflicts.
 
 **The Solution:** This skill enforces a strict claiming workflow:
 

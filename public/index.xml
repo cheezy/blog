@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jan 2026 10:41:00 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 10:23:45 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adopting AI Driven Development</title>
+      <link>http://localhost:1313/post/adopting-ai-driven-development/</link>
+      <pubDate>Mon, 12 Jan 2026 10:23:45 -0500</pubDate>
+      <guid>http://localhost:1313/post/adopting-ai-driven-development/</guid>
+      <description>&lt;h2 id=&#34;sharing-what-worked&#34;&gt;Sharing what worked&lt;/h2&gt;&#xA;&lt;p&gt;I have often wondered why some companies have had great success adopting AI for software development while others have had the opposite experience. Some people talk about AI &amp;ldquo;Slop&amp;rdquo; meaning very bad code written by AI. At the same time many of us see AI producing code that is high quality, well factored, and well tested. Is it possible that the way one approaches this technology has an impact on the outcome?&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Stride Active Guidence</title>
       <link>http://localhost:1313/post/stride-active-guidence/</link>
@@ -20,7 +27,7 @@
       <link>http://localhost:1313/post/stride-has-skills/</link>
       <pubDate>Fri, 09 Jan 2026 07:08:31 -0500</pubDate>
       <guid>http://localhost:1313/post/stride-has-skills/</guid>
-      <description>&lt;p&gt;I am excited to announce a major enhancement to Stride&amp;rsquo;s AI agent workflow: &lt;strong&gt;Claude Code Skills&lt;/strong&gt;. These skills enforce best practices and prevent common mistakes that waste hours of development time.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-are-claude-code-skills&#34;&gt;What Are Claude Code Skills?&lt;/h3&gt;&#xA;&lt;p&gt;Claude Code Skills are specialized instructions that guide AI agents through complex workflows. Think of them as expert advisors that activate at critical decision points, ensuring agents follow established patterns and avoid known pitfalls.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I am excited to announce a major enhancement to Stride&amp;rsquo;s AI agent workflow: &lt;strong&gt;Claude Code Skills&lt;/strong&gt;. These skills enforce best practices and prevent common mistakes that waste hours of development time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-claude-code-skills&#34;&gt;What Are Claude Code Skills?&lt;/h2&gt;&#xA;&lt;p&gt;Claude Code Skills are specialized instructions that guide AI agents through complex workflows. Think of them as expert advisors that activate at critical decision points, ensuring agents follow established patterns and avoid known pitfalls.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Stride Workflow</title>
