@@ -187,6 +187,30 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
+    <a href="http://localhost:1313/post/ai-kanban-part9/">
+        <h2 class="post-title">
+            Building a LiveView app using AI - Part 9
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <h2 id="doing-a-little-cleanup">Doing a little cleanup</h2>
+<p>This post is a cleanup post. After Part 8 I spent some time testing all aspects of the application and decided to make a few small changes beofre moving to the next phase. I noticed that flash messages (the message that shows in the upper right corner) stays there until I dismiss it. I think it becomes anoying to have to do that repeatedly when adding multiple tasks so I decide to make it automatically fade away after 5 seconds. I could ask Claude to do this but thought it was a very easy task so I set about to do it myself. Here is what I came up with.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Saturday, November 8, 2025
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="http://localhost:1313/post/upgrade-elixir-and-fly/">
         <h2 class="post-title">
             Upgrade Elixir and Fly.io to use Elixir 1.19
@@ -281,41 +305,6 @@
     <p class="post-meta">
     
         Posted by Cheezy World on Sunday, October 26, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part6/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 6
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="just-a-small-thing">Just a small thing</h2>
-<p>Off screen I asked Claude to create the favicon based on the image it has already placed on the home page. In less than a minute I had these files:</p>
-<p>
-  <img src="/img/favicon.png" alt="Image of favicons">
-
-</p>
-<p>Claude also added this html in the header of the <code>root.html.eex</code> file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">link</span> <span style="color:#50fa7b">rel</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon&#34;</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;image/x-icon&#34;</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">{~p&#34;/images/favicon.ico&#34;}</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">link</span> <span style="color:#50fa7b">rel</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon&#34;</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;image/png&#34;</span> <span style="color:#50fa7b">sizes</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;16x16&#34;</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">{~p&#34;/images/favicon-16x16.png&#34;}</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">link</span> <span style="color:#50fa7b">rel</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon&#34;</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;image/png&#34;</span> <span style="color:#50fa7b">sizes</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;32x32&#34;</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">{~p&#34;/images/favicon-32x32.png&#34;}</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">link</span> <span style="color:#50fa7b">rel</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon&#34;</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;image/png&#34;</span> <span style="color:#50fa7b">sizes</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;48x48&#34;</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">{~p&#34;/images/favicon-48x48.png&#34;}</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">link</span> <span style="color:#50fa7b">rel</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;icon&#34;</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;image/svg+xml&#34;</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">{~p&#34;/images/favicon.svg&#34;}</span> /&gt;
-</span></span></code></pre></div><p>This is a small change but it adds to the polish of the app.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, October 24, 2025
         
         
     
@@ -520,6 +509,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
+        
             <li><a href="/post/adopting-ai-driven-development/">Adopting AI Driven Development</a></li>
         
             <li><a href="/post/stride-active-guidence/">Stride Active Guidence</a></li>
@@ -527,8 +518,6 @@
             <li><a href="/post/stride-has-skills/">Stride Has Skills</a></li>
         
             <li><a href="/post/stride_workflow/">The Stride Workflow</a></li>
-        
-            <li><a href="/post/getting_started_with_stride/">Getting Started with Stride</a></li>
         
         </ul>
     </section>

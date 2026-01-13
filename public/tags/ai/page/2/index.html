@@ -186,30 +186,23 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part13/">
+    <a href="http://localhost:1313/post/stride-next/">
         <h2 class="post-title">
-            Building a LiveView app using AI - Part 13
+            Stride goes full AI
         </h2>
 	
         <div class="post-content-preview">
 	
-            <h2 id="setting-permissions-for-users">Setting permissions for users</h2>
-<p>Currently every user can do everything in the application. A read only user can delete a board or make any type of change they want. Let&rsquo;s fix that.</p>
-<h3 id="focus-on-owners-first">Focus on Owners first</h3>
-<p>First I want to focus on ensuring the board owner can do board-level actions and other users cannot. Let me start by listing out the things that only owners can do:</p>
-<ul>
-<li>Edit and delete their boards</li>
-<li>Add new columns to a board</li>
-<li>Edit or delete columns from their boards</li>
-<li>Reorder columns (including drag-and-drop)</li>
-</ul>
-<p>I think this is a good list. Let&rsquo;s ask TideWave to make these changes.</p>
+            <h2 id="building-an-ai-optimized-kanban-system-a-human-ai-collaboration-experiment">Building an AI-Optimized Kanban System: A Human-AI Collaboration Experiment</h2>
+<p>I&rsquo;m embarking on an experiment to build a Kanban task management system specifically designed for AI-human collaboration. This isn&rsquo;t just another project management tool—it&rsquo;s a system where AI agents and humans work together as peers on software development tasks.</p>
+<h2 id="the-vision">The Vision</h2>
+<p>Most task management tools treat tasks as simple items with a title and description. But when you&rsquo;re working with AI agents (like Claude, GPT-4, or custom agents), they need much more context to be effective. They need to understand:</p>
        
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Friday, November 21, 2025
+        Posted by Cheezy World on Friday, December 19, 2025
         
         
     
@@ -219,22 +212,22 @@
 <hr>
 
 <div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part12/">
+    <a href="http://localhost:1313/post/ai-kanban-part16/">
         <h2 class="post-title">
-            Building a LiveView app using AI - Part 12
+            Building a LiveView app using AI - Part 16
         </h2>
 	
         <div class="post-content-preview">
 	
-            <h2 id="adding-users-to-boards-and-tasks">Adding users to boards and tasks</h2>
-<p>Since the <a href="https://tidewave.ai/blog/claude-code-codex">announcement</a> of Claude Code running inside of Tidewave I have been extremely happy about this combo. For now I am using it for nearly all of my changes to the codebase. I have even given it a name - <strong>ClaudeWave</strong>. All of the changes in this post were done using ClaudeWave.</p>
-<p>So far our boards only have an owner. I want an owner to have the ability to add other users to a board and also assign tasks to one of those users. Let&rsquo;s get started.</p>
+            <h2 id="a-million-small-things---on-to-version-10">A million small things - on to Version 1.0</h2>
+<p>This is the final post in this series. There were many things that needed to be done that were not on the original plan so I worked with my trusty AI tools to complete them. This post simply lists them and provides a some details where I thought it was interesting.</p>
+<p>Do not worry about this being the end of the series. See the What&rsquo;s Next section at the bottom of this post to see where this is all going. What&rsquo;s next is very exciting and I hope you stay with me on this.</p>
        
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Wednesday, November 12, 2025
+        Posted by Cheezy World on Wednesday, December 17, 2025
         
         
     
@@ -244,23 +237,21 @@
 <hr>
 
 <div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part11/">
+    <a href="http://localhost:1313/post/ai-tensions/">
         <h2 class="post-title">
-            Building a LiveView app using AI - Part 11
+            Tensions with AI
         </h2>
 	
         <div class="post-content-preview">
 	
-            <h2 id="tasked-with-improving-tasks">Tasked with improving Tasks</h2>
-<p>The final phase of our plan is focused on visual cleanup and better error handling. Before I focused on the visual cleanup I wanted to fill in some of the gaps that exist in our plan. I&rsquo;m starting with Tasks. There are several missing features that I wanted to add to Tasks to make them more useful. This post includes those changes.</p>
-<h3 id="rounding-out-tasks">Rounding out Tasks</h3>
-<p>At this time Tasks only have a title, description, and their position in the column. This really is not enough for a serious Kanban application. I asked Claude to add the following fields:</p>
+            <h2 id="bringing-ai-into-your-organization">Bringing AI into your organization</h2>
+<p>I have now worked with multiple teams that have introduced an AI driven development into their development workflow and I have seen a pattern emerge. When AI, and more specifically Vibe Coding, is introduced into a traditional software development organization that are following an Agile process there are three tensions that quickly arise. All three of these tensions are due to the rapid pace of development.</p>
        
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Wednesday, November 12, 2025
+        Posted by Cheezy World on Monday, December 15, 2025
         
         
     
@@ -270,27 +261,48 @@
 <hr>
 
 <div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part10/">
+    <a href="http://localhost:1313/post/ai-kanban-part15/">
         <h2 class="post-title">
-            Building a LiveView app using AI - Part 10
+            Building a LiveView app using AI - Part 15
         </h2>
 	
         <div class="post-content-preview">
 	
-            <h2 id="adding-drag-and-drop">Adding Drag and Drop</h2>
-<p>We asked Claude to finish phase six which was adding drag and drop functionality to the board. Claude did this quickly but when I tested it I found that it was more complex that expected. Claude got a few things wrong. First of all let&rsquo;s watch the video of phase six.</p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/aM6Rt3fuC9Q?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-    </div>
-
-<h2 id="always-test-everything">Always test everything</h2>
-<p>At the end of the video it seems like everything was okay. One might be tempted to commit the code and move on. I think a very important step is to test everything that AI creates. Occasionally AI will make a mistake and it is important to catch it right away while it still has the entire context available.</p>
+            <h2 id="polish--enhancement">Polish &amp; Enhancement</h2>
+<p>It is finally time to get back and finish phase 7 of our plan. Here is what remains:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">#### Phase 7: Polish &amp; Enhancement
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **UI/UX improvements**
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Design beautiful board cards with Tailwind CSS
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add hover effects and transitions
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Improve spacing and typography
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add loading states for async actions
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add empty states for boards without columns/tasks
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Add notifications**
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Use Phoenix LiveView flash messages for success/error
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Style flash messages with Tailwind CSS
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Add confirmation dialogs**
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add confirmation for board deletion
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add confirmation for column deletion (mention tasks will be deleted)
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add confirmation for task deletion
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Error handling**
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add proper error messages for validation failures
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Handle edge cases (deleting last column, etc.)
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add 404 pages for missing resources
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Final Quality Checks**:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix test`</span> and ensure all tests pass (510 tests, 0 failures)
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix test --cover`</span> and verify coverage meets threshold (94.60% coverage)
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix credo --strict`</span> and fix any issues (no issues found)
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix sobelow --config`</span> and fix any security issues (no issues found)
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix precommit`</span> to run all checks together (all checks passed)
+</span></span></code></pre></div><h3 id="starting-with-uiux-improvements">Starting with UI/UX improvements</h3>
+<p>We start by asking TideWave to complete the first two tasks under UI/UX improvements. Less than five minutes later we have some sparkle.</p>
        
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Saturday, November 8, 2025
+        Posted by Cheezy World on Sunday, November 30, 2025
         
         
     
@@ -300,21 +312,21 @@
 <hr>
 
 <div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part9/">
+    <a href="http://localhost:1313/post/ai-kanban-part14/">
         <h2 class="post-title">
-            Building a LiveView app using AI - Part 9
+            Building a LiveView app using AI - Part 14
         </h2>
 	
         <div class="post-content-preview">
 	
-            <h2 id="doing-a-little-cleanup">Doing a little cleanup</h2>
-<p>This post is a cleanup post. After Part 8 I spent some time testing all aspects of the application and decided to make a few small changes beofre moving to the next phase. I noticed that flash messages (the message that shows in the upper right corner) stays there until I dismiss it. I think it becomes anoying to have to do that repeatedly when adding multiple tasks so I decide to make it automatically fade away after 5 seconds. I could ask Claude to do this but thought it was a very easy task so I set about to do it myself. Here is what I came up with.</p>
+            <h2 id="cleaning-up-authentication">Cleaning up Authentication</h2>
+<p>This is the last episode before we get back to our original plan. The authentication system currently in place is what was generated by running the <code>mix phx.gen.auth</code> command. The styles were cleaned up a little when I asked Claude to create a nice style for the entire site. But the behaviour is the generated form and is not what I want. In part 14 we will attack this head on.</p>
        
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Saturday, November 8, 2025
+        Posted by Cheezy World on Friday, November 28, 2025
         
         
     
@@ -519,15 +531,15 @@
         <h5>LAST POSTS</h5>
         <ul>
         
-            <li><a href="/post/stride-next/">Stride goes full AI</a></li>
+            <li><a href="/post/adopting-ai-driven-development/">Adopting AI Driven Development</a></li>
         
-            <li><a href="/post/ai-kanban-part16/">Building a LiveView app using AI - Part 16</a></li>
+            <li><a href="/post/stride-active-guidence/">Stride Active Guidence</a></li>
         
-            <li><a href="/post/ai-tensions/">Tensions with AI</a></li>
+            <li><a href="/post/stride-has-skills/">Stride Has Skills</a></li>
         
-            <li><a href="/post/ai-kanban-part15/">Building a LiveView app using AI - Part 15</a></li>
+            <li><a href="/post/stride_workflow/">The Stride Workflow</a></li>
         
-            <li><a href="/post/ai-kanban-part14/">Building a LiveView app using AI - Part 14</a></li>
+            <li><a href="/post/getting_started_with_stride/">Getting Started with Stride</a></li>
         
         </ul>
     </section>

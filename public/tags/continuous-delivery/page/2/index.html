@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
-    <meta property="og:title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
-    <meta property="twitter:title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
+    <meta name="title" content="" />
+    <meta property="og:title" content="" />
+    <meta property="twitter:title" content="" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/upgrade-elixir-and-fly/" />
+    <meta property="og:url" content="http://localhost:1313/tags/continuous-delivery/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Upgrade Elixir and Fly.io to use Elixir 1.19 | Cheezy&#39;s Blog</title>
+    <title>Continuous Delivery | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/upgrade-elixir-and-fly/">
+    <link rel="canonical" href="/tags/continuous-delivery/">
 
     
 
@@ -170,57 +170,113 @@
 
 
 
-
-<article>
-    <div class="container">
-        <div class="row">
-            
-            <div class="
+  
+<div data-pagefind-ignore="all" class="container">
+    <div class="row">
+        
+        
+   	    <div class="
             col-lg-8 col-lg-offset-1
             col-md-8 col-md-offset-1
             col-sm-12
             col-xs-12
-            post-container">
-            <h1>Upgrade Elixir and Fly.io to use Elixir 1.19</h1>
+            post-container
+        ">
+            
+<div data-pagefind-ignore="all">
+
+<div class="post-preview">
+    <a href="http://localhost:1313/post/stride-next/">
+        <h2 class="post-title">
+            Stride goes full AI
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <h2 id="building-an-ai-optimized-kanban-system-a-human-ai-collaboration-experiment">Building an AI-Optimized Kanban System: A Human-AI Collaboration Experiment</h2>
+<p>I&rsquo;m embarking on an experiment to build a Kanban task management system specifically designed for AI-human collaboration. This isn&rsquo;t just another project management tool—it&rsquo;s a system where AI agents and humans work together as peers on software development tasks.</p>
+<h2 id="the-vision">The Vision</h2>
+<p>Most task management tools treat tasks as simple items with a title and description. But when you&rsquo;re working with AI agents (like Claude, GPT-4, or custom agents), they need much more context to be effective. They need to understand:</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Friday, December 19, 2025
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="http://localhost:1313/post/ai-tensions/">
+        <h2 class="post-title">
+            Tensions with AI
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <h2 id="bringing-ai-into-your-organization">Bringing AI into your organization</h2>
+<p>I have now worked with multiple teams that have introduced an AI driven development into their development workflow and I have seen a pattern emerge. When AI, and more specifically Vibe Coding, is introduced into a traditional software development organization that are following an Agile process there are three tensions that quickly arise. All three of these tensions are due to the rapid pace of development.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Monday, December 15, 2025
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="http://localhost:1313/post/hello-world-again/">
+        <h2 class="post-title">
+            Hello world (again eh)!
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <h2 id="im-back">I&rsquo;m back</h2>
+<p>It has been a while since I&rsquo;ve blogged. I had a blog named CheezyWorld.com
+for many years but stopped posting more than 12 years ago. At the time I was traveling for work as well as traveling around the world to speak at conferences. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Friday, September 26, 2025
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+</div>
 
             
-                <p>Elixir finally reached version 1.19.2 so I feel the 1.19 is stable enough to give it a try. This short blog post is about my process to update Elixir and to also update my Fly.io deployment to the latest version of elixir and OTP.</p>
-<h2 id="update-the-application">Update the application</h2>
-<p>To begin with I needed to get the latest elixir and otp version. That was easy with <code>asdf</code> and so I installed <code>elixir 1.19.2-otp-28</code> and <code>erlang 28.1.1</code>. These are the latest versions at the time of this writing. To ensure I always use these version I updated my <code>.tool-versions</code> file in the root of my project:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>elixir 1.19.2-otp-28
-</span></span><span style="display:flex;"><span>erlang 28.1.1
-</span></span></code></pre></div><p>I also updated my <code>mix.exs</code> file to use the latest version of elixir:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f1fa8c">version</span>: <span style="color:#f1fa8c">&#34;1.1.0&#34;</span>,
-</span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f1fa8c">elixir</span>: <span style="color:#f1fa8c">&#34;~&gt; 1.19&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f1fa8c">elixirc_paths</span>: elixirc_paths(<span style="color:#50fa7b">Mix</span><span style="color:#ff79c6">.</span>env()),
-</span></span></code></pre></div><p>With these two changes I was able to run the application with the latest version of elixir and erlang otp. It was easy and seamless. Now on to getting my pipeline and deployment infrastructure updated.</p>
-<h2 id="pipeline-and-deployment">Pipeline and deployment</h2>
-<p>My application runs on <a href="https://fly.io">Fly.io</a>. It is a simple platform that gives me everything I need. I use GitHub Actions for my CI/CD pipeline. Here are the changes I had to make to get everything working with the latest Elixir.</p>
-<p>First of al I made this simple change to my GitHub Actionspipeline script:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>matrix:
-</span></span><span style="display:flex;"><span>  otp: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;28.1.1&#39;</span><span style="color:#ff79c6">]</span>       <span style="color:#6272a4"># Define the OTP version [required]</span>
-</span></span><span style="display:flex;"><span>  elixir: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;1.19.2&#39;</span><span style="color:#ff79c6">]</span>    <span style="color:#6272a4"># Define the elixir version [required]</span>
-</span></span></code></pre></div><p>I also had to make some changes to my <code>Dockerfile</code>. First of all I simply updated the version of elixir and erlang specified which also caused me to update the version of debian. Finding the right version of debian was a bit of a challenge. I eventually settled on the version below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">ELIXIR_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>.19.2
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">OTP_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">28</span>.1.1
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">DEBIAN_VERSION</span><span style="color:#ff79c6">=</span>trixie-20251103-slim
-</span></span></code></pre></div><p>When I pushed this code the pipeline failed complaining about a missing package: <code>Unable to locate package libncurses5</code>. After a little research I learned that this is an older version of the library and newer version of debian no long use that. I had to make one additional change to my Dockerfile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">RUN</span> apt-get update <span style="color:#f1fa8c">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#ff79c6">&amp;&amp;</span> apt-get install -y --no-install-recommends libstdc++6 openssl libncurses6 locales ca-certificates <span style="color:#f1fa8c">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#ff79c6">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
-</span></span></code></pre></div><p>Notice on line 2 that I updated the library to use <code>libncurses6</code>. With this change everything worked and the pipeline passed.</p>
-
-            
-             
-            
 
 
+<ul class="pager" data-pagefind-ignore="all">
+    
+    <li class="previous">
+        <a href="/tags/continuous-delivery/">&larr; Newer Posts</a>
+    </li>
+    
+    
+</ul>
 
 
-            
-            </div>
-            
-            
+       	</div>
+        
 
 <div class="
     col-lg-3 col-lg-offset-0
@@ -411,9 +467,9 @@
     
 </div>
 
-        </div>
-    </div>
-</article>
+	</div>
+</div>
+
 
 
 
@@ -473,7 +529,7 @@
             
            
                    <li>
-                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                       <a href='/tags/continuous-delivery/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

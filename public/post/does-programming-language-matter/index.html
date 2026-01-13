@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
-    <meta property="og:title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
-    <meta property="twitter:title" content="Upgrade Elixir and Fly.io to use Elixir 1.19" />
+    <meta name="title" content="Does Programming Language Matter?" />
+    <meta property="og:title" content="Does Programming Language Matter?" />
+    <meta property="twitter:title" content="Does Programming Language Matter?" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/upgrade-elixir-and-fly/" />
+    <meta property="og:url" content="http://localhost:1313/post/does-programming-language-matter/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Upgrade Elixir and Fly.io to use Elixir 1.19 | Cheezy&#39;s Blog</title>
+    <title>Does Programming Language Matter? | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/upgrade-elixir-and-fly/">
+    <link rel="canonical" href="/post/does-programming-language-matter/">
 
     
 
@@ -181,34 +181,96 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>Upgrade Elixir and Fly.io to use Elixir 1.19</h1>
+            <h1>Does Programming Language Matter?</h1>
 
             
-                <p>Elixir finally reached version 1.19.2 so I feel the 1.19 is stable enough to give it a try. This short blog post is about my process to update Elixir and to also update my Fly.io deployment to the latest version of elixir and OTP.</p>
-<h2 id="update-the-application">Update the application</h2>
-<p>To begin with I needed to get the latest elixir and otp version. That was easy with <code>asdf</code> and so I installed <code>elixir 1.19.2-otp-28</code> and <code>erlang 28.1.1</code>. These are the latest versions at the time of this writing. To ensure I always use these version I updated my <code>.tool-versions</code> file in the root of my project:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>elixir 1.19.2-otp-28
-</span></span><span style="display:flex;"><span>erlang 28.1.1
-</span></span></code></pre></div><p>I also updated my <code>mix.exs</code> file to use the latest version of elixir:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f1fa8c">version</span>: <span style="color:#f1fa8c">&#34;1.1.0&#34;</span>,
-</span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f1fa8c">elixir</span>: <span style="color:#f1fa8c">&#34;~&gt; 1.19&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f1fa8c">elixirc_paths</span>: elixirc_paths(<span style="color:#50fa7b">Mix</span><span style="color:#ff79c6">.</span>env()),
-</span></span></code></pre></div><p>With these two changes I was able to run the application with the latest version of elixir and erlang otp. It was easy and seamless. Now on to getting my pipeline and deployment infrastructure updated.</p>
-<h2 id="pipeline-and-deployment">Pipeline and deployment</h2>
-<p>My application runs on <a href="https://fly.io">Fly.io</a>. It is a simple platform that gives me everything I need. I use GitHub Actions for my CI/CD pipeline. Here are the changes I had to make to get everything working with the latest Elixir.</p>
-<p>First of al I made this simple change to my GitHub Actionspipeline script:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>matrix:
-</span></span><span style="display:flex;"><span>  otp: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;28.1.1&#39;</span><span style="color:#ff79c6">]</span>       <span style="color:#6272a4"># Define the OTP version [required]</span>
-</span></span><span style="display:flex;"><span>  elixir: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;1.19.2&#39;</span><span style="color:#ff79c6">]</span>    <span style="color:#6272a4"># Define the elixir version [required]</span>
-</span></span></code></pre></div><p>I also had to make some changes to my <code>Dockerfile</code>. First of all I simply updated the version of elixir and erlang specified which also caused me to update the version of debian. Finding the right version of debian was a bit of a challenge. I eventually settled on the version below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">ELIXIR_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>.19.2
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">OTP_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">28</span>.1.1
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">DEBIAN_VERSION</span><span style="color:#ff79c6">=</span>trixie-20251103-slim
-</span></span></code></pre></div><p>When I pushed this code the pipeline failed complaining about a missing package: <code>Unable to locate package libncurses5</code>. After a little research I learned that this is an older version of the library and newer version of debian no long use that. I had to make one additional change to my Dockerfile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">RUN</span> apt-get update <span style="color:#f1fa8c">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#ff79c6">&amp;&amp;</span> apt-get install -y --no-install-recommends libstdc++6 openssl libncurses6 locales ca-certificates <span style="color:#f1fa8c">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#ff79c6">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
-</span></span></code></pre></div><p>Notice on line 2 that I updated the library to use <code>libncurses6</code>. With this change everything worked and the pipeline passed.</p>
+                <h2 id="does-ai-work-better-with-some-languages-than-others">Does AI work better with some languages than others?</h2>
+<p>A lot of developers identify with the language they program in. How often do you hear &ldquo;I&rsquo;m a Java developer&rdquo; or &ldquo;I&rsquo;m a Python developer&rdquo;?</p>
+<p>I&rsquo;ve had several conversations with other developers about this topic. Some believe that certain languages are better suited for AI-assisted development than others. Others think that the choice of language has little to no impact on the outcome. I&rsquo;m of the opinion that language does matter but this is just based on my personal experience that is limited to three languages (Java, TypeScript, and Elixir) in four different contexts.</p>
+<h3 id="the-autocodebench-results">The AutoCodeBench Results</h3>
+<p><a href="https://hunyuan.tencent.com/visual">The Hunyuan team at Tencent</a> (maker of Weixin Pay) has released a benchmark called <a href="https://github.com/Tencent-Hunyuan/AutoCodeBenchmark?tab=readme-ov-file">AutoCodeBench</a>. In their benchmark they used 3,920 curated problems, 20 different programming languages, and evaluated over 30 LLMs. This benchmark provides some interesting insights into how different languages perform with AI-assisted development. Let&rsquo;s look at the results:</p>
+<p>
+  <img src="/img/AutoCodeBenchResult.png" alt="AutoCodeBench Results">
+
+</p>
+<p>When running the same set of tests across different languages and different LLMs you can see that the results range anywhere from less than 10% accuracy to over 90% accuracy. At the time they published these results (October 2025) Claude Opus 4.1 was the top performing LLM. If we look at only those results we can see 31.2% accuracy (PHP) to 86.9% accuracy (Elixir) with those languages scoring an upper bound of 53.8% and 97.5%. Let&rsquo;s see how some of the most popular corporate programming languages scored:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Language</th>
+          <th style="text-align: center">Accuracy</th>
+          <th style="text-align: center">Upper Bound</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Java</td>
+          <td style="text-align: center">56.4%</td>
+          <td style="text-align: center">80.9%</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">JavaScript</td>
+          <td style="text-align: center">42.9%</td>
+          <td style="text-align: center">60.9%</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">TypeScript</td>
+          <td style="text-align: center">47.7%</td>
+          <td style="text-align: center">61.3%</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">C#</td>
+          <td style="text-align: center">78.4%</td>
+          <td style="text-align: center">88.4%</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Python</td>
+          <td style="text-align: center">42.3%</td>
+          <td style="text-align: center">65.3%</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Ruby</td>
+          <td style="text-align: center">61.0%</td>
+          <td style="text-align: center">81.0%</td>
+      </tr>
+  </tbody>
+</table>
+<p>That is a huge spread. The difference between the highest and lowest scoring languages is 55.7%. I think there are reason why we see such a huge spread and I&rsquo;ll get into that later. But first, let&rsquo;s see what the world&rsquo;s largest technical professional organization has to say on this topic.</p>
+<h3 id="the-view-of-ieee">The view of IEEE</h3>
+<p>In late September <a href="https://www.ieee.org">IEEE</a> published a <a href="https://developers.slashdot.org/story/25/09/28/1823244/will-ai-mean-bring-an-end-to-top-programming-language-rankings">paper</a> on <a href="https://developers.slashdot.org">./Slashdot</a> of all places. In that paper they pose a very interesting question:</p>
+<blockquote>
+<p>Could we get our AIs to go straight from prompt to an intermediate language that could be fed into the interpreter or compiler of our choice? Do we need high-level languages at all in that future?</p>
+</blockquote>
+<p>This is an interesting thought. If developers are using agents to write over 90% of the code then does it really matter what language it is written in? Does it matter which language it is ultimately compiled to? Should the LLM select the runtime based on the characteristics needed by the application or component? They go on to say:</p>
+<blockquote>
+<p>Will there be a Top Programming Language in 2026? Right now, programming is going through the biggest transformation since compilers broke onto the scene in the early 1950s. Even if the predictions that much of AI is a bubble about to burst come true, the thing about tech bubbles is that there&rsquo;s always some residual technology that survives. It&rsquo;s likely that using LLMs to write and assist with code is something that&rsquo;s going to stick. So we&rsquo;re going to be spending the next 12 months figuring out what popularity means in this new age, and what metrics might be useful to measure.</p>
+</blockquote>
+<h3 id="the-corporate-perspective">The corporate perspective</h3>
+<p>Historically corporations have chosen languages based on factors like available developers, internal knowledge and experience, and the need to integrate with existing systems. In the age of AI, these factors may become less important as agents can write code in many languages and we have clearly seen that they are more accurate in some languages than others.</p>
+<p>If a company has chosen Java as their primary language would it be bad if an LLM chose another JVM based language like Kotlin for a specific component? In service oriented architectures that use basic JSON with RestFul APIs is it a bad thing if an LLM writes the code in a language where it is more accurate and where there are other characteristics that make it a better choice - like scalability and performance?</p>
+<p>These type of questions have not been asked in the past due to the cost of training developers on a new platform. But if AI is writing all of the code is there a cost to switching languages? Is that cost worth the tradeoffs that we might see by selecting the language that works best with the LLM?</p>
+<h3 id="my-cheezy-view">My Cheezy view</h3>
+<p>I have given a lot of thought to why I think some languages are more accurate than others and I believe it comes down to a few factors:</p>
+<ul>
+<li>
+<p>Complexity or simplicity of the language</p>
+<p>A simple example of this is comparing Object Oriented languages to Functional languages. OO languages have state that is spread across multiple objects and can be changed a numerous points in the code. Functional languages typically have imutable data with many small functions that have no side effects. It is easy for me to understand how an LLM might do better with a functional language than an object oriented language.</p>
+</li>
+<li>
+<p>Number of frameworks and libraries available</p>
+<p>I am going to go the opposite way than what you might think here. I think that the more frameworks and libraries a language has translate into more complexity. For example, if there are 10 different ways to build a basic web application due to 10 completely different frameworks then the LLM has more work to do to be great in each of those frameworks. Frameworks that have been around for a long time tend to have many ways of implementing a specific feature and depending on the codebase it brings with it even more complexity.</p>
+</li>
+<li>
+<p>Availability of documentation</p>
+<p>It is no secret that access to documentation helps LLMs understand how to implement specific features and patterns. I think that the quality of the documentation and the ability to find it make a big difference in how well an LLM can work with a language. Having to put a lot of links in your <a href="https://agents.md">AGENTS.md</a> file is far from ideal. Languages that have centralized all documentation in a well-known site and even provide <a href="https://modelcontextprotocol.io/docs/getting-started/intro">MCPs</a> that know how to locate and deliver the document the Agen needs are a huge benefit.</p>
+</li>
+<li>
+<p>Community support and activity</p>
+<p>There are some languages where the community has spent a considerable amount of time over many months making their language and tools work better with AI. Other languages are very late to the game and are playing catch-up. I believe this is clearly the reason the Elixir programming language does so well in Benchmarks.</p>
+</li>
+</ul>
+<h3 id="summary">Summary</h3>
+<p>I think many of the reasons specific programming languages were selected in the past no long hold the same level of importance. It is not a huge issue right now but over time I see developers / companies making programming language selections based on how well the language works with AI. How soon will this happen? Maybe this year!</p>
 
             
              
@@ -396,6 +458,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
+        
             <li><a href="/post/adopting-ai-driven-development/">Adopting AI Driven Development</a></li>
         
             <li><a href="/post/stride-active-guidence/">Stride Active Guidence</a></li>
@@ -403,8 +467,6 @@
             <li><a href="/post/stride-has-skills/">Stride Has Skills</a></li>
         
             <li><a href="/post/stride_workflow/">The Stride Workflow</a></li>
-        
-            <li><a href="/post/getting_started_with_stride/">Getting Started with Stride</a></li>
         
         </ul>
     </section>

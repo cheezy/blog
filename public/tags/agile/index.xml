@@ -6,8 +6,43 @@
     <description>Recent content in Agile on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Dec 2025 08:32:51 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 10:23:45 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/agile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adopting AI Driven Development</title>
+      <link>http://localhost:1313/post/adopting-ai-driven-development/</link>
+      <pubDate>Mon, 12 Jan 2026 10:23:45 -0500</pubDate>
+      <guid>http://localhost:1313/post/adopting-ai-driven-development/</guid>
+      <description>&lt;h2 id=&#34;sharing-what-worked&#34;&gt;Sharing what worked&lt;/h2&gt;&#xA;&lt;p&gt;I have often wondered why some companies have had great success adopting AI for software development while others have had the opposite experience. Some people talk about AI &amp;ldquo;Slop&amp;rdquo; meaning very bad code written by AI. At the same time many of us see AI producing code that is high quality, well factored, and well tested. Is it possible that the way one approaches this technology has an impact on the outcome?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stride Active Guidence</title>
+      <link>http://localhost:1313/post/stride-active-guidence/</link>
+      <pubDate>Fri, 09 Jan 2026 10:41:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/stride-active-guidence/</guid>
+      <description>&lt;h2 id=&#34;stride-now-supports-four-ai-assistants-with-always-active-guidance&#34;&gt;Stride Now Supports Four AI Assistants with Always-Active Guidance&lt;/h2&gt;&#xA;&lt;p&gt;What a day. Earlier today I rolled out &lt;a href=&#34;https://www.stridelikeaboss.com/blog/stride-has-skills&#34;&gt;Claude Code Skills for Stride&lt;/a&gt;. A couple of hours later I&amp;rsquo;m excited to announce that Stride now supports four popular AI coding assistants beyond Claude Code, with always-active instruction files that help developers avoid common mistakes and follow best practices when working with the Stride API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge-supporting-multiple-ai-assistants&#34;&gt;The Challenge: Supporting Multiple AI Assistants&lt;/h2&gt;&#xA;&lt;p&gt;I know that not all developers use Claude Code. Many companies are invested in tools like Copilot, Windsurf, etc. Developers in these companies should not feel left out when it comes to Stride. Because of that need, I have just added enhanced instructions for &lt;a href=&#34;https://github.com/features/copilot&#34;&gt;GitHub Copilot&lt;/a&gt;, &lt;a href=&#34;https://www.cursor.com/&#34;&gt;Cursor&lt;/a&gt;, &lt;a href=&#34;https://www.windsurfrules.com/&#34;&gt;Windsurf Cascade&lt;/a&gt;, and &lt;a href=&#34;https://continue.dev/&#34;&gt;Continue.dev&lt;/a&gt;. These assistants are excellent tools, but they needed help understanding Stride&amp;rsquo;s workflow requirements, especially around:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stride Has Skills</title>
+      <link>http://localhost:1313/post/stride-has-skills/</link>
+      <pubDate>Fri, 09 Jan 2026 07:08:31 -0500</pubDate>
+      <guid>http://localhost:1313/post/stride-has-skills/</guid>
+      <description>&lt;p&gt;I am excited to announce a major enhancement to Stride&amp;rsquo;s AI agent workflow: &lt;strong&gt;Claude Code Skills&lt;/strong&gt;. These skills enforce best practices and prevent common mistakes that waste hours of development time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-claude-code-skills&#34;&gt;What Are Claude Code Skills?&lt;/h2&gt;&#xA;&lt;p&gt;Claude Code Skills are specialized instructions that guide AI agents through complex workflows. Think of them as expert advisors that activate at critical decision points, ensuring agents follow established patterns and avoid known pitfalls.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Stride Workflow</title>
+      <link>http://localhost:1313/post/stride_workflow/</link>
+      <pubDate>Tue, 06 Jan 2026 08:05:52 -0500</pubDate>
+      <guid>http://localhost:1313/post/stride_workflow/</guid>
+      <description>&lt;h2 id=&#34;how-do-humans-collaborate-with-ai&#34;&gt;How do Humans collaborate with AI?&lt;/h2&gt;&#xA;&lt;p&gt;When I decided to make &lt;a href=&#34;https://www.stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; a Human-AI collaboration tool I spent some time thinking about when and how Humans would want to interject themselves into an AI driven worflow. Those of you that know me know that I have spent a significant portion of my life helping teams optimize their work and achieve better flow. With AI in the mix it causes us to rethink some of what helps us achieve that flow. We have to be realistic about what Humans do best (at this time) and what AI does best and find a way to optimize around these things. At the same time, many Humans are not comfortable (at this time) with letting AI take over completely and they want to be involved in the process. This is what I came up with:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started with Stride</title>
+      <link>http://localhost:1313/post/getting_started_with_stride/</link>
+      <pubDate>Mon, 05 Jan 2026 09:03:25 -0500</pubDate>
+      <guid>http://localhost:1313/post/getting_started_with_stride/</guid>
+      <description>&lt;h2 id=&#34;stride---ai-human-collaboration-platform&#34;&gt;Stride - AI-Human Collaboration Platform&lt;/h2&gt;&#xA;&lt;p&gt;This post is to help you get started. Through a series of videos I will guide you through the entire process from initial setup to working with your AI Agent to build an initial backlog.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s start at the beginning.&lt;/p&gt;&#xA;&lt;h2 id=&#34;building-your-first-ai-optimized-board&#34;&gt;Building your first AI Optimized Board&lt;/h2&gt;&#xA;&lt;p&gt;After you&amp;rsquo;ve registered with the system you will want to create your first AI Optimized Board. This is an extremely simple process.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Stride goes full AI</title>
       <link>http://localhost:1313/post/stride-next/</link>
