@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Jan 2026 10:23:45 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jan 2026 10:11:02 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Does Programming Language Matter?</title>
+      <link>http://localhost:1313/post/does-programming-language-matter/</link>
+      <pubDate>Tue, 13 Jan 2026 10:11:02 -0500</pubDate>
+      <guid>http://localhost:1313/post/does-programming-language-matter/</guid>
+      <description>&lt;h2 id=&#34;does-ai-work-better-with-some-languages-than-others&#34;&gt;Does AI work better with some languages than others?&lt;/h2&gt;&#xA;&lt;p&gt;A lot of developers identify with the language they program in. How often do you hear &amp;ldquo;I&amp;rsquo;m a Java developer&amp;rdquo; or &amp;ldquo;I&amp;rsquo;m a Python developer&amp;rdquo;?&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve had several conversations with other developers about this topic. Some believe that certain languages are better suited for AI-assisted development than others. Others think that the choice of language has little to no impact on the outcome. I&amp;rsquo;m of the opinion that language does matter but this is just based on my personal experience that is limited to three languages (Java, TypeScript, and Elixir) in four different contexts.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Adopting AI Driven Development</title>
       <link>http://localhost:1313/post/adopting-ai-driven-development/</link>
