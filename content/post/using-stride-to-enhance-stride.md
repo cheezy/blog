@@ -9,7 +9,7 @@ In this post I will be using Stride and Claude Code to add a _Resources_ section
 
 ## Brainstorming with Claude
 
-I start with a concept. I want to add a new section to Stride users can go to find answers to questions about Stride. I hope to include a lot of images and videos. The video below shows the output of a Brainstorming session I had with Claude. The session lasted about 5 minutes. I would expect a Product Owner and Developer to pair on this activity in a team setting.
+I start with a concept. I want to add a new section to Stride where users can go to find answers to questions about Stride. I hope to include a lot of images and videos. The video below shows the output of a Brainstorming session I had with Claude. The session lasted about 5 minutes. I would expect a Product Owner and Developer to pair on this activity in a team setting.
 
 I spent another 15 minutes reviewing the output after I finished with Claude. The goal at this time is not to create a perfect plan. Instead I think that having the plan be 80% right is perfect. We will have several opportunities to refine the plan and to make small adjustments as we go.
 
