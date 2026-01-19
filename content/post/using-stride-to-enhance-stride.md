@@ -17,15 +17,15 @@ I spent another 15 minutes reviewing the output after I finished with Claude. Th
 
 ## Creating the Backlog
 
-Now that we have a plan we need to break this down into tasks. In this video I ask Claude to do just that. Once the tasks are created Claude will use one of the Stride Skills to upload the tasks to Stride. This is a simple step and it took less than 2 minutes.
+Now that we have a plan we need to break this down into Tasks. In this video I ask Claude to do just that. Once the Tasks are created Claude will use one of the Stride Skills to upload the Tasks to Stride. What you do not see is that Stride causes Claude to add a lot of details to each [Task](https://cheezyworld.ca/post/what-is-a-task/). The Task includes things like testing approaches, dependencies, what, why, how, risks, security considerations, etc. This is very useful when the Agent gets around to implementing the Task which is frequently not immediately after the brainstorming. This is a simple step and it took less than 2 minutes.
 
 {{< youtube RW98r1CQMXc >}}
 
-After the tasks were in Stride I spent another 15 minutes reviewing the tasks and making sure I was happy with how things were broken out. I also ensured all of the dependencies were properly identified. Everything seemed okay so I moved the tasks to the _Ready_ column on the board so they could be picked up by the Agent.
+After the Tasks were in Stride I spent another 15 minutes reviewing the tasks and making sure I was happy with how things were broken out. I also ensured all of the dependencies were properly identified. Everything seemed okay so I moved the Tasks to the _Ready_ column on the board so they could be picked up by the Agent.
 
 ## Implementing the Change
 
-Now that we have a list of tasks in the _Ready_ column on the board we can ask Claude to implement them. A developer would be performing this step. It took a little under 47 minutes for Claude to work through all of the tasks. If I had multiple developers working on this Backlog it would have taken less time.
+Now that we have a list of Tasks in the _Ready_ column on the board we can ask Claude to implement them. Claude not only writes the code, but it also tests everything, performs quality checks like static code analysis, and runs security checks. All of these are specified in the [hooks](https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md) definition in the Stride configuration so you can tailor it to the needs of your team. A developer would be performing this step. It took a little under 47 minutes for Claude to work through all of the Tasks. If I had multiple developers working on this Backlog it would have taken less time. Stride makes it easy for multiple developers / Agents to work on the same Backlog. It includes intelligence during task assignment to ensure the Agents do not conflict with each other - even down to the individual file level.
 
 {{< youtube Pdv5l6e0Uw4 >}}
 
@@ -54,5 +54,5 @@ This is an example of how Claude can work with Stride to implement a feature. It
 
 It also points to a few things that I have blogged about before:
 
-1. On a development it will not be easy to create enough requirements to keep a lot of developers busy. The solution to this is to rapidly create requirements and get them mostly correct. Once the backlog is implemented a Product Owner can go through the software and make the tweaks necessary to get it ready for release.
+1. It will not be easy to create enough requirements to keep a lot of developers busy. The solution to this is to rapidly create requirements and get them mostly correct. Once the backlog is implemented a Product Owner can go through the software and make the tweaks necessary to get it ready for release.
 2. We no longer need large teams with many developers. Two developers and a Product Owner can implement a lot of changes in a short amount of time due to the power of AI.
