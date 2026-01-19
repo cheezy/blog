@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="Using Stride and Claude Code to Enhance Stride" />
+    <meta property="og:title" content="Using Stride and Claude Code to Enhance Stride" />
+    <meta property="twitter:title" content="Using Stride and Claude Code to Enhance Stride" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/categories/tech/" />
+    <meta property="og:url" content="http://localhost:1313/post/using-stride-to-enhance-stride/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Tech | Cheezy&#39;s Blog</title>
+    <title>Using Stride and Claude Code to Enhance Stride | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/categories/tech/">
+    <link rel="canonical" href="/post/using-stride-to-enhance-stride/">
 
     
 
@@ -170,57 +170,101 @@
 
 
 
-  
-<div data-pagefind-ignore="all" class="container">
-    <div class="row">
-        
-        
-   	    <div class="
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
             col-lg-8 col-lg-offset-1
             col-md-8 col-md-offset-1
             col-sm-12
             col-xs-12
-            post-container
-        ">
-            
-<div data-pagefind-ignore="all">
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/tdd-with-ai/">
-        <h2 class="post-title">
-            TDD With AI
-        </h2>
-	
-        <h3 class="post-subtitle">
-            Is it possible?
-        </h3>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="im-a-tdd-guy">I&rsquo;m a TDD guy</h2>
-<p>I have been writing code using Test Driven Development for about 25 years. I am a huge believer in the benefits of this practice. I have spoken about it at conferences around the world and have taught many workshops on the subject. As I started to dig into AI the first thing I tried to do is see how it would fit into my TDD workflow. I tried numerous approaches and they all felt unnatural. I watched videos of others try to do the same and didn&rsquo;t feel like they were successful.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by      &#34;&#34; on Tuesday, September 30, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-</div>
+            post-container">
+            <h1>Using Stride and Claude Code to Enhance Stride</h1>
 
             
+                <p>In this post I will be using Stride and Claude Code to add a <em>Resources</em> section to the Stride UI. Through a series of videos you will see me go through the entire lifecycle of adding this feature to Stride.</p>
+<h2 id="brainstorming-with-claude">Brainstorming with Claude</h2>
+<p>I start with a concept. I want to add a new section to Stride users can go to find answers to questions about Stride. I hope to include a lot of images and videos. The video below shows the output of a Brainstorming session I had with Claude. The session lasted about 5 minutes. I would expect a Product Owner and Developer to pair on this activity in a team setting.</p>
+<p>I spent another 15 minutes reviewing the output after I finished with Claude. The goal at this time is not to create a perfect plan. Instead I think that having the plan be 80% right is perfect. We will have several opportunities to refine the plan and to make small adjustments as we go.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/VQ6Zj7qNgwY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h2 id="creating-the-backlog">Creating the Backlog</h2>
+<p>Now that we have a plan we need to break this down into tasks. In this video I ask Claude to do just that. Once the tasks are created Claude will use one of the Stride Skills to upload the tasks to Stride. This is a simple step and it took less than 2 minutes.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RW98r1CQMXc?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>After the tasks were in Stride I spent another 15 minutes reviewing the tasks and making sure I was happy with how things were broken out. I also ensured all of the dependencies were properly identified. Everything seemed okay so I moved the tasks to the <em>Ready</em> column on the board so they could be picked up by the Agent.</p>
+<h2 id="implementing-the-change">Implementing the Change</h2>
+<p>Now that we have a list of tasks in the <em>Ready</em> column on the board we can ask Claude to implement them. A developer would be performing this step. It took a little under 47 minutes for Claude to work through all of the tasks. If I had multiple developers working on this Backlog it would have taken less time.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Pdv5l6e0Uw4?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h2 id="looking-at-the-results">Looking at the Results</h2>
+<p>This short video walks through some of the updates made to Stride. I wanted you to see what was added. This feature is now live in production so you can try it out. I plan to enhance it (with Claude and Stride) over the coming days.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/OymrWVivDP0?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>I will be going through the details of this change and asking Claude to make small changes. As I said earlier, I was shooting for 80% accuracy with the requirements and now that I have working software I can easily make small changes to accomplish the remaining 20%.</p>
+<h2 id="what-happened">What happened?</h2>
+<p>This is an example of how Claude can work with Stride to implement a feature. It took a total of 84 minutes to go from concept to live feature. I think this is a great example of how AI can be used to enhance the development process.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Activity</th>
+          <th style="text-align: center">Duration</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Brainstorming with Claude</td>
+          <td style="text-align: center">5 Minutes</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Reviewing the Brainstorming Output</td>
+          <td style="text-align: center">15 Minutes</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Creating the Backlog</td>
+          <td style="text-align: center">2 Minutes</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Reviewing the Backlog</td>
+          <td style="text-align: center">15 Minutes</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Implementing the Change</td>
+          <td style="text-align: center">47 Minutes</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>Total time spent on requirements: 37 Minutes</strong></li>
+<li><strong>Total time spent on implementation: 47 Minutes</strong></li>
+</ul>
+<p>It also points to a few things that I have blogged about before:</p>
+<ol>
+<li>On a development it will not be easy to create enough requirements to keep a lot of developers busy. The solution to this is to rapidly create requirements and get them mostly correct. Once the backlog is implemented a Product Owner can go through the software and make the tweaks necessary to get it ready for release.</li>
+<li>We no longer need large teams with many developers. Two developers and a Product Owner can implement a lot of changes in a short amount of time due to the power of AI.</li>
+</ol>
+
+            
+             
+            
 
 
 
-       	</div>
-        
+
+            
+            </div>
+            
+            
 
 <div class="
     col-lg-3 col-lg-offset-0
@@ -396,6 +440,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
+        
             <li><a href="/post/what-is-a-task/">What is a task?</a></li>
         
             <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
@@ -404,16 +450,14 @@
         
             <li><a href="/post/stride-active-guidence/">Stride Active Guidence</a></li>
         
-            <li><a href="/post/stride-has-skills/">Stride Has Skills</a></li>
-        
         </ul>
     </section>
     
 </div>
 
-	</div>
-</div>
-
+        </div>
+    </div>
+</article>
 
 
 
@@ -473,7 +517,7 @@
             
            
                    <li>
-                       <a href='/categories/tech/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

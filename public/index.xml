@@ -9,6 +9,13 @@
     <lastBuildDate>Wed, 14 Jan 2026 10:24:27 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Using Stride and Claude Code to Enhance Stride</title>
+      <link>http://localhost:1313/post/using-stride-to-enhance-stride/</link>
+      <pubDate>Wed, 14 Jan 2026 10:24:27 -0500</pubDate>
+      <guid>http://localhost:1313/post/using-stride-to-enhance-stride/</guid>
+      <description>&lt;p&gt;In this post I will be using Stride and Claude Code to add a &lt;em&gt;Resources&lt;/em&gt; section to the Stride UI. Through a series of videos you will see me go through the entire lifecycle of adding this feature to Stride.&lt;/p&gt;&#xA;&lt;h2 id=&#34;brainstorming-with-claude&#34;&gt;Brainstorming with Claude&lt;/h2&gt;&#xA;&lt;p&gt;I start with a concept. I want to add a new section to Stride users can go to find answers to questions about Stride. I hope to include a lot of images and videos. The video below shows the output of a Brainstorming session I had with Claude. The session lasted about 5 minutes. I would expect a Product Owner and Developer to pair on this activity in a team setting.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>What is a task?</title>
       <link>http://localhost:1313/post/what-is-a-task/</link>
       <pubDate>Wed, 14 Jan 2026 10:24:27 -0500</pubDate>

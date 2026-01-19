@@ -3,24 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/agile/</loc>
-    <lastmod>2026-01-13T10:11:02-05:00</lastmod>
+    <lastmod>2026-01-14T10:24:27-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ai/</loc>
-    <lastmod>2026-01-13T10:11:02-05:00</lastmod>
+    <lastmod>2026-01-14T10:24:27-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-01-13T10:11:02-05:00</lastmod>
+    <lastmod>2026-01-14T10:24:27-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/continuous-delivery/</loc>
-    <lastmod>2026-01-13T10:11:02-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/does-programming-language-matter/</loc>
-    <lastmod>2026-01-13T10:11:02-05:00</lastmod>
+    <lastmod>2026-01-14T10:24:27-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2026-01-13T10:11:02-05:00</lastmod>
+    <lastmod>2026-01-14T10:24:27-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-01-14T10:24:27-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/what-is-a-task/</loc>
+    <lastmod>2026-01-14T10:24:27-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/does-programming-language-matter/</loc>
     <lastmod>2026-01-13T10:11:02-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/adopting-ai-driven-development/</loc>
