@@ -50,9 +50,14 @@ This is an example of how Claude can work with Stride to implement a feature. It
 | Implementing the Change | 47 Minutes |
 
 - **Total time spent on requirements: 37 Minutes**
+    - 7 Minutes with Claude and 30 minutes reviewing the output
 - **Total time spent on implementation: 47 Minutes**
 
 It also points to a few things that I have blogged about before:
 
 1. It will not be easy to create enough requirements to keep a lot of developers busy. The solution to this is to rapidly create requirements and get them mostly correct. Once the backlog is implemented a Product Owner can go through the software and make the tweaks necessary to get it ready for release.
 2. We no longer need large teams with many developers. Two developers and a Product Owner can implement a lot of changes in a short amount of time due to the power of AI.
+
+## What happened Next?
+
+I deployed this change to production. You can go see it now at [Stride](https://StrideLikeABoss.ca). I am now in the process of going over everything created during the sessions. I'm adding images to some of the guides and enhancing the descriptions. I would expect a Product Owner would do this on a team.

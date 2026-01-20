@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/tags/ai/" />
+    <meta property="og:url" content="http://localhost:1313/tags/continuous-delivery/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>AI | Cheezy&#39;s Blog</title>
+    <title>Continuous Delivery | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/tags/ai/">
+    <link rel="canonical" href="/tags/continuous-delivery/">
 
     
 
@@ -186,154 +186,22 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
-    <a href="http://localhost:1313/post/ai-tensions/">
+    <a href="http://localhost:1313/post/hello-world-again/">
         <h2 class="post-title">
-            Tensions with AI
+            Hello world (again eh)!
         </h2>
 	
         <div class="post-content-preview">
 	
-            <h2 id="bringing-ai-into-your-organization">Bringing AI into your organization</h2>
-<p>I have now worked with multiple teams that have introduced an AI driven development into their development workflow and I have seen a pattern emerge. When AI, and more specifically Vibe Coding, is introduced into a traditional software development organization that are following an Agile process there are three tensions that quickly arise. All three of these tensions are due to the rapid pace of development.</p>
+            <h2 id="im-back">I&rsquo;m back</h2>
+<p>It has been a while since I&rsquo;ve blogged. I had a blog named CheezyWorld.com
+for many years but stopped posting more than 12 years ago. At the time I was traveling for work as well as traveling around the world to speak at conferences. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.</p>
        
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Monday, December 15, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part15/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 15
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="polish--enhancement">Polish &amp; Enhancement</h2>
-<p>It is finally time to get back and finish phase 7 of our plan. Here is what remains:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">#### Phase 7: Polish &amp; Enhancement
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **UI/UX improvements**
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Design beautiful board cards with Tailwind CSS
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add hover effects and transitions
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Improve spacing and typography
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add loading states for async actions
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add empty states for boards without columns/tasks
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Add notifications**
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Use Phoenix LiveView flash messages for success/error
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Style flash messages with Tailwind CSS
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Add confirmation dialogs**
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add confirmation for board deletion
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add confirmation for column deletion (mention tasks will be deleted)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add confirmation for task deletion
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Error handling**
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add proper error messages for validation failures
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Handle edge cases (deleting last column, etc.)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add 404 pages for missing resources
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Final Quality Checks**:
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix test`</span> and ensure all tests pass (510 tests, 0 failures)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix test --cover`</span> and verify coverage meets threshold (94.60% coverage)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix credo --strict`</span> and fix any issues (no issues found)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix sobelow --config`</span> and fix any security issues (no issues found)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix precommit`</span> to run all checks together (all checks passed)
-</span></span></code></pre></div><h3 id="starting-with-uiux-improvements">Starting with UI/UX improvements</h3>
-<p>We start by asking TideWave to complete the first two tasks under UI/UX improvements. Less than five minutes later we have some sparkle.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Sunday, November 30, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part14/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 14
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="cleaning-up-authentication">Cleaning up Authentication</h2>
-<p>This is the last episode before we get back to our original plan. The authentication system currently in place is what was generated by running the <code>mix phx.gen.auth</code> command. The styles were cleaned up a little when I asked Claude to create a nice style for the entire site. But the behaviour is the generated form and is not what I want. In part 14 we will attack this head on.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, November 28, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part13/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 13
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="setting-permissions-for-users">Setting permissions for users</h2>
-<p>Currently every user can do everything in the application. A read only user can delete a board or make any type of change they want. Let&rsquo;s fix that.</p>
-<h3 id="focus-on-owners-first">Focus on Owners first</h3>
-<p>First I want to focus on ensuring the board owner can do board-level actions and other users cannot. Let me start by listing out the things that only owners can do:</p>
-<ul>
-<li>Edit and delete their boards</li>
-<li>Add new columns to a board</li>
-<li>Edit or delete columns from their boards</li>
-<li>Reorder columns (including drag-and-drop)</li>
-</ul>
-<p>I think this is a good list. Let&rsquo;s ask TideWave to make these changes.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, November 21, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part12/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 12
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="adding-users-to-boards-and-tasks">Adding users to boards and tasks</h2>
-<p>Since the <a href="https://tidewave.ai/blog/claude-code-codex">announcement</a> of Claude Code running inside of Tidewave I have been extremely happy about this combo. For now I am using it for nearly all of my changes to the codebase. I have even given it a name - <strong>ClaudeWave</strong>. All of the changes in this post were done using ClaudeWave.</p>
-<p>So far our boards only have an owner. I want an owner to have the ability to add other users to a board and also assign tasks to one of those users. Let&rsquo;s get started.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Wednesday, November 12, 2025
+        Posted by Cheezy World on Friday, September 26, 2025
         
         
     
@@ -350,13 +218,9 @@
 <ul class="pager" data-pagefind-ignore="all">
     
     <li class="previous">
-        <a href="/tags/ai/page/2/">&larr; Newer Posts</a>
+        <a href="/tags/continuous-delivery/page/2/">&larr; Newer Posts</a>
     </li>
     
-    
-    <li class="next">
-        <a href="/tags/ai/page/4/">Older Posts &rarr;</a>
-    </li>
     
 </ul>
 
@@ -615,7 +479,7 @@
             
            
                    <li>
-                       <a href='/tags/ai/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                       <a href='/tags/continuous-delivery/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
