@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Jan 2026 10:24:27 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 02 Feb 2026 09:19:27 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is Stride?</title>
+      <link>http://localhost:1313/post/what-is-stride/</link>
+      <pubDate>Mon, 02 Feb 2026 09:19:27 -0500</pubDate>
+      <guid>http://localhost:1313/post/what-is-stride/</guid>
+      <description>&lt;p&gt;At its most basic level, &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; is a &lt;em&gt;smart&lt;/em&gt; kanban board where teams and AI agents can collaborate to build software. There are several tools available now that provide this basic capability, but Stride differentiates itself in several important and meaningful ways. This post will walk you through a Stride AI Optimized board and explain what the team and AI agents do at each step.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/img/stride-board.png&#34; alt=&#34;Stride AI Optimized Board&#34;&gt;&#xA;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;backlog&#34;&gt;Backlog&lt;/h2&gt;&#xA;&lt;p&gt;The Backlog column is where your agent will upload the Goals and Tasks that describe the work to be done.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Using Stride and Claude Code to Enhance Stride</title>
       <link>http://localhost:1313/post/using-stride-to-enhance-stride/</link>
@@ -216,7 +223,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>

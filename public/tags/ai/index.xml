@@ -23,6 +23,13 @@
       <description>&lt;p&gt;In my pursuit of trying to get the most out of my AI Agents I have spent a lot of time exploring how one can deliver requirements in such a way that they can be understood by Humans and provide the details that will make the Agent implementation successful. Knowing that there is typically a pause between when the requirements is established / captured and when the Agent starts working on it, I wanted to make sure that much of the context and details the Agent had during the planning session was captured in a way that it can be use later during implementation.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>What is Stride?</title>
+      <link>http://localhost:1313/post/what-is-stride/</link>
+      <pubDate>Wed, 14 Jan 2026 10:24:27 -0500</pubDate>
+      <guid>http://localhost:1313/post/what-is-stride/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Does Programming Language Matter?</title>
       <link>http://localhost:1313/post/does-programming-language-matter/</link>
       <pubDate>Tue, 13 Jan 2026 10:11:02 -0500</pubDate>
