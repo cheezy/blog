@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Stride Has Skills" />
-    <meta property="og:title" content="Stride Has Skills" />
-    <meta property="twitter:title" content="Stride Has Skills" />
+    <meta name="title" content="How Much Should I Spend?" />
+    <meta property="og:title" content="How Much Should I Spend?" />
+    <meta property="twitter:title" content="How Much Should I Spend?" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/stride-has-skills/" />
+    <meta property="og:url" content="http://localhost:1313/post/how-much/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Stride Has Skills | Cheezy&#39;s Blog</title>
+    <title>How Much Should I Spend? | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/stride-has-skills/">
+    <link rel="canonical" href="/post/how-much/">
 
     
 
@@ -181,146 +181,171 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>Stride Has Skills</h1>
+            <h1>How Much Should I Spend?</h1>
 
             
-                <p>I am excited to announce a major enhancement to Stride&rsquo;s AI agent workflow: <strong>Claude Code Skills</strong>. These skills enforce best practices and prevent common mistakes that waste hours of development time.</p>
-<h2 id="what-are-claude-code-skills">What Are Claude Code Skills?</h2>
-<p>Claude Code Skills are specialized instructions that guide AI agents through complex workflows. Think of them as expert advisors that activate at critical decision points, ensuring agents follow established patterns and avoid known pitfalls.</p>
-<p>Unlike traditional documentation that agents must search through and interpret, skills are:</p>
+                <p>This post will explore the question &ldquo;How much money should one spend on AI tools?&rdquo;. We will be looking at this question from multiple perspectives, the developer that wants to learn AI at home, the developer that works solo and wants the tools in order to boost their throughput and quality, and also from a corporate perspective. I&rsquo;ll give pricing that is available on the websites but larger discounts are often available for annual subscriptions or educational institutions. All prices are in Canadian Dollars.</p>
+<h2 id="the-current-landscape">The Current Landscape</h2>
+<p>Before we dive into specific recommendations, let&rsquo;s acknowledge that the AI tooling landscape is evolving rapidly. Prices change, new tools emerge, and existing tools add capabilities. What I share here is based on my experience as of early 2026.</p>
+<p>The good news is that there are options at every price point. The challenge is understanding what you get at each level and whether the investment makes sense for your situation.</p>
+<h2 id="the-home-learner">The Home Learner</h2>
+<p>If you are a developer who wants to learn how to leverage AI for development at home, you have several options. The first question to ask yourself is &ldquo;What do I want to learn?&rdquo;</p>
+<p>If you simply want to understand what AI can do and get a feel for the technology, you can start with free tiers.  Claude, ChatGPT,and others offer free access with limitations. You can copy and paste code into these tools and ask questions. This is a fine way to start but it will not give you a true sense of what is possible when AI is integrated into your development workflow.</p>
+<p>To really understand the potential, you need to use tools that are integrated into your IDE or terminal. Here are some options:</p>
+<h3 id="free-or-very-low-cost-options">Free or Very Low Cost Options</h3>
 <ul>
-<li><strong>Contextually triggered</strong> - Automatically invoked when relevant to the current task</li>
-<li><strong>Prescriptive</strong> - Provide step-by-step workflows, not just explanations</li>
-<li><strong>Preventative</strong> - Stop mistakes before they happen, not after</li>
-<li><strong>Self-contained</strong> - Include everything needed: workflows, examples, common mistakes, and quick references</li>
+<li><strong>GitHub Copilot Free Tier</strong> - GitHub now offers a free tier with limited completions per month. This is a good starting point for code completion.</li>
+<li><strong>Codeium</strong> - Offers a generous free tier for individuals with code completion and chat.</li>
+<li><strong>Continue</strong> - An open-source option that can connect to various models including local ones.</li>
 </ul>
-<p>When properly configured, Claude Code automatically discovers and uses these skills, making them feel like native capabilities rather than external documentation.</p>
-<h2 id="the-four-stride-skills">The Four Stride Skills</h2>
-<p>We&rsquo;ve implemented four skills that cover the complete Stride workflow:</p>
-<h3 id="1-stride-claiming-tasks">1. stride-claiming-tasks</h3>
-<p><strong>Purpose:</strong> Ensures proper task claiming workflow with hook execution before claiming.</p>
-<p><strong>The Problem:</strong> Agents claiming tasks before executing the <code>before_doing</code> hook end up working with outdated code, missing dependencies, and facing merge conflicts.</p>
-<p><strong>The Solution:</strong> This skill enforces a strict claiming workflow:</p>
+<p>These options will give you a taste of AI driven development but they have significant limitations.</p>
+<h3 id="the-sweet-spot-for-learning">The Sweet Spot for Learning</h3>
+<p>If you are serious about learning, I recommend spending $20-30 per month. This gets you access to:</p>
+<ul>
+<li><strong>Claude Pro</strong> ($28/month) - Access to Claude&rsquo;s most capable models with generous usage limits</li>
+<li><strong>ChatGPT Plus</strong> ($25/month) - Access to GPT-4 and other advanced features</li>
+<li><strong>GitHub Copilot</strong> ($14/month) - Solid code completion integrated into your IDE</li>
+</ul>
+<p>You do not need all of these. Pick one to start. My recommendation would be Claude Pro because it gives you access to Claude Code which is - in my opinion - the most capable AI coding agent available today.</p>
+<h3 id="my-recommendation-for-home-learners">My Recommendation for Home Learners</h3>
+<p>Start with Claude Pro at $28/month. Spend time learning how to work effectively with the AI. Read documentation, watch videos, and experiment. Learn about MCPs, Skills, and SubAgents and configure the tool to your workflow and development environment. After a month or two, you will know if this is something you want to continue investing in. The cost of a few cups of coffee per week is a small price to pay for learning a technology that is transforming our industry.</p>
+<h2 id="the-solo-developer">The Solo Developer</h2>
+<p>If you are a solo developer or freelancer looking to boost your productivity, the calculus changes. Now we are talking about return on investment. The question is not &ldquo;Can I afford this?&rdquo; but rather &ldquo;How much more can I accomplish with these tools?&rdquo;</p>
+<h3 id="the-math">The Math</h3>
+<p>Let&rsquo;s do some simple math. If you bill $100 per hour and AI tools help you complete work 50% faster, you either:</p>
+<ul>
+<li>Earn the same amount while working fewer hours, or</li>
+<li>Earn 50% more by taking on additional work</li>
+</ul>
+<p>At 160 hours per month, a 50% improvement is worth $8,000 in additional capacity. Even a conservative 10% improvement is worth $1,600 per month. Compared to that, $100-250 per month for AI tools is negligible.</p>
+<h3 id="what-i-recommend">What I Recommend</h3>
+<p>For solo developers who want maximum productivity:</p>
 <ol>
-<li>Verify <code>.stride_auth.md</code> and <code>.stride.md</code> files exist</li>
-<li>Find available tasks via <code>GET /api/tasks/next</code></li>
-<li>Review task details thoroughly</li>
-<li>Execute the <code>before_doing</code> hook (60s timeout, blocking)</li>
-<li>Only call <code>POST /api/tasks/claim</code> after the hook succeeds</li>
-<li>Begin implementation immediately after claiming</li>
+<li>
+<p><strong>Claude Code with API credits</strong> ($100-250/month depending on usage) - The Pro plan at $28/month is a starting point but heavy users will want to use API credits for unlimited access to the most capable models.</p>
+</li>
+<li>
+<p><strong>Windsurf Pro</strong> ($16.95/month) - If you prefer a more IDE-integrated experience, Windsurf is excellent. It combines a VS Code-based editor with deep AI integration.</p>
+</li>
+<li>
+<p><strong>Both</strong> - Many developers use Claude Code for complex tasks and Windsurf for in-editor assistance. The combination works well.</p>
+</li>
 </ol>
-<p><strong>Impact:</strong> Setup time for a new task is reduced as the Agent is very clear on what is expected.</p>
-<h3 id="2-stride-completing-tasks">2. stride-completing-tasks</h3>
-<p><strong>Purpose:</strong> Ensures both <code>after_doing</code> and <code>before_review</code> hooks are executed before marking tasks complete.</p>
-<p><strong>The Problem:</strong> Agents calling the completion endpoint before running validation hooks bypass quality gates. Humans want to be sure that all quality gates and preparation for review have been completed before marking a task as complete. This Skill saves time as it instructs the Agent on the proper workflow and prevents post-completion rework.</p>
-<p><strong>The Solution:</strong> This skill enforces proper completion workflow:</p>
+<h3 id="the-solo-developer-sweet-spot">The Solo Developer Sweet Spot</h3>
+<p>I would budget $100-250 per month for AI tools as a solo developer. This gives you access to the best tools without artificial limitations. If you find yourself hitting usage limits frequently, increase your budget. The ROI is almost certainly positive.</p>
+<h2 id="the-corporate-perspective">The Corporate Perspective</h2>
+<p>Corporate adoption of AI tools is different. There are considerations beyond just productivity:</p>
+<ul>
+<li>Security and data privacy</li>
+<li>Compliance requirements</li>
+<li>Licensing and legal concerns</li>
+<li>Training and onboarding costs</li>
+<li>Standardization across teams</li>
+</ul>
+<p>I cannot go into each of these topics in detail here. Instead I will focus on cost savings from moving to AI driven development and what you pay to achieve those savings.</p>
+<h3 id="expected-savings">Expected Savings</h3>
+<p>Adding AI driven development to your development teams can have significant impact on your bottom line. It will result in:</p>
+<ul>
+<li>Faster development cycles</li>
+<li>Reduced debugging time</li>
+<li>Fewer bugs in production</li>
+<li>Ability to take on more projects</li>
+<li>Higher quality deliverables</li>
+</ul>
+<p>Most organizations expect to see these types of savings but are they the only savings to come out of this shift? Let&rsquo;s look at the unexpected savings.</p>
+<h3 id="unexpected-savings">Unexpected Savings</h3>
+<p>I think there are three areas of savings that are typically not factored in when the overall cost of AI is calculated.</p>
 <ol>
-<li>Execute <code>after_doing</code> hook (120s timeout, blocking) - runs tests, linters, build</li>
-<li>Execute <code>before_review</code> hook (60s timeout, blocking) - creates PR, generates docs</li>
-<li>Only call <code>PATCH /api/tasks/:id/complete</code> after both hooks succeed</li>
-<li>Include both hook results in the API request</li>
-<li>If <code>needs_review=true</code>, stop and wait for human approval</li>
-<li>If <code>needs_review=false</code>, execute <code>after_review</code> hook and continue</li>
+<li>
+<p>In most corporate settings there is a fairly large testing organization that takes the output of development and verifies it correctness. As AI agents start writing more of the code the quality of the code goes up and the automated tests being written along side of that code also improves. Over time the need for the testing organization goes down dramatically as they issue the find drops. I have worked directly with teams where it was expected to find at least a couple of defects each week and once we introduced AI agents the number of defects dropped to very close to zero.</p>
+</li>
+<li>
+<p>As the teams ramp up with AI driven development it becomes very clear that the old way of gathering requirements is unable to keep up with the rate of change. This is not a problem that can be solved by having more people work on it. This can only be solved by leveraging AI to brainstorm changes and create tasks that can be delivered to the development team. Heavy weight processes will need to be replaced by process that are much more fluid and adaptive. This results in a much faster time to market and a much lower cost of change.</p>
+</li>
+<li>
+<p>In much the same way as the requirements process needs to be streamlined, other activities around the development process need to go through the same scrutiny. Our deployment pipelines need to become simplier and much faster. Our legan review processes need to be re-evaluated to truly understand what needs reviewed and what can be automated. Our audit requirements should be questioned in this new world and we should find new faster ways to meet our compliance requirements. The list of areas that will be impacted can go on but I will stop here for now.</p>
+</li>
 </ol>
-<p><strong>Impact:</strong> Reduction in post-completion rework and assurances from the Human that hooks workflow has been followed.</p>
-<h3 id="3-stride-creating-tasks">3. stride-creating-tasks</h3>
-<p><strong>Purpose:</strong> Requires comprehensive task specifications to prevent wasted time during implementation.</p>
-<p><strong>The Problem:</strong> Minimal task specifications force agents to spend hours discovering information that should have been provided upfront. Tasks like &ldquo;Add dark mode&rdquo; without context waste hours exploring which files to modify, what patterns to follow, and how to persist settings.</p>
-<p><strong>The Solution:</strong> This skill enforces a comprehensive task specification checklist including:</p>
-<ul>
-<li>Clear title format: <code>[Verb] [What] [Where]</code></li>
-<li>Complete description: WHY this matters and WHAT needs to be done</li>
-<li>Key files that will be modified (prevents merge conflicts)</li>
-<li>Verification steps as array of objects</li>
-<li>Testing strategy with unit, integration, and manual test arrays</li>
-<li>Acceptance criteria</li>
-<li>Patterns to follow with file references</li>
-<li>Pitfalls to avoid</li>
-</ul>
-<p><strong>Impact:</strong> Reduction in implementation time.</p>
-<h3 id="4-stride-creating-goals">4. stride-creating-goals</h3>
-<p><strong>Purpose:</strong> Enforces proper goal structure with nested tasks and correct batch format.</p>
-<p><strong>The Problem:</strong> Creating goals with incorrect structure causes API rejections (422 errors to date in Stride), silently ignored dependencies, and nested tasks without proper specifications. Although I have spent time improving the error messages on the upload APIs, Agents are still struggling with the correct format.</p>
-<p><strong>The Solution:</strong> This skill enforces:</p>
-<ul>
-<li>Correct batch format: root key must be <code>&quot;goals&quot;</code>, not <code>&quot;tasks&quot;</code></li>
-<li>Proper dependency patterns: indices for within-goal tasks, identifiers for existing tasks</li>
-<li>Never specify identifiers for new tasks (system auto-generates)</li>
-<li>Each nested task must follow the full stride-creating-tasks requirements</li>
-<li>Clear guidance on when to use goals vs. flat tasks (25+ hours = goal)</li>
-</ul>
-<p><strong>Impact:</strong> Reduction in format errors.</p>
-<h2 id="how-to-install-the-skills">How to Install the Skills</h2>
-<p>The skills are distributed automatically through Stride&rsquo;s onboarding endpoint and are <strong>automatically installed by AI agents</strong> when they fetch the onboarding data. This means Skills work exactly like the <code>.stride.md</code> and <code>.stride_auth.md</code> configuration files - agents create them automatically.</p>
-<h3 id="automatic-installation-recommended">Automatic Installation (Recommended)</h3>
-<p>When an AI agent (like Claude Code) calls the onboarding endpoint from their project root directory, it should automatically:</p>
+<h3 id="how-much-should-you-spend">How Much Should You Spend?</h3>
+<p>All of the savings I mentioned in the two previous sections are extremely hard to quantify. For my recomendations I will look at something else. Let&rsquo;s look at a couple of very simple images to help us understand the basis of what we are talking about. Let&rsquo;s assume that one developer can produce one jellybean each week. You very likely have a good idea of how much that developer costs you per week so I am sure you can perform a simple calculation to know how much you paid for that jellybean.</p>
+<p>
+  <img src="/img/one-developer-cost.png" alt="Cost for one developer">
+
+</p>
+<p>What if that developer could produce two, three, or even four jellybeans each week? What would you be willing to pay to achieve that level of productivity?</p>
+<p>
+  <img src="/img/one-developer-with-ai.png" alt="Cost increase for one developer with AI">
+
+</p>
+<p>This is the real question we need to be asking.</p>
+<h3 id="the-minimum-viable-investment">The Minimum Viable Investment</h3>
+<p>For a company exploring AI driven development, I recommend starting with a small pilot as I described in my <a href="/post/adopting-ai-driven-development/">previous post on adopting AI-driven development</a>. Budget for:</p>
 <ol>
-<li>Fetch the onboarding data: <code>GET https://www.stridelikeaboss.com/api/agent/onboarding</code></li>
-<li>Create <code>.stride_auth.md</code> from <code>file_templates.stride_auth_md</code></li>
-<li>Create <code>.stride.md</code> from <code>file_templates.stride_md</code></li>
-<li><strong>Create all 4 Skills</strong> from <code>claude_code_skills.available_skills</code> array</li>
+<li><strong>Tool licenses</strong> - $150 for Claude Enterprise and $30 for Windsurf Pro per developer per month for the pilot group</li>
+<li><strong>Training time</strong> - Expect 1-2 weeks of reduced productivity as developers learn</li>
+<li><strong>Guidance files</strong> - Time to create and refine your AGENTS.md, appropriate Claude Skills, and Subagents or similar configuration. Ideally you would have these ready before you launch your pilot team.</li>
 </ol>
-<p>The onboarding endpoint&rsquo;s <code>critical_first_steps</code> and <code>quick_start</code> sections now explicitly instruct agents to create all Skills automatically, just like they create the configuration files.</p>
-<h3 id="manual-installation-if-needed">Manual Installation (If Needed)</h3>
-<p>If you need to manually install the skills or update them:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Fetch onboarding data and extract all skills at once</span>
-</span></span><span style="display:flex;"><span>curl -s https://www.stridelikeaboss.com/api/agent/onboarding &gt; /tmp/onboarding.json
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Create directories</span>
-</span></span><span style="display:flex;"><span>mkdir -p ~/.claude/skills/<span style="color:#ff79c6">{</span>stride-claiming-tasks,stride-completing-tasks,stride-creating-tasks,stride-creating-goals<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Extract and save each skill</span>
-</span></span><span style="display:flex;"><span>jq -r <span style="color:#f1fa8c">&#39;.claude_code_skills.available_skills[0].content&#39;</span> /tmp/onboarding.json &gt; ~/.claude/skills/stride-claiming-tasks/SKILL.md
-</span></span><span style="display:flex;"><span>jq -r <span style="color:#f1fa8c">&#39;.claude_code_skills.available_skills[1].content&#39;</span> /tmp/onboarding.json &gt; ~/.claude/skills/stride-creating-tasks/SKILL.md
-</span></span><span style="display:flex;"><span>jq -r <span style="color:#f1fa8c">&#39;.claude_code_skills.available_skills[2].content&#39;</span> /tmp/onboarding.json &gt; ~/.claude/skills/stride-completing-tasks/SKILL.md
-</span></span><span style="display:flex;"><span>jq -r <span style="color:#f1fa8c">&#39;.claude_code_skills.available_skills[3].content&#39;</span> /tmp/onboarding.json &gt; ~/.claude/skills/stride-creating-goals/SKILL.md
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Clean up</span>
-</span></span><span style="display:flex;"><span>rm /tmp/onboarding.json
-</span></span></code></pre></div><h3 id="automatic-discovery">Automatic Discovery</h3>
-<p>Claude Code will automatically discover these skills when you start or restart a session. The skills will be invoked automatically when relevant:</p>
+<h3 id="scaling-up">Scaling Up</h3>
+<p>Once you have validated the approach with a pilot team, the question becomes how to scale. At this point, companies typically negotiate enterprise agreements. Prices vary significantly based on:</p>
 <ul>
-<li><strong>stride-claiming-tasks</strong>: Before calling <code>POST /api/tasks/claim</code></li>
-<li><strong>stride-completing-tasks</strong>: Before calling <code>PATCH /api/tasks/:id/complete</code></li>
-<li><strong>stride-creating-tasks</strong>: Before calling <code>POST /api/tasks</code> for individual tasks</li>
-<li><strong>stride-creating-goals</strong>: Before calling <code>POST /api/tasks</code> or <code>POST /api/tasks/batch</code> for goals</li>
+<li>Number of seats</li>
+<li>Security requirements</li>
+<li>Support levels</li>
+<li>Contract length</li>
 </ul>
-<h2 id="best-practices">Best Practices</h2>
-<h3 id="reload-skills-with-each-session">Reload Skills with Each Session</h3>
-<p>Skills may be updated with bug fixes or improvements. At the start of each new Claude Code session:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Fetch latest skills</span>
-</span></span><span style="display:flex;"><span>curl -s https://www.stridelikeaboss.com/api/agent/onboarding | jq <span style="color:#f1fa8c">&#39;.claude_code_skills&#39;</span>
-</span></span></code></pre></div><p>Check if the skills have changed and update your local copies if needed.</p>
-<h3 id="let-the-skills-guide-you">Let the Skills Guide You</h3>
-<p>When a skill is invoked, follow its guidance:</p>
+<p>Expect to pay $75-150 per developer per month at scale for basic tools, with additional costs for more capable models and higher usage limits.</p>
+<h3 id="the-hidden-costs">The Hidden Costs</h3>
+<p>What many companies underestimate is the cost of doing AI poorly. If you try to save money by using free or cheap tools, you may end up with:</p>
 <ul>
-<li>Read the &ldquo;Iron Law&rdquo; - the core principle that must never be violated</li>
-<li>Review &ldquo;The Critical Mistake&rdquo; - understand what you&rsquo;re preventing</li>
-<li>Follow the workflow step-by-step</li>
-<li>Check &ldquo;Red Flags&rdquo; if you&rsquo;re tempted to skip steps</li>
-<li>Use the Quick Reference Card for at-a-glance reminders</li>
+<li>Developers frustrated by limitations</li>
+<li>Lower quality output requiring more review</li>
+<li>Security risks from tools that do not meet compliance requirements</li>
+<li>Lost productivity from tools that are not capable enough</li>
 </ul>
-<h3 id="trust-the-process">Trust the Process</h3>
-<p>It may feel like skills add overhead initially. In reality, they save massive amounts of time by preventing mistakes and pay for themselves within the first task.</p>
-<h2 id="whats-next">What&rsquo;s Next</h2>
-<p>These four skills establish the foundation for disciplined AI agent workflows. Future enhancements may include:</p>
-<ul>
-<li>Skills for review workflows (approving, rejecting, requesting changes)</li>
-<li>Skills for dependency management</li>
-<li>Skills for unclaiming tasks properly</li>
-<li>Skills for handling blocked tasks</li>
-</ul>
-<h2 id="getting-started">Getting Started</h2>
-<p>Ready to boost your agent productivity? Install the skills and start experiencing the difference:</p>
+<p>The difference between a $10/month tool and a $100/month tool can be enormous in terms of capability. Do not be penny wise and pound foolish.</p>
+<h3 id="my-corporate-recommendation">My Corporate Recommendation</h3>
+<p>Budget $100-150 per developer per month for AI tools. This ensures access to capable tools without artificial limitations. More importantly, invest in:</p>
 <ol>
-<li>Visit the <a href="https://www.stridelikeaboss.com/api/agent/onboarding">onboarding endpoint</a></li>
-<li>Follow the installation instructions</li>
-<li>Start a new Claude Code session</li>
-<li>Watch the skills activate automatically</li>
+<li><strong>Training</strong> - Help developers learn to use the tools effectively</li>
+<li><strong>Guidance</strong> - Create and maintain good AGENTS files and standards</li>
+<li><strong>Process</strong> - Adapt your development process to take advantage of AI capabilities</li>
 </ol>
-<p>For detailed documentation on each skill, see the <a href="https://www.stridelikeaboss.com/api/agent/onboarding">onboarding endpoint</a> or visit our <a href="https://www.stridelikeaboss.com/docs/GETTING-STARTED-WITH-AI.md">getting started guide</a>.</p>
-<h2 id="not-using-claude-code">Not using Claude Code?</h2>
-<p>Users of other Agents should not feel left out. I am actively planning to provide enhanced instructions for several other Agents in the near future including <em>GitHub Copilot</em>, <em>Cursor</em>, <em>Windsurf Cascade</em>, and <em>Continue.dev</em>. Stay tuned and keep an eye on my blog for updates.</p>
+<p>The tools themselves are the smallest part of the investment. The bigger investment is in people and process.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The answer to &ldquo;How much should I spend?&rdquo; depends entirely on your situation:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Situation</th>
+          <th>Monthly Budget</th>
+          <th>Recommendation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Home learner</td>
+          <td>$20-30</td>
+          <td>Claude Pro or similar</td>
+      </tr>
+      <tr>
+          <td>Solo developer</td>
+          <td>$100-200</td>
+          <td>Claude Code + IDE integration</td>
+      </tr>
+      <tr>
+          <td>Corporate pilot</td>
+          <td>150-200/developer</td>
+          <td>Premium tools with proper training</td>
+      </tr>
+      <tr>
+          <td>Corporate scale</td>
+          <td>$75-150/developer</td>
+          <td>Enterprise agreements + investment in process</td>
+      </tr>
+  </tbody>
+</table>
+<p>The most important thing to understand is that the cost of AI tools is trivial compared to the value they provide. A developer who is dramatically more productive provides value worth thousands of dollars per month. Spending $100-150 to achieve that is an obvious investment.</p>
+<p>What you cannot afford is to ignore this technology or to use tools that are so limited they do not demonstrate what is possible. Either approach will leave you behind as the industry continues to evolve.</p>
 
             
              

@@ -6,8 +6,22 @@
     <description>Recent content in Continuous Delivery on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Jan 2026 10:24:27 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 07:39:01 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Much Should I Spend?</title>
+      <link>http://localhost:1313/post/how-much/</link>
+      <pubDate>Thu, 05 Feb 2026 07:39:01 -0500</pubDate>
+      <guid>http://localhost:1313/post/how-much/</guid>
+      <description>&lt;p&gt;This post will explore the question &amp;ldquo;How much money should one spend on AI tools?&amp;rdquo;. We will be looking at this question from multiple perspectives, the developer that wants to learn AI at home, the developer that works solo and wants the tools in order to boost their throughput and quality, and also from a corporate perspective. I&amp;rsquo;ll give pricing that is available on the websites but larger discounts are often available for annual subscriptions or educational institutions. All prices are in Canadian Dollars.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What is Stride?</title>
+      <link>http://localhost:1313/post/what-is-stride/</link>
+      <pubDate>Mon, 02 Feb 2026 09:19:27 -0500</pubDate>
+      <guid>http://localhost:1313/post/what-is-stride/</guid>
+      <description>&lt;p&gt;At its most basic level, &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; is a &lt;em&gt;smart&lt;/em&gt; kanban board where teams and AI agents can collaborate to build software. There are several tools available now that provide this basic capability, but Stride differentiates itself in several important and meaningful ways. This post will cover those differentiators while walking you through a Stride AI Optimized board explaining what the team and AI agents do at each step.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/img/stride-board.png&#34; alt=&#34;Stride AI Optimized Board&#34;&gt;&#xA;&#xA;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Using Stride and Claude Code to Enhance Stride</title>
       <link>http://localhost:1313/post/using-stride-to-enhance-stride/</link>
@@ -21,13 +35,6 @@
       <pubDate>Wed, 14 Jan 2026 10:24:27 -0500</pubDate>
       <guid>http://localhost:1313/post/what-is-a-task/</guid>
       <description>&lt;p&gt;In my pursuit of trying to get the most out of my AI Agents I have spent a lot of time exploring how one can deliver requirements in such a way that they can be understood by Humans and provide the details that will make the Agent implementation successful. Knowing that there is typically a pause between when the requirements is established / captured and when the Agent starts working on it, I wanted to make sure that much of the context and details the Agent had during the planning session was captured in a way that it can be use later during implementation.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>What is Stride?</title>
-      <link>http://localhost:1313/post/what-is-stride/</link>
-      <pubDate>Wed, 14 Jan 2026 10:24:27 -0500</pubDate>
-      <guid>http://localhost:1313/post/what-is-stride/</guid>
-      <description></description>
     </item>
     <item>
       <title>Does Programming Language Matter?</title>
