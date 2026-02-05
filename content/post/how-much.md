@@ -5,7 +5,7 @@ title: 'How Much Should I Spend?'
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 
-This post will explore the question "How much money should one spend on AI tools?". We will be looking at this question from multiple perspectives, the developer that wants to learn AI at home, the developer that works solo and wants the tools in order to boost their throughput and quality, and also from a corporate perspective. I'll give pricing that is available on the websites but larger discounts are often available for annual subscriptions or educational institutions. All prices are in Canadian Dollars.
+This post will explore the question "How much money should one spend on AI tools?". We will be looking at this question from multiple perspectives, the developer who wants to learn AI at home, the developer who works solo and wants the tools in order to boost their throughput and quality, and also from a corporate perspective. I'll give pricing that is available on the websites but larger discounts are often available for annual subscriptions or educational institutions. All prices are in Canadian Dollars.
 
 ## The Current Landscape
 
@@ -17,7 +17,7 @@ The good news is that there are options at every price point. The challenge is u
 
 If you are a developer who wants to learn how to leverage AI for development at home, you have several options. The first question to ask yourself is "What do I want to learn?"
 
-If you simply want to understand what AI can do and get a feel for the technology, you can start with free tiers.  Claude, ChatGPT,and others offer free access with limitations. You can copy and paste code into these tools and ask questions. This is a fine way to start but it will not give you a true sense of what is possible when AI is integrated into your development workflow.
+If you simply want to understand what AI can do and get a feel for the technology, you can start with free tiers. Claude, ChatGPT, and others offer free access with limitations. You can copy and paste code into these tools and ask questions. This is a fine way to start but it will not give you a true sense of what is possible when AI is integrated into your development workflow.
 
 To really understand the potential, you need to use tools that are integrated into your IDE or terminal. Here are some options:
 
@@ -27,7 +27,7 @@ To really understand the potential, you need to use tools that are integrated in
 - **Codeium** - Offers a generous free tier for individuals with code completion and chat.
 - **Continue** - An open-source option that can connect to various models including local ones.
 
-These options will give you a taste of AI driven development but they have significant limitations.
+These options will give you a taste of AI-driven development but they have significant limitations.
 
 ### The Sweet Spot for Learning
 
@@ -80,11 +80,11 @@ Corporate adoption of AI tools is different. There are considerations beyond jus
 - Training and onboarding costs
 - Standardization across teams
 
-I cannot go into each of these topics in detail here. Instead I will focus on cost savings from moving to AI driven development and what you pay to achieve those savings.
+I cannot go into each of these topics in detail here. Instead, I will focus on cost savings from moving to AI-driven development and what you pay to achieve those savings.
 
 ### Expected Savings
 
-Adding AI driven development to your development teams can have significant impact on your bottom line. It will result in:
+Adding AI-driven development to your development teams can have significant impact on your bottom line. It will result in:
 
 - Faster development cycles
 - Reduced debugging time
@@ -98,15 +98,15 @@ Most organizations expect to see these types of savings but are they the only sa
 
 I think there are three areas of savings that are typically not factored in when the overall cost of AI is calculated.
 
-1. In most corporate settings there is a fairly large testing organization that takes the output of development and verifies it correctness. As AI agents start writing more of the code the quality of the code goes up and the automated tests being written along side of that code also improves. Over time the need for the testing organization goes down dramatically as they issue the find drops. I have worked directly with teams where it was expected to find at least a couple of defects each week and once we introduced AI agents the number of defects dropped to very close to zero.
+1. In most corporate settings there is a fairly large testing organization that takes the output of development and verifies its correctness. As AI agents start writing more of the code, the quality of the code goes up and the automated tests being written alongside that code also improve. Over time the need for the testing organization goes down dramatically as the issues they find drop. I have worked directly with teams where it was expected to find at least a couple of defects each week and once we introduced AI agents the number of defects dropped to very close to zero.
 
-2. As the teams ramp up with AI driven development it becomes very clear that the old way of gathering requirements is unable to keep up with the rate of change. This is not a problem that can be solved by having more people work on it. This can only be solved by leveraging AI to brainstorm changes and create tasks that can be delivered to the development team. Heavy weight processes will need to be replaced by process that are much more fluid and adaptive. This results in a much faster time to market and a much lower cost of change.
+2. As the teams ramp up with AI-driven development it becomes very clear that the old way of gathering requirements is unable to keep up with the rate of change. This is not a problem that can be solved by having more people work on it. This can only be solved by leveraging AI to brainstorm changes and create tasks that can be delivered to the development team. Heavyweight processes will need to be replaced by processes that are much more fluid and adaptive. This results in a much faster time to market and a much lower cost of change.
 
-3. In much the same way as the requirements process needs to be streamlined, other activities around the development process need to go through the same scrutiny. Our deployment pipelines need to become simplier and much faster. Our legan review processes need to be re-evaluated to truly understand what needs reviewed and what can be automated. Our audit requirements should be questioned in this new world and we should find new faster ways to meet our compliance requirements. The list of areas that will be impacted can go on but I will stop here for now.
+3. In much the same way as the requirements process needs to be streamlined, other activities around the development process need to go through the same scrutiny. Our deployment pipelines need to become simpler and much faster. Our legal review processes need to be re-evaluated to truly understand what needs to be reviewed and what can be automated. Our audit requirements should be questioned in this new world and we should find new faster ways to meet our compliance requirements. The list of areas that will be impacted can go on but I will stop here for now.
 
 ### How Much Should You Spend?
 
-All of the savings I mentioned in the two previous sections are extremely hard to quantify. For my recomendations I will look at something else. Let's look at a couple of very simple images to help us understand the basis of what we are talking about. Let's assume that one developer can produce one jellybean each week. You very likely have a good idea of how much that developer costs you per week so I am sure you can perform a simple calculation to know how much you paid for that jellybean.
+All of the savings I mentioned in the two previous sections are extremely hard to quantify. For my recommendations I will look at something else. Let's look at a couple of very simple images to help us understand the basis of what we are talking about. Let's assume that one developer can produce one jellybean each week. You very likely have a good idea of how much that developer costs you per week so I am sure you can perform a simple calculation to know how much you paid for that jellybean.
 
 ![Cost for one developer](/img/one-developer-cost.png)
 
@@ -118,7 +118,7 @@ This is the real question we need to be asking.
 
 ### The Minimum Viable Investment
 
-For a company exploring AI driven development, I recommend starting with a small pilot as I described in my [previous post on adopting AI-driven development](/post/adopting-ai-driven-development/). Budget for:
+For a company exploring AI-driven development, I recommend starting with a small pilot as I described in my [previous post on adopting AI-driven development](/post/adopting-ai-driven-development/). Budget for:
 
 1. **Tool licenses** - $150 for Claude Enterprise and $30 for Windsurf Pro per developer per month for the pilot group
 2. **Training time** - Expect 1-2 weeks of reduced productivity as developers learn
@@ -164,7 +164,7 @@ The answer to "How much should I spend?" depends entirely on your situation:
 |-----------|----------------|----------------|
 | Home learner | $20-30 | Claude Pro or similar |
 | Solo developer | $100-200 | Claude Code + IDE integration |
-| Corporate pilot | 150-200/developer | Premium tools with proper training |
+| Corporate pilot | $150-200/developer | Premium tools with proper training |
 | Corporate scale | $75-150/developer | Enterprise agreements + investment in process |
 
 The most important thing to understand is that the cost of AI tools is trivial compared to the value they provide. A developer who is dramatically more productive provides value worth thousands of dollars per month. Spending $100-150 to achieve that is an obvious investment.
