@@ -187,25 +187,25 @@
                 <p>Elixir finally reached version 1.19.2 so I feel the 1.19 is stable enough to give it a try. This short blog post is about my process to update Elixir and to also update my Fly.io deployment to the latest version of elixir and OTP.</p>
 <h2 id="update-the-application">Update the application</h2>
 <p>To begin with I needed to get the latest elixir and otp version. That was easy with <code>asdf</code> and so I installed <code>elixir 1.19.2-otp-28</code> and <code>erlang 28.1.1</code>. These are the latest versions at the time of this writing. To ensure I always use these version I updated my <code>.tool-versions</code> file in the root of my project:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>elixir 1.19.2-otp-28
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>elixir 1.19.2-otp-28
 </span></span><span style="display:flex;"><span>erlang 28.1.1
 </span></span></code></pre></div><p>I also updated my <code>mix.exs</code> file to use the latest version of elixir:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f1fa8c">version</span>: <span style="color:#f1fa8c">&#34;1.1.0&#34;</span>,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f1fa8c">version</span>: <span style="color:#f1fa8c">&#34;1.1.0&#34;</span>,
 </span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f1fa8c">elixir</span>: <span style="color:#f1fa8c">&#34;~&gt; 1.19&#34;</span>,
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f1fa8c">elixirc_paths</span>: elixirc_paths(<span style="color:#50fa7b">Mix</span><span style="color:#ff79c6">.</span>env()),
 </span></span></code></pre></div><p>With these two changes I was able to run the application with the latest version of elixir and erlang otp. It was easy and seamless. Now on to getting my pipeline and deployment infrastructure updated.</p>
 <h2 id="pipeline-and-deployment">Pipeline and deployment</h2>
 <p>My application runs on <a href="https://fly.io">Fly.io</a>. It is a simple platform that gives me everything I need. I use GitHub Actions for my CI/CD pipeline. Here are the changes I had to make to get everything working with the latest Elixir.</p>
 <p>First of al I made this simple change to my GitHub Actionspipeline script:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>matrix:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>matrix:
 </span></span><span style="display:flex;"><span>  otp: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;28.1.1&#39;</span><span style="color:#ff79c6">]</span>       <span style="color:#6272a4"># Define the OTP version [required]</span>
 </span></span><span style="display:flex;"><span>  elixir: <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;1.19.2&#39;</span><span style="color:#ff79c6">]</span>    <span style="color:#6272a4"># Define the elixir version [required]</span>
 </span></span></code></pre></div><p>I also had to make some changes to my <code>Dockerfile</code>. First of all I simply updated the version of elixir and erlang specified which also caused me to update the version of debian. Finding the right version of debian was a bit of a challenge. I eventually settled on the version below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">ELIXIR_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>.19.2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">ELIXIR_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>.19.2
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">OTP_VERSION</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">28</span>.1.1
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">ARG</span> <span style="color:#8be9fd;font-style:italic">DEBIAN_VERSION</span><span style="color:#ff79c6">=</span>trixie-20251103-slim
 </span></span></code></pre></div><p>When I pushed this code the pipeline failed complaining about a missing package: <code>Unable to locate package libncurses5</code>. After a little research I learned that this is an older version of the library and newer version of debian no long use that. I had to make one additional change to my Dockerfile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">RUN</span> apt-get update <span style="color:#f1fa8c">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">RUN</span> apt-get update <span style="color:#f1fa8c">\
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#ff79c6">&amp;&amp;</span> apt-get install -y --no-install-recommends libstdc++6 openssl libncurses6 locales ca-certificates <span style="color:#f1fa8c">\
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#ff79c6">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
 </span></span></code></pre></div><p>Notice on line 2 that I updated the library to use <code>libncurses6</code>. With this change everything worked and the pipeline passed.</p>
@@ -396,6 +396,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
             <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
         
             <li><a href="/post/what-is-stride/">What is Stride?</a></li>
@@ -403,8 +405,6 @@
             <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
         
             <li><a href="/post/what-is-a-task/">What is a task?</a></li>
-        
-            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
         
         </ul>
     </section>

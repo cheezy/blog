@@ -194,7 +194,7 @@
 <p>At the end of the video it seems like everything was okay. One might be tempted to commit the code and move on. I think a very important step is to test everything that AI creates. Occasionally AI will make a mistake and it is important to catch it right away while it still has the entire context available.</p>
 <h3 id="first-defect">First defect</h3>
 <p>I started using the drag and drop functionality and I quickly discovered the first issue. If I drag a task to another position in the same column it works fine. If I drag a task to another column and place it at the end of the column it works fine. However, if I drag a task to another column and place it above an existing task I get a database unique constraint error. The violation had to do with this constraint:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>unique_constraint([<span style="color:#f1fa8c">:column_id</span>, <span style="color:#f1fa8c">:position</span>])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>unique_constraint([<span style="color:#f1fa8c">:column_id</span>, <span style="color:#f1fa8c">:position</span>])
 </span></span></code></pre></div><p>I wondered why the tests didn&rsquo;t catch this. When I looked at the tests I realized that the drag and drop tests always dragged to an empty column. I decided to take a test first approach to solve this problem. I asked claude to add a test where it dragged a task to another column and placed it above an existing task. It did this and the tests right away received the same error that I was getting.</p>
 <p>This was all it took. Claude went about figuring out why the test was failing and discovered the error. After five minutes Claude had fixed this issue.</p>
 <h3 id="second-defect">Second defect(?)</h3>
@@ -388,6 +388,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
             <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
         
             <li><a href="/post/what-is-stride/">What is Stride?</a></li>
@@ -395,8 +397,6 @@
             <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
         
             <li><a href="/post/what-is-a-task/">What is a task?</a></li>
-        
-            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
         
         </ul>
     </section>

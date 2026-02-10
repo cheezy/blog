@@ -263,7 +263,7 @@
 <p>The onboarding endpoint&rsquo;s <code>critical_first_steps</code> and <code>quick_start</code> sections now explicitly instruct agents to create all Skills automatically, just like they create the configuration files.</p>
 <h3 id="manual-installation-if-needed">Manual Installation (If Needed)</h3>
 <p>If you need to manually install the skills or update them:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Fetch onboarding data and extract all skills at once</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Fetch onboarding data and extract all skills at once</span>
 </span></span><span style="display:flex;"><span>curl -s https://www.stridelikeaboss.com/api/agent/onboarding &gt; /tmp/onboarding.json
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Create directories</span>
@@ -288,7 +288,7 @@
 <h2 id="best-practices">Best Practices</h2>
 <h3 id="reload-skills-with-each-session">Reload Skills with Each Session</h3>
 <p>Skills may be updated with bug fixes or improvements. At the start of each new Claude Code session:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Fetch latest skills</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Fetch latest skills</span>
 </span></span><span style="display:flex;"><span>curl -s https://www.stridelikeaboss.com/api/agent/onboarding | jq <span style="color:#f1fa8c">&#39;.claude_code_skills&#39;</span>
 </span></span></code></pre></div><p>Check if the skills have changed and update your local copies if needed.</p>
 <h3 id="let-the-skills-guide-you">Let the Skills Guide You</h3>
@@ -508,6 +508,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
             <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
         
             <li><a href="/post/what-is-stride/">What is Stride?</a></li>
@@ -515,8 +517,6 @@
             <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
         
             <li><a href="/post/what-is-a-task/">What is a task?</a></li>
-        
-            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
         
         </ul>
     </section>

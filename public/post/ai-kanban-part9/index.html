@@ -188,7 +188,7 @@
 <p>This post is a cleanup post. After Part 8 I spent some time testing all aspects of the application and decided to make a few small changes beofre moving to the next phase. I noticed that flash messages (the message that shows in the upper right corner) stays there until I dismiss it. I think it becomes anoying to have to do that repeatedly when adding multiple tasks so I decide to make it automatically fade away after 5 seconds. I could ask Claude to do this but thought it was a very easy task so I set about to do it myself. Here is what I came up with.</p>
 <h2 id="auto-dismiss-flash">Auto Dismiss Flash</h2>
 <p>The first think I needed to do was create a hook that could dismiss (in this case click) the flash. I created the file named <code>assets/js/hooks/auto-dismiss-flash.js</code> and this is what I came up with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> {
 </span></span><span style="display:flex;"><span>  mounted() {
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">this</span>.timer <span style="color:#ff79c6">=</span> setTimeout(() =&gt; {
 </span></span><span style="display:flex;"><span>      <span style="color:#6272a4">// Simulate a click to trigger the existing phx-click handler
@@ -203,7 +203,7 @@
 </span></span><span style="display:flex;"><span>  },
 </span></span><span style="display:flex;"><span>};
 </span></span></code></pre></div><p>The code is simple enough. I waits five seconds and then clicks the element. Next I needed to register the hook and I do this in my <code>app.js</code> file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">import</span> {Socket} from <span style="color:#f1fa8c">&#34;phoenix&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">import</span> {Socket} from <span style="color:#f1fa8c">&#34;phoenix&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">import</span> {LiveSocket} from <span style="color:#f1fa8c">&#34;phoenix_live_view&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#ff79c6">import</span> {hooks as colocatedHooks} from <span style="color:#f1fa8c">&#34;phoenix-colocated/kanban&#34;</span>
 </span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#ff79c6">import</span> AutoDismissFlash from <span style="color:#f1fa8c">&#34;./hooks/auto-dismiss-flash&#34;</span>
@@ -220,7 +220,7 @@
 </span></span><span style="display:flex; background-color:#3d3f4a"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>  hooks<span style="color:#ff79c6">:</span> {...colocatedHooks, ...MyHooks},
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>})
 </span></span></code></pre></div><p>The final step was to modify the flash componet. In the <code>core_components.ex</code> file I modified the flash component to register my hook viw the <code>phx-hook</code> attribute:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>  <span style="color:#8be9fd;font-style:italic">def</span> flash(assigns) <span style="color:#ff79c6">do</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>  <span style="color:#8be9fd;font-style:italic">def</span> flash(assigns) <span style="color:#ff79c6">do</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    assigns <span style="color:#ff79c6">=</span> assign_new(assigns, <span style="color:#f1fa8c">:id</span>, <span style="color:#ff79c6">fn</span> <span style="color:#ff79c6">-&gt;</span> <span style="color:#f1fa8c">&#34;flash-</span><span style="color:#f1fa8c">#{</span>assigns<span style="color:#ff79c6">.</span>kind<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#ff79c6">end</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#f1fa8c">~H</span><span style="color:#f1fa8c">&#34;&#34;&#34;
@@ -437,6 +437,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
             <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
         
             <li><a href="/post/what-is-stride/">What is Stride?</a></li>
@@ -444,8 +446,6 @@
             <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
         
             <li><a href="/post/what-is-a-task/">What is a task?</a></li>
-        
-            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
         
         </ul>
     </section>

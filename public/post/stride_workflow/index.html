@@ -195,19 +195,19 @@
 <h3 id="see-it-in-action">See it in action</h3>
 <p>This video picks up where the <a href="/post/getting_started_with_stride">Getting Started with Stride</a> video left off. It shows the full workflow in action. It is kind of boring and I sped it up a lot so you can see it grabbing tasks and moving them across the board. Here are the <em>hooks</em> from my <code>.stride.md</code> file so you can see what the Agent is doing as it works on the Tasks and moves them across the board:</p>
 <h4 id="before_doing">before_doing</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Starting task </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">: </span><span style="color:#8be9fd;font-style:italic">$TASK_TITLE</span><span style="color:#f1fa8c">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Starting task </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">: </span><span style="color:#8be9fd;font-style:italic">$TASK_TITLE</span><span style="color:#f1fa8c">&#34;</span>
 </span></span><span style="display:flex;"><span>git pull origin main
 </span></span></code></pre></div><h4 id="after_doing">after_doing</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Running quality checks for </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Running quality checks for </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">&#34;</span>
 </span></span><span style="display:flex;"><span>mix <span style="color:#8be9fd;font-style:italic">test</span> --cover
 </span></span><span style="display:flex;"><span>mix format --check-formatted
 </span></span><span style="display:flex;"><span>mix credo --strict
 </span></span><span style="display:flex;"><span>mix sobelow --config .sobelow_config.exs
 </span></span></code></pre></div><h4 id="before_review">before_review</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Rebasing code for </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Rebasing code for </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">&#34;</span>
 </span></span><span style="display:flex;"><span>git rebase --autostash origin/main
 </span></span></code></pre></div><h4 id="after_review">after_review</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Finished </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Finished </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">&#34;</span>
 </span></span><span style="display:flex;"><span>git commit -a -m <span style="color:#f1fa8c">&#34;Complete task </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">: </span><span style="color:#8be9fd;font-style:italic">$TASK_TITLE</span><span style="color:#f1fa8c">&#34;</span>
 </span></span></code></pre></div><p>Notice that in my <code>after_review</code> hook I do not automatically <em>push</em> the changes to the remote repository after each task. Instead I specify that a Task that finishes what would be a deployable change <em>needs review</em>. This allows me to review the changes before they are pushed to the main branch and deployed to users. There is more information about the <em>needs review</em> concept later in this post.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -553,6 +553,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
             <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
         
             <li><a href="/post/what-is-stride/">What is Stride?</a></li>
@@ -560,8 +562,6 @@
             <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
         
             <li><a href="/post/what-is-a-task/">What is a task?</a></li>
-        
-            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
         
         </ul>
     </section>

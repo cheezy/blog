@@ -202,28 +202,28 @@
 <strong>Size:</strong> ~9KB (~250 lines)
 <strong>Optimized for:</strong> Repository-scoped AI assistance</p>
 <p>Copilot has the strictest token limits (~4000 tokens), so its instructions focus on the top 5 critical mistakes and essential code patterns.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -o .github/copilot-instructions.md <span style="color:#f1fa8c">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -o .github/copilot-instructions.md <span style="color:#f1fa8c">\
 </span></span></span><span style="display:flex;"><span>  https://raw.githubusercontent.com/cheezy/kanban/refs/heads/main/docs/multi-agent-instructions/copilot-instructions.md
 </span></span></code></pre></div><h3 id="cursor">Cursor</h3>
 <p><strong>File:</strong> <code>.cursorrules</code>
 <strong>Size:</strong> ~15KB (~400 lines)
 <strong>Optimized for:</strong> Project-scoped chat and code generation</p>
 <p>With double the token budget (~8000 tokens), Cursor&rsquo;s instructions include more detailed examples, comprehensive mistake catalogs, and hook execution details.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -o .cursorrules <span style="color:#f1fa8c">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -o .cursorrules <span style="color:#f1fa8c">\
 </span></span></span><span style="display:flex;"><span>  https://raw.githubusercontent.com/cheezy/kanban/refs/heads/main/docs/multi-agent-instructions/cursorrules.txt
 </span></span></code></pre></div><h3 id="windsurf-cascade">Windsurf Cascade</h3>
 <p><strong>File:</strong> <code>.windsurfrules</code>
 <strong>Size:</strong> ~15KB (~400 lines)
 <strong>Optimized for:</strong> Hierarchical rules across multiple projects</p>
 <p>Windsurf&rsquo;s cascading rules system allows placing <code>.windsurfrules</code> in a parent directory to affect all child projects—perfect for teams working on multiple Stride-integrated codebases.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -o .windsurfrules <span style="color:#f1fa8c">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -o .windsurfrules <span style="color:#f1fa8c">\
 </span></span></span><span style="display:flex;"><span>  https://raw.githubusercontent.com/cheezy/kanban/refs/heads/main/docs/multi-agent-instructions/windsurfrules.txt
 </span></span></code></pre></div><h3 id="continuedev">Continue.dev</h3>
 <p><strong>File:</strong> <code>.continue/config.json</code>
 <strong>Size:</strong> ~4KB (~100 lines)
 <strong>Optimized for:</strong> JSON configuration with custom context providers</p>
 <p>Continue.dev&rsquo;s JSON format supports custom context providers (pointing to external documentation) and custom slash commands for common Stride workflows.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p .continue
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p .continue
 </span></span><span style="display:flex;"><span>curl -o .continue/config.json <span style="color:#f1fa8c">\
 </span></span></span><span style="display:flex;"><span>  https://raw.githubusercontent.com/cheezy/kanban/refs/heads/main/docs/multi-agent-instructions/continue-config.json
 </span></span></code></pre></div><h2 id="whats-covered-in-every-format">What&rsquo;s Covered in Every Format</h2>
@@ -299,7 +299,7 @@
 <p>When AI agents fetch the onboarding endpoint at <code>https://www.stridelikeaboss.com/api/agent/onboarding</code>, they&rsquo;ll see the <code>multi_agent_instructions</code> section with download URLs and installation commands for their format. Smart agents can automatically download and install the appropriate file.</p>
 <h3 id="manual-installation">Manual Installation</h3>
 <p>Developers can manually install instruction files using the curl commands shown above. On Windows, use PowerShell:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#6272a4"># GitHub Copilot</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#6272a4"># GitHub Copilot</span>
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Invoke-WebRequest</span> -Uri <span style="color:#f1fa8c">&#34;https://raw.githubusercontent.com/cheezy/kanban/refs/heads/main/docs/multi-agent-instructions/copilot-instructions.md&#34;</span> -OutFile .github/<span style="color:#8be9fd;font-style:italic">copilot-instructions</span>.<span style="color:#8be9fd;font-style:italic">md
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Cursor</span>
@@ -510,6 +510,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
             <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
         
             <li><a href="/post/what-is-stride/">What is Stride?</a></li>
@@ -517,8 +519,6 @@
             <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
         
             <li><a href="/post/what-is-a-task/">What is a task?</a></li>
-        
-            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
         
         </ul>
     </section>

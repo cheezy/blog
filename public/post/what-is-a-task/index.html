@@ -187,7 +187,7 @@
                 <p>In my pursuit of trying to get the most out of my AI Agents I have spent a lot of time exploring how one can deliver requirements in such a way that they can be understood by Humans and provide the details that will make the Agent implementation successful. Knowing that there is typically a pause between when the requirements is established / captured and when the Agent starts working on it, I wanted to make sure that much of the context and details the Agent had during the planning session was captured in a way that it can be use later during implementation.</p>
 <h2 id="how-i-started">How I started</h2>
 <p>When I first started using Agents to write my code I took a very basic (and naive) approach. I would ask my Agent to create a plan for my requirements and write it into a local Markdown file. Here is a portion of a plan that I created a while ago:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#6272a4">#### Phase 3: Board Management UI</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#6272a4">#### Phase 3: Board Management UI</span>
 </span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> **Create board list LiveView**
 </span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Create <span style="color:#f1fa8c">`</span>lib/kanban_web/live/board_live/index.ex<span style="color:#f1fa8c">`</span>
 </span></span><span style="display:flex;"><span>  - <span style="color:#ff79c6">[</span> <span style="color:#ff79c6">]</span> Implement <span style="color:#f1fa8c">`</span>mount/3<span style="color:#f1fa8c">`</span> to load user<span style="color:#f1fa8c">\&#39;</span>s boards
@@ -225,7 +225,7 @@
 <h2 id="my-task">My Task</h2>
 <p>Below is a portion of the <a href="https://hexdocs.pm/elixir/writing-documentation.html">@moduledoc</a> from the Task module in Stride. It has a lot details and might be a bit overwhelming but it is a good example of what a task should look like.</p>
 <p>Several of the fields (<em>actual_complexity, actual_files_changed, and time_spent_minutes</em>) are not for requiremnts but are instead used to capture information about the actual implementation that can be used for Agent learning by comparing to the estimates created during planning. The <em>needs_review</em> field is used for the Human to let the Agent know that they should pause and wait for the Human to review the completed task, read the status and notes (review_status, and review_notes) when the Human lets them know the review is complete, and then take the appropriate action based on the results of the review.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">@moduledoc</span> <span style="color:#f1fa8c">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">  Schema and validations for tasks in the Stride task management system.
 </span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">
@@ -301,23 +301,23 @@
 </span></span></span></code></pre></div><p>I think it is important to call out a few additional fields as they really help set this task structure apart from what I have seen elsewhere. Let&rsquo;s look at the details of <em>key_files</em>, <em>verification_steps</em>, and <em>testing_strategy</em>.</p>
 <h4 id="key_files">key_files</h4>
 <p>During planning the Agent can estimate what files they will need to change during the course of implementation. They will capture this information in a field named <em>key_files</em>. This is later used by Stride to try to minimize change conflicts. Here is the definition from the code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#6272a4"># Critical Files (Embedded Array of Objects)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#6272a4"># Critical Files (Embedded Array of Objects)</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Format: [%{file_path: &#34;lib/auth.ex&#34;, note: &#34;Main auth logic&#34;, position: 0}, ...]</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Validates: Array of objects with file_path (string), note (string), position (integer)</span>
 </span></span><span style="display:flex;"><span>embeds_many <span style="color:#f1fa8c">:key_files</span>, <span style="color:#50fa7b">KeyFile</span>, <span style="color:#f1fa8c">on_replace</span>: <span style="color:#f1fa8c">:delete</span>
 </span></span></code></pre></div><p>and here is an example from the comments in the code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#f1fa8c">key_files</span>: [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#f1fa8c">key_files</span>: [
 </span></span><span style="display:flex;"><span>    %{<span style="color:#f1fa8c">file_path</span>: <span style="color:#f1fa8c">&#34;lib/auth/oauth.ex&#34;</span>, <span style="color:#f1fa8c">note</span>: <span style="color:#f1fa8c">&#34;Main OAuth logic&#34;</span>, <span style="color:#f1fa8c">position</span>: <span style="color:#bd93f9">0</span>},
 </span></span><span style="display:flex;"><span>    %{<span style="color:#f1fa8c">file_path</span>: <span style="color:#f1fa8c">&#34;test/auth/oauth_test.exs&#34;</span>, <span style="color:#f1fa8c">note</span>: <span style="color:#f1fa8c">&#34;Test coverage&#34;</span>, <span style="color:#f1fa8c">position</span>: <span style="color:#bd93f9">1</span>}
 </span></span><span style="display:flex;"><span>]
 </span></span></code></pre></div><h4 id="verification_steps">verification_steps</h4>
 <p>This field captures what steps the Agent will perform to ensure that this task has been completed accurately. Let&rsquo;s look at the definition:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#6272a4"># Verification Steps (Embedded Array of Objects)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#6272a4"># Verification Steps (Embedded Array of Objects)</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Format: [%{step_type: &#34;command&#34;, step_text: &#34;mix test&#34;, expected_result: &#34;All pass&#34;, position: 0}, ...]</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Validates: step_type must be &#34;command&#34; or &#34;manual&#34;, all fields required</span>
 </span></span><span style="display:flex;"><span>embeds_many <span style="color:#f1fa8c">:verification_steps</span>, <span style="color:#50fa7b">VerificationStep</span>, <span style="color:#f1fa8c">on_replace</span>: <span style="color:#f1fa8c">:delete</span>
 </span></span></code></pre></div><p>and an example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#f1fa8c">verification_steps</span>: [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#f1fa8c">verification_steps</span>: [
 </span></span><span style="display:flex;"><span>    %{<span style="color:#f1fa8c">step_type</span>: <span style="color:#f1fa8c">&#34;command&#34;</span>, <span style="color:#f1fa8c">step_text</span>: <span style="color:#f1fa8c">&#34;mix test test/auth/oauth_test.exs&#34;</span>, <span style="color:#f1fa8c">expected_result</span>: <span style="color:#f1fa8c">&#34;All OAuth tests pass&#34;</span>, <span style="color:#f1fa8c">position</span>: <span style="color:#bd93f9">0</span>},
 </span></span><span style="display:flex;"><span>    %{<span style="color:#f1fa8c">step_type</span>: <span style="color:#f1fa8c">&#34;command&#34;</span>, <span style="color:#f1fa8c">step_text</span>: <span style="color:#f1fa8c">&#34;mix credo --strict lib/auth/oauth.ex&#34;</span>, <span style="color:#f1fa8c">expected_result</span>: <span style="color:#f1fa8c">&#34;No code issues&#34;</span>, <span style="color:#f1fa8c">position</span>: <span style="color:#bd93f9">1</span>},
 </span></span><span style="display:flex;"><span>    %{<span style="color:#f1fa8c">step_type</span>: <span style="color:#f1fa8c">&#34;manual&#34;</span>, <span style="color:#f1fa8c">step_text</span>: <span style="color:#f1fa8c">&#34;Test OAuth flow in browser with valid credentials&#34;</span>, <span style="color:#f1fa8c">expected_result</span>: <span style="color:#f1fa8c">&#34;Successfully authenticate and receive token&#34;</span>, <span style="color:#f1fa8c">position</span>: <span style="color:#bd93f9">2</span>},
@@ -325,11 +325,11 @@
 </span></span><span style="display:flex;"><span>]
 </span></span></code></pre></div><h4 id="testing_strategy">testing_strategy</h4>
 <p>In addition to verification, the Agent captures what type of tests will be writtena and additional non-automated tests.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#6272a4"># Comprehensive testing approach - Validated: Map with string or array values</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#6272a4"># Comprehensive testing approach - Validated: Map with string or array values</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Example: %{&#34;unit_tests&#34; =&gt; [&#34;Test token gen&#34;], &#34;edge_cases&#34; =&gt; [&#34;Expired tokens&#34;, &#34;Invalid emails&#34;]}</span>
 </span></span><span style="display:flex;"><span>field <span style="color:#f1fa8c">:testing_strategy</span>, <span style="color:#f1fa8c">:map</span>, <span style="color:#f1fa8c">default</span>: %{}
 </span></span></code></pre></div><p>and an example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#f1fa8c">testing_strategy</span>: %{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#f1fa8c">testing_strategy</span>: %{
 </span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;unit_tests&#34;</span> <span style="color:#ff79c6">=&gt;</span> [<span style="color:#f1fa8c">&#34;Test token generation&#34;</span>, <span style="color:#f1fa8c">&#34;Test token validation&#34;</span>],
 </span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;integration_tests&#34;</span> <span style="color:#ff79c6">=&gt;</span> [<span style="color:#f1fa8c">&#34;Full OAuth2 flow&#34;</span>],
 </span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;edge_cases&#34;</span> <span style="color:#ff79c6">=&gt;</span> [<span style="color:#f1fa8c">&#34;Expired tokens&#34;</span>, <span style="color:#f1fa8c">&#34;Invalid client IDs&#34;</span>]
@@ -523,6 +523,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
             <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
         
             <li><a href="/post/what-is-stride/">What is Stride?</a></li>
@@ -530,8 +532,6 @@
             <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
         
             <li><a href="/post/what-is-a-task/">What is a task?</a></li>
-        
-            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
         
         </ul>
     </section>

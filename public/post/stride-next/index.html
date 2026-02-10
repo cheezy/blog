@@ -199,7 +199,7 @@
 <h2 id="the-core-concept-tasks-as-rich-metadata">The Core Concept: Tasks as Rich Metadata</h2>
 <p>Traditional task: &ldquo;Add user authentication&rdquo;</p>
 <p>AI-optimized task includes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;identifier&#34;</span>: <span style="color:#f1fa8c">&#34;W42&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Add user authentication&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;work&#34;</span>,
@@ -323,18 +323,18 @@
 <h3 id="phase-3-ai-agent-api">Phase 3: AI Agent API</h3>
 <p>The heart of the system—a RESTful JSON API that enables AI agents to:</p>
 <p><strong>Authentication:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GET /api/tasks/next
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GET /api/tasks/next
 </span></span><span style="display:flex;"><span>Authorization: Bearer kan_dev_abc123xyz...
 </span></span></code></pre></div><p><strong>Task Discovery:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GET /api/tasks/next
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GET /api/tasks/next
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Returns the next task you&#39;re capable of completing</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Filters by capabilities, dependencies, and availability</span>
 </span></span></code></pre></div><p><strong>Atomic Task Claiming:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>POST /api/tasks/:id/claim
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>POST /api/tasks/:id/claim
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Atomically claims a task with 60-minute timeout</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Auto-releases if not completed within timeout</span>
 </span></span></code></pre></div><p><strong>Task Completion with Rich Summary:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PATCH /api/tasks/:id/complete
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PATCH /api/tasks/:id/complete
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;completed_by&#34;</span>: <span style="color:#f1fa8c">&#34;ai_agent:claude-sonnet-4.5&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;actual_complexity&#34;</span>: <span style="color:#f1fa8c">&#34;large&#34;</span>,
@@ -349,7 +349,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
 </span></span></code></pre></div><p><strong>Bulk Task Upload:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>POST /api/tasks/bulk
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>POST /api/tasks/bulk
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;tasks&#34;</span>: <span style="color:#ff79c6">[</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">{</span>
@@ -370,7 +370,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Creates multiple tasks in a single request</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Perfect for agents uploading entire feature breakdowns</span>
 </span></span></code></pre></div><p><strong>Agent Documentation Endpoint:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GET /api/agent/info
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GET /api/agent/info
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Returns comprehensive JSON documentation about:</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># - System workflow</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># - API endpoints</span>
@@ -409,7 +409,7 @@
 <li>Humans review completed work (if <code>needs_review=true</code>)</li>
 </ul>
 <h3 id="example-flow">Example Flow</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1. Human: &#34;We need user authentication&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1. Human: &#34;We need user authentication&#34;
 </span></span><span style="display:flex;"><span>2. AI Agent: Designs 8 tasks → POST /api/tasks/bulk → Land in Backlog
 </span></span><span style="display:flex;"><span>3. Human: Reviews tasks → Moves 6 to Ready, edits 1, deletes 1
 </span></span><span style="display:flex;"><span>4. AI Agent: GET /api/tasks/next → Claims W42 from Ready
@@ -420,7 +420,7 @@
 <h2 id="innovative-features">Innovative Features</h2>
 <h3 id="1-agent-workflow-hooks">1. Agent Workflow Hooks</h3>
 <p>AI agents can execute custom commands at workflow transition points via an <code>AGENTS.md</code> configuration file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold"># AGENTS.md
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold"># AGENTS.md
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="font-weight:bold">## agent:claude-sonnet-4.5
 </span></span></span><span style="display:flex;"><span>
@@ -461,17 +461,17 @@
 <p>No page refresh needed.</p>
 <h3 id="4-capability-matching">4. Capability Matching</h3>
 <p>Tasks specify required capabilities:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;required_capabilities&#34;</span>: [<span style="color:#f1fa8c">&#34;code_generation&#34;</span>, <span style="color:#f1fa8c">&#34;testing&#34;</span>, <span style="color:#f1fa8c">&#34;database_design&#34;</span>]
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Agents declare their capabilities:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;capabilities&#34;</span>: [<span style="color:#f1fa8c">&#34;code_generation&#34;</span>, <span style="color:#f1fa8c">&#34;testing&#34;</span>, <span style="color:#f1fa8c">&#34;documentation&#34;</span>]
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>GET /api/tasks/next</code> endpoint only returns tasks the agent is capable of completing.</p>
 <h3 id="5-follow-up-task-creation">5. Follow-Up Task Creation</h3>
 <p>When agents discover follow-up work during task completion, they don&rsquo;t just document it—they <strong>create new tasks</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Complete current task</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Complete current task</span>
 </span></span><span style="display:flex;"><span>PATCH /api/tasks/42/complete
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;completion_summary&#34;</span>: <span style="color:#ff79c6">{</span>
@@ -494,7 +494,7 @@
 <p>One of the most powerful aspects of this system is its ability to scale horizontally—multiple agents can work on the same backlog simultaneously, dramatically accelerating delivery.</p>
 <h3 id="multi-agent-collaboration">Multi-Agent Collaboration</h3>
 <p><strong>Single Backlog, Multiple Workers:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ready Column:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ready Column:
 </span></span><span style="display:flex;"><span>├── W42: Add user authentication
 </span></span><span style="display:flex;"><span>├── W43: Add password reset
 </span></span><span style="display:flex;"><span>├── W44: Implement logging
@@ -520,7 +520,7 @@
 </ul>
 <h3 id="multi-team-collaboration">Multi-Team Collaboration</h3>
 <p><strong>Same backlog, different teams:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Scenario: Multiple teams (or companies) working on the same product
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Scenario: Multiple teams (or companies) working on the same product
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Team A (Internal):
 </span></span><span style="display:flex;"><span>├── Agent 1: Full codebase access, all capabilities
@@ -553,20 +553,20 @@
 </ul>
 <h3 id="example-3-agents-15-tasks-8-hours-vs-24-hours">Example: 3 Agents, 15 Tasks, 8 Hours vs 24 Hours</h3>
 <p><strong>Sequential (Single Agent):</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Agent works alone:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Agent works alone:
 </span></span><span style="display:flex;"><span>- Hour 1-3:   Completes W42 (large)
 </span></span><span style="display:flex;"><span>- Hour 4-5:   Completes W43 (medium)
 </span></span><span style="display:flex;"><span>- Hour 6-7:   Completes W44 (medium)
 </span></span><span style="display:flex;"><span>- Hour 8-24:  Continues through remaining 12 tasks
 </span></span><span style="display:flex;"><span>Total: 24 hours
 </span></span></code></pre></div><p><strong>Parallel (Three Agents):</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>All agents work simultaneously:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>All agents work simultaneously:
 </span></span><span style="display:flex;"><span>- Hour 1-3:   Agent 1: W42, Agent 2: W43, Agent 3: W44
 </span></span><span style="display:flex;"><span>- Hour 4-5:   Agent 1: W45, Agent 2: W46, Agent 3: W47
 </span></span><span style="display:flex;"><span>- Hour 6-8:   All agents continue claiming available tasks
 </span></span><span style="display:flex;"><span>Total: ~8 hours (3x faster)
 </span></span></code></pre></div><p><strong>Real-World Scenario:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Monday 9 AM: Human designer uploads 50 tasks to Backlog
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Monday 9 AM: Human designer uploads 50 tasks to Backlog
 </span></span><span style="display:flex;"><span>Monday 9:30 AM: Human reviews, moves 30 tasks to Ready
 </span></span><span style="display:flex;"><span>Monday 10 AM: 5 agents start claiming tasks
 </span></span><span style="display:flex;"><span>Monday 6 PM: 25 tasks complete, 5 in progress
@@ -854,6 +854,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
             <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
         
             <li><a href="/post/what-is-stride/">What is Stride?</a></li>
@@ -861,8 +863,6 @@
             <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
         
             <li><a href="/post/what-is-a-task/">What is a task?</a></li>
-        
-            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
         
         </ul>
     </section>

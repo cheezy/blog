@@ -6,14 +6,21 @@
     <description>Recent content in Continuous Delivery on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Feb 2026 07:39:01 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 13:16:09 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adding Metrics to Stride</title>
+      <link>http://localhost:1313/post/metrics/</link>
+      <pubDate>Tue, 10 Feb 2026 13:16:09 -0500</pubDate>
+      <guid>http://localhost:1313/post/metrics/</guid>
+      <description></description>
+    </item>
     <item>
       <title>How Much Should I Spend?</title>
       <link>http://localhost:1313/post/how-much/</link>
       <pubDate>Thu, 05 Feb 2026 07:39:01 -0500</pubDate>
       <guid>http://localhost:1313/post/how-much/</guid>
-      <description>&lt;p&gt;This post will explore the question &amp;ldquo;How much money should one spend on AI tools?&amp;rdquo;. We will be looking at this question from multiple perspectives, the developer that wants to learn AI at home, the developer that works solo and wants the tools in order to boost their throughput and quality, and also from a corporate perspective. I&amp;rsquo;ll give pricing that is available on the websites but larger discounts are often available for annual subscriptions or educational institutions. All prices are in Canadian Dollars.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post will explore the question &amp;ldquo;How much money should one spend on AI tools?&amp;rdquo;. We will be looking at this question from multiple perspectives, the developer who wants to learn AI at home, the developer who works solo and wants the tools in order to boost their throughput and quality, and also from a corporate perspective. I&amp;rsquo;ll give pricing that is available on the websites but larger discounts are often available for annual subscriptions or educational institutions. All prices are in Canadian Dollars.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is Stride?</title>

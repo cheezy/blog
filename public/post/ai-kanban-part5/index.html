@@ -191,14 +191,14 @@
 <p>There is one thing about the design that bother me. It is not the actual design but instead it is the way that Claude decided to implement the design. Claude placed all of the tailwind css directly in the template files. This made reading the templates difficult. I would typically create classes in the <code>app.css</code> file and then use them in the templates. I asked <strong>Tidewave</strong> to do this.</p>
 <p>Why did I ask Tidewave and not Claude? In my opinion, Tidewave has more insight into how some things should work in Phoenix / LiveView than Claude. When I asked Tidewave to do this it informed me that starting with Tailwind 4 the <code>@apply</code> directive is no longer supported. Instead, Tidewave suggested creating function components and hiding the tailwind details there. This ended up being a better solution. Here is an example of a portion of a template before and after this change.</p>
 <p>Before:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">h1</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">h1</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  {gettext(&#34;Organize Your Work&#34;)}
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>    {gettext(&#34;With Kanban Boards&#34;)}
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#ff79c6">span</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#ff79c6">h1</span>&gt;
 </span></span></code></pre></div><p>After:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">.hero_title</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">.hero_title</span>&gt;
 </span></span><span style="display:flex;"><span>  {gettext(&#34;Organize Your Work&#34;)}
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#ff79c6">.hero_title_gradient</span>&gt;
 </span></span><span style="display:flex;"><span>    {gettext(&#34;With Kanban Boards&#34;)}
@@ -211,7 +211,7 @@
 <p>Looking at the remaining plan there is something that bothers me. Phase 3 is <code>Database Schema &amp; Context Setup</code>. This is creating the schema and context for the entirity of the application. The next four Phases are focused on creating the UI. I know this is what I asked Claude to do when I was making the plan but now that I think about it I am having doubts. I am not comfortable with this approach because we are making a lot of assumptions up front. This is not the way I would implement the changes if I were doing the coding. I like to work in small vertical slices with a running app each step.</p>
 <h3 id="a-change-of-plans">A change of plans</h3>
 <p>I asked Claude to restructure the plan so we are incrementally creating the schema and context along with the LiveView. This is the updated Phase 3:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">#### Phase 3: Board Management (Schema, Context &amp; UI)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">#### Phase 3: Board Management (Schema, Context &amp; UI)
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Generate Board schema and migration**
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Create migration: <span style="color:#f1fa8c">`mix ecto.gen.migration create_boards`</span>
@@ -466,6 +466,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
             <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
         
             <li><a href="/post/what-is-stride/">What is Stride?</a></li>
@@ -473,8 +475,6 @@
             <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
         
             <li><a href="/post/what-is-a-task/">What is a task?</a></li>
-        
-            <li><a href="/post/does-programming-language-matter/">Does Programming Language Matter?</a></li>
         
         </ul>
     </section>
