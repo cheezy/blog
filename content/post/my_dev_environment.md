@@ -182,6 +182,8 @@ This approach improves:
 - **IMPORTANT**: When you add or update a dependency run `mix deps.audit` and `mix hex.audit` to check for security issues
 - **IMPORTANT**: When you add or update a dependency run `mix hex.outdated` to check for outdated dependencies
 - **IMPORTANT**: When you complete a task run `mix sobelow --config` to check for security issues and fix any issue
+
+...
 ```
 
 Pay special attention to the Quality guidelines and Security guidelines. These are important and are emphasized in other configuration files.
@@ -363,20 +365,20 @@ BEFORE MARKING COMPLETE → GATE 3 (mix precommit, show output)
 
 There are a lot of details here that you can read. The important thing I want to leave you with is a couple of key items in the structure.
 
-* The top level guideline starting on line 6 makes it mandatory to use this skill when writing code. It also points Claude to the AGENTS.md file to get specific requirements regarding quality, security, UI/UX, and dark mode.
+* The top level guideline starting on **line 6** makes it mandatory to use this skill when writing code. It also points Claude to the AGENTS.md file to get specific requirements regarding quality, security, UI/UX, and dark mode.
 
-* On line 15, 31, and 44 I define very specific GATES that Claude must follow. These have become a part of my workflow that is defined later in this file.
+* On **line 15, 31, and 44** I define very specific GATES that Claude must follow. These have become a part of my workflow that is defined later in this file.
 
-* Starting on line 52 I define some very specific rules for Claude Code. Here is an example of one.
+* Starting on **line 52** I define some very specific rules for Claude Code. Here is an example of one.
 
 ```markdown
 **IF you are creating a new function:**
 → You MUST write a unit test for it. No exceptions. Run the test and show it passes.
 ```
 
-* Starting on line 82 I have a list of FORBIDDEN actions. This is a list of things that Claude Code has done in the past that I want to prevent it from doing again.
+* Starting on **line    82** I have a list of FORBIDDEN actions. This is a list of things that Claude Code has done in the past that I want to prevent it from doing again.
 
-* The final thing I want to bring to your attention starts on line 143. This is where I define the workflow that Claude Code must follow. Essentially, this is where I am telling Claude when to invoke the GATES that I defined earlier.
+* The final thing I want to bring to your attention starts on **line 143**. This is where I define the workflow that Claude Code must follow. Essentially, this is where I am telling Claude when to invoke the GATES that I defined earlier.
 
 ##### .stride.md
 
@@ -426,3 +428,7 @@ git checkout main
 git branch -d feature/$TASK_IDENTIFIER
 ```
 ````
+
+## Summary
+
+The configuration I've show you here might not be for everyone. But, you do need to configure your AI agent and tools you use to write code. Think of the agent as a fast car without a steering wheel and brakes. Your job is to tailor it for your specific workflow and needs.

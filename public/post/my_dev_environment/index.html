@@ -328,6 +328,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **IMPORTANT**: When you add or update a dependency run <span style="color:#f1fa8c">`mix deps.audit`</span> and <span style="color:#f1fa8c">`mix hex.audit`</span> to check for security issues
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **IMPORTANT**: When you add or update a dependency run <span style="color:#f1fa8c">`mix hex.outdated`</span> to check for outdated dependencies
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **IMPORTANT**: When you complete a task run <span style="color:#f1fa8c">`mix sobelow --config`</span> to check for security issues and fix any issue
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
 </span></span></code></pre></div><p>Pay special attention to the Quality guidelines and Security guidelines. These are important and are emphasized in other configuration files.</p>
 <h5 id="claudemd">CLAUDE.md</h5>
 <p>By default Claude Code does not read the AGENTS.md file. Instead it looks for a file named CLAUDE.md. Since I did not want to duplicate the AGENTS.md file content, I simply created a CLAUDE.md file that points to the AGENTS.md file.</p>
@@ -496,23 +498,23 @@
 </span></span></code></pre></div><p>There are a lot of details here that you can read. The important thing I want to leave you with is a couple of key items in the structure.</p>
 <ul>
 <li>
-<p>The top level guideline starting on line 6 makes it mandatory to use this skill when writing code. It also points Claude to the AGENTS.md file to get specific requirements regarding quality, security, UI/UX, and dark mode.</p>
+<p>The top level guideline starting on <strong>line 6</strong> makes it mandatory to use this skill when writing code. It also points Claude to the AGENTS.md file to get specific requirements regarding quality, security, UI/UX, and dark mode.</p>
 </li>
 <li>
-<p>On line 15, 31, and 44 I define very specific GATES that Claude must follow. These have become a part of my workflow that is defined later in this file.</p>
+<p>On <strong>line 15, 31, and 44</strong> I define very specific GATES that Claude must follow. These have become a part of my workflow that is defined later in this file.</p>
 </li>
 <li>
-<p>Starting on line 52 I define some very specific rules for Claude Code. Here is an example of one.</p>
+<p>Starting on <strong>line 52</strong> I define some very specific rules for Claude Code. Here is an example of one.</p>
 </li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>**IF you are creating a new function:**
 </span></span><span style="display:flex;"><span>→ You MUST write a unit test for it. No exceptions. Run the test and show it passes.
 </span></span></code></pre></div><ul>
 <li>
-<p>Starting on line 82 I have a list of FORBIDDEN actions. This is a list of things that Claude Code has done in the past that I want to prevent it from doing again.</p>
+<p>Starting on <strong>line    82</strong> I have a list of FORBIDDEN actions. This is a list of things that Claude Code has done in the past that I want to prevent it from doing again.</p>
 </li>
 <li>
-<p>The final thing I want to bring to your attention starts on line 143. This is where I define the workflow that Claude Code must follow. Essentially, this is where I am telling Claude when to invoke the GATES that I defined earlier.</p>
+<p>The final thing I want to bring to your attention starts on <strong>line 143</strong>. This is where I define the workflow that Claude Code must follow. Essentially, this is where I am telling Claude when to invoke the GATES that I defined earlier.</p>
 </li>
 </ul>
 <h5 id="stridemd">.stride.md</h5>
@@ -559,7 +561,9 @@
 </span></span><span style="display:flex;"><span>git checkout main
 </span></span><span style="display:flex;"><span>git branch -d feature/<span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span>
 </span></span><span style="display:flex;"><span><span style="color:#f1fa8c">```</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h2 id="summary">Summary</h2>
+<p>The configuration I&rsquo;ve show you here might not be for everyone. But, you do need to configure your AI agent and tools you use to write code. Think of the agent as a fast car without a steering wheel and brakes. Your job is to tailor it for your specific workflow and needs.</p>
+
             
              
             
