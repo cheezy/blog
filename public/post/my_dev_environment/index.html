@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="My AI Development Environment" />
+    <meta property="og:title" content="My AI Development Environment" />
+    <meta property="twitter:title" content="My AI Development Environment" />
+    
+
+    
+    <meta name="description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing.">
+    <meta property="og:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/my_dev_environment/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>My AI Development Environment | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/my_dev_environment/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Eat more cheese</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>My AI Development Environment</h1>
+
+            
+                <p>I see a lot of people posting about how bad AI is at creating code. I, along with everybody I work with, am having the opposite experience where AI is producing high-quality code that is well factored and tested. For a long time it has been a mystery how people can have such opposite experiences.</p>
+<p>I now have three cases where close friends were making such statements and I offered to have a chat to understand their experience. In each case, they were using tools that were far from ideal and the tools they had were not configured at all. When I told them about options to provide AI with more instructions and constrain / direct how it works they were surprised.</p>
+<p>Because of this experience I am convinced that a large percentage of people that are having a bad experience with AI are not using the right tools or not configuring the tools they have well enough. This post is to try to address this issue. I will be going into details about how I have my environment set up so you can start to understand what is possible.</p>
+<h2 id="my-tools">My Tools</h2>
+<p>I use <a href="https://claude.com/product/claude-code">Claude Code</a> and <a href="https://tidewave.ai">Tidewave</a> for my development. I also use <a href="https://windsurf.com">Windsurf</a> for my editor. The Claude Code and Tidewave combo is so central to what I do that my son and I have a term we use - <em>ClaudeWave</em>.</p>
+<h3 id="windsurf">Windsurf</h3>
+<p>I will not be going into details about Windsurf as it is the least important part of this setup. I only use it to occasionally review code, update configuration files, and to perform diffs prior to pushing code to my repository. I am using it to write this blog post.</p>
+<h3 id="tidewave">Tidewave</h3>
+<p>Tidewave is just pure awesomeness. It has enhanced my productivity and has simplified a lot of what I do. This post is not about promoting Tidewave, but I do suggest you check it out.</p>
+<p>Tidewave using Claude Code as its AI provider via the <a href="https://github.com/zed-industries/claude-code-acp">claude-code-acp adapter</a>. What that means is that when I am using Tidewave, I am really using Claude Code with all of the benefits of Tidewave. Always make sure you are using the latest Tidewave and the latest claude-code-acp adapter as that determines what model it is able to use. There really is no other configuration I need to call out.</p>
+<h3 id="claude-code">Claude Code</h3>
+<p>Since Claude Code is the agent I use to write code, the vast majority of my configuration is here. The configuration needs to be broken down into two parts - the configuration that is common across all projects I am working on and the configuration that is specific to a project.</p>
+<h4 id="common-claude-code-configuration">Common Claude Code Configuration</h4>
+<p>The primary configuration file for Claude Code is <code>~/.claude-code/settings.json</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;env&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;CLAUDE_CODE_MAX_OUTPUT_TOKENS&#34;</span>: <span style="color:#f1fa8c">&#34;64000&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;CLAUDE_CODE_EFFORT_LEVEL&#34;</span>: <span style="color:#f1fa8c">&#34;high&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;includeCoAuthoredBy&#34;</span>: <span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;permissions&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;allow&#34;</span>: [
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git add:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git commit:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git checkout:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git pull:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git push:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git branch:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git fetch:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git rebase:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git status:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git log:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git diff:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git stash:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(git merge:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(mix deps.get:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(mix ecto.migrate:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(mix test:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(mix format:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(mix credo:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(mix sobelow:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(mix assets.build:*)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Bash(curl:*)&#34;</span>
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;model&#34;</span>: <span style="color:#f1fa8c">&#34;opus&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;enabledPlugins&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;ast-grep@ast-grep-marketplace&#34;</span>: <span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;frontend-design@claude-code-plugins&#34;</span>: <span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;elixir-phoenix-guide@elixir-claude-optimization&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this configuration file you can see some environment variables I set to adjust the runtime, some commands that I allow Claude Code to run without asking me for permission, the model that I want Claude Code to use, and some plugins that I have installed. There are many other options that you should explore, but these are the ones that have given me the best experience. <code>CLAUDE_CODE_EFFORT_LEVEL</code> is new in <code>opus 4.6</code>. Not listed in this file but critical to my <a href="https://cheezyworld.ca/post/using-stride-to-enhance-stride/">workflow</a>, I have the four Stride Skills at this level. These were installed during the <a href="https://github.com/cheezy/kanban/blob/main/docs/GETTING-STARTED-WITH-AI.md">Stride onboarding process</a>.</p>
+<p>The <a href="https://github.com/j-morgan6/elixir-claude-optimization">elixir-phoenix-guide</a> plugin is a plugin that delivers a lot of knowledge to my agent about the tools and frameworks I am using. Specifically it has the following:</p>
+<p>Skills:</p>
+<ul>
+<li>elixir-essentials</li>
+<li>phoenix-liveview-essentials</li>
+<li>ecto-essentials</li>
+<li>phoenix-uploads</li>
+</ul>
+<p>Agents:</p>
+<ul>
+<li>liveview-checklist</li>
+<li>project-structure</li>
+<li>ecto-conventions</li>
+<li>testing-guide</li>
+</ul>
+<p>The other plugins I use are nice to haves, but not required.</p>
+<h4 id="mcp-servers">MCP Servers</h4>
+<p>There are a few MCP servers that I have configured. They are <a href="https://hexdocs.pm/hexdocs_mcp/readme.html">hexdocs</a>, <a href="https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking">sequential-thinking</a>, <a href="https://www.pulsemcp.com/servers/modelcontextprotocol-filesystem">filesystem</a>, <a href="https://www.pulsemcp.com/servers/modelcontextprotocol-postgres">postgres</a>, and tidewave. You might ask why I have the Tidewave MCP server. The ACP adapter (mentioned above) is how Tidewave talks to Claude Code but when I am working in Claude having the Tidewave MCP server allows Claude to access the tools provide by Tidewave.</p>
+<h4 id="project-specific-claude-code-configuration">Project Specific Claude Code Configuration</h4>
+<p>The majority of the Claude Code configuration is project specific. Since these can vary slightly from project to project, I will be reviewing the configuration I use while developing the <a href="https://StrideLikeABoss.com">Stride</a> application. Let&rsquo;s start with the most generic and move toward the more specific.</p>
+<h5 id="claude-codesettingsjson">.claude-code/settings.json</h5>
+<p>At the project level my settings.json only contains one setting. It is for the superpowers plugin. I use the brainstorm skill to create the requirements for each feature of the applications I build.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;enabledPlugins&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;superpowers@superpowers-marketplace&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="agentsmd">AGENTS.md</h5>
+<p>Since August of 2025 when you create a new Phoenix project it automatically creates an <code>AGENTS.md</code> file in the root of the project. This file contains detailed context coding agents need to perform their tasks. I have added to the generated file to provide my specific requirements. There is too much here to list it all, but I&rsquo;ll highlight the important parts that I added to what was generated. I removed a lot of details about how to handle Dark Mode but you can go to my <a href="https://github.com/cheezy/kanban/blob/main/AGENTS.md">AGENTS.md</a> file to see it all.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">## Project guidelines
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Use <span style="color:#f1fa8c">`mix precommit`</span> alias when you are done with all changes and fix any pending issues
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Use the already included and available <span style="color:#f1fa8c">`:req`</span> (<span style="color:#f1fa8c">`Req`</span>) library for HTTP requests, **avoid** <span style="color:#f1fa8c">`:httpoison`</span>, <span style="color:#f1fa8c">`:tesla`</span>, and <span style="color:#f1fa8c">`:httpc`</span>. Req is included by default and is the preferred HTTP client for Phoenix apps
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Use the HexDoc mcp server to read the documentation about project dependencies
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you add a new dependency or update an existing dependency run <span style="color:#f1fa8c">`mix usage_rules.sync AGENTS.md --all --link-to-folder deps --inline usage_rules:all`</span> to update the AGENTS.md file
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Always provide translations of all text that is visible in the UI
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Never put Ecto queries directly in LiveViews. Instead always put them in the appropriate context module
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">### Module design and complexity
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>**IMPORTANT**: When working with modules that are becoming too large or complex:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **Monitor module size and complexity**: If a module exceeds ~500-600 lines or contains deeply nested logic with high cyclomatic complexity, consider refactoring
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **Break out logical concerns**: Extract related functionality into separate, focused modules that handle a single responsibility
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **Use helper modules**: For complex domains (like task management), consider creating dedicated modules for specific sub-concerns:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">-</span> Positioning logic (e.g., <span style="color:#f1fa8c">`Tasks.Positioning`</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">-</span> Dependency management (e.g., <span style="color:#f1fa8c">`Tasks.Dependencies`</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">-</span> Validation logic (e.g., <span style="color:#f1fa8c">`Tasks.Validation`</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">-</span> Query builders (e.g., <span style="color:#f1fa8c">`Tasks.Queries`</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **Extract helper functions**: When a function becomes complex (cyclomatic complexity &gt; 9), extract complex conditional logic into smaller, well-named helper functions
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **Maintain clear module boundaries**: Each module should have a clear, single purpose with a well-defined public API
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **Document module organization**: When splitting modules, update documentation to explain the new structure and how modules relate to each other
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This approach improves:
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Code maintainability and readability
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Test isolation and coverage
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Collaboration between developers
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Ability to reason about individual components
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Credo compliance and code quality metrics
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">### UI/UX guidelines
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **Always follow existing application styles and patterns** when adding new UI elements
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Before creating custom styles, check <span style="color:#f1fa8c">`core_components.ex`</span> for existing components like <span style="color:#f1fa8c">`&lt;.input&gt;`</span>, <span style="color:#f1fa8c">`&lt;.button&gt;`</span>, <span style="color:#f1fa8c">`&lt;.form&gt;`</span>, etc.
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When adding form fields, use the standard component structure with <span style="color:#f1fa8c">`fieldset`</span>, <span style="color:#f1fa8c">`label`</span>, and <span style="color:#f1fa8c">`span.label`</span> classes to match existing forms
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> New buttons should use the <span style="color:#f1fa8c">`&lt;.button&gt;`</span> component without custom classes unless specifically requested
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Maintain consistency with existing color schemes, spacing, and typography throughout the application
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">### Dark Mode Verification Guidelines
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>**CRITICAL**: Always verify UI changes work in BOTH light and dark modes before considering a task complete.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">### Quality guidelines  
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>**ALWAYS** follow these quality guidelines:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **IMPORTANT**: When you complete a task that has new functions write unit tests for the new function
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **IMPORTANT**: When you complete a task that updates code make sure all existing unit tests pass and write new tests if needed
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Each time you write or update a unit test run them with <span style="color:#f1fa8c">`mix test`</span> and ensure they pass
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **IMPORTANT**: When you complete a task run <span style="color:#f1fa8c">`mix test --cover`</span> and ensure coverage is above the threshold.
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **IMPORTANT**: When you complete a task run <span style="color:#f1fa8c">`mix credo --strict`</span> to check for code quality issues and fix them
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">### Security guidelines
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>**ALWAYS** follow these security guidelines:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **IMPORTANT**: When you add or update a dependency run <span style="color:#f1fa8c">`mix deps.audit`</span> and <span style="color:#f1fa8c">`mix hex.audit`</span> to check for security issues
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **IMPORTANT**: When you add or update a dependency run <span style="color:#f1fa8c">`mix hex.outdated`</span> to check for outdated dependencies
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> **IMPORTANT**: When you complete a task run <span style="color:#f1fa8c">`mix sobelow --config`</span> to check for security issues and fix any issue
+</span></span></code></pre></div><p>Pay special attention to the Quality guidelines and Security guidelines. These are important and are emphasized in other configuration files.</p>
+<h5 id="claudemd">CLAUDE.md</h5>
+<p>By default Claude Code does not read the AGENTS.md file. Instead it looks for a file named CLAUDE.md. Since I did not want to duplicate the AGENTS.md file content, I simply created a CLAUDE.md file that points to the AGENTS.md file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>@AGENTS.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">## Development Rules (MANDATORY)
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Before writing or editing ANY file in lib/, test/, or assets/, you MUST invoke the <span style="color:#f1fa8c">`stride-development-guidelines`</span> skill. This is not optional. Do not write code without first invoking this skill.
+</span></span></code></pre></div><p>I think of this file as a connector. It is making Claude Code aware of everything that is in the AGENTS.md file and it is also making it mandatory that Claude Code use the custom skill that I maintain for the project.</p>
+<h5 id="stride-development-guidelines-skill">stride-development-guidelines skill</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span>name: stride-development-guidelines
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span>description: Use when writing ANY code in the Stride project (this Phoenix/Elixir kanban application). Invoke BEFORE implementing features, fixing bugs, or making UI changes. Invoke BEFORE marking any development task as complete.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span><span><span style="font-weight:bold"># Stride Development Guidelines
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span><span>This skill applies to ALL code changes in this codebase. No exceptions.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span>Standards for quality, security, UI/UX, and dark mode are defined in AGENTS.md.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span><span>This skill enforces them. Your job is not to re-read the standards — it is to EXECUTE the checks.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span><span><span style="font-weight:bold">## GATE 1: Before Writing Code
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span><span>STOP. Before you write or edit any file in <span style="color:#f1fa8c">`lib/`</span>, <span style="color:#f1fa8c">`test/`</span>, or <span style="color:#f1fa8c">`assets/`</span>, state out loud which of these apply to your change:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span><span><span style="color:#ff79c6">-</span> Modifying UI (<span style="color:#f1fa8c">`.heex`</span>, <span style="color:#f1fa8c">`core_components`</span>, CSS) → Dark mode verification REQUIRED
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span><span><span style="color:#ff79c6">-</span> Adding new functions → Unit tests REQUIRED
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span><span><span style="color:#ff79c6">-</span> Modifying existing code → Existing tests must pass REQUIRED
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span><span><span style="color:#ff79c6">-</span> Adding/updating dependencies → Security audit REQUIRED
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span><span><span style="color:#ff79c6">-</span> Editing a module over 400 lines → Check line count, propose split if over 500
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span><span>IF none apply, state &#34;No special requirements for this change&#34; and proceed.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span><span>You MUST NOT skip this step. Silently proceeding without stating applicability is a violation.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span><span><span style="font-weight:bold">## GATE 2: After Writing Code
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span><span>STOP. Run these commands and show the output. Do NOT claim they pass without running them.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span><span><span style="color:#ff79c6">1.</span> <span style="color:#f1fa8c">`mix test`</span> — all tests must pass
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span><span><span style="color:#ff79c6">2.</span> <span style="color:#f1fa8c">`mix credo --strict`</span> — no issues
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span><span>IF you wrote new functions, you MUST have written tests for them before reaching this gate.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span><span>IF you modified UI, you MUST have verified dark mode before reaching this gate (see Trigger Rules below).
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span><span><span style="font-weight:bold">## GATE 3: Before Marking Complete
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span><span>STOP. Run <span style="color:#f1fa8c">`mix precommit`</span> and show the output. This runs all quality and security checks together.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span><span>IF anything fails, fix it and re-run. Do NOT mark complete until <span style="color:#f1fa8c">`mix precommit`</span> passes with output shown.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span><span><span style="font-weight:bold">## Trigger Rules
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span><span>These are IF/THEN rules. When you encounter the trigger condition, you MUST take the specified action.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span><span>**IF you are about to write a hardcoded color in a template:**
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span><span>→ STOP. Use the theme-aware equivalent from the Dark Mode Color Map below. Never use <span style="color:#f1fa8c">`text-gray-*`</span>, <span style="color:#f1fa8c">`bg-white`</span>, <span style="color:#f1fa8c">`bg-gray-*`</span>, or <span style="color:#f1fa8c">`border-gray-*`</span> in templates.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span><span>**IF you are creating a new function:**
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span><span>→ You MUST write a unit test for it. No exceptions. Run the test and show it passes.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span><span>**IF a module you are editing is over 400 lines:**
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span><span>→ STOP. Count the lines. If over 500, propose a refactoring split before adding more code. Follow the module design patterns in AGENTS.md.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span><span>**IF you are adding or modifying any UI element:**
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span><span>→ Check <span style="color:#f1fa8c">`core_components.ex`</span> FIRST for existing components (<span style="color:#f1fa8c">`&lt;.input&gt;`</span>, <span style="color:#f1fa8c">`&lt;.button&gt;`</span>, <span style="color:#f1fa8c">`&lt;.form&gt;`</span>).
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span><span>→ Use existing components. Do NOT create custom alternatives unless specifically requested.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span><span>→ Verify the change works in BOTH light and dark modes.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span><span>**IF you are modifying a `.heex` file, CSS file, or `core_components.ex`:**
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span><span>→ You MUST verify dark mode. Test in both light and dark modes before proceeding.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span><span>→ Use browser evaluation or visual inspection to confirm contrast in both themes.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span><span>**IF you are adding or updating a dependency:**
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span><span>→ Run <span style="color:#f1fa8c">`mix deps.audit`</span>, <span style="color:#f1fa8c">`mix hex.audit`</span>, and <span style="color:#f1fa8c">`mix hex.outdated`</span>. Show the output.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span><span>**IF you are about to say &#34;done&#34;, &#34;complete&#34;, or &#34;finished&#34;:**
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span><span>→ STOP. Go to GATE 3. Run <span style="color:#f1fa8c">`mix precommit`</span>. Show the output. Only then say complete.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span><span><span style="font-weight:bold">## FORBIDDEN Actions
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span><span>These are hard failures. If you catch yourself doing any of these, STOP and correct immediately.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span><span><span style="color:#ff79c6">-</span> FORBIDDEN: Saying &#34;tests should pass&#34; or &#34;credo should be clean&#34; without running them
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span><span><span style="color:#ff79c6">-</span> FORBIDDEN: Marking a task complete without showing passing output from <span style="color:#f1fa8c">`mix precommit`</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span><span><span style="color:#ff79c6">-</span> FORBIDDEN: Adding UI elements without checking <span style="color:#f1fa8c">`core_components.ex`</span> first
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span><span><span style="color:#ff79c6">-</span> FORBIDDEN: Skipping dark mode verification on any UI change
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span><span><span style="color:#ff79c6">-</span> FORBIDDEN: Writing new functions without unit tests
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span><span><span style="color:#ff79c6">-</span> FORBIDDEN: Putting Ecto queries directly in LiveViews (use context modules)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span><span><span style="color:#ff79c6">-</span> FORBIDDEN: Adding text visible in the UI without providing translations
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span><span><span style="font-weight:bold">## Red Flags — STOP If You Think Any of These
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span><span>| Thought | Reality |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span><span>|---------|---------|
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span><span>| &#34;It&#39;s just a small change&#34; | Small changes break dark mode constantly. Verify. |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span><span>| &#34;Tests probably still pass&#34; | Run them. &#34;Probably&#34; is not evidence. |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span><span>| &#34;Credo is just style&#34; | Credo catches real bugs and complexity issues. |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span><span>| &#34;Security checks are overkill&#34; | One missed vulnerability = production incident. |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span><span>| &#34;I&#39;ll check dark mode later&#34; | You won&#39;t. Check now. |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span><span>| &#34;The module isn&#39;t that big&#34; | Count the lines. Over 500 = split it. |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span><span>| &#34;I already know this passes&#34; | Show the output. Knowledge without proof is assumption. |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span><span><span style="font-weight:bold">## Dark Mode Color Map (Reference)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span><span>Use this table when writing or reviewing template colors.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span><span>| Never Use          | Always Use Instead              |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span><span>| ------------------ | ------------------------------- |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span><span>| <span style="color:#f1fa8c">`text-gray-900`</span>    | <span style="color:#f1fa8c">`text-base-content`</span>             |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span><span>| <span style="color:#f1fa8c">`text-gray-600`</span>    | <span style="color:#f1fa8c">`text-base-content opacity-70`</span>  |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span><span>| <span style="color:#f1fa8c">`text-gray-500`</span>    | <span style="color:#f1fa8c">`text-base-content opacity-60`</span>  |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119</span><span>| <span style="color:#f1fa8c">`bg-white`</span>         | <span style="color:#f1fa8c">`bg-base-100`</span>                   |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120</span><span>| <span style="color:#f1fa8c">`bg-gray-50`</span>       | <span style="color:#f1fa8c">`bg-base-200`</span>                   |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121</span><span>| <span style="color:#f1fa8c">`border-gray-200`</span>  | <span style="color:#f1fa8c">`border-base-300`</span>               |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123</span><span><span style="font-weight:bold">### Dark Mode Element Fixes
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125</span><span>| Element                | Fix                                                                            |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126</span><span>| ---------------------- | ------------------------------------------------------------------------------ |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127</span><span>| Labels invisible       | <span style="color:#f1fa8c">`text-base-content`</span> with full opacity                                          |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128</span><span>| Inputs invisible       | <span style="color:#f1fa8c">`bg-base-100`</span> background, <span style="color:#f1fa8c">`text-base-content`</span> text, <span style="color:#f1fa8c">`border-base-300`</span> border   |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129</span><span>| Low contrast buttons   | <span style="color:#f1fa8c">`btn-primary`</span> or <span style="color:#f1fa8c">`var(--color-primary)`</span> background                             |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130</span><span>| Low contrast links     | <span style="color:#f1fa8c">`var(--color-primary)`</span> color                                                   |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131</span><span>| White modal background | <span style="color:#f1fa8c">`bg-base-100`</span> instead of <span style="color:#f1fa8c">`bg-white`</span>                                            |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132</span><span>| Modal backdrop         | <span style="color:#f1fa8c">`bg-base-200/90`</span> for proper overlay                                            |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134</span><span><span style="font-weight:bold">### Dark Mode Contrast Targets
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136</span><span>| Mode | Text | Background |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137</span><span>|------|------|------------|
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138</span><span>| Light | Dark text (oklch ~0.21) | Light backgrounds (oklch ~0.98) |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139</span><span>| Dark | Light text (oklch ~0.97) | Dark backgrounds (oklch ~0.30) |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143</span><span><span style="font-weight:bold">## Workflow Summary
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145</span><span><span style="color:#f1fa8c">```text
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146</span><span>BEFORE WRITING CODE → GATE 1 (state what applies)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147</span><span>    ↓
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148</span><span>WRITE CODE (follow trigger rules as you go)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149</span><span>    ↓
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150</span><span>AFTER WRITING CODE → GATE 2 (mix test + mix credo --strict, show output)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151</span><span>    ↓
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152</span><span>BEFORE MARKING COMPLETE → GATE 3 (mix precommit, show output)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153</span><span><span style="color:#f1fa8c">```</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155</span><span><span style="color:#f1fa8c">`mix precommit`</span> runs tests, coverage, credo, and sobelow together. Use it at GATE 3.
+</span></span></code></pre></div><p>There are a lot of details here that you can read. The important thing I want to leave you with is a couple of key items in the structure.</p>
+<ul>
+<li>
+<p>The top level guideline starting on line 6 makes it mandatory to use this skill when writing code. It also points Claude to the AGENTS.md file to get specific requirements regarding quality, security, UI/UX, and dark mode.</p>
+</li>
+<li>
+<p>On line 15, 31, and 44 I define very specific GATES that Claude must follow. These have become a part of my workflow that is defined later in this file.</p>
+</li>
+<li>
+<p>Starting on line 52 I define some very specific rules for Claude Code. Here is an example of one.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>**IF you are creating a new function:**
+</span></span><span style="display:flex;"><span>→ You MUST write a unit test for it. No exceptions. Run the test and show it passes.
+</span></span></code></pre></div><ul>
+<li>
+<p>Starting on line 82 I have a list of FORBIDDEN actions. This is a list of things that Claude Code has done in the past that I want to prevent it from doing again.</p>
+</li>
+<li>
+<p>The final thing I want to bring to your attention starts on line 143. This is where I define the workflow that Claude Code must follow. Essentially, this is where I am telling Claude when to invoke the GATES that I defined earlier.</p>
+</li>
+</ul>
+<h5 id="stridemd">.stride.md</h5>
+<p>Stride is the tool I use to deliver tasks to my agent and is a critical part of my workflow. With Stride you have the option to define <a href="https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md">Hooks</a> - commands that you want executed at various points in the workflow. I have two sets of hooks - one for when I am working on a project solo and one for when I am working on a project with a team. Here are the hooks I have defined for working with a team.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">## before_doing
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">```bash
+</span></span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Starting task </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">: </span><span style="color:#8be9fd;font-style:italic">$TASK_TITLE</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>git pull origin main
+</span></span><span style="display:flex;"><span>git checkout -b feature/<span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span>
+</span></span><span style="display:flex;"><span>mix deps.get
+</span></span><span style="display:flex;"><span>mix ecto.migrate
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">```</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">## after_doing
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">```bash
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># echo &#34;Running quality checks for $TASK_IDENTIFIER&#34;</span>
+</span></span><span style="display:flex;"><span>mix <span style="color:#8be9fd;font-style:italic">test</span> --cover
+</span></span><span style="display:flex;"><span>mix format --check-formatted
+</span></span><span style="display:flex;"><span>mix credo --strict
+</span></span><span style="display:flex;"><span>mix sobelow --config .sobelow_config.exs
+</span></span><span style="display:flex;"><span>git commit -a -m <span style="color:#f1fa8c">&#34;Completed task </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">: </span><span style="color:#8be9fd;font-style:italic">$TASK_TITLE</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">```</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">## before_review
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">```bash
+</span></span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Rebasing code for </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span>git fetch origin
+</span></span><span style="display:flex;"><span>git rebase origin/main
+</span></span><span style="display:flex;"><span>mix <span style="color:#8be9fd;font-style:italic">test</span>
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">```</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">## after_review
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">```bash
+</span></span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;Finished </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span>git fetch origin
+</span></span><span style="display:flex;"><span>git rebase origin/main
+</span></span><span style="display:flex;"><span>mix <span style="color:#8be9fd;font-style:italic">test</span>
+</span></span><span style="display:flex;"><span>git push origin HEAD:main
+</span></span><span style="display:flex;"><span>git checkout main
+</span></span><span style="display:flex;"><span>git branch -d feature/<span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span>
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">```</span>
+</span></span></code></pre></div>
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/my_dev_environment/">My AI Development Environment</a></li>
+        
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
+            <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
+        
+            <li><a href="/post/what-is-stride/">What is Stride?</a></li>
+        
+            <li><a href="/post/using-stride-to-enhance-stride/">Using Stride and Claude Code to Enhance Stride</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

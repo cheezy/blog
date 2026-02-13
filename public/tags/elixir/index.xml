@@ -6,8 +6,15 @@
     <description>Recent content in Elixir on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Dec 2025 08:23:02 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 13 Feb 2026 07:26:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/elixir/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Dev Environment</title>
+      <link>http://localhost:1313/post/my_dev_environment/</link>
+      <pubDate>Fri, 13 Feb 2026 07:26:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/my_dev_environment/</guid>
+      <description>&lt;p&gt;I see a lot of people posting about how bad AI is at creating code. I, and everybody I have worked with, have had the opposite experience where AI is producing high quality code that is well factored and tested.&lt;/p&gt;&#xA;&lt;p&gt;I now have three cases where close friends were making such statements and I offered to have a chat to understand their experience. In each case, they were using tools that were far from ideal and the tools they had were not configured at all. When I told them about options to provide AI with more instructions and constrain / direct how it works they were suprised.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building a LiveView app using AI - Part 16</title>
       <link>http://localhost:1313/post/ai-kanban-part16/</link>

@@ -2,25 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/post/metrics/</loc>
-    <lastmod>2026-02-10T13:16:09-05:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/agile/</loc>
-    <lastmod>2026-02-10T13:16:09-05:00</lastmod>
+    <lastmod>2026-02-13T07:26:00-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ai/</loc>
-    <lastmod>2026-02-10T13:16:09-05:00</lastmod>
+    <lastmod>2026-02-13T07:26:00-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-02-10T13:16:09-05:00</lastmod>
+    <lastmod>2026-02-13T07:26:00-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/continuous-delivery/</loc>
-    <lastmod>2026-02-10T13:16:09-05:00</lastmod>
+    <lastmod>2026-02-13T07:26:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/elixir/</loc>
+    <lastmod>2026-02-13T07:26:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/my_dev_environment/</loc>
+    <lastmod>2026-02-13T07:26:00-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2026-02-10T13:16:09-05:00</lastmod>
+    <lastmod>2026-02-13T07:26:00-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-02-13T07:26:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/metrics/</loc>
     <lastmod>2026-02-10T13:16:09-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/how-much/</loc>
@@ -57,9 +63,6 @@
     <lastmod>2025-12-19T08:32:51-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/ai-kanban-part16/</loc>
-    <lastmod>2025-12-17T08:23:02-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/elixir/</loc>
     <lastmod>2025-12-17T08:23:02-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/liveview/</loc>
