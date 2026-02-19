@@ -6,14 +6,21 @@
     <description>Recent content in Continuous Delivery on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Feb 2026 07:26:00 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 19 Feb 2026 13:01:01 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My Dev Environment</title>
+      <title>Stride has New Skills</title>
+      <link>http://localhost:1313/post/new-skills/</link>
+      <pubDate>Thu, 19 Feb 2026 13:01:01 -0500</pubDate>
+      <guid>http://localhost:1313/post/new-skills/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>My AI Development Environment</title>
       <link>http://localhost:1313/post/my_dev_environment/</link>
       <pubDate>Fri, 13 Feb 2026 07:26:00 -0500</pubDate>
       <guid>http://localhost:1313/post/my_dev_environment/</guid>
-      <description>&lt;p&gt;I see a lot of people posting about how bad AI is at creating code. I, and everybody I have worked with, have had the opposite experience where AI is producing high quality code that is well factored and tested.&lt;/p&gt;&#xA;&lt;p&gt;I now have three cases where close friends were making such statements and I offered to have a chat to understand their experience. In each case, they were using tools that were far from ideal and the tools they had were not configured at all. When I told them about options to provide AI with more instructions and constrain / direct how it works they were suprised.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I see a lot of people posting about how bad AI is at creating code. I, along with everybody I work with, am having the opposite experience where AI is producing high-quality code that is well factored and tested. For a long time it has been a mystery how people can have such opposite experiences.&lt;/p&gt;&#xA;&lt;p&gt;I now have three cases where close friends were making such statements and I offered to have a chat to understand their experience. In each case, they were using tools that were far from ideal and the tools they had were not configured at all. When I told them about options to provide AI with more instructions and constrain / direct how it works they were surprised.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Adding Metrics to Stride</title>

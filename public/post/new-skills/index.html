@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Stride Has New Skills" />
+    <meta property="og:title" content="Stride Has New Skills" />
+    <meta property="twitter:title" content="Stride Has New Skills" />
+    
+
+    
+    <meta name="description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing.">
+    <meta property="og:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/new-skills/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Stride Has New Skills | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/new-skills/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Eat more cheese</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Stride Has New Skills</h1>
+
+            
+                <p>When you build an API designed for AI agents, you quickly discover something humbling: agents make the same mistakes over and over. Not because they&rsquo;re incapable, but because they&rsquo;re working from memory instead of reference material. I spent a few hours fixing this in Stride, and the results surprised me.</p>
+<h2 id="the-problem">The Problem</h2>
+<p>Stride is a kanban-based task management platform built for AI agents. Agents claim tasks, execute lifecycle hooks, implement features, and mark work complete &mdash; all through a REST API. The system works well when agents format their requests correctly. The trouble is, they often don&rsquo;t.</p>
+<p>I kept seeing the same failures:</p>
+<ul>
+<li><strong>Wrong field types.</strong> <code>verification_steps</code> sent as <code>[&quot;mix test&quot;, &quot;mix credo&quot;]</code> (an array of strings) instead of the required array of objects with <code>step_type</code>, <code>step_text</code>, and <code>position</code> fields.</li>
+<li><strong>Invalid enum values.</strong> <code>&quot;type&quot;: &quot;task&quot;</code> or <code>&quot;type&quot;: &quot;bug&quot;</code> instead of the valid values <code>&quot;work&quot;</code>, <code>&quot;defect&quot;</code>, or <code>&quot;goal&quot;</code>.</li>
+<li><strong>Wrong root keys.</strong> The batch endpoint at <code>POST /api/tasks/batch</code> expects <code>&quot;goals&quot;</code> as the root JSON key, but agents consistently sent <code>&quot;tasks&quot;</code> &mdash; a reasonable guess that happens to be wrong.</li>
+<li><strong>Missing hook results.</strong> Agents calling the claim endpoint without <code>before_doing_result</code>, or the complete endpoint without both <code>after_doing_result</code> and <code>before_review_result</code>.</li>
+<li><strong>Wrong data shapes.</strong> <code>actual_files_changed</code> sent as a JSON array instead of a comma-separated string.</li>
+</ul>
+<p>These weren&rsquo;t edge cases. They accounted for a significant share of all 422 validation errors. And the root cause was always the same: the agent was constructing the request from memory, without consulting a reference.</p>
+<h2 id="the-diagnosis">The Diagnosis</h2>
+<p>I traced the problem to three gaps in the system:</p>
+<p><strong>1. No machine-readable field reference.</strong> The onboarding endpoint returned workflow instructions and file templates, but nothing that said &ldquo;the <code>type</code> field accepts exactly these three values.&rdquo; Agents had to rely on whatever they remembered from documentation they may or may not have read.</p>
+<p><strong>2. Skills lacked inline field guidance.</strong> The Claude Code skills (markdown files that guide agent behavior during claiming, completing, and creating tasks) described the <em>workflow</em> clearly but didn&rsquo;t include the <em>field formats</em> needed to construct valid requests. An agent following the claiming skill knew to execute the <code>before_doing</code> hook first, but had no quick reference for the exact shape of the claim request body.</p>
+<p><strong>3. No version tracking.</strong> When I updated a skill on the server, agents continued using their locally installed (now outdated) copy indefinitely. There was no mechanism to detect or signal that local skills were stale.</p>
+<h2 id="the-fix-three-goals-eleven-task-using-stride-terminology">The Fix: Three Goals, Eleven Task (using Stride terminology)</h2>
+<p>I broke the work into three goals and let Stride manage the execution.</p>
+<h3 id="goal-1-api-field-reference-schema">Goal 1: API Field Reference Schema</h3>
+<p>I added a structured <code>api_schema</code> map to the onboarding response. It&rsquo;s not documentation prose &mdash; it&rsquo;s a machine-readable reference that agents can consult before constructing any request:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;api_schema&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;request_formats&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;claim_task&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;endpoint&#34;</span>: <span style="color:#f1fa8c">&#34;POST /api/tasks/claim&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;required_body&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;identifier&#34;</span>: <span style="color:#f1fa8c">&#34;string (e.g. &#39;W47&#39;)&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;agent_name&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;before_doing_result&#34;</span>: <span style="color:#f1fa8c">&#34;hook_result_format (see below)&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;batch_create&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;endpoint&#34;</span>: <span style="color:#f1fa8c">&#34;POST /api/tasks/batch&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;root_key&#34;</span>: <span style="color:#f1fa8c">&#34;goals&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;note&#34;</span>: <span style="color:#f1fa8c">&#34;Root key MUST be &#39;goals&#39;, NOT &#39;tasks&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;task_fields&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;type&#34;</span>: {<span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;enum&#34;</span>, <span style="color:#ff79c6">&#34;values&#34;</span>: [<span style="color:#f1fa8c">&#34;work&#34;</span>, <span style="color:#f1fa8c">&#34;defect&#34;</span>, <span style="color:#f1fa8c">&#34;goal&#34;</span>], <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#ff79c6">true</span>},
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;priority&#34;</span>: {<span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;enum&#34;</span>, <span style="color:#ff79c6">&#34;values&#34;</span>: [<span style="color:#f1fa8c">&#34;low&#34;</span>, <span style="color:#f1fa8c">&#34;medium&#34;</span>, <span style="color:#f1fa8c">&#34;high&#34;</span>, <span style="color:#f1fa8c">&#34;critical&#34;</span>], <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#ff79c6">true</span>}
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;embedded_objects&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;verification_steps&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;array_of_objects&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;NOT_strings&#34;</span>: <span style="color:#f1fa8c">&#34;This MUST be an array of objects, NOT an array of strings&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;required_fields&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;step_type&#34;</span>: <span style="color:#f1fa8c">&#34;string (&#39;command&#39; or &#39;manual&#39; only)&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;step_text&#34;</span>: <span style="color:#f1fa8c">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;position&#34;</span>: <span style="color:#f1fa8c">&#34;integer &gt;= 0&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The schema covers request formats for every endpoint (create, batch, claim, complete), the hook result format, all task fields with types and valid values, and embedded object structures with explicit WRONG vs. RIGHT examples. When an agent sees <code>&quot;⚠️_NOT_strings&quot;</code> next to the verification_steps definition, the message is hard to miss.</p>
+<h3 id="goal-2-inline-field-guidance-in-skills">Goal 2: Inline Field Guidance in Skills</h3>
+<p>Each of the four Stride skills (claiming, completing, creating tasks, creating goals) was enhanced with inline field reference material. Rather than making agents leave the skill to look up field formats, I brought the reference to them.</p>
+<p>For the <strong>claiming skill</strong>, I added:</p>
+<ul>
+<li>A hook result format table showing the exact three fields (<code>exit_code</code>, <code>output</code>, <code>duration_ms</code>) with types and examples</li>
+<li>A claim request checklist with every field including the optional <code>skills_version</code></li>
+<li>WRONG vs. RIGHT examples that show common mistakes side by side</li>
+</ul>
+<p>For the <strong>completing skill</strong>, I added:</p>
+<ul>
+<li>A completion request field reference covering all required fields</li>
+<li>A reminder that <code>actual_files_changed</code> must be a comma-separated string, not an array</li>
+<li>The same hook result format table for consistency</li>
+</ul>
+<p>For the <strong>creating tasks</strong> and <strong>creating goals</strong> skills, I added:</p>
+<ul>
+<li>Field quick reference tables with exact valid values for enums</li>
+<li>Embedded object format sections with explicit WRONG/RIGHT examples for <code>verification_steps</code>, <code>key_files</code>, and <code>testing_strategy</code></li>
+<li>Batch endpoint root key reminders (for goals skill)</li>
+</ul>
+<p>Every skill now ends with a standard footer pointing to the <code>api_schema</code> in the onboarding response and the full API reference. Agents always know where to look for more detail.</p>
+<h3 id="goal-3-skill-versioning-and-staleness-detection">Goal 3: Skill Versioning and Staleness Detection</h3>
+<p>This was the most interesting piece. I needed a way to tell agents &ldquo;your local skills are outdated&rdquo; without adding a separate version-checking step to their workflow.</p>
+<p>The solution: <strong>piggyback on existing API calls.</strong></p>
+<p>I added a <code>@skills_version</code> module attribute to <code>AgentJSON</code> as a single source of truth:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#50fa7b">@skills_version</span> <span style="color:#f1fa8c">&#34;1.0&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">def</span> skills_version, <span style="color:#f1fa8c">do</span>: <span style="color:#50fa7b">@skills_version</span>
+</span></span></code></pre></div><p>The onboarding response now includes <code>skills_version: &quot;1.0&quot;</code>, and each skill&rsquo;s YAML frontmatter includes the same version. Agents note this version when they install skills.</p>
+<p>Then I modified the three most common task endpoints (<code>next</code>, <code>claim</code>, <code>complete</code>) to accept an optional <code>skills_version</code> parameter. Every response now includes <code>current_skills_version</code>. If the agent sends a version that doesn&rsquo;t match, the response includes an additional <code>skills_update_required</code> block:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;data&#34;</span>: { <span style="color:#ff79c6">&#34;...&#34;</span> },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;current_skills_version&#34;</span>: <span style="color:#f1fa8c">&#34;1.0&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;skills_update_required&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;current_version&#34;</span>: <span style="color:#f1fa8c">&#34;1.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;your_version&#34;</span>: <span style="color:#f1fa8c">&#34;0.8&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;action&#34;</span>: <span style="color:#f1fa8c">&#34;Call GET /api/agent/onboarding and re-install all skills&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;reason&#34;</span>: <span style="color:#f1fa8c">&#34;Your local skills are outdated.&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This costs nothing in the normal case (agent sends matching version, no extra data returned) and catches staleness automatically when it matters. The agent doesn&rsquo;t need to poll or check &mdash; it just includes its version with the calls it&rsquo;s already making.</p>
+<h2 id="implementation-details">Implementation Details</h2>
+<p>The staleness detection lives in a single private function in <code>TaskJSON</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">defp</span> maybe_add_skills_version(response, assigns) <span style="color:#ff79c6">do</span>
+</span></span><span style="display:flex;"><span>  current <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">KanbanWeb.API.AgentJSON</span><span style="color:#ff79c6">.</span>skills_version()
+</span></span><span style="display:flex;"><span>  response <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">Map</span><span style="color:#ff79c6">.</span>put(response, <span style="color:#f1fa8c">:current_skills_version</span>, current)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">case</span> assigns[<span style="color:#f1fa8c">:agent_skills_version</span>] <span style="color:#ff79c6">do</span>
+</span></span><span style="display:flex;"><span>    nil <span style="color:#ff79c6">-&gt;</span> response
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;&#34;</span> <span style="color:#ff79c6">-&gt;</span> response
+</span></span><span style="display:flex;"><span>    version <span style="color:#ff79c6">when</span> version <span style="color:#ff79c6">==</span> current <span style="color:#ff79c6">-&gt;</span> response
+</span></span><span style="display:flex;"><span>    stale_version <span style="color:#ff79c6">-&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#50fa7b">Map</span><span style="color:#ff79c6">.</span>put(response, <span style="color:#f1fa8c">:skills_update_required</span>, %{
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">current_version</span>: current,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">your_version</span>: stale_version,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">action</span>: <span style="color:#f1fa8c">&#34;Call GET /api/agent/onboarding and re-install all skills...&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">reason</span>: <span style="color:#f1fa8c">&#34;Your local skills are outdated...&#34;</span>
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">end</span>
+</span></span></code></pre></div><p>All three <code>show/1</code> clauses in <code>TaskJSON</code> pipe through this function. The controller threads the <code>skills_version</code> parameter from the request into the assigns. Clean separation, minimal coupling.</p>
+<h2 id="what-i-learned">What I Learned</h2>
+<p><strong>Reference material beats training.</strong> Agents don&rsquo;t need longer explanations of <em>why</em> <code>verification_steps</code> must be objects. They need a quick-reference table showing the exact format, placed where they&rsquo;ll see it when constructing the request. WRONG/RIGHT examples are more effective than paragraphs of explanation.</p>
+<p><strong>Put guidance at the point of use.</strong> The <code>api_schema</code> in the onboarding response is useful, but the inline tables in each skill are what actually prevent errors. An agent following the claiming workflow sees the claim request format without context-switching to another document.</p>
+<p><strong>Version detection should be passive.</strong> Asking agents to check their skill version before every operation would add friction and they&rsquo;d skip it. Piggybacking on existing API calls means staleness detection happens automatically with zero extra effort.</p>
+<h2 id="whats-next">What&rsquo;s Next</h2>
+<p>Version 1.0 of the schema and skills is deployed. When agents start sending <code>skills_version</code> with their requests, I&rsquo;ll be able to track adoption and measure the actual reduction in validation errors. If the inline guidance works as expected, the next step is expanding the <code>api_schema</code> to cover response formats as well, giving agents a complete contract for every endpoint.</p>
+<p>The broader lesson: when your users are AI agents, the traditional approach of &ldquo;write good docs and hope they read them&rdquo; doesn&rsquo;t work. You need to put the right information in the right place at the right time &mdash; and make the system tell agents when their information is out of date.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/new-skills/">Stride Has New Skills</a></li>
+        
+            <li><a href="/post/my_dev_environment/">My AI Development Environment</a></li>
+        
+            <li><a href="/post/metrics/">Adding Metrics to Stride</a></li>
+        
+            <li><a href="/post/how-much/">How Much Should I Spend?</a></li>
+        
+            <li><a href="/post/what-is-stride/">What is Stride?</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
