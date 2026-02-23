@@ -54,13 +54,22 @@ The simplified version of this process is a loop that takes anywhere from a half
 
 ### External Concerns
 
-There are often other concerns outside of the development team that feed into the requirements. For example, there might be legal, language translations, marketing, and other extermal groups that need to be considered when creating the requirements. If these groups are not also optimized around the new AI pace then we will be facing the same issues. For example, if a UI development team needs to wait days for a legal decision around verbage or wait days for a translation to be available, we have the same problems we had before.
+There are often other concerns outside of the development team that feed into the requirements. For example, there might be legal, language translations, design, and other extermal groups that need to be considered when creating the requirements. If these groups are not also optimized around the new AI pace then we will be facing the same issues and constraints mentioned above. For example, if a development development team needs to wait days for a legal decision around verbage or wait days for a translation to be available, we have the same problems we had before.
 
-These external groups will also need to move toward utilizing AI in order to deliver their requirements in a timely manner. For example, the translation team needs to build an agent that can be utilized by the development team to provide translations on demand.
+These external groups will also need to move toward utilizing AI in order to deliver their requirements in a timely manner. For example, the translation team needs to build an agent that can be utilized by the development team to provide translations on demand. Legal teams need to build their own LLMs that contain the specialized knowledge necessary to ensure legal compliance. Design organizations need to be using design systems that provide MCP access and/or should build out Agent Skills and Sub-Agents the teams can use to ensure compliance with the corporate design standards.
+
+### Dependencies Between Teams
+
+What do we do when we need multiple teams to complete work in order to release a single feature? AI is extremely good at adding and removing feature toggles and I believe it is the easiest way to coordinate the release of changes across multiple teams. There are a couple of things that will make this approach successful.
+
+1. Areas of the organization that will take longer to implement the change should start making the changes first. Areas that have historically been able to make changes more rapidly might want to wait until the longer-running changes are complete before even starting to make their changes.
+2. The feature toggles need to be removed as soon as possible once all of the changes are released.
 
 ## The New Application
 
-In order to demonstrate how this will work in practice, I will be building a new application from scratch. This application will be a simple Learning Management System. I will be creating a post about each step of the process along with descriptions of what each role is doing during that development. Please come back here for updates as the application is built over the next few days.
+In order to demonstrate how this will work in practice, I will be building a new application from scratch. This application will be a simple Learning Management System. I will be creating a post about each step of the process along with descriptions of what each role is doing during that development. 
+
+**Please come back here for updates as the application is built over the next few days and the table below links to those additional posts.**
 
 | Post | Duration | Involved Roles |
 |:--------:|:--------:|:-----------:|
