@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Feb 2026 13:01:01 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 23 Feb 2026 09:56:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The New Team</title>
+      <link>http://localhost:1313/post/the-new-team/</link>
+      <pubDate>Mon, 23 Feb 2026 09:56:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/the-new-team/</guid>
+      <description>&lt;p&gt;The traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers is incompatible with AI driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Spring Planning and Daily Standups and even our approach to testing.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Stride Has New Skills</title>
       <link>http://localhost:1313/post/new-skills/</link>

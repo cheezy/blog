@@ -6,14 +6,21 @@
     <description>Recent content in Agile on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Feb 2026 13:01:01 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 23 Feb 2026 09:56:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/agile/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Stride has New Skills</title>
+      <title>The New Team</title>
+      <link>http://localhost:1313/post/the-new-team/</link>
+      <pubDate>Mon, 23 Feb 2026 09:56:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/the-new-team/</guid>
+      <description>&lt;p&gt;The traditional Agile development teams composed of a Product Owner, Scrum Master, several Developers, and one or two Testers is incompatible with AI-assisted development.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stride Has New Skills</title>
       <link>http://localhost:1313/post/new-skills/</link>
       <pubDate>Thu, 19 Feb 2026 13:01:01 -0500</pubDate>
       <guid>http://localhost:1313/post/new-skills/</guid>
-      <description></description>
+      <description>&lt;p&gt;When you build an API designed for AI agents, you quickly discover something humbling: agents make the same mistakes over and over. Not because they&amp;rsquo;re incapable, but because they&amp;rsquo;re working from memory instead of reference material. I spent a few days experimenting and ultimately fixing this in Stride, and the results surprised me.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;&#xA;&lt;p&gt;Stride is a kanban-based task management platform built for AI agents. Agents claim tasks, execute lifecycle hooks, implement features, and mark work complete &amp;mdash; all through a REST API. The system works well when agents format their requests correctly. The trouble is, they often don&amp;rsquo;t.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My AI Development Environment</title>

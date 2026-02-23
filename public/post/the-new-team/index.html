@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Building a LiveView app using AI - Part 10" />
-    <meta property="og:title" content="Building a LiveView app using AI - Part 10" />
-    <meta property="twitter:title" content="Building a LiveView app using AI - Part 10" />
+    <meta name="title" content="The New Team" />
+    <meta property="og:title" content="The New Team" />
+    <meta property="twitter:title" content="The New Team" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/ai-kanban-part10/" />
+    <meta property="og:url" content="http://localhost:1313/post/the-new-team/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Building a LiveView app using AI - Part 10 | Cheezy&#39;s Blog</title>
+    <title>The New Team | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/ai-kanban-part10/">
+    <link rel="canonical" href="/post/the-new-team/">
 
     
 
@@ -181,26 +181,79 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>Building a LiveView app using AI - Part 10</h1>
+            <h1>The New Team</h1>
 
             
-                <h2 id="adding-drag-and-drop">Adding Drag and Drop</h2>
-<p>We asked Claude to finish phase six which was adding drag and drop functionality to the board. Claude did this quickly but when I tested it I found that it was more complex that expected. Claude got a few things wrong. First of all let&rsquo;s watch the video of phase six.</p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/aM6Rt3fuC9Q?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-    </div>
-
-<h2 id="always-test-everything">Always test everything</h2>
-<p>At the end of the video it seems like everything was okay. One might be tempted to commit the code and move on. I think a very important step is to test everything that AI creates. Occasionally AI will make a mistake and it is important to catch it right away while it still has the entire context available.</p>
-<h3 id="first-defect">First defect</h3>
-<p>I started using the drag and drop functionality and I quickly discovered the first issue. If I drag a task to another position in the same column it works fine. If I drag a task to another column and place it at the end of the column it works fine. However, if I drag a task to another column and place it above an existing task I get a database unique constraint error. The violation had to do with this constraint:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>unique_constraint([<span style="color:#f1fa8c">:column_id</span>, <span style="color:#f1fa8c">:position</span>])
-</span></span></code></pre></div><p>I wondered why the tests didn&rsquo;t catch this. When I looked at the tests I realized that the drag and drop tests always dragged to an empty column. I decided to take a test first approach to solve this problem. I asked claude to add a test where it dragged a task to another column and placed it above an existing task. It did this and the tests right away received the same error that I was getting.</p>
-<p>This was all it took. Claude went about figuring out why the test was failing and discovered the error. After five minutes Claude had fixed this issue.</p>
-<h3 id="second-defect">Second defect(?)</h3>
-<p>After the last fix I tested the remainder of the drag and drop functionality and everything looked good. I decided to test how drag and drop would react when one attempted to violate a WIP limit. I dragged a task to a column that was at its WIP limit and the task was not allowed to be dragged there. The column was also highlighted red and an exclamation point icon was placed at the top of the column. I that that was a little strange as it was in a state where the WIP limit was not violated and yet the column was highlighted red. I dragged another task away from the column making it even lower than the WIP limit and the highlighting remained.</p>
-<p>I had to think about how I wanted to to behave. The system is designed so it will not allow you to exceed a WIP limit but I still wanted it to provide some sort of indicator that a violation of the WIP limit was attempted. I asked Claude to change the highlighting strategy to only highlight the column for 3 seconds when there was an attempt to exceed the WIP limit. Claude did this and the highlighting was much more appropriate.</p>
-<p><a href="/post/ai-kanban-part11">Continue on to part eleven</a></p>
+                <p>The traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers is incompatible with AI driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Spring Planning and Daily Standups and even our approach to testing.</p>
+<p>When an AI driven development process if fully adopted we see significant constraints in each area of the team. This is a result of AI producing code at a much faster pace and higher quality than human developers. When this is applied to the traditional team structure described above we quickly reach a point where the system is idle for most of the time. We have a couple of choices:</p>
+<ul>
+<li>We can accept this constraint and continue to have our teams work at a human pace</li>
+<li>We can restructure our teams and the processes they follow to take advantage of the speed and quality of AI</li>
+</ul>
+<p>This post is about the second option. I will present my vision for the new team structure and the processes to be followed. To make it real, I will be building a new application from scratch describing how the new team will work together to deliver this application.</p>
+<h2 id="what-are-the-constraings">What are the constraings?</h2>
+<p>Before I go into detail to describe the new team structure and team process I want to describe the constraints that we are facing and that are driving this change.</p>
+<ul>
+<li>The traditional PO / stakeholder requirements gathering and elaboration process is too slow for AI driven development. If continued, the developers will quickly run out of work to do and will be idle.</li>
+<li>The traditional team that has four or five developers will run into significant constraints around source code management, collaboration with the PO to understand requirements, and understanding the changes being made to the application. As a result this will create a lot of <em>busy work</em> for the developers and will create plenty of idle time.</li>
+<li>The traditional tester role will not be able to keep up with the pace of AI driven development. The option will be to either add a very large number of testers to the team or have the developers slow their pace down to match the testers.</li>
+</ul>
+<p>While I know that the goal of any team is not to keep everybody fully utilized, when we think in terms of applying Lean to our process we really try to find the wait queues (idle time) and eliminate them.</p>
+<h2 id="the-optimized-team-structure">The Optimized Team Structure</h2>
+<p>The ideal team structure to fully take advantage of AI driven development is one Product Owner and one or two Developers. Let&rsquo;s look at these roles and explain what the will be doing during the development process.</p>
+<h3 id="the-product-owner">The Product Owner</h3>
+<p>The Product Owner is the person who has the vision for the application and is responsible for what is delivered. They will work very closely with the developers in tight feedback loops that last no more than a few hours.</p>
+<p>Due to the need to create a lot of requirements for the developers and also for the need to review and make slight modifications to what AI produces, they will be very busy and will not have a lot of time to have meetings with outside stakeholders. As a result, the organization eneds to empower these POs to make decisions without having extensive consultation outside of the team.</p>
+<p>Due to the ease and speed of making changes to the application, these POs should focused on experimentation and learning instead of a long list of hard requirements. They should measure success by achieving the desired outcomes instead of a roadmap that is based on assumptions that may or may not be true.</p>
+<p>If the team is not focused on customer facing software then the PO might need to have technical knowledge, and in some cases where the software resides in a complex system that is integrated with many other systems, the PO might need to have a deep understanding of the entire system and possibly have the role of an architect.</p>
+<h3 id="the-developers">The Developers</h3>
+<p>Developers will not be writing code. Instead they will be using an AI Agent like Claude Code to product the code and tests. In order to make this successful, the developers will need to truly understand the agents they are using, understand how to place quality/testing constraints and specific workflow instructions.</p>
+<p>They will be spending a significant amount of their time working with the PO and AI to create and maintain the task backlog before development and to work with the PO to make fine tune adjustments after the initial development.</p>
+<h2 id="the-optimized-process">The Optimized Process</h2>
+<p>The simplified version of this process is a loop that takes anywhere from a half day to a full day. Inside of that loop the PO and Devs will:</p>
+<ol>
+<li>Meet to create a backlog of tasks to be performed. This is achieved by the PO, Devs, and AI brainstorming the next change (goal), creating a requirements document for that goal, quickly reviewing that document and making any last minute adjustments, and finally having AI break that document down into tasks that can be later consumed by AI. This entire process should take anywhere from 15 minutes for a small feature to upwards of an hour for something larger.  The goal during this session is not to document a huge step with extreme details. Instead, I firmly believe we need to shoot for 80% completeness and accuracy at this stage.</li>
+<li>Developers work with their Agents to complete the tasks that were created in the previous session. This is the most boring part of the process as the Agents will be doing the majority of the work here. The developer is simply there to step in of there is a problem encountered like a code merge conflict. A single Agent can typically work through a backlog of 15 to 30 tasks in a matter of a few hours.</li>
+<li>Once the tasks created in the first step are finished, the team should get back together to review the changes. I suggest the PO have their Agent open during this review so they have the ability to make adjustments to the application during the review. This is where the remainder of the details can be filled in and the PO can ensure that this new feature is ready for end user consumption. In an ideal world, the code is pushed to production at the end of this session.</li>
+</ol>
+<h2 id="the-new-application">The New Application</h2>
+<p>In order to demonstrate how this will work in practice, I will be building a new application from scratch. This application will be a simple Learning Management System. I will be creating a post about each step of the process along with descriptions of what each role is doing during that development. Please come back here for updates as the application is built over the next few days.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Post</th>
+          <th style="text-align: center">Duration</th>
+          <th style="text-align: center">Involved Roles</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Initial Design Session</td>
+          <td style="text-align: center">30 Min</td>
+          <td style="text-align: center">PO and Devs</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Initial Development</td>
+          <td style="text-align: center">3 Hours</td>
+          <td style="text-align: center">Devs</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Review and Refinement Session</td>
+          <td style="text-align: center">1 hour</td>
+          <td style="text-align: center">PO and Devs</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Next Planning Session</td>
+          <td style="text-align: center">30 Min</td>
+          <td style="text-align: center">PO and Devs</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Next Development</td>
+          <td style="text-align: center">3 Hours</td>
+          <td style="text-align: center">Devs</td>
+      </tr>
+  </tbody>
+</table>
 
             
              
