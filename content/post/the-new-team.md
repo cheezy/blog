@@ -1,20 +1,20 @@
 ---
 date: '2026-02-23T09:56:00-05:00'
-draft: true
+draft: false
 title: 'The New Team'
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 
-The traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers is incompatible with AI driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Spring Planning and Daily Standups and even our approach to testing.
+The traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers is incompatible with AI driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Sprint Planning and Daily Standups and even our approach to testing.
 
-When an AI driven development process if fully adopted we see significant constraints in each area of the team. This is a result of AI producing code at a much faster pace and higher quality than human developers. When this is applied to the traditional team structure described above we quickly reach a point where the system is idle for most of the time. We have a couple of choices:
+When an AI driven development process is fully adopted we see significant constraints in each area of the team. This is a result of AI producing code at a much faster pace and higher quality than human developers. When this is applied to the traditional team structure described above we quickly reach a point where the system is idle for most of the time. When we find ourselves in the place we have two choices:
 
 - We can accept this constraint and continue to have our teams work at a human pace
 - We can restructure our teams and the processes they follow to take advantage of the speed and quality of AI
 
-This post is about the second option. I will present my vision for the new team structure and the processes to be followed. To make it real, I will be building a new application from scratch describing how the new team will work together to deliver this application.
+This post is about the second option. I will present my vision for the new team structure and the processes to be followed. To make it real, I will be building a new application from scratch describing how the new team would work together to deliver this application.
 
-## What are the constraings?
+## What are the constraints?
 
 Before I go into detail to describe the new team structure and team process I want to describe the constraints that we are facing and that are driving this change.
 
@@ -36,7 +36,7 @@ Due to the need to create a lot of requirements for the developers and also for 
 
 Due to the ease and speed of making changes to the application, these POs should focused on experimentation and learning instead of a long list of hard requirements. They should measure success by achieving the desired outcomes instead of a roadmap that is based on assumptions that may or may not be true.
 
-If the team is not focused on customer facing software then the PO might need to have technical knowledge, and in some cases where the software resides in a complex system that is integrated with many other systems, the PO might need to have a deep understanding of the entire system and possibly have the role of an architect.
+If the team is not focused on customer facing software then the PO might need to have technical knowledge, and in some cases where the software resides in a complex system that is integrated with many other systems, the PO might need to have a deep understanding of the entire system and possibly have the role of an technical lead or a technical business analysis.
 
 ### The Developers
 
