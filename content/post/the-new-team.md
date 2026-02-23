@@ -52,6 +52,12 @@ The simplified version of this process is a loop that takes anywhere from a half
 2. Developers work with their Agents to complete the tasks that were created in the previous session. This is the most boring part of the process as the Agents will be doing the majority of the work here. The developer is simply there to step in of there is a problem encountered like a code merge conflict. A single Agent can typically work through a backlog of 15 to 30 tasks in a matter of a few hours.
 3. Once the tasks created in the first step are finished, the team should get back together to review the changes. I suggest the PO have their Agent open during this review so they have the ability to make adjustments to the application during the review. This is where the remainder of the details can be filled in and the PO can ensure that this new feature is ready for end user consumption. In an ideal world, the code is pushed to production at the end of this session.
 
+### External Concerns
+
+There are often other concerns outside of the development team that feed into the requirements. For example, there might be legal, language translations, marketing, and other extermal groups that need to be considered when creating the requirements. If these groups are not also optimized around the new AI pace then we will be facing the same issues. For example, if a UI development team needs to wait days for a legal decision around verbage or wait days for a translation to be available, we have the same problems we had before.
+
+These external groups will also need to move toward utilizing AI in order to deliver their requirements in a timely manner. For example, the translation team needs to build an agent that can be utilized by the development team to provide translations on demand.
+
 ## The New Application
 
 In order to demonstrate how this will work in practice, I will be building a new application from scratch. This application will be a simple Learning Management System. I will be creating a post about each step of the process along with descriptions of what each role is doing during that development. Please come back here for updates as the application is built over the next few days.
