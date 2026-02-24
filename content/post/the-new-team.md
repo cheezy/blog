@@ -26,7 +26,7 @@ While I know that the goal of any team is not to achieve full utilization, when 
 
 ## The Optimized Team Structure
 
-The ideal team structure to fully take advantage of AI driven development is one Product Owner and one or two Developers. Let's look at these roles and explain what the will be doing during the development process.
+The ideal team structure to take full take advantage of AI driven development is a team comprised of one Product Owner and one or two Developers. That's it. Let's look at these roles and explain what the will be doing during the development process.
 
 ### The Product Owner
 
@@ -34,35 +34,47 @@ The Product Owner is the person who has the vision for the application and is re
 
 Due to the need to create a lot of requirements and also the need to review and make slight modifications to what AI produces, they will be very busy and will not have a lot of time to have meetings with outside stakeholders. As a result, the organization needs to empower these POs to make decisions without having extensive consultation outside of the team.
 
+When the PO does meet with stakeholders and customers, it is strongly encouraged that the developers be involved. Since the entire development process is very fast and highly collaborative, having the entire team understand the desired outcomes and business goals will help achieve them.
+
 Due to the ease and speed of making changes to the application, these POs should focused on experimentation and learning instead of a long list of hard requirements. They should measure success by achieving the desired outcomes instead of a roadmap that is based on assumptions that may or may not be true.
 
-If the team is not focused on customer facing software then the PO might need to have technical knowledge, and in some cases where the software resides in a complex system that is integrated with many other systems, the PO might need to have a deep understanding of the entire system and possibly have the role of an technical lead or a technical business analysis.
+If the team is not focused on customer facing software then the PO might need to have technical knowledge, and in some cases where the software resides in a complex system that is integrated with many other systems, the PO might need to have a deep understanding of the broader system and possibly have the role of an technical lead or a technical business analysis.
 
 ### The Developers
 
-Developers will not be writing code. Instead they will be using an AI Agent like Claude Code to product the code and tests. In order to make this successful, the developers will need to fully understand the agents they are using, understand how to place quality/testing constraints and specific workflow instructions.
+Developers will be writing very little code. Instead they will be using an AI Agent like Claude Code to product the code and tests. In order to make this successful, the developers will need to fully understand the agents they are using, understand how to place quality/testing constraints and specific workflow instructions.
 
-They will be spending a significant amount of their time working with the PO and AI to create and maintain the task backlog before development and to work with the PO to make fine tune adjustments after the initial development.
+Developers also need to ensure they have the tools in place that will allow the Agent to work effectively. Whatever is necessary to produce a quality application needs to happen fast and happen locally on the developers workstation. This includes running the tests, linting the code, running static code analysis to ensure code quality, and running security scans. Test suites need to finish quickly because the Agents will be running them continuously with each small change. This also means that pipelines that deploy to an environment need to be fast so the Agent can validate their changes. What is fast on both accounts? Seconds vs. minutes.
+
+They will be spending a significant amount of time working with the PO and AI to create and maintain the task backlog before development and to work with the PO to make fine tune adjustments after each development cycle. Further, I recommend the developers attend the few meetings that the PO have with stakeholders and customers to better understand business context and desired outcomes.
 
 ## The Optimized Process
 
 The simplified version of this process is a loop that takes anywhere from a half day to a full day. Inside of that loop the PO and Devs will:
 
-1. Meet to create a backlog of tasks to be performed. This is achieved by the PO, Devs, and AI brainstorming the next change (goal), creating a requirements document for that goal, quickly reviewing that document and making any last minute adjustments, and finally having AI break that document down into tasks that can be later consumed by AI. This entire process should take anywhere from 15 minutes for a small feature to upwards of an hour for something larger.  The goal during this session is not to document a huge step with extreme details. Instead, I believe we need to take small steps and shoot for 80% completeness and accuracy at this stage.
-2. Developers work with their Agents to complete the tasks that were created in the previous session. This is the most boring part of the process as the Agents will be doing the majority of the work here. Because of this, it is important that the developer has setup their environment so the Agent has a process to follow and will achieve both the code quality and application quality standards of the team. Beyond this, the developer is simply there to step in if there is a problem encountered like a code merge conflict. A single Agent can typically work through a backlog of 15 to 30 tasks in a matter of an hour or two.
-3. Once the tasks that were created in the first step are implemented, the team should get back together to review the changes. I suggest the PO have their Agent open during this review so they have the ability to make adjustments to the application in real time. This is where the remainder of the details can be filled in and the PO can ensure that this new feature is ready for end user consumption. In an ideal world, the code is pushed to production at the end of this session.
+1. Meet to create a backlog of tasks to be performed. This is achieved by: 
+
+    - the PO, Devs, and AI brainstorming the next change (goal)
+    - creating a requirements document for that goal
+    - quickly reviewing that document and making any last minute adjustments
+    - having AI break that document down into tasks that can be later consumed by AI
+
+    This entire process should take anywhere from 15 minutes for a small goal to upwards of an hour for something larger.  The target during this session is not to document a huge change with a large set of requirements and details. Instead, I believe we need to take small steps and shoot for 80% completeness and accuracy at this stage.
+
+2. Developers work with their Agents to complete the tasks that were created in the previous step. This is the most boring part of the process as the Agents will be doing the majority of the work. Because of this, it is important that the developer has setup their environment so the Agent has a process to follow and will achieve both the code quality and application quality standards of the team. Beyond this, the developer is simply there to step in if a problem is encountered like a code merge conflict. A single Agent can typically work through a backlog of 15 to 30 tasks in a matter of an hour or two.
+3. Once the tasks that were created in the first step are implemented in the second step, the team should get back together to review the changes. I suggest the PO have their Agent open during this review so they have the ability to make adjustments to the application in real time. This is where the remainder of the details can be filled in and the PO can ensure that this new feature is ready for end user consumption. In an ideal world, the code is pushed to production at the end of this session.
 
 ### External Concerns
 
-There are often other concerns outside of the development team that feed into the requirements. For example, there might be legal, language translations, design, and other extermal groups that need to be considered when creating the requirements. If these groups are not also optimized around the new AI pace then we will be facing the same issues and constraints mentioned above. For example, if a development team needs to wait days for a legal decision around verbage or wait days for a translation to be available, we have the same problems we had before.
+There are often other concerns outside of the development team that need to be considered as part of the requirements. For example, there might be legal, language translations, design, and other extermal groups that need to have some form of input into the requirements. If these groups are not also optimized around the new AI pace then we will be facing the same issues and constraints mentioned above. For example, if a development team needs to wait days for a legal decision around verbage or wait days for a translation to be available, we have the same problems we had before.
 
 These external groups will also need to move toward utilizing AI in order to deliver their requirements in a timely manner. For example, the translation team needs to build an agent that can be utilized by the development team to provide translations on demand. Legal teams need to build their own LLMs that contain the specialized knowledge necessary to ensure legal compliance. Design organizations need to be using design systems that provide MCP access and/or should build out Agent Skills and Sub-Agents the teams can use to ensure compliance with the corporate design standards.
 
 ### Dependencies Between Teams
 
-What do we do when we need multiple teams to complete work in order to release a single feature? AI is extremely good at adding and removing feature toggles and I believe it is the easiest way to coordinate the release of changes across multiple teams. There are a couple of things that will make this approach successful.
+What do we do when we need multiple teams to complete work in order to release a single feature? We have seen that AI is extremely good at adding and removing feature toggles and I believe it is the easiest way to coordinate the release of changes across multiple teams. There are a couple of things that will make this approach most successful.
 
-1. Areas of the organization that will take longer to implement the change should start making the changes first. Areas that have historically been able to make changes more rapidly might want to wait until the longer-running changes are complete before even starting to make their changes.
+1. Areas of the organization that will take longer to implement the change should start making the changes first. Areas that have historically been able to make changes more rapidly might want to wait until the longer-running changes are complete before even starting to make their changes. This coordination nessitates that some sort of structure focused on the larger initiative exist. Be careful to not create a heavy-weight process that slows down the entire initiative.
 2. The feature toggles need to be removed as soon as possible once all of the changes are released.
 
 ## The New Application
