@@ -5,28 +5,28 @@ title: 'The New Team'
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 
-Traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers is incompatible with AI driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Sprint Planning and Daily Standups and even our approach to testing.
+Traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers are incompatible with AI-driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Sprint Planning and Daily Standups and even our approach to testing.
 
-When an AI driven development process is fully adopted we see significant constraints in each area of the team. This is a result of AI producing code at a much faster pace and higher quality than human developers. When this is applied to the traditional team structure described above we quickly reach a point where the system is idle most of the time. When we find ourselves in the place where we have two choices:
+When an AI-driven development process is fully adopted we see significant constraints in each area of the team. This is a result of AI producing code at a much faster pace and higher quality than human developers. When this is applied to the traditional team structure described above we quickly reach a point where the system is idle most of the time. We find ourselves in a place where we have two choices:
 
 1. We can accept these constraints and continue to have our teams work at a human pace
-2. We can restructure our teams and the processes they follow to take advantage of the speed and quality of AI
+2. We can restructure our teams and the processes they follow to take advantage of the speed and quality of AI-driven development
 
 This post is about the second option. I will present my vision for the new team structure and the processes to be followed. To make it real, I will be building a new application from scratch describing how the new team structure and process would work to deliver this application.
 
 ## What are the constraints?
 
-Before I go into detail to describe the new team structure and team process I want to describe the constraints that we are facing and that are driving this change.
+Before I go into detail to describe the new team structure and team process, I want to describe the constraints that we are facing and that are driving this change.
 
-- The traditional PO / stakeholder requirements gathering and elaboration process is too slow for AI driven development. If continued, the developers will quickly run out of work to do and will be idle.
-- The traditional team that has four or five developers will run into significant constraints around source code management, collaboration with the PO to understand requirements, and understanding the changes being made to the application. As a result this will create a lot of _busy work_ for the developers and will create plenty of idle time.
-- The traditional tester role will not be able to keep up with the pace of AI driven development. The option will be to either add a very large number of testers to the team or have the developers slow their pace down to match the testers.
+- The traditional PO / stakeholder requirements gathering and elaboration process is too slow for AI-driven development. If continued, the developers will quickly run out of work to do and will be idle.
+- The traditional team that has four or five developers will run into significant constraints around source code management, collaboration with the PO to understand requirements, and understanding the changes being made to the application. As a result, this will create a lot of _busy work_ for the developers and will create plenty of idle time.
+- The traditional tester role will not be able to keep up with the pace of AI-driven development. The option will be to either add a very large number of testers to the team or have the developers slow their pace down to match the testers.
 
 While I know that the goal of any team is not to achieve full utilization, when we view things from a Lean perspective we should try to identify the wait queues (idle time) and eliminate them in order to achieve flow.
 
 ## The Optimized Team Structure
 
-The ideal team structure to take full take advantage of AI driven development is a team comprised of one Product Owner and one or two Developers. That's it. Let's look at these roles and explain what the will be doing during the development process.
+The ideal team structure to take full advantage of AI-driven development is a team comprised of one Product Owner and one or two Developers. That's it. Let's look at these roles and explain what they will be doing during the development process.
 
 ### The Product Owner
 
@@ -36,17 +36,17 @@ Due to the need to create a lot of requirements and also the need to review and 
 
 When the PO does meet with stakeholders and customers, it is strongly encouraged that the developers be involved. Since the entire development process is very fast and highly collaborative, having the entire team understand the desired outcomes and business goals will help achieve them.
 
-Due to the ease and speed of making changes to the application, these POs should focused on experimentation and learning instead of a long list of hard requirements. They should measure success by achieving the desired outcomes instead of a roadmap that is based on assumptions that may or may not be true.
+Due to the ease and speed of making changes to the application, these POs should be focused on experimentation and learning instead of a long list of hard requirements. They should measure success by achieving the desired outcomes instead of a roadmap that is based on assumptions that may or may not be true.
 
-If the team is not focused on customer facing software then the PO might need to have technical knowledge, and in some cases where the software resides in a complex system that is integrated with many other systems, the PO might need to have a deep understanding of the broader system and possibly have the role of an technical lead or a technical business analysis.
+If the team is not focused on customer facing software then the PO might need to have technical knowledge, and in some cases where the software resides in a complex system that is integrated with many other systems, the PO might need to have a deep understanding of the broader system and possibly have the role of a technical lead or a technical business analyst.
 
 ### The Developers
 
-Developers will be writing very little code. Instead they will be using an AI Agent like Claude Code to product the code and tests. In order to make this successful, the developers will need to fully understand the agents they are using, understand how to place quality/testing constraints and specific workflow instructions.
+Developers will be writing very little code. Instead they will be using an AI Agent like Claude Code to produce the code and tests. In order to make this successful, the developers will need to fully understand the agents they are using, understand how to place quality/testing constraints and specific workflow instructions.
 
-Developers also need to ensure they have the tools in place that will allow the Agent to work effectively. Whatever is necessary to produce a quality application needs to happen fast and happen locally on the developers workstation. This includes running the tests, linting the code, running static code analysis to ensure code quality, and running security scans. Test suites need to finish quickly because the Agents will be running them continuously with each small change. This also means that pipelines that deploy to an environment need to be fast so the Agent can validate their changes. What is fast on both accounts? Seconds vs. minutes.
+Developers also need to ensure they have the tools in place that will allow the Agent to work effectively. Whatever is necessary to produce a quality application needs to happen fast and happen locally on the developer's workstation. This includes running the tests, linting the code, running static code analysis to ensure code quality, and running security scans. Test suites need to finish quickly because the Agents will be running them continuously with each small change. This also means that pipelines that deploy to an environment need to be fast so the Agent can validate their changes. What is fast on both counts? Seconds vs. minutes.
 
-They will be spending a significant amount of time working with the PO and AI to create and maintain the task backlog before development and to work with the PO to make fine tune adjustments after each development cycle. Further, I recommend the developers attend the few meetings that the PO have with stakeholders and customers to better understand business context and desired outcomes.
+They will be spending a significant amount of time working with the PO and AI to create and maintain the task backlog before development and to work with the PO to fine-tune adjustments after each development cycle. Further, I recommend the developers attend the few meetings that the PO has with stakeholders and customers to better understand business context and desired outcomes.
 
 ## The Optimized Process
 
@@ -61,12 +61,12 @@ The simplified version of this process is a loop that takes anywhere from a half
 
     This entire process should take anywhere from 15 minutes for a small goal to upwards of an hour for something larger.  The target during this session is not to document a huge change with a large set of requirements and details. Instead, I believe we need to take small steps and shoot for 80% completeness and accuracy at this stage.
 
-2. Developers work with their Agents to complete the tasks that were created in the previous step. This is the most boring part of the process as the Agents will be doing the majority of the work. Because of this, it is important that the developer has setup their environment so the Agent has a process to follow and will achieve both the code quality and application quality standards of the team. Beyond this, the developer is simply there to step in if a problem is encountered like a code merge conflict. A single Agent can typically work through a backlog of 15 to 30 tasks in a matter of an hour or two.
+2. Developers work with their Agents to complete the tasks that were created in the previous step. This is the most boring part of the process as the Agents will be doing the majority of the work. Because of this, it is important that the developer has set up their environment so the Agent has a process to follow and will achieve both the code quality and application quality standards of the team. Beyond this, the developer is simply there to step in if a problem is encountered like a code merge conflict. A single Agent can typically work through a backlog of 15 to 30 tasks in a matter of an hour or two.
 3. Once the tasks that were created in the first step are implemented in the second step, the team should get back together to review the changes. I suggest the PO have their Agent open during this review so they have the ability to make adjustments to the application in real time. This is where the remainder of the details can be filled in and the PO can ensure that this new feature is ready for end user consumption. In an ideal world, the code is pushed to production at the end of this session.
 
 ### External Concerns
 
-There are often other concerns outside of the development team that need to be considered as part of the requirements. For example, there might be legal, language translations, design, and other extermal groups that need to have some form of input into the requirements. If these groups are not also optimized around the new AI pace then we will be facing the same issues and constraints mentioned above. For example, if a development team needs to wait days for a legal decision around verbage or wait days for a translation to be available, we have the same problems we had before.
+There are often other concerns outside of the development team that need to be considered as part of the requirements. For example, there might be legal, language translations, design, and other external groups that need to have some form of input into the requirements. If these groups are not also optimized around the new AI pace then we will be facing the same issues and constraints mentioned above. For example, if a development team needs to wait days for a legal decision around verbiage or wait days for a translation to be available, we have the same problems we had before.
 
 These external groups will also need to move toward utilizing AI in order to deliver their requirements in a timely manner. For example, the translation team needs to build an agent that can be utilized by the development team to provide translations on demand. Legal teams need to build their own LLMs that contain the specialized knowledge necessary to ensure legal compliance. Design organizations need to be using design systems that provide MCP access and/or should build out Agent Skills and Sub-Agents the teams can use to ensure compliance with the corporate design standards.
 
@@ -74,7 +74,7 @@ These external groups will also need to move toward utilizing AI in order to del
 
 What do we do when we need multiple teams to complete work in order to release a single feature? We have seen that AI is extremely good at adding and removing feature toggles and I believe it is the easiest way to coordinate the release of changes across multiple teams. There are a couple of things that will make this approach most successful.
 
-1. Areas of the organization that will take longer to implement the change should start making the changes first. Areas that have historically been able to make changes more rapidly might want to wait until the longer-running changes are complete before even starting to make their changes. This coordination nessitates that some sort of structure focused on the larger initiative exist. Be careful to not create a heavy-weight process that slows down the entire initiative.
+1. Areas of the organization that will take longer to implement the change should start making the changes first. Areas that have historically been able to make changes more rapidly might want to wait until the longer-running changes are complete before even starting to make their changes. This coordination necessitates that some sort of structure focused on the larger initiative exist. Be careful to not create a heavy-weight process that slows down the entire initiative.
 2. The feature toggles need to be removed as soon as possible once all of the changes are released.
 
 ## The New Application
