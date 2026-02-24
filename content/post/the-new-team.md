@@ -7,7 +7,7 @@ tags: ["AI", "Agile", "Continuous Delivery"]
 
 Traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers are incompatible with AI-driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Sprint Planning and Daily Standups and even our approach to testing.
 
-When an AI-driven development process is fully adopted we see significant constraints in each area of the team. This is a result of AI producing code at a much faster pace and higher quality than human developers. When this is applied to the traditional team structure described above we quickly reach a point where the system is idle most of the time. We find ourselves in a place where we have two choices:
+When an AI-driven development process is fully adopted we see significant constraints in each area of the team. This is a result of AI producing code at a much faster pace and higher quality than human developers. When this is applied to the traditional team structure described above we quickly reach a point where parts of the system are idle most of the time. We find ourselves in a place where we have two choices:
 
 1. We can accept these constraints and continue to have our teams work at a human pace
 2. We can restructure our teams and the processes they follow to take advantage of the speed and quality of AI-driven development
