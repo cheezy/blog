@@ -9,11 +9,18 @@
     <lastBuildDate>Mon, 23 Feb 2026 09:56:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Building the Learning Management System - Initial Design</title>
+      <link>http://localhost:1313/post/lms1/</link>
+      <pubDate>Mon, 23 Feb 2026 09:56:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/lms1/</guid>
+      <description>&lt;p&gt;In this post we start to show how the process we outlined in my post &lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works for a real application.&lt;/p&gt;&#xA;&lt;p&gt;I want to build a Learning Management System. The system should allow companies to register and then add their employees. Companies should be able to create training for their employees. The train could include text, images, and videos to make professional looking courses. Companies should be able to enroll their employees in a particular course and the employee will receive an email notifying them of this enrollment. Employees should have their own landing page where they can see the courses the have completed, courses that are in progress, as well as courses that they have not started yet. Please help me brainstore the details of this application.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>The New Team</title>
       <link>http://localhost:1313/post/the-new-team/</link>
       <pubDate>Mon, 23 Feb 2026 09:56:00 -0500</pubDate>
       <guid>http://localhost:1313/post/the-new-team/</guid>
-      <description>&lt;p&gt;The traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers is incompatible with AI driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Spring Planning and Daily Standups and even our approach to testing.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers are incompatible with AI-driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Sprint Planning and Daily Standups and even our approach to testing.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stride Has New Skills</title>
