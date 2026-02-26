@@ -1,6 +1,6 @@
 ---
 date: '2026-02-26T11:21:00-05:00'
-draft: true
+draft: false
 title: 'Building the Learning Management System - Creating the Backlog'
 tags: ["AI", "Continuous Delivery"]
 ---
