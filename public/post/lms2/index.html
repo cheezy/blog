@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="Building the Learning Management System - Creating the Backlog" />
+    <meta property="og:title" content="Building the Learning Management System - Creating the Backlog" />
+    <meta property="twitter:title" content="Building the Learning Management System - Creating the Backlog" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/tags/phoenix/" />
+    <meta property="og:url" content="http://localhost:1313/post/lms2/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Phoenix | Cheezy&#39;s Blog</title>
+    <title>Building the Learning Management System - Creating the Backlog | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/tags/phoenix/">
+    <link rel="canonical" href="/post/lms2/">
 
     
 
@@ -170,196 +170,80 @@
 
 
 
-  
-<div data-pagefind-ignore="all" class="container">
-    <div class="row">
-        
-        
-   	    <div class="
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
             col-lg-8 col-lg-offset-1
             col-md-8 col-md-offset-1
             col-sm-12
             col-xs-12
-            post-container
-        ">
+            post-container">
+            <h1>Building the Learning Management System - Creating the Backlog</h1>
+
             
-<div data-pagefind-ignore="all">
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part16/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 16
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="a-million-small-things---on-to-version-10">A million small things - on to Version 1.0</h2>
-<p>This is the final post in this series. There were many things that needed to be done that were not on the original plan so I worked with my trusty AI tools to complete them. This post simply lists them and provides a some details where I thought it was interesting.</p>
-<p>Do not worry about this being the end of the series. See the What&rsquo;s Next section at the bottom of this post to see where this is all going. What&rsquo;s next is very exciting and I hope you stay with me on this.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Wednesday, December 17, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part15/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 15
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="polish--enhancement">Polish &amp; Enhancement</h2>
-<p>It is finally time to get back and finish phase 7 of our plan. Here is what remains:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">#### Phase 7: Polish &amp; Enhancement
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **UI/UX improvements**
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Design beautiful board cards with Tailwind CSS
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add hover effects and transitions
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Improve spacing and typography
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add loading states for async actions
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add empty states for boards without columns/tasks
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Add notifications**
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Use Phoenix LiveView flash messages for success/error
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Style flash messages with Tailwind CSS
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Add confirmation dialogs**
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add confirmation for board deletion
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add confirmation for column deletion (mention tasks will be deleted)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add confirmation for task deletion
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Error handling**
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add proper error messages for validation failures
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Handle edge cases (deleting last column, etc.)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Add 404 pages for missing resources
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">- [ ]</span> **Final Quality Checks**:
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix test`</span> and ensure all tests pass (510 tests, 0 failures)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix test --cover`</span> and verify coverage meets threshold (94.60% coverage)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix credo --strict`</span> and fix any issues (no issues found)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix sobelow --config`</span> and fix any security issues (no issues found)
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">- [ ]</span> Run <span style="color:#f1fa8c">`mix precommit`</span> to run all checks together (all checks passed)
-</span></span></code></pre></div><h3 id="starting-with-uiux-improvements">Starting with UI/UX improvements</h3>
-<p>We start by asking TideWave to complete the first two tasks under UI/UX improvements. Less than five minutes later we have some sparkle.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Sunday, November 30, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part14/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 14
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="cleaning-up-authentication">Cleaning up Authentication</h2>
-<p>This is the last episode before we get back to our original plan. The authentication system currently in place is what was generated by running the <code>mix phx.gen.auth</code> command. The styles were cleaned up a little when I asked Claude to create a nice style for the entire site. But the behaviour is the generated form and is not what I want. In part 14 we will attack this head on.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, November 28, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part13/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 13
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="setting-permissions-for-users">Setting permissions for users</h2>
-<p>Currently every user can do everything in the application. A read only user can delete a board or make any type of change they want. Let&rsquo;s fix that.</p>
-<h3 id="focus-on-owners-first">Focus on Owners first</h3>
-<p>First I want to focus on ensuring the board owner can do board-level actions and other users cannot. Let me start by listing out the things that only owners can do:</p>
+                <p>In this post, we continue to show how the process we outlined in the post <a href="/post/the-new-team/">The New Team</a> works. If you haven&rsquo;t read the initial post, I recommend you do so before reading this one.</p>
+<h2 id="creating-the-backlog">Creating the Backlog</h2>
+<p>In the <a href="/post/lms1/">previous post</a>, we created a set of requirements for the Learning Management System. In this post, we will turn that set of requirements into a backlog of tasks that we will use to build the system.</p>
+<p>In this simulation, the team will use Claude Code with a set of <a href="https://code.claude.com/docs/en/skills">Skills</a> provided by <a href="https://stridelikeaboss.com">Stride</a> to build out the backlog from the document created earlier. This Skill will inform Claude of what details we want to capture in each task. This will be used by agents to build the system.</p>
+<h3 id="why-tasks">Why Tasks?</h3>
+<p>Many developers that are not using Stride or a similar tool, try to provide prompts to AI agents to direct them on their work. Simple prompts are not effective as they lack so many details. It is no wonder that many developers complain that AI didn&rsquo;t implement their requirements properly.</p>
+<p>The <a href="https://cheezyworld.ca/post/what-is-a-task/">tasks</a> as defined by Stride are very detailed and include concerns that might not be thought of initially. This is a large part of the secret of this approach to development. Some of the information that exists in Stride Tasks are:</p>
 <ul>
-<li>Edit and delete their boards</li>
-<li>Add new columns to a board</li>
-<li>Edit or delete columns from their boards</li>
-<li>Reorder columns (including drag-and-drop)</li>
+<li><code>title</code> - Short description (required)</li>
+<li><code>description</code> - Detailed explanation</li>
+<li><code>acceptance_criteria</code> - Definition of done</li>
+<li><code>priority</code> - :low, :medium, :high, or :critical (required)</li>
+<li><code>complexity</code> - :small, :medium, or :large</li>
+<li><code>why</code> - Problem/value explanation</li>
+<li><code>what</code> - Specific change description</li>
+<li><code>where_context</code> - Location in code/UI</li>
+<li><code>estimated_files</code> - Files expected to change</li>
+<li><code>patterns_to_follow</code> - Code patterns to replicate</li>
+<li><code>database_changes</code> - Schema modifications needed</li>
+<li><code>validation_rules</code> - Input validation requirements</li>
+<li><code>key_files</code> - Critical files to modify (embeds)</li>
+<li><code>verification_steps</code> - How to verify completion (embeds)</li>
+<li><code>pitfalls</code> - What NOT to do</li>
+<li><code>out_of_scope</code> - Explicitly excluded functionality</li>
+<li><code>required_capabilities</code> - Agent skills needed (e.g., [&ldquo;code_generation&rdquo;, &ldquo;testing&rdquo;])</li>
+<li><code>security_considerations</code> - Security implications</li>
+<li><code>testing_strategy</code> - Comprehensive testing approach</li>
+<li><code>integration_points</code> - External systems/events involved</li>
+<li><code>technology_requirements</code> - Specific tools/libraries needed</li>
+<li><code>telemetry_event</code> - Event name to emit</li>
+<li><code>metrics_to_track</code> - What to measure</li>
+<li><code>logging_requirements</code> - Logging expectations</li>
+<li><code>error_user_message</code> - User-facing error message</li>
+<li><code>error_on_failure</code> - Error to raise on failure</li>
+<li><code>dependencies</code> - Task identifiers that must complete first</li>
+<li><code>parent_id</code> - Parent goal (for hierarchical structure)</li>
+<li><code>needs_review</code> / <code>review_status</code> - Review workflow</li>
 </ul>
-<p>I think this is a good list. Let&rsquo;s ask TideWave to make these changes.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, November 21, 2025
-        
-        
-    
-    </p>
+<p>There are additional fields in the task that are used for internal purposes and also to support a review process. We&rsquo;ll describe the review process in a later post.</p>
+<h3 id="building-the-backlog">Building the Backlog</h3>
+<p>The video is not that exciting. Most of the time is spent waiting for Claude to work out the details of the tasks. In my opinion, this is time well spent.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/xFuugLMfD3M?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
 
-</div>
-<hr>
+<h3 id="what-happens-next">What happens next?</h3>
+<p>After the backlog is uploaded to Stride, the team will review the tasks and make any necessary changes. This is one field that is very important. It is the <code>Needs Review</code> field. If this field is set to true, the agent implementing the task will wait for the human reviewer to give them the okay or request changes prior to grabbing the next task. This is yet another way for Humans to be involved in the process.</p>
+<p>Once the teams are happy with the details of the tasks they can simply move them to the <code>Ready</code> column on the board. That signals to the agent that they are <em>ready</em> for implementation. That is where the next post will pick up.</p>
 
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part12/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 12
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="adding-users-to-boards-and-tasks">Adding users to boards and tasks</h2>
-<p>Since the <a href="https://tidewave.ai/blog/claude-code-codex">announcement</a> of Claude Code running inside of Tidewave I have been extremely happy about this combo. For now I am using it for nearly all of my changes to the codebase. I have even given it a name - <strong>ClaudeWave</strong>. All of the changes in this post were done using ClaudeWave.</p>
-<p>So far our boards only have an owner. I want an owner to have the ability to add other users to a board and also assign tasks to one of those users. Let&rsquo;s get started.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Wednesday, November 12, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-</div>
-
+            
+             
             
 
 
-<ul class="pager" data-pagefind-ignore="all">
-    
-    
-    <li class="next">
-        <a href="/tags/phoenix/page/2/">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
 
 
-       	</div>
-        
+            
+            </div>
+            
+            
 
 <div class="
     col-lg-3 col-lg-offset-0
@@ -550,9 +434,9 @@
     
 </div>
 
-	</div>
-</div>
-
+        </div>
+    </div>
+</article>
 
 
 
@@ -612,7 +496,7 @@
             
            
                    <li>
-                       <a href='/tags/phoenix/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
