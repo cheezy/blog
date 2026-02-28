@@ -6,14 +6,21 @@
     <description>Recent content in AI on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Feb 2026 11:21:00 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 13:47:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Remote Control</title>
+      <link>http://localhost:1313/post/claude-remote-control/</link>
+      <pubDate>Sat, 28 Feb 2026 13:47:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/claude-remote-control/</guid>
+      <description>&lt;p&gt;Anthropic is in the process of releasing a feature for Claude Code that I think is amazing. It is &lt;a href=&#34;https://code.claude.com/docs/en/remote-control&#34;&gt;Claude Remote Control&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building the Learning Management System - Creating the Backlog</title>
       <link>http://localhost:1313/post/lms2/</link>
       <pubDate>Thu, 26 Feb 2026 11:21:00 -0500</pubDate>
       <guid>http://localhost:1313/post/lms2/</guid>
-      <description>&lt;p&gt;In this post, we continue to show how the process we outlined in the post &lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-the-backlog&#34;&gt;Creating the Backlog&lt;/h2&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;http://localhost:1313/post/lms1/&#34;&gt;previous post&lt;/a&gt;, we created a set of requirements for the Learning Management System. In this post, we will thrun that set of requirements into a backlog of tasks that we will use to build the system.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this post, we continue to show how the process we outlined in the post &lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-the-backlog&#34;&gt;Creating the Backlog&lt;/h2&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;http://localhost:1313/post/lms1/&#34;&gt;previous post&lt;/a&gt;, we created a set of requirements for the Learning Management System. In this post, we will turn that set of requirements into a backlog of tasks that we will use to build the system.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building the Learning Management System - Initial Requirements</title>

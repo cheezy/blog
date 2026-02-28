@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Feb 2026 11:21:00 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 13:47:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Remote Control</title>
+      <link>http://localhost:1313/post/claude-remote-control/</link>
+      <pubDate>Sat, 28 Feb 2026 13:47:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/claude-remote-control/</guid>
+      <description>&lt;p&gt;Anthropic is in the process of releasing a feature for Claude Code that I think is amazing. It is &lt;a href=&#34;https://code.claude.com/docs/en/remote-control&#34;&gt;Claude Remote Control&lt;/a&gt;. This feature allows you to control your Claude Code session remotely from any iOS or Android device.&lt;/p&gt;&#xA;&lt;p&gt;I can see this feature being used in many different scenarios. For example, you could use it to check on work while you are in a meeting, to kick off a task while you&amp;rsquo;re at lunch with friends, or to simply sit on the couch and oversee some work Claude is doing. I used it to get a few tasks completed while having coffee with my son. It was extremely easy to use and I can tell you I will be using it a lot. I personally tested it on both my iPhone and iPad and it works great.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building the Learning Management System - Creating the Backlog</title>
       <link>http://localhost:1313/post/lms2/</link>
@@ -272,7 +279,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>
