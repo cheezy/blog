@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="About" />
-    <meta property="og:title" content="About" />
-    <meta property="twitter:title" content="About" />
+    <meta name="title" content="Building the Learning Management System - First Coding Session" />
+    <meta property="og:title" content="Building the Learning Management System - First Coding Session" />
+    <meta property="twitter:title" content="Building the Learning Management System - First Coding Session" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/about/" />
+    <meta property="og:url" content="http://localhost:1313/post/lms3/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>About | Cheezy&#39;s Blog</title>
+    <title>Building the Learning Management System - First Coding Session | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/about/">
+    <link rel="canonical" href="/post/lms3/">
 
     
 
@@ -181,11 +181,22 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>About</h1>
+            <h1>Building the Learning Management System - First Coding Session</h1>
 
             
-                <h2 id="about-me">About Me</h2>
-<p>Hello, I&rsquo;m Jeff &ldquo;Cheezy&rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.</p>
+                <p>This post is a continuation of the implementation of the Learning Management System application demonstrating my concept for the new team structure and process in the age of AI-driven development.</p>
+<p>In the first post of the implementation series, we <a href="/post/lms1/">created a requirements document</a> with the whole team and Claude Code. In the second post, the whole team, using Claude Code, <a href="/post/lms2/">created a backlog of tasks from that requirements document</a> and uploaded it to <a href="https://stridelikeaboss.com">Stride</a>. The entire process and team structure is outlined in the post titled &ldquo;<a href="/post/the-new-team/">The New Team</a>.&rdquo; If you haven&rsquo;t read the initial post, I recommend you do so before reading this one and follow along with the implementation via the links at the bottom of that post.</p>
+<h3 id="implementing-the-backlog">Implementing the Backlog</h3>
+<p>This step in the process is conducted by the one or two developers that are the developers for the product. The role of the developer is to simply monitor their Agent and only step in if the Agent needs to ask for permission to do something, or if the Agent needs clarification.</p>
+<p>Following our process, the developer does not type prompts into the Agent in order to implement the Task from the backlog. Due to the way we built our backlog, each Task contains all of the details necessary to implement the Task. The developer is simply asking their Agent to claim the next Task from <a href="https://stridelikeaboss.com">Stride</a>.</p>
+<h3 id="looking-at-the-details">Looking at the Details</h3>
+<p>In the video below, I tried to draw attention to all of the <a href="https://cheezyworld.ca/post/my_dev_environment/">configuration I have in place</a> to direct how the Agent writes and tests the code. Agents are very much like a fast car without a steering wheel and brakes. It is up to the developers to configure the behaviour of the Agent to ensure their standards are met. This configuration should provide best practices for the language you are using, any major framework you are using, quality and testing standards, and anything else that is important to you.</p>
+<p>In the video, you will not only see the configuration but you will also see the Agent run the <a href="https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md">Stride Hooks</a>. The hooks are a set of commands that the Agent must complete successfully at different points in the workflow in order to move to the next step. There are four hooks that must be defined. They are before and after the <em>doing</em> step and before and after the <em>review</em> step. Typical hooks include checking out the latest code, running tests, running static code analysis, running security scans, running linters, and of course committing the code and pushing it to the repository.</p>
+<p>All of these things together are what make this process so effective. The Agent is not just writing code, it is also writing and running tests, and all other things necessary to ensure the quality of the application being built.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/EED6iNdp8nE?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
 
             
              

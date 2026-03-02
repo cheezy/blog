@@ -6,14 +6,21 @@
     <description>Recent content in AI on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Feb 2026 13:47:00 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 01 Mar 2026 12:15:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building the Learning Management System - First Coding Session</title>
+      <link>http://localhost:1313/post/lms3/</link>
+      <pubDate>Sun, 01 Mar 2026 12:15:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/lms3/</guid>
+      <description>&lt;p&gt;This post is a continuation of the simulation demonstrating my concept for the new team structure and process in the age of AI-drive development. The process is outlined in this &lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;post&lt;/a&gt;. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one and follow along with the simulations via the links at the bottom of that post.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Claude Remote Control</title>
       <link>http://localhost:1313/post/claude-remote-control/</link>
       <pubDate>Sat, 28 Feb 2026 13:47:00 -0500</pubDate>
       <guid>http://localhost:1313/post/claude-remote-control/</guid>
-      <description>&lt;p&gt;Anthropic is in the process of releasing a feature for Claude Code that I think is amazing. It is &lt;a href=&#34;https://code.claude.com/docs/en/remote-control&#34;&gt;Claude Remote Control&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Anthropic is in the process of releasing a feature for Claude Code that I think is amazing. It is &lt;a href=&#34;https://code.claude.com/docs/en/remote-control&#34;&gt;Claude Remote Control&lt;/a&gt;. This feature allows you to control your Claude Code session remotely from any iOS or Android device.&lt;/p&gt;&#xA;&lt;p&gt;I can see this feature being used in many different scenarios. For example, you could use it to check on work while you are in a meeting, to kick off a task while you&amp;rsquo;re at lunch with friends, or to simply sit on the couch and oversee some work Claude is doing. I used it to get a few tasks completed while having coffee with my son. It was extremely easy to use and I can tell you I will be using it a lot. I personally tested it on both my iPhone and iPad and it works great.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building the Learning Management System - Creating the Backlog</title>

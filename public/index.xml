@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Feb 2026 13:47:00 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 01 Mar 2026 12:15:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building the Learning Management System - First Coding Session</title>
+      <link>http://localhost:1313/post/lms3/</link>
+      <pubDate>Sun, 01 Mar 2026 12:15:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/lms3/</guid>
+      <description>&lt;p&gt;This post is a continuation of the implementation of the Learning Management System application demonstrating my concept for the new team structure and process in the age of AI-driven development.&lt;/p&gt;&#xA;&lt;p&gt;In the first post of the implementation series, we &lt;a href=&#34;http://localhost:1313/post/lms1/&#34;&gt;created a requirements document&lt;/a&gt; with the whole team and Claude Code. In the second post, the whole team, using Claude Code, &lt;a href=&#34;http://localhost:1313/post/lms2/&#34;&gt;created a backlog of tasks from that requirements document&lt;/a&gt; and uploaded it to &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt;. The entire process and team structure is outlined in the post titled &amp;ldquo;&lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt;.&amp;rdquo; If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one and follow along with the implementation via the links at the bottom of that post.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Claude Remote Control</title>
       <link>http://localhost:1313/post/claude-remote-control/</link>
@@ -279,7 +286,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>

@@ -6,8 +6,15 @@
     <description>Recent content in Continuous Delivery on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Feb 2026 11:21:00 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 01 Mar 2026 12:15:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building the Learning Management System - First Coding Session</title>
+      <link>http://localhost:1313/post/lms3/</link>
+      <pubDate>Sun, 01 Mar 2026 12:15:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/lms3/</guid>
+      <description>&lt;p&gt;This post is a continuation of the simulation demonstrating my concept for the new team structure and process in the age of AI-drive development. The process is outlined in this &lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;post&lt;/a&gt;. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one and follow along with the simulations via the links at the bottom of that post.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building the Learning Management System - Creating the Backlog</title>
       <link>http://localhost:1313/post/lms2/</link>

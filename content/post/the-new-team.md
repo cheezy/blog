@@ -87,7 +87,7 @@ In order to demonstrate how this will work in practice, I will be building a new
 |:--------:|:--------:|:-----------:|
 | [Creating the Requirements](/post/lms1) | ~ 30 Min | PO and Devs |
 | [Requirements to Backlog](/post/lms2) | < 15 Min | PO and Devs |
-| Initial Development | 3 Hours | Devs |
+| [Initial Development](/post/lms3) | < 4 Hours | Devs |
 | Review and Refinement Session | 1 hour | PO and Devs |
 | Next Planning Session | 30 Min | PO and Devs |
 | Next Development | 3 Hours | Devs |
