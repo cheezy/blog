@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Mar 2026 12:15:00 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2026 10:47:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Impact Will AI Have On Outsourcing?</title>
+      <link>http://localhost:1313/post/ai-impact-outsourcing/</link>
+      <pubDate>Mon, 02 Mar 2026 10:47:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/ai-impact-outsourcing/</guid>
+      <description>&lt;p&gt;I was in a conversation with a potential new client last Friday, and they told me that they still had some of their development outsourced to an offshore company. After the call I started to think about the outsourcing model. How will it be impacted by AI? It led me to a conclusion that might be uncomfortable for some.&lt;/p&gt;&#xA;&lt;h3 id=&#34;why-did-companies-outsource&#34;&gt;Why did companies outsource?&lt;/h3&gt;&#xA;&lt;p&gt;In my experience, there have been two primary reasons for companies to outsource development:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building the Learning Management System - First Coding Session</title>
       <link>http://localhost:1313/post/lms3/</link>
