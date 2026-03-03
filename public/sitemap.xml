@@ -2,172 +2,174 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cheezyworld.ca/tags/ai/</loc>
+    <loc>http://localhost:1313/tags/ai/</loc>
     <lastmod>2026-03-02T10:47:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-03-02T10:47:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/tags/continuous-delivery/</loc>
+    <loc>http://localhost:1313/tags/continuous-delivery/</loc>
     <lastmod>2026-03-02T10:47:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/</loc>
+    <loc>http://localhost:1313/post/</loc>
     <lastmod>2026-03-02T10:47:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-03-02T10:47:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-impact-outsourcing/</loc>
+    <loc>http://localhost:1313/post/ai-impact-outsourcing/</loc>
     <lastmod>2026-03-02T10:47:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/lms3/</loc>
+    <loc>http://localhost:1313/post/lms3/</loc>
     <lastmod>2026-03-01T12:15:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/claude-remote-control/</loc>
+    <loc>http://localhost:1313/post/claude-remote-control/</loc>
     <lastmod>2026-02-28T13:47:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/lms2/</loc>
+    <loc>http://localhost:1313/post/lms2/</loc>
     <lastmod>2026-02-26T11:21:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/lms1/</loc>
+    <loc>http://localhost:1313/post/lms1/</loc>
     <lastmod>2026-02-25T11:22:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/tags/agile/</loc>
+    <loc>http://localhost:1313/tags/agile/</loc>
     <lastmod>2026-02-23T09:56:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/the-new-team/</loc>
+    <loc>http://localhost:1313/post/the-new-team/</loc>
     <lastmod>2026-02-23T09:56:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/new-skills/</loc>
+    <loc>http://localhost:1313/post/new-skills/</loc>
     <lastmod>2026-02-19T13:01:01-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/tags/elixir/</loc>
+    <loc>http://localhost:1313/tags/elixir/</loc>
     <lastmod>2026-02-13T07:26:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/my_dev_environment/</loc>
+    <loc>http://localhost:1313/post/my_dev_environment/</loc>
     <lastmod>2026-02-13T07:26:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/metrics/</loc>
+    <loc>http://localhost:1313/post/metrics/</loc>
     <lastmod>2026-02-10T13:16:09-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/how-much/</loc>
+    <loc>http://localhost:1313/post/how-much/</loc>
     <lastmod>2026-02-05T07:39:01-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/what-is-stride/</loc>
+    <loc>http://localhost:1313/post/what-is-stride/</loc>
     <lastmod>2026-02-02T09:19:27-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/using-stride-to-enhance-stride/</loc>
+    <loc>http://localhost:1313/post/using-stride-to-enhance-stride/</loc>
     <lastmod>2026-01-14T10:24:27-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/what-is-a-task/</loc>
+    <loc>http://localhost:1313/post/what-is-a-task/</loc>
     <lastmod>2026-01-14T10:24:27-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/does-programming-language-matter/</loc>
+    <loc>http://localhost:1313/post/does-programming-language-matter/</loc>
     <lastmod>2026-01-13T10:11:02-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/adopting-ai-driven-development/</loc>
+    <loc>http://localhost:1313/post/adopting-ai-driven-development/</loc>
     <lastmod>2026-01-12T10:23:45-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/stride-active-guidence/</loc>
+    <loc>http://localhost:1313/post/stride-active-guidence/</loc>
     <lastmod>2026-01-09T10:41:00-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/stride-has-skills/</loc>
+    <loc>http://localhost:1313/post/stride-has-skills/</loc>
     <lastmod>2026-01-09T07:08:31-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/stride_workflow/</loc>
+    <loc>http://localhost:1313/post/stride_workflow/</loc>
     <lastmod>2026-01-06T08:05:52-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/getting_started_with_stride/</loc>
+    <loc>http://localhost:1313/post/getting_started_with_stride/</loc>
     <lastmod>2026-01-05T09:03:25-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/stride-next/</loc>
+    <loc>http://localhost:1313/post/stride-next/</loc>
     <lastmod>2025-12-19T08:32:51-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part16/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part16/</loc>
     <lastmod>2025-12-17T08:23:02-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/tags/liveview/</loc>
+    <loc>http://localhost:1313/tags/liveview/</loc>
     <lastmod>2025-12-17T08:23:02-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/tags/phoenix/</loc>
+    <loc>http://localhost:1313/tags/phoenix/</loc>
     <lastmod>2025-12-17T08:23:02-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-tensions/</loc>
+    <loc>http://localhost:1313/post/ai-tensions/</loc>
     <lastmod>2025-12-15T06:38:22-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part15/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part15/</loc>
     <lastmod>2025-11-30T15:21:44-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part14/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part14/</loc>
     <lastmod>2025-11-28T15:15:03-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part13/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part13/</loc>
     <lastmod>2025-11-21T07:05:12-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part12/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part12/</loc>
     <lastmod>2025-11-12T15:22:47-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part11/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part11/</loc>
     <lastmod>2025-11-12T12:22:22-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part10/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part10/</loc>
     <lastmod>2025-11-08T18:36:42-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part9/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part9/</loc>
     <lastmod>2025-11-08T14:04:14-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/tags/fly.io/</loc>
+    <loc>http://localhost:1313/tags/fly.io/</loc>
     <lastmod>2025-11-07T15:41:11-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/tags/pipeline/</loc>
+    <loc>http://localhost:1313/tags/pipeline/</loc>
     <lastmod>2025-11-07T15:41:11-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/upgrade-elixir-and-fly/</loc>
+    <loc>http://localhost:1313/post/upgrade-elixir-and-fly/</loc>
     <lastmod>2025-11-07T15:41:11-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part8/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part8/</loc>
     <lastmod>2025-11-02T18:35:14-05:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/agile-and-ai/</loc>
+    <loc>http://localhost:1313/post/agile-and-ai/</loc>
     <lastmod>2025-10-29T15:28:45-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/tags/software-development/</loc>
+    <loc>http://localhost:1313/tags/software-development/</loc>
     <lastmod>2025-10-29T15:28:45-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part7/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part7/</loc>
     <lastmod>2025-10-26T14:53:21-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part6/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part6/</loc>
     <lastmod>2025-10-24T10:41:11-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part5/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part5/</loc>
     <lastmod>2025-10-18T15:13:21-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part4/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part4/</loc>
     <lastmod>2025-10-17T10:00:00-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part3/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part3/</loc>
     <lastmod>2025-10-05T11:18:02-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part2/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part2/</loc>
     <lastmod>2025-10-01T09:52:02-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2025-09-30T09:52:02-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/tags/tdd/</loc>
+    <loc>http://localhost:1313/tags/tdd/</loc>
     <lastmod>2025-09-30T09:52:02-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/tdd-with-ai/</loc>
+    <loc>http://localhost:1313/post/tdd-with-ai/</loc>
     <lastmod>2025-09-30T09:52:02-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/categories/tech/</loc>
+    <loc>http://localhost:1313/categories/tech/</loc>
     <lastmod>2025-09-30T09:52:02-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/ai-kanban-part1/</loc>
+    <loc>http://localhost:1313/post/ai-kanban-part1/</loc>
     <lastmod>2025-09-28T09:52:02-04:00</lastmod>
   </url><url>
-    <loc>https://cheezyworld.ca/post/hello-world-again/</loc>
+    <loc>http://localhost:1313/post/hello-world-again/</loc>
     <lastmod>2025-09-26T07:43:32-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>
