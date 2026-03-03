@@ -39,14 +39,14 @@
 		    {{ range .Site.Params.additional_menus }}
                         <li><a href="{{.href | relLangURL}}/">{{.title}}</a></li>
                     {{ end }}
-		            <li>
-                        <a href="{{ "search" | relURL }}"><i class="fa fa-search"></i></a>
-		           </li>
                     {{ if .Site.Params.social.rss }}
                     <li>
                         <a href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
                     </li>
                     {{ end }}
+		            <li>
+                        <a href="{{ "search" | relURL }}"><i class="fa fa-search"></i></a>
+		           </li>
                 </ul>
             </div>
         </div>
