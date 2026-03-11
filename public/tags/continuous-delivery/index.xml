@@ -2,157 +2,157 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Continuous Delivery on Cheezy World</title>
-    <link>https://cheezyworld.ca/tags/continuous-delivery/</link>
+    <link>http://localhost:1313/tags/continuous-delivery/</link>
     <description>Recent content in Continuous Delivery on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Mar 2026 10:47:00 -0500</lastBuildDate>
-    <atom:link href="https://cheezyworld.ca/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What Impact Will AI Have On Outsourcing?</title>
-      <link>https://cheezyworld.ca/post/ai-impact-outsourcing/</link>
+      <link>http://localhost:1313/post/ai-impact-outsourcing/</link>
       <pubDate>Mon, 02 Mar 2026 10:47:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-impact-outsourcing/</guid>
+      <guid>http://localhost:1313/post/ai-impact-outsourcing/</guid>
       <description>&lt;p&gt;I was in a conversation with a potential new client last Friday, and they told me that they still had some of their development outsourced to an offshore company. After the call I started to think about the outsourcing model. How will it be impacted by AI? It led me to a conclusion that might be uncomfortable for some.&lt;/p&gt;&#xA;&lt;h3 id=&#34;why-did-companies-outsource&#34;&gt;Why did companies outsource?&lt;/h3&gt;&#xA;&lt;p&gt;In my experience, there have been two primary reasons for companies to outsource development:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building the Learning Management System - First Coding Session</title>
-      <link>https://cheezyworld.ca/post/lms3/</link>
+      <link>http://localhost:1313/post/lms3/</link>
       <pubDate>Sun, 01 Mar 2026 12:15:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/lms3/</guid>
-      <description>&lt;p&gt;This post is a continuation of the implementation of the Learning Management System application demonstrating my concept for the new team structure and process in the age of AI-driven development.&lt;/p&gt;&#xA;&lt;p&gt;In the first post of the implementation series, we &lt;a href=&#34;https://cheezyworld.ca/post/lms1/&#34;&gt;created a requirements document&lt;/a&gt; with the whole team and Claude Code. In the second post, the whole team, using Claude Code, &lt;a href=&#34;https://cheezyworld.ca/post/lms2/&#34;&gt;created a backlog of tasks from that requirements document&lt;/a&gt; and uploaded it to &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt;. The entire process and team structure is outlined in the post titled &amp;ldquo;&lt;a href=&#34;https://cheezyworld.ca/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt;.&amp;rdquo; If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one and follow along with the implementation via the links at the bottom of that post.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/lms3/</guid>
+      <description>&lt;p&gt;This post is a continuation of the implementation of the Learning Management System application demonstrating my concept for the new team structure and process in the age of AI-driven development.&lt;/p&gt;&#xA;&lt;p&gt;In the first post of the implementation series, we &lt;a href=&#34;http://localhost:1313/post/lms1/&#34;&gt;created a requirements document&lt;/a&gt; with the whole team and Claude Code. In the second post, the whole team, using Claude Code, &lt;a href=&#34;http://localhost:1313/post/lms2/&#34;&gt;created a backlog of tasks from that requirements document&lt;/a&gt; and uploaded it to &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt;. The entire process and team structure is outlined in the post titled &amp;ldquo;&lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt;.&amp;rdquo; If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one and follow along with the implementation via the links at the bottom of that post.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building the Learning Management System - Creating the Backlog</title>
-      <link>https://cheezyworld.ca/post/lms2/</link>
+      <link>http://localhost:1313/post/lms2/</link>
       <pubDate>Thu, 26 Feb 2026 11:21:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/lms2/</guid>
-      <description>&lt;p&gt;In this post, we continue to show how the process we outlined in the post &lt;a href=&#34;https://cheezyworld.ca/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-the-backlog&#34;&gt;Creating the Backlog&lt;/h2&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;https://cheezyworld.ca/post/lms1/&#34;&gt;previous post&lt;/a&gt;, we created a set of requirements for the Learning Management System. In this post, we will turn that set of requirements into a backlog of tasks that we will use to build the system.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/lms2/</guid>
+      <description>&lt;p&gt;In this post, we continue to show how the process we outlined in the post &lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-the-backlog&#34;&gt;Creating the Backlog&lt;/h2&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;http://localhost:1313/post/lms1/&#34;&gt;previous post&lt;/a&gt;, we created a set of requirements for the Learning Management System. In this post, we will turn that set of requirements into a backlog of tasks that we will use to build the system.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building the Learning Management System - Initial Requirements</title>
-      <link>https://cheezyworld.ca/post/lms1/</link>
+      <link>http://localhost:1313/post/lms1/</link>
       <pubDate>Wed, 25 Feb 2026 11:22:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/lms1/</guid>
-      <description>&lt;p&gt;In this post, we start to show how the process we outlined in the post &lt;a href=&#34;https://cheezyworld.ca/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works for a real application. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-the-requirements&#34;&gt;Creating the Requirements&lt;/h2&gt;&#xA;&lt;p&gt;This step is performed by the Product Owner and the Developers. Both are involved because knowledge of the business requirements as well as the technical details of the application is needed in order to create a complete set of requirements.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/lms1/</guid>
+      <description>&lt;p&gt;In this post, we start to show how the process we outlined in the post &lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works for a real application. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-the-requirements&#34;&gt;Creating the Requirements&lt;/h2&gt;&#xA;&lt;p&gt;This step is performed by the Product Owner and the Developers. Both are involved because knowledge of the business requirements as well as the technical details of the application is needed in order to create a complete set of requirements.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The New Team</title>
-      <link>https://cheezyworld.ca/post/the-new-team/</link>
+      <link>http://localhost:1313/post/the-new-team/</link>
       <pubDate>Mon, 23 Feb 2026 09:56:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/the-new-team/</guid>
+      <guid>http://localhost:1313/post/the-new-team/</guid>
       <description>&lt;p&gt;Traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers are incompatible with AI-driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Sprint Planning and Daily Standups and even our approach to testing.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stride Has New Skills</title>
-      <link>https://cheezyworld.ca/post/new-skills/</link>
+      <link>http://localhost:1313/post/new-skills/</link>
       <pubDate>Thu, 19 Feb 2026 13:01:01 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/new-skills/</guid>
+      <guid>http://localhost:1313/post/new-skills/</guid>
       <description>&lt;p&gt;When you build an API designed for AI agents, you quickly discover something humbling: agents make the same mistakes over and over. Not because they&amp;rsquo;re incapable, but because they&amp;rsquo;re working from memory instead of reference material. I spent a few days experimenting and ultimately fixing this in Stride, and the results surprised me.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;&#xA;&lt;p&gt;Stride is a kanban-based task management platform built for AI agents. Agents claim tasks, execute lifecycle hooks, implement features, and mark work complete &amp;mdash; all through a REST API. The system works well when agents format their requests correctly. The trouble is, they often don&amp;rsquo;t.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My AI Development Environment</title>
-      <link>https://cheezyworld.ca/post/my_dev_environment/</link>
+      <link>http://localhost:1313/post/my_dev_environment/</link>
       <pubDate>Fri, 13 Feb 2026 07:26:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/my_dev_environment/</guid>
+      <guid>http://localhost:1313/post/my_dev_environment/</guid>
       <description>&lt;p&gt;I see a lot of people posting about how bad AI is at creating code. I, along with everybody I work with, am having the opposite experience where AI is producing high-quality code that is well factored and tested. For a long time it has been a mystery how people can have such opposite experiences.&lt;/p&gt;&#xA;&lt;p&gt;I now have three cases where close friends were making such statements and I offered to have a chat to understand their experience. In each case, they were using tools that were far from ideal and the tools they had were not configured at all. When I told them about options to provide AI with more instructions and constrain / direct how it works they were surprised.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Adding Metrics to Stride</title>
-      <link>https://cheezyworld.ca/post/metrics/</link>
+      <link>http://localhost:1313/post/metrics/</link>
       <pubDate>Tue, 10 Feb 2026 13:16:09 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/metrics/</guid>
+      <guid>http://localhost:1313/post/metrics/</guid>
       <description>&lt;p&gt;In this post we will simply show you a video of the new metrics feature in Stride. Teams can use these metrics to understand how they are performing in order to find ways to improve. There are four metrics that are available:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Throughput&lt;/li&gt;&#xA;&lt;li&gt;Cycle Time&lt;/li&gt;&#xA;&lt;li&gt;Lead Time&lt;/li&gt;&#xA;&lt;li&gt;Wait Time (our special version)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;We also support export to PDF and Excel.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/2lsF3gwz_eQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;</description>
     </item>
     <item>
       <title>How Much Should I Spend?</title>
-      <link>https://cheezyworld.ca/post/how-much/</link>
+      <link>http://localhost:1313/post/how-much/</link>
       <pubDate>Thu, 05 Feb 2026 07:39:01 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/how-much/</guid>
+      <guid>http://localhost:1313/post/how-much/</guid>
       <description>&lt;p&gt;This post will explore the question &amp;ldquo;How much money should one spend on AI tools?&amp;rdquo;. We will be looking at this question from multiple perspectives, the developer who wants to learn AI at home, the developer who works solo and wants the tools in order to boost their throughput and quality, and also from a corporate perspective. I&amp;rsquo;ll give pricing that is available on the websites but larger discounts are often available for annual subscriptions or educational institutions. All prices are in Canadian Dollars.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is Stride?</title>
-      <link>https://cheezyworld.ca/post/what-is-stride/</link>
+      <link>http://localhost:1313/post/what-is-stride/</link>
       <pubDate>Mon, 02 Feb 2026 09:19:27 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/what-is-stride/</guid>
-      <description>&lt;p&gt;At its most basic level, &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; is a &lt;em&gt;smart&lt;/em&gt; kanban board where teams and AI agents can collaborate to build software. There are several tools available now that provide this basic capability, but Stride differentiates itself in several important and meaningful ways. This post will cover those differentiators while walking you through a Stride AI Optimized board explaining what the team and AI agents do at each step.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;img src=&#34;https://cheezyworld.ca/img/stride-board.png&#34; alt=&#34;Stride AI Optimized Board&#34;&gt;&#xA;&#xA;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/what-is-stride/</guid>
+      <description>&lt;p&gt;At its most basic level, &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; is a &lt;em&gt;smart&lt;/em&gt; kanban board where teams and AI agents can collaborate to build software. There are several tools available now that provide this basic capability, but Stride differentiates itself in several important and meaningful ways. This post will cover those differentiators while walking you through a Stride AI Optimized board explaining what the team and AI agents do at each step.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/img/stride-board.png&#34; alt=&#34;Stride AI Optimized Board&#34;&gt;&#xA;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Using Stride and Claude Code to Enhance Stride</title>
-      <link>https://cheezyworld.ca/post/using-stride-to-enhance-stride/</link>
+      <link>http://localhost:1313/post/using-stride-to-enhance-stride/</link>
       <pubDate>Wed, 14 Jan 2026 10:24:27 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/using-stride-to-enhance-stride/</guid>
+      <guid>http://localhost:1313/post/using-stride-to-enhance-stride/</guid>
       <description>&lt;p&gt;In this post I will be using Stride and Claude Code to add a &lt;em&gt;Resources&lt;/em&gt; section to the Stride UI. Through a series of videos you will see me go through the entire lifecycle of adding this feature to Stride.&lt;/p&gt;&#xA;&lt;h2 id=&#34;brainstorming-with-claude&#34;&gt;Brainstorming with Claude&lt;/h2&gt;&#xA;&lt;p&gt;I start with a concept. I want to add a new section to Stride where users can go to find answers to questions about Stride. I hope to include a lot of images and videos. The video below shows the output of a Brainstorming session I had with Claude. The session lasted about 5 minutes. I would expect a Product Owner and Developer to pair on this activity in a team setting.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is a task?</title>
-      <link>https://cheezyworld.ca/post/what-is-a-task/</link>
+      <link>http://localhost:1313/post/what-is-a-task/</link>
       <pubDate>Wed, 14 Jan 2026 10:24:27 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/what-is-a-task/</guid>
+      <guid>http://localhost:1313/post/what-is-a-task/</guid>
       <description>&lt;p&gt;In my pursuit of trying to get the most out of my AI Agents I have spent a lot of time exploring how one can deliver requirements in such a way that they can be understood by Humans and provide the details that will make the Agent implementation successful. Knowing that there is typically a pause between when the requirements is established / captured and when the Agent starts working on it, I wanted to make sure that much of the context and details the Agent had during the planning session was captured in a way that it can be use later during implementation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Does Programming Language Matter?</title>
-      <link>https://cheezyworld.ca/post/does-programming-language-matter/</link>
+      <link>http://localhost:1313/post/does-programming-language-matter/</link>
       <pubDate>Tue, 13 Jan 2026 10:11:02 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/does-programming-language-matter/</guid>
+      <guid>http://localhost:1313/post/does-programming-language-matter/</guid>
       <description>&lt;h2 id=&#34;does-ai-work-better-with-some-languages-than-others&#34;&gt;Does AI work better with some languages than others?&lt;/h2&gt;&#xA;&lt;p&gt;A lot of developers identify with the language they program in. How often do you hear &amp;ldquo;I&amp;rsquo;m a Java developer&amp;rdquo; or &amp;ldquo;I&amp;rsquo;m a Python developer&amp;rdquo;?&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve had several conversations with other developers about this topic. Some believe that certain languages are better suited for AI-assisted development than others. Others think that the choice of language has little to no impact on the outcome. I&amp;rsquo;m of the opinion that language does matter but this is just based on my personal experience that is limited to three languages (Java, TypeScript, and Elixir) in four different contexts.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Adopting AI Driven Development</title>
-      <link>https://cheezyworld.ca/post/adopting-ai-driven-development/</link>
+      <link>http://localhost:1313/post/adopting-ai-driven-development/</link>
       <pubDate>Mon, 12 Jan 2026 10:23:45 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/adopting-ai-driven-development/</guid>
+      <guid>http://localhost:1313/post/adopting-ai-driven-development/</guid>
       <description>&lt;h2 id=&#34;sharing-what-worked&#34;&gt;Sharing what worked&lt;/h2&gt;&#xA;&lt;p&gt;I have often wondered why some companies have had great success adopting AI for software development while others have had the opposite experience. Some people talk about AI &amp;ldquo;Slop&amp;rdquo; meaning very bad code written by AI. At the same time many of us see AI producing code that is high quality, well factored, and well tested. Is it possible that the way one approaches this technology has an impact on the outcome?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stride Active Guidence</title>
-      <link>https://cheezyworld.ca/post/stride-active-guidence/</link>
+      <link>http://localhost:1313/post/stride-active-guidence/</link>
       <pubDate>Fri, 09 Jan 2026 10:41:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/stride-active-guidence/</guid>
+      <guid>http://localhost:1313/post/stride-active-guidence/</guid>
       <description>&lt;h2 id=&#34;stride-now-supports-four-ai-assistants-with-always-active-guidance&#34;&gt;Stride Now Supports Four AI Assistants with Always-Active Guidance&lt;/h2&gt;&#xA;&lt;p&gt;What a day. Earlier today I rolled out &lt;a href=&#34;https://www.stridelikeaboss.com/blog/stride-has-skills&#34;&gt;Claude Code Skills for Stride&lt;/a&gt;. A couple of hours later I&amp;rsquo;m excited to announce that Stride now supports four popular AI coding assistants beyond Claude Code, with always-active instruction files that help developers avoid common mistakes and follow best practices when working with the Stride API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge-supporting-multiple-ai-assistants&#34;&gt;The Challenge: Supporting Multiple AI Assistants&lt;/h2&gt;&#xA;&lt;p&gt;I know that not all developers use Claude Code. Many companies are invested in tools like Copilot, Windsurf, etc. Developers in these companies should not feel left out when it comes to Stride. Because of that need, I have just added enhanced instructions for &lt;a href=&#34;https://github.com/features/copilot&#34;&gt;GitHub Copilot&lt;/a&gt;, &lt;a href=&#34;https://www.cursor.com/&#34;&gt;Cursor&lt;/a&gt;, &lt;a href=&#34;https://www.windsurfrules.com/&#34;&gt;Windsurf Cascade&lt;/a&gt;, and &lt;a href=&#34;https://continue.dev/&#34;&gt;Continue.dev&lt;/a&gt;. These assistants are excellent tools, but they needed help understanding Stride&amp;rsquo;s workflow requirements, especially around:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stride Has Skills</title>
-      <link>https://cheezyworld.ca/post/stride-has-skills/</link>
+      <link>http://localhost:1313/post/stride-has-skills/</link>
       <pubDate>Fri, 09 Jan 2026 07:08:31 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/stride-has-skills/</guid>
+      <guid>http://localhost:1313/post/stride-has-skills/</guid>
       <description>&lt;p&gt;I am excited to announce a major enhancement to Stride&amp;rsquo;s AI agent workflow: &lt;strong&gt;Claude Code Skills&lt;/strong&gt;. These skills enforce best practices and prevent common mistakes that waste hours of development time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-claude-code-skills&#34;&gt;What Are Claude Code Skills?&lt;/h2&gt;&#xA;&lt;p&gt;Claude Code Skills are specialized instructions that guide AI agents through complex workflows. Think of them as expert advisors that activate at critical decision points, ensuring agents follow established patterns and avoid known pitfalls.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Stride Workflow</title>
-      <link>https://cheezyworld.ca/post/stride_workflow/</link>
+      <link>http://localhost:1313/post/stride_workflow/</link>
       <pubDate>Tue, 06 Jan 2026 08:05:52 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/stride_workflow/</guid>
+      <guid>http://localhost:1313/post/stride_workflow/</guid>
       <description>&lt;h2 id=&#34;how-do-humans-collaborate-with-ai&#34;&gt;How do Humans collaborate with AI?&lt;/h2&gt;&#xA;&lt;p&gt;When I decided to make &lt;a href=&#34;https://www.stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; a Human-AI collaboration tool I spent some time thinking about when and how Humans would want to interject themselves into an AI driven worflow. Those of you that know me know that I have spent a significant portion of my life helping teams optimize their work and achieve better flow. With AI in the mix it causes us to rethink some of what helps us achieve that flow. We have to be realistic about what Humans do best (at this time) and what AI does best and find a way to optimize around these things. At the same time, many Humans are not comfortable (at this time) with letting AI take over completely and they want to be involved in the process. This is what I came up with:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Getting Started with Stride</title>
-      <link>https://cheezyworld.ca/post/getting_started_with_stride/</link>
+      <link>http://localhost:1313/post/getting_started_with_stride/</link>
       <pubDate>Mon, 05 Jan 2026 09:03:25 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/getting_started_with_stride/</guid>
+      <guid>http://localhost:1313/post/getting_started_with_stride/</guid>
       <description>&lt;h2 id=&#34;stride---ai-human-collaboration-platform&#34;&gt;Stride - AI-Human Collaboration Platform&lt;/h2&gt;&#xA;&lt;p&gt;This post is to help you get started. Through a series of videos I will guide you through the entire process from initial setup to working with your AI Agent to build an initial backlog.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s start at the beginning.&lt;/p&gt;&#xA;&lt;h2 id=&#34;building-your-first-ai-optimized-board&#34;&gt;Building your first AI Optimized Board&lt;/h2&gt;&#xA;&lt;p&gt;After you&amp;rsquo;ve registered with the system you will want to create your first AI Optimized Board. This is an extremely simple process.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stride goes full AI</title>
-      <link>https://cheezyworld.ca/post/stride-next/</link>
+      <link>http://localhost:1313/post/stride-next/</link>
       <pubDate>Fri, 19 Dec 2025 08:32:51 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/stride-next/</guid>
+      <guid>http://localhost:1313/post/stride-next/</guid>
       <description>&lt;h2 id=&#34;building-an-ai-optimized-kanban-system-a-human-ai-collaboration-experiment&#34;&gt;Building an AI-Optimized Kanban System: A Human-AI Collaboration Experiment&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m embarking on an experiment to build a Kanban task management system specifically designed for AI-human collaboration. This isn&amp;rsquo;t just another project management tool—it&amp;rsquo;s a system where AI agents and humans work together as peers on software development tasks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-vision&#34;&gt;The Vision&lt;/h2&gt;&#xA;&lt;p&gt;Most task management tools treat tasks as simple items with a title and description. But when you&amp;rsquo;re working with AI agents (like Claude, GPT-4, or custom agents), they need much more context to be effective. They need to understand:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tensions with AI</title>
-      <link>https://cheezyworld.ca/post/ai-tensions/</link>
+      <link>http://localhost:1313/post/ai-tensions/</link>
       <pubDate>Mon, 15 Dec 2025 06:38:22 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-tensions/</guid>
+      <guid>http://localhost:1313/post/ai-tensions/</guid>
       <description>&lt;h2 id=&#34;bringing-ai-into-your-organization&#34;&gt;Bringing AI into your organization&lt;/h2&gt;&#xA;&lt;p&gt;I have now worked with multiple teams that have introduced an AI driven development into their development workflow and I have seen a pattern emerge. When AI, and more specifically Vibe Coding, is introduced into a traditional software development organization that are following an Agile process there are three tensions that quickly arise. All three of these tensions are due to the rapid pace of development.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>
-      <link>https://cheezyworld.ca/post/hello-world-again/</link>
+      <link>http://localhost:1313/post/hello-world-again/</link>
       <pubDate>Fri, 26 Sep 2025 07:43:32 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/hello-world-again/</guid>
+      <guid>http://localhost:1313/post/hello-world-again/</guid>
       <description>&lt;h2 id=&#34;im-back&#34;&gt;I&amp;rsquo;m back&lt;/h2&gt;&#xA;&lt;p&gt;It has been a while since I&amp;rsquo;ve blogged. I had a blog named CheezyWorld.com&#xA;for many years but stopped posting more than 12 years ago. At the time I was traveling for work as well as traveling around the world to speak at conferences. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.&lt;/p&gt;</description>
     </item>
   </channel>

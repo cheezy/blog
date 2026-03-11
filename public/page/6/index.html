@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.156.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.157.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -192,6 +192,39 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
+    <a href="http://localhost:1313/post/ai-kanban-part13/">
+        <h2 class="post-title">
+            Building a LiveView app using AI - Part 13
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <h2 id="setting-permissions-for-users">Setting permissions for users</h2>
+<p>Currently every user can do everything in the application. A read only user can delete a board or make any type of change they want. Let&rsquo;s fix that.</p>
+<h3 id="focus-on-owners-first">Focus on Owners first</h3>
+<p>First I want to focus on ensuring the board owner can do board-level actions and other users cannot. Let me start by listing out the things that only owners can do:</p>
+<ul>
+<li>Edit and delete their boards</li>
+<li>Add new columns to a board</li>
+<li>Edit or delete columns from their boards</li>
+<li>Reorder columns (including drag-and-drop)</li>
+</ul>
+<p>I think this is a good list. Let&rsquo;s ask TideWave to make these changes.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Friday, November 21, 2025
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="http://localhost:1313/post/ai-kanban-part12/">
         <h2 class="post-title">
             Building a LiveView app using AI - Part 12
@@ -288,31 +321,6 @@
     <p class="post-meta">
     
         Posted by Cheezy World on Saturday, November 8, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/upgrade-elixir-and-fly/">
-        <h2 class="post-title">
-            Upgrade Elixir and Fly.io to use Elixir 1.19
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>Elixir finally reached version 1.19.2 so I feel the 1.19 is stable enough to give it a try. This short blog post is about my process to update Elixir and to also update my Fly.io deployment to the latest version of elixir and OTP.</p>
-<h2 id="update-the-application">Update the application</h2>
-<p>To begin with I needed to get the latest elixir and otp version. That was easy with <code>asdf</code> and so I installed <code>elixir 1.19.2-otp-28</code> and <code>erlang 28.1.1</code>. These are the latest versions at the time of this writing. To ensure I always use these version I updated my <code>.tool-versions</code> file in the root of my project:</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, November 7, 2025
         
         
     
@@ -517,6 +525,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-plugin-update/">Teaching AI Agents to Look Before They Leap</a></li>
+        
             <li><a href="/post/ai-impact-outsourcing/">What Impact Will AI Have On Outsourcing?</a></li>
         
             <li><a href="/post/lms3/">Building the Learning Management System - First Coding Session</a></li>
@@ -524,8 +534,6 @@
             <li><a href="/post/claude-remote-control/">Claude Remote Control</a></li>
         
             <li><a href="/post/lms2/">Building the Learning Management System - Creating the Backlog</a></li>
-        
-            <li><a href="/post/lms1/">Building the Learning Management System - Initial Requirements</a></li>
         
         </ul>
     </section>

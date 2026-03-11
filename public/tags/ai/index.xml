@@ -2,290 +2,290 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AI on Cheezy World</title>
-    <link>https://cheezyworld.ca/tags/ai/</link>
+    <link>http://localhost:1313/tags/ai/</link>
     <description>Recent content in AI on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Mar 2026 10:47:00 -0500</lastBuildDate>
-    <atom:link href="https://cheezyworld.ca/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What Impact Will AI Have On Outsourcing?</title>
-      <link>https://cheezyworld.ca/post/ai-impact-outsourcing/</link>
+      <link>http://localhost:1313/post/ai-impact-outsourcing/</link>
       <pubDate>Mon, 02 Mar 2026 10:47:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-impact-outsourcing/</guid>
+      <guid>http://localhost:1313/post/ai-impact-outsourcing/</guid>
       <description>&lt;p&gt;I was in a conversation with a potential new client last Friday, and they told me that they still had some of their development outsourced to an offshore company. After the call I started to think about the outsourcing model. How will it be impacted by AI? It led me to a conclusion that might be uncomfortable for some.&lt;/p&gt;&#xA;&lt;h3 id=&#34;why-did-companies-outsource&#34;&gt;Why did companies outsource?&lt;/h3&gt;&#xA;&lt;p&gt;In my experience, there have been two primary reasons for companies to outsource development:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building the Learning Management System - First Coding Session</title>
-      <link>https://cheezyworld.ca/post/lms3/</link>
+      <link>http://localhost:1313/post/lms3/</link>
       <pubDate>Sun, 01 Mar 2026 12:15:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/lms3/</guid>
-      <description>&lt;p&gt;This post is a continuation of the implementation of the Learning Management System application demonstrating my concept for the new team structure and process in the age of AI-driven development.&lt;/p&gt;&#xA;&lt;p&gt;In the first post of the implementation series, we &lt;a href=&#34;https://cheezyworld.ca/post/lms1/&#34;&gt;created a requirements document&lt;/a&gt; with the whole team and Claude Code. In the second post, the whole team, using Claude Code, &lt;a href=&#34;https://cheezyworld.ca/post/lms2/&#34;&gt;created a backlog of tasks from that requirements document&lt;/a&gt; and uploaded it to &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt;. The entire process and team structure is outlined in the post titled &amp;ldquo;&lt;a href=&#34;https://cheezyworld.ca/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt;.&amp;rdquo; If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one and follow along with the implementation via the links at the bottom of that post.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/lms3/</guid>
+      <description>&lt;p&gt;This post is a continuation of the implementation of the Learning Management System application demonstrating my concept for the new team structure and process in the age of AI-driven development.&lt;/p&gt;&#xA;&lt;p&gt;In the first post of the implementation series, we &lt;a href=&#34;http://localhost:1313/post/lms1/&#34;&gt;created a requirements document&lt;/a&gt; with the whole team and Claude Code. In the second post, the whole team, using Claude Code, &lt;a href=&#34;http://localhost:1313/post/lms2/&#34;&gt;created a backlog of tasks from that requirements document&lt;/a&gt; and uploaded it to &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt;. The entire process and team structure is outlined in the post titled &amp;ldquo;&lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt;.&amp;rdquo; If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one and follow along with the implementation via the links at the bottom of that post.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Claude Remote Control</title>
-      <link>https://cheezyworld.ca/post/claude-remote-control/</link>
+      <link>http://localhost:1313/post/claude-remote-control/</link>
       <pubDate>Sat, 28 Feb 2026 13:47:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/claude-remote-control/</guid>
+      <guid>http://localhost:1313/post/claude-remote-control/</guid>
       <description>&lt;p&gt;Anthropic is in the process of releasing a feature for Claude Code that I think is amazing. It is &lt;a href=&#34;https://code.claude.com/docs/en/remote-control&#34;&gt;Claude Remote Control&lt;/a&gt;. This feature allows you to control your Claude Code session remotely from any iOS or Android device.&lt;/p&gt;&#xA;&lt;p&gt;I can see this feature being used in many different scenarios. For example, you could use it to check on work while you are in a meeting, to kick off a task while you&amp;rsquo;re at lunch with friends, or to simply sit on the couch and oversee some work Claude is doing. I used it to get a few tasks completed while having coffee with my son. It was extremely easy to use and I can tell you I will be using it a lot. I personally tested it on both my iPhone and iPad and it works great.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building the Learning Management System - Creating the Backlog</title>
-      <link>https://cheezyworld.ca/post/lms2/</link>
+      <link>http://localhost:1313/post/lms2/</link>
       <pubDate>Thu, 26 Feb 2026 11:21:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/lms2/</guid>
-      <description>&lt;p&gt;In this post, we continue to show how the process we outlined in the post &lt;a href=&#34;https://cheezyworld.ca/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-the-backlog&#34;&gt;Creating the Backlog&lt;/h2&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;https://cheezyworld.ca/post/lms1/&#34;&gt;previous post&lt;/a&gt;, we created a set of requirements for the Learning Management System. In this post, we will turn that set of requirements into a backlog of tasks that we will use to build the system.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/lms2/</guid>
+      <description>&lt;p&gt;In this post, we continue to show how the process we outlined in the post &lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-the-backlog&#34;&gt;Creating the Backlog&lt;/h2&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;http://localhost:1313/post/lms1/&#34;&gt;previous post&lt;/a&gt;, we created a set of requirements for the Learning Management System. In this post, we will turn that set of requirements into a backlog of tasks that we will use to build the system.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building the Learning Management System - Initial Requirements</title>
-      <link>https://cheezyworld.ca/post/lms1/</link>
+      <link>http://localhost:1313/post/lms1/</link>
       <pubDate>Wed, 25 Feb 2026 11:22:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/lms1/</guid>
-      <description>&lt;p&gt;In this post, we start to show how the process we outlined in the post &lt;a href=&#34;https://cheezyworld.ca/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works for a real application. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-the-requirements&#34;&gt;Creating the Requirements&lt;/h2&gt;&#xA;&lt;p&gt;This step is performed by the Product Owner and the Developers. Both are involved because knowledge of the business requirements as well as the technical details of the application is needed in order to create a complete set of requirements.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/lms1/</guid>
+      <description>&lt;p&gt;In this post, we start to show how the process we outlined in the post &lt;a href=&#34;http://localhost:1313/post/the-new-team/&#34;&gt;The New Team&lt;/a&gt; works for a real application. If you haven&amp;rsquo;t read the initial post, I recommend you do so before reading this one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-the-requirements&#34;&gt;Creating the Requirements&lt;/h2&gt;&#xA;&lt;p&gt;This step is performed by the Product Owner and the Developers. Both are involved because knowledge of the business requirements as well as the technical details of the application is needed in order to create a complete set of requirements.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The New Team</title>
-      <link>https://cheezyworld.ca/post/the-new-team/</link>
+      <link>http://localhost:1313/post/the-new-team/</link>
       <pubDate>Mon, 23 Feb 2026 09:56:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/the-new-team/</guid>
+      <guid>http://localhost:1313/post/the-new-team/</guid>
       <description>&lt;p&gt;Traditional Agile development teams composed of a Product Owner (PO), a Scrum Master (SM), several Developers, and one or two Testers are incompatible with AI-driven development. The old team structure was built around the assumptions that things happen at a human developer pace and achieve human developer quality. We built all of our processes around this human pace - everything from POs working with stakeholders to define and elaborate user stories to SMs facilitating Sprint Planning and Daily Standups and even our approach to testing.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stride Has New Skills</title>
-      <link>https://cheezyworld.ca/post/new-skills/</link>
+      <link>http://localhost:1313/post/new-skills/</link>
       <pubDate>Thu, 19 Feb 2026 13:01:01 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/new-skills/</guid>
+      <guid>http://localhost:1313/post/new-skills/</guid>
       <description>&lt;p&gt;When you build an API designed for AI agents, you quickly discover something humbling: agents make the same mistakes over and over. Not because they&amp;rsquo;re incapable, but because they&amp;rsquo;re working from memory instead of reference material. I spent a few days experimenting and ultimately fixing this in Stride, and the results surprised me.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;&#xA;&lt;p&gt;Stride is a kanban-based task management platform built for AI agents. Agents claim tasks, execute lifecycle hooks, implement features, and mark work complete &amp;mdash; all through a REST API. The system works well when agents format their requests correctly. The trouble is, they often don&amp;rsquo;t.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My AI Development Environment</title>
-      <link>https://cheezyworld.ca/post/my_dev_environment/</link>
+      <link>http://localhost:1313/post/my_dev_environment/</link>
       <pubDate>Fri, 13 Feb 2026 07:26:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/my_dev_environment/</guid>
+      <guid>http://localhost:1313/post/my_dev_environment/</guid>
       <description>&lt;p&gt;I see a lot of people posting about how bad AI is at creating code. I, along with everybody I work with, am having the opposite experience where AI is producing high-quality code that is well factored and tested. For a long time it has been a mystery how people can have such opposite experiences.&lt;/p&gt;&#xA;&lt;p&gt;I now have three cases where close friends were making such statements and I offered to have a chat to understand their experience. In each case, they were using tools that were far from ideal and the tools they had were not configured at all. When I told them about options to provide AI with more instructions and constrain / direct how it works they were surprised.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Adding Metrics to Stride</title>
-      <link>https://cheezyworld.ca/post/metrics/</link>
+      <link>http://localhost:1313/post/metrics/</link>
       <pubDate>Tue, 10 Feb 2026 13:16:09 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/metrics/</guid>
+      <guid>http://localhost:1313/post/metrics/</guid>
       <description>&lt;p&gt;In this post we will simply show you a video of the new metrics feature in Stride. Teams can use these metrics to understand how they are performing in order to find ways to improve. There are four metrics that are available:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Throughput&lt;/li&gt;&#xA;&lt;li&gt;Cycle Time&lt;/li&gt;&#xA;&lt;li&gt;Lead Time&lt;/li&gt;&#xA;&lt;li&gt;Wait Time (our special version)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;We also support export to PDF and Excel.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/2lsF3gwz_eQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;</description>
     </item>
     <item>
       <title>How Much Should I Spend?</title>
-      <link>https://cheezyworld.ca/post/how-much/</link>
+      <link>http://localhost:1313/post/how-much/</link>
       <pubDate>Thu, 05 Feb 2026 07:39:01 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/how-much/</guid>
+      <guid>http://localhost:1313/post/how-much/</guid>
       <description>&lt;p&gt;This post will explore the question &amp;ldquo;How much money should one spend on AI tools?&amp;rdquo;. We will be looking at this question from multiple perspectives, the developer who wants to learn AI at home, the developer who works solo and wants the tools in order to boost their throughput and quality, and also from a corporate perspective. I&amp;rsquo;ll give pricing that is available on the websites but larger discounts are often available for annual subscriptions or educational institutions. All prices are in Canadian Dollars.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is Stride?</title>
-      <link>https://cheezyworld.ca/post/what-is-stride/</link>
+      <link>http://localhost:1313/post/what-is-stride/</link>
       <pubDate>Mon, 02 Feb 2026 09:19:27 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/what-is-stride/</guid>
-      <description>&lt;p&gt;At its most basic level, &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; is a &lt;em&gt;smart&lt;/em&gt; kanban board where teams and AI agents can collaborate to build software. There are several tools available now that provide this basic capability, but Stride differentiates itself in several important and meaningful ways. This post will cover those differentiators while walking you through a Stride AI Optimized board explaining what the team and AI agents do at each step.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;img src=&#34;https://cheezyworld.ca/img/stride-board.png&#34; alt=&#34;Stride AI Optimized Board&#34;&gt;&#xA;&#xA;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/what-is-stride/</guid>
+      <description>&lt;p&gt;At its most basic level, &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; is a &lt;em&gt;smart&lt;/em&gt; kanban board where teams and AI agents can collaborate to build software. There are several tools available now that provide this basic capability, but Stride differentiates itself in several important and meaningful ways. This post will cover those differentiators while walking you through a Stride AI Optimized board explaining what the team and AI agents do at each step.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/img/stride-board.png&#34; alt=&#34;Stride AI Optimized Board&#34;&gt;&#xA;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Using Stride and Claude Code to Enhance Stride</title>
-      <link>https://cheezyworld.ca/post/using-stride-to-enhance-stride/</link>
+      <link>http://localhost:1313/post/using-stride-to-enhance-stride/</link>
       <pubDate>Wed, 14 Jan 2026 10:24:27 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/using-stride-to-enhance-stride/</guid>
+      <guid>http://localhost:1313/post/using-stride-to-enhance-stride/</guid>
       <description>&lt;p&gt;In this post I will be using Stride and Claude Code to add a &lt;em&gt;Resources&lt;/em&gt; section to the Stride UI. Through a series of videos you will see me go through the entire lifecycle of adding this feature to Stride.&lt;/p&gt;&#xA;&lt;h2 id=&#34;brainstorming-with-claude&#34;&gt;Brainstorming with Claude&lt;/h2&gt;&#xA;&lt;p&gt;I start with a concept. I want to add a new section to Stride where users can go to find answers to questions about Stride. I hope to include a lot of images and videos. The video below shows the output of a Brainstorming session I had with Claude. The session lasted about 5 minutes. I would expect a Product Owner and Developer to pair on this activity in a team setting.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is a task?</title>
-      <link>https://cheezyworld.ca/post/what-is-a-task/</link>
+      <link>http://localhost:1313/post/what-is-a-task/</link>
       <pubDate>Wed, 14 Jan 2026 10:24:27 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/what-is-a-task/</guid>
+      <guid>http://localhost:1313/post/what-is-a-task/</guid>
       <description>&lt;p&gt;In my pursuit of trying to get the most out of my AI Agents I have spent a lot of time exploring how one can deliver requirements in such a way that they can be understood by Humans and provide the details that will make the Agent implementation successful. Knowing that there is typically a pause between when the requirements is established / captured and when the Agent starts working on it, I wanted to make sure that much of the context and details the Agent had during the planning session was captured in a way that it can be use later during implementation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Does Programming Language Matter?</title>
-      <link>https://cheezyworld.ca/post/does-programming-language-matter/</link>
+      <link>http://localhost:1313/post/does-programming-language-matter/</link>
       <pubDate>Tue, 13 Jan 2026 10:11:02 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/does-programming-language-matter/</guid>
+      <guid>http://localhost:1313/post/does-programming-language-matter/</guid>
       <description>&lt;h2 id=&#34;does-ai-work-better-with-some-languages-than-others&#34;&gt;Does AI work better with some languages than others?&lt;/h2&gt;&#xA;&lt;p&gt;A lot of developers identify with the language they program in. How often do you hear &amp;ldquo;I&amp;rsquo;m a Java developer&amp;rdquo; or &amp;ldquo;I&amp;rsquo;m a Python developer&amp;rdquo;?&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve had several conversations with other developers about this topic. Some believe that certain languages are better suited for AI-assisted development than others. Others think that the choice of language has little to no impact on the outcome. I&amp;rsquo;m of the opinion that language does matter but this is just based on my personal experience that is limited to three languages (Java, TypeScript, and Elixir) in four different contexts.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Adopting AI Driven Development</title>
-      <link>https://cheezyworld.ca/post/adopting-ai-driven-development/</link>
+      <link>http://localhost:1313/post/adopting-ai-driven-development/</link>
       <pubDate>Mon, 12 Jan 2026 10:23:45 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/adopting-ai-driven-development/</guid>
+      <guid>http://localhost:1313/post/adopting-ai-driven-development/</guid>
       <description>&lt;h2 id=&#34;sharing-what-worked&#34;&gt;Sharing what worked&lt;/h2&gt;&#xA;&lt;p&gt;I have often wondered why some companies have had great success adopting AI for software development while others have had the opposite experience. Some people talk about AI &amp;ldquo;Slop&amp;rdquo; meaning very bad code written by AI. At the same time many of us see AI producing code that is high quality, well factored, and well tested. Is it possible that the way one approaches this technology has an impact on the outcome?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stride Active Guidence</title>
-      <link>https://cheezyworld.ca/post/stride-active-guidence/</link>
+      <link>http://localhost:1313/post/stride-active-guidence/</link>
       <pubDate>Fri, 09 Jan 2026 10:41:00 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/stride-active-guidence/</guid>
+      <guid>http://localhost:1313/post/stride-active-guidence/</guid>
       <description>&lt;h2 id=&#34;stride-now-supports-four-ai-assistants-with-always-active-guidance&#34;&gt;Stride Now Supports Four AI Assistants with Always-Active Guidance&lt;/h2&gt;&#xA;&lt;p&gt;What a day. Earlier today I rolled out &lt;a href=&#34;https://www.stridelikeaboss.com/blog/stride-has-skills&#34;&gt;Claude Code Skills for Stride&lt;/a&gt;. A couple of hours later I&amp;rsquo;m excited to announce that Stride now supports four popular AI coding assistants beyond Claude Code, with always-active instruction files that help developers avoid common mistakes and follow best practices when working with the Stride API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge-supporting-multiple-ai-assistants&#34;&gt;The Challenge: Supporting Multiple AI Assistants&lt;/h2&gt;&#xA;&lt;p&gt;I know that not all developers use Claude Code. Many companies are invested in tools like Copilot, Windsurf, etc. Developers in these companies should not feel left out when it comes to Stride. Because of that need, I have just added enhanced instructions for &lt;a href=&#34;https://github.com/features/copilot&#34;&gt;GitHub Copilot&lt;/a&gt;, &lt;a href=&#34;https://www.cursor.com/&#34;&gt;Cursor&lt;/a&gt;, &lt;a href=&#34;https://www.windsurfrules.com/&#34;&gt;Windsurf Cascade&lt;/a&gt;, and &lt;a href=&#34;https://continue.dev/&#34;&gt;Continue.dev&lt;/a&gt;. These assistants are excellent tools, but they needed help understanding Stride&amp;rsquo;s workflow requirements, especially around:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stride Has Skills</title>
-      <link>https://cheezyworld.ca/post/stride-has-skills/</link>
+      <link>http://localhost:1313/post/stride-has-skills/</link>
       <pubDate>Fri, 09 Jan 2026 07:08:31 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/stride-has-skills/</guid>
+      <guid>http://localhost:1313/post/stride-has-skills/</guid>
       <description>&lt;p&gt;I am excited to announce a major enhancement to Stride&amp;rsquo;s AI agent workflow: &lt;strong&gt;Claude Code Skills&lt;/strong&gt;. These skills enforce best practices and prevent common mistakes that waste hours of development time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-claude-code-skills&#34;&gt;What Are Claude Code Skills?&lt;/h2&gt;&#xA;&lt;p&gt;Claude Code Skills are specialized instructions that guide AI agents through complex workflows. Think of them as expert advisors that activate at critical decision points, ensuring agents follow established patterns and avoid known pitfalls.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Stride Workflow</title>
-      <link>https://cheezyworld.ca/post/stride_workflow/</link>
+      <link>http://localhost:1313/post/stride_workflow/</link>
       <pubDate>Tue, 06 Jan 2026 08:05:52 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/stride_workflow/</guid>
+      <guid>http://localhost:1313/post/stride_workflow/</guid>
       <description>&lt;h2 id=&#34;how-do-humans-collaborate-with-ai&#34;&gt;How do Humans collaborate with AI?&lt;/h2&gt;&#xA;&lt;p&gt;When I decided to make &lt;a href=&#34;https://www.stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; a Human-AI collaboration tool I spent some time thinking about when and how Humans would want to interject themselves into an AI driven worflow. Those of you that know me know that I have spent a significant portion of my life helping teams optimize their work and achieve better flow. With AI in the mix it causes us to rethink some of what helps us achieve that flow. We have to be realistic about what Humans do best (at this time) and what AI does best and find a way to optimize around these things. At the same time, many Humans are not comfortable (at this time) with letting AI take over completely and they want to be involved in the process. This is what I came up with:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Getting Started with Stride</title>
-      <link>https://cheezyworld.ca/post/getting_started_with_stride/</link>
+      <link>http://localhost:1313/post/getting_started_with_stride/</link>
       <pubDate>Mon, 05 Jan 2026 09:03:25 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/getting_started_with_stride/</guid>
+      <guid>http://localhost:1313/post/getting_started_with_stride/</guid>
       <description>&lt;h2 id=&#34;stride---ai-human-collaboration-platform&#34;&gt;Stride - AI-Human Collaboration Platform&lt;/h2&gt;&#xA;&lt;p&gt;This post is to help you get started. Through a series of videos I will guide you through the entire process from initial setup to working with your AI Agent to build an initial backlog.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s start at the beginning.&lt;/p&gt;&#xA;&lt;h2 id=&#34;building-your-first-ai-optimized-board&#34;&gt;Building your first AI Optimized Board&lt;/h2&gt;&#xA;&lt;p&gt;After you&amp;rsquo;ve registered with the system you will want to create your first AI Optimized Board. This is an extremely simple process.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stride goes full AI</title>
-      <link>https://cheezyworld.ca/post/stride-next/</link>
+      <link>http://localhost:1313/post/stride-next/</link>
       <pubDate>Fri, 19 Dec 2025 08:32:51 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/stride-next/</guid>
+      <guid>http://localhost:1313/post/stride-next/</guid>
       <description>&lt;h2 id=&#34;building-an-ai-optimized-kanban-system-a-human-ai-collaboration-experiment&#34;&gt;Building an AI-Optimized Kanban System: A Human-AI Collaboration Experiment&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m embarking on an experiment to build a Kanban task management system specifically designed for AI-human collaboration. This isn&amp;rsquo;t just another project management tool—it&amp;rsquo;s a system where AI agents and humans work together as peers on software development tasks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-vision&#34;&gt;The Vision&lt;/h2&gt;&#xA;&lt;p&gt;Most task management tools treat tasks as simple items with a title and description. But when you&amp;rsquo;re working with AI agents (like Claude, GPT-4, or custom agents), they need much more context to be effective. They need to understand:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 16</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part16/</link>
+      <link>http://localhost:1313/post/ai-kanban-part16/</link>
       <pubDate>Wed, 17 Dec 2025 08:23:02 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part16/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part16/</guid>
       <description>&lt;h2 id=&#34;a-million-small-things---on-to-version-10&#34;&gt;A million small things - on to Version 1.0&lt;/h2&gt;&#xA;&lt;p&gt;This is the final post in this series. There were many things that needed to be done that were not on the original plan so I worked with my trusty AI tools to complete them. This post simply lists them and provides a some details where I thought it was interesting.&lt;/p&gt;&#xA;&lt;p&gt;Do not worry about this being the end of the series. See the What&amp;rsquo;s Next section at the bottom of this post to see where this is all going. What&amp;rsquo;s next is very exciting and I hope you stay with me on this.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tensions with AI</title>
-      <link>https://cheezyworld.ca/post/ai-tensions/</link>
+      <link>http://localhost:1313/post/ai-tensions/</link>
       <pubDate>Mon, 15 Dec 2025 06:38:22 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-tensions/</guid>
+      <guid>http://localhost:1313/post/ai-tensions/</guid>
       <description>&lt;h2 id=&#34;bringing-ai-into-your-organization&#34;&gt;Bringing AI into your organization&lt;/h2&gt;&#xA;&lt;p&gt;I have now worked with multiple teams that have introduced an AI driven development into their development workflow and I have seen a pattern emerge. When AI, and more specifically Vibe Coding, is introduced into a traditional software development organization that are following an Agile process there are three tensions that quickly arise. All three of these tensions are due to the rapid pace of development.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 15</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part15/</link>
+      <link>http://localhost:1313/post/ai-kanban-part15/</link>
       <pubDate>Sun, 30 Nov 2025 15:21:44 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part15/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part15/</guid>
       <description>&lt;h2 id=&#34;polish--enhancement&#34;&gt;Polish &amp;amp; Enhancement&lt;/h2&gt;&#xA;&lt;p&gt;It is finally time to get back and finish phase 7 of our plan. Here is what remains:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;font-weight:bold&#34;&gt;#### Phase 7: Polish &amp;amp; Enhancement&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; **UI/UX improvements**&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Design beautiful board cards with Tailwind CSS&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Add hover effects and transitions&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Improve spacing and typography&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Add loading states for async actions&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Add empty states for boards without columns/tasks&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; **Add notifications**&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Use Phoenix LiveView flash messages for success/error&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Style flash messages with Tailwind CSS&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; **Add confirmation dialogs**&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Add confirmation for board deletion&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Add confirmation for column deletion (mention tasks will be deleted)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Add confirmation for task deletion&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; **Error handling**&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Add proper error messages for validation failures&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Handle edge cases (deleting last column, etc.)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Add 404 pages for missing resources&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; **Final Quality Checks**:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Run &lt;span style=&#34;color:#f1fa8c&#34;&gt;`mix test`&lt;/span&gt; and ensure all tests pass (510 tests, 0 failures)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Run &lt;span style=&#34;color:#f1fa8c&#34;&gt;`mix test --cover`&lt;/span&gt; and verify coverage meets threshold (94.60% coverage)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Run &lt;span style=&#34;color:#f1fa8c&#34;&gt;`mix credo --strict`&lt;/span&gt; and fix any issues (no issues found)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Run &lt;span style=&#34;color:#f1fa8c&#34;&gt;`mix sobelow --config`&lt;/span&gt; and fix any security issues (no issues found)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;- [ ]&lt;/span&gt; Run &lt;span style=&#34;color:#f1fa8c&#34;&gt;`mix precommit`&lt;/span&gt; to run all checks together (all checks passed)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;starting-with-uiux-improvements&#34;&gt;Starting with UI/UX improvements&lt;/h3&gt;&#xA;&lt;p&gt;We start by asking TideWave to complete the first two tasks under UI/UX improvements. Less than five minutes later we have some sparkle.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 14</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part14/</link>
+      <link>http://localhost:1313/post/ai-kanban-part14/</link>
       <pubDate>Fri, 28 Nov 2025 15:15:03 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part14/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part14/</guid>
       <description>&lt;h2 id=&#34;cleaning-up-authentication&#34;&gt;Cleaning up Authentication&lt;/h2&gt;&#xA;&lt;p&gt;This is the last episode before we get back to our original plan. The authentication system currently in place is what was generated by running the &lt;code&gt;mix phx.gen.auth&lt;/code&gt; command. The styles were cleaned up a little when I asked Claude to create a nice style for the entire site. But the behaviour is the generated form and is not what I want. In part 14 we will attack this head on.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 13</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part13/</link>
+      <link>http://localhost:1313/post/ai-kanban-part13/</link>
       <pubDate>Fri, 21 Nov 2025 07:05:12 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part13/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part13/</guid>
       <description>&lt;h2 id=&#34;setting-permissions-for-users&#34;&gt;Setting permissions for users&lt;/h2&gt;&#xA;&lt;p&gt;Currently every user can do everything in the application. A read only user can delete a board or make any type of change they want. Let&amp;rsquo;s fix that.&lt;/p&gt;&#xA;&lt;h3 id=&#34;focus-on-owners-first&#34;&gt;Focus on Owners first&lt;/h3&gt;&#xA;&lt;p&gt;First I want to focus on ensuring the board owner can do board-level actions and other users cannot. Let me start by listing out the things that only owners can do:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Edit and delete their boards&lt;/li&gt;&#xA;&lt;li&gt;Add new columns to a board&lt;/li&gt;&#xA;&lt;li&gt;Edit or delete columns from their boards&lt;/li&gt;&#xA;&lt;li&gt;Reorder columns (including drag-and-drop)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I think this is a good list. Let&amp;rsquo;s ask TideWave to make these changes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 12</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part12/</link>
+      <link>http://localhost:1313/post/ai-kanban-part12/</link>
       <pubDate>Wed, 12 Nov 2025 15:22:47 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part12/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part12/</guid>
       <description>&lt;h2 id=&#34;adding-users-to-boards-and-tasks&#34;&gt;Adding users to boards and tasks&lt;/h2&gt;&#xA;&lt;p&gt;Since the &lt;a href=&#34;https://tidewave.ai/blog/claude-code-codex&#34;&gt;announcement&lt;/a&gt; of Claude Code running inside of Tidewave I have been extremely happy about this combo. For now I am using it for nearly all of my changes to the codebase. I have even given it a name - &lt;strong&gt;ClaudeWave&lt;/strong&gt;. All of the changes in this post were done using ClaudeWave.&lt;/p&gt;&#xA;&lt;p&gt;So far our boards only have an owner. I want an owner to have the ability to add other users to a board and also assign tasks to one of those users. Let&amp;rsquo;s get started.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 11</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part11/</link>
+      <link>http://localhost:1313/post/ai-kanban-part11/</link>
       <pubDate>Wed, 12 Nov 2025 12:22:22 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part11/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part11/</guid>
       <description>&lt;h2 id=&#34;tasked-with-improving-tasks&#34;&gt;Tasked with improving Tasks&lt;/h2&gt;&#xA;&lt;p&gt;The final phase of our plan is focused on visual cleanup and better error handling. Before I focused on the visual cleanup I wanted to fill in some of the gaps that exist in our plan. I&amp;rsquo;m starting with Tasks. There are several missing features that I wanted to add to Tasks to make them more useful. This post includes those changes.&lt;/p&gt;&#xA;&lt;h3 id=&#34;rounding-out-tasks&#34;&gt;Rounding out Tasks&lt;/h3&gt;&#xA;&lt;p&gt;At this time Tasks only have a title, description, and their position in the column. This really is not enough for a serious Kanban application. I asked Claude to add the following fields:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 10</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part10/</link>
+      <link>http://localhost:1313/post/ai-kanban-part10/</link>
       <pubDate>Sat, 08 Nov 2025 18:36:42 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part10/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part10/</guid>
       <description>&lt;h2 id=&#34;adding-drag-and-drop&#34;&gt;Adding Drag and Drop&lt;/h2&gt;&#xA;&lt;p&gt;We asked Claude to finish phase six which was adding drag and drop functionality to the board. Claude did this quickly but when I tested it I found that it was more complex that expected. Claude got a few things wrong. First of all let&amp;rsquo;s watch the video of phase six.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/aM6Rt3fuC9Q?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;always-test-everything&#34;&gt;Always test everything&lt;/h2&gt;&#xA;&lt;p&gt;At the end of the video it seems like everything was okay. One might be tempted to commit the code and move on. I think a very important step is to test everything that AI creates. Occasionally AI will make a mistake and it is important to catch it right away while it still has the entire context available.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 9</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part9/</link>
+      <link>http://localhost:1313/post/ai-kanban-part9/</link>
       <pubDate>Sat, 08 Nov 2025 14:04:14 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part9/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part9/</guid>
       <description>&lt;h2 id=&#34;doing-a-little-cleanup&#34;&gt;Doing a little cleanup&lt;/h2&gt;&#xA;&lt;p&gt;This post is a cleanup post. After Part 8 I spent some time testing all aspects of the application and decided to make a few small changes beofre moving to the next phase. I noticed that flash messages (the message that shows in the upper right corner) stays there until I dismiss it. I think it becomes anoying to have to do that repeatedly when adding multiple tasks so I decide to make it automatically fade away after 5 seconds. I could ask Claude to do this but thought it was a very easy task so I set about to do it myself. Here is what I came up with.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 8</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part8/</link>
+      <link>http://localhost:1313/post/ai-kanban-part8/</link>
       <pubDate>Sun, 02 Nov 2025 18:35:14 -0500</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part8/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part8/</guid>
       <description>&lt;h2 id=&#34;adding-tasks&#34;&gt;Adding tasks&lt;/h2&gt;&#xA;&lt;p&gt;Before getting started adding tasks to our Kanban Board I decided to do a little maintenance. A couple of the dependencies had updates so I decided to go ahead and update the project. Also, the latest version of Elixir finally reached 1.19.2. To me that signals that the 1.19 versions are stable enough to update so I did. I&amp;rsquo;ll have a separate blog post of what I had to do to update the application as well as update my deployment scripts and Dockerfile.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Is Agile compatible with AI?</title>
-      <link>https://cheezyworld.ca/post/agile-and-ai/</link>
+      <link>http://localhost:1313/post/agile-and-ai/</link>
       <pubDate>Wed, 29 Oct 2025 15:28:45 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/agile-and-ai/</guid>
+      <guid>http://localhost:1313/post/agile-and-ai/</guid>
       <description>&lt;p&gt;I have made my living as an Agile coach since 2003. I have worked as a coach for clients around the world, taught many courses in various topics, and spoken at too many conferences to count. I have dedicated more than a third of my life to these concepts and truly believe they have been the best way to deliver software.&lt;/p&gt;&#xA;&lt;p&gt;Agile has gone through many changes over my career. A few of the major ones that I feel have had the most impact are the introduction of Lean Startup, practices like BDD and Acceptance Test Driven Development, and my favourite which is Continuous Delivery. Most of these changes have come from within the Agile community and have pushed us forward in our understanding of how to deliver more value quicker. I have stayed current and in some cases have been on the forefront for many of these changes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 7</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part7/</link>
+      <link>http://localhost:1313/post/ai-kanban-part7/</link>
       <pubDate>Sun, 26 Oct 2025 14:53:21 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part7/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part7/</guid>
       <description>&lt;h2 id=&#34;wip-limits&#34;&gt;WIP Limits&lt;/h2&gt;&#xA;&lt;p&gt;Before we start building out the columns I asked Claude to update the plan in order to add WIP limits. I was suprised by the number of changes that were required. You can see the details here in the first video of this post.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/qrUxEm1e1GA?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;adding-the-columns&#34;&gt;Adding the columns&lt;/h2&gt;&#xA;&lt;p&gt;Now on to adding columns to our Kanban application. In the first video we ask Claude to finish all of the non-UI work which includes adding a column table to the database, create the relationship to board, create the schema to hold the data from the database, create the context to perform the basic CRUD functions, and finally create the tests for all of this.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 6</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part6/</link>
+      <link>http://localhost:1313/post/ai-kanban-part6/</link>
       <pubDate>Fri, 24 Oct 2025 10:41:11 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part6/</guid>
-      <description>&lt;h2 id=&#34;just-a-small-thing&#34;&gt;Just a small thing&lt;/h2&gt;&#xA;&lt;p&gt;Off screen I asked Claude to create the favicon based on the image it has already placed on the home page. In less than a minute I had these files:&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;img src=&#34;https://cheezyworld.ca/img/favicon.png&#34; alt=&#34;Image of favicons&#34;&gt;&#xA;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Claude also added this html in the header of the &lt;code&gt;root.html.eex&lt;/code&gt; file:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;image/x-icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{~p&amp;#34;/images/favicon.ico&amp;#34;}&lt;/span&gt; /&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;image/png&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;sizes&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;16x16&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{~p&amp;#34;/images/favicon-16x16.png&amp;#34;}&lt;/span&gt; /&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;image/png&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;sizes&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;32x32&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{~p&amp;#34;/images/favicon-32x32.png&amp;#34;}&lt;/span&gt; /&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;image/png&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;sizes&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;48x48&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{~p&amp;#34;/images/favicon-48x48.png&amp;#34;}&lt;/span&gt; /&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;image/svg+xml&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{~p&amp;#34;/images/favicon.svg&amp;#34;}&lt;/span&gt; /&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a small change but it adds to the polish of the app.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/ai-kanban-part6/</guid>
+      <description>&lt;h2 id=&#34;just-a-small-thing&#34;&gt;Just a small thing&lt;/h2&gt;&#xA;&lt;p&gt;Off screen I asked Claude to create the favicon based on the image it has already placed on the home page. In less than a minute I had these files:&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/img/favicon.png&#34; alt=&#34;Image of favicons&#34;&gt;&#xA;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Claude also added this html in the header of the &lt;code&gt;root.html.eex&lt;/code&gt; file:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;image/x-icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{~p&amp;#34;/images/favicon.ico&amp;#34;}&lt;/span&gt; /&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;image/png&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;sizes&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;16x16&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{~p&amp;#34;/images/favicon-16x16.png&amp;#34;}&lt;/span&gt; /&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;image/png&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;sizes&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;32x32&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{~p&amp;#34;/images/favicon-32x32.png&amp;#34;}&lt;/span&gt; /&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;image/png&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;sizes&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;48x48&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{~p&amp;#34;/images/favicon-48x48.png&amp;#34;}&lt;/span&gt; /&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;image/svg+xml&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{~p&amp;#34;/images/favicon.svg&amp;#34;}&lt;/span&gt; /&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a small change but it adds to the polish of the app.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 5</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part5/</link>
+      <link>http://localhost:1313/post/ai-kanban-part5/</link>
       <pubDate>Sat, 18 Oct 2025 15:13:21 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part5/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part5/</guid>
       <description>&lt;h2 id=&#34;follow-up-for-the-french-translations&#34;&gt;Follow up for the French Translations&lt;/h2&gt;&#xA;&lt;p&gt;After the last recording I started manually looking at the translatons. I quickly noticed that the authentication pages were not translated. This is why I take very small steps and verify after each one. LLMs cannot read your mind and they do not always do what you think they should. Small steps allow us to make adjustments or revert when it does the wrong thing. I asked Claude to translate the authentication pages and it did.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 4</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part4/</link>
+      <link>http://localhost:1313/post/ai-kanban-part4/</link>
       <pubDate>Fri, 17 Oct 2025 10:00:00 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part4/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part4/</guid>
       <description>&lt;h2 id=&#34;taking-a-detour&#34;&gt;Taking a Detour&lt;/h2&gt;&#xA;&lt;p&gt;I decided to change the plan a little and take care of a couple of user facing issues. Let&amp;rsquo;s see how that goes.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/qA-ALhMOabc?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;p&gt;So we have a new plan. I will be making the site pretty (and responsive) and I will be adding internationalization including the French language support for all existing pages. Should I trust Claude to come up with my design? What should I expect out of an LLM? Let&amp;rsquo;s see the results of the first part of this revised plan.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 3</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part3/</link>
+      <link>http://localhost:1313/post/ai-kanban-part3/</link>
       <pubDate>Sun, 05 Oct 2025 11:18:02 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part3/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part3/</guid>
       <description>&lt;h2 id=&#34;using-claude-code-to-write-the-authentication-code&#34;&gt;Using Claude Code to write the Authentication Code&lt;/h2&gt;&#xA;&lt;p&gt;In Part 3 of this series we are finally ready to allow Claude Code to wite some code. We have our system configured properly, we have created a plan to take small steps, and now it is time to get started. I will be using Claude Code to build the Authentication for our Kanban Board application. There are a few times where I had to ask Claude to do something different. It is always important to pay attention. After the video was complete It took the time to verify everything and look at the code. Everything was good as I expected.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 2</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part2/</link>
+      <link>http://localhost:1313/post/ai-kanban-part2/</link>
       <pubDate>Wed, 01 Oct 2025 09:52:02 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part2/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part2/</guid>
       <description>&lt;h2 id=&#34;using-claude-code-to-create-the-plan&#34;&gt;Using Claude Code to create the plan&lt;/h2&gt;&#xA;&lt;p&gt;In Part 2 of this series I will be using Claude Code to generate a plan to build the Kanban Board application. It is very important to me that the plan take very small steps and include a lot of places where we check the quality along the way. Here is a video of the session.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/nipOWuKmI8Q?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;h3 id=&#34;the-plan&#34;&gt;The Plan&lt;/h3&gt;&#xA;&lt;p&gt;So you can see what Claude Code produced, I am including the entire plan here.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TDD With AI</title>
-      <link>https://cheezyworld.ca/post/tdd-with-ai/</link>
+      <link>http://localhost:1313/post/tdd-with-ai/</link>
       <pubDate>Tue, 30 Sep 2025 09:52:02 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/tdd-with-ai/</guid>
+      <guid>http://localhost:1313/post/tdd-with-ai/</guid>
       <description>&lt;h2 id=&#34;im-a-tdd-guy&#34;&gt;I&amp;rsquo;m a TDD guy&lt;/h2&gt;&#xA;&lt;p&gt;I have been writing code using Test Driven Development for about 25 years. I am a huge believer in the benefits of this practice. I have spoken about it at conferences around the world and have taught many workshops on the subject. As I started to dig into AI the first thing I tried to do is see how it would fit into my TDD workflow. I tried numerous approaches and they all felt unnatural. I watched videos of others try to do the same and didn&amp;rsquo;t feel like they were successful.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building a LiveView app using AI - Part 1</title>
-      <link>https://cheezyworld.ca/post/ai-kanban-part1/</link>
+      <link>http://localhost:1313/post/ai-kanban-part1/</link>
       <pubDate>Sun, 28 Sep 2025 09:52:02 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/ai-kanban-part1/</guid>
+      <guid>http://localhost:1313/post/ai-kanban-part1/</guid>
       <description>&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;&#xA;&lt;p&gt;This is the first post in a series in which I will be building a Kanban board application with &lt;a href=&#34;https://www.phoenixframework.org&#34;&gt;Phoenix&lt;/a&gt; and &lt;a href=&#34;https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html&#34;&gt;LiveView&lt;/a&gt;. What is different about this series is that I will use AI to write the code and tests as well as come up with the design of the application.  I will be using a set of tools and workflow that I have worked out over the past several months to truly take advantage of the benefits of AI while producing quality code and a fully tested application.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>
-      <link>https://cheezyworld.ca/post/hello-world-again/</link>
+      <link>http://localhost:1313/post/hello-world-again/</link>
       <pubDate>Fri, 26 Sep 2025 07:43:32 -0400</pubDate>
-      <guid>https://cheezyworld.ca/post/hello-world-again/</guid>
+      <guid>http://localhost:1313/post/hello-world-again/</guid>
       <description>&lt;h2 id=&#34;im-back&#34;&gt;I&amp;rsquo;m back&lt;/h2&gt;&#xA;&lt;p&gt;It has been a while since I&amp;rsquo;ve blogged. I had a blog named CheezyWorld.com&#xA;for many years but stopped posting more than 12 years ago. At the time I was traveling for work as well as traveling around the world to speak at conferences. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.&lt;/p&gt;</description>
     </item>
   </channel>
