@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Strides New Enhanced Workflow" />
+    <meta property="og:title" content="Strides New Enhanced Workflow" />
+    <meta property="twitter:title" content="Strides New Enhanced Workflow" />
+    
+
+    
+    <meta name="description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing.">
+    <meta property="og:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/stride-enhanced-workflow/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Strides New Enhanced Workflow | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/stride-enhanced-workflow/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Eat more cheese</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Strides New Enhanced Workflow</h1>
+
+            
+                <p>Over the past two weeks, a lot of enhancements have been made to the Stride Workflow. I wanted to take the time to detail them here as I think they are a good example of how one can direct an AI agent to perform specific tasks in a repeatable manner.</p>
+<h3 id="what-is-stride">What is Stride?</h3>
+<p>For those new here: <a href="https://www.stridelikeaboss.com">Stride</a> is a kanban-based task management platform built specifically for Human and AI agent collaboration. It is very different than the typical &ldquo;let the agents run through a lot of tasks and we&rsquo;ll check at the end&rdquo; mode of working with AI. Instead, Stride gives the human (team) multiple places where they can insert themselves into the workflow. Enough of that for now as I want this post to focus on the workflow enhancements.</p>
+<h3 id="claude-code-only-for-now">Claude Code Only (for now)</h3>
+<p>Several of the <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">Skills</a> and <a href="https://code.claude.com/docs/en/sub-agents">Subagents</a> you see detailed in this post are currently only available in <a href="https://code.claude.com/">Claude Code</a>. Over time, I hope to bring much of what I&rsquo;ve built to other popular agents. Unless I specifically state that the feature is Claude Code only, you can assume it is available in Claude Code, GitHub Copilot, Cursor, Windsurf, Gemini, and OpenCode.</p>
+<h4 id="step-0-creating-the-requirements">Step 0: Creating the requirements</h4>
+<p>This step has nothing to do with Stride, but it&rsquo;s the first step in the workflow. Teams will use a brainstorming Skill or Subagent to create a detailed requirements document for the next feature they wish to build. The team would typically review this document together and iterate with the agent until they are satisfied with the details. I use the <a href="https://github.com/obra/superpowers">superpowers brainstorming</a> Skill and find it to be perfect for my needs.</p>
+<h4 id="step-1-getting-the-requirements-into-stride">Step 1: Getting the requirements into Stride</h4>
+<p>The next step is very easy, but a lot of behind-the-scenes magic takes place at this time. One would simply ask the agent to break the requirements document (created in the previous step) down into goals and tasks (or simply tasks for smaller features) and upload them to Stride.</p>
+<p>At this time, one of two <a href="https://github.com/cheezy/stride/tree/main/skills">Stride Skills</a> will be invoked. The <strong>stride-creating-goals</strong> and <strong>stride-creating-tasks</strong> skills show the agent what constitutes a <a href="https://cheezyworld.ca/post/what-is-a-task/">task</a> in Stride and how to format and upload the information using the Stride API.</p>
+<p>I will not go into all of the details of what is included in a task (follow the link in the previous paragraph), but it is responsible for a lot of Stride&rsquo;s success. Establishing the details of each task up front alleviates the need for developers to type detailed prompts and constantly course correct later. When this step is complete, the requirements will be broken down into manageable tasks and uploaded to the <em>Backlog</em> column in Stride. Tasks that are in the <em>Backlog</em> column are not available for agents to work on.</p>
+<h4 id="step-2-human-review-of-tasks">Step 2: Human review of Tasks</h4>
+<p>At this point in the workflow, we have yet another opportunity for the team to review the tasks and make any necessary adjustments before the agents begin working on them. There are three critical things to do at this stage.</p>
+<ol>
+<li>The team should ensure they are in agreement with the <code>acceptance criteria</code> that were created as it will be used by a subagent later in the workflow</li>
+<li>The team should decide which tasks they want to review and which tasks they are comfortable with the agent working on without human review. Tasks that need review can be identified by simply checking the <code>Needs Review</code> checkbox on the task.</li>
+<li>Add any missing tasks that were not created by the agent. These are often organizational tasks and can be either flagged as <code>Human Tasks</code> (agent will not work on) or additional work for an agent to complete.</li>
+</ol>
+<p>Once the team is satisfied with the task details they can simply drag the tasks to the <em>Ready</em> column in Stride. This will make them available for agents to work on.</p>
+<h4 id="step-3-agent-claims-a-task">Step 3: Agent Claims a Task</h4>
+<p>With the tasks in the <em>Ready</em> column, agents can now claim them and begin working on them. This is where things get very interesting.</p>
+<h5 id="step-31-fetching-task-details">Step 3.1: Fetching Task Details</h5>
+<p>The agent will use the <strong>stride-claiming-tasks</strong> Skill to see if there is a task available to claim. If there is, the agent will start by running a hook.</p>
+<h5 id="step-32-the-before_-hook">Step 3.2: The <strong>before_doing</strong> Hook</h5>
+<p><a href="https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md">Hooks</a> are a set of commands that the developers have specified should run at specific times during the workflow. The developers will have specified what commands the agent must complete successfully prior to starting work on a task. Often the <strong>before_doing</strong> hook is used to refresh the local codebase from a central server. If, for any reason, the commands are not successful, the agent will invoke the <strong>hook-diagnostician</strong> SubAgent to help diagnose and fix the issue. The agent is not able to move forward until this step passes. This SubAgent is only available in Claude Code at this time.</p>
+<h5 id="step-33-claiming-the-task">Step 3.3: Claiming the Task</h5>
+<p>Now that the first hook has passed, the agent is ready to begin working on the task. But there are a few things that need to happen first. When the agent makes the API call to claim the task, the task is moved to the <em>Doing</em> column in Stride and then the agent performs the additional activities based on the details of the task. Here is a breakout:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Task Attributes</th>
+          <th>task-decomposer</th>
+          <th>task-explorer</th>
+          <th>Plan Agent</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>small, 0-1 key_files</td>
+          <td>Skip</td>
+          <td>Skip</td>
+          <td>Skip</td>
+      </tr>
+      <tr>
+          <td>small, 2+ key_files</td>
+          <td>Skip</td>
+          <td>Run</td>
+          <td>Skip</td>
+      </tr>
+      <tr>
+          <td>medium (any)</td>
+          <td>Skip</td>
+          <td>Run</td>
+          <td>Run</td>
+      </tr>
+      <tr>
+          <td>large (any)</td>
+          <td>Skip</td>
+          <td>Run</td>
+          <td>Run</td>
+      </tr>
+      <tr>
+          <td>Defect type</td>
+          <td>Skip</td>
+          <td>Run</td>
+          <td>Skip (unless large)</td>
+      </tr>
+      <tr>
+          <td>Large complexity, not yet decomposed</td>
+          <td>Run</td>
+          <td>Skip</td>
+          <td>Skip</td>
+      </tr>
+      <tr>
+          <td>25+ hour estimate, not yet decomposed</td>
+          <td>Run</td>
+          <td>Skip</td>
+          <td>Skip</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="step-331-enrich-the-task-if-it-is-incomplete">Step 3.3.1: Enrich the task if it is incomplete</h5>
+<p>There are cases where a human may have created a task via the Stride UI. Often the human does not have the time or knowledge to fully enrich the task with all the details the agent would like to have available during implementation. In these cases, the agent will use the <strong>task-enricher</strong> Skill to enrich the task with the desired details. This Skill is only invoked if there is critical information missing. This skill is only available in Claude Code.</p>
+<h6 id="step-332-break-down-large-tasks">Step 3.3.2: Break down large tasks</h6>
+<p>If the task is large or complex, the agent will use the <strong>task-decomposer</strong> SubAgent to break it down into smaller, more manageable tasks. This SubAgent will use the <strong>stride-creating-tasks</strong> skill to create the new tasks and place them in the Ready column. Next, the agent will begin working on one of the newly created smaller tasks. This SubAgent is currently only available in Claude Code.</p>
+<h6 id="step-333-explore-the-codebase">Step 3.3.3: Explore the codebase</h6>
+<p>Next, the agent will invoke the <strong>task-explorer</strong> SubAgent to explore the codebase to understand the context of the change. Specifically, the SubAgent looks at the code files specified in the <code>key_files</code> and also reads the <code>patterns_to_follow</code>, <code>where_context</code>, <code>acceptance_criteria</code>, and <code>testing_strategy</code> fields of the Task to direct its exploration. The knowledge and information it gathers is then returned to the implementation agent to inform its work. This SubAgent is currently only available in Claude Code.</p>
+<h6 id="step-334-break-the-activity-down-into-small-implementation-steps">Step 3.3.4: Break the activity down into small implementation steps</h6>
+<p>At this point the agent has what it needs to begin the implementation. For tasks that are flagged as medium or large the agent will invoke its internal Plan SubAgent to create the steps to implement the task. This is not part of Stride, but Stride will inform the agent to do this at this point. This is only available in Claude Code.</p>
+<h4 id="step-4-implement-the-changes">Step 4: Implement the changes</h4>
+<p>We are now at the point where the agent is ready to start working on the task. It might seem like it has taken a lot of time to get to this point, but the previous steps happen very quickly, and you may not notice all of the work that has already been performed.</p>
+<h5 id="step-41-make-the-change">Step 4.1: Make the change</h5>
+<p>This is where the agent does its thing. Code is written, tests are written, and eventually the agent believes it has completed the task.</p>
+<h5 id="step-42-validate-the-accuracy-of-the-changes">Step 4.2: Validate the accuracy of the changes</h5>
+<p>Before moving on to complete the task, the agent might invoke the <strong>task-reviewer</strong> SubAgent. This SubAgent will review the changes made by the agent and ensure that they are correct and complete. This table shows when the agent will be invoked.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Task Attributes</th>
+          <th>stride:task-reviewer</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>small, 0-1 key_files</td>
+          <td>Skip</td>
+      </tr>
+      <tr>
+          <td>small, 2+ key_files</td>
+          <td>Run</td>
+      </tr>
+      <tr>
+          <td>medium (any)</td>
+          <td>Run</td>
+      </tr>
+      <tr>
+          <td>large (any)</td>
+          <td>Run</td>
+      </tr>
+      <tr>
+          <td>Defect type</td>
+          <td>Run</td>
+      </tr>
+  </tbody>
+</table>
+<p>The agent does the following review:</p>
+<ul>
+<li>looks at the <code>acceptance criteria</code> defined on the Task and compares them with the code changes. Any acceptance criteria that cannot be mapped to a change is flagged as incomplete.</li>
+<li>looks at the <code>pitfalls</code> defined on the Task and ensures the pitfalls have not been realized.</li>
+<li>looks at the <code>patterns to follow</code> defined on the Task and ensures the changes followed those patterns.</li>
+<li>looks at the <code>testing strategy</code> defined on the Task and ensures the agent has implemented that strategy.</li>
+<li>looks for basic code quality issues that are easy to detect.</li>
+</ul>
+<p>If the change does not pass the review, a report is returned to the agent and the agent is informed to address the shortcomings. The agent must have a clean review in order to continue to the next step. This SubAgent is only available in Claude Code.</p>
+<blockquote>
+<p><strong>FYI</strong>: A new feature that is under development now and should be available by sometime next week is to have the <strong>task-reviewer</strong> SubAgent create a report that shows compliance via the review and attach that report to the Task. I feel this will be valuable for tracking and auditing purposes. Stay tuned.</p>
+</blockquote>
+<h5 id="step-43-the-after_-hook">Step 4.3: The <strong>after_doing</strong> Hook</h5>
+<p>The final step in the implementation is to execute the <strong>after_doing</strong> hook. Like the <strong>before_doing</strong> hook, this is a user-defined set of commands that must pass in order for the task to be considered complete. Often this is where a final test run takes place as well as quality checks like static code analysis, linting, and security scans. If the hooks do not pass, the <strong>hook-diagnostician</strong> SubAgent will be invoked to help diagnose the issue.</p>
+<h4 id="step-5-complete-the-review-process">Step 5: Complete the Review Process</h4>
+<p>With implementation finished, we now enter the review process. This gives the team an opportunity to dictate how the agent behaves. There are two hooks that must be executed successfully and an optional pause while a review of the changes is conducted.</p>
+<h5 id="step-51-the-stride-completing-tasks-skill">Step 5.1: The <strong>stride-completing-tasks</strong> Skill</h5>
+<p>At this point the agent will invoke the <strong>stride-completing-tasks</strong> skill. This skill will guide the agent through the remainder of the workflow.</p>
+<h5 id="step-52-the-before_-hook">Step 5.2: The <strong>before_review</strong> Hook</h5>
+<p>The <strong>before_review</strong> hook is executed at the beginning of the review process. This hook can be used for things like creating a pull request, deploying the changes to an environment where it can be validated, or anything that makes sense at this stage of the workflow. Like all of the hooks in this workflow, the developers define the commands that are executed at this point. If the hooks do not pass, the <strong>hook-diagnostician</strong> SubAgent will be invoked to help diagnose the issue.</p>
+<h5 id="step-53-invoking-the-complete-endpoint">Step 5.3: Invoking the <em>complete</em> endpoint</h5>
+<p>The agent will now call the <em>/api/tasks/:id/complete</em> endpoint with the output of the <strong>after_doing</strong> and <strong>before_review</strong> hooks. Also, the agent must provide additional details that are added to the Task. Those details are <code>completion_summary</code>, <code>actual_complexity</code>, <code>time_spent_minutes</code>, and <code>actual_files_changed</code>. This moves the task to the <em>Review</em> column on the board.</p>
+<h5 id="step-54-the-optional-agent-pause">Step 5.4: The optional agent pause</h5>
+<p>When the tasks are in the <em>Backlog</em> column, before the agent begins working on them, the team can check a <code>needs review</code> checkbox. Checking this value causes the agent to <a href="https://github.com/cheezy/kanban/blob/main/docs/REVIEW-WORKFLOW.md">pause and wait</a> for human review at this point in the workflow before continuing. If the checkbox was not checked, then the agent immediately moves to the next step.</p>
+<p>Once the team has completed their review, they need to update the Task. The <code>Review Status</code> field dictates the next steps:</p>
+<ul>
+<li><code>Approved</code>: This task is ready to be moved to the <em>Done</em> column.</li>
+<li><code>Rejected</code>: These changes need to be reverted and the task should be moved back to the <em>Ready</em> column.</li>
+<li><code>Changes Requested</code>: The task should be moved back to the <em>Doing</em> column and the agent will continue work based on the feedback provided in the <code>Review Notes</code> field.</li>
+</ul>
+<p>Once the task has been updated with the review information, the developer simply lets the agent know that the review is complete and the agent will continue the workflow.</p>
+<h5 id="step-55-the-after_-hook">Step 5.5: The <strong>after_review</strong> Hook</h5>
+<p>This is the final hook in the workflow, and it is often used to push code to a central server, start pipelines, or anything else that should occur with completed work. If the hooks do not pass, the <strong>hook-diagnostician</strong> SubAgent will be invoked to help diagnose the issue.</p>
+<h4 id="step-6-the-task-is-moved-to-the-done-column">Step 6: The task is moved to the <em>Done</em> column</h4>
+<p>A final API call is made with the results of the <strong>after_review</strong> hook. This moves the task to the <em>Done</em> column and the agent is ready to claim the next task.</p>
+<h3 id="summary">Summary</h3>
+<p>The workflow defined here is the result of running several thousand tasks through Stride and making small adjustments based on the results. I feel it is a great example of how to use the features available to the agents to create a robust and efficient workflow.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/stride-enhanced-workflow/">Strides New Enhanced Workflow</a></li>
+        
+            <li><a href="/post/stride-plugin-update/">Teaching AI Agents to Look Before They Leap</a></li>
+        
+            <li><a href="/post/ai-impact-outsourcing/">What Impact Will AI Have On Outsourcing?</a></li>
+        
+            <li><a href="/post/lms3/">Building the Learning Management System - First Coding Session</a></li>
+        
+            <li><a href="/post/claude-remote-control/">Claude Remote Control</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

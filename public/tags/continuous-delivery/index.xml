@@ -6,8 +6,22 @@
     <description>Recent content in Continuous Delivery on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Mar 2026 10:47:00 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2026 09:47:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Strides New Enhanced Workflow</title>
+      <link>http://localhost:1313/post/stride-enhanced-workflow/</link>
+      <pubDate>Fri, 13 Mar 2026 09:47:00 -0400</pubDate>
+      <guid>http://localhost:1313/post/stride-enhanced-workflow/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Teaching AI Agents to Look Before They Leap</title>
+      <link>http://localhost:1313/post/stride-plugin-update/</link>
+      <pubDate>Wed, 11 Mar 2026 14:13:00 -0400</pubDate>
+      <guid>http://localhost:1313/post/stride-plugin-update/</guid>
+      <description>&lt;p&gt;The Stride Claude Code plugin just shipped version 1.1, and the headline feature is &lt;strong&gt;subagent orchestration&lt;/strong&gt; — the ability for an AI agent to dispatch specialized sub-agents at key points in the task lifecycle. Instead of one agent doing everything sequentially, the primary agent now coordinates a team: an explorer that reads the codebase before coding starts, and a reviewer that checks the work before tests run.&lt;/p&gt;&#xA;&lt;p&gt;This post covers what changed and how it works.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>What Impact Will AI Have On Outsourcing?</title>
       <link>http://localhost:1313/post/ai-impact-outsourcing/</link>
