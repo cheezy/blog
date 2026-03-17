@@ -6,14 +6,21 @@
     <description>Recent content in Posts on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2026 09:47:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 14:52:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title># Closing the Loop: How We Added Review Report Traceability to Stride</title>
+      <link>http://localhost:1313/post/review-report/</link>
+      <pubDate>Tue, 17 Mar 2026 14:52:00 -0400</pubDate>
+      <guid>http://localhost:1313/post/review-report/</guid>
+      <description>&lt;p&gt;When AI agents review code, their findings shouldn&amp;rsquo;t vanish into the ether. That was the driving insight behind the &lt;code&gt;review_report&lt;/code&gt; feature we shipped in Stride v1.25.0 and the Stride plugin v1.4.0 this week. Here&amp;rsquo;s the story of what we built, why it matters, and how all the pieces fit together.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;&#xA;&lt;p&gt;Stride&amp;rsquo;s task-reviewer agent already did excellent work — it checks code changes against acceptance criteria, verifies pitfall avoidance, and validates pattern compliance. But the review output lived only in the agent&amp;rsquo;s conversation context. Once the agent completed the task, the structured findings were gone. Human reviewers opening a task in the Review column had no visibility into what the AI had already checked.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Strides New Enhanced Workflow</title>
       <link>http://localhost:1313/post/stride-enhanced-workflow/</link>
       <pubDate>Fri, 13 Mar 2026 09:47:00 -0400</pubDate>
       <guid>http://localhost:1313/post/stride-enhanced-workflow/</guid>
-      <description></description>
+      <description>&lt;p&gt;Over the past two weeks, a lot of enhancements have been made to the Stride Workflow. I wanted to take the time to detail them here as I think they are a good example of how one can direct an AI agent to perform specific tasks in a repeatable manner.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-stride&#34;&gt;What is Stride?&lt;/h3&gt;&#xA;&lt;p&gt;For those new here: &lt;a href=&#34;https://www.stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; is a kanban-based task management platform built specifically for Human and AI agent collaboration. It is very different than the typical &amp;ldquo;let the agents run through a lot of tasks and we&amp;rsquo;ll check at the end&amp;rdquo; mode of working with AI. Instead, Stride gives the human (team) multiple places where they can insert themselves into the workflow. Enough of that for now as I want this post to focus on the workflow enhancements.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Teaching AI Agents to Look Before They Leap</title>
