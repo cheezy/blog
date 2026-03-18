@@ -220,14 +220,56 @@
 <p><strong><code>stride-subagent-workflow</code> skill</strong> — Updated Phase 3 (Code Review) to instruct agents to capture the task-reviewer agent&rsquo;s return value and pass it as <code>review_report</code> in the completion API call. This capture happens regardless of whether the review outcome is &ldquo;Approved&rdquo; or &ldquo;Issues found.&rdquo; When the reviewer is skipped (e.g., small tasks with 0–1 key files), the field is simply omitted.</p>
 <p><strong><code>stride:task-reviewer</code> agent</strong> — Added an &ldquo;Output persistence&rdquo; note clarifying that the structured review output will be stored on the Stride task record. This nudges the agent to always produce a complete, well-formatted review — even for clean approvals — since the report is now permanently visible.</p>
 <h2 id="why-this-matters">Why This Matters</h2>
-<p>This feature creates a <strong>complete audit trail</strong> for AI-assisted code review. When a human reviewer opens a task in the <em>Review</em> or <em>Done</em> column, they can immediately see:</p>
+<p>This feature creates a <strong>complete audit trail</strong> for AI-assisted code review. When a human reviewer opens a task in the <em>Review</em> or <em>Done</em> column, they can see this report that compares the code produced by the AI agent to the original task specification.</p>
+<p>Let&rsquo;s take a look at what is included in the report and how the SubAgent evaluates the changes against the task.</p>
+<ol>
+<li>
+<p><strong>Acceptance Criteria Verification</strong>:</p>
 <ul>
-<li>Which acceptance criteria were checked and their status</li>
-<li>Whether any pitfalls from the task specification were violated</li>
-<li>Whether the implementation follows the prescribed patterns</li>
-<li>If the defined testing strategy was followed</li>
-<li>Any issues the AI reviewer flagged</li>
+<li>Parse each line of <code>acceptance_criteria</code> on the taskas a separate requirement</li>
+<li>For each criterion, search the diff for corresponding code changes that satisfy it</li>
+<li>Mark each criterion as: Met (with file:line reference), Partially Met (with explanation of what&rsquo;s missing), or Not Met</li>
+<li>If any criterion is Not Met, flag it as a Critical issue</li>
+<li>If any criterion is Partially Met, flag it as an Important issue</li>
 </ul>
+</li>
+<li>
+<p><strong>Pitfall Detection</strong>:</p>
+<ul>
+<li>Read each entry in the <code>pitfalls</code> array on the task</li>
+<li>Scan the diff for any code that violates a listed pitfall</li>
+<li>For each violation found, flag it as Critical with the specific file:line reference and the pitfall it violates</li>
+<li>Pitfall violations are always Critical because the task author explicitly warned against them</li>
+</ul>
+</li>
+<li>
+<p><strong>Pattern Compliance</strong>:</p>
+<ul>
+<li>If <code>patterns_to_follow</code> is provided, verify the implementation follows the referenced patterns</li>
+<li>Check: module structure, function naming, error handling approach, return value format</li>
+<li>Flag deviations as Important with a description of how the implementation differs from the expected pattern</li>
+<li>Note whether deviations are justified improvements or problematic departures</li>
+</ul>
+</li>
+<li>
+<p><strong>Testing Strategy Alignment</strong>:</p>
+<ul>
+<li>If <code>testing_strategy</code> is provided, check whether the diff includes appropriate tests</li>
+<li>For <code>unit_tests</code>: verify test files exist for new functions</li>
+<li>For <code>integration_tests</code>: verify end-to-end test scenarios are covered</li>
+<li>For <code>edge_cases</code>: verify edge case handling in both code and tests</li>
+<li>Flag missing test coverage as Important</li>
+</ul>
+</li>
+<li>
+<p><strong>General Code Quality</strong>:</p>
+<ul>
+<li>Check for obvious bugs, off-by-one errors, or missing error handling in new code</li>
+<li>Check for hardcoded values that should be configurable</li>
+<li>Flag issues as Minor unless they could cause runtime failures (then Critical)</li>
+</ul>
+</li>
+</ol>
 <p>This shifts the human reviewer&rsquo;s role from &ldquo;re-review everything from scratch&rdquo; to &ldquo;validate AI findings and check what the AI might have missed.&rdquo; It&rsquo;s a force multiplier for review throughput.</p>
 <p>It also establishes <strong>traceability</strong> — if a bug ships, you can look at the task&rsquo;s review report to understand what was checked and what wasn&rsquo;t. That&rsquo;s valuable for improving both the AI reviewer&rsquo;s prompts and the team&rsquo;s task specifications over time.</p>
 <hr>

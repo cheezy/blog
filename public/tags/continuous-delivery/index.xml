@@ -9,11 +9,11 @@
     <lastBuildDate>Tue, 17 Mar 2026 14:52:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title># Closing the Loop: How We Added Review Report Traceability to Stride</title>
+      <title>Closing the Loop: How We Added Traceability to Stride</title>
       <link>http://localhost:1313/post/review-report/</link>
       <pubDate>Tue, 17 Mar 2026 14:52:00 -0400</pubDate>
       <guid>http://localhost:1313/post/review-report/</guid>
-      <description>&lt;p&gt;When AI agents review code, their findings shouldn&amp;rsquo;t vanish into the ether. That was the driving insight behind the &lt;code&gt;review_report&lt;/code&gt; feature we shipped in Stride v1.25.0 and the Stride plugin v1.4.0 this week. Here&amp;rsquo;s the story of what we built, why it matters, and how all the pieces fit together.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;&#xA;&lt;p&gt;Stride&amp;rsquo;s task-reviewer agent already did excellent work — it checks code changes against acceptance criteria, verifies pitfall avoidance, and validates pattern compliance. But the review output lived only in the agent&amp;rsquo;s conversation context. Once the agent completed the task, the structured findings were gone. Human reviewers opening a task in the Review column had no visibility into what the AI had already checked.&lt;/p&gt;</description>
+      <description>&lt;p&gt;When AI agents review code, their findings shouldn&amp;rsquo;t vanish into the ether. That was the driving insight behind the &lt;code&gt;review_report&lt;/code&gt; feature we shipped in &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt; v1.25 and the &lt;a href=&#34;https://github.com/cheezy/stride&#34;&gt;Stride plugin&lt;/a&gt; v1.4 this week. Here&amp;rsquo;s the story of what we built, why it matters, and how all the pieces fit together.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;&#xA;&lt;p&gt;Stride&amp;rsquo;s task-reviewer SubAgent already did excellent work — it checks code changes against &lt;code&gt;acceptance criteria&lt;/code&gt;, verifies &lt;code&gt;pitfall&lt;/code&gt; avoidance, validates &lt;code&gt;pattern compliance&lt;/code&gt; and alignment of the &lt;code&gt;testing strategy&lt;/code&gt;. But the review output lived only in the agent&amp;rsquo;s conversation context. Once the agent completed the task, the structured findings were gone. Human reviewers opening a task in the &lt;em&gt;Review&lt;/em&gt; or &lt;em&gt;Done&lt;/em&gt; column had no visibility into what the AI had already checked.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Strides New Enhanced Workflow</title>

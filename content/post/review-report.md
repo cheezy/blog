@@ -57,13 +57,40 @@ The plugin changes ensure AI agents actually *produce and submit* review reports
 
 ## Why This Matters
 
-This feature creates a **complete audit trail** for AI-assisted code review. When a human reviewer opens a task in the _Review_ or _Done_ column, they can immediately see:
+This feature creates a **complete audit trail** for AI-assisted code review. When a human reviewer opens a task in the _Review_ or _Done_ column, they can see this report that compares the code produced by the AI agent to the original task specification.
 
-- Which acceptance criteria were checked and their status
-- Whether any pitfalls from the task specification were violated
-- Whether the implementation follows the prescribed patterns
-- If the defined testing strategy was followed
-- Any issues the AI reviewer flagged
+Let's take a look at what is included in the report and how the SubAgent evaluates the changes against the task.
+
+1. **Acceptance Criteria Verification**:
+   - Parse each line of `acceptance_criteria` on the taskas a separate requirement
+   - For each criterion, search the diff for corresponding code changes that satisfy it
+   - Mark each criterion as: Met (with file:line reference), Partially Met (with explanation of what's missing), or Not Met
+   - If any criterion is Not Met, flag it as a Critical issue
+   - If any criterion is Partially Met, flag it as an Important issue
+
+2. **Pitfall Detection**:
+   - Read each entry in the `pitfalls` array on the task
+   - Scan the diff for any code that violates a listed pitfall
+   - For each violation found, flag it as Critical with the specific file:line reference and the pitfall it violates
+   - Pitfall violations are always Critical because the task author explicitly warned against them
+
+3. **Pattern Compliance**:
+   - If `patterns_to_follow` is provided, verify the implementation follows the referenced patterns
+   - Check: module structure, function naming, error handling approach, return value format
+   - Flag deviations as Important with a description of how the implementation differs from the expected pattern
+   - Note whether deviations are justified improvements or problematic departures
+
+4. **Testing Strategy Alignment**:
+   - If `testing_strategy` is provided, check whether the diff includes appropriate tests
+   - For `unit_tests`: verify test files exist for new functions
+   - For `integration_tests`: verify end-to-end test scenarios are covered
+   - For `edge_cases`: verify edge case handling in both code and tests
+   - Flag missing test coverage as Important
+
+5. **General Code Quality**:
+   - Check for obvious bugs, off-by-one errors, or missing error handling in new code
+   - Check for hardcoded values that should be configurable
+   - Flag issues as Minor unless they could cause runtime failures (then Critical)
 
 This shifts the human reviewer's role from "re-review everything from scratch" to "validate AI findings and check what the AI might have missed." It's a force multiplier for review throughput.
 
