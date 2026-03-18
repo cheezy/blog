@@ -14,72 +14,18 @@ In February 2026, Thoughtworks released an article titled "[The future of softwa
 
 The article went on to list ten themes with a time horizon and core insight.
 
-<table style="text-align: left">
-  <colgroup>
-    <col style="width: 25%">
-    <col style="width: 8%">
-    <col style="width: 67%">
-  </colgroup>
-  <thead>
-    <tr>
-      <th>Theme</th>
-      <th>Horizon</th>
-      <th>Core Insight</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Where does the rigor go?</strong></td>
-      <td>Now</td>
-      <td>Engineering quality doesn't disappear when AI writes code. It migrates to specs, tests, constraints, and risk management.</td>
-    </tr>
-    <tr>
-      <td><strong>From code review to risk tiering</strong></td>
-      <td>Now</td>
-      <td>Code review is being unbundled. Its four functions (mentorship, consistency, correctness, trust) each need a new home.</td>
-    </tr>
-    <tr>
-      <td><strong>The productivity/experience paradox</strong></td>
-      <td>Now</td>
-      <td>Developer productivity and developer experience are decoupling. Organizations face hard choices about which to optimize.</td>
-    </tr>
-    <tr>
-      <td><strong>Security as afterthought</strong></td>
-      <td>Now</td>
-      <td>Agent security is woefully underdeveloped. Email access alone can enable full account takeover.</td>
-    </tr>
-    <tr>
-      <td><strong>The middle loop</strong></td>
-      <td>Now–1 yr</td>
-      <td>A new category of supervisory engineering work is forming between inner-loop coding and outer-loop delivery. Nobody has named it yet.</td>
-    </tr>
-    <tr>
-      <td><strong>Cognitive debt</strong></td>
-      <td>Now–1 yr</td>
-      <td>Technical debt is becoming cognitive debt: the gap between system complexity and human understanding.</td>
-    </tr>
-    <tr>
-      <td><strong>Agent topologies</strong></td>
-      <td>1–3 yrs</td>
-      <td>Conway's Law applies to agents too. Enterprise architecture must now account for agent mobility, specialization, and drift.</td>
-    </tr>
-    <tr>
-      <td><strong>Knowledge graphs & semantic layers</strong></td>
-      <td>1–3 yrs</td>
-      <td>Decades-old technologies are suddenly relevant again as the grounding layer for domain-aware agents.</td>
-    </tr>
-    <tr>
-      <td><strong>The future of roles</strong></td>
-      <td>1–3 yrs</td>
-      <td>PM, developer, and designer roles are converging. Staff engineers face new expectations. Juniors are more valuable than ever.</td>
-    </tr>
-    <tr>
-      <td><strong>Self-healing systems</strong></td>
-      <td>2–5 yrs</td>
-      <td>Moving from human incident response to agent-assisted healing requires solving the 'latent knowledge' problem first.</td>
-    </tr>
-  </tbody>
-</table>
+| Theme | Horizon | Core Insight |
+|:-------|:---------|:--------------|
+| **Where does the rigor go?** | Now | Engineering quality doesn't disappear when AI writes code. It migrates to specs, tests, constraints, and risk management. |
+| **From code review to risk tiering** | Now | Code review is being unbundled. Its four functions (mentorship, consistency, correctness, trust) each need a new home. |
+| **The productivity/experience paradox** | Now | Developer productivity and developer experience are decoupling. Organizations face hard choices about which to optimize. |
+| **Security as afterthought** | Now | Agent security is woefully underdeveloped. Email access alone can enable full account takeover. |
+| **The middle loop** | Now–1 yr | A new category of supervisory engineering work is forming between inner-loop coding and outer-loop delivery. Nobody has named it yet. |
+| **Cognitive debt** | Now–1 yr | Technical debt is becoming cognitive debt: the gap between system complexity and human understanding. |
+| **Agent topologies** | 1–3 yrs | Conway's Law applies to agents too. Enterprise architecture must now account for agent mobility, specialization, and drift. |
+| **Knowledge graphs & semantic layers** | 1–3 yrs | Decades-old technologies are suddenly relevant again as the grounding layer for domain-aware agents. |
+| **The future of roles** | 1–3 yrs | PM, developer, and designer roles are converging. Staff engineers face new expectations. Juniors are more valuable than ever. |
+| **Self-healing systems** | 2–5 yrs | Moving from human incident response to agent-assisted healing requires solving the 'latent knowledge' problem first. |
 
 After listing these ten themes, the article goes on to summarize the findings of the retreat into **eight categories**. I will only discuss the **first category** in this post that covers the first two themes above. I am hoping to have additional posts in this series where I cover the remaining seven categories.
 

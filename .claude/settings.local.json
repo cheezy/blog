@@ -8,7 +8,9 @@
       "WebFetch(domain:cheezyworld.ca)",
       "Bash(hugo)",
       "Bash(md5)",
-      "Bash(hugo list:*)"
+      "Bash(hugo list:*)",
+      "Bash(find /Users/cheezy/dev/blog/static -name *.png -o -name *.jpg -o -name *.svg)",
+      "Bash(find /Users/cheezy/dev/blog -name *banner* -o -name *cheese*)"
     ]
   }
 }

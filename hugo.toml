@@ -11,9 +11,10 @@ language = 'en-ca'
 [params]
   header_image = "img/cheese_banner.png"
   SEOTitle = "Cheezy's Blog"
-  description = "This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing."
+  description = "Insights on AI-driven development, continuous delivery, and extreme programming from Jeff 'Cheezy' Morgan — 30+ years delivering software."
   keyword = "Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir"
-  slogan = "Eat more cheese"
+  slogan = "Delivering software with discipline and joy"
+  custom_css = ["css/custom.css"]
   upstreamAttribution = false
 
   omit_categories = false

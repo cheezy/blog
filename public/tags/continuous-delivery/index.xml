@@ -9,11 +9,11 @@
     <lastBuildDate>Wed, 18 Mar 2026 13:47:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The future of software development retreat: My Response</title>
+      <title>The future of software engineering: My Thoughts - Part 1</title>
       <link>http://localhost:1313/post/tw-retreat-response/</link>
       <pubDate>Wed, 18 Mar 2026 13:47:00 -0400</pubDate>
       <guid>http://localhost:1313/post/tw-retreat-response/</guid>
-      <description>&lt;p&gt;If February 2026, Thoughtworks released a document titled &amp;ldquo;The future of software engineering&amp;rdquo;. It was a document that summarized the thoughts of attendees at a retreat they organized.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In February 2026, Thoughtworks released an article titled &amp;ldquo;&lt;a href=&#34;https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf&#34;&gt;The future of software engineering&lt;/a&gt;&amp;rdquo;. It is a great paper and I encourage everyone to read it. The article lists key themes and takeaways from attendees at a retreat they organized. Here is the Executive summary:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;h3 id=&#34;executive-summary&#34;&gt;Executive summary&lt;/h3&gt;&#xA;&lt;p&gt;Senior engineering practitioners from major technology companies gathered for a multi-day retreat to confront the questions that matter most as AI transforms software development. The discussions covered more than twenty topics across breakout sessions, but the most significant insights didn’t emerge from one single session. Instead, they surfaced at various intersections; we found that the same concerns kept appearing in different conversations, framed by different people solving different problems.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Closing the Loop: How We Added Traceability to Stride</title>
