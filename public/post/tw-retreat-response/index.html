@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Building the Learning Management System - Creating the Backlog" />
-    <meta property="og:title" content="Building the Learning Management System - Creating the Backlog" />
-    <meta property="twitter:title" content="Building the Learning Management System - Creating the Backlog" />
+    <meta name="title" content="The future of software engineering: My Thoughts - Part 1" />
+    <meta property="og:title" content="The future of software engineering: My Thoughts - Part 1" />
+    <meta property="twitter:title" content="The future of software engineering: My Thoughts - Part 1" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="This site contains thoughts and experiences of Jeff Cheezy Morgan that he thought worth sharing." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/lms2/" />
+    <meta property="og:url" content="http://localhost:1313/post/tw-retreat-response/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Building the Learning Management System - Creating the Backlog | Cheezy&#39;s Blog</title>
+    <title>The future of software engineering: My Thoughts - Part 1 | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/lms2/">
+    <link rel="canonical" href="/post/tw-retreat-response/">
 
     
 
@@ -186,57 +186,142 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>Building the Learning Management System - Creating the Backlog</h1>
+            <h1>The future of software engineering: My Thoughts - Part 1</h1>
 
             
-                <p>In this post, we continue to show how the process we outlined in the post <a href="/post/the-new-team/">The New Team</a> works. If you haven&rsquo;t read the initial post, I recommend you do so before reading this one.</p>
-<h2 id="creating-the-backlog">Creating the Backlog</h2>
-<p>In the <a href="/post/lms1/">previous post</a>, we created a set of requirements for the Learning Management System. In this post, we will turn that set of requirements into a backlog of tasks that we will use to build the system.</p>
-<p>In this simulation, the team will use Claude Code with a set of <a href="https://code.claude.com/docs/en/skills">Skills</a> provided by <a href="https://stridelikeaboss.com">Stride</a> to build out the backlog from the document created earlier. This Skill will inform Claude of what details we want to capture in each task. This will be used by agents to build the system.</p>
-<h3 id="why-tasks">Why Tasks?</h3>
-<p>Many developers that are not using Stride or a similar tool, try to provide prompts to AI agents to direct them on their work. Simple prompts are not effective as they lack so many details. It is no wonder that many developers complain that AI didn&rsquo;t implement their requirements properly.</p>
-<p>The <a href="https://cheezyworld.ca/post/what-is-a-task/">tasks</a> as defined by Stride are very detailed and include concerns that might not be thought of initially. This is a large part of the secret of this approach to development. Some of the information that exists in Stride Tasks are:</p>
+                <p>In February 2026, Thoughtworks released an article titled &ldquo;<a href="https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf">The future of software engineering</a>&rdquo;. It is a great paper and I encourage everyone to read it. The article lists key themes and takeaways from attendees at a retreat they organized. Here is the Executive summary:</p>
+<blockquote>
+<h3 id="executive-summary">Executive summary</h3>
+<p>Senior engineering practitioners from major technology companies gathered for a multi-day retreat to confront the questions that matter most as AI transforms software development. The discussions covered more than twenty topics across breakout sessions, but the most significant insights didn’t emerge from one single session. Instead, they surfaced at various intersections; we found that the same concerns kept appearing in different conversations, framed by different people solving different problems.</p>
+<p>This publication synthesizes those cross-cutting themes, organized around the patterns that senior leaders need to understand and act on now. The retreat did not produce a single, unified vision of the future, but instead produced something more useful: a map of the fault lines where current practices are breaking and new ones are forming.</p>
+</blockquote>
+<p>The article went on to list ten themes with a time horizon and core insight.</p>
+<table style="text-align: left">
+  <colgroup>
+    <col style="width: 25%">
+    <col style="width: 8%">
+    <col style="width: 67%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Theme</th>
+      <th>Horizon</th>
+      <th>Core Insight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Where does the rigor go?</strong></td>
+      <td>Now</td>
+      <td>Engineering quality doesn't disappear when AI writes code. It migrates to specs, tests, constraints, and risk management.</td>
+    </tr>
+    <tr>
+      <td><strong>From code review to risk tiering</strong></td>
+      <td>Now</td>
+      <td>Code review is being unbundled. Its four functions (mentorship, consistency, correctness, trust) each need a new home.</td>
+    </tr>
+    <tr>
+      <td><strong>The productivity/experience paradox</strong></td>
+      <td>Now</td>
+      <td>Developer productivity and developer experience are decoupling. Organizations face hard choices about which to optimize.</td>
+    </tr>
+    <tr>
+      <td><strong>Security as afterthought</strong></td>
+      <td>Now</td>
+      <td>Agent security is woefully underdeveloped. Email access alone can enable full account takeover.</td>
+    </tr>
+    <tr>
+      <td><strong>The middle loop</strong></td>
+      <td>Now–1 yr</td>
+      <td>A new category of supervisory engineering work is forming between inner-loop coding and outer-loop delivery. Nobody has named it yet.</td>
+    </tr>
+    <tr>
+      <td><strong>Cognitive debt</strong></td>
+      <td>Now–1 yr</td>
+      <td>Technical debt is becoming cognitive debt: the gap between system complexity and human understanding.</td>
+    </tr>
+    <tr>
+      <td><strong>Agent topologies</strong></td>
+      <td>1–3 yrs</td>
+      <td>Conway's Law applies to agents too. Enterprise architecture must now account for agent mobility, specialization, and drift.</td>
+    </tr>
+    <tr>
+      <td><strong>Knowledge graphs & semantic layers</strong></td>
+      <td>1–3 yrs</td>
+      <td>Decades-old technologies are suddenly relevant again as the grounding layer for domain-aware agents.</td>
+    </tr>
+    <tr>
+      <td><strong>The future of roles</strong></td>
+      <td>1–3 yrs</td>
+      <td>PM, developer, and designer roles are converging. Staff engineers face new expectations. Juniors are more valuable than ever.</td>
+    </tr>
+    <tr>
+      <td><strong>Self-healing systems</strong></td>
+      <td>2–5 yrs</td>
+      <td>Moving from human incident response to agent-assisted healing requires solving the 'latent knowledge' problem first.</td>
+    </tr>
+  </tbody>
+</table>
+<p>After listing these ten themes, the article goes on to summarize the findings of the retreat into <strong>eight categories</strong>. I will only discuss the <strong>first category</strong> in this post that covers the first two themes above. I am hoping to have additional posts in this series where I cover the remaining seven categories.</p>
+<p>Before going into the first category, I need to say that I completely agree with their findings. Since I have started working with AI driven developement eight months ago, I have realized that the rigor that used to come from writing code and reviewing code has moved elsewhere.</p>
+<h3 id="1-where-does-the-rigor-go">1. Where does the rigor go?</h3>
+<p>This is the first category listed in the article and it states that it was <em>The single most important question of the retreat. It surfaced in nearly every session.</em></p>
+<p>Then it begins this section with this statement:</p>
+<blockquote>
+<p>If AI takes over code production, the engineering discipline that used to live in writing and
+reviewing code does not disappear; it moves elsewhere. The retreat spent more time on
+this question than any other, approaching it from various viewpoints, including code
+review, testing, language design, self-healing systems and organizational design.</p>
+</blockquote>
+<p>The article then goes on to list five destinations where the rigor is already moving. They are:</p>
+<ol>
+<li>Upstream to specification review</li>
+<li>Into test suites as first-class artifacts</li>
+<li>Into type systems and constraints</li>
+<li>Into risk management</li>
+<li>Into continuous comprehension</li>
+</ol>
+<p>In my work, I have seen my rigor move to items 1 and 4 with a little focus on item 2.</p>
+<h4 id="upstream-to-specification-review">Upstream to specification review</h4>
+<p>The article states:</p>
+<blockquote>
+<p>Several practitioners reported shifting their review efforts from code to the plan that
+precedes it.  &hellip;  The logic is straightforward: if an AI generates code from a spec, the spec is now the highest-leverage artifact for catching errors. Bad specs produce bad code at scale.</p>
+<p>This has practical implications. Organizations experimenting with spec-driven development report that the specifications themselves need new formats. Traditional user stories are too vague</p>
+</blockquote>
+<p>I started seeing this last September. With my client, we went through several iterations of refining our specifications. We realized then that it was not possible to have our agent write accurate and complete code from a simple prompt. We tried to use traditional user stories, but they did not deliver the level of detail needed for the agent to understand the requirements.</p>
+<p>I spent the second half of December experimenting with different datasets and different approaches to deliver that data to an agent in order to drive accuracy. This was the genesis of <a href="https://stridelikeaboss.com">Stride</a>. I discovered that the agent needed a lot of context to be accurate, and that context needed to be delivered just-in-time.</p>
+<p>The outcome of this effort was the <a href="https://cheezyworld.ca/post/what-is-a-task/">Stride Task</a>. <strong>This is my specification</strong>. It contains all the context that the agent needs to be accurate. When these tasks are uploaded to <a href="https://stridelikeaboss.com">Stride</a> via one of the <a href="https://code.claude.com/docs/en/skills">Skills</a> that are a part of the <a href="https://github.com/cheezy/stride/tree/main">Stride Claude Code Plugin</a>, they are placed into a <em>Backlog</em> column (my upstream). <strong>This is where my review takes place</strong>. The tasks are not available for agents to begin working until they are moved to the <em>Ready</em> column, so this provides the developer and/or product manager with the opportunity to review and refine the task before it is worked on.</p>
+<h4 id="into-risk-management">Into risk management</h4>
+<p>The article states:</p>
+<blockquote>
+<p>Not all code carries the same risk. The retreat discussed tiering code by business blast radius, distinguishing between internal tools, external-facing services and safety-critical systems. This risk mapping determines where human review is essential and where automated verification is sufficient.</p>
+<p>&hellip; This moves engineering from a craft model (every line is hand-reviewed) to a risk management model (verification investment matches exposure).</p>
+</blockquote>
+<p>When I started using AI to write code, I reviewed every single diff that the agent generated. The teams I was working with created PRs for every single task. We spent a lot of time reviewing everything. At that time it was fairly common to find some code that we wanted to change. But as the agents got better and as we got better at <a href="https://cheezyworld.ca/post/my_dev_environment/">providing the guardrails</a> for the agents, we started seeing fewer and fewer issues that needed to be addressed. We eventually reached a point where it was extremely rare for us to find some code that needed changes during our code reviews. We realized we were spending far more time reviewing code than it took the agent to generate the code and the return on that time was very small.</p>
+<p>In early January, I was having conversations with a lot of people about how to manage the risk of using AI to write code. I found that others were having the same experience that I had over the past six months. The need to review every line of code that the agent produces becomes less necessary as the agents proved themselves. Understanding this, I built an <a href="https://github.com/cheezy/kanban/blob/main/docs/REVIEW-WORKFLOW.md">optional review process</a> into the <a href="https://cheezyworld.ca/post/stride-enhanced-workflow/">Stride workflow</a>. This allows the developer and/or product manager to flag individual tasks as needing a human review. Tasks that are flagged are paused once the agent completes the implementation and will not continue until the human has completed their review.</p>
+<p>To assist with this review, I added a <a href="https://github.com/cheezy/stride/blob/main/agents/task-reviewer.md"><strong>task-reviewer</strong></a> <a href="https://code.claude.com/docs/en/sub-agents">SubAgent</a> to the Stride plugin. This SubAgent reviews the code once the agent completes the implementation, and compares the code changes to key fields in the task specification. If the code does not match the specification, the SubAgent provides a report to the implementation agent about the shortcomings and asks it to resolve the issues. If the code matches the specification, a <a href="https://cheezyworld.ca/post/review-report/">review report</a> is attached to the task specification so anybody on the team can see the results of the review.</p>
+<p>The final ingredient to my risk management approach is <a href="https://github.com/cheezy/kanban/blob/main/docs/AGENT-HOOK-EXECUTION-GUIDE.md">Stride Hooks</a>. The hooks specify four places in the development workflow (before and after implementation and review) where the agent must run a set of developer defined commands. These hooks are used to force the agent to perform tasks like running test suites, linting, static code analysis, security scanning, and other quality assurance steps. These hooks ensure that the code and tests are always in a working state and the code adheres to the team&rsquo;s standards.</p>
+<h4 id="into-test-suites-as-first-class-artifacts">Into test suites as first-class artifacts</h4>
+<p>The article states:</p>
+<blockquote>
+<p>One of the retreat&rsquo;s most shareable insights was that test-driven development produces dramatically better results from AI coding agents. The mechanism is specific: TDD prevents a failure mode where agents write tests that verify broken behavior. When the tests exist before the code, agents cannot cheat by writing a test that simply confirms whatever incorrect implementation they produced.</p>
+<p>This reframes TDD as a form of prompt engineering. The tests become deterministic validation for non-deterministic generation.</p>
+</blockquote>
+<p>I am a long time practitioner of Test Driven Development. When I started having AI write the majority of my code, I faced an internal battle. I wanted to continue practicing TDD, but it was unnatural for the agent to work in that way. I had to step back and realize that it was the <a href="https://cheezyworld.ca/post/tdd-with-ai/">outcome that I wanted to achieve and not the specific practice</a>. I wanted to have well factored code that was thoroughly tested with quality unit tests.</p>
+<p>When I designed the <a href="https://cheezyworld.ca/post/what-is-a-task/">Stride Task</a>, I wanted to ensure the specification (task) had everything needed to specify the desired behaviour. Here are a few of the most critical fields:</p>
 <ul>
-<li><code>title</code> - Short description (required)</li>
-<li><code>description</code> - Detailed explanation</li>
 <li><code>acceptance_criteria</code> - Definition of done</li>
-<li><code>priority</code> - :low, :medium, :high, or :critical (required)</li>
-<li><code>complexity</code> - :small, :medium, or :large</li>
-<li><code>why</code> - Problem/value explanation</li>
-<li><code>what</code> - Specific change description</li>
-<li><code>where_context</code> - Location in code/UI</li>
-<li><code>estimated_files</code> - Files expected to change</li>
 <li><code>patterns_to_follow</code> - Code patterns to replicate</li>
-<li><code>database_changes</code> - Schema modifications needed</li>
 <li><code>validation_rules</code> - Input validation requirements</li>
-<li><code>key_files</code> - Critical files to modify (embeds)</li>
-<li><code>verification_steps</code> - How to verify completion (embeds)</li>
+<li><code>verification_steps</code> - How to verify completion</li>
 <li><code>pitfalls</code> - What NOT to do</li>
-<li><code>out_of_scope</code> - Explicitly excluded functionality</li>
-<li><code>required_capabilities</code> - Agent skills needed (e.g., [&ldquo;code_generation&rdquo;, &ldquo;testing&rdquo;])</li>
-<li><code>security_considerations</code> - Security implications</li>
 <li><code>testing_strategy</code> - Comprehensive testing approach</li>
-<li><code>integration_points</code> - External systems/events involved</li>
-<li><code>technology_requirements</code> - Specific tools/libraries needed</li>
-<li><code>telemetry_event</code> - Event name to emit</li>
-<li><code>metrics_to_track</code> - What to measure</li>
-<li><code>logging_requirements</code> - Logging expectations</li>
-<li><code>error_user_message</code> - User-facing error message</li>
-<li><code>error_on_failure</code> - Error to raise on failure</li>
-<li><code>dependencies</code> - Task identifiers that must complete first</li>
-<li><code>parent_id</code> - Parent goal (for hierarchical structure)</li>
-<li><code>needs_review</code> / <code>review_status</code> - Review workflow</li>
 </ul>
-<p>There are additional fields in the task that are used for internal purposes and also to support a review process. We&rsquo;ll describe the review process in a later post.</p>
-<h3 id="building-the-backlog">Building the Backlog</h3>
-<p>The video is not that exciting. Most of the time is spent waiting for Claude to work out the details of the tasks. In my opinion, this is time well spent.</p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/xFuugLMfD3M?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-    </div>
-
-<h3 id="what-happens-next">What happens next?</h3>
-<p>After the backlog is uploaded to Stride, the team will review the tasks and make any necessary changes. This is one field that is very important. It is the <code>Needs Review</code> field. If this field is set to true, the agent implementing the task will wait for the human reviewer to give them the okay or request changes prior to grabbing the next task. This is yet another way for Humans to be involved in the process.</p>
-<p>Once the teams are happy with the details of the tasks they can simply move them to the <code>Ready</code> column on the board. That signals to the agent that they are <em>ready</em> for implementation. That is where the next post will pick up.</p>
+<p>The <strong>task-reviewer</strong> SubAgent detailed in the previous section uses these fields to perform its review. This is my form of specifying the details before implementation and ensuring completeness and correctness after implementation.</p>
+<h3 id="summary">Summary</h3>
+<p>I have used <a href="https://code.claude.com/docs/en/overview">Claude</a> to write code nearly every day since August. I have seen its capabilities and accuracy improve dramatically with each new model release. My knowledge of how to guide the agent to produce quality code that addresses the requirements has also improved as Anthropic has provided new tools to help with this. During the past three months, I have dedicated my time to building out tools that address the challenges I face when working with AI coding agents. The challenges I have seen are exactly what is presented in this article. I feel completely validated!</p>
+<p>Stay tuned for future posts where I discuss the other seven categories presented in this article.</p>
 
             
              
@@ -424,7 +509,7 @@
         <h5>LAST POSTS</h5>
         <ul>
         
-            <li><a href="/post/tw-retreat-response/">The future of software development retreat: My Thoughts</a></li>
+            <li><a href="/post/tw-retreat-response/">The future of software engineering: My Thoughts - Part 1</a></li>
         
             <li><a href="/post/review-report/">Closing the Loop: How We Added Traceability to Stride</a></li>
         
