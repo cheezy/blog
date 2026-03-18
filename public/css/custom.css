@@ -16,13 +16,13 @@ header.intro-header {
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
-    padding: 60px 0 40px;
+    padding: 25px 0 15px;
 }
 
 @media only screen and (min-width: 768px) {
     .intro-header .site-heading,
     .intro-header .post-heading,
     .intro-header .page-heading {
-        padding: 80px 0 50px;
+        padding: 40px 0 25px;
     }
 }
