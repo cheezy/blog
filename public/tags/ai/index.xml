@@ -6,8 +6,15 @@
     <description>Recent content in AI on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Mar 2026 13:47:00 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 12:19:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The future of software engineering: My Thoughts - Part 2</title>
+      <link>http://localhost:1313/post/tw-retreat-response2/</link>
+      <pubDate>Fri, 20 Mar 2026 12:19:00 -0400</pubDate>
+      <guid>http://localhost:1313/post/tw-retreat-response2/</guid>
+      <description>&lt;p&gt;This is part 2 in a series where I discuss my thoughts on the Thoughtworks retreat report titled &lt;a href=&#34;https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf&#34;&gt;The future of software engineering&lt;/a&gt;. If you haven&amp;rsquo;t read &lt;a href=&#34;http://localhost:1313/post/tw-retreat-response/&#34;&gt;part 1&lt;/a&gt;, I&amp;rsquo;d encourage you to do so first as it provides a lot of context.&lt;/p&gt;&#xA;&lt;p&gt;In part 2 I will discuss the second and third categories from the report. Let&amp;rsquo;s jump right in.&lt;/p&gt;&#xA;&lt;h3 id=&#34;2-the-middle-loop-a-new-category-of-work&#34;&gt;2. The middle loop: a new category of work&lt;/h3&gt;&#xA;&lt;p&gt;The report states &lt;em&gt;&amp;ldquo;The retreat&amp;rsquo;s strongest first-mover concept. Nobody in the industry has named this yet.&amp;rdquo;&lt;/em&gt; It goes on to say:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The future of software engineering: My Thoughts - Part 1</title>
       <link>http://localhost:1313/post/tw-retreat-response/</link>

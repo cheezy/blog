@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="TDD With AI" />
-    <meta property="og:title" content="TDD With AI" />
-    <meta property="twitter:title" content="TDD With AI" />
+    <meta name="title" content="The future of software engineering: My Thoughts - Part 2" />
+    <meta property="og:title" content="The future of software engineering: My Thoughts - Part 2" />
+    <meta property="twitter:title" content="The future of software engineering: My Thoughts - Part 2" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/tdd-with-ai/" />
+    <meta property="og:url" content="http://localhost:1313/post/tw-retreat-response2/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>TDD With AI | Cheezy&#39;s Blog</title>
+    <title>The future of software engineering: My Thoughts - Part 2 | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/tdd-with-ai/">
+    <link rel="canonical" href="/post/tw-retreat-response2/">
 
     
 
@@ -186,47 +186,92 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>TDD With AI</h1>
+            <h1>The future of software engineering: My Thoughts - Part 2</h1>
 
             
-                <h2 id="im-a-tdd-guy">I&rsquo;m a TDD guy</h2>
-<p>I have been writing code using Test Driven Development for about 25 years. I am a huge believer in the benefits of this practice. I have spoken about it at conferences around the world and have taught many workshops on the subject. As I started to dig into AI the first thing I tried to do is see how it would fit into my TDD workflow. I tried numerous approaches and they all felt unnatural. I watched videos of others try to do the same and didn&rsquo;t feel like they were successful.</p>
-<p>What was wrong? Why wouldn&rsquo;t AI work with my TDD workflow? I felt very frustrated and thought to myself &ldquo;AI will not really work for Craftsmen like myself&rdquo;. And yet the popularity of AI continued to grow and the tools became more powerful and capable.</p>
-<h2 id="why-am-i-a-tdd-guy">Why am I a TDD guy?</h2>
-<p>I am a TDD guy because it is the best way I know to produce code that is thoroughly tested and well factored. Throughout the years this practice has served me well. At the same time I continue to work with AI and see the benefits. My son and I have created applications in a half day that would take a week or two to write without AI.</p>
-<p>It was through this process (and growing) that I realized that TDD was simply a practice. It is a practice that achieves a desired outcome. The outcome - as I said earlier - is to produce code that is thoroughly tested and well factored. What if I could achieve the same outcome using AI? What if I was able to create code that was nearly identical to what I would procude using TDD?</p>
-<p>I have spent a lot of time experimenting with different tools, different configurations, different workflows. Throughout the months I have also seen the AI development tools mature which has helped make my desired outcome easier to achieve. I now believe I can use AI to build an application while ensuring the code is fully tested and well factored. What follows is a very high-level overview of what works for me.</p>
-<h2 id="what-works-for-me">What works for me</h2>
-<h3 id="make-important-things-easy">Make important things easy</h3>
-<p>The first thing that I believe a developer needs to do is make it very easy within their IDE to do the things that are important to them. Here is my list:</p>
+                <p>This is part 2 in a series where I discuss my thoughts on the Thoughtworks retreat report titled <a href="https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf">The future of software engineering</a>. If you haven&rsquo;t read <a href="/post/tw-retreat-response/">part 1</a>, I&rsquo;d encourage you to do so first as it provides a lot of context.</p>
+<p>In part 2, I will discuss the second and third categories from the report. Let&rsquo;s jump right in.</p>
+<h3 id="2-the-middle-loop-a-new-category-of-work">2. The middle loop: a new category of work</h3>
+<p>The report states <em>&ldquo;The retreat&rsquo;s strongest first-mover concept. Nobody in the industry has named this yet.&rdquo;</em> It goes on to say:</p>
+<blockquote>
+<p>Software development has long been described in terms of two loops. The inner loop is the developer&rsquo;s personal cycle of writing, testing and debugging code. The outer loop is the broader delivery cycle of CI/CD, deployment and operations. The retreat identified a third: a middle loop of supervisory engineering work that sits between them.</p>
+<p>This middle loop involves directing, evaluating and fixing the output of AI agents. It requires a different skill set than writing code. It demands the ability to decompose problems into agent-sized work packages, calibrate trust in agent output, recognize when agents are producing plausible-looking but incorrect results and maintain architectural coherence across many parallel streams of agent-generated work.</p>
+</blockquote>
+<p>I had to think about this one a lot. The loop of directing, evaluating and fixing the <strong>output</strong> was something that I felt I had to do somewhat regularly last year. But as the agents became more powerful, I felt this type of work became less necessary. Eventually, I decided to address this issue head on.</p>
+<h4 id="getting-the-agent-to-produce-the-right-thing">Getting the agent to produce the right thing</h4>
+<p>When I first started using agents to write my code I started by typing a prompt. Obviously, the prompt had very little context and contained few of the details the agent needed to accurately implement my desired change. I tried to compensate by asking the agent to take extremely small steps. This worked okay, but I did have to maintain that middle loop discussed in the report. It felt bad, and I was unable to accept this as the new normal.</p>
+<p>The idea of verifying the accuracy <em>after</em> the agent completed a task was a form of rework. To me, rework is waste and I always feel the need to try to eliminate it. I would prefer for the agent to have all necessary information it needed to get it right the first time. This meant that I needed to abandon the idea of using prompts and instead use a more structured approach.</p>
+<p>In mid-December I started asking my agent what information it needed to complete a task accurately. I also asked what format was the easiest for it to consume. This started a process of providing the agent with structured inputs, seeing how accurate the output was, and iterating on the inputs until I felt confident in the results. The outcome was what became Stride&rsquo;s <a href="https://cheezyworld.ca/post/what-is-a-task/">task</a> definition. This task includes a lot of information about what to build. Here is a sampling of some of the fields:</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>name</code></td>
+          <td><code>description</code></td>
+          <td><code>acceptance criteria</code></td>
+      </tr>
+      <tr>
+          <td><code>why</code></td>
+          <td><code>what</code></td>
+          <td><code>patterns to follow</code></td>
+      </tr>
+      <tr>
+          <td><code>validation rules</code></td>
+          <td><code>database changes</code></td>
+          <td><code>pitfalls</code></td>
+      </tr>
+      <tr>
+          <td><code>security considerations</code></td>
+          <td><code>integration points</code></td>
+          <td><code>out of scope</code></td>
+      </tr>
+      <tr>
+          <td><code>telemetry events</code></td>
+          <td><code>metrics to track</code></td>
+          <td><code>logging requirements</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>This approach forces me to spend a little more time up front ensuring that I provide the agent with the information it needs, but I spend almost no time afterwards verifying the output. The <a href="https://github.com/cheezy/stride">Stride Skills</a> guide the agent in the creation of these detailed tasks.</p>
+<p>The next piece of my approach is to ensure the output matches the task details. The Stride <a href="https://github.com/cheezy/stride/blob/main/agents/task-reviewer.md">task reviewer</a> <a href="https://code.claude.com/docs/en/sub-agents">SubAgent</a> handles this. It compares the code changes to the task specification and ensures that the implementation matches the specification. If it doesn&rsquo;t, the SubAgent provides the details to the coding agent and asks it to fix the issues. If everything is okay, this SubAgent attaches a review report to the task so a human can review it later.</p>
+<p>The final piece of my approach is to perform a quick review of the application changes using a tool like <a href="https://tidewave.ai/">Tidewave</a>. Tidewave allows me to make the changes in the browser while I am looking at the application and see the results immediately.</p>
+<h3 id="3-agent-topologies-and-enterprise-architecture">3. Agent topologies and enterprise architecture</h3>
+<p>The report states <em>&ldquo;Conway&rsquo;s Law didn&rsquo;t retire. It got more complicated&rdquo;</em></p>
+<blockquote>
+<p>The retreat introduced the concept of &ldquo;agent topologies&rdquo; as an extension of the Team Topologies framework. The premise: if organizations design systems that mirror their communication structures, what happens when agents become first-class participants in those structures?</p>
+<p>Unlike humans, agents can be duplicated instantly and deployed across multiple teams without onboarding friction. A specialized database agent can exist on every team simultaneously, bringing consistent expertise without the centralization bottleneck that comes with a single human database specialist. This sounds like a pure win, but the retreat identified several complicating factors.</p>
+</blockquote>
+<p>It goes on to list three complicating factors:</p>
+<ol>
+<li>
+<p><strong>The speed mismatch</strong>: Agents burn through backlogs so fast they collide with slow organizational dependencies.  &hellip;  The result is not faster delivery. It is the same speed with more frustration, because the bottleneck has shifted from engineering capacity to everything else.</p>
+</li>
+<li>
+<p><strong>Agent drift</strong>: Agents that learn from their context will diverge over time. &hellip;  This mirrors the human problem of team-specific norms, but on an accelerated timeline.</p>
+</li>
+<li>
+<p><strong>Decision fatigue as the new bottleneck</strong>: If agents can produce work faster than leaders can review and approve it, the constraint shifts from production capacity to decision-making capacity. Middle managers who previously served as coordination points now become approval bottlenecks.</p>
+</li>
+</ol>
+<p>I have seen all three of these problems and they have led me to conclude that it is not possible to bring AI into an organization without significant disruption. In the pre-AI days, we built our entire organization and process around a certain pace of development and level of quality. Our requirements process was designed to deliver user stories to the teams just-in-time. The testing organization was sized to the stream of changes. This carries forward to everything that touches development - for example, providing language translations for applications, legal review of text used in software, pipelines, operations, etc.</p>
+<p>When the pace of development increases dramatically and the quality goes up by the same factor, the entire organization needs to be restructured to accommodate the new reality. This, in my opinion, is the most difficult part of transforming into an AI-driven organization.</p>
+<p>It is not possible to simply layer AI on top of your existing Scrum or other Agile process. They are not compatible. If you go down this route, you will need to slow down AI and accept the fact that your organization will be less productive than it could be.</p>
+<p>In February I wrote a <a href="https://cheezyworld.ca/post/the-new-team/">post on where I think this could be going</a>. I think this concept addresses <strong>the speed mismatch</strong> and <strong>decision fatigue as the new bottleneck</strong>.  In essence:</p>
 <ul>
-<li>make it easy and fast to run tests</li>
-<li>make it easy to get code coverage infomation when the tests run</li>
-<li>make it easy to run static code analysis that you configure to check for the things you think are important</li>
-<li>make it easy to run security analysis on both the code as well as dependencies of the application</li>
+<li>Teams will be comprised of a product owner and a couple of developers</li>
+<li>Teams will collaborate with AI to quickly build out the requirements for their work</li>
+<li>Teams will collaborate with AI to quickly build out the code for their work</li>
+<li>Specialized Agents will be built to handle external requirements like language translations, legal verbiage, production support, etc.</li>
 </ul>
-<h3 id="educate-your-llm">Educate your LLM</h3>
-<p>Once you make it easy to perform these tasks you need to let your LLM know how to run these commands. You would typically do this by adding these commands to your <code>AGENTS.md</code> file. This is a file that exists at the root of the project and your LLMs will read this to learn information about the project. Here are a few of the entries from this file in an Elixir project I am currently working on:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">### Quality guidelines  
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task that has new functions write unit tests for the new function
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task that updates code make sure all existing unit tests pass and write new tests if needed
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Each time you write or update a unit tests run them with <span style="color:#f1fa8c">`mix test`</span> and ensure they pass
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task run <span style="color:#f1fa8c">`mix test --cover`</span> and ensure coverage is above the threshold.
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you complete a task run <span style="color:#f1fa8c">`mix credo --strict`</span> to check for code quality issues and fix them
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">### Security guidelines
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you add or update a dependency run <span style="color:#f1fa8c">`mix deps.audit`</span> and <span style="color:#f1fa8c">`mix hex.audit`</span> to check for security issues
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> When you add or update a dependency run <span style="color:#f1fa8c">`mix hex.outdated`</span> to check for outdated dependencies
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> when you complete a task run <span style="color:#f1fa8c">`mix sobelow --config`</span> to check for security issues and fix any issue
-</span></span></code></pre></div><p>You can also add entries in this file to tell the LLM how to use some of the dependencies and even where to find documentation about your projects dependencies.</p>
-<p>Now that we have made it easy to test, check for quality, and perform security check and we have shown our LLM how to do this it is time to move to a workflow that works given this setup.</p>
-<h3 id="workflow">Workflow</h3>
-<p>Now that we have our environment setup and our LLM understanding what is important to us, we can start to write code. I like to start by asking the LLM to write a PLAN for the next task. I explain what the task is, tell it to divide the task into small steps, and then ask it to write the plan to a file that we can use to track progress. I also remind it to follow the guidelines I have in my AGENTS.md file (although it should already know this). If the plan seems too complicated I ask the LLM to rewrite all or portions of the plan breaking it into smaller steps.</p>
-<p>Next I work with the LLM to execute the plan. I simply ask the LLM to perform the next step. This usually takes a few minutes and once it is finished I am able to review the code it has created. There is no need for me to run the tests as the LLM has already done that for me. There is no need for me to run the static code analysis as the LLM has already done that for me. There is no need to perform security analysis as the LLM has already done that for me. I just take a quick look at the product code. If there is something that I think needs improvement I have the choice to do it myself or ask the LLM to do it. When I am content with the step I commit the code.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>This is the process I follow when I am writing code using my LLM. I am not doing TDD but I am achieving the same outcome I would expect had I been doing TDD. And I am producing in an hour what it would take me all day to produce. Am I still a believer in TDD? Yes. Will I still do TDD? Yes. But due to the productivity boost, I spend most of my time these days writing code using AI.</p>
+<p>I am totally fine with <strong>agent drift</strong> in the same way I am fine with different teams having different norms. Instead of trying to drive <strong>standardization</strong> across the organization, I would rather teach developers details on how to build out quality <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">Skills</a>, <a href="https://code.claude.com/docs/en/sub-agents">SubAgents</a>, and <a href="https://platform.claude.com/docs/en/agent-sdk/hooks">Agent Hooks</a> so they can harness AI to produce what is appropriate for them in their context.</p>
+<h3 id="summary">Summary</h3>
+<p>The second and third category from the Thoughtworks paper discuss very important issues that need to be addressed by any organization that is trying to be successful with AI driven development. First of all, knowing how to direct AI to build the correct features and ensuring that it does that is <em>fundamental to success</em>. Secondly, understanding that AI is disruptive to your entire organization and if you want to be successful <em>you need to be ready to make changes</em> to see the full benefit.</p>
 
             
              
