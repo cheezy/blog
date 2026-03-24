@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Mar 2026 12:19:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 12:37:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution</title>
+      <link>http://localhost:1313/post/stride-new-plugins/</link>
+      <pubDate>Tue, 24 Mar 2026 12:37:00 -0400</pubDate>
+      <guid>http://localhost:1313/post/stride-new-plugins/</guid>
+      <description>&lt;p&gt;Prior to today, Stride had excellent support for Claude Code via six Skills and four SubAgents. All other agents were only provided with Skills without the enforcement and additional capabilities added by the SubAgents.&lt;/p&gt;&#xA;&lt;p&gt;Today I shipped three updates that fundamentally change how AI agents interact with Stride. Two new platform extensions bring Stride&amp;rsquo;s full workflow and support to &lt;a href=&#34;https://github.com/cheezy/stride-copilot&#34;&gt;GitHub Copilot&lt;/a&gt; and &lt;a href=&#34;https://github.com/cheezy/stride-gemini&#34;&gt;Google Gemini CLI&lt;/a&gt;. And a new Claude Code hooks integration eliminates the most persistent friction point that still existed in the Claude Code agent workflow: permission prompts.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The future of software engineering: My Thoughts - Part 2</title>
       <link>http://localhost:1313/post/tw-retreat-response2/</link>
@@ -328,7 +335,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>

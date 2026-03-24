@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution" />
+    <meta property="og:title" content="Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution" />
+    <meta property="twitter:title" content="Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/stride-new-plugins/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/stride-new-plugins/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution</h1>
+
+            
+                <p>Prior to today, Stride had excellent support for Claude Code via six Skills and four SubAgents. All other agents were only provided with Skills without the enforcement and additional capabilities added by the SubAgents.</p>
+<p>Today I shipped three updates that fundamentally change how AI agents interact with Stride. Two new platform extensions bring Stride&rsquo;s full workflow and support to <a href="https://github.com/cheezy/stride-copilot">GitHub Copilot</a> and <a href="https://github.com/cheezy/stride-gemini">Google Gemini CLI</a>. And a new Claude Code hooks integration eliminates the most persistent friction point that still existed in the Claude Code agent workflow: permission prompts.</p>
+<h2 id="the-problem-im-solving">The Problem I&rsquo;m Solving</h2>
+<p>Stride was built on a simple premise: AI agents are most effective when they collaborate closely with humans and when they follow a structured workflow. Claim a task, execute setup hooks, do the work, run validation, mark it complete. Every step has a purpose. The hooks ensure code is current before you start and tested before you finish.</p>
+<p>But until now, this workflow had two limitations:</p>
+<ol>
+<li>
+<p><strong>It only worked in Claude Code.</strong> Developers using GitHub Copilot or Google Gemini CLI could only use a few of Stride&rsquo;s skills and could not leverage additional capabilities provided by the SubAgents.</p>
+</li>
+<li>
+<p><strong>Even in Claude Code, hook execution was painful.</strong> Every hook command execution triggered a permission dialog. The user had already defined these commands in <code>.stride.md</code> — they clearly wanted them to run — but the CLI&rsquo;s permission system didn&rsquo;t know that.</p>
+</li>
+</ol>
+<p>Today&rsquo;s release fixes both.</p>
+<h2 id="stride-for-github-copilot-and-google-gemini-cli">Stride for GitHub Copilot and Google Gemini CLI</h2>
+<p>Both extensions ship the same six workflow skills and four specialized agents that Claude Code users already know — adapted for each platform&rsquo;s native conventions.</p>
+<h3 id="skills">Skills</h3>
+<ul>
+<li><strong>stride-claiming-tasks</strong> — Task discovery and claiming with <code>before_doing</code> hook execution</li>
+<li><strong>stride-completing-tasks</strong> — Dual-hook completion with <code>after_doing</code> and <code>before_review</code></li>
+<li><strong>stride-creating-tasks</strong> — Task creation with validated field formats</li>
+<li><strong>stride-creating-goals</strong> — Batch goal creation with correct API structure</li>
+<li><strong>stride-enriching-tasks</strong> — Codebase exploration to fill in sparse task specs</li>
+<li><strong>stride-subagent-workflow</strong> — Decision matrix for exploration, planning, and review</li>
+</ul>
+<p>Each skill contains the exact API fields, hook execution patterns, and validation rules needed for that workflow phase. The content is adapted for each platform&rsquo;s conventions but the substance is identical — an agent using Copilot or Gemini follows the same workflow as one using Claude Code.</p>
+<h3 id="agents">Agents</h3>
+<ul>
+<li><strong>task-explorer</strong> — Reads key files, finds related tests, searches for patterns before implementation begins</li>
+<li><strong>task-reviewer</strong> — Reviews changes against acceptance criteria and pitfalls, producing structured review reports</li>
+<li><strong>task-decomposer</strong> — Breaks goals and large tasks into dependency-ordered child tasks</li>
+<li><strong>hook-diagnostician</strong> — Parses hook failure output and returns prioritized fix plans</li>
+</ul>
+<p>These are the same agents Claude Code users have been using through the Stride plugin&rsquo;s subagent workflow. Copilot ships them in <code>.github/agents/</code> where agent mode picks them up automatically. Gemini CLI ships them through its native extension system.</p>
+<h3 id="installation">Installation</h3>
+<p><strong>GitHub Copilot:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Clone into your project</span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/cheezy/stride-copilot.git .github/stride-copilot/
+</span></span></code></pre></div><p><strong>Google Gemini CLI:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gemini extensions install cheezy/stride-gemini
+</span></span></code></pre></div><h2 id="why-multi-platform-matters">Why Multi-Platform Matters</h2>
+<p>AI-assisted development isn&rsquo;t a single-tool story. Teams use different editors, different AI providers, different workflows. A senior developer might use Claude Code while a teammate prefers Copilot. A contractor might work in Gemini CLI.</p>
+<p>Stride&rsquo;s task management doesn&rsquo;t care which AI tool claims the task. The API is the same. The hooks are the same. The workflow is the same. What matters is that every agent — regardless of platform — follows the structured approach that prevents the failures I&rsquo;ve seen over and over: claiming tasks without pulling latest code, marking work complete without running tests, creating tasks with missing specifications that waste hours during implementation.</p>
+<p>By shipping platform-native extensions instead of lowest-common-denominator adaptations, each agent gets an experience that feels right for its environment while maintaining the workflow discipline that makes Stride effective.</p>
+<h2 id="zero-prompt-hook-execution">Zero-Prompt Hook Execution</h2>
+<p>Now for the change that Claude Code users have been waiting for.</p>
+<h3 id="the-permission-problem">The Permission Problem</h3>
+<p>Here&rsquo;s what hook execution looked like before today:</p>
+<pre tabindex="0"><code>Agent: Running before_doing hook...
+CLI: ⚠️ Allow Bash(git pull origin main)? [y/n]
+User: y
+CLI: ⚠️ Allow Bash(mix deps.get)? [y/n]
+User: y
+CLI: ⚠️ Allow Bash(mix ecto.migrate)? [y/n]
+User: y
+</code></pre><p>Multiply this by four hooks (before_doing, after_doing, before_review, after_review) with multiple commands each, and you&rsquo;re clicking through many permission dialogs per task. For every task. All day.</p>
+<p>The irony is thick: the user wrote these commands in <code>.stride.md</code>. They&rsquo;re not surprised by tests running — they put it there specifically because they want it to run. But Claude Code&rsquo;s permission system operates at the tool level, not the intent level. Every Bash command triggers a prompt regardless of context.</p>
+<p>I tried solving this in software. CLAUDE.md instructions saying &ldquo;don&rsquo;t prompt.&rdquo; Skill documentation saying &ldquo;hooks are pre-authorized.&rdquo; None of it worked because the prompting happens in the CLI harness, not in the LLM.</p>
+<h3 id="the-solution-claude-code-hooks">The Solution: Claude Code Hooks</h3>
+<p>Claude Code has a hook system that executes shell commands at lifecycle events — <em>PreToolUse</em>, <em>PostToolUse</em>, <em>SessionStart</em>, and others. These hooks run on the harness itself, not through Claude&rsquo;s Bash tool. No tool call means no permission prompt.</p>
+<p>The Stride plugin now ships two new files:</p>
+<p><strong><code>hooks/hooks.json</code></strong> registers the plugin&rsquo;s hooks with Claude Code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;hooks&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;PostToolUse&#34;</span>: [{
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;matcher&#34;</span>: <span style="color:#f1fa8c">&#34;Bash&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;hooks&#34;</span>: [{
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;command&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;command&#34;</span>: <span style="color:#f1fa8c">&#34;${CLAUDE_PLUGIN_ROOT}/hooks/stride-hook.sh post&#34;</span>
+</span></span><span style="display:flex;"><span>      }]
+</span></span><span style="display:flex;"><span>    }],
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;PreToolUse&#34;</span>: [{
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;matcher&#34;</span>: <span style="color:#f1fa8c">&#34;Bash&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;hooks&#34;</span>: [{
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;command&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;command&#34;</span>: <span style="color:#f1fa8c">&#34;${CLAUDE_PLUGIN_ROOT}/hooks/stride-hook.sh pre&#34;</span>
+</span></span><span style="display:flex;"><span>      }]
+</span></span><span style="display:flex;"><span>    }]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong><code>hooks/stride-hook.sh</code></strong> is the bridge between Claude Code&rsquo;s event system and Stride&rsquo;s <code>.stride.md</code> format. When a Bash tool call fires, the script:</p>
+<ol>
+<li>Reads the command from the hook&rsquo;s JSON input</li>
+<li>Checks if it&rsquo;s a Stride API call (claim, complete, or mark_reviewed)</li>
+<li>Determines which <code>.stride.md</code> section to execute</li>
+<li>Parses that section and runs each uncommented command</li>
+<li>Exits 2 on failure to block the tool call (in PreToolUse context)</li>
+</ol>
+<p>The routing is straightforward:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Event</th>
+          <th>API Pattern</th>
+          <th>Stride Hook</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>PostToolUse</td>
+          <td><code>/api/tasks/claim</code></td>
+          <td><code>before_doing</code></td>
+      </tr>
+      <tr>
+          <td>PreToolUse</td>
+          <td><code>/api/tasks/:id/complete</code></td>
+          <td><code>after_doing</code></td>
+      </tr>
+      <tr>
+          <td>PostToolUse</td>
+          <td><code>/api/tasks/:id/complete</code></td>
+          <td><code>before_review</code></td>
+      </tr>
+      <tr>
+          <td>PostToolUse</td>
+          <td><code>/api/tasks/:id/mark_reviewed</code></td>
+          <td><code>after_review</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>The <code>after_doing</code> hook is the critical one. It runs as a PreToolUse hook on the completion API call, which means if your tests fail, the completion call is blocked. The agent can&rsquo;t mark work done until validation passes. This is the same guarantee the existing workflow provides, but now it&rsquo;s enforced deterministically by the harness rather than relying on the LLM to follow instructions.</p>
+<h3 id="generic-by-design">Generic by Design</h3>
+<p>The script doesn&rsquo;t know or care what&rsquo;s in your <code>.stride.md</code>. It parses whatever you&rsquo;ve defined and runs it. One team might have:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">## after_doing
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>``<span style="color:#f1fa8c">`bash
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mix test --cover
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mix format --check-formatted
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mix credo --strict
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mix sobelow --config
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">git commit -a -m &#34;Completed task $TASK_IDENTIFIER: $TASK_TITLE&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">`</span>``​
+</span></span></code></pre></div><p>Another might have:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">## after_doing
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>``<span style="color:#f1fa8c">`bash
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">npm test
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">npx eslint .
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">git add -A &amp;&amp; git commit -m &#34;$TASK_IDENTIFIER done&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">`</span>``​
+</span></span></code></pre></div><p>Both work. The script reads the section, skips comments and empty lines, and executes each command. No assumptions about language, framework, or tooling.</p>
+<h3 id="environment-variables">Environment Variables</h3>
+<p>Stride hooks use environment variables like <code>$TASK_IDENTIFIER</code> and <code>$TASK_TITLE</code> — most commonly in git commit messages. In the old flow, the agent set these explicitly before running hooks. In the new flow, the script extracts them from the Stride API response after a successful claim and caches them to a temp file (<code>.stride-env-cache</code>). Every subsequent hook loads the cache before executing commands, so variable references in <code>.stride.md</code> resolve correctly throughout the entire task lifecycle.</p>
+<p>The cache is cleaned up automatically after the <code>after_review</code> hook completes.</p>
+<h3 id="structured-diagnostics">Structured Diagnostics</h3>
+<p>When a hook fails, the script doesn&rsquo;t just exit with an error code. It emits structured JSON:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;hook&#34;</span>: <span style="color:#f1fa8c">&#34;after_doing&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;status&#34;</span>: <span style="color:#f1fa8c">&#34;failed&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;failed_command&#34;</span>: <span style="color:#f1fa8c">&#34;mix test --cover&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;command_index&#34;</span>: <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;exit_code&#34;</span>: <span style="color:#bd93f9">1</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;stdout&#34;</span>: <span style="color:#f1fa8c">&#34;...&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;stderr&#34;</span>: <span style="color:#f1fa8c">&#34;...&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;commands_completed&#34;</span>: [],
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;commands_remaining&#34;</span>: [<span style="color:#f1fa8c">&#34;mix credo --strict&#34;</span>, <span style="color:#f1fa8c">&#34;mix sobelow --config&#34;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Claude receives this as structured context and can reason about the failure almost as well as if it had run the command itself. The hook-diagnostician agent has been updated to parse this format, producing fix plans that reference the specific command position in the sequence.</p>
+<h2 id="what-this-means-in-practice">What This Means in Practice</h2>
+<p>For Claude Code users: enable the updated Stride plugin and your hooks run silently. No permission dialogs. No clicking through prompts. The workflow you defined in <code>.stride.md</code> executes exactly as you wrote it, every time.</p>
+<p>For Copilot users: install the Stride Copilot extension and your agent follows the same structured workflow that Claude Code agents have been using. Same skills, same API, same quality gates.</p>
+<p>For Gemini CLI users: install the Stride Gemini extension and get the full package — skills plus custom agents for exploration, review, decomposition, and diagnostics.</p>
+<p>For teams: your agents can now work across platforms while maintaining consistent workflow discipline. The task board doesn&rsquo;t care which AI tool is doing the work. It cares that hooks ran, tests passed, and the completion API was called with the right fields.</p>
+<h2 id="whats-next">What&rsquo;s Next?</h2>
+<p>I will be looking for ways to bring the same level of support as I have just added to Copilot and Gemini to other popular agents. If you have one that you would like to see supported, please let me know.</p>
+<p>Also, I will be bringing the same Stride Hook enhancements to agents that support this pattern.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/stride-new-plugins/">Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution</a></li>
+        
+            <li><a href="/post/tw-retreat-response2/">The future of software engineering: My Thoughts - Part 2</a></li>
+        
+            <li><a href="/post/tw-retreat-response/">The future of software engineering: My Thoughts - Part 1</a></li>
+        
+            <li><a href="/post/review-report/">Closing the Loop: How We Added Traceability to Stride</a></li>
+        
+            <li><a href="/post/stride-enhanced-workflow/">Strides New Enhanced Workflow</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

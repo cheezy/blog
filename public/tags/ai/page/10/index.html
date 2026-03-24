@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
     
 
-    <meta property="og:url" content="http://localhost:1313/tags/elixir/" />
+    <meta property="og:url" content="http://localhost:1313/tags/ai/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Elixir | Cheezy&#39;s Blog</title>
+    <title>AI | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/tags/elixir/">
+    <link rel="canonical" href="/tags/ai/">
 
     
 
@@ -115,7 +115,7 @@
                     
                     
                     <li>
-                        <a href='/tags/elixir/index.xml' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                        <a href='/tags/ai/index.xml' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
                     </li>
                     
 		            <li>
@@ -191,127 +191,22 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part12/">
+    <a href="http://localhost:1313/post/hello-world-again/">
         <h2 class="post-title">
-            Building a LiveView app using AI - Part 12
+            Hello world (again eh)!
         </h2>
 	
         <div class="post-content-preview">
 	
-            <h2 id="adding-users-to-boards-and-tasks">Adding users to boards and tasks</h2>
-<p>Since the <a href="https://tidewave.ai/blog/claude-code-codex">announcement</a> of Claude Code running inside of Tidewave I have been extremely happy about this combo. For now I am using it for nearly all of my changes to the codebase. I have even given it a name - <strong>ClaudeWave</strong>. All of the changes in this post were done using ClaudeWave.</p>
-<p>So far our boards only have an owner. I want an owner to have the ability to add other users to a board and also assign tasks to one of those users. Let&rsquo;s get started.</p>
+            <h2 id="im-back">I&rsquo;m back</h2>
+<p>It has been a while since I&rsquo;ve blogged. I had a blog named CheezyWorld.com
+for many years but stopped posting more than 12 years ago. At the time I was traveling for work as well as traveling around the world to speak at conferences. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.</p>
        
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Wednesday, November 12, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part11/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 11
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="tasked-with-improving-tasks">Tasked with improving Tasks</h2>
-<p>The final phase of our plan is focused on visual cleanup and better error handling. Before I focused on the visual cleanup I wanted to fill in some of the gaps that exist in our plan. I&rsquo;m starting with Tasks. There are several missing features that I wanted to add to Tasks to make them more useful. This post includes those changes.</p>
-<h3 id="rounding-out-tasks">Rounding out Tasks</h3>
-<p>At this time Tasks only have a title, description, and their position in the column. This really is not enough for a serious Kanban application. I asked Claude to add the following fields:</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Wednesday, November 12, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part10/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 10
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="adding-drag-and-drop">Adding Drag and Drop</h2>
-<p>We asked Claude to finish phase six which was adding drag and drop functionality to the board. Claude did this quickly but when I tested it I found that it was more complex that expected. Claude got a few things wrong. First of all let&rsquo;s watch the video of phase six.</p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/aM6Rt3fuC9Q?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-    </div>
-
-<h2 id="always-test-everything">Always test everything</h2>
-<p>At the end of the video it seems like everything was okay. One might be tempted to commit the code and move on. I think a very important step is to test everything that AI creates. Occasionally AI will make a mistake and it is important to catch it right away while it still has the entire context available.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Saturday, November 8, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part9/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 9
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="doing-a-little-cleanup">Doing a little cleanup</h2>
-<p>This post is a cleanup post. After Part 8 I spent some time testing all aspects of the application and decided to make a few small changes beofre moving to the next phase. I noticed that flash messages (the message that shows in the upper right corner) stays there until I dismiss it. I think it becomes anoying to have to do that repeatedly when adding multiple tasks so I decide to make it automatically fade away after 5 seconds. I could ask Claude to do this but thought it was a very easy task so I set about to do it myself. Here is what I came up with.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Saturday, November 8, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/upgrade-elixir-and-fly/">
-        <h2 class="post-title">
-            Upgrade Elixir and Fly.io to use Elixir 1.19
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>Elixir finally reached version 1.19.2 so I feel the 1.19 is stable enough to give it a try. This short blog post is about my process to update Elixir and to also update my Fly.io deployment to the latest version of elixir and OTP.</p>
-<h2 id="update-the-application">Update the application</h2>
-<p>To begin with I needed to get the latest elixir and otp version. That was easy with <code>asdf</code> and so I installed <code>elixir 1.19.2-otp-28</code> and <code>erlang 28.1.1</code>. These are the latest versions at the time of this writing. To ensure I always use these version I updated my <code>.tool-versions</code> file in the root of my project:</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, November 7, 2025
+        Posted by Cheezy World on Friday, September 26, 2025
         
         
     
@@ -328,13 +223,9 @@
 <ul class="pager" data-pagefind-ignore="all">
     
     <li class="previous">
-        <a href="/tags/elixir/">&larr; Newer Posts</a>
+        <a href="/tags/ai/page/9/">&larr; Newer Posts</a>
     </li>
     
-    
-    <li class="next">
-        <a href="/tags/elixir/page/3/">Older Posts &rarr;</a>
-    </li>
     
 </ul>
 
@@ -593,7 +484,7 @@
             
            
                    <li>
-                       <a href='/tags/elixir/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                       <a href='/tags/ai/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
