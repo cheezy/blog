@@ -109,3 +109,5 @@ The **task-reviewer** SubAgent detailed in the previous section uses these field
 I have used [Claude](https://code.claude.com/docs/en/overview) to write code nearly every day since August. I have seen its capabilities and accuracy improve dramatically with each new model release. My knowledge of how to guide the agent to produce quality code that addresses the requirements has also improved as Anthropic has provided new tools to help with this. During the past three months, I have dedicated my time to building out tools that address the challenges I face when working with AI coding agents. The challenges I have seen are exactly what is presented in this article. I feel completely validated!
 
 Stay tuned for future posts where I discuss the other seven categories presented in this article.
+
+[Continue on to part two](/post/tw-retreat-response2)
