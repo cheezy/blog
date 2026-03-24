@@ -41,6 +41,39 @@ The next piece of my approach is to ensure the output matches the task details. 
 
 The final piece of my approach is to perform a quick review of the application changes using a tool like [Tidewave](https://tidewave.ai/). Tidewave allows me to make the changes in the browser while I am looking at the application and see the results immediately.
 
+##### UPDATE
+
+I was using Stride to build a full plugin for GitHub Copilot and one of the tasks was sent back to the implementation agent for rework by the **task reviewer** SubAgent before it was permitted to mark it as complete. I thought you might want to see how this works. Here is the report as it was added to the finished task.
+
+```markdown
+## Review Summary
+
+2 issues found (0 Critical, 2 Important, 0 Minor)
+
+### Issues
+
+**1. [Important] task-decomposer missing example section**
+- The full worked example (~140 lines) was dropped during port
+- Fixed: Added back the complete example section
+
+**2. [Important] task-decomposer codebase search instruction genericized**
+- "Grep" changed to "Search" and added "or similar project instruction files"
+- Judgment call: kept as reasonable generalization for Copilot platform
+
+### Acceptance Criteria
+| # | Criterion | Status |
+|---|-----------|--------|
+| 1 | All 4 agent files exist with .agent.md extension | Met |
+| 2 | Correct YAML frontmatter (name, description, tools) | Met |
+| 3 | Instructions preserve ALL original logic | Met (after fix) |
+| 4 | No Claude Code-specific references remain | Met |
+| 5 | Tools arrays minimal and read-only | Met |
+| 6 | hook-diagnostician: [read, search] only | Met |
+| 7 | Other 3: [read, search, glob] | Met |
+```
+
+Notice how the first issue in the example states that it was **Fixed** and the third acceptance criterion states that it was **Met (after fix)**? When the **task reviewer** SubAgent compared the changes to the acceptance criteria, it discovered that the third one was not met. It sent the task back to the implementation agent to fix this and once the fix was in place the SubAgent ran the report again. What you see here is the final report that was attached to the Task in Stride.
+
 ### 3. Agent topologies and enterprise architecture
 
 The report states _"Conway's Law didn't retire. It got more complicated"_

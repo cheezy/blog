@@ -241,6 +241,33 @@
 <p>This approach forces me to spend a little more time up front ensuring that I provide the agent with the information it needs, but I spend almost no time afterwards verifying the output. The <a href="https://github.com/cheezy/stride">Stride Skills</a> guide the agent in the creation of these detailed tasks.</p>
 <p>The next piece of my approach is to ensure the output matches the task details. The Stride <a href="https://github.com/cheezy/stride/blob/main/agents/task-reviewer.md">task reviewer</a> <a href="https://code.claude.com/docs/en/sub-agents">SubAgent</a> handles this. It compares the code changes to the task specification and ensures that the implementation matches the specification. If it doesn&rsquo;t, the SubAgent provides the details to the coding agent and asks it to fix the issues. If everything is okay, this SubAgent attaches a review report to the task so a human can review it later.</p>
 <p>The final piece of my approach is to perform a quick review of the application changes using a tool like <a href="https://tidewave.ai/">Tidewave</a>. Tidewave allows me to make the changes in the browser while I am looking at the application and see the results immediately.</p>
+<h5 id="update">UPDATE</h5>
+<p>I was using Stride to build a full plugin for GitHub Copilot and one of the tasks was sent back to the implementation agent for rework by the <strong>task reviewer</strong> SubAgent before it was permitted to mark it as complete. I thought you might want to see how this works. Here is the report as it was added to the finished task.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold">## Review Summary
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>2 issues found (0 Critical, 2 Important, 0 Minor)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">### Issues
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>**1. [Important] task-decomposer missing example section**
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> The full worked example (~140 lines) was dropped during port
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Fixed: Added back the complete example section
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>**2. [Important] task-decomposer codebase search instruction genericized**
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> &#34;Grep&#34; changed to &#34;Search&#34; and added &#34;or similar project instruction files&#34;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">-</span> Judgment call: kept as reasonable generalization for Copilot platform
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">### Acceptance Criteria
+</span></span></span><span style="display:flex;"><span>| # | Criterion | Status |
+</span></span><span style="display:flex;"><span>|---|-----------|--------|
+</span></span><span style="display:flex;"><span>| 1 | All 4 agent files exist with .agent.md extension | Met |
+</span></span><span style="display:flex;"><span>| 2 | Correct YAML frontmatter (name, description, tools) | Met |
+</span></span><span style="display:flex;"><span>| 3 | Instructions preserve ALL original logic | Met (after fix) |
+</span></span><span style="display:flex;"><span>| 4 | No Claude Code-specific references remain | Met |
+</span></span><span style="display:flex;"><span>| 5 | Tools arrays minimal and read-only | Met |
+</span></span><span style="display:flex;"><span>| 6 | hook-diagnostician: [read, search] only | Met |
+</span></span><span style="display:flex;"><span>| 7 | Other 3: [read, search, glob] | Met |
+</span></span></code></pre></div><p>Notice how the first issue in the example states that it was <strong>Fixed</strong> and the third acceptance criterion states that it was <strong>Met (after fix)</strong>? When the <strong>task reviewer</strong> SubAgent compared the changes to the acceptance criteria, it discovered that the third one was not met. It sent the task back to the implementation agent to fix this and once the fix was in place the SubAgent ran the report again. What you see here is the final report that was attached to the Task in Stride.</p>
 <h3 id="3-agent-topologies-and-enterprise-architecture">3. Agent topologies and enterprise architecture</h3>
 <p>The report states <em>&ldquo;Conway&rsquo;s Law didn&rsquo;t retire. It got more complicated&rdquo;</em></p>
 <blockquote>
