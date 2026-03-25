@@ -50,14 +50,13 @@ These are the same agents Claude Code users have been using through the Stride p
 **GitHub Copilot:**
 
 ```bash
-# Clone into your project
-git clone https://github.com/cheezy/stride-copilot.git .github/stride-copilot/
+copilot plugin install https://github.com/cheezy/stride-copilot
 ```
 
 **Google Gemini CLI:**
 
 ```bash
-gemini extensions install cheezy/stride-gemini
+gemini extensions install https://github.com/cheezy/stride-gemini
 ```
 
 
