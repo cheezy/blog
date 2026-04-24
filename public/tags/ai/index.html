@@ -191,6 +191,29 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
+    <a href="http://localhost:1313/post/context-matters/">
+        <h2 class="post-title">
+            Context Matters
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Friday, April 24, 2026
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="http://localhost:1313/post/plugin-enforcement-updates/">
         <h2 class="post-title">
             Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;
@@ -198,9 +221,7 @@
 	
         <div class="post-content-preview">
 	
-            <h2 id="the-problem-17-tasks-zero-process-compliance">The Problem: 17 Tasks, Zero Process Compliance</h2>
-<p>During a recent session where an AI agent implemented 17 Stride tasks back-to-back, we discovered something uncomfortable: the agent skipped nearly every mandatory workflow step. The <code>task-explorer</code> was used once, then never again. The <code>task-reviewer</code> was never invoked. The <code>hook-diagnostician</code> was never called when hooks failed. The <code>stride-subagent-workflow</code> skill — labeled MANDATORY — was ignored entirely.</p>
-<p>The agent wasn&rsquo;t malfunctioning. It was optimizing. Given competing instructions to &ldquo;follow every step&rdquo; and &ldquo;work continuously without stopping,&rdquo; it resolved the tension by choosing speed over process. And every skill it skipped was one the system allowed it to skip.</p>
+            <p>During a recent session on a friends computer where an AI agent implemented 17 Stride tasks back-to-back,I discovered something uncomfortable: the agent skipped nearly every mandatory workflow step. The <code>task-explorer</code> was used once, then never again. The <code>task-reviewer</code> was never invoked. The <code>hook-diagnostician</code> was never called when hooks failed. The <code>stride-subagent-workflow</code> skill — labeled MANDATORY — was ignored entirely. This was shocking to me as I have not see this on my own computer. I realized that I had enough contained in my configuration to force the agent to do what I wanted but not everybody had that config.</p>
        
         </div>
     </a>
@@ -283,31 +304,6 @@
     <p class="post-meta">
     
         Posted by Cheezy World on Wednesday, March 18, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/review-report/">
-        <h2 class="post-title">
-            Closing the Loop: How We Added Traceability to Stride
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>When AI agents review code, their findings shouldn&rsquo;t vanish into the ether. That was the driving insight behind the <code>review_report</code> feature we shipped in <a href="https://stridelikeaboss.com">Stride</a> v1.25 and the <a href="https://github.com/cheezy/stride">Stride plugin</a> v1.4 this week. Here&rsquo;s the story of what we built, why it matters, and how all the pieces fit together.</p>
-<h2 id="the-problem">The Problem</h2>
-<p>Stride&rsquo;s task-reviewer SubAgent already did excellent work — it checks code changes against <code>acceptance criteria</code>, verifies <code>pitfall</code> avoidance, validates <code>pattern compliance</code> and alignment of the <code>testing strategy</code>. But the review output lived only in the agent&rsquo;s conversation context. Once the agent completed the task, the structured findings were gone. Human reviewers opening a task in the <em>Review</em> or <em>Done</em> column had no visibility into what the AI had already checked.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Tuesday, March 17, 2026
         
         
     
@@ -508,6 +504,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/context-matters/">Context Matters</a></li>
+        
             <li><a href="/post/plugin-enforcement-updates/">Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;</a></li>
         
             <li><a href="/post/stride-new-plugins/">Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution</a></li>
@@ -515,8 +513,6 @@
             <li><a href="/post/tw-retreat-response2/">The future of software engineering: My Thoughts - Part 2</a></li>
         
             <li><a href="/post/tw-retreat-response/">The future of software engineering: My Thoughts - Part 1</a></li>
-        
-            <li><a href="/post/review-report/">Closing the Loop: How We Added Traceability to Stride</a></li>
         
         </ul>
     </section>

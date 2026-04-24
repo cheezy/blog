@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Apr 2026 19:44:22 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2026 09:37:42 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Context Matters</title>
+      <link>http://localhost:1313/post/context-matters/</link>
+      <pubDate>Fri, 24 Apr 2026 09:37:42 -0400</pubDate>
+      <guid>http://localhost:1313/post/context-matters/</guid>
+      <description>&lt;p&gt;At the AI Coffee Chat this past Wednesday we were having a great conversation about how to minimize the overall context that your Agent uses and what happens as the context gets full. I will not go into the details here of what the Agent context is and why it is important to not fill it up with unnecessary things. In the Chat session, I made the statement that a great way to minimize context usage is to understand the core thing you are asking your Agent to do and try to move everything else out to &lt;a href=&#34;https://code.claude.com/docs/en/sub-agents&#34;&gt;SubAgents&lt;/a&gt;, &lt;a href=&#34;https://code.claude.com/docs/en/hooks&#34;&gt;Hooks&lt;/a&gt;, or &lt;a href=&#34;https://code.claude.com/docs/en/skills&#34;&gt;Skills&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;</title>
       <link>http://localhost:1313/post/plugin-enforcement-updates/</link>
@@ -342,7 +349,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>

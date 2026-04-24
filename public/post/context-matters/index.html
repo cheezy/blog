@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Context Matters" />
+    <meta property="og:title" content="Context Matters" />
+    <meta property="twitter:title" content="Context Matters" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/context-matters/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Context Matters | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/context-matters/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Context Matters</h1>
+
+            
+                <p>At the AI Coffee Chat this past Wednesday we were having a great conversation about how to minimize the overall context that your Agent uses and what happens as the context gets full. I will not go into the details here of what the Agent context is and why it is important to not fill it up with unnecessary things. In the Chat session, I made the statement that a great way to minimize context usage is to understand the core thing you are asking your Agent to do and try to move everything else out to <a href="https://code.claude.com/docs/en/sub-agents">SubAgents</a>, <a href="https://code.claude.com/docs/en/hooks">Hooks</a>, or <a href="https://code.claude.com/docs/en/skills">Skills</a>.</p>
+<p>I continued that conversation with a colleague online and he made the statement <em>&ldquo;I am only asking Claude to write code. I really do not have a need for those things.&rdquo;</em>. This post is intended to help explain that you are not simply asking Claude to write code and it is actually very easy to move a lot of what your Agent does out of its main context.</p>
+<h3 id="im-only-writing-code">I&rsquo;m Only Writing Code</h3>
+<p>So what is really happening when we ask an Agent to write code and what could easily be moved out of its context? What follows is a list of all of the typical things that happen while our Agent is writing code.</p>
+<h4 id="1-defining-detailed-requirements">1. Defining detailed requirements</h4>
+<p>Before the Agent begins any work it needs to figure out the details of what you are asking it to do. Quite often the human has not provided enough information and the Agent will have to add a lot of details in order to accurately complete the task. Sometimes the human asks the Agent to perform too much for one task and the Agent will want to break that task down into several smaller tasks. If you take the approach of having it figure out this information and enrich the requirements just-in-time, then that happens in your context and adds to the overall context size. If, instead, you have those requirements worked out before the Agent begins a task and have them available in a form that can easily be digested by the Agent you can do this completely outside of Context.</p>
+<h4 id="2-get-the-developer-workspace-ready-to-begin">2. Get the developer workspace ready to begin</h4>
+<p>Before an Agent starts working on a task we need to make sure the local development workspace is ready to go. If there are multiple developers working on the same codebase this often means getting the latest code from the code repository, running a command to install any updated dependencies, running any database migrations that may have been updated, and possibly running the tests to make sure everything is working prior to making any changes. This work can and should be moved out of the Agent&rsquo;s context.</p>
+<h4 id="3-explore-the-existing-codebase">3. Explore the existing codebase</h4>
+<p>Prior to the Agent making changes it should explore the existing codebase to understand the structure of the application and how to go about making those changes. Ideally, the Agent was already informed of what files will need to change (included in the task from step 1) and it should look at those files and the related test files to have a better understanding of how the code is expected to behave. If the original task definition included any specific patterns to follow during implementation, the Agent should locate other areas in the code where that pattern has already been implemented. Finally, a detailed testing strategy should have been provided in the task definition from step 1 and the Agent should look at other existing examples of similar tests. This exploration can all be removed from context and a structured result can be returned to the implementing Agent.</p>
+<h4 id="4-update-the-code-with-the-appropriate-changes">4. Update the code with the appropriate changes</h4>
+<p>We are finally at a place where context is used. Up to this point the task details and details about the existing codebase should have been farmed out to other SubAgents. But even in this implementation step there are still opportunities for us to minimize the usage of context. Any framework or language specific details you want the Agent to utilize should be moved out to Skills in order to not have this reside in your Agent&rsquo;s context.</p>
+<h4 id="5-quality-checks">5. Quality checks</h4>
+<p>After the Agent has finished implementing the code, you will want to have several quality checks performed. These typically include running a linter, running the test suite, running static code analysis, and running security scans. If any of these fail, you will want to analyze the failure and provide those details to the implementing Agent and move back to step 4. If they all pass, you will want to continue moving through the workflow. This could easily happen in a Hook that runs outside of the Agent&rsquo;s context.</p>
+<h4 id="6-review-the-changes">6. Review the changes</h4>
+<p>Now that the Agent has made its changes and we have run our quality checks to make sure the code is clean and tested, it is time to make sure the Agent did everything we asked it to do. This should include ensuring all of the acceptance criteria can be mapped to code changes, any pitfalls defined earlier were avoided, any suggested patterns to follow were utilized, and ensuring the specified testing strategy was followed. This type of review could easily happen outside of the implementation context. If any of these checks fail, details of those failures should be created in a simple format and it should be sent back to the Agent and the task sent back to step 4. If the review passes, the code can be committed and the details of this review should be attached to the task being performed so it can ultimately become part of the traceability of the work if desired.</p>
+<h4 id="7-completing-the-work">7. Completing the work</h4>
+<p>Now that the work for a single task is completed, it is time to capture information about that implementation and to also ask our Agent to learn. Things that are nice to capture include data like a simple completion summary, the actual complexity of the task (to be compared with the estimated complexity from step 1), the actual files that were changed (to be compared with the estimated files to change from step 1), the duration of time to complete the task (to be compared with the estimated duration), and even what Agent and model completed the task. Capturing this information and performing any learning from comparing actual to the estimates made in step 1 should happen with the primary Agent.</p>
+<h4 id="8-integrating-the-changes">8. Integrating the changes</h4>
+<p>Now that everything is completed it is time to push all of the changes to a central code repository. It is common to rebase the code prior to pushing and to execute one final execution of the test suite after that rebase. This is yet another example of work that can be pushed out of the Agent&rsquo;s context.</p>
+<h3 id="what-did-we-just-see">What did we just see?</h3>
+<p>The act of taking a requirement and turning it into working code is a complex process that involves many steps. Many of those steps can be moved out of the Agent&rsquo;s context so that the context remains focused on the actual implementation work (step 4) and learning (step 7).</p>
+<h3 id="this-sounds-complex">This sounds complex</h3>
+<p>Building out the SubAgents, Hooks, and Skills does take some time and a lot of effort goes into ensuring they work as expected. I have spent countless hours creating and improving these components over the past few months.</p>
+<p>The good news is that if you are using <a href="https://www.stridelikeaboss.com">Stride</a> with one of its supported Agent plugins then you already have everything mentioned above. The supported Agents are <a href="https://github.com/cheezy/stride">Claude Code</a>, <a href="https://github.com/cheezy/stride-copilot">GitHub Copilot</a>, <a href="https://github.com/cheezy/stride-gemini">Google Gemini CLI</a>, <a href="https://github.com/cheezy/stride-codex">OpenAI Codex</a>, and <a href="https://github.com/cheezy/stride-opencode">OpenCode</a>. If you are not using Stride and want to roll-your-own, please take a look at one of these repos and freely use it to help you get started.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/context-matters/">Context Matters</a></li>
+        
+            <li><a href="/post/plugin-enforcement-updates/">Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;</a></li>
+        
+            <li><a href="/post/stride-new-plugins/">Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution</a></li>
+        
+            <li><a href="/post/tw-retreat-response2/">The future of software engineering: My Thoughts - Part 2</a></li>
+        
+            <li><a href="/post/tw-retreat-response/">The future of software engineering: My Thoughts - Part 1</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

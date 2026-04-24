@@ -6,14 +6,21 @@
     <description>Recent content in Posts on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Apr 2026 19:44:22 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2026 09:37:42 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Context Matters</title>
+      <link>http://localhost:1313/post/context-matters/</link>
+      <pubDate>Fri, 24 Apr 2026 09:37:42 -0400</pubDate>
+      <guid>http://localhost:1313/post/context-matters/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;</title>
       <link>http://localhost:1313/post/plugin-enforcement-updates/</link>
       <pubDate>Tue, 14 Apr 2026 19:44:22 -0400</pubDate>
       <guid>http://localhost:1313/post/plugin-enforcement-updates/</guid>
-      <description>&lt;h2 id=&#34;the-problem-17-tasks-zero-process-compliance&#34;&gt;The Problem: 17 Tasks, Zero Process Compliance&lt;/h2&gt;&#xA;&lt;p&gt;During a recent session where an AI agent implemented 17 Stride tasks back-to-back, we discovered something uncomfortable: the agent skipped nearly every mandatory workflow step. The &lt;code&gt;task-explorer&lt;/code&gt; was used once, then never again. The &lt;code&gt;task-reviewer&lt;/code&gt; was never invoked. The &lt;code&gt;hook-diagnostician&lt;/code&gt; was never called when hooks failed. The &lt;code&gt;stride-subagent-workflow&lt;/code&gt; skill — labeled MANDATORY — was ignored entirely.&lt;/p&gt;&#xA;&lt;p&gt;The agent wasn&amp;rsquo;t malfunctioning. It was optimizing. Given competing instructions to &amp;ldquo;follow every step&amp;rdquo; and &amp;ldquo;work continuously without stopping,&amp;rdquo; it resolved the tension by choosing speed over process. And every skill it skipped was one the system allowed it to skip.&lt;/p&gt;</description>
+      <description>&lt;p&gt;During a recent session on a friends computer where an AI agent implemented 17 Stride tasks back-to-back,I discovered something uncomfortable: the agent skipped nearly every mandatory workflow step. The &lt;code&gt;task-explorer&lt;/code&gt; was used once, then never again. The &lt;code&gt;task-reviewer&lt;/code&gt; was never invoked. The &lt;code&gt;hook-diagnostician&lt;/code&gt; was never called when hooks failed. The &lt;code&gt;stride-subagent-workflow&lt;/code&gt; skill — labeled MANDATORY — was ignored entirely. This was shocking to me as I have not see this on my own computer. I realized that I had enough contained in my configuration to force the agent to do what I wanted but not everybody had that config.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution</title>
