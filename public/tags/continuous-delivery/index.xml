@@ -9,11 +9,11 @@
     <lastBuildDate>Fri, 01 May 2026 09:37:42 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Mechanical Gating Works</title>
+      <title>Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</title>
       <link>http://localhost:1313/post/mechanical-gating-works/</link>
       <pubDate>Fri, 01 May 2026 09:37:42 -0400</pubDate>
       <guid>http://localhost:1313/post/mechanical-gating-works/</guid>
-      <description>&lt;h2 id=&#34;prose-only-enforcement-is-unreliable-mechanical-gating-works&#34;&gt;Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Posted 2026-04-29&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;A few weeks ago I shipped a Claude Code plugin called Stride. It manages a kanban-style task lifecycle for AI agents: claim a task, work on it, complete it, loop. The lifecycle is decomposed into seven skills — one orchestrator (&lt;code&gt;stride-workflow&lt;/code&gt;) and six sub-skills that handle individual phases (&lt;code&gt;stride-claiming-tasks&lt;/code&gt;, &lt;code&gt;stride-completing-tasks&lt;/code&gt;, and so on). The sub-skills exist because each phase has a non-trivial API contract that the agent has to get exactly right.&lt;/p&gt;</description>
+      <description>&lt;p&gt;As many of you know, I&amp;rsquo;ve built a tool called &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt;.  It is a human / AI collaboration tool that offers a robust workflow with many features to drive collaboration and predictability. It takes the form of a hosted kanban-like app that manages the detailed tasks and agent plugins for all of the major AI agents. Even though it has several thousand users now, I have struggled with forcing the agents to always follow the workflow defined in the plugins. The plugins define a lifecycle that is decomposed into seven skills — one orchestrator (&lt;code&gt;stride-workflow&lt;/code&gt;) and six sub-skills that handle individual phases (&lt;code&gt;stride-claiming-tasks&lt;/code&gt;, &lt;code&gt;stride-completing-tasks&lt;/code&gt;, and so on). The sub-skills exist because each phase has a non-trivial API contract that the agent has to get exactly right. The plugins also contain four subagents and a hook designed to execute developer defined commands at specific times during the lifecycle of the work.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Context Matters</title>
