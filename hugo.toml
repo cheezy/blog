@@ -1,5 +1,5 @@
 baseURL = 'https://cheezyworld.ca/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'Cheezy World'
 theme = 'cleanwhite'
 language = 'en-ca'

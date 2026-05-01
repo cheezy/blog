@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Apr 2026 09:37:42 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 09:37:42 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</title>
+      <link>http://localhost:1313/post/mechanical-gating-works/</link>
+      <pubDate>Fri, 01 May 2026 09:37:42 -0400</pubDate>
+      <guid>http://localhost:1313/post/mechanical-gating-works/</guid>
+      <description>&lt;p&gt;As many of you know, I&amp;rsquo;ve built a tool called &lt;a href=&#34;https://stridelikeaboss.com&#34;&gt;Stride&lt;/a&gt;.  It is a human / AI collaboration tool that offers a robust workflow with many features to drive collaboration and predictability. It takes the form of a hosted kanban-like app that manages the detailed tasks and agent plugins for all of the major AI agents. Even though it has several thousand users now, I have struggled with forcing the agents to always follow the workflow defined in the plugins. The plugins define a lifecycle that is decomposed into seven skills — one orchestrator (&lt;code&gt;stride-workflow&lt;/code&gt;) and six sub-skills that handle individual phases (&lt;code&gt;stride-claiming-tasks&lt;/code&gt;, &lt;code&gt;stride-completing-tasks&lt;/code&gt;, and so on). The sub-skills exist because each phase has a non-trivial API contract that the agent has to get exactly right. The plugins also contain four subagents and a hook designed to execute developer defined commands at specific times during the lifecycle of the work.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Context Matters</title>
       <link>http://localhost:1313/post/context-matters/</link>
@@ -349,7 +356,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>
