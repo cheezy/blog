@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta name="generator" content="Hugo 0.161.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +26,7 @@
     <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
     
 
-    <meta property="og:url" content="http://localhost:1313/" />
+    <meta property="og:url" content="http://localhost:1313/tags/continuous-delivery/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -37,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Cheezy World | Cheezy&#39;s Blog</title>
+    <title>Continuous Delivery | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="/tags/continuous-delivery/">
 
     
 
@@ -116,7 +115,7 @@
                     
                     
                     <li>
-                        <a href='/index.xml' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                        <a href='/tags/continuous-delivery/index.xml' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
                     </li>
                     
 		            <li>
@@ -192,116 +191,22 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
-    <a href="http://localhost:1313/post/the-security-review-plugin/">
+    <a href="http://localhost:1313/post/hello-world-again/">
         <h2 class="post-title">
-            The Security Review Plugin: My latest addition to the Stride plugin library
+            Hello world (again eh)!
         </h2>
 	
         <div class="post-content-preview">
 	
-            <p>Yesterday I typed the following into Claude Code:</p>
-<pre tabindex="0"><code>/security-review:security-review --full
-</code></pre><p>Forty-two agent dispatches and roughly twelve minutes later, I had a 72-finding security review of Stride. The breakdown was sobering: 0 critical, 12 high, 15 medium, 38 low, 7 info. Some of those findings I knew about from having ran a different security review tool. That previous tool found 17 items. The rest were new to me.</p>
-<p>Then I spent the rest of the day fixing them - or more accurately watching Claude fix them.</p>
+            <h2 id="im-back">I&rsquo;m back</h2>
+<p>It has been a while since I&rsquo;ve blogged. I had a blog named CheezyWorld.com
+for many years but stopped posting more than 12 years ago. At the time I was traveling for work as well as traveling around the world to speak at conferences. My life circumstances are different now and I am happy to return to blogging. I am doing (and have been doing) a lot of exciting work and have a lot to share.</p>
        
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Tuesday, May 12, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/mechanical-gating-works/">
-        <h2 class="post-title">
-            Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>As many of you know, I&rsquo;ve built a tool called <a href="https://stridelikeaboss.com">Stride</a>.  It is a human / AI collaboration tool that offers a robust workflow with many features to drive collaboration and predictability. It takes the form of a hosted kanban-like app that manages the detailed tasks and agent plugins for all of the major AI agents. Even though it has several thousand users now, I have struggled with forcing the agents to always follow the workflow defined in the plugins. The plugins define a lifecycle that is decomposed into seven skills — one orchestrator (<code>stride-workflow</code>) and six sub-skills that handle individual phases (<code>stride-claiming-tasks</code>, <code>stride-completing-tasks</code>, and so on). The sub-skills exist because each phase has a non-trivial API contract that the agent has to get exactly right. The plugins also contain four subagents and a hook designed to execute developer defined commands at specific times during the lifecycle of the work.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, May 1, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/context-matters/">
-        <h2 class="post-title">
-            Context Matters
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>At the AI Coffee Chat this past Wednesday we were having a great conversation about how to minimize the overall context that your Agent uses and what happens as the context gets full. I will not go into the details here of what the Agent context is and why it is important to not fill it up with unnecessary things. In the Chat session, I made the statement that a great way to minimize context usage is to understand the core thing you are asking your Agent to do and try to move everything else out to <a href="https://code.claude.com/docs/en/sub-agents">SubAgents</a>, <a href="https://code.claude.com/docs/en/hooks">Hooks</a>, or <a href="https://code.claude.com/docs/en/skills">Skills</a>.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, April 24, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/plugin-enforcement-updates/">
-        <h2 class="post-title">
-            Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>During a recent session on a friends computer where an AI agent implemented 17 Stride tasks back-to-back,I discovered something uncomfortable: the agent skipped nearly every mandatory workflow step. The <code>task-explorer</code> was used once, then never again. The <code>task-reviewer</code> was never invoked. The <code>hook-diagnostician</code> was never called when hooks failed. The <code>stride-subagent-workflow</code> skill — labeled MANDATORY — was ignored entirely. This was shocking to me as I have not see this on my own computer. I realized that I had enough contained in my configuration to force the agent to do what I wanted but not everybody had that config.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Tuesday, April 14, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/stride-new-plugins/">
-        <h2 class="post-title">
-            Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>Prior to today, Stride had excellent support for Claude Code via six Skills and four SubAgents. All other agents were only provided with Skills without the enforcement and additional capabilities added by the SubAgents.</p>
-<p>Today I shipped three updates that fundamentally change how AI agents interact with Stride. Two new platform extensions bring Stride&rsquo;s full workflow and support to <a href="https://github.com/cheezy/stride-copilot">GitHub Copilot</a> and <a href="https://github.com/cheezy/stride-gemini">Google Gemini CLI</a>. And a new Claude Code hooks integration eliminates the most persistent friction point that still existed in the Claude Code agent workflow: permission prompts.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Tuesday, March 24, 2026
+        Posted by Cheezy World on Friday, September 26, 2025
         
         
     
@@ -317,10 +222,10 @@
 
 <ul class="pager" data-pagefind-ignore="all">
     
-    
-    <li class="next">
-        <a href="/page/2/">Older Posts &rarr;</a>
+    <li class="previous">
+        <a href="/tags/continuous-delivery/page/6/">&larr; Newer Posts</a>
     </li>
+    
     
 </ul>
 
@@ -579,7 +484,7 @@
             
            
                    <li>
-                       <a href='/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                       <a href='/tags/continuous-delivery/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta name="generator" content="Hugo 0.161.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="The Security Review Plugin: My latest addition to the Stride plugin library" />
+    <meta property="og:title" content="The Security Review Plugin: My latest addition to the Stride plugin library" />
+    <meta property="twitter:title" content="The Security Review Plugin: My latest addition to the Stride plugin library" />
     
 
     
@@ -27,7 +26,7 @@
     <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
     
 
-    <meta property="og:url" content="http://localhost:1313/" />
+    <meta property="og:url" content="http://localhost:1313/post/the-security-review-plugin/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -37,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Cheezy World | Cheezy&#39;s Blog</title>
+    <title>The Security Review Plugin: My latest addition to the Stride plugin library | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="/post/the-security-review-plugin/">
 
     
 
@@ -116,7 +115,7 @@
                     
                     
                     <li>
-                        <a href='/index.xml' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
                     </li>
                     
 		            <li>
@@ -176,157 +175,117 @@
 
 
 
-  
-<div data-pagefind-ignore="all" class="container">
-    <div class="row">
-        
-        
-   	    <div class="
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
             col-lg-8 col-lg-offset-1
             col-md-8 col-md-offset-1
             col-sm-12
             col-xs-12
-            post-container
-        ">
-            
-<div data-pagefind-ignore="all">
+            post-container">
+            <h1>The Security Review Plugin: My latest addition to the Stride plugin library</h1>
 
-<div class="post-preview">
-    <a href="http://localhost:1313/post/the-security-review-plugin/">
-        <h2 class="post-title">
-            The Security Review Plugin: My latest addition to the Stride plugin library
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>Yesterday I typed the following into Claude Code:</p>
+            
+                <p>Yesterday I typed the following into Claude Code:</p>
 <pre tabindex="0"><code>/security-review:security-review --full
 </code></pre><p>Forty-two agent dispatches and roughly twelve minutes later, I had a 72-finding security review of Stride. The breakdown was sobering: 0 critical, 12 high, 15 medium, 38 low, 7 info. Some of those findings I knew about from having ran a different security review tool. That previous tool found 17 items. The rest were new to me.</p>
 <p>Then I spent the rest of the day fixing them - or more accurately watching Claude fix them.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Tuesday, May 12, 2026
-        
-        
-    
-    </p>
+<p>This post is about the plugin that made that possible. What it is, why it works, what it costs, and the honest version of when you should and should not reach for it.</p>
+<h2 id="what-it-is">What it is</h2>
+<p><code>security-review</code> is a Claude Code plugin. Installing it gives you one slash command and one agent — that&rsquo;s it. No configuration, no SaaS dashboard, no token budget to argue about.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/plugin marketplace add cheezy/stride-marketplace
+</span></span><span style="display:flex;"><span>/plugin install security-review@stride-marketplace
+</span></span></code></pre></div><p>The slash command takes a few flags. The two that matter most:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Invocation</th>
+          <th>Question it answers</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>/security-review:security-review</code></td>
+          <td>Is this PR safe to merge? (diff against <code>HEAD</code>)</td>
+      </tr>
+      <tr>
+          <td><code>/security-review:security-review --full</code></td>
+          <td>What latent issues are in this codebase right now?</td>
+      </tr>
+  </tbody>
+</table>
+<p>Diff mode is the default and the one most teams will actually adopt — it&rsquo;s the PR-time check. Full mode is the one I ran yesterday: it enumerates every tracked text file, batches them in groups of 10, dispatches a <code>security-reviewer</code> agent on each batch in parallel, and merges the results.</p>
+<p>There are other flags — <code>--json</code> for piping, <code>--maestro</code> for the seven-layer agentic-AI taxonomy, <code>--rci</code> for recursive criticism passes, <code>--baseline</code> for suppressing already-acknowledged findings, <code>--patches</code> for inline auto-fix diffs. They compose: <code>--full --maestro --rci 2 --baseline ci.json --patches lib/</code> is a valid invocation. Read the <a href="https://github.com/cheezy/security-review">README</a> for the full taxonomy.</p>
+<h2 id="why-it-works">Why it works</h2>
+<p>There are roughly three things doing the heavy lifting under the hood.</p>
+<p><strong>It&rsquo;s a real agent, not a regex.</strong> A <code>grep</code> hit on <code>eval(</code> is not a finding; <code>eval(user_input)</code> flowing in from an HTTP boundary is. The agent reads the actual diff (or the actual file, in full mode), traces trust boundaries, and writes a description that names the source, the sink, and the realistic worst-case outcome. The output isn&rsquo;t a list of rule IDs — it&rsquo;s a paragraph for each issue that you can hand to a developer who has never seen the codebase, and they will understand what to fix and why.</p>
+<p><strong>It filters its own noise.</strong> The plugin&rsquo;s <a href="https://github.com/cheezy/security-review#what-it-deliberately-ignores">README</a> lists what the agent will not report: pure denial-of-service, generic rate-limiting concerns (unless they sit on an authentication endpoint), memory exhaustion alone, hypothetical risks not realizable through the changed code, style-as-security. This is the difference between a tool you actually keep in the loop and one you mute after week two. The 72 findings I got on Stride were 72 things I had reasons to act on, not 720 with a 90% triage tax.</p>
+<p><strong>It speaks JSON.</strong> Every finding carries a <code>vulnerability_class</code>, a <code>cwe</code> array, an <code>owasp</code> array, a <code>severity</code>, a <code>confidence</code>. With <code>--json</code> the entire document is pipeable. The Stride hook that auto-commits work after <code>mix test</code> could just as easily run <code>/security-review:security-review --json</code> and refuse to mark a task <code>done</code> if the diff introduces a critical. The plugin doesn&rsquo;t ship that hook — it ships the data shape that makes building it trivial.</p>
+<h2 id="the-real-story-running-it-against-stride">The real story: running it against Stride</h2>
+<p>Stride is an Elixir/Phoenix kanban app I&rsquo;ve been building in the open for months. It has authentication, an API token system, a multi-tenant board model, a metrics dashboard, and a LiveView for every interactive surface. It has 442 tracked files and around 2,700 tests. It is also, until today, a codebase that had never been through a top-to-bottom security review.</p>
+<p>The full scan ran for about twelve minutes. The agent dispatched 42 parallel batches, skipped 30 files (29 binaries, one oversized test fixture), and returned a single merged JSON document. The high-severity findings were the ones that mattered. Here are a few examples:</p>
+<ol>
+<li><strong><code>config/runtime.exs</code></strong> had <code>sockopts: [{:verify, :verify_none}]</code> on the production SMTP mailer. Translation: every outgoing password-reset email could be intercepted and modified by anyone on a hop between the app and the mail relay. CWE-295. One-line fix.</li>
+<li><strong><code>api/task_controller.ex</code></strong> PATCH and POST actions cast the entire JSON payload into the Task schema. Translation: any agent with a board-scoped API token could <code>PATCH</code> a task to <code>{&quot;status&quot;: &quot;completed&quot;, &quot;review_status&quot;: &quot;approved&quot;, &quot;completed_by_id&quot;: &lt;victim&gt;}</code> and bypass every workflow gate. CWE-915. Two related fixes, one strict allow-list changeset per direction.</li>
+<li><strong><code>metrics_excel.ex</code></strong> wrote <code>task.title</code> and <code>board.name</code> verbatim into Excel cells. Translation: a title like <code>=cmd|'/C calc'!A1</code> would execute the formula on whoever opened the export. CWE-1236. Twenty-line fix: one <code>safe_text/1</code> helper, applied at every cell construction site.</li>
+<li><strong><code>board_live/show.ex</code></strong> had seven places where <code>Columns.get_column!(id)</code> or <code>Tasks.get_task!(id)</code> ran on a client-supplied id with no board-scope check. Translation: an owner of board A could <code>delete_column</code> against a column id from board B and the LiveView would oblige. CWE-639. The fix was to replace each with the existing <code>*_for_board/2</code> variants — defenses that already shipped in the codebase but weren&rsquo;t being used at every call site.</li>
+</ol>
+<p>None of these were exotic. None required novel exploit research. All of them sat in code that had passed test runs, static code analysis, and security scans for months. The combination of <code>verify_none</code>, mass-assignment, formula injection, and unscoped IDOR is what auditors find on the first sweep of every codebase, and the only reason they aren&rsquo;t critical is that this app doesn&rsquo;t run a Federal Reserve. They would be critical on the next thing I ship.</p>
+<h2 id="how-the-workflow-actually-went">How the workflow actually went</h2>
+<p>The plugin gives you findings. It does not, on its own, fix anything. The interesting part of today was the workflow that wrapped around the findings.</p>
+<p>After the scan I asked Claude to write the results into a file. After I completed a review of the contents of the file, I asked Claude Code to create a goal and tasks for the high-severity items and add them to Stride. I did the same for the medium-severity and low-severity items as well. Then I told it to start claiming tasks from Stride.</p>
+<p>For each task: claim it, dispatch a <code>task-explorer</code> subagent to map the call sites, implement, run a <code>task-reviewer</code> subagent against the diff, hook the test suite, commit. By dinnertime all of the tasks were completed. Test count went from 2,690 to 2,762 — 72 new regression tests asserting the exploit no longer works.</p>
+<p>The agent did not invent any of those fixes. The fixes were already obvious once the finding was articulated clearly. What it bought me was the cycle time. Instead of one finding per afternoon, it was one task per five-to-ten minutes, with a dispassionate reviewer subagent calling out the things I would have missed.</p>
+<p>If you ever wondered what the AI-driven development loop is supposed to look like, this was it: the same person doing the work, but with the boring parts of &ldquo;find the issue, explain the issue, write the test, run the suite&rdquo; handled by something that doesn&rsquo;t get tired between the second and twelfth invocation.</p>
+<h2 id="what-it-costs">What it costs</h2>
+<p>Honest accounting:</p>
+<ul>
+<li><strong>Tokens.</strong> Every batch in a full scan is an agent dispatch. Forty-two batches for Stride wasn&rsquo;t free. The diff-mode default is much cheaper — single dispatch, single file. As a rule, run <code>--full</code> on a cadence (quarterly, on every release branch, before vendoring an upstream), and run the diff mode on every PR.</li>
+<li><strong>False positives.</strong> The agent&rsquo;s filter is good, not perfect. On the 72 findings I got, I disputed exactly one (a &ldquo;low&rdquo; about a <code>.bak</code> file that was already excluded by git ignore in a follow-up). Your mileage will vary by language and by how much LLM/agent code you have — the framework-specific rule packs (Django, Phoenix, Rails) and the MAESTRO-derived agentic-AI classes have less wear on them than the core ten.</li>
+<li><strong>Findings that need humans.</strong> Three of Stride&rsquo;s medium findings were supply-chain pinning tasks that I unclaimed and left for interactive work later — they needed real commit SHAs from upstream repos and SHA256 digests from Docker Hub, and getting a SHA wrong breaks CI. The plugin correctly identified them. Acting on them required a person at a keyboard. That&rsquo;s the right division of labor.</li>
+</ul>
+<h2 id="when-to-reach-for-it">When to reach for it</h2>
+<p>Reach for diff mode (<code>/security-review:security-review</code>):</p>
+<ul>
+<li>On every PR that touches authentication, authorization, user input handling, cryptography, secrets, database queries, shell-outs, file uploads, redirects, or response rendering.</li>
+<li>Before merging anything that changes a Dockerfile, CI workflow, or production config.</li>
+<li>As the final pre-push check on any branch you can&rsquo;t easily revert.</li>
+</ul>
+<p>Reach for full mode (<code>/security-review:security-review --full</code>):</p>
+<ul>
+<li>When you onboard the plugin onto an existing repo. You want a baseline before you start gating PRs.</li>
+<li>On a quarterly cadence. The codebase changes underneath you; latent issues accumulate.</li>
+<li>When you vendor or fork an upstream codebase and intend to ship it.</li>
+<li>When something tangentially related has been disclosed in the wider ecosystem and you want a fresh sweep.</li>
+</ul>
+<p>Do not reach for it when:</p>
+<ul>
+<li>You need provable correctness (formal verification, fuzzing, manual code review against a threat model — those are different tools).</li>
+<li>You&rsquo;re auditing a binary, a closed system, or a runtime configuration that isn&rsquo;t checked into the repo.</li>
+<li>You want it to fix things autonomously without you looking. The findings are good. The fixes are still yours (and Claudes&rsquo;) to write and verify.</li>
+</ul>
+<h2 id="where-to-get-it">Where to get it</h2>
+<p>The marketplace is public. The plugin is MIT-licensed. The agent prompt is a markdown file you can read and fork. Issues at <a href="https://github.com/cheezy/security-review">https://github.com/cheezy/security-review</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/plugin marketplace add cheezy/stride-marketplace
+</span></span><span style="display:flex;"><span>/plugin install security-review@stride-marketplace
+</span></span><span style="display:flex;"><span>/security-review:security-review --full
+</span></span></code></pre></div><p>If you find a finding it should have caught and missed, that&rsquo;s the contribution shape that helps most — open an issue with the smallest possible reproducing diff. The agent prompt has a documented template for extending vulnerability classes and framework packs. Adding a new framework pack (Spring, Express, Gin, Laravel, FastAPI) is a single PR.</p>
+<p>That is the plugin. Twelve minutes to ask the question, the rest of an afternoon to do something about the answer. There are worse trades.</p>
 
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/mechanical-gating-works/">
-        <h2 class="post-title">
-            Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>As many of you know, I&rsquo;ve built a tool called <a href="https://stridelikeaboss.com">Stride</a>.  It is a human / AI collaboration tool that offers a robust workflow with many features to drive collaboration and predictability. It takes the form of a hosted kanban-like app that manages the detailed tasks and agent plugins for all of the major AI agents. Even though it has several thousand users now, I have struggled with forcing the agents to always follow the workflow defined in the plugins. The plugins define a lifecycle that is decomposed into seven skills — one orchestrator (<code>stride-workflow</code>) and six sub-skills that handle individual phases (<code>stride-claiming-tasks</code>, <code>stride-completing-tasks</code>, and so on). The sub-skills exist because each phase has a non-trivial API contract that the agent has to get exactly right. The plugins also contain four subagents and a hook designed to execute developer defined commands at specific times during the lifecycle of the work.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, May 1, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/context-matters/">
-        <h2 class="post-title">
-            Context Matters
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>At the AI Coffee Chat this past Wednesday we were having a great conversation about how to minimize the overall context that your Agent uses and what happens as the context gets full. I will not go into the details here of what the Agent context is and why it is important to not fill it up with unnecessary things. In the Chat session, I made the statement that a great way to minimize context usage is to understand the core thing you are asking your Agent to do and try to move everything else out to <a href="https://code.claude.com/docs/en/sub-agents">SubAgents</a>, <a href="https://code.claude.com/docs/en/hooks">Hooks</a>, or <a href="https://code.claude.com/docs/en/skills">Skills</a>.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, April 24, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/plugin-enforcement-updates/">
-        <h2 class="post-title">
-            Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>During a recent session on a friends computer where an AI agent implemented 17 Stride tasks back-to-back,I discovered something uncomfortable: the agent skipped nearly every mandatory workflow step. The <code>task-explorer</code> was used once, then never again. The <code>task-reviewer</code> was never invoked. The <code>hook-diagnostician</code> was never called when hooks failed. The <code>stride-subagent-workflow</code> skill — labeled MANDATORY — was ignored entirely. This was shocking to me as I have not see this on my own computer. I realized that I had enough contained in my configuration to force the agent to do what I wanted but not everybody had that config.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Tuesday, April 14, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/stride-new-plugins/">
-        <h2 class="post-title">
-            Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>Prior to today, Stride had excellent support for Claude Code via six Skills and four SubAgents. All other agents were only provided with Skills without the enforcement and additional capabilities added by the SubAgents.</p>
-<p>Today I shipped three updates that fundamentally change how AI agents interact with Stride. Two new platform extensions bring Stride&rsquo;s full workflow and support to <a href="https://github.com/cheezy/stride-copilot">GitHub Copilot</a> and <a href="https://github.com/cheezy/stride-gemini">Google Gemini CLI</a>. And a new Claude Code hooks integration eliminates the most persistent friction point that still existed in the Claude Code agent workflow: permission prompts.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Tuesday, March 24, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-</div>
-
+            
+             
             
 
 
-<ul class="pager" data-pagefind-ignore="all">
-    
-    
-    <li class="next">
-        <a href="/page/2/">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
 
 
-       	</div>
-        
+            
+            </div>
+            
+            
 
 <div class="
     col-lg-3 col-lg-offset-0
@@ -517,9 +476,9 @@
     
 </div>
 
-	</div>
-</div>
-
+        </div>
+    </div>
+</article>
 
 
 
@@ -579,7 +538,7 @@
             
            
                    <li>
-                       <a href='/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

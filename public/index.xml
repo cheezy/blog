@@ -6,8 +6,15 @@
     <description>Recent content on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 May 2026 09:37:42 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 10:43:42 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Security Review Plugin: My latest addition to the Stride plugin library</title>
+      <link>http://localhost:1313/post/the-security-review-plugin/</link>
+      <pubDate>Tue, 12 May 2026 10:43:42 -0400</pubDate>
+      <guid>http://localhost:1313/post/the-security-review-plugin/</guid>
+      <description>&lt;p&gt;Yesterday I typed the following into Claude Code:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/security-review:security-review --full&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Forty-two agent dispatches and roughly twelve minutes later, I had a 72-finding security review of Stride. The breakdown was sobering: 0 critical, 12 high, 15 medium, 38 low, 7 info. Some of those findings I knew about from having ran a different security review tool. That previous tool found 17 items. The rest were new to me.&lt;/p&gt;&#xA;&lt;p&gt;Then I spent the rest of the day fixing them - or more accurately watching Claude fix them.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</title>
       <link>http://localhost:1313/post/mechanical-gating-works/</link>
@@ -356,7 +363,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello world (again eh)!</title>
