@@ -190,14 +190,14 @@
 
             
                 <p>Yesterday I typed the following into Claude Code:</p>
-<pre tabindex="0"><code>/security-review:security-review --full
+<pre tabindex="0"><code>/stride-security-review:security-review --full
 </code></pre><p>Forty-two agent dispatches and roughly twelve minutes later, I had a 72-finding security review of Stride. The breakdown was sobering: 0 critical, 12 high, 15 medium, 38 low, 7 info. Some of those findings I knew about from having ran a different security review tool. That previous tool found 17 items. The rest were new to me.</p>
 <p>Then I spent the rest of the day fixing them - or more accurately watching Claude fix them.</p>
 <p>This post is about the plugin that made that possible. What it is, why it works, what it costs, and the honest version of when you should and should not reach for it.</p>
 <h2 id="what-it-is">What it is</h2>
-<p><code>security-review</code> is a Claude Code plugin. Installing it gives you one slash command and one agent — that&rsquo;s it. No configuration, no SaaS dashboard, no token budget to argue about.</p>
+<p><code>stride-security-review</code> is a Claude Code plugin. Installing it gives you one slash command and one agent — that&rsquo;s it. No configuration, no SaaS dashboard, no token budget to argue about.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/plugin marketplace add cheezy/stride-marketplace
-</span></span><span style="display:flex;"><span>/plugin install security-review@stride-marketplace
+</span></span><span style="display:flex;"><span>/plugin install stride-security-review@stride-marketplace
 </span></span></code></pre></div><p>The slash command takes a few flags. The two that matter most:</p>
 <table>
   <thead>
@@ -208,22 +208,22 @@
   </thead>
   <tbody>
       <tr>
-          <td><code>/security-review:security-review</code></td>
+          <td><code>/stride-security-review:security-review</code></td>
           <td>Is this PR safe to merge? (diff against <code>HEAD</code>)</td>
       </tr>
       <tr>
-          <td><code>/security-review:security-review --full</code></td>
+          <td><code>/stride-security-review:security-review --full</code></td>
           <td>What latent issues are in this codebase right now?</td>
       </tr>
   </tbody>
 </table>
-<p>Diff mode is the default and the one most teams will actually adopt — it&rsquo;s the PR-time check. Full mode is the one I ran yesterday: it enumerates every tracked text file, batches them in groups of 10, dispatches a <code>security-reviewer</code> agent on each batch in parallel, and merges the results.</p>
-<p>There are other flags — <code>--json</code> for piping, <code>--maestro</code> for the seven-layer agentic-AI taxonomy, <code>--rci</code> for recursive criticism passes, <code>--baseline</code> for suppressing already-acknowledged findings, <code>--patches</code> for inline auto-fix diffs. They compose: <code>--full --maestro --rci 2 --baseline ci.json --patches lib/</code> is a valid invocation. Read the <a href="https://github.com/cheezy/security-review">README</a> for the full taxonomy.</p>
+<p>Diff mode is the default and the one most teams will actually adopt — it&rsquo;s the PR-time check. Full mode is the one I ran yesterday: it enumerates every tracked text file, batches them in groups of 10, dispatches a <code>stride-security-reviewer</code> agent on each batch in parallel, and merges the results.</p>
+<p>There are other flags — <code>--json</code> for piping, <code>--maestro</code> for the seven-layer agentic-AI taxonomy, <code>--rci</code> for recursive criticism passes, <code>--baseline</code> for suppressing already-acknowledged findings, <code>--patches</code> for inline auto-fix diffs. They compose: <code>--full --maestro --rci 2 --baseline ci.json --patches lib/</code> is a valid invocation. Read the <a href="https://github.com/cheezy/stride-security-review">README</a> for the full taxonomy.</p>
 <h2 id="why-it-works">Why it works</h2>
 <p>There are roughly three things doing the heavy lifting under the hood.</p>
 <p><strong>It&rsquo;s a real agent, not a regex.</strong> A <code>grep</code> hit on <code>eval(</code> is not a finding; <code>eval(user_input)</code> flowing in from an HTTP boundary is. The agent reads the actual diff (or the actual file, in full mode), traces trust boundaries, and writes a description that names the source, the sink, and the realistic worst-case outcome. The output isn&rsquo;t a list of rule IDs — it&rsquo;s a paragraph for each issue that you can hand to a developer who has never seen the codebase, and they will understand what to fix and why.</p>
-<p><strong>It filters its own noise.</strong> The plugin&rsquo;s <a href="https://github.com/cheezy/security-review#what-it-deliberately-ignores">README</a> lists what the agent will not report: pure denial-of-service, generic rate-limiting concerns (unless they sit on an authentication endpoint), memory exhaustion alone, hypothetical risks not realizable through the changed code, style-as-security. This is the difference between a tool you actually keep in the loop and one you mute after week two. The 72 findings I got on Stride were 72 things I had reasons to act on, not 720 with a 90% triage tax.</p>
-<p><strong>It speaks JSON.</strong> Every finding carries a <code>vulnerability_class</code>, a <code>cwe</code> array, an <code>owasp</code> array, a <code>severity</code>, a <code>confidence</code>. With <code>--json</code> the entire document is pipeable. The Stride hook that auto-commits work after <code>mix test</code> could just as easily run <code>/security-review:security-review --json</code> and refuse to mark a task <code>done</code> if the diff introduces a critical. The plugin doesn&rsquo;t ship that hook — it ships the data shape that makes building it trivial.</p>
+<p><strong>It filters its own noise.</strong> The plugin&rsquo;s <a href="https://github.com/cheezy/stride-security-review#what-it-deliberately-ignores">README</a> lists what the agent will not report: pure denial-of-service, generic rate-limiting concerns (unless they sit on an authentication endpoint), memory exhaustion alone, hypothetical risks not realizable through the changed code, style-as-security. This is the difference between a tool you actually keep in the loop and one you mute after week two. The 72 findings I got on Stride were 72 things I had reasons to act on, not 720 with a 90% triage tax.</p>
+<p><strong>It speaks JSON.</strong> Every finding carries a <code>vulnerability_class</code>, a <code>cwe</code> array, an <code>owasp</code> array, a <code>severity</code>, a <code>confidence</code>. With <code>--json</code> the entire document is pipeable. The Stride hook that auto-commits work after <code>mix test</code> could just as easily run <code>/stride-security-review:security-review --json</code> and refuse to mark a task <code>done</code> if the diff introduces a critical. The plugin doesn&rsquo;t ship that hook — it ships the data shape that makes building it trivial.</p>
 <h2 id="the-real-story-running-it-against-stride">The real story: running it against Stride</h2>
 <p>Stride is an Elixir/Phoenix kanban app I&rsquo;ve been building in the open for months. It has authentication, an API token system, a multi-tenant board model, a metrics dashboard, and a LiveView for every interactive surface. It has 442 tracked files and around 2,700 tests. It is also, until today, a codebase that had never been through a top-to-bottom security review.</p>
 <p>The full scan ran for about twelve minutes. The agent dispatched 42 parallel batches, skipped 30 files (29 binaries, one oversized test fixture), and returned a single merged JSON document. The high-severity findings were the ones that mattered. Here are a few examples:</p>
@@ -248,13 +248,13 @@
 <li><strong>Findings that need humans.</strong> Three of Stride&rsquo;s medium findings were supply-chain pinning tasks that I unclaimed and left for interactive work later — they needed real commit SHAs from upstream repos and SHA256 digests from Docker Hub, and getting a SHA wrong breaks CI. The plugin correctly identified them. Acting on them required a person at a keyboard. That&rsquo;s the right division of labor.</li>
 </ul>
 <h2 id="when-to-reach-for-it">When to reach for it</h2>
-<p>Reach for diff mode (<code>/security-review:security-review</code>):</p>
+<p>Reach for diff mode (<code>/stride-security-review:security-review</code>):</p>
 <ul>
 <li>On every PR that touches authentication, authorization, user input handling, cryptography, secrets, database queries, shell-outs, file uploads, redirects, or response rendering.</li>
 <li>Before merging anything that changes a Dockerfile, CI workflow, or production config.</li>
 <li>As the final pre-push check on any branch you can&rsquo;t easily revert.</li>
 </ul>
-<p>Reach for full mode (<code>/security-review:security-review --full</code>):</p>
+<p>Reach for full mode (<code>/stride-security-review:security-review --full</code>):</p>
 <ul>
 <li>When you onboard the plugin onto an existing repo. You want a baseline before you start gating PRs.</li>
 <li>On a quarterly cadence. The codebase changes underneath you; latent issues accumulate.</li>
@@ -268,10 +268,10 @@
 <li>You want it to fix things autonomously without you looking. The findings are good. The fixes are still yours (and Claudes&rsquo;) to write and verify.</li>
 </ul>
 <h2 id="where-to-get-it">Where to get it</h2>
-<p>The marketplace is public. The plugin is MIT-licensed. The agent prompt is a markdown file you can read and fork. Issues at <a href="https://github.com/cheezy/security-review">https://github.com/cheezy/security-review</a>.</p>
+<p>The marketplace is public. The plugin is MIT-licensed. The agent prompt is a markdown file you can read and fork. Issues at <a href="https://github.com/cheezy/stride-security-review">https://github.com/cheezy/stride-security-review</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/plugin marketplace add cheezy/stride-marketplace
-</span></span><span style="display:flex;"><span>/plugin install security-review@stride-marketplace
-</span></span><span style="display:flex;"><span>/security-review:security-review --full
+</span></span><span style="display:flex;"><span>/plugin install stride-security-review@stride-marketplace
+</span></span><span style="display:flex;"><span>/stride-security-review:security-review --full
 </span></span></code></pre></div><p>If you find a finding it should have caught and missed, that&rsquo;s the contribution shape that helps most — open an issue with the smallest possible reproducing diff. The agent prompt has a documented template for extending vulnerability classes and framework packs. Adding a new framework pack (Spring, Express, Gin, Laravel, FastAPI) is a single PR.</p>
 <p>That is the plugin. Twelve minutes to ask the question, the rest of an afternoon to do something about the answer. There are worse trades.</p>
 
