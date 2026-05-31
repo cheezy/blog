@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 May 2026 10:43:42 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2026 10:37:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Product Team: How does AI change the structure of a larger product organization?</title>
+      <link>http://localhost:1313/post/the-product-team/</link>
+      <pubDate>Sun, 31 May 2026 10:37:00 -0400</pubDate>
+      <guid>http://localhost:1313/post/the-product-team/</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;http://localhost:1313/post/the-new-team&#34;&gt;The New Team&lt;/a&gt; I described what a single AI-driven product team looks like: one Product Owner and one or two Developers, working in tight feedback loops that produce shippable software in hours rather than weeks. That post was about the atomic unit. This post is about what happens when you zoom out.&lt;/p&gt;&#xA;&lt;p&gt;Most product organizations were not designed around a single team. They were designed around the assumption that delivering software is slow, expensive, and risky. Every layer of the org chart - the directors, the program managers, the design ops leads, the release coordinators - exists to manage that slowness and risk. When the underlying work becomes fast and cheap, those layers do not automatically become useful. Many of them become friction.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The Security Review Plugin: My latest addition to the Stride plugin library</title>
       <link>http://localhost:1313/post/the-security-review-plugin/</link>
