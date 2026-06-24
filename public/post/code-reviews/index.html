@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Are Code Reviews and Pull Requests a Thing of the Past?" />
+    <meta property="og:title" content="Are Code Reviews and Pull Requests a Thing of the Past?" />
+    <meta property="twitter:title" content="Are Code Reviews and Pull Requests a Thing of the Past?" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/code-reviews/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Are Code Reviews and Pull Requests a Thing of the Past? | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/code-reviews/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Are Code Reviews and Pull Requests a Thing of the Past?</h1>
+
+            
+                <p>The pull request is one of the most entrenched rituals in modern software development. Open a branch, push your work, open a PR, wait for a colleague to read the diff, address their comments, wait again, and finally merge. We have built entire products, careers, and cultural norms around this loop. It is so universal that most developers have never seriously questioned whether it should exist.</p>
+<p>I want to question it. Because once you have an AI-driven workflow that is tuned well, the traditional pull request and the human code review that rides along with it are, in most cases, no longer necessary. That is a strong claim, so let me be careful about what I mean by it - and then let me be equally honest about the fact that plenty of organizations are going to keep requiring reviews anyway, and what the right answer looks like for them.</p>
+<h2 id="what-code-review-was-actually-for">What code review was actually for</h2>
+<p>It helps to remember why we review code in the first place. Strip away the ritual and there are really only a handful of jobs a code review does:</p>
+<ol>
+<li><strong>Catch defects</strong> before they reach production.</li>
+<li><strong>Enforce standards</strong> - style, architecture, naming, test coverage, security practices.</li>
+<li><strong>Spread knowledge</strong> so more than one person understands a given piece of the system.</li>
+<li><strong>Create a gate</strong> - a deliberate pause where a second human takes responsibility for what ships.</li>
+</ol>
+<p>For decades these jobs were bundled together and assigned to a human reviewer because a human was the only thing capable of doing any of them. The pull request was the container we built to hold all four jobs in one place.</p>
+<p>It is worth being honest about how hard that container actually is to do well, because the ritual hides the difficulty. To review a change properly, a person has to reassemble context that lives in a dozen different places. The code is in the repository, but the requirements it is supposed to satisfy are in Jira - or in a Confluence page, or a Slack thread, or a comment on a ticket that links to another ticket. The reviewer has to hold the diff in one window and the acceptance criteria in another and mentally check one against the other, hoping the ticket was actually kept up to date as the work evolved.</p>
+<p>The standards are worse. Some of them are written down - a style guide, an architecture decision record, a security checklist - but most of them are not. They live in the heads of the senior developers who have been on the team longest, and they surface only when a change happens to violate one. Two different reviewers will enforce two different sets of unwritten rules, and the same reviewer will enforce different rules on different days depending on what they happen to remember. There is no single authoritative place a reviewer can go to know what &ldquo;good&rdquo; means for this codebase, so &ldquo;good&rdquo; becomes whatever the person looking at it this time believes it to be.</p>
+<p>And all of this competes for attention with the reviewer&rsquo;s own work. A code review is almost never anyone&rsquo;s primary job. It is the thing you do between your own tasks, when a notification interrupts you, on a change someone else is blocked on. It takes the back burner to whatever you were already building, which is exactly why PRs sit for hours or days, why reviews get skimmed under deadline pressure, and why &ldquo;LGTM&rdquo; so often means &ldquo;I trust you and I am busy.&rdquo; The job is genuinely hard - it requires assembling scattered context and applying mostly-undocumented judgment - and we hand it to people in the margins of their day and expect rigor.</p>
+<p>The interesting thing about AI-driven delivery is that it pulls these four jobs apart and hands most of them to mechanisms that are faster, more consistent, and available continuously rather than whenever a colleague has a free half hour. It also addresses the fragmentation directly: when the requirements, the standards, and the verification steps are encoded into the task and the loop instead of scattered across Jira tickets and senior developers&rsquo; memories, the context no longer has to be reassembled by hand every single time.</p>
+<h2 id="why-a-well-tuned-ai-workflow-doesnt-need-the-human-review">Why a well-tuned AI workflow doesn&rsquo;t need the human review</h2>
+<p>When I say &ldquo;tuned well,&rdquo; I mean something specific. I mean a workflow where the standards a reviewer used to enforce by hand have been moved down into the loop itself: linters, type checkers, test suites, security skills, and architectural conventions encoded as hooks and subagents that run on every change. I have written before about how <a href="/post/mechanical-gating-works">mechanical gating beats prose</a> - the same principle applies here. A human reviewer reminding you to add a test is an aspiration. A hook that refuses to complete the work until the test exists is a guarantee.</p>
+<p>Walk back through the four jobs with that in mind.</p>
+<p><strong>Catching defects.</strong> A well-configured agent runs the full test suite, runs static analysis, and frequently runs a dedicated review subagent against its own diff before the work is ever called done. This happens on every change, not on the changes a busy reviewer happened to look at closely. The defect-catching job is not removed - it is automated and made continuous.</p>
+<p><strong>Enforcing standards.</strong> This is the job humans were always worst at. Human reviewers are inconsistent: they enforce the rules they remember, on the days they have energy, with a thoroughness that varies wildly with how long the diff is. A skill or a linter does not get tired on a 900-line diff. Standards enforcement is precisely the kind of mechanical work that belongs in code, not in a person&rsquo;s head.</p>
+<p><strong>Spreading knowledge.</strong> This was always the weakest justification in practice. Most PR approvals are rubber stamps - a quick scroll, a &ldquo;LGTM,&rdquo; and a merge. Real knowledge transfer happened in design conversations and pairing, not in the review tool. And in an AI workflow the relevant context lives in the task definition and the agent&rsquo;s record of what it did, which is more durable than a teammate&rsquo;s fading memory of a diff they skimmed last Tuesday.</p>
+<p><strong>The gate.</strong> This is the one that survives, and it is worth separating cleanly from the other three. Sometimes you genuinely want a human to pause and take responsibility before something ships - not because the machine can&rsquo;t check it, but because the decision carries risk that a person should own. That is a real need. But notice it is a much narrower need than &ldquo;review every change.&rdquo; It applies to a fraction of the work, and it is about judgment and accountability, not about reading every line of every diff.</p>
+<p>So the honest summary is: three of the four jobs are done better by the loop itself, and the fourth - the gate - is real but should be applied surgically, not universally. A workflow that is tuned well has already absorbed jobs one through three. What is left is deciding which changes deserve a human gate.</p>
+<h2 id="but-plenty-of-companies-will-still-require-reviews">But plenty of companies will still require reviews</h2>
+<p>I am not naive about this. Even granting everything above, a large number of organizations are going to keep requiring pull request reviews on every change for a long time. Sometimes for good reasons and sometimes for bad ones:</p>
+<ul>
+<li><strong>Regulatory and compliance requirements</strong> that mandate a documented second pair of eyes on changes to certain systems. SOX, HIPAA, and various audit frameworks effectively require a review trail.</li>
+<li><strong>Contractual obligations</strong> to customers who demand human sign-off.</li>
+<li><strong>Genuine high-stakes surfaces</strong> - the billing engine, the auth layer, the data-deletion path - where the cost of a defect justifies a human gate regardless of how good the automation is.</li>
+<li><strong>Organizational trust that hasn&rsquo;t caught up yet.</strong> This is the most common reason, and it is not irrational. Trust in an automated workflow is earned over time, and a company that has not yet built that trust is right to be cautious.</li>
+</ul>
+<p>The mistake is to treat all of these the same way the old world did - by routing every single change through the same heavyweight human review. That is what the traditional pull request forces you to do. The better answer is a workflow that lets you apply the human gate exactly where it is needed and nowhere else.</p>
+<h2 id="the-traditional-approach-vs-what-stride-does">The traditional approach vs. what Stride does</h2>
+<p>This is where I want to contrast the old container with what I have built into <a href="https://stridelikeaboss.com">Stride</a>.</p>
+<p>In the traditional model, the pull request is the unit of review, and review is binary and ambient. Every change becomes a PR. Every PR sits in a queue waiting for human attention. The reviewer&rsquo;s job is undifferentiated - they look at the trivial copy change and the auth refactor with the same tool, the same ceremony, and roughly the same friction. The result is a system where the low-risk work is over-reviewed and slowed down, while the high-risk work gets the same skim as everything else because the reviewer is drowning in volume. The gate is applied everywhere, which means it is applied carefully nowhere.</p>
+<p>Stride takes the gate and makes it an explicit, per-task decision rather than an ambient default.</p>
+<h3 id="the-needs_review-flag">The <code>needs_review</code> flag</h3>
+<p>Every task in Stride carries a <code>needs_review</code> flag, and what happens when the work is finished depends entirely on it.</p>
+<p>
+  <img src="/img/needs_review.png" alt="Needs review">
+
+</p>
+<p>When an agent finishes the work and runs its validation hooks, what happens next depends on that flag. If <code>needs_review</code> is false, the task moves straight to <em>Done</em> - the automated gates have already run, and there is nothing a human gate would add. If <code>needs_review</code> is true, the task does not move to <em>Done</em>. It moves into a review state and waits for a human.</p>
+<p>The crucial design choice is who sets that flag and when. Agents do not get to decide that their own work is exempt from review. A human decides which tasks require a human gate, deliberately, as part of defining the work - marking the auth change and the billing change as <code>needs_review: true</code> while letting the routine work flow through on the strength of the automated checks alone. The decision about where to spend human attention is made once, up front, by a person who understands the risk - not implicitly, by the mere fact that a diff exists.</p>
+<p>This is the inversion of the traditional model. In the old world, review is the default and skipping it is the exception you have to argue for. In Stride, the automated loop is the default and the human gate is the exception you deliberately mark.</p>
+<h3 id="the-review-queue">The Review queue</h3>
+<p>The flag needs somewhere to land, and that is the Review queue page. Instead of human attention being scattered across a pile of pull requests in a Git host - each one a context switch into a diff view - the tasks that were explicitly marked as needing a human gate collect in one place. A reviewer opens the Review queue and sees exactly the work that a person decided was worth a person&rsquo;s judgment. Nothing else is in there competing for attention.</p>
+<p>The difference in experience is the whole point. A traditional reviewer faces a queue that is mostly noise - trivial changes they have to clear to get to the one that matters. A Stride reviewer faces a queue that is all signal, because the filtering happened at task-definition time. When a reviewer approves a task, it moves to <em>Done</em> and any dependent work unblocks; the gate did its narrow job and got out of the way.</p>
+<p>The queue also solves the fragmentation problem I described earlier. Remember that the hardest part of a traditional review is reassembling context that lives in a dozen places - the diff in one window, the acceptance criteria in a Jira ticket, the standards in a senior developer&rsquo;s head. Stride attacks that directly with a <a href="https://github.com/cheezy/stride/blob/main/agents/task-reviewer.md">task-reviewer subagent</a> that runs before the work is ever offered up for a human gate. The subagent receives every field the task supplies - the acceptance criteria, the pitfalls the author explicitly warned against, the patterns to follow, the testing strategy, the security considerations - and checks the diff against each one, item by item. It also reads the project&rsquo;s <code>CODE-REVIEW.md</code> and evaluates the change against every standard the team has bothered to write down. The output is a structured report: each acceptance criterion marked met or not met with a file-and-line reference, each pitfall checked, each project standard evaluated.</p>
+<p>Here is what that looks like in Stride today.</p>
+<p>
+  <img src="/img/review_queue_top_summary.png" alt="Review Queue Summary">
+
+</p>
+<p>At the top of the review screen sits the summary - a high-level verdict on how the task fared against the criteria it was defined with, so the reviewer knows within seconds whether this is a clean pass or something that needs a closer look. Two buttons drive the decision. <strong>Approve</strong> clears the task and moves it straight to the <em>Done</em> column of the board; the gate did its job and the work ships. <strong>Request change</strong> opens a text area where the reviewer describes what needs to be different, and the task drops back to <em>In Progress</em> for the agent to address the feedback. There is no branch to check out, no PR thread to manage, no second round trip through a Git host - the reviewer&rsquo;s judgment goes straight back to the agent that did the work, and the loop closes.</p>
+<p>
+  <img src="/img/review_queue_details.png" alt="Review Queue Details">
+
+</p>
+<p>Scroll down from the summary and you reach the detail - the full report the task-reviewer subagent produced, laid out section by section. The security considerations are checked off first, then every acceptance criterion appears as its own row: a green pass marker, the criterion in the task&rsquo;s own wording, and a one-line note on the evidence that satisfied it, so a reviewer can see at a glance that all six of six were met and read exactly <em>why</em> each one passed. Below that come the review checks - the testing strategy broken out into unit, integration, and manual tests, then the patterns and pitfalls the task author specified, each with its own verdict. This is the part that replaces the diff-archaeology of a traditional review. Instead of reverse-engineering whether a change did what it was supposed to, the reviewer reads a checklist where the requirements and the evidence sit side by side, already cross-referenced against the actual code.</p>
+<p>
+  <img src="/img/review_queue_file_diffs.png" alt="Review Queue File Diffs">
+
+</p>
+<p>And when the reviewer does want to look at the code itself, it is right there too. Below the checklist sits the full diff for the task - every file the change touched, with the familiar red-and-green line-by-line view and the complete list of affected files. The point is not that the diff disappears; experienced reviewers will always want to read the code for the changes that matter. The point is that the diff is no longer the <em>starting</em> point. It arrives last, after the requirements, the standards, and the verification results have already framed what to look for - so the reviewer reads the code with a checklist in hand rather than a blank slate.</p>
+<p>
+  <img src="/img/code_review.png" alt="CODE-REVIEW.md">
+
+</p>
+<p>This is where the &ldquo;standards live in a senior developer&rsquo;s head&rdquo; problem finally gets solved. A team writes down the things it actually cares about in a <code>CODE-REVIEW.md</code> file that lives in the repository - one bullet per rule, grouped under headings like <em>Authentication and authorization</em> or <em>LiveView / context boundary</em>. These are exactly the unwritten conventions a human reviewer used to enforce inconsistently from memory: no Ecto queries directly in a LiveView, public functions documented, error tuples for fallible operations, no hardcoded colors. Writing them down once turns the tribal knowledge into a checklist the machine can run.</p>
+<p>
+  <img src="/img/review_queue_code_review.png" alt="Review Queue Code Review">
+
+</p>
+<p>And run it the machine does. On every task, the agent reads each line of <code>CODE-REVIEW.md</code> and evaluates the diff against it individually. The result is the panel above: every rule the team wrote down appears as its own row, marked either <strong>N/A</strong> when the change does not touch the area the rule governs - a check about LiveView rendering simply does not apply to a pure context-module change - or <strong>MET</strong> with a one-line note pointing at the evidence in the code. Nothing gets skipped because the reviewer was tired, and nothing gets enforced selectively because a particular reviewer happened to feel strongly about it that day. Every rule is considered against every change, every time, and the reviewer can see at a glance which rules were in play and which sat out. The consistency that human reviewers could never quite deliver is exactly what an agent working from an explicit list does best.</p>
+<h2 id="where-this-lands">Where this lands</h2>
+<p>I do not think the pull request disappears tomorrow, and I do not think every team should rip out their review process this quarter. Trust is earned, regulations are real, and some surfaces will always warrant a human pause.</p>
+<p>But I do think the era of reviewing every change by hand is ending, and that clinging to it is going to look, in a few years, the way manual deployment looks now - a thing we did because the tools forced us to, long after the underlying need had been automated away. The four jobs of code review have come apart. Three of them belong in the loop. The fourth - the human gate - is real but narrow, and it deserves a tool that treats it as the deliberate exception it is, rather than a tax on every line of code that ships.</p>
+<p>Taken to its conclusion, this points at something larger than a better review screen. Stride can become the single place where everything a review needs is pulled together - the requirements, the standards checklist, the verification results, and the diff - and where the human gate, when it is warranted, actually happens. The pull request stops being the container. The task does. And once the task is the container, the Git mechanics that the pull request existed to manage can move underneath it: accepting a task moves it to <em>Done</em>, and an <code>after_review</code> or <code>after_goal</code> hook simply integrates the code - merging the branch, kicking off the deploy, whatever the team&rsquo;s integration step is. The reviewer never opens a Git host, never manages a branch, never clicks &ldquo;merge&rdquo; in a separate tool. They make the one judgment that needed a human - approve or request change - and the plumbing follows automatically. The pull request, in other words, does not just become unnecessary; its remaining mechanical job gets absorbed into the hook that fires the moment a human says yes.</p>
+<p>That is the bet behind the <code>needs_review</code> flag and the Review queue: keep the human gate exactly where human judgment adds value, and let everything else move at the speed the automation has already earned.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
+        
+            <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
+        
+            <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
+        
+            <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
+        
+            <li><a href="/post/context-matters/">Context Matters</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -6,8 +6,15 @@
     <description>Recent content in AI on Cheezy World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 May 2026 10:37:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 10:37:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Are Code Reviews and Pull Requests a thing of the past?</title>
+      <link>http://localhost:1313/post/code-reviews/</link>
+      <pubDate>Wed, 24 Jun 2026 10:37:00 -0400</pubDate>
+      <guid>http://localhost:1313/post/code-reviews/</guid>
+      <description>&lt;p&gt;The pull request is one of the most entrenched rituals in modern software development. Open a branch, push your work, open a PR, wait for a colleague to read the diff, address their comments, wait again, and finally merge. We have built entire products, careers, and cultural norms around this loop. It is so universal that most developers have never seriously questioned whether it should exist.&lt;/p&gt;&#xA;&lt;p&gt;I want to question it. Because once you have an AI-driven workflow that is tuned well, the traditional pull request and the human code review that rides along with it are, in most cases, no longer necessary. That is a strong claim, so let me be careful about what I mean by it - and then let me be equally honest about the fact that plenty of organizations are going to keep requiring reviews anyway, and what the right answer looks like for them.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The Product Team: How does AI change the structure of a larger product organization?</title>
       <link>http://localhost:1313/post/the-product-team/</link>
