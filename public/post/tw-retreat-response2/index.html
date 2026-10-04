@@ -203,40 +203,40 @@
 <p>The idea of verifying the accuracy <em>after</em> the agent completed a task was a form of rework. To me, rework is waste and I always feel the need to try to eliminate it. I would prefer for the agent to have all necessary information it needed to get it right the first time. This meant that I needed to abandon the idea of using prompts and instead use a more structured approach.</p>
 <p>In mid-December I started asking my agent what information it needed to complete a task accurately. I also asked what format was the easiest for it to consume. This started a process of providing the agent with structured inputs, seeing how accurate the output was, and iterating on the inputs until I felt confident in the results. The outcome was what became Stride&rsquo;s <a href="https://cheezyworld.ca/post/what-is-a-task/">task</a> definition. This task includes a lot of information about what to build. Here is a sampling of some of the fields:</p>
 <table>
-  <thead>
-      <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>name</code></td>
-          <td><code>description</code></td>
-          <td><code>acceptance criteria</code></td>
-      </tr>
-      <tr>
-          <td><code>why</code></td>
-          <td><code>what</code></td>
-          <td><code>patterns to follow</code></td>
-      </tr>
-      <tr>
-          <td><code>validation rules</code></td>
-          <td><code>database changes</code></td>
-          <td><code>pitfalls</code></td>
-      </tr>
-      <tr>
-          <td><code>security considerations</code></td>
-          <td><code>integration points</code></td>
-          <td><code>out of scope</code></td>
-      </tr>
-      <tr>
-          <td><code>telemetry events</code></td>
-          <td><code>metrics to track</code></td>
-          <td><code>logging requirements</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>name</code></td>
+					<td><code>description</code></td>
+					<td><code>acceptance criteria</code></td>
+			</tr>
+			<tr>
+					<td><code>why</code></td>
+					<td><code>what</code></td>
+					<td><code>patterns to follow</code></td>
+			</tr>
+			<tr>
+					<td><code>validation rules</code></td>
+					<td><code>database changes</code></td>
+					<td><code>pitfalls</code></td>
+			</tr>
+			<tr>
+					<td><code>security considerations</code></td>
+					<td><code>integration points</code></td>
+					<td><code>out of scope</code></td>
+			</tr>
+			<tr>
+					<td><code>telemetry events</code></td>
+					<td><code>metrics to track</code></td>
+					<td><code>logging requirements</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>This approach forces me to spend a little more time up front ensuring that I provide the agent with the information it needs, but I spend almost no time afterwards verifying the output. The <a href="https://github.com/cheezy/stride">Stride Skills</a> guide the agent in the creation of these detailed tasks.</p>
 <p>The next piece of my approach is to ensure the output matches the task details. The Stride <a href="https://github.com/cheezy/stride/blob/main/agents/task-reviewer.md">task reviewer</a> <a href="https://code.claude.com/docs/en/sub-agents">SubAgent</a> handles this. It compares the code changes to the task specification and ensures that the implementation matches the specification. If it doesn&rsquo;t, the SubAgent provides the details to the coding agent and asks it to fix the issues. If everything is okay, this SubAgent attaches a review report to the task so a human can review it later.</p>
@@ -382,6 +382,12 @@
                
             
                
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
                     <a href="/tags/tdd" title="tdd">
                         tdd
                     </a>
@@ -486,6 +492,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-notifications/">Stride Now Tells You When It Needs You</a></li>
+        
             <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
         
             <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
@@ -493,8 +501,6 @@
             <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
         
             <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
-        
-            <li><a href="/post/context-matters/">Context Matters</a></li>
         
         </ul>
     </section>

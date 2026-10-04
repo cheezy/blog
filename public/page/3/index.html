@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.161.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.166.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -192,6 +192,31 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
+    <a href="http://localhost:1313/post/review-report/">
+        <h2 class="post-title">
+            Closing the Loop: How We Added Traceability to Stride
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <p>When AI agents review code, their findings shouldn&rsquo;t vanish into the ether. That was the driving insight behind the <code>review_report</code> feature we shipped in <a href="https://stridelikeaboss.com">Stride</a> v1.25 and the <a href="https://github.com/cheezy/stride">Stride plugin</a> v1.4 this week. Here&rsquo;s the story of what we built, why it matters, and how all the pieces fit together.</p>
+<h2 id="the-problem">The Problem</h2>
+<p>Stride&rsquo;s task-reviewer SubAgent already did excellent work — it checks code changes against <code>acceptance criteria</code>, verifies <code>pitfall</code> avoidance, validates <code>pattern compliance</code> and alignment of the <code>testing strategy</code>. But the review output lived only in the agent&rsquo;s conversation context. Once the agent completed the task, the structured findings were gone. Human reviewers opening a task in the <em>Review</em> or <em>Done</em> column had no visibility into what the AI had already checked.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Tuesday, March 17, 2026
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="http://localhost:1313/post/stride-enhanced-workflow/">
         <h2 class="post-title">
             Strides New Enhanced Workflow
@@ -289,30 +314,6 @@
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="http://localhost:1313/post/claude-remote-control/">
-        <h2 class="post-title">
-            Claude Remote Control
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>Anthropic is in the process of releasing a feature for Claude Code that I think is amazing. It is <a href="https://code.claude.com/docs/en/remote-control">Claude Remote Control</a>. This feature allows you to control your Claude Code session remotely from any iOS or Android device.</p>
-<p>I can see this feature being used in many different scenarios. For example, you could use it to check on work while you are in a meeting, to kick off a task while you&rsquo;re at lunch with friends, or to simply sit on the couch and oversee some work Claude is doing. I used it to get a few tasks completed while having coffee with my son. It was extremely easy to use and I can tell you I will be using it a lot. I personally tested it on both my iPhone and iPad and it works great.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Saturday, February 28, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
 </div>
 
             
@@ -401,6 +402,12 @@
                
                     <a href="/tags/software-development" title="software development">
                         software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
                     </a>
                
             
@@ -509,6 +516,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-notifications/">Stride Now Tells You When It Needs You</a></li>
+        
             <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
         
             <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
@@ -516,8 +525,6 @@
             <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
         
             <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
-        
-            <li><a href="/post/context-matters/">Context Matters</a></li>
         
         </ul>
     </section>

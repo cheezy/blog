@@ -1,82 +1,94 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on Cheezy World</title>
-    <link>http://localhost:1313/tags/</link>
-    <description>Recent content in Tags on Cheezy World</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jun 2026 10:37:00 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI</title>
-      <link>http://localhost:1313/tags/ai/</link>
-      <pubDate>Wed, 24 Jun 2026 10:37:00 -0400</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Continuous Delivery</title>
-      <link>http://localhost:1313/tags/continuous-delivery/</link>
-      <pubDate>Wed, 24 Jun 2026 10:37:00 -0400</pubDate>
-      <guid>http://localhost:1313/tags/continuous-delivery/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Agile</title>
-      <link>http://localhost:1313/tags/agile/</link>
-      <pubDate>Fri, 13 Mar 2026 09:47:00 -0400</pubDate>
-      <guid>http://localhost:1313/tags/agile/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Elixir</title>
-      <link>http://localhost:1313/tags/elixir/</link>
-      <pubDate>Fri, 13 Feb 2026 07:26:00 -0500</pubDate>
-      <guid>http://localhost:1313/tags/elixir/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LiveView</title>
-      <link>http://localhost:1313/tags/liveview/</link>
-      <pubDate>Wed, 17 Dec 2025 08:23:02 -0500</pubDate>
-      <guid>http://localhost:1313/tags/liveview/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Phoenix</title>
-      <link>http://localhost:1313/tags/phoenix/</link>
-      <pubDate>Wed, 17 Dec 2025 08:23:02 -0500</pubDate>
-      <guid>http://localhost:1313/tags/phoenix/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Fly.io</title>
-      <link>http://localhost:1313/tags/fly.io/</link>
-      <pubDate>Fri, 07 Nov 2025 15:41:11 -0500</pubDate>
-      <guid>http://localhost:1313/tags/fly.io/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pipeline</title>
-      <link>http://localhost:1313/tags/pipeline/</link>
-      <pubDate>Fri, 07 Nov 2025 15:41:11 -0500</pubDate>
-      <guid>http://localhost:1313/tags/pipeline/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Software Development</title>
-      <link>http://localhost:1313/tags/software-development/</link>
-      <pubDate>Wed, 29 Oct 2025 15:28:45 -0400</pubDate>
-      <guid>http://localhost:1313/tags/software-development/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>TDD</title>
-      <link>http://localhost:1313/tags/tdd/</link>
-      <pubDate>Tue, 30 Sep 2025 09:52:02 -0400</pubDate>
-      <guid>http://localhost:1313/tags/tdd/</guid>
-      <description></description>
-    </item>
-  </channel>
+	<channel>
+		<title>Tags on Cheezy World</title>
+		<link>http://localhost:1313/tags/</link>
+		<description>Recent content in Tags on Cheezy World</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 03 Oct 2026 14:13:00 -0400</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AI</title>
+				<link>http://localhost:1313/tags/ai/</link>
+				<pubDate>Sat, 03 Oct 2026 14:13:00 -0400</pubDate>
+				<guid>http://localhost:1313/tags/ai/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Continuous Delivery</title>
+				<link>http://localhost:1313/tags/continuous-delivery/</link>
+				<pubDate>Sat, 03 Oct 2026 14:13:00 -0400</pubDate>
+				<guid>http://localhost:1313/tags/continuous-delivery/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Stride</title>
+				<link>http://localhost:1313/tags/stride/</link>
+				<pubDate>Sat, 03 Oct 2026 14:13:00 -0400</pubDate>
+				<guid>http://localhost:1313/tags/stride/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Agile</title>
+				<link>http://localhost:1313/tags/agile/</link>
+				<pubDate>Fri, 13 Mar 2026 09:47:00 -0400</pubDate>
+				<guid>http://localhost:1313/tags/agile/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Elixir</title>
+				<link>http://localhost:1313/tags/elixir/</link>
+				<pubDate>Fri, 13 Feb 2026 07:26:00 -0500</pubDate>
+				<guid>http://localhost:1313/tags/elixir/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>LiveView</title>
+				<link>http://localhost:1313/tags/liveview/</link>
+				<pubDate>Wed, 17 Dec 2025 08:23:02 -0500</pubDate>
+				<guid>http://localhost:1313/tags/liveview/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Phoenix</title>
+				<link>http://localhost:1313/tags/phoenix/</link>
+				<pubDate>Wed, 17 Dec 2025 08:23:02 -0500</pubDate>
+				<guid>http://localhost:1313/tags/phoenix/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Fly.io</title>
+				<link>http://localhost:1313/tags/fly.io/</link>
+				<pubDate>Fri, 07 Nov 2025 15:41:11 -0500</pubDate>
+				<guid>http://localhost:1313/tags/fly.io/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Pipeline</title>
+				<link>http://localhost:1313/tags/pipeline/</link>
+				<pubDate>Fri, 07 Nov 2025 15:41:11 -0500</pubDate>
+				<guid>http://localhost:1313/tags/pipeline/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Software Development</title>
+				<link>http://localhost:1313/tags/software-development/</link>
+				<pubDate>Wed, 29 Oct 2025 15:28:45 -0400</pubDate>
+				<guid>http://localhost:1313/tags/software-development/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>TDD</title>
+				<link>http://localhost:1313/tags/tdd/</link>
+				<pubDate>Tue, 30 Sep 2025 09:52:02 -0400</pubDate>
+				<guid>http://localhost:1313/tags/tdd/</guid>
+				<description></description>
+			</item>
+	</channel>
 </rss>

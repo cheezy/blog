@@ -213,40 +213,40 @@
 <h3 id="stride-subagent-workflow">stride-subagent-workflow</h3>
 <p>The orchestration skill is the traffic controller. It contains a decision matrix that determines which subagents to dispatch based on task complexity and the number of key files:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Task Attributes</th>
-          <th>Explorer</th>
-          <th>Plan</th>
-          <th>Reviewer</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>small, 0-1 key_files</td>
-          <td>Skip</td>
-          <td>Skip</td>
-          <td>Skip</td>
-      </tr>
-      <tr>
-          <td>small, 2+ key_files</td>
-          <td>Run</td>
-          <td>Skip</td>
-          <td>Run</td>
-      </tr>
-      <tr>
-          <td>medium (any)</td>
-          <td>Run</td>
-          <td>Run</td>
-          <td>Run</td>
-      </tr>
-      <tr>
-          <td>large (any)</td>
-          <td>Run</td>
-          <td>Run</td>
-          <td>Run</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Task Attributes</th>
+					<th>Explorer</th>
+					<th>Plan</th>
+					<th>Reviewer</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>small, 0-1 key_files</td>
+					<td>Skip</td>
+					<td>Skip</td>
+					<td>Skip</td>
+			</tr>
+			<tr>
+					<td>small, 2+ key_files</td>
+					<td>Run</td>
+					<td>Skip</td>
+					<td>Run</td>
+			</tr>
+			<tr>
+					<td>medium (any)</td>
+					<td>Run</td>
+					<td>Run</td>
+					<td>Run</td>
+			</tr>
+			<tr>
+					<td>large (any)</td>
+					<td>Run</td>
+					<td>Run</td>
+					<td>Run</td>
+			</tr>
+	</tbody>
 </table>
 <p>Simple tasks get zero overhead — the agent codes directly. Complex tasks get the full treatment: explore, plan, implement, review. The skill also integrates Claude Code&rsquo;s built-in Plan agent for medium and large tasks, creating a three-phase pre-implementation workflow: explore the code, design the approach, then execute.</p>
 <h2 id="how-it-fits-into-the-workflow">How It Fits Into the Workflow</h2>
@@ -358,6 +358,12 @@
                
             
                
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
                     <a href="/tags/tdd" title="tdd">
                         tdd
                     </a>
@@ -462,6 +468,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-notifications/">Stride Now Tells You When It Needs You</a></li>
+        
             <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
         
             <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
@@ -469,8 +477,6 @@
             <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
         
             <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
-        
-            <li><a href="/post/context-matters/">Context Matters</a></li>
         
         </ul>
     </section>

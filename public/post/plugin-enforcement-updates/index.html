@@ -241,46 +241,46 @@
   → Step 9: Loop back to Step 1 or stop
 </code></pre><p>The orchestrator adapts to each platform:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Platform</th>
-          <th>Exploration</th>
-          <th>Review</th>
-          <th>Hooks</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Claude Code</strong></td>
-          <td>Subagent dispatch (task-explorer)</td>
-          <td>Subagent dispatch (task-reviewer)</td>
-          <td>Automatic via hooks.json</td>
-      </tr>
-      <tr>
-          <td><strong>Copilot CLI</strong></td>
-          <td>Custom agents (explorer, reviewer)</td>
-          <td>Custom agents</td>
-          <td>Manual execution</td>
-      </tr>
-      <tr>
-          <td><strong>Gemini CLI</strong></td>
-          <td>Custom agents</td>
-          <td>Custom agents</td>
-          <td>Automatic via tool.execute hooks</td>
-      </tr>
-      <tr>
-          <td><strong>Codex CLI</strong></td>
-          <td>Custom agents with fallback</td>
-          <td>Custom agents with fallback</td>
-          <td>Manual execution</td>
-      </tr>
-      <tr>
-          <td><strong>OpenCode</strong></td>
-          <td>Custom agents with fallback</td>
-          <td>Custom agents with fallback</td>
-          <td>Automatic via tool.execute hooks</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Platform</th>
+					<th>Exploration</th>
+					<th>Review</th>
+					<th>Hooks</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Claude Code</strong></td>
+					<td>Subagent dispatch (task-explorer)</td>
+					<td>Subagent dispatch (task-reviewer)</td>
+					<td>Automatic via hooks.json</td>
+			</tr>
+			<tr>
+					<td><strong>Copilot CLI</strong></td>
+					<td>Custom agents (explorer, reviewer)</td>
+					<td>Custom agents</td>
+					<td>Manual execution</td>
+			</tr>
+			<tr>
+					<td><strong>Gemini CLI</strong></td>
+					<td>Custom agents</td>
+					<td>Custom agents</td>
+					<td>Automatic via tool.execute hooks</td>
+			</tr>
+			<tr>
+					<td><strong>Codex CLI</strong></td>
+					<td>Custom agents with fallback</td>
+					<td>Custom agents with fallback</td>
+					<td>Manual execution</td>
+			</tr>
+			<tr>
+					<td><strong>OpenCode</strong></td>
+					<td>Custom agents with fallback</td>
+					<td>Custom agents with fallback</td>
+					<td>Automatic via tool.execute hooks</td>
+			</tr>
+	</tbody>
 </table>
 <p>The individual skills (<code>stride-claiming-tasks</code>, <code>stride-completing-tasks</code>, etc.) remain fully functional for standalone use — resuming a partially completed task, or agents that need just the API format. But the orchestrator is the recommended entry point.</p>
 <h3 id="3-claiming-gate">3. Claiming Gate</h3>
@@ -312,40 +312,40 @@
 <h2 id="plugin-releases">Plugin Releases</h2>
 <p>All changes shipped today in coordinated releases:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Plugin</th>
-          <th>Version</th>
-          <th>Key Changes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>stride</strong> (Claude Code)</td>
-          <td>1.8.0</td>
-          <td>Orchestrator, reframed notices, claiming gate, verification checklist</td>
-      </tr>
-      <tr>
-          <td><strong>stride-copilot</strong></td>
-          <td>2.4.0</td>
-          <td>Same changes, adapted for Copilot&rsquo;s <code>activate</code> syntax</td>
-      </tr>
-      <tr>
-          <td><strong>stride-gemini</strong></td>
-          <td>1.4.0</td>
-          <td>Same changes, with tool.execute hook integration</td>
-      </tr>
-      <tr>
-          <td><strong>stride-codex</strong></td>
-          <td>1.3.0</td>
-          <td>Same changes, with graceful fallback for agents</td>
-      </tr>
-      <tr>
-          <td><strong>stride-opencode</strong></td>
-          <td>1.3.0</td>
-          <td>Same changes, with tool.execute hook integration</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Plugin</th>
+					<th>Version</th>
+					<th>Key Changes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>stride</strong> (Claude Code)</td>
+					<td>1.8.0</td>
+					<td>Orchestrator, reframed notices, claiming gate, verification checklist</td>
+			</tr>
+			<tr>
+					<td><strong>stride-copilot</strong></td>
+					<td>2.4.0</td>
+					<td>Same changes, adapted for Copilot&rsquo;s <code>activate</code> syntax</td>
+			</tr>
+			<tr>
+					<td><strong>stride-gemini</strong></td>
+					<td>1.4.0</td>
+					<td>Same changes, with tool.execute hook integration</td>
+			</tr>
+			<tr>
+					<td><strong>stride-codex</strong></td>
+					<td>1.3.0</td>
+					<td>Same changes, with graceful fallback for agents</td>
+			</tr>
+			<tr>
+					<td><strong>stride-opencode</strong></td>
+					<td>1.3.0</td>
+					<td>Same changes, with tool.execute hook integration</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="design-principles">Design Principles</h2>
 <p>Three principles guided today&rsquo;s work:</p>
@@ -434,6 +434,12 @@
                
                     <a href="/tags/software-development" title="software development">
                         software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
                     </a>
                
             
@@ -542,6 +548,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-notifications/">Stride Now Tells You When It Needs You</a></li>
+        
             <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
         
             <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
@@ -549,8 +557,6 @@
             <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
         
             <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
-        
-            <li><a href="/post/context-matters/">Context Matters</a></li>
         
         </ul>
     </section>

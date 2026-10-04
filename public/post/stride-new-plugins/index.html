@@ -278,35 +278,35 @@ User: y
 </ol>
 <p>The routing is straightforward:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Event</th>
-          <th>API Pattern</th>
-          <th>Stride Hook</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>PostToolUse</td>
-          <td><code>/api/tasks/claim</code></td>
-          <td><code>before_doing</code></td>
-      </tr>
-      <tr>
-          <td>PreToolUse</td>
-          <td><code>/api/tasks/:id/complete</code></td>
-          <td><code>after_doing</code></td>
-      </tr>
-      <tr>
-          <td>PostToolUse</td>
-          <td><code>/api/tasks/:id/complete</code></td>
-          <td><code>before_review</code></td>
-      </tr>
-      <tr>
-          <td>PostToolUse</td>
-          <td><code>/api/tasks/:id/mark_reviewed</code></td>
-          <td><code>after_review</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Event</th>
+					<th>API Pattern</th>
+					<th>Stride Hook</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>PostToolUse</td>
+					<td><code>/api/tasks/claim</code></td>
+					<td><code>before_doing</code></td>
+			</tr>
+			<tr>
+					<td>PreToolUse</td>
+					<td><code>/api/tasks/:id/complete</code></td>
+					<td><code>after_doing</code></td>
+			</tr>
+			<tr>
+					<td>PostToolUse</td>
+					<td><code>/api/tasks/:id/complete</code></td>
+					<td><code>before_review</code></td>
+			</tr>
+			<tr>
+					<td>PostToolUse</td>
+					<td><code>/api/tasks/:id/mark_reviewed</code></td>
+					<td><code>after_review</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>The <code>after_doing</code> hook is the critical one. It runs as a PreToolUse hook on the completion API call, which means if your tests fail, the completion call is blocked. The agent can&rsquo;t mark work done until validation passes. This is the same guarantee the existing workflow provides, but now it&rsquo;s enforced deterministically by the harness rather than relying on the LLM to follow instructions.</p>
 <h3 id="generic-by-design">Generic by Design</h3>
@@ -437,6 +437,12 @@ User: y
                
             
                
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
                     <a href="/tags/tdd" title="tdd">
                         tdd
                     </a>
@@ -541,6 +547,8 @@ User: y
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-notifications/">Stride Now Tells You When It Needs You</a></li>
+        
             <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
         
             <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
@@ -548,8 +556,6 @@ User: y
             <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
         
             <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
-        
-            <li><a href="/post/context-matters/">Context Matters</a></li>
         
         </ul>
     </section>

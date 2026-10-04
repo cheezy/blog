@@ -217,58 +217,58 @@
 <h5 id="step-33-claiming-the-task">Step 3.3: Claiming the Task</h5>
 <p>Now that the first hook has passed, the agent is ready to begin working on the task. But there are a few things that need to happen first. When the agent makes the API call to claim the task, the task is moved to the <em>Doing</em> column in Stride and then the agent performs the additional activities based on the details of the task. Here is a breakout:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Task Attributes</th>
-          <th>task-decomposer</th>
-          <th>task-explorer</th>
-          <th>Plan Agent</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>small, 0-1 key_files</td>
-          <td>Skip</td>
-          <td>Skip</td>
-          <td>Skip</td>
-      </tr>
-      <tr>
-          <td>small, 2+ key_files</td>
-          <td>Skip</td>
-          <td>Run</td>
-          <td>Skip</td>
-      </tr>
-      <tr>
-          <td>medium (any)</td>
-          <td>Skip</td>
-          <td>Run</td>
-          <td>Run</td>
-      </tr>
-      <tr>
-          <td>large (any)</td>
-          <td>Skip</td>
-          <td>Run</td>
-          <td>Run</td>
-      </tr>
-      <tr>
-          <td>Defect type</td>
-          <td>Skip</td>
-          <td>Run</td>
-          <td>Skip (unless large)</td>
-      </tr>
-      <tr>
-          <td>Large complexity, not yet decomposed</td>
-          <td>Run</td>
-          <td>Skip</td>
-          <td>Skip</td>
-      </tr>
-      <tr>
-          <td>25+ hour estimate, not yet decomposed</td>
-          <td>Run</td>
-          <td>Skip</td>
-          <td>Skip</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Task Attributes</th>
+					<th>task-decomposer</th>
+					<th>task-explorer</th>
+					<th>Plan Agent</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>small, 0-1 key_files</td>
+					<td>Skip</td>
+					<td>Skip</td>
+					<td>Skip</td>
+			</tr>
+			<tr>
+					<td>small, 2+ key_files</td>
+					<td>Skip</td>
+					<td>Run</td>
+					<td>Skip</td>
+			</tr>
+			<tr>
+					<td>medium (any)</td>
+					<td>Skip</td>
+					<td>Run</td>
+					<td>Run</td>
+			</tr>
+			<tr>
+					<td>large (any)</td>
+					<td>Skip</td>
+					<td>Run</td>
+					<td>Run</td>
+			</tr>
+			<tr>
+					<td>Defect type</td>
+					<td>Skip</td>
+					<td>Run</td>
+					<td>Skip (unless large)</td>
+			</tr>
+			<tr>
+					<td>Large complexity, not yet decomposed</td>
+					<td>Run</td>
+					<td>Skip</td>
+					<td>Skip</td>
+			</tr>
+			<tr>
+					<td>25+ hour estimate, not yet decomposed</td>
+					<td>Run</td>
+					<td>Skip</td>
+					<td>Skip</td>
+			</tr>
+	</tbody>
 </table>
 <h5 id="step-331-enrich-the-task-if-it-is-incomplete">Step 3.3.1: Enrich the task if it is incomplete</h5>
 <p>There are cases where a human may have created a task via the Stride UI. Often the human does not have the time or knowledge to fully enrich the task with all the details the agent would like to have available during implementation. In these cases, the agent will use the <strong>task-enricher</strong> Skill to enrich the task with the desired details. This Skill is only invoked if there is critical information missing. This skill is only available in Claude Code.</p>
@@ -285,34 +285,34 @@
 <h5 id="step-42-validate-the-accuracy-of-the-changes">Step 4.2: Validate the accuracy of the changes</h5>
 <p>Before moving on to complete the task, the agent might invoke the <strong>task-reviewer</strong> SubAgent. This SubAgent will review the changes made by the agent and ensure that they are correct and complete. This table shows when the agent will be invoked.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Task Attributes</th>
-          <th>stride:task-reviewer</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>small, 0-1 key_files</td>
-          <td>Skip</td>
-      </tr>
-      <tr>
-          <td>small, 2+ key_files</td>
-          <td>Run</td>
-      </tr>
-      <tr>
-          <td>medium (any)</td>
-          <td>Run</td>
-      </tr>
-      <tr>
-          <td>large (any)</td>
-          <td>Run</td>
-      </tr>
-      <tr>
-          <td>Defect type</td>
-          <td>Run</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Task Attributes</th>
+					<th>stride:task-reviewer</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>small, 0-1 key_files</td>
+					<td>Skip</td>
+			</tr>
+			<tr>
+					<td>small, 2+ key_files</td>
+					<td>Run</td>
+			</tr>
+			<tr>
+					<td>medium (any)</td>
+					<td>Run</td>
+			</tr>
+			<tr>
+					<td>large (any)</td>
+					<td>Run</td>
+			</tr>
+			<tr>
+					<td>Defect type</td>
+					<td>Run</td>
+			</tr>
+	</tbody>
 </table>
 <p>The agent does the following review:</p>
 <ul>
@@ -434,6 +434,12 @@
                
             
                
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
                     <a href="/tags/tdd" title="tdd">
                         tdd
                     </a>
@@ -538,6 +544,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-notifications/">Stride Now Tells You When It Needs You</a></li>
+        
             <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
         
             <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
@@ -545,8 +553,6 @@
             <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
         
             <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
-        
-            <li><a href="/post/context-matters/">Context Matters</a></li>
         
         </ul>
     </section>

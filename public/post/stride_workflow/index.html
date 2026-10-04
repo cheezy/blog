@@ -216,8 +216,8 @@
 </span></span><span style="display:flex;"><span>git commit -a -m <span style="color:#f1fa8c">&#34;Complete task </span><span style="color:#8be9fd;font-style:italic">$TASK_IDENTIFIER</span><span style="color:#f1fa8c">: </span><span style="color:#8be9fd;font-style:italic">$TASK_TITLE</span><span style="color:#f1fa8c">&#34;</span>
 </span></span></code></pre></div><p>Notice that in my <code>after_review</code> hook I do not automatically <em>push</em> the changes to the remote repository after each task. Instead I specify that a Task that finishes what would be a deployable change <em>needs review</em>. This allows me to review the changes before they are pushed to the main branch and deployed to users. There is more information about the <em>needs review</em> concept later in this post.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/kS_JZBQPR7Y?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-    </div>
+			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/kS_JZBQPR7Y?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+		</div>
 
 <h2 id="what-is-the-stride-workflow-and-how-do-i-work-with-stride-to-complete-tasks">What is the Stride Workflow and how do I work with Stride to complete Tasks?</h2>
 <p>It starts with a Backlog - a list of Tasks in the <strong>Backlog</strong> column. If you are not sure how to build out your backlog, check out the <a href="/post/getting_started_with_stride/">Getting Started with Stride</a> post. You should work with the Agent to continuously refine new Tasks as you will need a lot of them. An important part of reviewing the Tasks is deciding which Tasks you want to <em>review</em> after the Agent completes them. You identify these Tasks by checking the Needs Review checkbox.</p>
@@ -454,6 +454,12 @@
                
             
                
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
                     <a href="/tags/tdd" title="tdd">
                         tdd
                     </a>
@@ -558,6 +564,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-notifications/">Stride Now Tells You When It Needs You</a></li>
+        
             <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
         
             <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
@@ -565,8 +573,6 @@
             <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
         
             <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
-        
-            <li><a href="/post/context-matters/">Context Matters</a></li>
         
         </ul>
     </section>

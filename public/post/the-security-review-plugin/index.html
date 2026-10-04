@@ -200,22 +200,22 @@
 </span></span><span style="display:flex;"><span>/plugin install stride-security-review@stride-marketplace
 </span></span></code></pre></div><p>The slash command takes a few flags. The two that matter most:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Invocation</th>
-          <th>Question it answers</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>/stride-security-review:security-review</code></td>
-          <td>Is this PR safe to merge? (diff against <code>HEAD</code>)</td>
-      </tr>
-      <tr>
-          <td><code>/stride-security-review:security-review --full</code></td>
-          <td>What latent issues are in this codebase right now?</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Invocation</th>
+					<th>Question it answers</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>/stride-security-review:security-review</code></td>
+					<td>Is this PR safe to merge? (diff against <code>HEAD</code>)</td>
+			</tr>
+			<tr>
+					<td><code>/stride-security-review:security-review --full</code></td>
+					<td>What latent issues are in this codebase right now?</td>
+			</tr>
+	</tbody>
 </table>
 <p>Diff mode is the default and the one most teams will actually adopt — it&rsquo;s the PR-time check. Full mode is the one I ran yesterday: it enumerates every tracked text file, batches them in groups of 10, dispatches a <code>stride-security-reviewer</code> agent on each batch in parallel, and merges the results.</p>
 <p>There are other flags — <code>--json</code> for piping, <code>--maestro</code> for the seven-layer agentic-AI taxonomy, <code>--rci</code> for recursive criticism passes, <code>--baseline</code> for suppressing already-acknowledged findings, <code>--patches</code> for inline auto-fix diffs. They compose: <code>--full --maestro --rci 2 --baseline ci.json --patches lib/</code> is a valid invocation. Read the <a href="https://github.com/cheezy/stride-security-review">README</a> for the full taxonomy.</p>
@@ -357,6 +357,12 @@
                
             
                
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
                     <a href="/tags/tdd" title="tdd">
                         tdd
                     </a>
@@ -461,6 +467,8 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-notifications/">Stride Now Tells You When It Needs You</a></li>
+        
             <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
         
             <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
@@ -468,8 +476,6 @@
             <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
         
             <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
-        
-            <li><a href="/post/context-matters/">Context Matters</a></li>
         
         </ul>
     </section>
