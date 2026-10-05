@@ -192,6 +192,55 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
+    <a href="http://localhost:1313/post/the-security-review-plugin/">
+        <h2 class="post-title">
+            The Security Review Plugin: My latest addition to the Stride plugin library
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <p>Yesterday I typed the following into Claude Code:</p>
+<pre tabindex="0"><code>/stride-security-review:security-review --full
+</code></pre><p>Forty-two agent dispatches and roughly twelve minutes later, I had a 72-finding security review of Stride. The breakdown was sobering: 0 critical, 12 high, 15 medium, 38 low, 7 info. Some of those findings I knew about from having ran a different security review tool. That previous tool found 17 items. The rest were new to me.</p>
+<p>Then I spent the rest of the day fixing them - or more accurately watching Claude fix them.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Tuesday, May 12, 2026
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="http://localhost:1313/post/mechanical-gating-works/">
+        <h2 class="post-title">
+            Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <p>As many of you know, I&rsquo;ve built a tool called <a href="https://stridelikeaboss.com">Stride</a>.  It is a human / AI collaboration tool that offers a robust workflow with many features to drive collaboration and predictability. It takes the form of a hosted kanban-like app that manages the detailed tasks and agent plugins for all of the major AI agents. Even though it has several thousand users now, I have struggled with forcing the agents to always follow the workflow defined in the plugins. The plugins define a lifecycle that is decomposed into seven skills — one orchestrator (<code>stride-workflow</code>) and six sub-skills that handle individual phases (<code>stride-claiming-tasks</code>, <code>stride-completing-tasks</code>, and so on). The sub-skills exist because each phase has a non-trivial API contract that the agent has to get exactly right. The plugins also contain four subagents and a hook designed to execute developer defined commands at specific times during the lifecycle of the work.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Friday, May 1, 2026
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="http://localhost:1313/post/context-matters/">
         <h2 class="post-title">
             Context Matters
@@ -253,58 +302,6 @@
     <p class="post-meta">
     
         Posted by Cheezy World on Tuesday, March 24, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/tw-retreat-response2/">
-        <h2 class="post-title">
-            The future of software engineering: My Thoughts - Part 2
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>This is part 2 in a series where I discuss my thoughts on the Thoughtworks retreat report titled <a href="https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf">The future of software engineering</a>. If you haven&rsquo;t read <a href="/post/tw-retreat-response/">part 1</a>, I&rsquo;d encourage you to do so first as it provides a lot of context.</p>
-<p>In part 2, I will discuss the second and third categories from the report. Let&rsquo;s jump right in.</p>
-<h3 id="2-the-middle-loop-a-new-category-of-work">2. The middle loop: a new category of work</h3>
-<p>The report states <em>&ldquo;The retreat&rsquo;s strongest first-mover concept. Nobody in the industry has named this yet.&rdquo;</em> It goes on to say:</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, March 20, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/tw-retreat-response/">
-        <h2 class="post-title">
-            The future of software engineering: My Thoughts - Part 1
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>In February 2026, Thoughtworks released an article titled &ldquo;<a href="https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf">The future of software engineering</a>&rdquo;. It is a great paper and I encourage everyone to read it. The article lists key themes and takeaways from attendees at a retreat they organized. Here is the Executive summary:</p>
-<blockquote>
-<h3 id="executive-summary">Executive summary</h3>
-<p>Senior engineering practitioners from major technology companies gathered for a multi-day retreat to confront the questions that matter most as AI transforms software development. The discussions covered more than twenty topics across breakout sessions, but the most significant insights didn’t emerge from one single session. Instead, they surfaced at various intersections; we found that the same concerns kept appearing in different conversations, framed by different people solving different problems.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Wednesday, March 18, 2026
         
         
     
@@ -515,15 +512,15 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-plugin-leaner/">The Stride Plugin Gets Leaner, Faster and Harder to Fool</a></li>
+        
+            <li><a href="/post/stride-api-filters/">The Stride API Now Pages, Filters and Describes Itself</a></li>
+        
             <li><a href="/post/stride-notifications/">Stride Now Tells You When It Needs You</a></li>
         
             <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
         
             <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
-        
-            <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
-        
-            <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
         
         </ul>
     </section>

@@ -192,6 +192,53 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
+    <a href="http://localhost:1313/post/stride-plugin-leaner/">
+        <h2 class="post-title">
+            The Stride Plugin Gets Leaner, Faster and Harder to Fool
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <p>The Stride plugin for Claude Code is what turns a coding agent into a Stride teammate: it claims tasks, explores the code, implements, sends the work through review and completes it. Over the last few releases we went through that loop measuring where time and tokens actually went and why reviewers kept sending work back. Then we fixed what we found.</p>
+<p>None of this changes how you start. You still ask the agent to work a task, a goal or the queue. What changes is what happens next: long sessions stay small, reviews settle in fewer rounds, and the agent gets better at catching its own mistakes before a reviewer, or you, has to.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Monday, October 5, 2026
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="http://localhost:1313/post/stride-api-filters/">
+        <h2 class="post-title">
+            The Stride API Now Pages, Filters and Describes Itself
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <p>Most of the work on a Stride board is done by things that talk to the API: coding agents claiming and completing tasks, scripts that build reports, dashboards that keep an eye on progress. Two changes make that API much easier to build on. You can now page through and filter the task list, and Stride publishes a complete, machine-readable description of its API that tools can read for themselves.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Monday, October 5, 2026
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="http://localhost:1313/post/stride-notifications/">
         <h2 class="post-title">
             Stride Now Tells You When It Needs You
@@ -254,55 +301,6 @@
     <p class="post-meta">
     
         Posted by Cheezy World on Sunday, May 31, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/the-security-review-plugin/">
-        <h2 class="post-title">
-            The Security Review Plugin: My latest addition to the Stride plugin library
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>Yesterday I typed the following into Claude Code:</p>
-<pre tabindex="0"><code>/stride-security-review:security-review --full
-</code></pre><p>Forty-two agent dispatches and roughly twelve minutes later, I had a 72-finding security review of Stride. The breakdown was sobering: 0 critical, 12 high, 15 medium, 38 low, 7 info. Some of those findings I knew about from having ran a different security review tool. That previous tool found 17 items. The rest were new to me.</p>
-<p>Then I spent the rest of the day fixing them - or more accurately watching Claude fix them.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Tuesday, May 12, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/mechanical-gating-works/">
-        <h2 class="post-title">
-            Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>As many of you know, I&rsquo;ve built a tool called <a href="https://stridelikeaboss.com">Stride</a>.  It is a human / AI collaboration tool that offers a robust workflow with many features to drive collaboration and predictability. It takes the form of a hosted kanban-like app that manages the detailed tasks and agent plugins for all of the major AI agents. Even though it has several thousand users now, I have struggled with forcing the agents to always follow the workflow defined in the plugins. The plugins define a lifecycle that is decomposed into seven skills — one orchestrator (<code>stride-workflow</code>) and six sub-skills that handle individual phases (<code>stride-claiming-tasks</code>, <code>stride-completing-tasks</code>, and so on). The sub-skills exist because each phase has a non-trivial API contract that the agent has to get exactly right. The plugins also contain four subagents and a hook designed to execute developer defined commands at specific times during the lifecycle of the work.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Friday, May 1, 2026
         
         
     
@@ -509,15 +507,15 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/stride-plugin-leaner/">The Stride Plugin Gets Leaner, Faster and Harder to Fool</a></li>
+        
+            <li><a href="/post/stride-api-filters/">The Stride API Now Pages, Filters and Describes Itself</a></li>
+        
             <li><a href="/post/stride-notifications/">Stride Now Tells You When It Needs You</a></li>
         
             <li><a href="/post/code-reviews/">Are Code Reviews and Pull Requests a Thing of the Past?</a></li>
         
             <li><a href="/post/the-product-team/">The Product Team: How does AI change the structure of a larger product organization?</a></li>
-        
-            <li><a href="/post/the-security-review-plugin/">The Security Review Plugin: My latest addition to the Stride plugin library</a></li>
-        
-            <li><a href="/post/mechanical-gating-works/">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a></li>
         
         </ul>
     </section>

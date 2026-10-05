@@ -10,15 +10,22 @@
 		
 		
 		
-			<lastBuildDate>Sat, 03 Oct 2026 14:13:00 -0400</lastBuildDate>
+			<lastBuildDate>Mon, 05 Oct 2026 18:21:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/stride/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The Stride API Now Pages, Filters and Describes Itself</title>
+				<link>http://localhost:1313/post/stride-api-filters/</link>
+				<pubDate>Mon, 05 Oct 2026 18:21:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/stride-api-filters/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Stride Now Tells You When It Needs You</title>
 				<link>http://localhost:1313/post/stride-notifications/</link>
 				<pubDate>Sat, 03 Oct 2026 14:13:00 -0400</pubDate>
 				<guid>http://localhost:1313/post/stride-notifications/</guid>
-				<description></description>
+				<description>&lt;p&gt;AI agents don&amp;rsquo;t keep office hours. They finish work at 2 a.m., on Sunday afternoons, and in the middle of your lunch meeting. Until now, Stride kept quiet about all of it: if an agent finished something that needed your review, it sat in the review queue until you happened to open it. A stalled claim, a finished goal, a delivery date slipping out of reach. All of it waited for you to come and look.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

@@ -1,6 +1,6 @@
 ---
 date: '2026-10-03T14:13:00-04:00'
-draft: fakse
+draft: false
 title: 'Stride Now Tells You When It Needs You'
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
