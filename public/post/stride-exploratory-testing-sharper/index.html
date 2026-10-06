@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="What Impact Will AI Have On Outsourcing?" />
-    <meta property="og:title" content="What Impact Will AI Have On Outsourcing?" />
-    <meta property="twitter:title" content="What Impact Will AI Have On Outsourcing?" />
+    <meta name="title" content="Exploratory Testing Gets Sharper, Safer and Quicker" />
+    <meta property="og:title" content="Exploratory Testing Gets Sharper, Safer and Quicker" />
+    <meta property="twitter:title" content="Exploratory Testing Gets Sharper, Safer and Quicker" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
     
 
-    <meta property="og:url" content="http://localhost:1313/post/ai-impact-outsourcing/" />
+    <meta property="og:url" content="http://localhost:1313/post/stride-exploratory-testing-sharper/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>What Impact Will AI Have On Outsourcing? | Cheezy&#39;s Blog</title>
+    <title>Exploratory Testing Gets Sharper, Safer and Quicker | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/ai-impact-outsourcing/">
+    <link rel="canonical" href="/post/stride-exploratory-testing-sharper/">
 
     
 
@@ -186,22 +186,90 @@
             col-sm-12
             col-xs-12
             post-container">
-            <h1>What Impact Will AI Have On Outsourcing?</h1>
+            <h1>Exploratory Testing Gets Sharper, Safer and Quicker</h1>
 
             
-                <p>I was in a conversation with a potential new client last Friday, and they told me that they still had some of their development outsourced to an offshore company. After the call I started to think about the outsourcing model. How will it be impacted by AI? It led me to a conclusion that might be uncomfortable for some.</p>
-<h3 id="why-did-companies-outsource">Why did companies outsource?</h3>
-<p>In my experience, there have been two primary reasons for companies to outsource development:</p>
+                <p>The Stride exploratory-testing plugin teaches a coding agent to test software the way a good human tester does: give it a mission, let it probe the running app, judge what it sees, and come back with bugs, questions and an honest account of what it didn&rsquo;t get to. The latest version is the result of a close look at how the plugin actually behaved in real use. This post covers what changed, what that means for you, and how to use the plugin inside the Stride workflow or on its own.</p>
+<h2 id="what-changed">What changed</h2>
+<h3 id="severity-labels-you-can-rely-on">Severity labels you can rely on</h3>
+<p>Every bug the explorer reports gets a severity: <strong>Critical, High, Moderate or Minor</strong>. When we reviewed real sessions, most bugs didn&rsquo;t use those four words. We saw &ldquo;Major&rdquo;, &ldquo;important&rdquo;, &ldquo;medium&rdquo; and even whole sentences. The rules for choosing a severity lived in a separate skill the explorer was told to read but almost never did.</p>
+<p>Those rules now travel inside the explorer itself as a compact reference card: the four levels and what qualifies for each, how to break a tie, how to rate a bug whose impact isn&rsquo;t known yet, and when a session should stop. The explorer no longer depends on loading anything else to label a bug correctly.</p>
+<p>This matters most inside Stride, which treats a <strong>Critical</strong> bug as a reason to stop and fix before completing a task. A bug labelled &ldquo;Major&rdquo; instead of &ldquo;Critical&rdquo; used to slip past that check.</p>
+<h3 id="findings-you-can-trust">Findings you can trust</h3>
+<p>Each session&rsquo;s findings now follow a published, versioned format, so anything reading them knows exactly what to expect:</p>
+<ul>
+<li><strong>Every bug says how often it reproduced.</strong> &ldquo;3/3&rdquo; means the explorer triggered it three times out of three from a clean start. A bug seen once is marked as not yet reproduced, never as &ldquo;1/1&rdquo;. A severity that&rsquo;s still a best guess is marked <strong>provisional</strong>.</li>
+<li><strong>Every session says how it ended and what that means.</strong> Did the charter run out of things to find, did the probe budget run out first, or was the session blocked? Each ending maps to one clear status, so &ldquo;stopped early&rdquo; always means the same thing.</li>
+<li><strong>Known issues stay out of the bug list.</strong> Hand the explorer a list of bugs you already know about, and matches go in a separate list instead of being reported as new.</li>
+</ul>
+<h3 id="an-explorer-that-only-claims-what-it-can-see">An explorer that only claims what it can see</h3>
+<p>The explorer used to be able to fetch web pages through a tool that returns a processed summary of the page, hiding the status code and headers a tester needs. It now observes HTTP directly with <code>curl</code>, seeing the raw response.</p>
+<p>It also no longer pretends to judge things it can&rsquo;t see. It has no browser, so it can&rsquo;t see layout, colour or contrast. A charter that depends on those now ends with an honest &ldquo;no way to observe this&rdquo; result instead of a guess drawn from HTML or CSS source. Inside Stride, that manual test goes back to a human rather than being counted as done.</p>
+<h3 id="a-stricter-safety-boundary">A stricter safety boundary</h3>
+<p>The explorer exercises a live application, so its limits now need explicit permission rather than relying on careful wording:</p>
+<ul>
+<li><strong>It needs explicit permission.</strong> Every session must say, in a fixed form, that the target is authorized and not production, and list exactly which hosts the explorer may reach. If either line is missing, unclear or repeated, the explorer does nothing. Zero probes, no exceptions.</li>
+<li><strong>It only goes where it&rsquo;s allowed.</strong> Hosts are matched exactly against that list. It never follows a redirect to a host that isn&rsquo;t listed.</li>
+<li><strong>It cleans up after itself.</strong> Every file and process it starts is tracked and removed on every exit path, including when something goes wrong.</li>
+<li><strong>It handles credentials narrowly.</strong> It reads a credentials file only for the specific value it was told to use.</li>
+<li><strong>Disruptive techniques stay inside the app.</strong> Ideas like interrupting work mid-flight or starving the app of resources are limited to what you can do through the app itself, never by killing processes or cutting the machine&rsquo;s network.</li>
+</ul>
+<h3 id="quicker-sessions">Quicker sessions</h3>
+<ul>
+<li><strong>Findings go to a file, not the conversation.</strong> When a caller provides a report path, the explorer writes its full findings there and returns a short summary: how the session ended, the counts, and one line per bug. Your conversation no longer fills up with tens of kilobytes of findings.</li>
+<li><strong>Re-checking a fix is quick.</strong> A new verify mode takes one bug&rsquo;s minimal reproduction and checks whether it still happens, in one or two probes instead of a full session. &ldquo;Couldn&rsquo;t verify&rdquo; is never treated as a pass.</li>
+<li><strong>Turning bugs into tests can run unattended.</strong> The <code>/harden</code> command drafts a regression test for each confirmed bug. When it&rsquo;s given the findings and the name of your test framework, it never stops to ask a question, so an automated workflow can run it.</li>
+<li><strong>The explorer reads less.</strong> It finds what it needs with a search and reads only that part of a file, and it never re-reads something it has already read.</li>
+</ul>
+<h3 id="less-overhead-in-every-session">Less overhead in every session</h3>
+<p>The plugin&rsquo;s descriptions are loaded into every session where it&rsquo;s installed, whether or not you test anything. They&rsquo;re now about a quarter smaller, with every trigger kept. Reference material the explorer never uses has moved out of the skills into linked documents, where people can still read it.</p>
+<h2 id="what-you-get-from-it">What you get from it</h2>
+<p>We compared three explorer sessions on the new version with nineteen from before the change:</p>
+<ul>
+<li><strong>The main conversation receives about 0.5 KB per session instead of about 37 KB.</strong> The full findings, about 14 KB, sit in a file you can open when you want them.</li>
+<li><strong>Sessions finished in a median of about 4½ minutes instead of 9.</strong> Part of that comes from the type of charter and a newer model, so we don&rsquo;t credit all of it to the plugin.</li>
+<li><strong>Stride&rsquo;s instructions to the explorer shrank from about 6.8 KB to 1.1 KB.</strong> Stride now fills in a fixed template instead of writing a request by hand.</li>
+<li><strong>Inside Stride, independent read-only sessions now run side by side.</strong> All three of the measured sessions had finished within about 5 minutes of starting.</li>
+</ul>
+<p>We want to be straight about what didn&rsquo;t improve. <strong>Total tokens used inside each explorer session went up,</strong> from a median of about 1.1 million to about 1.5 million. The explorer&rsquo;s instructions grew to carry the reference card, the safety rules and verify mode, and every request pays for those. Most of what you notice in practice is the conversation staying small, but the total work inside a session cost more. Three sessions is a small sample, so we&rsquo;re treating the severity-label improvement as encouraging rather than proven.</p>
+<h2 id="how-the-plugin-works">How the plugin works</h2>
+<p>The plugin is built on a simple idea: <strong>Tested = Checked + Explored.</strong> Automated tests <em>check</em> what you already expect. Exploration <em>discovers</em> what you didn&rsquo;t think to check. The plugin gives the agent a tester&rsquo;s toolkit for the second half:</p>
+<ul>
+<li><strong>Charters</strong> give each session a mission: <em>Explore &lt;target&gt; with &lt;resources&gt; to discover &lt;information&gt;</em>.</li>
+<li><strong>Heuristics</strong> supply concrete test ideas when you&rsquo;re stuck: cheat sheets, a catalog of things to vary, and themed &ldquo;tours&rdquo; of the product.</li>
+<li><strong>Oracles</strong> decide whether a result is actually wrong, not just surprising.</li>
+<li><strong>Bug advocacy</strong> turns a confirmed defect into a report someone will act on: reproduce it, narrow it down, find its worst consequence, and rate its severity.</li>
+<li><strong>Sessions</strong> keep the work disciplined: a time box, a running session sheet, a parking lot for things that come up along the way, and a debrief at the end.</li>
+</ul>
+<h3 id="inside-the-stride-workflow">Inside the Stride workflow</h3>
+<p>If you use Stride with the exploratory-testing plugin installed, it joins your task workflow automatically. You don&rsquo;t run any commands.</p>
 <ol>
-<li>Cost - the ability to hire developers at a lower cost than they could find in the local market.</li>
-<li>Availability - the ability to find developers with the skills they need. This is especially true in smaller markets.</li>
+<li><strong>At the start of a session,</strong> the agent asks you one question: is there an app it&rsquo;s allowed to test that isn&rsquo;t production, how does it reach it, and where are the test accounts? Point to them; don&rsquo;t paste credentials. Answer once and that&rsquo;s it for the session. If you don&rsquo;t answer, or the answer is anything short of a clear yes, exploratory testing is simply skipped.</li>
+<li><strong>When a task lists manual tests,</strong> the agent turns them into a small number of charters, highest risk first, and runs an explorer session for each, side by side when they only observe. Any manual test it can&rsquo;t cover goes back to a human, and the completion record says so.</li>
+<li><strong>When a session finds a Critical bug in code the task just wrote,</strong> the agent fixes it and re-checks with verify mode before completing. A Critical that couldn&rsquo;t be reproduced is recorded as advisory rather than blocking the task. A bug in code the task didn&rsquo;t touch becomes a follow-up task instead of holding up this one.</li>
+<li><strong>When there are confirmed bugs,</strong> the agent can run <code>/harden</code> to draft regression tests from them. Drafts are staged in <code>.exploratory/checks/</code>, never dropped straight into your test suite, so a test for a bug that isn&rsquo;t fixed yet can&rsquo;t break your build.</li>
 </ol>
-<p>I am sure there are other reasons, but these are the two I have seen and what I will focus on in this post.</p>
-<h3 id="do-these-reasons-still-hold-true-in-the-age-of-ai">Do these reasons still hold true in the age of AI?</h3>
-<p><em>Could an offshore developer or tester be replaced by an AI Agent?</em></p>
-<p>This is the question that has to be answered and it is not as straightforward as it may seem. In many environments today, Agents still need to be monitored by a human to clarify requirements and to provide permissions to perform some actions. This is becoming less of an issue with each advance in the AI models, but it still exists at this time. We know that a Developer currently equipped with the latest tools and a robust configuration can produce many times the amount of code with higher quality than they could without AI.</p>
-<p>It is also becoming much easier for a Developer to run more than one Agent at a time. This takes the productivity gains described in the previous paragraph and scales them up. Add to this any one of the robust tools that exist to coordinate work between multiple Agents and you have a very strong delivery team with just one or two Developers.</p>
-<p>In my opinion, the cost and availability of people arguments for outsourcing are no longer valid. It is now more cost effective to have a small team working together with AI to deliver software than to outsource to an offshore company.</p>
+<p>If the plugin isn&rsquo;t installed, or no app is available, the workflow continues exactly as before. Exploratory testing never blocks a task from completing.</p>
+<h3 id="on-its-own">On its own</h3>
+<p>The plugin works just as well without Stride, through its commands:</p>
+<ul>
+<li><strong><code>/charter &lt;target&gt;</code></strong> turns a feature, a requirement or a worry into a ranked list of charters. <strong><code>/nightmare-headline &lt;feature&gt;</code></strong> gets there by asking what the worst possible news story about the feature would be.</li>
+<li><strong><code>/recon &lt;feature&gt;</code></strong> does a quick survey of something unfamiliar: what it does, what questions to ask, and where to aim.</li>
+<li><strong><code>/explore &lt;target&gt;</code></strong> runs a full session: it builds charters, sends the explorer out under the safety boundary, and brings everything back as one debrief with a ranked bug list, saved in <code>.exploratory/sessions/</code>.</li>
+<li><strong><code>/pair &lt;target&gt;</code></strong> flips the roles. You drive the app; the agent suggests the next thing to try, judges what you report, keeps your notes, and points out what you haven&rsquo;t touched yet.</li>
+<li><strong><code>/debrief</code></strong> turns notes and findings into a report for stakeholders: what was explored, what was found, and what&rsquo;s still unknown.</li>
+<li><strong><code>/harden</code></strong> drafts a regression test for each confirmed bug, using the test framework your project already has.</li>
+</ul>
+<p>A typical first session looks like this:</p>
+<pre tabindex="0"><code>/charter the CSV receipt import --risk multi-tenant data leakage
+/explore the CSV receipt import --timebox 90
+/debrief
+</code></pre><p>The plugin makes no network calls of its own and needs no accounts or keys. The explorer only touches the app you name, and only after you&rsquo;ve confirmed it&rsquo;s authorized and isn&rsquo;t production. Add <code>.exploratory/</code> to your <code>.gitignore</code>; that&rsquo;s where sessions, notes and drafted tests are kept.</p>
+<h2 id="getting-it">Getting it</h2>
+<p>It is available from the Stride marketplace. In Claude Code, run:</p>
+<pre tabindex="0"><code>/plugin marketplace add cheezy/stride-marketplace
+/plugin install stride-exploratory-testing@stride-marketplace
+</code></pre><p>If you already have it installed, run <code>/plugin marketplace update stride-marketplace</code> and then <code>/plugin update stride-exploratory-testing@stride-marketplace</code>. To get the Stride workflow changes that go with it (side-by-side sessions, verify-mode re-checks and the fixed request template), update the Stride plugin to 1.84.0 or later as well.</p>
 
             
              

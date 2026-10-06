@@ -3,22 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/ai/</loc>
-    <lastmod>2026-10-05T18:21:00-04:00</lastmod>
+    <lastmod>2026-10-06T06:22:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-10-05T18:21:00-04:00</lastmod>
+    <lastmod>2026-10-06T06:22:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/continuous-delivery/</loc>
-    <lastmod>2026-10-05T18:21:00-04:00</lastmod>
+    <lastmod>2026-10-06T06:22:00-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/stride-exploratory-testing-sharper/</loc>
+    <lastmod>2026-10-06T06:22:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2026-10-05T18:21:00-04:00</lastmod>
+    <lastmod>2026-10-06T06:22:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/stride/</loc>
-    <lastmod>2026-10-05T18:21:00-04:00</lastmod>
+    <lastmod>2026-10-06T06:22:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-10-05T18:21:00-04:00</lastmod>
+    <lastmod>2026-10-06T06:22:00-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/stride-plugin-leaner/</loc>
+    <lastmod>2026-10-05T19:25:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/stride-api-filters/</loc>
     <lastmod>2026-10-05T18:21:00-04:00</lastmod>

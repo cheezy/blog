@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Mon, 05 Oct 2026 19:25:00 -0400</lastBuildDate>
+			<lastBuildDate>Tue, 06 Oct 2026 06:22:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Exploratory Testing Gets Sharper, Safer and Quicker</title>
+				<link>http://localhost:1313/post/stride-exploratory-testing-sharper/</link>
+				<pubDate>Tue, 06 Oct 2026 06:22:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/stride-exploratory-testing-sharper/</guid>
+				<description>&lt;p&gt;The Stride exploratory-testing plugin teaches a coding agent to test software the way a good human tester does: give it a mission, let it probe the running app, judge what it sees, and come back with bugs, questions and an honest account of what it didn&amp;rsquo;t get to. The latest version is the result of a close look at how the plugin actually behaved in real use. This post covers what changed, what that means for you, and how to use the plugin inside the Stride workflow or on its own.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>The Stride Plugin Gets Leaner, Faster and Harder to Fool</title>
 				<link>http://localhost:1313/post/stride-plugin-leaner/</link>

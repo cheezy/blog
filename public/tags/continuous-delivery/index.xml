@@ -10,15 +10,29 @@
 		
 		
 		
-			<lastBuildDate>Mon, 05 Oct 2026 18:21:00 -0400</lastBuildDate>
+			<lastBuildDate>Tue, 06 Oct 2026 06:22:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Exploratory Testing Gets Sharper, Safer and Quicker</title>
+				<link>http://localhost:1313/post/stride-exploratory-testing-sharper/</link>
+				<pubDate>Tue, 06 Oct 2026 06:22:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/stride-exploratory-testing-sharper/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>The Stride Plugin Gets Leaner, Faster and Harder to Fool</title>
+				<link>http://localhost:1313/post/stride-plugin-leaner/</link>
+				<pubDate>Mon, 05 Oct 2026 19:25:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/stride-plugin-leaner/</guid>
+				<description>&lt;p&gt;The Stride plugin for Claude Code is what turns a coding agent into a Stride teammate: it claims tasks, explores the code, implements, sends the work through review and completes it. Over the last few releases we went through that loop measuring where time and tokens actually went and why reviewers kept sending work back. Then we fixed what we found.&lt;/p&gt;&#xA;&lt;p&gt;None of this changes how you start. You still ask the agent to work a task, a goal or the queue. What changes is what happens next: long sessions stay small, reviews settle in fewer rounds, and the agent gets better at catching its own mistakes before a reviewer, or you, has to.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>The Stride API Now Pages, Filters and Describes Itself</title>
 				<link>http://localhost:1313/post/stride-api-filters/</link>
 				<pubDate>Mon, 05 Oct 2026 18:21:00 -0400</pubDate>
 				<guid>http://localhost:1313/post/stride-api-filters/</guid>
-				<description></description>
+				<description>&lt;p&gt;Most of the work on a Stride board is done by things that talk to the API: coding agents claiming and completing tasks, scripts that build reports, dashboards that keep an eye on progress. Two changes make that API much easier to build on. You can now page through and filter the task list, and Stride publishes a complete, machine-readable description of its API that tools can read for themselves.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Stride Now Tells You When It Needs You</title>
