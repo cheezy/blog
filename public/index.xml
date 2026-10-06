@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Tue, 06 Oct 2026 06:22:00 -0400</lastBuildDate>
+			<lastBuildDate>Tue, 06 Oct 2026 19:27:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>A Permanent Record of Who Did What</title>
+				<link>http://localhost:1313/post/stride-audit-log/</link>
+				<pubDate>Tue, 06 Oct 2026 19:27:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/stride-audit-log/</guid>
+				<description>&lt;p&gt;When something unexpected happens on a Stride instance, such as a run of failed sign-ins, an API token nobody remembers creating, or someone trying to reach a page they shouldn&amp;rsquo;t, the first question is always the same: &lt;em&gt;what happened, and when?&lt;/em&gt; Until now, Stride noted these events in its server logs, which come and go and which administrators can&amp;rsquo;t search from Stride. Now it keeps them.&lt;/p&gt;&#xA;&lt;p&gt;Stride has a &lt;strong&gt;permanent, append-only audit log&lt;/strong&gt; of important security events. Entries are only ever added. Once an event is recorded it can&amp;rsquo;t be edited, and recent entries can&amp;rsquo;t be deleted. Site administrators can search the log, filter it and export it.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Exploratory Testing Gets Sharper, Safer and Quicker</title>
 				<link>http://localhost:1313/post/stride-exploratory-testing-sharper/</link>
@@ -410,7 +417,7 @@
 				<link>http://localhost:1313/about/</link>
 				<pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
 				<guid>http://localhost:1313/about/</guid>
-				<description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
+				<description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Hello world (again eh)!</title>

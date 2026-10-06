@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="A Permanent Record of Who Did What" />
+    <meta property="og:title" content="A Permanent Record of Who Did What" />
+    <meta property="twitter:title" content="A Permanent Record of Who Did What" />
     
 
     
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
     
 
-    <meta property="og:url" content="http://localhost:1313/tags/phoenix/" />
+    <meta property="og:url" content="http://localhost:1313/post/stride-audit-log/" />
 
     
     <meta property="twitter:card" content="summary" />
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Phoenix | Cheezy&#39;s Blog</title>
+    <title>A Permanent Record of Who Did What | Cheezy&#39;s Blog</title>
 
-    <link rel="canonical" href="/tags/phoenix/">
+    <link rel="canonical" href="/post/stride-audit-log/">
 
     
 
@@ -115,7 +115,7 @@
                     
                     
                     <li>
-                        <a href='/tags/phoenix/index.xml' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
                     </li>
                     
 		            <li>
@@ -175,62 +175,104 @@
 
 
 
-  
-<div data-pagefind-ignore="all" class="container">
-    <div class="row">
-        
-        
-   	    <div class="
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
             col-lg-8 col-lg-offset-1
             col-md-8 col-md-offset-1
             col-sm-12
             col-xs-12
-            post-container
-        ">
-            
-<div data-pagefind-ignore="all">
-
-<div class="post-preview">
-    <a href="http://localhost:1313/post/ai-kanban-part1/">
-        <h2 class="post-title">
-            Building a LiveView app using AI - Part 1
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <h2 id="getting-started">Getting Started</h2>
-<p>This is the first post in a series in which I will be building a Kanban board application with <a href="https://www.phoenixframework.org">Phoenix</a> and <a href="https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html">LiveView</a>. What is different about this series is that I will use AI to write the code and tests as well as come up with the design of the application.  I will be using a set of tools and workflow that I have worked out over the past several months to truly take advantage of the benefits of AI while producing quality code and a fully tested application.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Sunday, September 28, 2025
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-</div>
+            post-container">
+            <h1>A Permanent Record of Who Did What</h1>
 
             
-
-
-<ul class="pager" data-pagefind-ignore="all">
-    
-    <li class="previous">
-        <a href="/tags/phoenix/page/3/">&larr; Newer Posts</a>
-    </li>
-    
-    
+                <p>When something unexpected happens on a Stride instance, such as a run of failed sign-ins, an API token nobody remembers creating, or someone trying to reach a page they shouldn&rsquo;t, the first question is always the same: <em>what happened, and when?</em> Until now, Stride noted these events in its server logs, which come and go and which administrators can&rsquo;t search from Stride. Now it keeps them.</p>
+<p>Stride has a <strong>permanent, append-only audit log</strong> of important security events. Entries are only ever added. Once an event is recorded it can&rsquo;t be edited, and recent entries can&rsquo;t be deleted. Site administrators can search the log, filter it and export it.</p>
+<h2 id="stride-now-remembers-security-events">Stride now remembers security events</h2>
+<p>Stride records an entry every time one of these happens:</p>
+<ul>
+<li>someone fails to sign in;</li>
+<li>someone asks for a password reset;</li>
+<li>someone opens a page that needs a recent password confirmation, such as account settings;</li>
+<li>someone is turned away from a page they aren&rsquo;t allowed to see;</li>
+<li>an API token is created or revoked;</li>
+<li>a request arrives with a missing, unknown, revoked or expired API token;</li>
+<li>a completed task&rsquo;s notes look like they contain a credential;</li>
+<li>someone exports the audit log itself.</li>
 </ul>
+<p>Each entry records <strong>when</strong> it happened, <strong>what</strong> happened, <strong>who</strong> did it (when Stride knows), <strong>where</strong> the request came from, and any useful details, such as which token or board was involved.</p>
+<p>A few things are always true of what gets stored:</p>
+<ul>
+<li><strong>No secrets.</strong> Passwords, tokens and other secrets are never written into the log. If a detail looks sensitive, Stride leaves it out before the entry is saved. A security record shouldn&rsquo;t become a security risk itself.</li>
+<li><strong>No runaway entries.</strong> Very long details are cut to a sensible length, so one oversized value can&rsquo;t swamp the log.</li>
+<li><strong>Nothing gets in your way.</strong> If Stride can&rsquo;t save an entry for some reason, whatever you were doing carries on as normal.</li>
+<li><strong>Nothing is lost when people leave.</strong> Deleting a user doesn&rsquo;t delete their history. Their events stay in the log, shown as <em>User #N (deleted)</em>, so the record still says which account did what.</li>
+<li><strong>Server logs keep working.</strong> Every event still goes to Stride&rsquo;s server logs and monitoring as well, so any alerts you already have keep firing.</li>
+</ul>
+<h2 id="looking-things-up">Looking things up</h2>
+<p>Site administrators get a new <strong>Audit Log</strong> page, linked from the top navigation.</p>
+<p>
+  <img src="/img/audit-log-viewer.png" alt="The audit log viewer, showing an export, a flagged credential, a revoked token, a denied admin page, a password confirmation, a rejected API token and failed sign-ins, newest first">
+
+</p>
+<p>Events are listed newest first, 50 at a time. <strong>Older events</strong> takes you further back, and <strong>Newest</strong> brings you back to the top. Every time is shown in UTC, so entries line up however your team is spread across time zones. When no signed-in person caused an event, such as a request with no API token, the Actor column says <em>None</em>.</p>
+<p>You can narrow the list four ways, and combine them:</p>
+<ul>
+<li><strong>Action:</strong> only one kind of event, such as failed sign-ins or revoked tokens.</li>
+<li><strong>Actor email:</strong> everything involving one person&rsquo;s email address. That includes what they did, and failed sign-ins or password resets aimed at their account. Capitalisation doesn&rsquo;t matter.</li>
+<li><strong>From</strong> and <strong>To:</strong> only events within a date range. Both ends are whole days in UTC, and both are included.</li>
+</ul>
+<p>For example, filter to failed sign-ins for today and a pattern jumps out: four attempts in about a minute from one address, against three different accounts.</p>
+<p>
+  <img src="/img/audit-log-filtered.png" alt="The audit log filtered to failed sign-ins on one day">
+
+</p>
+<p>The list updates as you change a filter. <strong>Clear filters</strong> puts everything back. The filters are part of the page&rsquo;s address, so you can bookmark a view or send another administrator a link to exactly the events you&rsquo;re looking at. A filter value that doesn&rsquo;t make sense, such as a mistyped date in a shared link, is simply ignored rather than breaking the page.</p>
+<h2 id="taking-it-with-you">Taking it with you</h2>
+<p><strong>Export CSV</strong> and <strong>Export JSON</strong> download the events you&rsquo;re looking at. An export uses the same filters as the page, so &ldquo;every failed sign-in last week&rdquo; is a filter and one click. Exports stream straight from the database in batches, so even a very large log can be downloaded in full.</p>
+<ul>
+<li><strong>CSV</strong> opens in any spreadsheet. Stride makes sure no cell can be read as a spreadsheet formula, so an export is safe to open even if someone typed something malicious into a field that ends up in the log.</li>
+<li><strong>JSON</strong> is ready for scripts, security tools and anything else that reads structured data.</li>
+</ul>
+<p>Exporting is recorded too. The log shows which administrator exported it, in which format and with which filters, so you can see who has taken a copy. The entry is written before the download starts, so even an abandoned download leaves a record.</p>
+<h2 id="only-administrators-and-nobody-can-rewrite-history">Only administrators, and nobody can rewrite history</h2>
+<p>The audit log is visible only to site administrators. Anyone else who tries to open the page or download an export is sent away, and the attempt is itself recorded.</p>
+<p>The log is <strong>append-only</strong>. Once an entry is saved:</p>
+<ul>
+<li><strong>It can&rsquo;t be edited.</strong> The database itself refuses any change to a stored entry, so this isn&rsquo;t just a promise the app makes. The only exception is when a user is deleted: the event&rsquo;s link to their account is cleared, and the event itself is kept.</li>
+<li><strong>It can&rsquo;t be deleted or wiped while it&rsquo;s recent.</strong> The database refuses deletes, and it refuses requests to empty the log in one go.</li>
+<li><strong>History has a 90-day floor.</strong> Old entries can only be removed through a single retention step, and that step refuses to touch anything less than 90 days old. The database enforces the floor, not the app. Nothing removes old entries today; retention settings will build on this later.</li>
+</ul>
+<p>Where the database allows it, Stride goes one step further. The log is handed to a separate, locked-away database owner, and Stride&rsquo;s own connection can only add entries and read them. In that setup, even a compromised Stride couldn&rsquo;t switch the protection off or quietly remove the evidence.</p>
+<p><strong>If you run your own Stride,</strong> that last step is yours to take. It needs a database administrator&rsquo;s credentials, which Stride deliberately never stores, so it&rsquo;s a one-time command you run yourself after upgrading:</p>
+<ul>
+<li><strong>Upgrades never fail because of it.</strong> If Stride doesn&rsquo;t have the rights it needs during an upgrade, the upgrade carries on with the protection described above.</li>
+<li><strong>You&rsquo;ll know where you stand.</strong> A status check reports whether your log is fully locked down and, if not, why. Stride also writes a warning to its startup log until it is.</li>
+<li><strong>Some hosts can&rsquo;t fully lock it down.</strong> Some managed database services don&rsquo;t hand out the full administrator rights the last step needs. On those, the log still rejects edits, deletes and wipes through Stride, and the 90-day floor still holds, but a compromised Stride could undo that protection. The startup warning stays as a reminder.</li>
+</ul>
+<p>The <a href="../audit-log-database-roles.md">database roles guide</a> walks through every step.</p>
+<h2 id="why-it-matters">Why it matters</h2>
+<ul>
+<li><strong>Answer &ldquo;what happened?&rdquo; in minutes.</strong> Look up a suspicious sign-in pattern, an unexpected token or a denied request without asking anyone to dig through server logs.</li>
+<li><strong>Hand evidence to the people who need it.</strong> Security reviews, compliance checks and incident reports want a record they can keep. Filter, export and attach it.</li>
+<li><strong>Trust the record.</strong> A log that could be quietly edited proves nothing. This one only grows, and recent history can&rsquo;t be removed.</li>
+</ul>
+<p>The audit log is in Stride now. If you&rsquo;re a site administrator, you&rsquo;ll find <strong>Audit Log</strong> in the admin menu.</p>
+
+            
+             
+            
 
 
-       	</div>
-        
+
+
+            
+            </div>
+            
+            
 
 <div class="
     col-lg-3 col-lg-offset-0
@@ -427,9 +469,9 @@
     
 </div>
 
-	</div>
-</div>
-
+        </div>
+    </div>
+</article>
 
 
 
@@ -489,7 +531,7 @@
             
            
                    <li>
-                       <a href='/tags/phoenix/index.xml' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
