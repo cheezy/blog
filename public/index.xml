@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Tue, 06 Oct 2026 19:27:00 -0400</lastBuildDate>
+			<lastBuildDate>Wed, 07 Oct 2026 06:50:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Stride Now Speaks MCP</title>
+				<link>http://localhost:1313/post/stride-mcp/</link>
+				<pubDate>Wed, 07 Oct 2026 06:50:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/stride-mcp/</guid>
+				<description>&lt;p&gt;Coding agents are Stride&amp;rsquo;s busiest users. They find the next task, claim it, do the work, run your quality checks and hand it back for review. Until now they did all of that by building HTTP requests by hand: shell commands with headers, JSON bodies and careful quoting, assembled fresh every time.&lt;/p&gt;&#xA;&lt;p&gt;Stride now has a &lt;strong&gt;Model Context Protocol (MCP) server&lt;/strong&gt;. MCP is the open standard that AI tools such as Claude Code use to discover and call external tools. Point an MCP client at Stride and your agent sees a small set of named, documented tools with defined inputs. It no longer has to remember an API. The agent asks for what it needs, and Stride checks the request before acting on it.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>A Permanent Record of Who Did What</title>
 				<link>http://localhost:1313/post/stride-audit-log/</link>
@@ -417,7 +424,7 @@
 				<link>http://localhost:1313/about/</link>
 				<pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
 				<guid>http://localhost:1313/about/</guid>
-				<description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+				<description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Hello world (again eh)!</title>
