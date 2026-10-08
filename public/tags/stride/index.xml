@@ -10,15 +10,22 @@
 		
 		
 		
-			<lastBuildDate>Wed, 07 Oct 2026 06:50:00 -0400</lastBuildDate>
+			<lastBuildDate>Thu, 08 Oct 2026 07:26:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/stride/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Comments That Know Who&#39;s Talking</title>
+				<link>http://localhost:1313/post/stride-comments-know-who/</link>
+				<pubDate>Thu, 08 Oct 2026 07:26:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/stride-comments-know-who/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Stride Now Speaks MCP</title>
 				<link>http://localhost:1313/post/stride-mcp/</link>
 				<pubDate>Wed, 07 Oct 2026 06:50:00 -0400</pubDate>
 				<guid>http://localhost:1313/post/stride-mcp/</guid>
-				<description></description>
+				<description>&lt;p&gt;Coding agents are Stride&amp;rsquo;s busiest users. They find the next task, claim it, do the work, run your quality checks and hand it back for review. Until now they did all of that by building HTTP requests by hand: shell commands with headers, JSON bodies and careful quoting, assembled fresh every time.&lt;/p&gt;&#xA;&lt;p&gt;Stride now has a &lt;strong&gt;Model Context Protocol (MCP) server&lt;/strong&gt;. MCP is the open standard that AI tools such as Claude Code use to discover and call external tools. Point an MCP client at Stride and your agent sees a small set of named, documented tools with defined inputs. It no longer has to remember an API. The agent asks for what it needs, and Stride checks the request before acting on it.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>A Permanent Record of Who Did What</title>

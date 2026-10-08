@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Comments That Know Who&#39;s Talking" />
+    <meta property="og:title" content="Comments That Know Who&#39;s Talking" />
+    <meta property="twitter:title" content="Comments That Know Who&#39;s Talking" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/stride-comments-know-who/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Comments That Know Who&#39;s Talking | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/stride-comments-know-who/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Comments That Know Who&#39;s Talking</h1>
+
+            
+                <p>A task&rsquo;s comments are where the real work gets discussed. Someone reproduces the bug, an agent explains what it changed, a reviewer raises a concern, and someone else answers it. Until now, Stride&rsquo;s comments were a list of notes with a date. They didn&rsquo;t say who wrote them, you couldn&rsquo;t fix a typo, and the only way to get someone&rsquo;s attention was to message them somewhere else.</p>
+<p>Comments in Stride are now a proper conversation. Every comment shows who wrote it, human or agent. You can edit or delete your own comments. You can <strong>@mention</strong> a teammate, and they&rsquo;re notified in Stride and by email, with a link that takes them straight to your comment. Agents can read and post comments through the API too.</p>
+<h2 id="every-comment-has-an-author">Every comment has an author</h2>
+<p>
+  <img src="/img/comments-thread.png" alt="A task&rsquo;s comment thread with comments from Priya, Claude Code, Marcus, Dana and Cheezy, including mentions, an edited comment and an agent comment">
+
+</p>
+<p>Each comment shows the author&rsquo;s name and avatar and how long ago it was posted, such as <em>20h ago</em>. Hover over the time to see the exact date and time.</p>
+<p>Comments written by an agent are easy to spot. The agent&rsquo;s name is shown as the author, with a square avatar where people have round ones, followed by the person whose API token the agent was using. In the thread above, <em>Claude Code via Cheezy Morgan</em> tells you an agent did the work and who it was working for. Agents from Claude, Cursor, Aider and Codex each get their own avatar colour.</p>
+<p>If someone&rsquo;s account is later deleted, their comments stay on the task, shown with <em>Unknown</em> as the author. The conversation still makes sense.</p>
+<p>The thread appears in both the task view and the task edit form, and it&rsquo;s the same thread in both places. Comments are listed oldest first, and a long thread scrolls inside its own box so the rest of the task stays in view.</p>
+<h2 id="fix-it-or-remove-it">Fix it or remove it</h2>
+<p>
+  <img src="/img/comments-inline-edit.png" alt="Editing a comment in place, with Save and Cancel buttons">
+
+</p>
+<p>Mistyped something? Click <strong>Edit</strong> on your comment and change it right where it is. Click <strong>Save</strong> to keep the change or <strong>Cancel</strong> to leave it as it was. An edited comment is marked <em>edited</em>, and hovering over the marker shows when it was changed. The original posting time never changes, so the thread&rsquo;s order stays honest.</p>
+<p><strong>Delete</strong> removes a comment after you confirm.</p>
+<ul>
+<li><strong>You can edit your own comments.</strong> Nobody else can, not even the board owner, so nobody can put words in your mouth.</li>
+<li><strong>You can delete your own comments.</strong> The board owner can also delete any comment on their board, to clean up something posted in the wrong place. Stride records that in the audit log, without the comment&rsquo;s text.</li>
+<li><strong>You need to be on the board.</strong> Anyone on the board can comment, including read-only members. Once someone leaves the board, they can no longer edit or delete what they wrote there.</li>
+</ul>
+<p>Edit and Delete only appear when you&rsquo;re allowed to use them, and Stride checks again on the server every time.</p>
+<h2 id="changes-appear-for-everyone-straight-away">Changes appear for everyone, straight away</h2>
+<p>If several people have the same task open, they all see new comments appear, edits change and deleted comments disappear as it happens. They don&rsquo;t have to refresh. Your half-written comment and any edit you have open are left alone while the thread updates around them.</p>
+<p>Posting a comment from the task edit form no longer throws away changes you haven&rsquo;t saved yet. Change a task&rsquo;s title, leave a comment about why, and your new title is still there, waiting for <strong>Save Task</strong>.</p>
+<h2 id="mention-a-teammate">Mention a teammate</h2>
+<p>
+  <img src="/img/comments-mention-autocomplete.png" alt="Typing @ma in the comment box lists the matching board members, Marcus Bell and Priya Raman">
+
+</p>
+<p>Type <strong>@</strong> followed by part of a name and Stride lists the matching people on the board. It matches anywhere in a person&rsquo;s name or email address, so <em>@ma</em> finds Marcus Bell and Priya Ra<em>ma</em>n. Choose a name and it&rsquo;s added to your comment. When the comment is posted, the mention shows as a highlighted chip with the person&rsquo;s avatar.</p>
+<ul>
+<li><strong>Keyboard:</strong> Up and Down move through the list. <strong>Enter</strong> or <strong>Tab</strong> adds the highlighted person. <strong>Escape</strong> closes the list without closing the task.</li>
+<li><strong>Mouse:</strong> click a name. The cursor stays in the comment box, so you can carry on typing.</li>
+<li><strong>Email addresses don&rsquo;t set it off.</strong> The list only opens when <strong>@</strong> starts a word, so typing <em><a href="mailto:dana@example.com">dana@example.com</a></em> in a comment doesn&rsquo;t pop it up.</li>
+<li><strong>It finds the right people.</strong> You can only mention people on the task&rsquo;s board, and disabled accounts aren&rsquo;t offered. Up to eight matches are shown at a time.</li>
+<li><strong>Names stay current.</strong> A mention always shows the person&rsquo;s current name, so if someone changes their name, old comments show the new one.</li>
+</ul>
+<p>Screen readers can use it too. They announce the list of board members and the person you&rsquo;ve highlighted as you move through it. The highlighted person is marked with a bar as well as a colour, so you can see the highlight without relying on colour.</p>
+<h2 id="mentions-reach-people-where-they-are">Mentions reach people where they are</h2>
+<p>
+  <img src="/img/comments-mention-notification.png" alt="The notifications inbox, with a new mention from Dana Okafor at the top">
+
+</p>
+<p>When you&rsquo;re mentioned, it shows up in your <a href="/post/stride-notifications/">notifications</a> straight away, under <strong>Mentions</strong>, with the task and who mentioned you. When an agent mentions you, the notification names both the agent and the person it was working for, for example <em>Claude Code (Cheezy Morgan)</em>.</p>
+<p>Stride emails you as well:</p>
+<p>
+  <img src="/img/comments-mention-email.png" alt="The mention email: You were mentioned, the task, who mentioned you, the board, and a View in Stride button">
+
+</p>
+<p>Mention emails are on by default. You can turn them off, along with any other notification email, on your notification preferences page or with the unsubscribe link in the email.</p>
+<p>Neither the notification nor the email includes the comment&rsquo;s text. Emails get forwarded and notification lists get glanced at over shoulders, so the words stay in Stride where only the board can see them.</p>
+<p>Stride is careful not to nag:</p>
+<ul>
+<li><strong>You&rsquo;re notified once.</strong> Editing a comment doesn&rsquo;t notify the people who were already mentioned in it. Only people the edit adds are told.</li>
+<li><strong>You&rsquo;re never notified about yourself.</strong> Mention yourself as a reminder if you like, and nothing is sent.</li>
+<li><strong>Only people on the board are notified.</strong> A mention of someone who isn&rsquo;t on the board is left as plain text, and nobody hears about it.</li>
+<li><strong>Up to 20 people can be mentioned in one comment.</strong> That&rsquo;s enough for a real conversation and stops one comment from pinging a whole company.</li>
+</ul>
+<h2 id="straight-to-the-comment">Straight to the comment</h2>
+<p>
+  <img src="/img/comments-deep-link.png" alt="The task opened from a mention, with Dana&rsquo;s comment outlined in the thread">
+
+</p>
+<p>Clicking a mention, in Stride or in the email, opens the task and scrolls to the comment you were mentioned in. The comment is outlined so you can find it at a glance, even in a long thread. You don&rsquo;t have to hunt for it.</p>
+<h2 id="agents-can-join-the-conversation">Agents can join the conversation</h2>
+<p>Agents often have the most to say about a task. They know what they changed, what they tested and what they&rsquo;re unsure of. They can now read a task&rsquo;s comments and add their own through the API:</p>
+<ul>
+<li><code>GET /api/tasks/:id/comments</code> returns the most recent comments, up to 200 at a time, oldest first.</li>
+<li><code>POST /api/tasks/:id/comments</code> adds a comment. The <code>stride_add_comment</code> MCP tool does the same thing.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;content&#34;</span>: <span style="color:#f1fa8c">&#34;Retry is in place behind the checkout_retry flag. @[Priya Raman](user:66) can you confirm staging still returns 504 for a timeout?&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;agent_name&#34;</span>: <span style="color:#f1fa8c">&#34;Claude Code&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>An agent&rsquo;s comment works just like a person&rsquo;s:</p>
+<ul>
+<li><strong>Mentions work the same way.</strong> Mentioned people are notified as usual.</li>
+<li><strong>The comment is credited correctly.</strong> It&rsquo;s always attributed to the token&rsquo;s owner, and the agent&rsquo;s name is shown alongside, so nobody can post as someone else.</li>
+<li><strong>Task details include a comment count.</strong> An agent can see at a glance whether there&rsquo;s a discussion to read before it starts work.</li>
+</ul>
+<p>The <a href="https://github.com/cheezy/kanban/blob/main/docs/api/post_tasks_id_comments.md">API reference</a> has the details, and the <a href="https://github.com/cheezy/kanban/blob/main/docs/api/get_tasks_id_comments.md">read side</a> is documented alongside it.</p>
+<h2 id="light-or-dark-any-language">Light or dark, any language</h2>
+<p>Comments, mentions and their notifications follow your light or dark theme, and they&rsquo;re available in every language Stride supports.</p>
+<p>
+  <img src="/img/comments-thread-dark.png" alt="The comment thread in dark mode">
+
+</p>
+<h2 id="why-it-matters">Why it matters</h2>
+<ul>
+<li><strong>Know who said what.</strong> Every comment has a name on it, and agent work is clearly labelled and tied to the person who ran the agent.</li>
+<li><strong>Get the right person&rsquo;s attention.</strong> A mention reaches them in Stride and in their inbox, and takes them straight to the comment.</li>
+<li><strong>Keep the decision on the task.</strong> Questions, answers and second thoughts stay next to the work instead of being scattered across chat threads.</li>
+<li><strong>Let people and agents work in one thread.</strong> Agents read what people wrote and answer in the same place, with the same mentions and notifications.</li>
+</ul>
+<p>Better comments are in Stride now. Open any task and start talking.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/stride-comments-know-who/">Comments That Know Who&#39;s Talking</a></li>
+        
+            <li><a href="/post/stride-mcp/">Stride Now Speaks MCP</a></li>
+        
+            <li><a href="/post/stride-audit-log/">A Permanent Record of Who Did What</a></li>
+        
+            <li><a href="/post/stride-exploratory-testing-sharper/">Exploratory Testing Gets Sharper, Safer and Quicker</a></li>
+        
+            <li><a href="/post/stride-plugin-leaner/">The Stride Plugin Gets Leaner, Faster and Harder to Fool</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
