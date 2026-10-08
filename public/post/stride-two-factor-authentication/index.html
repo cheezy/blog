@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="A Stolen Password Is No Longer Enough" />
+    <meta property="og:title" content="A Stolen Password Is No Longer Enough" />
+    <meta property="twitter:title" content="A Stolen Password Is No Longer Enough" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/stride-two-factor-authentication/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>A Stolen Password Is No Longer Enough | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/stride-two-factor-authentication/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>A Stolen Password Is No Longer Enough</h1>
+
+            
+                <p>Until now, your Stride account was exactly as safe as your password. If your password leaked in someone else&rsquo;s data breach, if you reused it somewhere, or if you typed it into a convincing fake sign-in page, whoever had it could sign in as you. They could see your boards, change your tasks and create API tokens.</p>
+<p>Stride now supports <strong>two-factor authentication</strong>. Once you turn it on, signing in takes two things: your password, and a six-digit code from an authenticator app on your phone. Someone who has only your password gets no further than the second step.</p>
+<h2 id="turning-it-on">Turning it on</h2>
+<p>Open <strong>Settings</strong> and choose the <strong>Two-factor</strong> tab.</p>
+<p>
+  <img src="/img/two-factor-settings-off.png" alt="The Two-factor tab in Settings, showing that two-factor authentication is off, with a Set up two-factor authentication button">
+
+</p>
+<p>Click <strong>Set up two-factor authentication</strong>. Stride shows a QR code and the same key written out as text.</p>
+<p>
+  <img src="/img/two-factor-setup-qr.png" alt="Setting up two-factor: a QR code, the key written out in groups of four, and a box for the 6-digit code">
+
+</p>
+<ol>
+<li><strong>Scan the QR code</strong> with an authenticator app such as 1Password, Google Authenticator or Authy. If you can&rsquo;t scan it, type the key into the app by hand.</li>
+<li><strong>Enter the six-digit code</strong> the app shows, and click <strong>Verify and turn on</strong>.</li>
+</ol>
+<p>Two-factor only turns on once Stride has seen a correct code. So you can&rsquo;t switch it on by accident, and you can&rsquo;t switch it on with an app that was set up wrong. Change your mind halfway through? Click <strong>Cancel</strong> and nothing changes.</p>
+<p>Two-factor settings need a recent sign-in. If you signed in more than ten minutes ago, Stride asks for your password again before showing the page. Someone who walks up to a computer you left signed in can&rsquo;t quietly turn two-factor on or off.</p>
+<h2 id="your-recovery-codes">Your recovery codes</h2>
+<p>As soon as two-factor is on, Stride shows you ten <strong>recovery codes</strong>.</p>
+<p>
+  <img src="/img/two-factor-recovery-codes.png" alt="Ten recovery codes shown once after turning two-factor on, with an I have saved these codes button">
+
+</p>
+<p>Recovery codes are your way back in if you lose your phone. Each one works once, in place of a six-digit code. <strong>They&rsquo;re shown only this once.</strong> Save them before you click <strong>I have saved these codes</strong>. A password manager is a good place for them, or print them and keep the paper somewhere safe.</p>
+<p>The codes are easy to read and to type. They leave out characters that are easy to confuse, such as <em>1</em>, <em>l</em>, <em>i</em> and <em>o</em>. Stride doesn&rsquo;t care whether you type the dash, or whether you use capital letters.</p>
+<p>Once you&rsquo;re set up, the Two-factor tab offers two things:</p>
+<p>
+  <img src="/img/two-factor-settings-on.png" alt="The Two-factor tab with two-factor on: generate new recovery codes, or turn two-factor off">
+
+</p>
+<ul>
+<li><strong>New recovery codes.</strong> Enter a code from your authenticator app and click <strong>Generate new codes</strong>. You get a fresh set of ten, and your old codes stop working straight away. Do this if you&rsquo;ve used a few of them, or if you think someone else has seen them.</li>
+<li><strong>Turn off two-factor.</strong> Enter a code from your authenticator app, or one of your recovery codes if you no longer have the app, and click <strong>Turn off two-factor</strong>.</li>
+</ul>
+<h2 id="signing-in">Signing in</h2>
+<p>Sign in with your email and password as usual. If two-factor is on, Stride then asks for your code before it lets you in.</p>
+<p>
+  <img src="/img/two-factor-challenge.png" alt="The two-factor sign-in step: Enter the 6-digit code from your authenticator app">
+
+</p>
+<p>Open your authenticator app, type the code shown for Stride, and click <strong>Verify</strong>. That&rsquo;s all. If you ticked <strong>Keep me signed in on this device</strong>, Stride remembers that too. If you were on your way to a particular page when Stride asked you to sign in, you&rsquo;ll land on that page.</p>
+<p>If you don&rsquo;t have your phone, click <strong>Use a recovery code instead</strong> and enter one of the codes you saved.</p>
+<p>
+  <img src="/img/two-factor-challenge-recovery.png" alt="The recovery code version of the sign-in step">
+
+</p>
+<p>Stride tells you when you&rsquo;ve used one, so you know your supply is shrinking:</p>
+<p>
+  <img src="/img/two-factor-recovery-sign-in.png" alt="After signing in with a recovery code: Welcome back! You signed in with a recovery code, which can&rsquo;t be used again. Create new recovery codes in Settings → Two-factor.">
+
+</p>
+<p>If a code is mistyped, or has just expired, Stride says so and lets you try again:</p>
+<p>
+  <img src="/img/two-factor-challenge-invalid.png" alt="That code is not valid. Check it and try again.">
+
+</p>
+<h2 id="a-nudge-to-get-started">A nudge to get started</h2>
+<p>Two-factor is your choice, and it&rsquo;s off until you turn it on. To help people find it, Stride shows a short reminder after you sign in with a password if two-factor isn&rsquo;t on yet.</p>
+<p>
+  <img src="/img/two-factor-reminder.png" alt="A reminder above the boards list: Protect your account with two-factor authentication, with Set up two-factor authentication, Not now and Read the setup guide">
+
+</p>
+<ul>
+<li><strong>Set up two-factor authentication</strong> takes you straight to the Two-factor tab.</li>
+<li><strong>Read the setup guide</strong> opens a step-by-step guide in Resources, including what to do when you get a new phone or a code is refused.</li>
+<li><strong>Not now</strong> hides the reminder for ten days on every device you use.</li>
+</ul>
+<p>The reminder only appears right after you sign in, and it&rsquo;s gone when you move to another page. It never gets in the way of your work.</p>
+<h2 id="what-makes-it-safe">What makes it safe</h2>
+<p>A second step is only as strong as the way it&rsquo;s built. Here&rsquo;s what Stride does behind the scenes:</p>
+<ul>
+<li><strong>Your password is checked first.</strong> Stride only asks for a code after the password is right. Someone guessing passwords can&rsquo;t use the sign-in page to find out who has two-factor turned on.</li>
+<li><strong>A correct password alone isn&rsquo;t a session.</strong> Until the code is accepted, you aren&rsquo;t signed in to anything. The half-finished sign-in expires after five minutes, and then you start again from your password.</li>
+<li><strong>Each code works once.</strong> A code from your app is accepted for about a minute and a half, to allow for a clock that&rsquo;s a little out. Within that time, a code that has already been used is refused. A code someone watched you type is no use to them afterwards.</li>
+<li><strong>Guessing is slow and pointless.</strong> A six-digit code has a million possibilities. Stride allows only a handful of attempts per account every few minutes, and limits wrong codes from a single network across all accounts. It also caps wrong codes per account over a whole day. Reach a limit while signing in and you&rsquo;re sent back to the start, password and all.</li>
+<li><strong>Your key is encrypted.</strong> The key behind your codes is stored encrypted with AES-256-GCM, using a key the server keeps separately from the database. A copy of the database alone doesn&rsquo;t reveal it.</li>
+<li><strong>Recovery codes are never stored.</strong> Stride keeps only a keyed fingerprint of each one, enough to check a code you type but not to recover it. Once a code is used, it&rsquo;s removed.</li>
+<li><strong>Every step leaves a record.</strong> Turning two-factor on or off, generating new recovery codes, signing in with two-factor, using a recovery code and entering a wrong code are all written to Stride&rsquo;s audit log, where site administrators can review them. Codes, keys and recovery codes themselves are never written down.</li>
+</ul>
+<h2 id="things-to-know">Things to know</h2>
+<ul>
+<li><strong>Agents aren&rsquo;t affected.</strong> API tokens keep working exactly as before, so your agents, scripts and MCP connections don&rsquo;t need anything new. Two-factor protects the browser sign-in. Treat API tokens like passwords, and revoke one if it might have leaked.</li>
+<li><strong>Turning it on doesn&rsquo;t sign out your other devices.</strong> Two-factor applies to every sign-in from then on. If you think someone already got into your account, change your password too. That signs out every other device.</li>
+<li><strong>Keep your recovery codes safe.</strong> Stride deliberately can&rsquo;t turn off two-factor for you, and neither can a site administrator, without one of your codes. That&rsquo;s what stops someone talking their way into your account. It also means that if you lose your phone <em>and</em> your recovery codes, you can&rsquo;t get back in.</li>
+<li><strong>Moving to a new phone?</strong> Many authenticator apps, such as 1Password, move your codes to the new phone for you, and then there&rsquo;s nothing to do. Otherwise, while you still have the old phone, turn two-factor off with a code from it, then set it up again on the new one. The setup guide in Resources walks through it.</li>
+</ul>
+<p>Two-factor follows your light or dark theme like the rest of Stride, and it&rsquo;s available in every language Stride supports.</p>
+<p>
+  <img src="/img/two-factor-settings-on-dark.png" alt="The Two-factor tab in dark mode">
+
+</p>
+<h2 id="why-it-matters">Why it matters</h2>
+<ul>
+<li><strong>A leaked password stops being an emergency.</strong> Breaches, reused passwords and phishing pages all hand over a password. None of them hands over your phone.</li>
+<li><strong>Your boards stay yours.</strong> Your account can see and change your team&rsquo;s work and create API tokens for agents. A second step keeps all of that behind something only you have.</li>
+<li><strong>It takes seconds.</strong> Setting it up takes about a minute, and each sign-in adds one six-digit code.</li>
+</ul>
+<p>Two-factor authentication is in Stride now. Open <strong>Settings → Two-factor</strong> to turn it on.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/stride-two-factor-authentication/">A Stolen Password Is No Longer Enough</a></li>
+        
+            <li><a href="/post/stride-comments-know-who/">Comments That Know Who&#39;s Talking</a></li>
+        
+            <li><a href="/post/stride-mcp/">Stride Now Speaks MCP</a></li>
+        
+            <li><a href="/post/stride-audit-log/">A Permanent Record of Who Did What</a></li>
+        
+            <li><a href="/post/stride-exploratory-testing-sharper/">Exploratory Testing Gets Sharper, Safer and Quicker</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
