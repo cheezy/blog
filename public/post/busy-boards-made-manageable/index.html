@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Busy Boards, Made Manageable" />
+    <meta property="og:title" content="Busy Boards, Made Manageable" />
+    <meta property="twitter:title" content="Busy Boards, Made Manageable" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/busy-boards-made-manageable/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Busy Boards, Made Manageable | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/busy-boards-made-manageable/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Busy Boards, Made Manageable</h1>
+
+            
+                <p>A Stride board with a dozen cards is easy to read at a glance. A board with a hundred is not. Until now, finding something meant scanning every column by eye. There was no way to say &ldquo;these are all the Android bugs&rdquo;, and no single place to see everything assigned to you. Tidying up after a planning session meant dragging cards one at a time.</p>
+<p>This release adds six things to help with that:</p>
+<ul>
+<li><strong>labels</strong>, to group cards by theme;</li>
+<li><strong>search and filters</strong> on the board;</li>
+<li>a <strong>My Work</strong> page that lists everything assigned to you;</li>
+<li><strong>bulk actions</strong>, to change many cards at once;</li>
+<li><strong>keyboard shortcuts</strong>;</li>
+<li><strong>labels in the API</strong>, so agents can use them too.</li>
+</ul>
+<h2 id="labels">Labels</h2>
+<p>Labels are short coloured tags you put on cards, such as <em>iOS</em>, <em>Payments</em> or <em>Tech debt</em>. They show up as chips on each card, so the board shows you at a glance what kind of work is where.</p>
+<p>
+  <img src="/img/board-labels.png" alt="The Mobile Checkout board with coloured label chips such as iOS, Payments, Android, Support and Performance on each card">
+
+</p>
+<p>A card shows up to three labels. If it has more, a small <strong>+1</strong> (or +2, and so on) shows how many are hidden, so cards stay compact however many labels they carry.</p>
+<h3 id="setting-up-your-labels">Setting up your labels</h3>
+<p>Each board has its own set of labels. Open the board&rsquo;s <strong>Settings</strong> tab and scroll down to <strong>Labels</strong>.</p>
+<p>
+  <img src="/img/labels-settings.png" alt="The Labels section of board settings, listing eight labels with Edit and Delete buttons, and a form to add a new label called Design review in pink">
+
+</p>
+<p>Type a name, pick one of nine colours, and click <strong>Add label</strong>. You can rename a label, change its colour or delete it at any time, and every change saves straight away. A few rules keep the list tidy:</p>
+<ul>
+<li><strong>Names are unique on a board, whatever the capitals.</strong> You can&rsquo;t have both <em>iOS</em> and <em>IOS</em>.</li>
+<li><strong>Names are up to 40 characters.</strong></li>
+<li><strong>Deleting a label never deletes a card.</strong> The label simply disappears from the cards that had it.</li>
+</ul>
+<p>The nine colours were chosen to be readable in both light and dark mode, and each chip has a visible border, so a label never fades into the card behind it.</p>
+<p>Anyone on the board can see the labels. Only the board owner and members who can edit get the edit controls.</p>
+<h3 id="labelling-a-card">Labelling a card</h3>
+<p>The task form now has a <strong>Labels</strong> row. Tick the labels that apply and save.</p>
+<p>
+  <img src="/img/task-form-labels.png" alt="The task form, showing Priority, Status and Assigned To, and a Labels row of checkboxes with Payments and Support ticked">
+
+</p>
+<p>The picker only offers the current board&rsquo;s labels, so you can&rsquo;t attach another board&rsquo;s labels by mistake. If someone deletes a label while you have the form open, Stride saves your other changes and tells you that label was dropped.</p>
+<h2 id="search-and-filters">Search and filters</h2>
+<p>Every board now has a search box and four filters above the columns: <strong>type</strong>, <strong>priority</strong>, <strong>assignee</strong> and <strong>label</strong>.</p>
+<ul>
+<li><strong>Search</strong> matches card titles and IDs, so typing <code>D2</code> or <code>apple pay</code> both work, and capitals don&rsquo;t matter.</li>
+<li><strong>Assignee</strong> includes an <strong>Unassigned</strong> option, for finding work nobody has picked up yet.</li>
+<li><strong>Filters combine.</strong> Choose <em>High</em> and <em>Payments</em> and you see only cards that are both.</li>
+</ul>
+<p>Here is the Mobile Checkout board narrowed to high-priority payment work:</p>
+<p>
+  <img src="/img/board-filtered.png" alt="The board filtered to High priority and the Payments label: Backlog shows 1 of 6 cards, Ready shows 2 of 4, Doing shows 1 of 3, and an empty column says no cards match">
+
+</p>
+<p>Each column header shows how many cards match out of how many there are, such as <strong>2 of 4</strong>. A column with no matches says so, rather than looking broken. Click <strong>Clear filters</strong> to see everything again.</p>
+<p>If a goal&rsquo;s subtask matches, the goal stays on the board too, so you never see a subtask without the goal it belongs to.</p>
+<p>While a filter is on, you can&rsquo;t drag cards to reorder them, and the board shows a note saying so. A drag on a partial view could put a card somewhere you didn&rsquo;t expect among the cards you can&rsquo;t see.</p>
+<h3 id="share-exactly-what-you-see">Share exactly what you see</h3>
+<p>Your search and filters are saved in the page address:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/boards/49?priority=high&amp;label=50
+</span></span></code></pre></div><p>Copy the address into chat and your teammate opens the board already filtered the same way. Bookmark it, and you have a saved view for your Monday triage. If a link mentions a label that has since been deleted, or a value Stride doesn&rsquo;t recognise, Stride ignores that part and shows the rest.</p>
+<p>Everyone who can see a board can filter it, including members with view-only access and visitors to a public board.</p>
+<h2 id="my-work">My Work</h2>
+<p><strong>My Work</strong> is a new item in the side navigation. It lists every open task assigned to you, across all the boards you belong to, in one place.</p>
+<p>
+  <img src="/img/my-work.png" alt="The My Work page, with Customer Accounts and Mobile Checkout groups, each listing the tasks assigned to you with their ID, title, labels and priority">
+
+</p>
+<ul>
+<li><strong>Grouped by board, most urgent first.</strong> Within each board, critical tasks come first, then high, medium and low.</li>
+<li><strong>Only work that&rsquo;s still to do.</strong> Completed and archived tasks are left out.</li>
+<li><strong>Labels come along.</strong> Each row shows the task&rsquo;s labels as they are on its own board. In the example, <em>Support</em> is red on one board and orange on the other.</li>
+<li><strong>One click to the task.</strong> Each row opens the task on its board. If you can only view that board, Stride opens the board with a search for the task instead.</li>
+</ul>
+<p>My Work only ever shows boards you are a member of. If someone removes you from a board, its tasks leave your list too.</p>
+<h2 id="bulk-actions">Bulk actions</h2>
+<p>Triage and planning often mean the same change to many cards: move these five to Ready, give those three to Priya, label all of these <em>Support</em>. Now you can do that in one step.</p>
+<p>Click <strong>Select</strong> at the top of the board. A checkbox appears on every card, and an action bar appears above the columns.</p>
+<p>
+  <img src="/img/bulk-select.png" alt="Selection mode: three cards are ticked, and the action bar shows 3 selected, with Move, Assign, Add label, Remove label and Archive actions, and Priya Raman chosen in the Assign menu">
+
+</p>
+<p>Tick cards one by one, or use <strong>Select all</strong> at the top of a column. Then choose one action:</p>
+<ul>
+<li><strong>Move</strong> the cards to another column.</li>
+<li><strong>Assign</strong> them to a board member, or unassign them.</li>
+<li><strong>Add a label</strong> to all of them, or <strong>remove a label</strong> from all of them.</li>
+<li><strong>Archive</strong> them. Stride asks you to confirm first, and archived cards are recorded exactly as if you had archived each one by hand.</li>
+</ul>
+<p>A few safeguards make bulk changes safe to use:</p>
+<ul>
+<li><strong>All or nothing.</strong> If any part of an action fails, nothing changes. For example, a move that would push a column past its WIP limit is refused with a message, and no cards are moved.</li>
+<li><strong>Goals are handled carefully.</strong> Move, assign and archive skip goals, because those actions would also affect the goal&rsquo;s subtasks. Stride tells you how many it skipped. Labels can be added to goals and removed from them as normal.</li>
+<li><strong>Only sensible choices.</strong> You can only assign to members of the board, and only use the board&rsquo;s own labels.</li>
+<li><strong>Everyone stays in sync.</strong> Anyone else looking at the board sees the change at the same moment.</li>
+</ul>
+<p>Bulk actions are only for people who can edit the board. Members with view-only access don&rsquo;t see the checkboxes or the action bar, and Stride refuses the action even if someone tries to send it by other means.</p>
+<p>Press <strong>Esc</strong> to untick everything and start again. Click <strong>Done selecting</strong> when you&rsquo;ve finished.</p>
+<h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
+<p>People who spend all day on the board can now keep their hands on the keyboard:</p>
+<p>
+  <img src="/img/keyboard-shortcuts.png" alt="The Keyboard shortcuts overlay: / focuses the search box, ? shows or hides the list, Esc closes the list or clears the selected tasks">
+
+</p>
+<ul>
+<li><strong>/</strong> jumps to the search box.</li>
+<li><strong>?</strong> opens a list of the shortcuts.</li>
+<li><strong>Esc</strong> closes that list, or clears your selected cards.</li>
+</ul>
+<p>The small <strong>/</strong> and <strong>?</strong> keys beside the search box are there as a reminder. The shortcuts stay out of your way: they don&rsquo;t fire while you&rsquo;re typing in a text box or a menu, while you hold Ctrl, Cmd or Alt, or while another dialog is open. So typing a question mark in a comment, or using your browser&rsquo;s own shortcuts, works exactly as before.</p>
+<h2 id="labels-for-agents">Labels for agents</h2>
+<p>Agents plan and triage work through Stride&rsquo;s API, and they now see the same labels people do.</p>
+<ul>
+<li>
+<p><strong>Every task in the API now includes its labels</strong>, each with a name and a colour.</p>
+</li>
+<li>
+<p><strong>Agents can set labels by name</strong> when they create a task, create a batch of goals, or update a task:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{ <span style="color:#ff79c6">&#34;task&#34;</span>: { <span style="color:#ff79c6">&#34;labels&#34;</span>: [<span style="color:#f1fa8c">&#34;Payments&#34;</span>, <span style="color:#f1fa8c">&#34;Support&#34;</span>] } }
+</span></span></code></pre></div><p>On an update, the list replaces the task&rsquo;s labels, an empty list removes them all, and leaving the field out changes nothing.</p>
+</li>
+<li>
+<p><strong>A label name the board doesn&rsquo;t have is refused</strong> with an error naming it, and nothing is saved, so a typo never half-applies.</p>
+</li>
+<li>
+<p><strong>Agents can list tasks with a given label</strong> using <code>GET /api/tasks?label=Payments</code>, and the MCP tool takes the same <code>label</code> option. The result matches what the board&rsquo;s label filter shows for the same label.</p>
+</li>
+</ul>
+<p>Labels are created and managed in board settings, not through the API, so the label list stays under the team&rsquo;s control.</p>
+<h2 id="why-it-matters">Why it matters</h2>
+<ul>
+<li><strong>Find any card in seconds.</strong> Search and filters replace scanning columns by eye, and the counts tell you at once how much of the board is in view.</li>
+<li><strong>See the shape of the work.</strong> Labels show where the payment work, the accessibility work or the customer bugs are, without opening a single card.</li>
+<li><strong>Talk about the same view.</strong> A filtered board is just a link, so &ldquo;look at the high-priority Android bugs&rdquo; becomes a link instead of instructions.</li>
+<li><strong>Know what to do next.</strong> My Work gathers your tasks from every board into one list, sorted by urgency, so nothing assigned to you hides on a board you rarely open.</li>
+<li><strong>Spend planning time on decisions, not clicks.</strong> Bulk actions change many cards in one step, and the all-or-nothing rule means a half-finished change never leaves the board in a muddle.</li>
+<li><strong>Agents and people share one vocabulary.</strong> The same labels appear on the board, in the API and in the MCP tools, so an agent can pick up &ldquo;all the <em>Support</em> cards&rdquo; exactly as a person would.</li>
+</ul>
+<p>All of this is on every board now. Open a board and press <strong>?</strong> to get started.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/busy-boards-made-manageable/">Busy Boards, Made Manageable</a></li>
+        
+            <li><a href="/post/stride-two-factor-authentication/">A Stolen Password Is No Longer Enough</a></li>
+        
+            <li><a href="/post/stride-comments-know-who/">Comments That Know Who&#39;s Talking</a></li>
+        
+            <li><a href="/post/stride-mcp/">Stride Now Speaks MCP</a></li>
+        
+            <li><a href="/post/stride-audit-log/">A Permanent Record of Who Did What</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

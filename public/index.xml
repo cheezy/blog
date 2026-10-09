@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Thu, 08 Oct 2026 16:57:00 -0400</lastBuildDate>
+			<lastBuildDate>Fri, 09 Oct 2026 06:51:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Busy Boards, Made Manageable</title>
+				<link>http://localhost:1313/post/busy-boards-made-manageable/</link>
+				<pubDate>Fri, 09 Oct 2026 06:51:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/busy-boards-made-manageable/</guid>
+				<description>&lt;p&gt;A Stride board with a dozen cards is easy to read at a glance. A board with a hundred is not. Until now, finding something meant scanning every column by eye. There was no way to say &amp;ldquo;these are all the Android bugs&amp;rdquo;, and no single place to see everything assigned to you. Tidying up after a planning session meant dragging cards one at a time.&lt;/p&gt;&#xA;&lt;p&gt;This release adds six things to help with that:&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>A Stolen Password Is No Longer Enough</title>
 				<link>http://localhost:1313/post/stride-two-factor-authentication/</link>

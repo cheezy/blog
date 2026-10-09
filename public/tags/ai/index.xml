@@ -10,15 +10,22 @@
 		
 		
 		
-			<lastBuildDate>Thu, 08 Oct 2026 16:57:00 -0400</lastBuildDate>
+			<lastBuildDate>Fri, 09 Oct 2026 06:51:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Busy Boards, Made Manageable</title>
+				<link>http://localhost:1313/post/busy-boards-made-manageable/</link>
+				<pubDate>Fri, 09 Oct 2026 06:51:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/busy-boards-made-manageable/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>A Stolen Password Is No Longer Enough</title>
 				<link>http://localhost:1313/post/stride-two-factor-authentication/</link>
 				<pubDate>Thu, 08 Oct 2026 16:57:00 -0400</pubDate>
 				<guid>http://localhost:1313/post/stride-two-factor-authentication/</guid>
-				<description></description>
+				<description>&lt;p&gt;Until now, your Stride account was exactly as safe as your password. If your password leaked in someone else&amp;rsquo;s data breach, if you reused it somewhere, or if you typed it into a convincing fake sign-in page, whoever had it could sign in as you. They could see your boards, change your tasks and create API tokens.&lt;/p&gt;&#xA;&lt;p&gt;Stride now supports &lt;strong&gt;two-factor authentication&lt;/strong&gt;. Once you turn it on, signing in takes two things: your password, and a six-digit code from an authenticator app on your phone. Someone who has only your password gets no further than the second step.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Comments That Know Who&#39;s Talking</title>
