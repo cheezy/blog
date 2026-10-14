@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Your Board, Wherever Your Team Talks" />
+    <meta property="og:title" content="Your Board, Wherever Your Team Talks" />
+    <meta property="twitter:title" content="Your Board, Wherever Your Team Talks" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/webhooks-slack-discord/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Your Board, Wherever Your Team Talks | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/webhooks-slack-discord/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Your Board, Wherever Your Team Talks</h1>
+
+            
+                <p>A Stride board knows the moment anything happens. A card is picked up, an agent finishes a task, a reviewer approves the work. Until now, though, you only found out if you happened to have the board open. Most teams don&rsquo;t sit on their board all day. They live in Slack or Discord, and the board was one more tab to check.</p>
+<p>Stride can now tell your team about it where they already are. Each board has a new <strong>Integrations</strong> tab, where the board&rsquo;s owner can send board activity to:</p>
+<ul>
+<li>a <strong>Slack</strong> channel;</li>
+<li>a <strong>Discord</strong> channel;</li>
+<li>a <strong>webhook</strong>, for teams who want to feed Stride into their own tools.</li>
+</ul>
+<p>Setting one up takes a couple of minutes, and you choose exactly which kinds of activity each channel hears about.</p>
+<h2 id="the-integrations-tab">The Integrations tab</h2>
+<p>Open your board and choose <strong>Integrations</strong>, next to <strong>Settings</strong>.</p>
+<p>
+  <img src="/img/board-integrations-tab.png" alt="The Mobile Checkout board, with the Integrations tab next to Settings above the columns">
+
+</p>
+<p>Stride opens a panel listing the board&rsquo;s endpoints, with a form to add a new one underneath.</p>
+<p>
+  <img src="/img/integrations-overview.png" alt="The Integrations panel: a Slack endpoint already sending task events, and the Add an endpoint form with a Kind menu, a URL box and nine events to choose from">
+
+</p>
+<p>Each place Stride sends to is called an <strong>endpoint</strong>. A board can have as many as you like. One team might send everything to an engineering channel, and only finished work to a channel the whole company reads.</p>
+<p>Only the board&rsquo;s owner sees this tab. Members, including those who can edit cards, don&rsquo;t. A board&rsquo;s integrations decide what gets shared outside Stride, so that choice stays with one person.</p>
+<h2 id="slack">Slack</h2>
+<h3 id="get-a-link-from-slack">Get a link from Slack</h3>
+<p>Slack calls this an <strong>incoming webhook</strong>: a private link that posts into one channel. To make one:</p>
+<ol>
+<li>Go to <a href="https://api.slack.com/apps">api.slack.com/apps</a> and choose <strong>Create New App</strong>, then <strong>From scratch</strong>.</li>
+<li>Call it &ldquo;Stride&rdquo;, pick your workspace and choose <strong>Create App</strong>.</li>
+<li>Open <strong>Incoming Webhooks</strong> and turn it on.</li>
+<li>Choose <strong>Add New Webhook to Workspace</strong>, pick the channel, and choose <strong>Allow</strong>. Some workspaces need an admin to approve the app first.</li>
+<li>Copy the link Slack gives you. It starts with <code>https://hooks.slack.com/services/</code>.</li>
+</ol>
+<h3 id="add-it-to-your-board">Add it to your board</h3>
+<p>Back on the Integrations tab, set <strong>Kind</strong> to <strong>Slack</strong>, paste the link, and tick the activity you want the channel to hear about.</p>
+<p>
+  <img src="/img/add-slack-endpoint.png" alt="The Add an endpoint form with Kind set to Slack, a Slack webhook link pasted in, and task.claimed, task.moved_to_review, task.reviewed and task.completed ticked">
+
+</p>
+<p>Choose <strong>Add endpoint</strong>, and you&rsquo;re done.</p>
+<p>Treat that Slack link like a password: anyone who has it can post in your channel. Stride stores it encrypted and never shows it in full again. If you come back to edit the endpoint later, you see only the start of the address.</p>
+<h3 id="what-your-channel-sees">What your channel sees</h3>
+<p>From then on, every time something you ticked happens on the board, a short message appears in the channel.</p>
+<p>
+  <img src="/img/slack-message.png" alt="A Slack channel called #mobile-checkout. Between messages from teammates, Stride posts that W11 Show a clear message when a card is declined was claimed, moved to review, reviewed and completed, and that D3 Keyboard covers the postcode field on small iPhones was claimed. Each message names the board, the column and the event">
+
+</p>
+<p><em>An illustration of a Slack channel, showing the messages Stride sends.</em></p>
+<p>Each message tells you:</p>
+<ul>
+<li><strong>which card</strong>, by its ID and title, linked straight to the card in Stride;</li>
+<li><strong>what happened</strong> to it, such as <em>claimed</em>, <em>moved</em> or <em>completed</em>;</li>
+<li><strong>which column</strong> it&rsquo;s in now, and <strong>which board</strong>, with a link to the board.</li>
+</ul>
+<p>The messages are deliberately short. They tell you something happened and take you to the card in one click, without filling the channel with detail.</p>
+<h2 id="discord">Discord</h2>
+<h3 id="get-a-link-from-discord">Get a link from Discord</h3>
+<p>Discord calls this a <strong>channel webhook</strong>. You need the <strong>Manage Webhooks</strong> permission on the server.</p>
+<ol>
+<li>Open <strong>Server Settings</strong>, then <strong>Integrations</strong>.</li>
+<li>Choose <strong>Webhooks</strong>, then <strong>New Webhook</strong>.</li>
+<li>Name it &ldquo;Stride&rdquo; and pick the channel.</li>
+<li>Choose <strong>Copy Webhook URL</strong>.</li>
+</ol>
+<h3 id="add-the-discord-link-to-your-board">Add the Discord link to your board</h3>
+<p>On the Integrations tab, set <strong>Kind</strong> to <strong>Discord</strong>, paste the link and tick your events.</p>
+<p>
+  <img src="/img/add-discord-endpoint.png" alt="The Add an endpoint form with Kind set to Discord, a Discord webhook link pasted in, and task.created, task.moved, task.completed and task.reviewed ticked">
+
+</p>
+<p>Stride accepts only a real Discord webhook link here. If you paste the wrong thing, such as a link to a channel or a server invite, it tells you, rather than leaving you with an endpoint that will never post.</p>
+<h3 id="what-your-discord-channel-sees">What your Discord channel sees</h3>
+<p>Discord messages show as a small card, with the task as a clickable title and the event, column and board laid out underneath.</p>
+<p>
+  <img src="/img/discord-message.png" alt="A Discord channel called #stride-updates where Stride posts a card for each event: W15 Saved cards list for returning customers was created in Backlog, W10 Prefetch shipping rates while the cart loads was moved to Doing, and W11 Show a clear message when a card is declined was reviewed">
+
+</p>
+<p><em>An illustration of a Discord channel, showing the messages Stride sends.</em></p>
+<h2 id="a-safe-channel-whatever-the-card-says">A safe channel, whatever the card says</h2>
+<p>Card titles are written by people and, more and more, by AI agents. Stride makes sure a title can never misbehave in your channel. A card called <em>@everyone the release is broken</em> shows up as exactly that text: it doesn&rsquo;t ping the whole server. In Slack, <code>&lt;!channel&gt;</code> in a title doesn&rsquo;t notify the channel, and a title can&rsquo;t sneak in a link that looks like something else. Very long titles are shortened, so one card can&rsquo;t take over the conversation.</p>
+<h2 id="webhooks-for-your-own-tools">Webhooks, for your own tools</h2>
+<p>If your team has developers, a <strong>webhook</strong> endpoint sends the same activity to a web address of your choosing. It&rsquo;s how you connect Stride to an internal dashboard, a reporting tool, an automation service such as Zapier, or anything else that can receive a web request.</p>
+<p>Leave <strong>Kind</strong> as <strong>Generic webhook</strong>, enter the address, tick your events and choose <strong>Add endpoint</strong>. Stride then shows you a <strong>signing secret</strong>.</p>
+<p>
+  <img src="/img/webhook-signing-secret.png" alt="After adding a webhook endpoint for hooks.zapier.com, Stride shows its signing secret once, with a Copy button and a reminder that you won&rsquo;t see it again. The secret is blurred here">
+
+</p>
+<p>Hand the secret to whoever builds the receiving side. It lets their tool check that each message really came from your board and wasn&rsquo;t faked or replayed. <strong>You see it only this once.</strong> If it&rsquo;s lost, or you think someone else has seen it, choose <strong>Rotate secret</strong> to get a new one. The old one stops working at once.</p>
+<p>Stride also checks the address before it sends anything. It refuses an address that points into a private network, so a webhook can&rsquo;t be used to reach systems that were never meant to be reachable from the outside.</p>
+<h2 id="choosing-what-to-hear-about">Choosing what to hear about</h2>
+<p>Every endpoint gets only the activity you ticked for it. There are nine kinds, each with a short name on the form:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Tick this</th>
+					<th>To hear when</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>task.created</code></td>
+					<td>a card or goal is added, by a person or an agent</td>
+			</tr>
+			<tr>
+					<td><code>task.updated</code></td>
+					<td>a card&rsquo;s details or status change</td>
+			</tr>
+			<tr>
+					<td><code>task.moved</code></td>
+					<td>a card moves to another column</td>
+			</tr>
+			<tr>
+					<td><code>task.claimed</code></td>
+					<td>an agent picks up a card to work on</td>
+			</tr>
+			<tr>
+					<td><code>task.unclaimed</code></td>
+					<td>an agent lets go of a card</td>
+			</tr>
+			<tr>
+					<td><code>task.moved_to_review</code></td>
+					<td>an agent finishes a card and it&rsquo;s waiting for review</td>
+			</tr>
+			<tr>
+					<td><code>task.reviewed</code></td>
+					<td>someone approves a card or asks for changes</td>
+			</tr>
+			<tr>
+					<td><code>task.completed</code></td>
+					<td>a card is done</td>
+			</tr>
+			<tr>
+					<td><code>task.deleted</code></td>
+					<td>a card is deleted</td>
+			</tr>
+	</tbody>
+</table>
+<p>A few suggestions:</p>
+<ul>
+<li><strong>A busy team channel:</strong> <code>task.claimed</code>, <code>task.moved_to_review</code> and <code>task.completed</code> tell people what&rsquo;s being worked on and what&rsquo;s finished, without the noise of every small edit.</li>
+<li><strong>A reviewers&rsquo; channel:</strong> just <code>task.moved_to_review</code>, so the people who approve work know the moment something is waiting for them.</li>
+<li><strong>A company-wide channel:</strong> just <code>task.completed</code>, as a running list of what got done.</li>
+<li><strong>A reporting tool:</strong> everything, so it has the whole picture.</li>
+</ul>
+<p>Stride only speaks up when something actually changed. Opening a card and saving it without changing anything sends nothing. Neither does adding a label, or the cards below a deleted card moving up to fill the gap. If you move twenty cards at once, each one gets its own message, so nothing is lumped together or lost.</p>
+<h2 id="keeping-an-eye-on-things">Keeping an eye on things</h2>
+<p>Once you&rsquo;ve added endpoints, they&rsquo;re listed on the Integrations tab with what each one listens for.</p>
+<p>
+  <img src="/img/endpoints-list.png" alt="The Integrations panel listing three endpoints, a Slack one, a Discord one and a generic webhook to hooks.zapier.com, each with the events it receives and Edit, Disable, Send test, Deliveries and Delete buttons. The webhook also has Rotate secret">
+
+</p>
+<p>Each endpoint has a few actions:</p>
+<ul>
+<li><strong>Send test</strong> posts a test message, &ldquo;Stride test message for board Mobile Checkout&rdquo;, so you can check everything is connected before real activity arrives.</li>
+<li><strong>Deliveries</strong> shows the last 20 messages Stride tried to send, whether each one arrived, and when.</li>
+<li><strong>Edit</strong> changes which activity the endpoint hears about, or swaps in a new link.</li>
+<li><strong>Disable</strong> pauses the endpoint without losing its settings, and <strong>Enable</strong> turns it back on. Nothing is saved up while it&rsquo;s paused, so you won&rsquo;t get a flood of old messages when you turn it back on.</li>
+<li><strong>Delete</strong> removes it for good.</li>
+</ul>
+<h3 id="when-something-goes-wrong">When something goes wrong</h3>
+<p>Choose <strong>Deliveries</strong> to see what Stride has sent to an endpoint recently, whether it arrived, and when.</p>
+<p>
+  <img src="/img/deliveries.png" alt="The recent deliveries for the Slack endpoint: a task.moved message two hours ago and a test message the day before, both Succeeded on the first attempt with a 200 response">
+
+</p>
+<p>Slack, Discord and your own tools all have bad moments. If a message can&rsquo;t get through, Stride doesn&rsquo;t give up. It tries again, waiting a little longer each time, for about an hour. Each attempt appears in the deliveries list with its attempt number and the error, so you can see exactly what happened.</p>
+<p>Some problems won&rsquo;t fix themselves, such as a Slack channel that was archived or a Discord webhook someone deleted. Then Stride stops after the first try instead of retrying for an hour, and records why. To fix it, make a new link in Slack or Discord and paste it in with <strong>Edit</strong>.</p>
+<p>To change an endpoint&rsquo;s link, choose <strong>Edit</strong> and paste the new one. Leave it blank to keep the old one.</p>
+<p>
+  <img src="/img/edit-endpoint.png" alt="Editing the Discord endpoint: the URL box shows only the current host, discord.com, with a note to leave it blank to keep the current link, and the ticked events can be changed">
+
+</p>
+<h2 id="why-it-matters">Why it matters</h2>
+<ul>
+<li><strong>Stop checking the board.</strong> The board comes to you, in the channel you already have open.</li>
+<li><strong>See your agents at work.</strong> When an agent claims a card, finishes it or sends it for review, your team sees it as it happens, alongside everything else they&rsquo;re talking about.</li>
+<li><strong>Faster reviews.</strong> A message the moment work is waiting means reviewers no longer find it hours later.</li>
+<li><strong>Each channel hears only what it needs.</strong> Engineers can follow every move while the rest of the company sees only what&rsquo;s finished, from the same board.</li>
+<li><strong>Safe by default.</strong> Links and secrets are stored encrypted and shown once. Card titles can&rsquo;t ping a channel, and webhooks can&rsquo;t be pointed at your private network.</li>
+<li><strong>Connect anything.</strong> A webhook turns your board&rsquo;s activity into something your own tools can use.</li>
+</ul>
+<p>Open a board you own and choose <strong>Integrations</strong> to get started.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/webhooks-slack-discord/">Your Board, Wherever Your Team Talks</a></li>
+        
+            <li><a href="/post/busy-boards-made-manageable/">Busy Boards, Made Manageable</a></li>
+        
+            <li><a href="/post/stride-two-factor-authentication/">A Stolen Password Is No Longer Enough</a></li>
+        
+            <li><a href="/post/stride-comments-know-who/">Comments That Know Who&#39;s Talking</a></li>
+        
+            <li><a href="/post/stride-mcp/">Stride Now Speaks MCP</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Fri, 09 Oct 2026 06:51:00 -0400</lastBuildDate>
+			<lastBuildDate>Wed, 14 Oct 2026 13:35:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Your Board, Wherever Your Team Talks</title>
+				<link>http://localhost:1313/post/webhooks-slack-discord/</link>
+				<pubDate>Wed, 14 Oct 2026 13:35:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/webhooks-slack-discord/</guid>
+				<description>&lt;p&gt;A Stride board knows the moment anything happens. A card is picked up, an agent finishes a task, a reviewer approves the work. Until now, though, you only found out if you happened to have the board open. Most teams don&amp;rsquo;t sit on their board all day. They live in Slack or Discord, and the board was one more tab to check.&lt;/p&gt;&#xA;&lt;p&gt;Stride can now tell your team about it where they already are. Each board has a new &lt;strong&gt;Integrations&lt;/strong&gt; tab, where the board&amp;rsquo;s owner can send board activity to:&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Busy Boards, Made Manageable</title>
 				<link>http://localhost:1313/post/busy-boards-made-manageable/</link>
@@ -445,7 +452,7 @@
 				<link>http://localhost:1313/about/</link>
 				<pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
 				<guid>http://localhost:1313/about/</guid>
-				<description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+				<description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Hello world (again eh)!</title>

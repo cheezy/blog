@@ -23,6 +23,9 @@
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-10-09T06:51:00-04:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/post/webhooks-slack-discord/</loc>
+    <lastmod>2026-10-09T06:51:00-04:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/post/stride-two-factor-authentication/</loc>
     <lastmod>2026-10-08T16:57:00-04:00</lastmod>
   </url><url>
