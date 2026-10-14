@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Wed, 14 Oct 2026 13:35:00 -0400</lastBuildDate>
+			<lastBuildDate>Wed, 14 Oct 2026 15:20:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>See Everything Your Board Is Doing</title>
+				<link>http://localhost:1313/post/telemetry/</link>
+				<pubDate>Wed, 14 Oct 2026 15:20:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/telemetry/</guid>
+				<description>&lt;p&gt;Your Stride board shows you where every card is right now. What it couldn&amp;rsquo;t easily tell you was how the work has been &lt;em&gt;going&lt;/em&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;How many tasks did the agents finish this week?&lt;/li&gt;&#xA;&lt;li&gt;How long does a task take from the moment an agent claims it to the moment it&amp;rsquo;s done?&lt;/li&gt;&#xA;&lt;li&gt;How often does work pass review the first time?&lt;/li&gt;&#xA;&lt;li&gt;Did anything quietly fail overnight?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Stride now records all of that. Every meaningful thing that happens, such as a task claimed, a review approved, a goal&amp;rsquo;s hook failing or an API call, sends a small, private &lt;strong&gt;telemetry event&lt;/strong&gt;. You can feed those events into the dashboards, reports and alerts your team already uses, or build new ones around them.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Your Board, Wherever Your Team Talks</title>
 				<link>http://localhost:1313/post/webhooks-slack-discord/</link>
@@ -452,7 +459,7 @@
 				<link>http://localhost:1313/about/</link>
 				<pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
 				<guid>http://localhost:1313/about/</guid>
-				<description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
+				<description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Hello world (again eh)!</title>

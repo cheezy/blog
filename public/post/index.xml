@@ -10,22 +10,22 @@
 		
 		
 		
-			<lastBuildDate>Fri, 09 Oct 2026 06:51:00 -0400</lastBuildDate>
+			<lastBuildDate>Wed, 14 Oct 2026 13:35:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Your Board, Wherever Your Team Talks</title>
+				<link>http://localhost:1313/post/webhooks-slack-discord/</link>
+				<pubDate>Wed, 14 Oct 2026 13:35:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/webhooks-slack-discord/</guid>
+				<description>&lt;p&gt;A Stride board knows the moment anything happens. A card is picked up, an agent finishes a task, a reviewer approves the work. Until now, though, you only found out if you happened to have the board open. Most teams don&amp;rsquo;t sit on their board all day. They live in Slack or Discord, and the board was one more tab to check.&lt;/p&gt;&#xA;&lt;p&gt;Stride can now tell your team about it where they already are. Each board has a new &lt;strong&gt;Integrations&lt;/strong&gt; tab, where the board&amp;rsquo;s owner can send board activity to:&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Busy Boards, Made Manageable</title>
 				<link>http://localhost:1313/post/busy-boards-made-manageable/</link>
 				<pubDate>Fri, 09 Oct 2026 06:51:00 -0400</pubDate>
 				<guid>http://localhost:1313/post/busy-boards-made-manageable/</guid>
 				<description>&lt;p&gt;A Stride board with a dozen cards is easy to read at a glance. A board with a hundred is not. Until now, finding something meant scanning every column by eye. There was no way to say &amp;ldquo;these are all the Android bugs&amp;rdquo;, and no single place to see everything assigned to you. Tidying up after a planning session meant dragging cards one at a time.&lt;/p&gt;&#xA;&lt;p&gt;This release adds six things to help with that:&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Your Board, Wherever Your Team Talks</title>
-				<link>http://localhost:1313/post/webhooks-slack-discord/</link>
-				<pubDate>Fri, 09 Oct 2026 06:51:00 -0400</pubDate>
-				<guid>http://localhost:1313/post/webhooks-slack-discord/</guid>
-				<description></description>
 			</item>
 			<item>
 				<title>A Stolen Password Is No Longer Enough</title>
