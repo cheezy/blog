@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="A Workspace for Every Team" />
+    <meta property="og:title" content="A Workspace for Every Team" />
+    <meta property="twitter:title" content="A Workspace for Every Team" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/workspaces/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>A Workspace for Every Team | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/workspaces/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>A Workspace for Every Team</h1>
+
+            
+                <p><em>This post is part of the <a href="/post/stride-3-0-0/">Stride 3.0.0 announcement</a>. Workspaces are part of the Organization plan.</em></p>
+<p>Once more than one team uses Stride, the Boards page gets crowded. The mobile team&rsquo;s release board sits next to marketing&rsquo;s campaign board and the platform team&rsquo;s migration. Everyone sees everything they&rsquo;ve been added to, in one long list, and nobody can tell at a glance which boards belong together.</p>
+<p>Stride 3.0.0 adds <strong>workspaces</strong>. An Organization can have as many as it needs, such as one per team or one per product. Each workspace holds its own boards and has its own people.</p>
+<h2 id="switching-workspaces">Switching workspaces</h2>
+<p>If you belong to an Organization, a workspace switcher sits at the top of the sidebar, just under the Stride logo. Open it to see the workspaces you&rsquo;re in, with an orange dot next to the one you&rsquo;re in now.</p>
+<p>
+  <img src="/img/workspaces-switcher.png" alt="The top of Stride&rsquo;s sidebar. The workspace switcher is open on Product Team, with a Workspace settings link underneath and Boards, My Work, Agents, Review queue, Metrics and Organization below it">
+
+</p>
+<p>Choose a workspace and the <strong>Boards</strong> page shows it first. The page groups your boards into three sections:</p>
+<ul>
+<li><strong>the workspace you&rsquo;re in</strong>, such as <em>Product Team</em>, with its boards;</li>
+<li><strong>Personal boards</strong>: the boards you made for yourself, outside any workspace;</li>
+<li><strong>Other shared boards</strong>: boards other people have shared with you.</li>
+</ul>
+<p>Your other pages don&rsquo;t change when you switch. <strong>My Work</strong>, <strong>Agents</strong>, the <strong>Review queue</strong> and <strong>Metrics</strong> still cover everything you can see.</p>
+<h2 id="creating-workspaces">Creating workspaces</h2>
+<p>Org-admins create workspaces from the Organization console. Open <strong>Organization</strong> in the sidebar, choose <strong>Workspaces</strong>, type a name and choose <strong>Create workspace</strong>.</p>
+<p>
+  <img src="/img/workspaces-create.png" alt="The Workspaces tab of the Organization console: Design Team typed into New workspace name beside a Create workspace button, and the Product Team workspace listed with Rename and Archive buttons">
+
+</p>
+<p>Each workspace can be renamed at any time. Once it holds no boards, it can be archived. Archiving can&rsquo;t be undone, and it revokes the workspace&rsquo;s tokens and open invitations.</p>
+<h2 id="whos-in-a-workspace">Who&rsquo;s in a workspace</h2>
+<p>Everyone in a workspace is either a <strong>Member</strong> or a <strong>Guest</strong>:</p>
+<ul>
+<li><strong>Members</strong> can create boards in the workspace.</li>
+<li><strong>Guests</strong> work only on the boards they&rsquo;re invited to.</li>
+</ul>
+<p>Choose <strong>Workspace settings</strong> in the switcher to see who&rsquo;s there. Org-admins can change someone&rsquo;s role, or remove them.</p>
+<p>
+  <img src="/img/workspaces-settings-members.png" alt="Workspace settings for Product Team. The Members tab lists Marcus Bell as a Guest and Priya Raman as a Member, each with a role menu, Save and Remove. The tabs down the side are Members, Boards, Invitations, Tokens and Export">
+
+</p>
+<p>Removing someone from a workspace also takes away their board memberships and API tokens there, and any tasks they had claimed go back to Ready.</p>
+<p>Being in a workspace doesn&rsquo;t open all of its boards for you. You still work on the boards you&rsquo;ve been added to. The exception is org-admins: they can open and manage every board in their Organization&rsquo;s workspaces, without being added to each one.</p>
+<h2 id="inviting-people">Inviting people</h2>
+<p>Org-admins invite people from the <strong>Invitations</strong> tab. Enter an email address and choose a role. You can also give the person access to one board straight away, as <strong>Read only</strong> or <strong>Can edit</strong>.</p>
+<p>
+  <img src="/img/workspaces-invite-people.png" alt="The Invite people form with sam.ortiz@example.test as a Guest with Can edit access to Mobile App Launch, a Send invitation button, and a pending invitation to jordan.alvarez@example.test that expires on 2026-10-31, with Resend and Revoke buttons">
+
+</p>
+<p>Stride emails a link that works once and expires after 7 days. Pending invitations are listed underneath, where you can resend or revoke them. Resending sends a new link, and the old one stops working.</p>
+<p>The person who opens the link signs in or creates an account with the address it was sent to. Accepting it adds them to the workspace and to your Organization.</p>
+<p>
+  <img src="/img/workspaces-invitation-page.png" alt="The invitation page: You&rsquo;re invited, Create an account with the email address this invitation was sent to, or sign in if you already have one and then open this link again, with Create account and Sign in buttons">
+
+</p>
+<p>The page never shows who invited you, or to what, until you&rsquo;re signed in with the right address.</p>
+<h2 id="bringing-your-boards-in">Bringing your boards in</h2>
+<p>A board you made before your Organization existed is one of your personal boards. To bring it in, an org-admin who owns it opens <strong>Workspace settings</strong>, chooses <strong>Boards</strong>, picks it under <strong>Move a board here</strong> and chooses <strong>Move here</strong>.</p>
+<p>
+  <img src="/img/workspaces-move-a-board.png" alt="The Boards tab lists Mobile App Launch. Underneath, the Move a board here card explains that every member of the board must already belong to the Organization, that they keep their access, that the board becomes a paid board and that boards can&rsquo;t be moved back, with Checkout Revamp chosen and a Move here button">
+
+</p>
+<p>Everyone on the board must already belong to the Organization, and they all keep their access. If someone doesn&rsquo;t, Stride names them, so you can invite them to the workspace or take them off the board first. Moving a board can&rsquo;t be undone.</p>
+<p>Once the board is in a workspace, it&rsquo;s a paid board: the 3-person limit lifts and every Organization feature switches on, from notifications to integrations. From then on, only members of your Organization can be added to it.</p>
+<p>New boards land in the workspace you&rsquo;re in when you create them, as long as you&rsquo;re a Member there or an org-admin.</p>
+<h2 id="one-token-for-all-your-agents">One token for all your agents</h2>
+<p>Agents use API tokens to work on boards. Until now, every board needed its own token. A workspace has its own kind: a <strong>workspace token</strong>, which an org-admin creates on the <strong>Tokens</strong> tab.</p>
+<p>One workspace token reaches every AI Optimized board in the workspace that its creator can change. Each request names the board it&rsquo;s for, and agents can ask for the list of boards the token can use. Workspace tokens expire after 90 days. They stop working as soon as they&rsquo;re revoked, or when the org-admin who made them leaves the Organization.</p>
+<h2 id="exporting-a-workspace">Exporting a workspace</h2>
+<p>Org-admins can download a whole workspace from the <strong>Export</strong> tab, as a backup or to move it to another Stride instance.</p>
+<p>
+  <img src="/img/workspaces-export.png" alt="Export this workspace: a zip archive of the workspace&rsquo;s boards, columns, labels, tasks, comments, history and memberships, prepared in the background and kept for 7 days, with a Request export button. Underneath, Recent exports says only org-admins can download an archive, and there are no exports yet">
+
+</p>
+<p>Choose <strong>Request export</strong>, and Stride builds a zip of JSON files in the background. When it&rsquo;s ready, it appears under <strong>Recent exports</strong> with a <strong>Download</strong> button, and it&rsquo;s kept for 7 days. The archive holds the workspace&rsquo;s boards, columns, labels, tasks, comments, history and memberships. It never holds passwords, API tokens or webhook secrets.</p>
+<p>Moving to your own server? A self-hosted Stride restores the archive with <code>mix kanban.import_workspace</code>. Moving the other way, we import it for you.</p>
+<h2 id="light-and-dark">Light and dark</h2>
+<p>Like the rest of Stride, workspaces follow your light or dark theme, and every screen is translated into every language Stride supports.</p>
+<h2 id="why-it-matters">Why it matters</h2>
+<ul>
+<li><strong>Each team gets its own space.</strong> The Boards page shows the team&rsquo;s boards first, and everything else stays out of the way.</li>
+<li><strong>The right people, nobody extra.</strong> Members create boards, guests see only what they&rsquo;re invited to, and org-admins can reach every board.</li>
+<li><strong>Invitations that are safe to send.</strong> Links work once, expire in a week and reveal nothing until the right person signs in.</li>
+<li><strong>One token, many boards.</strong> Agents work across a workspace without a token per board.</li>
+<li><strong>Your data is yours.</strong> Export a workspace at any time, with no secrets in the archive.</li>
+</ul>
+<p>Workspaces come with the Organization plan. The <a href="/post/organizations">Organizations</a> post shows the console org-admins use, and the <a href="https://github.com/cheezy/kanban/blob/main/docs/organizations.md">workspaces reference</a> has every detail.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/organizations/">One Place to Run Your Team&#39;s Stride</a></li>
+        
+            <li><a href="/post/single-sign-on/">Sign In Through Your Identity Provider</a></li>
+        
+            <li><a href="/post/workspaces/">A Workspace for Every Team</a></li>
+        
+            <li><a href="/post/stride-3-0-0/">Stride 3.0.0: Organizations and the Free Plan</a></li>
+        
+            <li><a href="/post/telemetry/">See Everything Your Board Is Doing</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

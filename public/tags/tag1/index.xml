@@ -15,9 +15,9 @@
 			<atom:link href="http://localhost:1313/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>An Example Post</title>
-				<link>http://localhost:1313/post/stride-plugin-leaner/</link>
+				<link>http://localhost:1313/post/workspaces/</link>
 				<pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/post/stride-plugin-leaner/</guid>
+				<guid>http://localhost:1313/post/workspaces/</guid>
 				<description></description>
 			</item>
 	</channel>
