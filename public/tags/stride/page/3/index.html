@@ -191,6 +191,101 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
+    <a href="http://localhost:1313/post/stride-mcp/">
+        <h2 class="post-title">
+            Stride Now Speaks MCP
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <p>Coding agents are Stride&rsquo;s busiest users. They find the next task, claim it, do the work, run your quality checks and hand it back for review. Until now they did all of that by building HTTP requests by hand: shell commands with headers, JSON bodies and careful quoting, assembled fresh every time.</p>
+<p>Stride now has a <strong>Model Context Protocol (MCP) server</strong>. MCP is the open standard that AI tools such as Claude Code use to discover and call external tools. Point an MCP client at Stride and your agent sees a small set of named, documented tools with defined inputs. It no longer has to remember an API. The agent asks for what it needs, and Stride checks the request before acting on it.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Wednesday, October 7, 2026
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="http://localhost:1313/post/stride-audit-log/">
+        <h2 class="post-title">
+            A Permanent Record of Who Did What
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <p>When something unexpected happens on a Stride instance, such as a run of failed sign-ins, an API token nobody remembers creating, or someone trying to reach a page they shouldn&rsquo;t, the first question is always the same: <em>what happened, and when?</em> Until now, Stride noted these events in its server logs, which come and go and which administrators can&rsquo;t search from Stride. Now it keeps them.</p>
+<p>Stride has a <strong>permanent, append-only audit log</strong> of important security events. Entries are only ever added. Once an event is recorded it can&rsquo;t be edited, and recent entries can&rsquo;t be deleted. Site administrators can search the log, filter it and export it.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Tuesday, October 6, 2026
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="http://localhost:1313/post/stride-exploratory-testing-sharper/">
+        <h2 class="post-title">
+            Exploratory Testing Gets Sharper, Safer and Quicker
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <p>The Stride exploratory-testing plugin teaches a coding agent to test software the way a good human tester does: give it a mission, let it probe the running app, judge what it sees, and come back with bugs, questions and an honest account of what it didn&rsquo;t get to. The latest version is the result of a close look at how the plugin actually behaved in real use. This post covers what changed, what that means for you, and how to use the plugin inside the Stride workflow or on its own.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Tuesday, October 6, 2026
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="http://localhost:1313/post/stride-plugin-leaner/">
+        <h2 class="post-title">
+            The Stride Plugin Gets Leaner, Faster and Harder to Fool
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <p>The Stride plugin for Claude Code is what turns a coding agent into a Stride teammate: it claims tasks, explores the code, implements, sends the work through review and completes it. Over the last few releases we went through that loop measuring where time and tokens actually went and why reviewers kept sending work back. Then we fixed what we found.</p>
+<p>None of this changes how you start. You still ask the agent to work a task, a goal or the queue. What changes is what happens next: long sessions stay small, reviews settle in fewer rounds, and the agent gets better at catching its own mistakes before a reviewer, or you, has to.</p>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Cheezy World on Monday, October 5, 2026
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
     <a href="http://localhost:1313/post/stride-api-filters/">
         <h2 class="post-title">
             The Stride API Now Pages, Filters and Describes Itself
@@ -213,29 +308,6 @@
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="http://localhost:1313/post/stride-notifications/">
-        <h2 class="post-title">
-            Stride Now Tells You When It Needs You
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            <p>AI agents don&rsquo;t keep office hours. They finish work at 2 a.m., on Sunday afternoons, and in the middle of your lunch meeting. Until now, Stride kept quiet about all of it: if an agent finished something that needed your review, it sat in the review queue until you happened to open it. A stalled claim, a finished goal, a delivery date slipping out of reach. All of it waited for you to come and look.</p>
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Cheezy World on Saturday, October 3, 2026
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
 </div>
 
             
@@ -247,6 +319,10 @@
         <a href="/tags/stride/page/2/">&larr; Newer Posts</a>
     </li>
     
+    
+    <li class="next">
+        <a href="/tags/stride/page/4/">Older Posts &rarr;</a>
+    </li>
     
 </ul>
 
@@ -434,15 +510,15 @@
         <h5>LAST POSTS</h5>
         <ul>
         
+            <li><a href="/post/half-day-session/">From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session</a></li>
+        
+            <li><a href="/post/organizations/">One Place to Run Your Team&#39;s Stride</a></li>
+        
+            <li><a href="/post/single-sign-on/">Sign In Through Your Identity Provider</a></li>
+        
+            <li><a href="/post/workspaces/">A Workspace for Every Team</a></li>
+        
             <li><a href="/post/stride-3-0-0/">Stride 3.0.0: Organizations and the Free Plan</a></li>
-        
-            <li><a href="/post/telemetry/">See Everything Your Board Is Doing</a></li>
-        
-            <li><a href="/post/webhooks-slack-discord/">Your Board, Wherever Your Team Talks</a></li>
-        
-            <li><a href="/post/busy-boards-made-manageable/">Busy Boards, Made Manageable</a></li>
-        
-            <li><a href="/post/stride-two-factor-authentication/">A Stolen Password Is No Longer Enough</a></li>
         
         </ul>
     </section>

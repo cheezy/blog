@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session" />
+    <meta property="og:title" content="From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session" />
+    <meta property="twitter:title" content="From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/half-day-session/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/half-day-session/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session</h1>
+
+            
+                <p>I now run half-day, hands-on sessions where your team and AI agents build part of your proof of concept together in Stride. The handout below covers the offer. This post is about the parts it can&rsquo;t fit: what to have in place before the day, why we start with ideation rather than code, and how your team keeps going once we leave.</p>
+<p>
+  <img src="/img/hitme-handout.png" alt="The front and back of the Stride handout, side by side. The front reads &ldquo;Stride with us. Humans decide. Agents build. Everyone ships.&rdquo; above Ready, Doing, Review and Done chips captioned you, agent, you and together, beside the tilted Level Boss sticker. The back reads &ldquo;Start with desire, leave with knowledge&rdquo; and lists five steps for how people and AI work together, with a cyan panel listing what you leave with, a QR code, StrideLikeABoss.com/HitMe and enterprise@letstango.ca">
+
+</p>
+<h2 id="before-the-session">Before the session</h2>
+<p>Half a day goes quickly. Every item below is something I&rsquo;d otherwise spend the morning waiting on, so having them ready means the time goes into building.</p>
+<ul>
+<li>
+<p><strong>Your people.</strong> The person who owns the proof of concept, plus the developers who will build it, free for the whole half day. The owner matters as much as the developers: ideation is a conversation about <em>what</em> to build, and only they can answer it.</p>
+</li>
+<li>
+<p><strong>Your idea.</strong> A short write-up of the proof of concept: the problem, who it&rsquo;s for, and what a first version must do. A paragraph or two is plenty. It&rsquo;s the starting point for ideation, not a specification.</p>
+</li>
+<li>
+<p><strong>Your code.</strong> A Git repository, new or existing, that the team can push to. If you&rsquo;ve already decided on your tech stack then having the core files scaffolded is a nice-to-have, but not required.</p>
+</li>
+<li>
+<p><strong>Your checks.</strong> A test runner and a linter that each run with one command, even if there&rsquo;s only one test so far. Stride runs them before an agent may finish a task, so they&rsquo;re the quality gate for everything the agents build. Stride doesn&rsquo;t prescribe which tools to use, only that they run with one command.</p>
+</li>
+<li>
+<p><strong>Your agents.</strong> A coding agent installed and signed in on each developer&rsquo;s and the person who will specify the requirements machine, with your company&rsquo;s approval to use it on this code, and four Stride plugins installed in it:</p>
+<ul>
+<li><strong>Stride</strong>, the workflow itself: claiming tasks, running your checks and completing work;</li>
+<li><strong>Stride Ideation</strong>, which turns your idea into requirements and then into tasks;</li>
+<li><strong>Stride Security Review</strong>, which checks each task&rsquo;s work against its security considerations;</li>
+<li><strong>Stride Exploratory Testing</strong>, which explores your running app to find what scripted tests miss.</li>
+</ul>
+<p>All four are available for Claude Code, GitHub Copilot CLI, Gemini CLI, Codex CLI and OpenCode. Pi has only the Stride plugin so far, so a team that uses Pi should have one of the other five ready for the session. In Claude Code, all four install from the Stride marketplace:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/plugin marketplace add cheezy/stride-marketplace
+</span></span><span style="display:flex;"><span>/plugin install stride@stride-marketplace
+</span></span><span style="display:flex;"><span>/plugin install stride-ideation@stride-marketplace
+</span></span><span style="display:flex;"><span>/plugin install stride-security-review@stride-marketplace
+</span></span><span style="display:flex;"><span>/plugin install stride-exploratory-testing@stride-marketplace
+</span></span></code></pre></div><p>For the other runtimes, each plugin has its own repository under <a href="https://github.com/cheezy">github.com/cheezy</a>, named for the runtime, such as <code>stride-copilot</code> and <code>stride-copilot-ideation</code>, and its README has the install command.</p>
+</li>
+<li>
+<p><strong>Other agent plugins.</strong> If you have specified your tech stack, install the relevant plugins for your agent. For example, if you&rsquo;re using Claude Code, install the Claude Code plugins for your tech stack in order to guide it on how to structure your code.</p>
+</li>
+<li>
+<p><strong>Your Stride accounts.</strong> Everyone signed up at <a href="https://www.stridelikeaboss.com">stridelikeaboss.com</a> before the day, with the confirmation email clicked. You can&rsquo;t sign in until you have.</p>
+</li>
+<li>
+<p><strong>Your machines.</strong> Laptops that can build and run the project locally. On Windows, I recommend using WSL2.</p>
+</li>
+</ul>
+<p>You don&rsquo;t need to create a board, an API token or any Stride configuration beforehand. We do that together in the first part of the session, so everyone sees how the pieces connect.</p>
+<h2 id="why-we-start-with-ideation-not-code">Why we start with ideation, not code</h2>
+<p>An agent builds what it&rsquo;s told. When the instructions are vague, it fills the gaps with guesses, and guesses that look plausible are the expensive kind: they pass a quick glance and fail in review, or worse, after review. Most of the accuracy in an agent-built feature is decided before any code is written.</p>
+<p>So the session starts with Stride&rsquo;s ideation plugin. Its <code>/ideate</code> command interviews your team in a few short rounds of questions. Every question offers &ldquo;I&rsquo;m not sure — propose candidates&rdquo;, so nobody gets stuck. It won&rsquo;t write the requirements document until seven sections have real content:</p>
+<ul>
+<li><strong>Goal</strong>, <strong>Problem</strong> and <strong>Outcome</strong>: what you&rsquo;re building, why, and what&rsquo;s different when it works.</li>
+<li><strong>Assumptions</strong>: including the ways the proof of concept could fail, worked out with a premortem, and ranked so the riskiest one is marked.</li>
+<li><strong>Constraints</strong>: the limits the solution has to live within.</li>
+<li><strong>Non-goals</strong>: what you&rsquo;re deliberately <em>not</em> building, which is what stops an agent from wandering into scope you never asked for.</li>
+<li><strong>Success Metrics</strong>: both leading and lagging measures, so you can tell early whether you&rsquo;re on track.</li>
+</ul>
+<p>A reviewer then reads the draft and points out thin sections, contradictions and ambiguous acceptance criteria. You choose which to address. Nothing is decided for you, and the finished document is committed to your repository.</p>
+<h2 id="from-requirements-to-a-goal">From requirements to a goal</h2>
+<p>The ideation plugin&rsquo;s <code>/stridify</code> command turns that document into a Stride <strong>goal</strong>: a set of tasks the agents will build, each about one to two hours of agent work. You see a preview and approve it before anything is created. The tasks land in your Backlog, so nothing starts until a person moves it to Ready.</p>
+<p>Each task carries what an agent needs to get it right the first time, without guessing. Here are just a few examples:</p>
+<ul>
+<li><strong>acceptance criteria</strong> that define done;</li>
+<li>the <strong>key files</strong> it should change;</li>
+<li>a <strong>testing strategy</strong>, and <strong>verification steps</strong> to confirm it works;</li>
+<li><strong>patterns to follow</strong> from your existing code;</li>
+<li><strong>pitfalls</strong> to avoid;</li>
+<li>the <strong>security considerations</strong> it has to address.</li>
+</ul>
+<p>This structure, and the plugins that check the work, are what make the outcome more accurate:</p>
+<ul>
+<li><strong>Order.</strong> Tasks wait for the tasks they depend on, so nothing is built on a foundation that isn&rsquo;t there yet.</li>
+<li><strong>No collisions.</strong> Two agents are never given tasks that change the same files at the same time.</li>
+<li><strong>Checked against the brief.</strong> An agent&rsquo;s work is reviewed against that task&rsquo;s acceptance criteria and pitfalls, and the security review plugin checks it against the task&rsquo;s security considerations, escalating any it finds unmitigated rather than letting them through. Then your tests and linter must pass before it can finish.</li>
+<li><strong>Explored, not just checked.</strong> When a task lists manual tests, the exploratory testing plugin explores a non-production copy of your running app around them and reports what it finds, the kind of problem a scripted test never thinks to look for.</li>
+<li><strong>Traceable.</strong> The file that created the goal is committed to your repository next to the requirements document, with a fingerprint of the exact version it was built from, so &ldquo;why was this built?&rdquo; always has an answer.</li>
+</ul>
+<h2 id="carrying-on-without-me">Carrying on without me</h2>
+<p>The point of the half day isn&rsquo;t the code we write together. It&rsquo;s that your team leaves knowing how to do it again.</p>
+<ul>
+<li><strong>The loop keeps running.</strong> Move tasks to Ready and an agent claims the highest-priority one it can work on, builds it, passes your checks and claims the next. It stops at any task that&rsquo;s waiting for a person.</li>
+<li><strong>You set the level of trust.</strong> Tick <em>Needs Review</em> on a task and the agent stops there until a person approves it. The Review queue shows the diff and the acceptance checklist, and you can approve the work or request changes. Start with review on most tasks and relax it as you come to trust the agents.</li>
+<li><strong>The next idea uses the same path.</strong> Run <code>/ideate</code> on it, then <code>/stridify</code> the result into a new goal. The first time is the session; every time after is yours.</li>
+<li><strong>Your gates are shared.</strong> The hooks file we set up lives in your repository, so every developer and every agent runs the same steps: pull before starting, test and lint before finishing, and whatever you add, such as opening a pull request, or pushing when a goal is complete.</li>
+<li><strong>You can see how it&rsquo;s going.</strong> Stride&rsquo;s metrics show cycle time, lead time and throughput, and the agents page shows what each agent is doing right now.</li>
+<li><strong>New projects set themselves up.</strong> Point an agent at Stride&rsquo;s onboarding endpoint and it configures a new project the same way we did on the day.</li>
+<li><strong>The safety nets stay on.</strong> The security review plugin checks every task that lists security considerations, and the exploratory testing plugin explores every task that lists manual tests, once you&rsquo;ve told the agent which non-production copy of your app it may test. The checks you saw on the day don&rsquo;t depend on anyone remembering to run them.</li>
+</ul>
+<h2 id="book-a-half-day-session">Book a half-day session</h2>
+<p>Tell us about your team and your proof of concept, and we&rsquo;ll reply with next steps. Email <a href="mailto:enterprise@letstango.ca">enterprise@letstango.ca</a>, or visit <a href="https://www.stridelikeaboss.com/HitMe">StrideLikeABoss.com/HitMe</a>.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/half-day-session/">From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session</a></li>
+        
+            <li><a href="/post/organizations/">One Place to Run Your Team&#39;s Stride</a></li>
+        
+            <li><a href="/post/single-sign-on/">Sign In Through Your Identity Provider</a></li>
+        
+            <li><a href="/post/workspaces/">A Workspace for Every Team</a></li>
+        
+            <li><a href="/post/stride-3-0-0/">Stride 3.0.0: Organizations and the Free Plan</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
