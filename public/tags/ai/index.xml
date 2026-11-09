@@ -10,15 +10,22 @@
 		
 		
 		
-			<lastBuildDate>Sat, 31 Oct 2026 12:33:00 -0400</lastBuildDate>
+			<lastBuildDate>Mon, 09 Nov 2026 06:04:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Attach the Screenshot, Not a Description of It</title>
+				<link>http://localhost:1313/post/attachments/</link>
+				<pubDate>Mon, 09 Nov 2026 06:04:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/attachments/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session</title>
 				<link>http://localhost:1313/post/half-day-session/</link>
 				<pubDate>Sat, 31 Oct 2026 12:33:00 -0400</pubDate>
 				<guid>http://localhost:1313/post/half-day-session/</guid>
-				<description></description>
+				<description>&lt;p&gt;I now run half-day, hands-on sessions where your team and AI agents build part of your proof of concept together in Stride. The handout below covers the offer. This post is about the parts it can&amp;rsquo;t fit: what to have in place before the day, why we start with ideation rather than code, and how your team keeps going once we leave.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/img/hitme-handout.png&#34; alt=&#34;The front and back of the Stride handout, side by side. The front reads &amp;ldquo;Stride with us. Humans decide. Agents build. Everyone ships.&amp;rdquo; above Ready, Doing, Review and Done chips captioned you, agent, you and together, beside the tilted Level Boss sticker. The back reads &amp;ldquo;Start with desire, leave with knowledge&amp;rdquo; and lists five steps for how people and AI work together, with a cyan panel listing what you leave with, a QR code, StrideLikeABoss.com/HitMe and enterprise@letstango.ca&#34;&gt;&#xA;&#xA;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>One Place to Run Your Team&#39;s Stride</title>

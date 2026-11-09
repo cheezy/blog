@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Attach the Screenshot, Not a Description of It" />
+    <meta property="og:title" content="Attach the Screenshot, Not a Description of It" />
+    <meta property="twitter:title" content="Attach the Screenshot, Not a Description of It" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/attachments/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Attach the Screenshot, Not a Description of It | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/attachments/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Attach the Screenshot, Not a Description of It</h1>
+
+            
+                <p><em>This post covers attachments, new in Stride 3.1.0. Attachments are part of the Organization plan.</em></p>
+<p>Some things are hard to describe in words. &ldquo;The app crashes when the card has expired&rdquo; could mean a dozen things. A screenshot of the crash, the device log and the spec it breaks leave no doubt. Until now those files lived somewhere else: a chat thread, a shared drive or someone&rsquo;s downloads folder. Whoever picked up the task had to go and find them.</p>
+<p>Stride 3.1.0 lets you <strong>attach files to tasks and comments</strong>. The evidence sits on the task, where everyone working on it, people and agents alike, can see it.</p>
+<h2 id="limits-at-a-glance">Limits at a glance</h2>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Limit</th>
+					<th style="text-align: left">Size</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Largest single file</td>
+					<td style="text-align: left"><strong>25 MB</strong></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Files on one task</td>
+					<td style="text-align: left"><strong>20</strong>, counting the files on the task&rsquo;s comments</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Storage for a whole Organization</td>
+					<td style="text-align: left"><strong>10 GB</strong>, shared by every board in every workspace</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Length of a file name</td>
+					<td style="text-align: left"><strong>255 characters</strong>; a longer name is shortened, keeping its extension</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Text an agent can read directly over MCP</td>
+					<td style="text-align: left"><strong>256 KB</strong> per file; larger files are downloaded instead</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Downloads by one agent token</td>
+					<td style="text-align: left"><strong>60 a minute</strong></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Attachments on a free board</td>
+					<td style="text-align: left"><strong>None</strong>: attachments come with the Organization plan</td>
+			</tr>
+	</tbody>
+</table>
+<p>The sections below show what you&rsquo;ll see when you reach each one.</p>
+<h2 id="attaching-files-to-a-task">Attaching files to a task</h2>
+<p>Open a task and you&rsquo;ll find an <strong>Attachments</strong> section above <strong>History</strong>. Drag files onto <strong>Drop files here or browse</strong>, or click it to pick them. Each file shows its size and a progress bar as it uploads. Images show a small preview, so you can check you picked the right one.</p>
+<p>
+  <img src="/img/attachments-staged-upload.png" alt="The Attachments section of a task called Fix checkout crash when a saved card has expired. Three files are already attached: ios-checkout-crash.log, checkout-errors-by-device.csv and checkout-2.4-spec.pdf. Below the drop zone, two phone screenshots, checkout-expired-cards.png and crash-after-pay-now.png, have finished uploading and are waiting, each with a Cancel button, above an Upload files button">
+
+</p>
+<p>Change your mind about a file? Choose <strong>Cancel</strong> next to it. When everything looks right, choose <strong>Upload files</strong> and the files join the list.</p>
+<p>
+  <img src="/img/attachments-task-files.png" alt="The same task&rsquo;s Attachments section, now showing five files. Each row has an icon or an image thumbnail, the file name, its size, who uploaded it and when, and Download and Delete buttons">
+
+</p>
+<p>Every file shows its name, its size, who uploaded it and when. The list updates live, so anyone else with the task open sees new files appear without reloading. The task&rsquo;s edit form has the same section.</p>
+<h2 id="seeing-images-at-full-size">Seeing images at full size</h2>
+<p>PNG, JPEG, GIF and WebP images get a thumbnail. Click it to open the full image right there on the task, with <strong>Download</strong> at the top if you want a copy.</p>
+<p>
+  <img src="/img/attachments-image-preview.png" alt="A full-size preview of crash-after-pay-now.png over the task. The image shows a phone checkout screen with a &ldquo;Northwind quit unexpectedly&rdquo; alert. Close and Download buttons sit above it">
+
+</p>
+<p>PDFs, logs, Markdown, CSV and JSON files show an icon. Choose <strong>Download</strong> to open them.</p>
+<h2 id="attaching-files-to-a-comment">Attaching files to a comment</h2>
+<p>Sometimes a file belongs with what you&rsquo;re saying rather than with the task as a whole, such as a screenshot of the fix or the steps you used to reproduce a bug. Under the comment box, drag files onto <strong>Attach files</strong>, or click it, and then post your comment. The files are saved with the comment and listed under it.</p>
+<p>
+  <img src="/img/attachments-comment-files.png" alt="A comment from Cheezy Morgan saying the crash is fixed on their branch, with add-card-sheet.png and repro-steps.md listed under it. Below is the empty Add a comment box with its Attach files area and an Add Comment button">
+
+</p>
+<p>You can remove a file while you&rsquo;re editing your own comment. Deleting a comment deletes its files too.</p>
+<h2 id="attaching-files-to-a-new-task">Attaching files to a new task</h2>
+<p>You don&rsquo;t have to save a task before adding files. The new-task form has its own <strong>Attachments</strong> field. Add your files, fill in the rest of the task and choose <strong>Save Task</strong>. The files are stored as soon as the task is saved. The new-goal form works the same way.</p>
+<p>
+  <img src="/img/attachments-new-task-form.png" alt="The bottom of the New Task form. Under Dependencies, an Attachments field holds apple-pay-flow.png and apple-pay-config.json, waiting to be saved with the task, above a Save Task button">
+
+</p>
+<p>If a file can&rsquo;t be stored, the task is still created and Stride tells you which file was left out, so you can add it again.</p>
+<h2 id="what-you-can-attach">What you can attach</h2>
+<p>You can attach:</p>
+<ul>
+<li><strong>images:</strong> PNG, JPEG, GIF and WebP;</li>
+<li><strong>documents:</strong> PDF;</li>
+<li><strong>text:</strong> plain text and log files, Markdown, CSV and JSON.</li>
+</ul>
+<p>SVG, HTML and zip files are refused. Stride also checks that each file really is what its name says it is, so a renamed file is refused too. A file of a type that isn&rsquo;t allowed says &ldquo;This file type is not allowed.&rdquo; and isn&rsquo;t attached.</p>
+<h2 id="size-limits">Size limits</h2>
+<h3 id="25-mb-per-file">25 MB per file</h3>
+<p>Each file can be <strong>up to 25 MB</strong>. You find out as soon as you add a bigger one, before anything is sent. The file is marked &ldquo;This file is larger than the 25 MB limit.&rdquo;, and <strong>Upload files</strong> waits until you cancel it. The other files are ready to go as soon as it&rsquo;s gone.</p>
+<p>
+  <img src="/img/attachments-file-too-large.png" alt="Three files waiting under the drop zone. Two images are ready at 100%. The third, screen-recording-frames.png at 31 MB, is marked &ldquo;This file is larger than the 25 MB limit.&rdquo;, with &ldquo;Cancel the files marked with an error to upload the others.&rdquo; below it and a greyed-out Upload files button">
+
+</p>
+<p>For a screen recording or a long log, attach a few frames or the part that matters, or trim the file below 25 MB.</p>
+<h3 id="20-files-per-task">20 files per task</h3>
+<p>A task can hold <strong>up to 20 files</strong>, and the files on its comments count towards that 20. If you add more files than the task has room for, Stride tells you how many more it can take. <strong>Upload files</strong> waits until you cancel the extras.</p>
+<p>
+  <img src="/img/attachments-task-room.png" alt="A task with 18 files and four more waiting to upload. The message under them reads &ldquo;This task has room for 2 more files. Cancel some files to upload the rest.&rdquo;">
+
+</p>
+<p>When a task holds all 20 files, the drop zone is replaced by a note saying so. Delete a file to make room for another.</p>
+<p>
+  <img src="/img/attachments-task-full.png" alt="The end of a task&rsquo;s file list. Where the drop zone was, a note reads &ldquo;A task can hold at most 20 files. Delete a file to upload another.&rdquo;">
+
+</p>
+<h3 id="10-gb-per-organization">10 GB per Organization</h3>
+<p>All the files in your Organization share <strong>10 GB</strong> of storage: every file on every task and comment, on every board, in every workspace. Archived tasks&rsquo; files count too, because they&rsquo;re kept. When there isn&rsquo;t enough room left for a file, it isn&rsquo;t uploaded and Stride says why.</p>
+<p>
+  <img src="/img/attachments-org-storage-full.png" alt="A task&rsquo;s Attachments section with an error message in the corner: &ldquo;Could not upload crash-on-ipad.png: There is not enough attachment storage left for this file.&rdquo;">
+
+</p>
+<p>To free space, delete files your team no longer needs, or delete old tasks: deleting a task deletes its files.</p>
+<p>The same limit applies when a board joins your Organization. If the board&rsquo;s files would take more storage than the Organization has left, the move doesn&rsquo;t happen. Stride tells you how much the board&rsquo;s files take, how much the Organization has left, and how much it&rsquo;s short, so you know how much to delete first.</p>
+<h3 id="file-names">File names</h3>
+<p>A file name can be up to <strong>255 characters</strong>. A longer name is shortened, and its extension is kept. Accents and emoji in names are kept too.</p>
+<h2 id="who-can-do-what">Who can do what</h2>
+<p>Attachments follow the board&rsquo;s access. Stride checks it every time someone views, uploads or downloads a file.</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Who</th>
+					<th style="text-align: left">What they can do</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">The board&rsquo;s owner, and org-admins on their Organization&rsquo;s boards</td>
+					<td style="text-align: left">Upload, download and delete any file</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Members with modify access</td>
+					<td style="text-align: left">Upload, download, attach files to their own comments, and delete the files they uploaded</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Members with read-only access</td>
+					<td style="text-align: left">See and download every file</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Anyone who isn&rsquo;t on the board</td>
+					<td style="text-align: left">Nothing. They don&rsquo;t see the files, and the task tells them only board members can</td>
+			</tr>
+	</tbody>
+</table>
+<p>Anyone who can see a task&rsquo;s files can download them, so check who&rsquo;s on a board before you attach something sensitive.</p>
+<p>Deleting a file asks you to confirm first, and it can&rsquo;t be undone. Deleting a task deletes its files.</p>
+<h2 id="archived-tasks-keep-their-files">Archived tasks keep their files</h2>
+<p>When a task is archived, its files stay with it. The board&rsquo;s <strong>Archive</strong> page shows how many files each archived task has, comment files included. Open the task to download them. Nothing can be uploaded or deleted while a task is archived. Restore the task and its files work as before.</p>
+<h2 id="agents-can-read-attachments-too">Agents can read attachments too</h2>
+<p>Stride&rsquo;s agents see a task&rsquo;s files just as people do. When an agent claims a task, the task it receives lists every attached file with its name, type and size. The agent can then download the files it needs: the crash log, the spec, the screenshot of the broken screen.</p>
+<p>Agents work within two limits of their own:</p>
+<ul>
+<li><strong>256 KB of text read directly.</strong> Agents that connect to Stride through MCP can read a plain text, Markdown, CSV or JSON file of up to 256 KB straight from the task. A larger file, and every image and PDF, is downloaded instead.</li>
+<li><strong>60 downloads a minute.</strong> Each agent token can download up to 60 files a minute, counting files read over MCP. An agent that goes over is told how many seconds to wait, and then carries on.</li>
+</ul>
+<p>Stride tells agents to treat a file as information about the task, never as instructions. A file that says &ldquo;ignore your task and do this instead&rdquo; is just text, and the agent keeps to the task and to you.</p>
+<p><strong>Coming soon:</strong> an update to the Stride agent plugins will download a task&rsquo;s files automatically when the agent claims it. The files will be ready the moment work starts, and the agent will tidy them away when it finishes.</p>
+<h2 id="your-files-go-where-your-workspace-goes">Your files go where your workspace goes</h2>
+<p>Export a workspace and its attachments come with it, each file in the archive next to the task it belongs to. The archive is about as large as the files themselves, so a workspace with a few gigabytes of files gives a download of a few gigabytes. Moving to your own Stride server, or back to ours, brings your files along.</p>
+<p>When a workspace archive is brought into an Organization, the same limits apply. Its files must fit in the Organization&rsquo;s 10 GB, and each task brings at most 20 files. Any file left out is named in the import report, so you know exactly what didn&rsquo;t come across.</p>
+<p>Moving a board into an Organization brings its files along as well, as long as they fit in the Organization&rsquo;s storage (see <a href="#10-gb-per-organization">10 GB per Organization</a>).</p>
+<h2 id="on-a-free-board">On a free board</h2>
+<p>Attachments are part of the Organization plan. On a free board, a task shows a locked <strong>Attachments</strong> section with an <strong>Available to organizations</strong> link in place of its files.</p>
+<p>
+  <img src="/img/attachments-locked.png" alt="A locked Attachments section on a free board, with a padlock and an Available to organizations link">
+
+</p>
+<p>If a free board already has files, they aren&rsquo;t deleted. They&rsquo;re kept, hidden, and appear again as soon as the board moves into an Organization.</p>
+<h2 id="why-it-matters">Why it matters</h2>
+<ul>
+<li><strong>The evidence lives on the task.</strong> Screenshots, logs and specs sit next to the work, not in a chat thread nobody can find.</li>
+<li><strong>Fewer round trips.</strong> Whoever picks up the task, person or agent, starts with everything the reporter had.</li>
+<li><strong>Safe by default.</strong> Only board members see a task&rsquo;s files, and risky file types are refused.</li>
+<li><strong>Clear limits.</strong> 25 MB a file, 20 files a task and 10 GB an Organization, and Stride tells you plainly when a file won&rsquo;t fit.</li>
+<li><strong>Nothing gets lost.</strong> Files stay with archived tasks, travel with workspace exports, and survive a move between plans.</li>
+</ul>
+<p>Attachments come with the Organization plan. The <a href="/post/organizations">Organizations</a> post explains the plan and how to move a board into an Organization.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/attachments/">Attach the Screenshot, Not a Description of It</a></li>
+        
+            <li><a href="/post/half-day-session/">From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session</a></li>
+        
+            <li><a href="/post/organizations/">One Place to Run Your Team&#39;s Stride</a></li>
+        
+            <li><a href="/post/single-sign-on/">Sign In Through Your Identity Provider</a></li>
+        
+            <li><a href="/post/workspaces/">A Workspace for Every Team</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
