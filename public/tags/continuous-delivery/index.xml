@@ -18,7 +18,7 @@
 				<link>http://localhost:1313/post/audit-log-streaming/</link>
 				<pubDate>Sun, 15 Nov 2026 09:57:00 -0400</pubDate>
 				<guid>http://localhost:1313/post/audit-log-streaming/</guid>
-				<description></description>
+				<description>&lt;p&gt;&lt;em&gt;Audit log streaming and signed exports are part of the Organization plan.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Your security team doesn&amp;rsquo;t want to log in to every tool your company uses to see what happened in it. They want every tool&amp;rsquo;s security events in one place: Splunk, Datadog or the system your security operations centre already watches. There they can search them, alert on them and keep them as long as your policies say.&lt;/p&gt;&#xA;&lt;p&gt;Until now, getting Stride&amp;rsquo;s events there meant exporting the &lt;a href=&#34;http://localhost:1313/post/organizations/&#34;&gt;Organization audit log&lt;/a&gt; by hand. Today Stride does it for you. &lt;strong&gt;Audit log streaming&lt;/strong&gt; sends your Organization&amp;rsquo;s audit log to Splunk, Datadog or any HTTPS endpoint, as it happens. &lt;strong&gt;Signed exports&lt;/strong&gt; let an auditor check that an exported file really came from Stride and hasn&amp;rsquo;t been changed since.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Attach the Screenshot, Not a Description of It</title>

@@ -69,7 +69,7 @@ If your tool refuses the token or API key, Stride shows it as **Failing** with t
 
 ### Gaps
 
-Some events can't be delivered at all. Your Organization's [audit retention](organizations.md) may delete events before a destination that was down has received them. Or a Datadog destination may have been failing for so long that its events became too old for Datadog to accept. Stride records each run of events like this as a **gap**: how many events, why, and when they happened.
+Some events can't be delivered at all. Your Organization's [audit retention](/post/organizations) may delete events before a destination that was down has received them. Or a Datadog destination may have been failing for so long that its events became too old for Datadog to accept. Stride records each run of events like this as a **gap**: how many events, why, and when they happened.
 
 ![The Gaps card on the Datadog destination: 312 events lost, too old for Datadog, from 2026-11-11 14:23:39 to 2026-11-12 08:50:19 UTC, with a Dismiss button](/img/audit-streaming-gap.png)
 

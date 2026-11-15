@@ -247,7 +247,7 @@
 </ul>
 <p>If your tool refuses the token or API key, Stride shows it as <strong>Failing</strong> with the reason in plain words. Fix the credential, and the next delivery recovers on its own.</p>
 <h3 id="gaps">Gaps</h3>
-<p>Some events can&rsquo;t be delivered at all. Your Organization&rsquo;s <a href="organizations.md">audit retention</a> may delete events before a destination that was down has received them. Or a Datadog destination may have been failing for so long that its events became too old for Datadog to accept. Stride records each run of events like this as a <strong>gap</strong>: how many events, why, and when they happened.</p>
+<p>Some events can&rsquo;t be delivered at all. Your Organization&rsquo;s <a href="/post/organizations">audit retention</a> may delete events before a destination that was down has received them. Or a Datadog destination may have been failing for so long that its events became too old for Datadog to accept. Stride records each run of events like this as a <strong>gap</strong>: how many events, why, and when they happened.</p>
 <p>
   <img src="/img/audit-streaming-gap.png" alt="The Gaps card on the Datadog destination: 312 events lost, too old for Datadog, from 2026-11-11 14:23:39 to 2026-11-12 08:50:19 UTC, with a Dismiss button">
 
