@@ -10,15 +10,22 @@
 		
 		
 		
-			<lastBuildDate>Mon, 09 Nov 2026 06:04:00 -0400</lastBuildDate>
+			<lastBuildDate>Sun, 15 Nov 2026 09:57:00 -0400</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Send Your Audit Log to Your Security Tools</title>
+				<link>http://localhost:1313/post/audit-log-streaming/</link>
+				<pubDate>Sun, 15 Nov 2026 09:57:00 -0400</pubDate>
+				<guid>http://localhost:1313/post/audit-log-streaming/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Attach the Screenshot, Not a Description of It</title>
 				<link>http://localhost:1313/post/attachments/</link>
 				<pubDate>Mon, 09 Nov 2026 06:04:00 -0400</pubDate>
 				<guid>http://localhost:1313/post/attachments/</guid>
-				<description></description>
+				<description>&lt;p&gt;&lt;em&gt;This post covers attachments, new in Stride 3.1.0. Attachments are part of the Organization plan.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Some things are hard to describe in words. &amp;ldquo;The app crashes when the card has expired&amp;rdquo; could mean a dozen things. A screenshot of the crash, the device log and the spec it breaks leave no doubt. Until now those files lived somewhere else: a chat thread, a shared drive or someone&amp;rsquo;s downloads folder. Whoever picked up the task had to go and find them.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session</title>
