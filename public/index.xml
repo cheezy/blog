@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sun, 15 Nov 2026 09:57:00 -0400</lastBuildDate>
+			<lastBuildDate>Mon, 16 Nov 2026 18:38:00 -0500</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Scaling the New Team</title>
+				<link>http://localhost:1313/post/scaling-the-new-team/</link>
+				<pubDate>Mon, 16 Nov 2026 18:38:00 -0500</pubDate>
+				<guid>http://localhost:1313/post/scaling-the-new-team/</guid>
+				<description>&lt;p&gt;In February of 2026 I wrote about &lt;a href=&#34;http://localhost:1313/post/the-new-team&#34;&gt;The New Team&lt;/a&gt;: a very small team built for AI-driven development, with one person who knows what to build and one or two developers whose agents build it. At the time, the post was based on the successes of a few experiments at two different clients.&lt;/p&gt;&#xA;&lt;p&gt;Since then I&amp;rsquo;ve used this structure on many teams. It works. The small team consistently delivers far more than the traditional Agile team it replaces, and it does so with less coordination, not more. If your delivery org is currently a single team then this is the right shape for you. So the question I get asked now isn&amp;rsquo;t &amp;ldquo;does it work?&amp;rdquo; It&amp;rsquo;s &amp;ldquo;what happens when we need more than one of these teams?&amp;rdquo;&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Send Your Audit Log to Your Security Tools</title>
 				<link>http://localhost:1313/post/audit-log-streaming/</link>
@@ -508,7 +515,7 @@
 				<link>http://localhost:1313/about/</link>
 				<pubDate>Fri, 26 Sep 2025 12:41:47 -0400</pubDate>
 				<guid>http://localhost:1313/about/</guid>
-				<description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. This blog is where I share ideas and experiences I have as I work with teams delivering software and as I build my own applications. Hopefully you find some value in the things I write.&lt;/p&gt;</description>
+				<description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;&#xA;&lt;p&gt;Hello, I&amp;rsquo;m Jeff &amp;ldquo;Cheezy&amp;rdquo; Morgan and yes Cheezy is a nickname given to me a long time ago. I have worked with development teams and leadership for over 30 years. This blog is where I share ideas and experiences I have working with modern tools, exploring AI and machine learning, and rapid delivery techniques while delivering software for my clients and building my own applications.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Hello world (again eh)!</title>

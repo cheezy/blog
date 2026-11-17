@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sun, 15 Nov 2026 09:57:00 -0400</lastBuildDate>
+			<lastBuildDate>Mon, 16 Nov 2026 18:38:00 -0500</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Scaling the New Team</title>
+				<link>http://localhost:1313/post/scaling-the-new-team/</link>
+				<pubDate>Mon, 16 Nov 2026 18:38:00 -0500</pubDate>
+				<guid>http://localhost:1313/post/scaling-the-new-team/</guid>
+				<description>&lt;p&gt;Earlier this year I wrote about &lt;a href=&#34;http://localhost:1313/post/the-new-team&#34;&gt;The New Team&lt;/a&gt;: a very small team built for AI-driven development, with one person who knows what to build and one or two developers whose agents build it. At the time it was a vision, backed by a few experiments at two different clients.&lt;/p&gt;&#xA;&lt;p&gt;Since then I&amp;rsquo;ve used this structure on many teams and in very different organizations. It works. The small team consistently delivers far more than the traditional Agile team it replaces, and it does so with less coordination, not more. So the question I get asked now isn&amp;rsquo;t &amp;ldquo;does it work?&amp;rdquo; It&amp;rsquo;s &amp;ldquo;what happens when we need more than one of these teams?&amp;rdquo;&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Send Your Audit Log to Your Security Tools</title>
 				<link>http://localhost:1313/post/audit-log-streaming/</link>
