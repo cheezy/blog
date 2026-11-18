@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Why Your Agent Needs a Monorepo" />
+    <meta property="og:title" content="Why Your Agent Needs a Monorepo" />
+    <meta property="twitter:title" content="Why Your Agent Needs a Monorepo" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/monorepo-for-agents/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Why Your Agent Needs a Monorepo | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/monorepo-for-agents/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Why Your Agent Needs a Monorepo</h1>
+
+            
+                <p>In <a href="/post/scaling-the-new-team">Scaling the New Team</a> I listed five things that have to be in place for a small AI-driven team to deliver. One of them was that <strong>the agent can see everything</strong>: all the code is in source control the agent can read, and I prefer a monorepo or, if that isn&rsquo;t possible, a meta-repo. That&rsquo;s one line in that post, but it trips up more organizations than any of the other four. So this post is about that one line.</p>
+<p>The short version: if your application is split across a frontend repository and a backend repositories, with frontend developers working in one and backend developers working in the other, your agents will build every feature in pieces. Each piece is built by an agent that can only see half of the change. That&rsquo;s an antipattern, and the fix is to restructure the code, and the team, so that one agent can see and change every layer at once.</p>
+<h2 id="the-antipattern-frontend-developers-and-backend-developers">The antipattern: frontend developers and backend developers</h2>
+<p>Most teams I meet are organized like this. The web application lives in one repository and the API lives in another. Sometimes the database migrations live in a third. Frontend developers work in the first, backend developers work in the second, and the two sides agree on an API contract that lives somewhere else: a wiki page, a comment on a ticket, a thread in a chat channel.</p>
+<p>
+  <img src="/img/monorepo-split-repos.png" alt="Two repositories, two developers, two halves of one change. On the left, a web-app repository with its frontend developer and Agent A, outlined as what Agent A can see. On the right, an api-service repository with its backend developer and Agent B, outlined as what Agent B can see. Between them, the API contract is a wiki page, a ticket comment or a chat thread. Each agent sees one side, and neither agent can see the whole feature">
+
+</p>
+<p>When each developer adds an agent, the structure stays exactly the same. The frontend developer&rsquo;s agent works in the frontend repository and the backend developer&rsquo;s agent works in the backend repository. Each agent is very good at the half of the feature it can see. Neither of them can see the feature.</p>
+<h2 id="a-change-made-in-pieces">A change made in pieces</h2>
+<p>Here&rsquo;s what that looks like for a small feature: show the delivery window on an order.</p>
+<p>
+  <img src="/img/monorepo-change-in-pieces.png" alt="The same change made in pieces and made whole. Split across two repositories, with two tickets, two agents and two reviews: on day 1 the story is split into a backend ticket and a frontend ticket; on day 2 Agent B adds delivery_window to the API and ships it; on days 3 and 4 the frontend ticket waits for the next free developer; on day 5 Agent A reads the ticket and guesses the response shape; on day 6 integration breaks because the field name and the date format disagree; on days 7 and 8 there is rework in both repositories, reviewed twice, then shipped. In one repository, with one ticket, one agent and one review: on day 1 one agent changes the migration, the endpoint, the screen and the tests for every layer in one commit, the build tells it straight away if the layers disagree, and the change is reviewed once and shipped. No hand-off, no waiting, nothing guessed">
+
+</p>
+<p>The story is split into a backend ticket and a frontend ticket, because that&rsquo;s how the work is organized. The backend agent adds the field to the API and the change ships. The frontend ticket waits until a frontend developer is free. When it&rsquo;s picked up, the frontend agent reads the ticket, maybe the wiki page, and builds the screen against the response it expects. It expects a <code>deliveryWindow</code> with a start and end date. The API returns <code>delivery_window</code> as a single string. Nobody finds out until the two halves meet, and then both repositories need rework, two more reviews and another wait.</p>
+<p>None of this is new. Teams split this way have always paid for hand-offs, waiting and integration surprises. What&rsquo;s new is the ratio. When building a change takes the agent an hour, the days spent waiting for the other half become almost all of the time it takes to deliver the feature. The agent didn&rsquo;t make delivery faster. It made the queue more obvious.</p>
+<h2 id="why-its-worse-with-an-agent">Why it&rsquo;s worse with an agent</h2>
+<p>When two people split a feature, the gap between them is filled with conversation. The frontend developer walks over, or sends a message, and asks what the field is called. It&rsquo;s slow, but it works.</p>
+<p>An agent doesn&rsquo;t walk over. It works from what&rsquo;s in front of it: the code in its working directory, the ticket, and whatever documents you gave it. When the answer to a question is in the other repository, the agent doesn&rsquo;t stop and ask. It fills the gap with the most plausible answer it can come up with, and plausible answers look correct. The field name it guesses follows the conventions of its own codebase. The error handling it writes handles the errors it imagines the API returns. Its tests pass, because its tests are built on the same guesses.</p>
+<p>
+  <img src="/img/monorepo-guess-or-check.png" alt="Half the code means guessing, all the code means checking. An agent in one of two repositories has to guess the field names the other side uses, the date, money and ID formats it sends, which errors come back and when, whether the other side&rsquo;s tests still pass, and what else breaks when it changes something. An agent in one repository can check: it reads the schema, the endpoint and the screen, follows a value from the database to the page, uses the error the endpoint really returns, runs every layer&rsquo;s tests before it hands over, and finds every caller before it changes something. An agent can only build what it can see">
+
+</p>
+<p>This is the core of the problem. An agent can only build what it can see. Give it half the code and it will guess at the other half, confidently and at speed. Give it all the code and it will check.</p>
+<h2 id="the-fix-one-repository-vertical-slices">The fix: one repository, vertical slices</h2>
+<p>Restructure the code into a monorepo: one repository that holds the web application, the API, the business logic, the database schema and the tests for all of them. Then give each feature to one person and their agent, end to end.</p>
+<p>
+  <img src="/img/monorepo-vertical-slice.png" alt="One repository, one vertical slice through every layer. A single repository holds web/ for screens and components, api/ for endpoints and the contract, core/ for business rules, db/ for schema and migrations, and test/ for tests for every layer. One agent cuts down through all five layers, each marked with a check: one feature, one change, one commit. What the agent can do now: read every layer before it changes any of them, rename a field everywhere in a single change, run the tests for every layer and see them fail before a person does, and hand over one change, reviewed once, that works end to end">
+
+</p>
+<p>Now the delivery window feature is one ticket. The agent reads the schema, the endpoint and the screen before it writes anything. It adds the migration, the field, the endpoint change, the screen and the tests for each layer, in one change. If the screen expects a field the endpoint doesn&rsquo;t return, a test fails right there, in the agent&rsquo;s own run, before any person looks at it. The person reviews one change that works from the database to the page, and it ships.</p>
+<p>The things that were hard become ordinary:</p>
+<ul>
+<li><strong>Renaming something is one change.</strong> Rename a field and the agent finds and updates every caller, on both sides, in the same commit. In split repositories that&rsquo;s a coordinated release.</li>
+<li><strong>The contract is code, not a document.</strong> The endpoint and the screen that calls it are both in front of the agent. There&rsquo;s no wiki page to drift out of date.</li>
+<li><strong>Tests cover the seams.</strong> The tests that matter most are the ones that cross layers, and they can only run where all the layers are.</li>
+<li><strong>One review, of a whole change.</strong> Reviewing half a feature tells you very little. Reviewing a whole one tells you whether it works.</li>
+</ul>
+<h2 id="restructure-the-team-too">Restructure the team, too</h2>
+<p>Moving the code into one repository isn&rsquo;t enough if the team is still organized as frontend developers and backend developers. If the work is still split into a frontend ticket and a backend ticket, you&rsquo;ll get the same pieces, just in one repository.</p>
+<p>The team has to change with the code. In <a href="/post/the-new-team">The New Team</a> the engineers aren&rsquo;t frontend or backend engineers. Each one owns a feature end to end, and their agent does the work in every layer. The engineer&rsquo;s job is to judge what the agent built across all of those layers, not to build one of them. A strong frontend developer and a strong backend developer don&rsquo;t lose their depth in this structure. They review each other&rsquo;s work and bring that depth to every feature, instead of to half of each one.</p>
+<h2 id="how-to-get-there">How to get there</h2>
+<p>You don&rsquo;t need a big migration to start. A few steps get most of the value:</p>
+<ol>
+<li><strong>Bring the repositories together.</strong> Create one repository with a top-level directory for each application, such as <code>web/</code>, <code>api/</code> and <code>db/</code>. Tools like <code>git subtree</code> can bring each repository in with its history intact.</li>
+<li><strong>Keep the builds working as they are.</strong> Each application can keep its own language, build tool and deployment. A monorepo isn&rsquo;t a monolith. You can still deploy the frontend and the backend independently.</li>
+<li><strong>Build one pipeline.</strong> Run the tests for every layer a change touches, including the tests that cross layers, on every change.</li>
+<li><strong>Tell the agent how the repository is laid out.</strong> Add instructions at the root (an <code>AGENTS.md</code>, a <code>CLAUDE.md</code>, or whatever your agent reads) that describe each directory and how to run each layer&rsquo;s tests. Start the agent at the root, not in a subdirectory.</li>
+<li><strong>Write the tickets as vertical slices.</strong> One feature, one ticket, through every layer it needs.</li>
+</ol>
+<p>People usually raise three concerns. &ldquo;The repository will be too big for the agent.&rdquo; The agent doesn&rsquo;t read every file. It searches for what it needs, and it can only find what&rsquo;s there. &ldquo;Different teams own different parts.&rdquo; Ownership can be expressed with code owners and reviews, not with repository boundaries. &ldquo;Our frontend and backend are in different languages.&rdquo; That&rsquo;s fine. Many monorepos hold several languages, and agents handle that well.</p>
+<h2 id="if-you-cant-move-to-a-monorepo-use-a-meta-repo">If you can&rsquo;t move to a monorepo, use a meta-repo</h2>
+<p>Sometimes the code really can&rsquo;t move. The repositories belong to different departments, they&rsquo;re shared with other products, or the politics of merging them would cost more than the change is worth. If you&rsquo;re in that position, a <strong>meta-repo</strong> is your best choice.</p>
+<p>A meta-repo is a parent workspace that checks out every repository side by side. It holds a script to clone and update all of them, and the agent instructions at the top that describe each repository and how to run its tests. The agent starts in the workspace, not in one of the repositories, so it can read the schema, the endpoint and the screen before it changes any of them. It can make one feature&rsquo;s changes across every repository in one session. That removes most of the guessing, and it&rsquo;s far better than giving each agent one repository.</p>
+<p>But a meta-repo only fixes what the agent can see. It doesn&rsquo;t fix how the change is delivered. The feature is still delivered in pieces, and the pieces bring their own problems:</p>
+<ul>
+<li><strong>Multiple commits.</strong> One feature becomes a commit in each repository. Nothing ties them together except a ticket number in the commit messages, so the history of the feature is spread across repositories. Rolling it back means finding and reverting every one of them.</li>
+<li><strong>Multiple reviews.</strong> Each repository has its own pull request, its own reviewers and its own approval rules. Each reviewer sees half a change again, often at different times. One half can be approved while the other has changes requested, and the agent&rsquo;s single, consistent change has to be reworked on one side without breaking the other.</li>
+<li><strong>Half a change can be merged.</strong> The backend change merges while the frontend change is still waiting for review, or fails its build. Now the main branches disagree. The frontend may call a field the backend doesn&rsquo;t return yet, or the backend may have removed a field the frontend still uses. If each repository deploys when it merges, that disagreement reaches production as errors.</li>
+<li><strong>No build checks the whole change.</strong> Each repository&rsquo;s pipeline tests its change against the other repository&rsquo;s main branch, not against the other half of the change. The test that would catch the mismatch has nowhere to run unless you build a pipeline that checks out the matching branches together.</li>
+<li><strong>Stale checkouts.</strong> The agent reads whatever is checked out in the workspace. If one repository hasn&rsquo;t been updated, the agent builds against old code, and its change looks right until it meets the current version.</li>
+<li><strong>Every change has to be safe in either order.</strong> Because either half can ship first, every change has to be backward compatible. Add the new field before you use it, and stop using the old one before you remove it. A rename becomes three releases instead of one commit. That&rsquo;s extra work, and extra time, that a monorepo doesn&rsquo;t need.</li>
+</ul>
+<p>You can reduce these problems with some discipline:</p>
+<ol>
+<li><strong>Update every repository before the agent starts</strong> a task, so it never builds against stale code.</li>
+<li><strong>Use the same branch name in every repository</strong> for a feature, and link the pull requests to each other and to the ticket.</li>
+<li><strong>Test the branches together.</strong> Before anything merges, run the cross-layer tests against all of a feature&rsquo;s branches at once.</li>
+<li><strong>Merge in a known order.</strong> Merge the backward-compatible half first, usually the backend, then the half that depends on it.</li>
+<li><strong>Count the feature as done only when every piece is merged and deployed</strong>, not when the first one is.</li>
+</ol>
+<p>Even then, the meta-repo is a workaround. The agent sees the whole change, but people still review it, merge it and release it in pieces. Use a meta-repo when you have to, and keep pushing toward one repository.</p>
+<h2 id="an-agent-can-only-build-what-it-can-see">An agent can only build what it can see</h2>
+<p>When we split code by layer and people by specialty, we were optimizing for how people work: each person can only hold so much of a system in their head. Agents change the economics. An agent can read every layer of the application in minutes, but only if every layer is somewhere it can read.</p>
+<p>If your agents keep building the half of the feature they can see, don&rsquo;t blame the agents. Show them the rest of the code.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/monorepo-for-agents/">Why Your Agent Needs a Monorepo</a></li>
+        
+            <li><a href="/post/scaling-the-new-team/">Scaling the New Team</a></li>
+        
+            <li><a href="/post/audit-log-streaming/">Send Your Audit Log to Your Security Tools</a></li>
+        
+            <li><a href="/post/attachments/">Attach the Screenshot, Not a Description of It</a></li>
+        
+            <li><a href="/post/half-day-session/">From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

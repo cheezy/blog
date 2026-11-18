@@ -10,27 +10,27 @@
 		
 		
 		
-			<lastBuildDate>Mon, 16 Nov 2026 18:38:00 -0500</lastBuildDate>
+			<lastBuildDate>Wed, 18 Nov 2026 08:52:00 -0500</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Agile</title>
 				<link>http://localhost:1313/tags/agile/</link>
-				<pubDate>Mon, 16 Nov 2026 18:38:00 -0500</pubDate>
+				<pubDate>Wed, 18 Nov 2026 08:52:00 -0500</pubDate>
 				<guid>http://localhost:1313/tags/agile/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>AI</title>
 				<link>http://localhost:1313/tags/ai/</link>
-				<pubDate>Mon, 16 Nov 2026 18:38:00 -0500</pubDate>
+				<pubDate>Wed, 18 Nov 2026 08:52:00 -0500</pubDate>
 				<guid>http://localhost:1313/tags/ai/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Continuous Delivery</title>
 				<link>http://localhost:1313/tags/continuous-delivery/</link>
-				<pubDate>Mon, 16 Nov 2026 18:38:00 -0500</pubDate>
+				<pubDate>Wed, 18 Nov 2026 08:52:00 -0500</pubDate>
 				<guid>http://localhost:1313/tags/continuous-delivery/</guid>
 				<description></description>
 			</item>
