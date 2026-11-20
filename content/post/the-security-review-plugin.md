@@ -2,7 +2,7 @@
 date: '2026-05-12T10:43:42-04:00'
 draft: false
 title: 'The Security Review Plugin: My latest addition to the Stride plugin library'
-tags: ["AI", "Continuous Delivery"]
+tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
 Yesterday I typed the following into Claude Code:

@@ -2,7 +2,7 @@
 date: '2026-06-24T10:37:00-04:00'
 draft: false
 title: 'Are Code Reviews and Pull Requests a Thing of the Past?'
-tags: ["AI", "Continuous Delivery"]
+tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
 The pull request is one of the most entrenched rituals in modern software development. Open a branch, push your work, open a PR, wait for a colleague to read the diff, address their comments, wait again, and finally merge. We have built entire products, careers, and cultural norms around this loop. It is so universal that most developers have never seriously questioned whether it should exist.
