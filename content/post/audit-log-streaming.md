@@ -9,7 +9,7 @@ tags: ["AI", "Continuous Delivery", "Stride"]
 
 Your security team doesn't want to log in to every tool your company uses to see what happened in it. They want every tool's security events in one place: Splunk, Datadog or the system your security operations centre already watches. There they can search them, alert on them and keep them as long as your policies say.
 
-Until now, getting Stride's events there meant exporting the [Organization audit log](/post/organizations/) by hand. Today Stride does it for you. **Audit log streaming** sends your Organization's audit log to Splunk, Datadog or any HTTPS endpoint, as it happens. **Signed exports** let an auditor check that an exported file really came from Stride and hasn't been changed since.
+Until now, getting [Stride](https://StrideLikeABoss.com)'s events there meant exporting the [Organization audit log](/post/organizations/) by hand. Today Stride does it for you. **Audit log streaming** sends your Organization's audit log to Splunk, Datadog or any HTTPS endpoint, as it happens. **Signed exports** let an auditor check that an exported file really came from Stride and hasn't been changed since.
 
 ## Streaming, from the Organization console
 

@@ -5,7 +5,7 @@ title: 'Stride Now Tells You When It Needs You'
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-AI agents don't keep office hours. They finish work at 2 a.m., on Sunday afternoons, and in the middle of your lunch meeting. Until now, Stride kept quiet about all of it: if an agent finished something that needed your review, it sat in the review queue until you happened to open it. A stalled claim, a finished goal, a delivery date slipping out of reach. All of it waited for you to come and look.
+AI agents don't keep office hours. They finish work at 2 a.m., on Sunday afternoons, and in the middle of your lunch meeting. Until now, [Stride](https://StrideLikeABoss.com) kept quiet about all of it: if an agent finished something that needed your review, it sat in the review queue until you happened to open it. A stalled claim, a finished goal, a delivery date slipping out of reach. All of it waited for you to come and look.
 
 That changes today. Stride now tells you when something needs your attention, in the app and by email, and lets you decide exactly what reaches you and how.
 

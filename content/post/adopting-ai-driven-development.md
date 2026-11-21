@@ -132,7 +132,7 @@ In the end they did not follow any of these suggestions. Over time they realized
 
 #### 2. Merge conflicts were greater as the Agent was producing the code faster and refactoring and cleaning up the code in the process
 
-The code merging was a problem that we did not resolved. During our investigation we realized that an Agent can fairly accurately estimate what files they will need to change before they make the change. We started adding this information to the tasks and manually tried to manage this risk by selecting tasks that would avoid conflicts. I baked this knowledge into Stride. When an Agent asks Stride what task they can work on next, Stride will not give them a task if another Agent is working on a task that will touch the same files.
+The code merging was a problem that we did not resolved. During our investigation we realized that an Agent can fairly accurately estimate what files they will need to change before they make the change. We started adding this information to the tasks and manually tried to manage this risk by selecting tasks that would avoid conflicts. I baked this knowledge into [Stride](https://StrideLikeABoss.com). When an Agent asks Stride what task they can work on next, Stride will not give them a task if another Agent is working on a task that will touch the same files.
 
 ## Conclusion
 

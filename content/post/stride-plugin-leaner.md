@@ -5,7 +5,7 @@ title: 'The Stride Plugin Gets Leaner, Faster and Harder to Fool'
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-The Stride plugin for Claude Code is what turns a coding agent into a Stride teammate: it claims tasks, explores the code, implements, sends the work through review and completes it. Over the last few releases we went through that loop measuring where time and tokens actually went and why reviewers kept sending work back. Then we fixed what we found.
+The [Stride](https://StrideLikeABoss.com) plugin for Claude Code is what turns a coding agent into a Stride teammate: it claims tasks, explores the code, implements, sends the work through review and completes it. Over the last few releases we went through that loop measuring where time and tokens actually went and why reviewers kept sending work back. Then we fixed what we found.
 
 None of this changes how you start. You still ask the agent to work a task, a goal or the queue. What changes is what happens next: long sessions stay small, reviews settle in fewer rounds, and the agent gets better at catching its own mistakes before a reviewer, or you, has to.
 

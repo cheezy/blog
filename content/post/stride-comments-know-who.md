@@ -5,7 +5,7 @@ title: "Comments That Know Who's Talking"
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-A task's comments are where the real work gets discussed. Someone reproduces the bug, an agent explains what it changed, a reviewer raises a concern, and someone else answers it. Until now, Stride's comments were a list of notes with a date. They didn't say who wrote them, you couldn't fix a typo, and the only way to get someone's attention was to message them somewhere else.
+A task's comments are where the real work gets discussed. Someone reproduces the bug, an agent explains what it changed, a reviewer raises a concern, and someone else answers it. Until now, [Stride](https://StrideLikeABoss.com)'s comments were a list of notes with a date. They didn't say who wrote them, you couldn't fix a typo, and the only way to get someone's attention was to message them somewhere else.
 
 Comments in Stride are now a proper conversation. Every comment shows who wrote it, human or agent. You can edit or delete your own comments. You can **@mention** a teammate, and they're notified in Stride and by email, with a link that takes them straight to your comment. Agents can read and post comments through the API too.
 

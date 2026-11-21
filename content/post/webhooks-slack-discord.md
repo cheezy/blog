@@ -5,7 +5,7 @@ title: "Your Board, Wherever Your Team Talks"
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-A Stride board knows the moment anything happens. A card is picked up, an agent finishes a task, a reviewer approves the work. Until now, though, you only found out if you happened to have the board open. Most teams don't sit on their board all day. They live in Slack or Discord, and the board was one more tab to check.
+A [Stride](https://StrideLikeABoss.com) board knows the moment anything happens. A card is picked up, an agent finishes a task, a reviewer approves the work. Until now, though, you only found out if you happened to have the board open. Most teams don't sit on their board all day. They live in Slack or Discord, and the board was one more tab to check.
 
 Stride can now tell your team about it where they already are. Each board has a new **Integrations** tab, where the board's owner can send board activity to:
 

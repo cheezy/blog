@@ -25,7 +25,7 @@ When I first started using agents to write my code I started by typing a prompt.
 
 The idea of verifying the accuracy _after_ the agent completed a task was a form of rework. To me, rework is waste and I always feel the need to try to eliminate it. I would prefer for the agent to have all necessary information it needed to get it right the first time. This meant that I needed to abandon the idea of using prompts and instead use a more structured approach.
 
-In mid-December I started asking my agent what information it needed to complete a task accurately. I also asked what format was the easiest for it to consume. This started a process of providing the agent with structured inputs, seeing how accurate the output was, and iterating on the inputs until I felt confident in the results. The outcome was what became Stride's [task](https://cheezyworld.ca/post/what-is-a-task/) definition. This task includes a lot of information about what to build. Here is a sampling of some of the fields:
+In mid-December I started asking my agent what information it needed to complete a task accurately. I also asked what format was the easiest for it to consume. This started a process of providing the agent with structured inputs, seeing how accurate the output was, and iterating on the inputs until I felt confident in the results. The outcome was what became [Stride](https://StrideLikeABoss.com)'s [task](https://cheezyworld.ca/post/what-is-a-task/) definition. This task includes a lot of information about what to build. Here is a sampling of some of the fields:
 
 |  |  | |
 |---|---|---|

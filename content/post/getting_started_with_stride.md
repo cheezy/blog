@@ -17,7 +17,7 @@ After you've registered with the system you will want to create your first AI Op
 
 {{< youtube oHZWbYg_JnY >}}
 
-As mentioned in the Video, there are two levels of items on a Stride board - Goals and Tasks. There are also two types of Tasks - Work and Defect. Selecting a goal will show you the list of Tasks and what column each is in.
+As mentioned in the Video, there are two levels of items on a [Stride](https://StrideLikeABoss.com) board - Goals and Tasks. There are also two types of Tasks - Work and Defect. Selecting a goal will show you the list of Tasks and what column each is in.
 
 ![Goal](/img/goal.png)
 

@@ -7,7 +7,7 @@ tags: ["AI", "Continuous Delivery", "Stride"]
 
 *This post is part of the [Stride 3.0.0 announcement](/post/stride-3-0-0/). Single sign-on is part of the Organization plan.*
 
-Your company already has one place where people sign in: Okta, Microsoft Entra ID, Google Workspace or another identity provider. That's where new starters get their accounts, where multi-factor authentication is set up, and where access is switched off when someone leaves. Until now, Stride was one more password to manage on the side.
+Your company already has one place where people sign in: Okta, Microsoft Entra ID, Google Workspace or another identity provider. That's where new starters get their accounts, where multi-factor authentication is set up, and where access is switched off when someone leaves. Until now, [Stride](https://StrideLikeABoss.com) was one more password to manage on the side.
 
 Stride 3.0.0 adds **single sign-on** for Organizations. Your people sign in through your identity provider, their first sign-in creates their Stride account, and your identity provider's multi-factor authentication protects them. With **SCIM provisioning**, your identity provider can also add people, keep their workspaces in step with its groups, and take their access away when they leave.
 

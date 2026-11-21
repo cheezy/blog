@@ -5,7 +5,7 @@ title: 'Adding Metrics to Stride'
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 
-In this post we will simply show you a video of the new metrics feature in Stride. Teams can use these metrics to understand how they are performing in order to find ways to improve. There are four metrics that are available:
+In this post we will simply show you a video of the new metrics feature in [Stride](https://StrideLikeABoss.com). Teams can use these metrics to understand how they are performing in order to find ways to improve. There are four metrics that are available:
 
 * Throughput
 * Cycle Time

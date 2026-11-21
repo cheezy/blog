@@ -11,7 +11,7 @@ Yesterday I typed the following into Claude Code:
 /stride-security-review:security-review --full
 ```
 
-Forty-two agent dispatches and roughly twelve minutes later, I had a 72-finding security review of Stride. The breakdown was sobering: 0 critical, 12 high, 15 medium, 38 low, 7 info. Some of those findings I knew about from having ran a different security review tool. That previous tool found 17 items. The rest were new to me.
+Forty-two agent dispatches and roughly twelve minutes later, I had a 72-finding security review of [Stride](https://StrideLikeABoss.com). The breakdown was sobering: 0 critical, 12 high, 15 medium, 38 low, 7 info. Some of those findings I knew about from having ran a different security review tool. That previous tool found 17 items. The rest were new to me.
 
 Then I spent the rest of the day fixing them - or more accurately watching Claude fix them.
 

@@ -5,7 +5,7 @@ title: "Attach the Screenshot, Not a Description of It"
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-*This post covers attachments, new in Stride 3.1.0. Attachments are part of the Organization plan.*
+*This post covers attachments, new in [Stride](https://StrideLikeABoss.com) 3.1.0. Attachments are part of the Organization plan.*
 
 Some things are hard to describe in words. "The app crashes when the card has expired" could mean a dozen things. A screenshot of the crash, the device log and the spec it breaks leave no doubt. Until now those files lived somewhere else: a chat thread, a shared drive or someone's downloads folder. Whoever picked up the task had to go and find them.
 

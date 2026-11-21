@@ -5,7 +5,7 @@ title: 'Teaching AI Agents to Look Before They Leap'
 tags: ["AI", "Continuous Delivery"]
 ---
 
-The Stride Claude Code plugin just shipped version 1.1, and the headline feature is **subagent orchestration** — the ability for an AI agent to dispatch specialized sub-agents at key points in the task lifecycle. Instead of one agent doing everything sequentially, the primary agent now coordinates a team: an explorer that reads the codebase before coding starts, and a reviewer that checks the work before tests run.
+The [Stride](https://StrideLikeABoss.com) Claude Code plugin just shipped version 1.1, and the headline feature is **subagent orchestration** — the ability for an AI agent to dispatch specialized sub-agents at key points in the task lifecycle. Instead of one agent doing everything sequentially, the primary agent now coordinates a team: an explorer that reads the codebase before coding starts, and a reviewer that checks the work before tests run.
 
 This post covers what changed and how it works.
 

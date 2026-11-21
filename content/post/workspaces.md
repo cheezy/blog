@@ -7,7 +7,7 @@ tags: ["AI", "Continuous Delivery", "Stride"]
 
 *This post is part of the [Stride 3.0.0 announcement](/post/stride-3-0-0/). Workspaces are part of the Organization plan.*
 
-Once more than one team uses Stride, the Boards page gets crowded. The mobile team's release board sits next to marketing's campaign board and the platform team's migration. Everyone sees everything they've been added to, in one long list, and nobody can tell at a glance which boards belong together.
+Once more than one team uses [Stride](https://StrideLikeABoss.com), the Boards page gets crowded. The mobile team's release board sits next to marketing's campaign board and the platform team's migration. Everyone sees everything they've been added to, in one long list, and nobody can tell at a glance which boards belong together.
 
 Stride 3.0.0 adds **workspaces**. An Organization can have as many as it needs, such as one per team or one per product. Each workspace holds its own boards and has its own people.
 
