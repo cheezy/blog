@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Wed, 18 Nov 2026 08:52:00 -0500</lastBuildDate>
+			<lastBuildDate>Sun, 22 Nov 2026 09:00:00 -0500</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/agile/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Why the Stride Workflow works so well</title>
+				<link>http://localhost:1313/post/why-the-stride-workflow-works/</link>
+				<pubDate>Sun, 22 Nov 2026 09:00:00 -0500</pubDate>
+				<guid>http://localhost:1313/post/why-the-stride-workflow-works/</guid>
+				<description>&lt;p&gt;Most teams start with AI agents the same way: a developer opens a chat window, describes what they want, and watches the agent write code. For one person on one change, that works. For a team it falls apart quickly. Nobody else can see what the agent was asked to do. The requirements live in one developer&amp;rsquo;s prompt history. Two agents change the same file at the same time. Quality depends on whether the developer remembered to ask for tests. When the work is done, the reviewer has a diff and nothing to judge it against.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Why Your Agent Needs a Monorepo</title>
 				<link>http://localhost:1313/post/monorepo-for-agents/</link>

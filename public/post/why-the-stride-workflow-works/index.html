@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
+    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
+    
+
+    
+    <meta name="title" content="Why the Stride Workflow works so well" />
+    <meta property="og:title" content="Why the Stride Workflow works so well" />
+    <meta property="twitter:title" content="Why the Stride Workflow works so well" />
+    
+
+    
+    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
+    
+
+    <meta property="og:url" content="http://localhost:1313/post/why-the-stride-workflow-works/" />
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Why the Stride Workflow works so well | Cheezy&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/why-the-stride-workflow-works/">
+
+    
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.min.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheezy World</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                    
+
+		    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+                    
+                    <li>
+                        <a href='' rel="alternate" type="application/rss+xml" title="RSS Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/cheese_banner.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Cheezy World </h1>
+                    
+		    <span class="subheading">Delivering software with discipline and joy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>Why the Stride Workflow works so well</h1>
+
+            
+                <p>Most teams start with AI agents the same way: a developer opens a chat window, describes what they want, and watches the agent write code. For one person on one change, that works. For a team it falls apart quickly. Nobody else can see what the agent was asked to do. The requirements live in one developer&rsquo;s prompt history. Two agents change the same file at the same time. Quality depends on whether the developer remembered to ask for tests. When the work is done, the reviewer has a diff and nothing to judge it against.</p>
+<p><a href="https://StrideLikeABoss.com">Stride</a> exists because I kept running into those problems, first on my own projects and then with clients. Over the past year it has grown from a kanban board with an API into a platform and a set of agent plugins that together define one way of working. I&rsquo;ve written about many of the pieces individually. This post pulls them together and explains why the whole works as well as it does, especially for teams.</p>
+<p>The short version: <strong>people own deciding what to build and judging what was built; agents own the building; and the workflow between them is enforced, not suggested.</strong> Everything below is a consequence of that idea.</p>
+<h2 id="the-board-is-the-contract">The board is the contract</h2>
+<p>Every AI-optimized board in Stride has the same five columns: <strong>Backlog</strong>, <strong>Ready</strong>, <strong>Doing</strong>, <strong>Review</strong> and <strong>Done</strong>. The product page describes it in one line: people specify in Backlog, agents pull from Ready, and people review in Review.</p>
+<p>That simple layout does a lot of work.</p>
+<ul>
+<li><strong>Backlog is the human staging area.</strong> Agents never take work from the Backlog. It&rsquo;s where people sharpen the scope of each task, confirm it has a clear reason and acceptance criteria, add context, and decide which tasks they want to review when they&rsquo;re finished.</li>
+<li><strong>Ready is the contract.</strong> Dragging a task into Ready is the go signal. It says &ldquo;this is specified well enough that an agent can build it without asking me anything.&rdquo; Agents claim only from Ready.</li>
+<li><strong>Doing, Review and Done are where the agents work</strong>, and where people step back in only when they&rsquo;ve asked to.</li>
+</ul>
+<p>Because the rules are the same on every board, everyone on the team knows what a card&rsquo;s position means. A task in Ready has been looked at by a person. A task in Review is waiting on a person. A task in Done passed every gate the team defined. Nobody has to ask.</p>
+<h2 id="start-from-a-real-specification-not-a-one-line-prompt">Start from a real specification, not a one-line prompt</h2>
+<p>An agent can only build what it understands, and a backlog full of one-line tasks forces it to guess. The <a href="https://github.com/cheezy/stride-ideation">stride-ideation</a> plugin fixes this before a single task reaches the board.</p>
+<ol>
+<li><strong><code>/ideate</code></strong> runs an interactive question-and-answer session that turns a fuzzy idea into a committed requirements document covering the goal, the problem, the outcome, assumptions, constraints, non-goals and success metrics.</li>
+<li><strong><code>/stridify</code></strong> decomposes that document into a goal with small, dependency-ordered tasks and sends them to Stride.</li>
+<li><strong>The goal and its tasks land in the Backlog</strong>, where people curate them before moving them to Ready.</li>
+</ol>
+<p>The requirements document is committed to the repository, so the reasoning behind the work is kept alongside the code it produced. And because the agent does the decomposition, the team gets the volume of well-formed tasks it needs. As I wrote in <a href="/post/stride_workflow">The Stride Workflow</a>, you will need a lot more tasks in Ready than you think. Agents work fast, and several developers each running agents will empty a backlog quickly.</p>
+<h2 id="the-task-carries-the-context">The task carries the context</h2>
+<p>The biggest single lesson I learned building Stride is that the shape of the task matters more than the prompt. I described how I arrived at that shape in <a href="/post/what-is-a-task">What is a task?</a>. A Stride task carries far more than a title:</p>
+<ul>
+<li><strong>Why</strong> it matters and <strong>what</strong> to build</li>
+<li><strong>Where</strong> it lives in the code, and the <strong>key files</strong> it will touch</li>
+<li><strong>Acceptance criteria</strong> that define done</li>
+<li><strong>Patterns to follow</strong> from the existing codebase</li>
+<li><strong>Pitfalls</strong> to avoid</li>
+<li>A <strong>testing strategy</strong> with unit tests, integration tests, manual tests and edge cases</li>
+<li><strong>Verification steps</strong>, <strong>security considerations</strong> and the <strong>telemetry and logging</strong> it needs</li>
+<li><strong>Dependencies</strong>, <strong>priority</strong>, <strong>complexity</strong> and whether it <strong>needs review</strong></li>
+</ul>
+<p>Most of that is written by the agent during planning, so people don&rsquo;t have to type it all. People review it and adjust it. Then, possibly days later and in a completely different session, a different agent claims the task and has everything it needs to work without a round trip. That separation between planning and building is what lets the work be shared. The developer who planned a task doesn&rsquo;t have to be the one whose agent builds it.</p>
+<p>The same fields that guide the agent become the standard the finished work is judged against. People review against criteria they wrote. Agents record their actuals, such as the complexity they experienced, the files they actually changed and the time spent, so the team can compare them with the estimates and get better at planning.</p>
+<h2 id="stride-decides-whats-next-so-agents-dont-collide">Stride decides what&rsquo;s next, so agents don&rsquo;t collide</h2>
+<p>When several agents from several developers ask for work at the same time, something has to decide who gets what. In Stride, the server does. When an agent asks for the next task, Stride only considers tasks that are:</p>
+<ul>
+<li>in the <strong>Ready</strong> column and not already claimed (or whose claim has expired);</li>
+<li><strong>unblocked</strong>, meaning every task they depend on is Done;</li>
+<li>a <strong>match for the agent&rsquo;s capabilities</strong>; and</li>
+<li><strong>free of file conflicts</strong>, meaning none of the task&rsquo;s key files are being changed by another task in Doing or Review.</li>
+</ul>
+<p>From what&rsquo;s left, the highest priority task nearest the top of the Ready column wins. Claims are atomic, so two agents can never claim the same task, and a claim that isn&rsquo;t completed expires so the work goes back to the pool.</p>
+<p>This is the part teams notice first. Without it, parallel agents create merge conflicts faster than people can untangle them. With it, five agents can work through the same backlog without stepping on each other, and nobody has to coordinate it by hand.</p>
+<h2 id="a-fixed-loop-with-gates-that-cant-be-skipped">A fixed loop with gates that can&rsquo;t be skipped</h2>
+<p>Once a task is claimed, the agent runs the same loop every time. The <a href="https://github.com/cheezy/stride">Stride plugin</a> carries the task from claim to completion with hooks, subagents and skills:</p>
+<ol>
+<li><strong>Claim.</strong> The <code>before_doing</code> hook runs on the developer&rsquo;s machine: pull the latest code, fetch dependencies, run migrations, so the agent starts from a known state.</li>
+<li><strong>Explore.</strong> A read-only <code>task-explorer</code> subagent reads the key files, finds the tests that cover them and looks for existing patterns. For medium and larger tasks, a planner turns that map into a step-by-step plan.</li>
+<li><strong>Implement.</strong> The agent writes the code and its tests, guided by the task, the explorer&rsquo;s map and the plan.</li>
+<li><strong>Review.</strong> A <code>task-reviewer</code> subagent checks the diff against the task&rsquo;s acceptance criteria, pitfalls, patterns and testing strategy. If the project has a <code>CODE-REVIEW.md</code> file, every bullet in it becomes a review check. Critical and important findings must be fixed and re-reviewed before the task can move on.</li>
+<li><strong>Validate.</strong> The <code>after_doing</code> hook runs your quality gate: the full test suite, formatting, static analysis, security scanning, the build. If anything fails, the task does not complete. The agent fixes the problem and runs the hook again.</li>
+</ol>
+<p>Optional gates slot into the same loop. When the <a href="/post/the-security-review-plugin">security review plugin</a> is installed and a task lists security considerations, a security reviewer checks the same diff. When the <a href="/post/stride-exploratory-testing-sharper">exploratory testing plugin</a> is installed and a task lists manual tests, a time-boxed exploratory session runs against a safe, non-production copy of the app.</p>
+<p>Two things make this loop trustworthy.</p>
+<p><strong>The gates are yours.</strong> Hooks are plain shell commands in a <code>.stride.md</code> file at the root of your project. Stride doesn&rsquo;t impose a test framework or a linter. It runs whatever your project already runs, at fixed points in the loop, on the developer&rsquo;s own machine.</p>
+<p><strong>The gates are enforced.</strong> Early on I learned that agents skip steps they&rsquo;re only asked to follow. I wrote about it in <a href="/post/mechanical-gating-works">Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</a>. Today the plugins block out-of-order steps, and the API won&rsquo;t accept a claim or a completion without the results of the hooks that were supposed to run. The task records which workflow steps actually ran and what the reviewer found, so there is evidence, not just a claim that it was done.</p>
+<p>This is what turns &ldquo;the agent usually writes tests&rdquo; into &ldquo;nothing reaches Done in a broken state.&rdquo;</p>
+<h2 id="human-review-exactly-where-it-matters">Human review exactly where it matters</h2>
+<p>Some changes deserve a person&rsquo;s sign-off before they ship. Most don&rsquo;t. Routing every change through the same heavyweight review, as the traditional pull request does, wastes your scarcest resource. I made the full argument in <a href="/post/code-reviews">Are Code Reviews and Pull Requests a Thing of the Past?</a>.</p>
+<p>Stride lets the team decide per task, during backlog refinement, using the <strong>Needs Review</strong> checkbox.</p>
+<ul>
+<li><strong>When <code>needs_review</code> is true</strong>, the completed task stops in the Review column. It shows up in the review queue, the shared list of finished work waiting on a person, oldest first with how long each has waited. The reviewer sees the completion summary, the full diff file by file, and the <a href="/post/review-report">task-reviewer&rsquo;s report</a>: evidence for each acceptance criterion, and how the work did on the testing strategy, patterns and pitfalls. They approve, or they request changes with notes the agent picks up. On approval the <code>after_review</code> hook fires to merge, deploy or notify, and the task moves to Done.</li>
+<li><strong>When <code>needs_review</code> is false</strong>, the task never pauses. It goes straight to Done, the <code>after_review</code> hook fires, and the change ships with no one waiting on it.</li>
+</ul>
+<p>Either way, the agent moves on to the next task in Ready and keeps going until Ready is empty. Only a task that asked for review holds up the run.</p>
+<p>This changes what a reviewer does. They&rsquo;re no longer reassembling context from a ticket, a Slack thread and a diff, then re-reviewing everything from scratch. The requirements, the standards and the automated review are all in front of them. Their job becomes judging whether the result is right and checking what the machine might have missed. That&rsquo;s a much better use of a person&rsquo;s attention, and it&rsquo;s why review doesn&rsquo;t become the bottleneck as the agents speed up.</p>
+<h2 id="works-with-the-agent-your-team-already-uses">Works with the agent your team already uses</h2>
+<p>Teams rarely agree on one coding agent, and they shouldn&rsquo;t have to. Stride has <a href="/post/stride-new-plugins">plugins</a> for Claude Code, GitHub Copilot CLI, Gemini CLI, Codex CLI, OpenCode and Pi. Each one teaches the same loop: claim a task, run the hooks in <code>.stride.md</code>, do the work, complete it. On paid boards, any MCP client can also work the board through Stride&rsquo;s <a href="/post/stride-mcp">MCP server</a>.</p>
+<p>The result is that one developer using Claude Code and another using Codex work the same board, under the same gates, and their work is reviewed the same way. The workflow belongs to the team, not to a tool.</p>
+<h2 id="insight-into-how-things-are-progressing">Insight into how things are progressing</h2>
+<p>When agents do the building, work moves faster than anyone can follow by watching the board. A team needs to know how things are going without asking anyone, and without someone assembling a status report. Stride gives everyone the same view, at every level from a single task up to a dated release.</p>
+<h3 id="progress-at-a-glance">Progress at a glance</h3>
+<ul>
+<li><strong>The Boards page</strong> shows every board you belong to, with how many tasks are in To Do, Doing, Review and Done, how many were finished over the last 14 days, and when work last moved. It refreshes every 30 seconds, so a stalled board stands out.</li>
+<li><strong>Goals track their own progress.</strong> Every goal shows how many of its tasks are complete, with a progress bar split by column, so you can see at a glance whether the remaining work is waiting in Backlog, being built in Doing or sitting in Review.</li>
+<li><strong>The Agents page</strong> shows each agent as working, waiting for review or idle, with its completions today and over seven days, its success rate and its claims, plus a live feed of claims, completions and reviews. An agent holding a task too long, or one that has gone quiet, is flagged as stalled.</li>
+<li><strong>My Work</strong> lists every open task assigned to you across all your boards, most urgent first.</li>
+</ul>
+<h3 id="delivery-targets">Delivery targets</h3>
+<p>Goals tell you how a piece of work is going. Most teams also have to answer a harder question: <em>will we make the date?</em> That&rsquo;s what <strong>delivery targets</strong> are for.</p>
+<p>A delivery target is a name and a date, such as &ldquo;Mobile release, December 15&rdquo;. You attach goals to it, and they can come from any of your boards, so one target can cover the mobile team&rsquo;s goals, the platform team&rsquo;s migration and the API work they depend on. The target&rsquo;s page shows the combined progress of all its goals as one segmented progress bar, with a row for each goal showing where its tasks are.</p>
+<p>The most useful part is that <strong>Stride estimates the completion date for you</strong>, and nobody has to update it. The estimate comes from how the team has actually been working:</p>
+<ol>
+<li>Stride looks at every task already completed on the boards the target&rsquo;s goals live on, and takes the <strong>median lead time</strong>: the typical time from a task being created to it reaching Done.</li>
+<li>It counts the <strong>tasks remaining</strong> across all of the target&rsquo;s goals.</li>
+<li>It multiplies the two and counts forward from right now. The day that lands on is the estimated completion date.</li>
+</ol>
+<p>For example, if tasks on those boards typically take four hours from creation to Done and 30 tasks remain, the estimate is five days from now. As tasks finish, the remaining count drops and the date moves. As the team&rsquo;s history grows, the median reflects how it works today. There is no velocity to calculate and no burndown to maintain.</p>
+<p>Stride then compares the estimate with the date you committed to and gives every target one of four statuses:</p>
+<ul>
+<li><strong>On track:</strong> nothing suggests the target will be late.</li>
+<li><strong>At risk:</strong> either the estimated completion date falls after the target date, or the share of work completed is more than 15 percentage points behind the share of the calendar that has passed. A target that is 40% done when 60% of its time has gone is at risk, even if the estimate hasn&rsquo;t slipped yet.</li>
+<li><strong>Missed:</strong> the date has passed and the work isn&rsquo;t finished.</li>
+<li><strong>Complete:</strong> every goal on the target is done.</li>
+</ul>
+<p>The status is calculated from the current state of the work every time you look, so it can never go stale. When a target you own becomes at risk or misses its date, Stride notifies you once, rather than every hour after. On the Agents page, an at-risk target comes with an explanation: the goals that are stalling it and the stuck or idle agents behind them. The target&rsquo;s owner, or the board&rsquo;s owner, can reassign or reprioritize a stalled goal right there.</p>
+<p>This is what turns &ldquo;how&rsquo;s it going?&rdquo; from a meeting into a glance. The Product Owner can see every target across every team&rsquo;s boards, which ones are at risk and why, and act on it.</p>
+<h3 id="metrics">Metrics</h3>
+<p>Targets tell you whether you&rsquo;ll make a date. <a href="/post/metrics">Metrics</a> tell you how the work is flowing so you can improve it. Every board has a Metrics Dashboard with four measures:</p>
+<ul>
+<li><strong>Throughput:</strong> how many tasks are completed each day.</li>
+<li><strong>Cycle time:</strong> how long a task takes from being claimed to being completed, which is the time spent actively working on it.</li>
+<li><strong>Lead time:</strong> how long a task takes from being created to being completed, including the time it waited in Backlog and Ready.</li>
+<li><strong>Wait time:</strong> how long work sits idle, split into time waiting in the backlog before an agent claims it and time waiting in Review for a person to look at it.</li>
+</ul>
+<p>You can look at today, the last 7, 30 or 90 days, or all time, with or without weekends. On an AI-optimized board you can narrow the numbers to a single agent. Each metric has its own page that exports to PDF or Excel.</p>
+<p>Above the boards, workspace metrics show median cycle time, median lead time, throughput and review wait time across all the boards you choose, along with cumulative flow and a leaderboard of the agents and people finishing work.</p>
+<p>Review wait time deserves a special mention. In an agent-driven team the risk is rarely that the agents are slow. It&rsquo;s that finished work piles up waiting for a person. Seeing that number grow is the early warning to rebalance which tasks get the <strong>Needs Review</strong> flag, or who is reviewing them.</p>
+<p>Two more sources of insight round this out. On AI-optimized boards, the <strong>Compliance</strong> page shows how often agents ran each workflow step and why they skipped any they didn&rsquo;t run, so you can confirm your gates are actually being followed. And <a href="/post/telemetry">task telemetry</a> sends events for claims, completions, reviews and hook results to the dashboards and alerts your team already uses.</p>
+<h2 id="built-for-teams">Built for teams</h2>
+<p>Everything so far would help a single developer. What makes Stride a team platform is that the work stays visible to everyone, and that it can be run the way your organization runs everything else.</p>
+<p><strong>Hear about work where you already are.</strong> <a href="/post/stride-notifications">Notifications</a> tell you when something needs you, such as a review request, an assignment, a released claim or an at-risk target, in Stride, by email, or in a weekly digest. Board events can go to <a href="/post/webhooks-slack-discord">Slack, Discord or your own webhook</a>, so the team hears about finished work in the channels it already uses.</p>
+<p><strong>Talk about the work on the work.</strong> Every task has a <a href="/post/stride-comments-know-who">comment thread</a> where people and agents discuss it together, and every comment shows who wrote it, human or agent. Type <strong>@</strong> and part of a name to mention a teammate on the board. They&rsquo;re notified in Stride and by email, and the link takes them straight to the comment, outlined so they can find it even in a long thread. Agents can read and post comments through the API too, so an agent can answer a question from a reviewer, or @mention the SME when a requirement is unclear, in the same place everyone else is talking. When an agent mentions you, the notification names both the agent and the person it was working for. The conversation stays attached to the task, so the next person to pick it up has the whole story.</p>
+<p><strong>Govern it like the rest of your systems.</strong> An <a href="/post/organizations">Organization</a> groups boards into <a href="/post/workspaces">workspaces</a>, typically one per team, each with its own members and boards. Org-admins can require <a href="/post/stride-two-factor-authentication">two-factor authentication</a>, connect <a href="/post/single-sign-on">single sign-on</a> and SCIM provisioning, and read or <a href="/post/audit-log-streaming">stream</a> the <a href="/post/stride-audit-log">audit log</a>.</p>
+<h3 id="how-it-fits-the-team">How it fits the team</h3>
+<p>In <a href="/post/scaling-the-new-team">Scaling the New Team</a> I described the team I now recommend: a subject-matter expert and two engineers, with a thin layer of leads above several teams. When building stops being the bottleneck, the constraint moves to deciding what to build and judging what was built. Stride&rsquo;s workflow is shaped around exactly those two constraints:</p>
+<ul>
+<li><strong>The SME</strong> owns the Backlog. They run ideation, sharpen tasks, set priorities and decide which tasks need review.</li>
+<li><strong>The engineers</strong> own the gates: the hooks in <code>.stride.md</code>, the rules in <code>CODE-REVIEW.md</code>, and the review queue. They judge what the agents built and review each other&rsquo;s changes.</li>
+<li><strong>The Quality Lead</strong> uses the Compliance page, the review wait times and the optional security and exploratory testing gates to confirm the work is ready for production.</li>
+<li><strong>The Developer Lead</strong> keeps the hooks, the pipelines and the cross-team dependencies coherent, and watches cycle time and the Agents page for work that is stuck.</li>
+<li><strong>The Product Owner</strong> works at the level of goals and delivery targets. Stride&rsquo;s estimates and at-risk warnings show them progress across every team&rsquo;s boards without asking for a status report.</li>
+</ul>
+<p>Each role has a place on the board, and the board shows each of them what they need. That&rsquo;s why the same small team can deliver several times what a larger traditional team did. Almost none of its time goes to coordination, because the workflow is doing the coordinating.</p>
+<h2 id="why-it-works">Why it works</h2>
+<p>Pull all of this together and the reasons are simple:</p>
+<ol>
+<li><strong>Clear handoffs.</strong> People specify in Backlog, agents pull from Ready, people review in Review. Everyone knows whose move it is.</li>
+<li><strong>Context that survives.</strong> The task carries the why, the what and the how from planning into building and on into review.</li>
+<li><strong>No collisions.</strong> Dependencies, capabilities and key files decide who works on what, so parallel agents don&rsquo;t fight.</li>
+<li><strong>Guaranteed quality.</strong> Your own gates run on every change, and they can&rsquo;t be skipped.</li>
+<li><strong>Review where it counts.</strong> People sign off on the changes that need judgment, with the evidence in front of them, and everything else flows.</li>
+<li><strong>One workflow for every agent.</strong> The team&rsquo;s process doesn&rsquo;t depend on which tool each developer prefers.</li>
+<li><strong>Insight without status reports.</strong> Goal progress, delivery targets with automatic completion estimates, flow metrics and compliance keep the whole team, and the people above it, informed without meetings.</li>
+</ol>
+<p>None of these ideas is new on its own. Kanban, definition of done, continuous integration and targeted review have been around for a long time. What&rsquo;s new is that agents will follow them every time when the workflow enforces them, and that frees the people on the team to spend their time on the two things only they can do well.</p>
+<p>If you want to see it run, drop a <code>.stride.md</code> in your project, get an API token for your agent, and point it at a board. Stride is free for individuals and small teams, and free to self-host. You can <a href="https://StrideLikeABoss.com">get started here</a>.</p>
+
+            
+             
+            
+
+
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/agile" title="agile">
+                        agile
+                    </a>
+               
+            
+               
+                    <a href="/tags/ai" title="ai">
+                        ai
+                    </a>
+               
+            
+               
+                    <a href="/tags/continuous-delivery" title="continuous delivery">
+                        continuous delivery
+                    </a>
+               
+            
+               
+                    <a href="/tags/elixir" title="elixir">
+                        elixir
+                    </a>
+               
+            
+               
+                    <a href="/tags/fly.io" title="fly.io">
+                        fly.io
+                    </a>
+               
+            
+               
+                    <a href="/tags/liveview" title="liveview">
+                        liveview
+                    </a>
+               
+            
+               
+                    <a href="/tags/phoenix" title="phoenix">
+                        phoenix
+                    </a>
+               
+            
+               
+                    <a href="/tags/pipeline" title="pipeline">
+                        pipeline
+                    </a>
+               
+            
+               
+                    <a href="/tags/software-development" title="software development">
+                        software development
+                    </a>
+               
+            
+               
+                    <a href="/tags/stride" title="stride">
+                        stride
+                    </a>
+               
+            
+               
+                    <a href="/tags/tdd" title="tdd">
+                        tdd
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <hr>
+        <h5>ABOUT ME</h5>
+
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/CheezyOrange.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>Software Developer, Continuous Delivery and AI Coach</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:cheezy@letstango.ca">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/cheezy">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr>
+        <h5>QUICK LINKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://continuousdeliverypodcast.buzzsprout.com">The CD Podcast</a></li>
+            
+            <li><a target="_blank" href="https://elixir-lang.org">Elixir Programming Language</a></li>
+            
+            <li><a target="_blank" href="https://tidewave.ai">Tidewave</a></li>
+            
+            <li><a target="_blank" href="https://claude.com/product/claude-code">Claude Code</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>LAST POSTS</h5>
+        <ul>
+        
+            <li><a href="/post/why-the-stride-workflow-works/">Why the Stride Workflow works so well</a></li>
+        
+            <li><a href="/post/monorepo-for-agents/">Why Your Agent Needs a Monorepo</a></li>
+        
+            <li><a href="/post/scaling-the-new-team/">Scaling the New Team</a></li>
+        
+            <li><a href="/post/audit-log-streaming/">Send Your Audit Log to Your Security Tools</a></li>
+        
+            <li><a href="/post/attachments/">Attach the Screenshot, Not a Description of It</a></li>
+        
+        </ul>
+    </section>
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="mailto:cheezy@letstango.ca">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/cheezy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jeffmorgan5/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Cheezy World" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Cheezy World 2026
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow" title="' + t + '">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
