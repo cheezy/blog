@@ -31,7 +31,7 @@ The interesting thing about AI-driven delivery is that it pulls these four jobs 
 
 ## Why a well-tuned AI workflow doesn't need the human review
 
-When I say "tuned well," I mean something specific. I mean a workflow where the standards a reviewer used to enforce by hand have been moved down into the loop itself: linters, type checkers, test suites, security skills, and architectural conventions encoded as hooks and subagents that run on every change. I have written before about how [mechanical gating beats prose](/post/mechanical-gating-works) - the same principle applies here. A human reviewer reminding you to add a test is an aspiration. A hook that refuses to complete the work until the test exists is a guarantee.
+When I say "tuned well," I mean something specific. I mean a workflow where the standards a reviewer used to enforce by hand have been moved down into the loop itself: linters, type checkers, test suites, security skills, and architectural conventions encoded as hooks and subagents that run on every change. I have written before about how [mechanical gating beats prose](/post/mechanical-gating-works/) - the same principle applies here. A human reviewer reminding you to add a test is an aspiration. A hook that refuses to complete the work until the test exists is a guarantee.
 
 Walk back through the four jobs with that in mind.
 
@@ -58,7 +58,7 @@ The mistake is to treat all of these the same way the old world did - by routing
 
 ## The traditional approach vs. what Stride does
 
-This is where I want to contrast the old container with what I have built into [Stride](https://stridelikeaboss.com).
+This is where I want to contrast the old container with what I have built into [Stride](https://www.stridelikeaboss.com).
 
 In the traditional model, the pull request is the unit of review, and review is binary and ambient. Every change becomes a PR. Every PR sits in a queue waiting for human attention. The reviewer's job is undifferentiated - they look at the trivial copy change and the auth refactor with the same tool, the same ceremony, and roughly the same friction. The result is a system where the low-risk work is over-reviewed and slowed down, while the high-risk work gets the same skim as everything else because the reviewer is drowning in volume. The gate is applied everywhere, which means it is applied carefully nowhere.
 

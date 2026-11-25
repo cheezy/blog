@@ -6,7 +6,7 @@ description: "Split frontend and backend repositories make AI agents build featu
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 
-In [Scaling the New Team](/post/scaling-the-new-team) I listed five things that have to be in place for a small AI-driven team to deliver. One of them was that **the agent can see everything**: all the code is in source control the agent can read, and I prefer a monorepo or, if that isn't possible, a meta-repo. That's one line in that post, but it trips up more organizations than any of the other four. So this post is about that one line.
+In [Scaling the New Team](/post/scaling-the-new-team/) I listed five things that have to be in place for a small AI-driven team to deliver. One of them was that **the agent can see everything**: all the code is in source control the agent can read, and I prefer a monorepo or, if that isn't possible, a meta-repo. That's one line in that post, but it trips up more organizations than any of the other four. So this post is about that one line.
 
 The short version: if your application is split across a frontend repository and a backend repositories, with frontend developers working in one and backend developers working in the other, your agents will build every feature in pieces. Each piece is built by an agent that can only see half of the change. That's an antipattern, and the fix is to restructure the code, and the team, so that one agent can see and change every layer at once.
 
@@ -57,7 +57,7 @@ The things that were hard become ordinary:
 
 Moving the code into one repository isn't enough if the team is still organized as frontend developers and backend developers. If the work is still split into a frontend ticket and a backend ticket, you'll get the same pieces, just in one repository.
 
-The team has to change with the code. In [The New Team](/post/the-new-team) the engineers aren't frontend or backend engineers. Each one owns a feature end to end, and their agent does the work in every layer. The engineer's job is to judge what the agent built across all of those layers, not to build one of them. A strong frontend developer and a strong backend developer don't lose their depth in this structure. They review each other's work and bring that depth to every feature, instead of to half of each one.
+The team has to change with the code. In [The New Team](/post/the-new-team/) the engineers aren't frontend or backend engineers. Each one owns a feature end to end, and their agent does the work in every layer. The engineer's job is to judge what the agent built across all of those layers, not to build one of them. A strong frontend developer and a strong backend developer don't lose their depth in this structure. They review each other's work and bring that depth to every feature, instead of to half of each one.
 
 ## How to get there
 

@@ -34,4 +34,4 @@ But for those of you who can't wait, here's a picture of an example board with c
 
 ![Image of board with columns](/img/columns.png)
 
-[Continue on to part eight](/post/ai-kanban-part8)
+[Continue on to part eight](/post/ai-kanban-part8/)

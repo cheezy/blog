@@ -8,13 +8,13 @@ tags: ["AI", "Continuous Delivery"]
 
 This post is a continuation of the implementation of the Learning Management System application demonstrating my concept for the new team structure and process in the age of AI-driven development. 
 
-In the first post of the implementation series, we [created a requirements document](/post/lms1/) with the whole team and Claude Code. In the second post, the whole team, using Claude Code, [created a backlog of tasks from that requirements document](/post/lms2/) and uploaded it to [Stride](https://stridelikeaboss.com). The entire process and team structure is outlined in the post titled "[The New Team](/post/the-new-team/)." If you haven't read the initial post, I recommend you do so before reading this one and follow along with the implementation via the links at the bottom of that post.
+In the first post of the implementation series, we [created a requirements document](/post/lms1/) with the whole team and Claude Code. In the second post, the whole team, using Claude Code, [created a backlog of tasks from that requirements document](/post/lms2/) and uploaded it to [Stride](https://www.stridelikeaboss.com). The entire process and team structure is outlined in the post titled "[The New Team](/post/the-new-team/)." If you haven't read the initial post, I recommend you do so before reading this one and follow along with the implementation via the links at the bottom of that post.
 
 ### Implementing the Backlog
 
 This step in the process is conducted by the one or two developers that are the developers for the product. The role of the developer is to simply monitor their Agent and only step in if the Agent needs to ask for permission to do something, or if the Agent needs clarification.
 
-Following our process, the developer does not type prompts into the Agent in order to implement the Task from the backlog. Due to the way we built our backlog, each Task contains all of the details necessary to implement the Task. The developer is simply asking their Agent to claim the next Task from [Stride](https://stridelikeaboss.com).
+Following our process, the developer does not type prompts into the Agent in order to implement the Task from the backlog. Due to the way we built our backlog, each Task contains all of the details necessary to implement the Task. The developer is simply asking their Agent to claim the next Task from [Stride](https://www.stridelikeaboss.com).
 
 ### Looking at the Details
 

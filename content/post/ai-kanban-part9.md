@@ -85,10 +85,10 @@ The link to add a new task was originally placed at the bottom of the column. If
 
 ## And I have a name
 
-My marketing manager (my wife) has decided that the application shall be named [Stride](https://StrideLikeABoss.com). I asked Tidewave to update the home page to use the new application name. Once that was finished I asked Claude to present me with a list of possible logos. We have selected one but you'll have to wait to see it. Stay tuned!
+My marketing manager (my wife) has decided that the application shall be named [Stride](https://www.stridelikeaboss.com). I asked Tidewave to update the home page to use the new application name. Once that was finished I asked Claude to present me with a list of possible logos. We have selected one but you'll have to wait to see it. Stay tuned!
 
 ## What's next?
 
 With these small tweaks of the UI out of the way I think we are ready to complete the final two phases. I have also already dreamed up other features but I want to release the MVP prior to adding them.
 
-[Continue on to part ten](/post/ai-kanban-part10)
+[Continue on to part ten](/post/ai-kanban-part10/)

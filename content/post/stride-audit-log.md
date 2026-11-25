@@ -6,7 +6,7 @@ description: "Stride keeps a permanent, append-only audit log of security events
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-When something unexpected happens on a [Stride](https://StrideLikeABoss.com) instance, such as a run of failed sign-ins, an API token nobody remembers creating, or someone trying to reach a page they shouldn't, the first question is always the same: *what happened, and when?* Until now, Stride noted these events in its server logs, which come and go and which administrators can't search from Stride. Now it keeps them.
+When something unexpected happens on a [Stride](https://www.stridelikeaboss.com) instance, such as a run of failed sign-ins, an API token nobody remembers creating, or someone trying to reach a page they shouldn't, the first question is always the same: *what happened, and when?* Until now, Stride noted these events in its server logs, which come and go and which administrators can't search from Stride. Now it keeps them.
 
 Stride has a **permanent, append-only audit log** of important security events. Entries are only ever added. Once an event is recorded it can't be edited, and recent entries can't be deleted. Site administrators can search the log, filter it and export it.
 

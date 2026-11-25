@@ -42,4 +42,4 @@ Finally, I also asked TideWave to update the language toggle to make it a dropdo
 
 ![Top level links](/img/root_links.png)
 
-[Continue on to part fifteen](/post/ai-kanban-part15)
+[Continue on to part fifteen](/post/ai-kanban-part15/)

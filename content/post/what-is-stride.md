@@ -6,7 +6,7 @@ description: "Stride is a smart Kanban board where teams and AI agents build sof
 tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
-At its most basic level, [Stride](https://stridelikeaboss.com) is a _smart_ kanban board where teams and AI agents can collaborate to build software. There are several tools available now that provide this basic capability, but Stride differentiates itself in several important and meaningful ways. This post will cover those differentiators while walking you through a Stride AI Optimized board explaining what the team and AI agents do at each step.
+At its most basic level, [Stride](https://www.stridelikeaboss.com) is a _smart_ kanban board where teams and AI agents can collaborate to build software. There are several tools available now that provide this basic capability, but Stride differentiates itself in several important and meaningful ways. This post will cover those differentiators while walking you through a Stride AI Optimized board explaining what the team and AI agents do at each step.
 
 ![Stride AI Optimized Board](/img/stride-board.png)
 

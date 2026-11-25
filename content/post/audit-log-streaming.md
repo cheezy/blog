@@ -10,7 +10,7 @@ tags: ["AI", "Continuous Delivery", "Stride"]
 
 Your security team doesn't want to log in to every tool your company uses to see what happened in it. They want every tool's security events in one place: Splunk, Datadog or the system your security operations centre already watches. There they can search them, alert on them and keep them as long as your policies say.
 
-Until now, getting [Stride](https://StrideLikeABoss.com)'s events there meant exporting the [Organization audit log](/post/organizations/) by hand. Today Stride does it for you. **Audit log streaming** sends your Organization's audit log to Splunk, Datadog or any HTTPS endpoint, as it happens. **Signed exports** let an auditor check that an exported file really came from Stride and hasn't been changed since.
+Until now, getting [Stride](https://www.stridelikeaboss.com)'s events there meant exporting the [Organization audit log](/post/organizations/) by hand. Today Stride does it for you. **Audit log streaming** sends your Organization's audit log to Splunk, Datadog or any HTTPS endpoint, as it happens. **Signed exports** let an auditor check that an exported file really came from Stride and hasn't been changed since.
 
 ## Streaming, from the Organization console
 
@@ -70,7 +70,7 @@ If your tool refuses the token or API key, Stride shows it as **Failing** with t
 
 ### Gaps
 
-Some events can't be delivered at all. Your Organization's [audit retention](/post/organizations) may delete events before a destination that was down has received them. Or a Datadog destination may have been failing for so long that its events became too old for Datadog to accept. Stride records each run of events like this as a **gap**: how many events, why, and when they happened.
+Some events can't be delivered at all. Your Organization's [audit retention](/post/organizations/) may delete events before a destination that was down has received them. Or a Datadog destination may have been failing for so long that its events became too old for Datadog to accept. Stride records each run of events like this as a **gap**: how many events, why, and when they happened.
 
 ![The Gaps card on the Datadog destination: 312 events lost, too old for Datadog, from 2026-11-11 14:23:39 to 2026-11-12 08:50:19 UTC, with a Dismiss button](/img/audit-streaming-gap.png)
 

@@ -6,7 +6,7 @@ description: "Labels, search and filters, a My Work page, bulk actions and keybo
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-A [Stride](https://StrideLikeABoss.com) board with a dozen cards is easy to read at a glance. A board with a hundred is not. Until now, finding something meant scanning every column by eye. There was no way to say "these are all the Android bugs", and no single place to see everything assigned to you. Tidying up after a planning session meant dragging cards one at a time.
+A [Stride](https://www.stridelikeaboss.com) board with a dozen cards is easy to read at a glance. A board with a hundred is not. Until now, finding something meant scanning every column by eye. There was no way to say "these are all the Android bugs", and no single place to see everything assigned to you. Tidying up after a planning session meant dragging cards one at a time.
 
 This release adds six things to help with that:
 

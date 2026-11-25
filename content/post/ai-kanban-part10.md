@@ -34,4 +34,4 @@ After the last fix I tested the remainder of the drag and drop functionality and
 
 I had to think about how I wanted to to behave. The system is designed so it will not allow you to exceed a WIP limit but I still wanted it to provide some sort of indicator that a violation of the WIP limit was attempted. I asked Claude to change the highlighting strategy to only highlight the column for 3 seconds when there was an attempt to exceed the WIP limit. Claude did this and the highlighting was much more appropriate.
 
-[Continue on to part eleven](/post/ai-kanban-part11)
+[Continue on to part eleven](/post/ai-kanban-part11/)

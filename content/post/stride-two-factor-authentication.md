@@ -6,7 +6,7 @@ description: "Stride now supports two-factor authentication with an authenticato
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-Until now, your [Stride](https://StrideLikeABoss.com) account was exactly as safe as your password. If your password leaked in someone else's data breach, if you reused it somewhere, or if you typed it into a convincing fake sign-in page, whoever had it could sign in as you. They could see your boards, change your tasks and create API tokens.
+Until now, your [Stride](https://www.stridelikeaboss.com) account was exactly as safe as your password. If your password leaked in someone else's data breach, if you reused it somewhere, or if you typed it into a convincing fake sign-in page, whoever had it could sign in as you. They could see your boards, change your tasks and create API tokens.
 
 Stride now supports **two-factor authentication**. Once you turn it on, signing in takes two things: your password, and a six-digit code from an authenticator app on your phone. Someone who has only your password gets no further than the second step.
 

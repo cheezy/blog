@@ -6,7 +6,7 @@ description: "The Stride exploratory-testing plugin gets clearer bug severities,
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-The [Stride](https://StrideLikeABoss.com) exploratory-testing plugin teaches a coding agent to test software the way a good human tester does: give it a mission, let it probe the running app, judge what it sees, and come back with bugs, questions and an honest account of what it didn't get to. The latest version is the result of a close look at how the plugin actually behaved in real use. This post covers what changed, what that means for you, and how to use the plugin inside the Stride workflow or on its own.
+The [Stride](https://www.stridelikeaboss.com) exploratory-testing plugin teaches a coding agent to test software the way a good human tester does: give it a mission, let it probe the running app, judge what it sees, and come back with bugs, questions and an honest account of what it didn't get to. The latest version is the result of a close look at how the plugin actually behaved in real use. This post covers what changed, what that means for you, and how to use the plugin inside the Stride workflow or on its own.
 
 ## What changed
 

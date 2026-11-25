@@ -12,4 +12,4 @@ In Part 3 of this series we are finally ready to allow Claude Code to wite some 
 
 {{< youtube iIQ1tR9Ppto >}}
 
-[Continue on to part four](/post/ai-kanban-part4)
+[Continue on to part four](/post/ai-kanban-part4/)

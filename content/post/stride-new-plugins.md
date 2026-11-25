@@ -6,7 +6,7 @@ description: "Stride brings its full workflow to GitHub Copilot and Google Gemin
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-Prior to today, [Stride](https://StrideLikeABoss.com) had excellent support for Claude Code via six Skills and four SubAgents. All other agents were only provided with Skills without the enforcement and additional capabilities added by the SubAgents.
+Prior to today, [Stride](https://www.stridelikeaboss.com) had excellent support for Claude Code via six Skills and four SubAgents. All other agents were only provided with Skills without the enforcement and additional capabilities added by the SubAgents.
 
 Today I shipped three updates that fundamentally change how AI agents interact with Stride. Two new platform extensions bring Stride's full workflow and support to [GitHub Copilot](https://github.com/cheezy/stride-copilot) and [Google Gemini CLI](https://github.com/cheezy/stride-gemini). And a new Claude Code hooks integration eliminates the most persistent friction point that still existed in the Claude Code agent workflow: permission prompts.
 

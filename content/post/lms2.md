@@ -12,7 +12,7 @@ In this post, we continue to show how the process we outlined in the post [The N
 
 In the [previous post](/post/lms1/), we created a set of requirements for the Learning Management System. In this post, we will turn that set of requirements into a backlog of tasks that we will use to build the system.
 
-In this simulation, the team will use Claude Code with a set of [Skills](https://code.claude.com/docs/en/skills) provided by [Stride](https://stridelikeaboss.com) to build out the backlog from the document created earlier. This Skill will inform Claude of what details we want to capture in each task. This will be used by agents to build the system.
+In this simulation, the team will use Claude Code with a set of [Skills](https://code.claude.com/docs/en/skills) provided by [Stride](https://www.stridelikeaboss.com) to build out the backlog from the document created earlier. This Skill will inform Claude of what details we want to capture in each task. This will be used by agents to build the system.
 
 ### Why Tasks?
 

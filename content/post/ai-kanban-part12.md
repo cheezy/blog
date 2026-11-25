@@ -58,4 +58,4 @@ If you add a new column to a board it always adds the column to the end of the b
 
 ![Drag and drop columns](/img/drag_and_drop_columns.png)
 
-[Continue on to part thirteen](/post/ai-kanban-part13)
+[Continue on to part thirteen](/post/ai-kanban-part13/)

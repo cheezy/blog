@@ -102,7 +102,7 @@ There are a few MCP servers that I have configured. They are [hexdocs](https://h
 
 #### Project Specific Claude Code Configuration
 
-The majority of the Claude Code configuration is project specific. Since these can vary slightly from project to project, I will be reviewing the configuration I use while developing the [Stride](https://StrideLikeABoss.com) application. Let's start with the most generic and move toward the more specific.
+The majority of the Claude Code configuration is project specific. Since these can vary slightly from project to project, I will be reviewing the configuration I use while developing the [Stride](https://www.stridelikeaboss.com) application. Let's start with the most generic and move toward the more specific.
 
 ##### .claude-code/settings.json
 

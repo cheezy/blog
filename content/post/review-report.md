@@ -6,7 +6,7 @@ description: "How Stride saves the AI reviewer's findings on the task, so people
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-When AI agents review code, their findings shouldn't vanish into the ether. That was the driving insight behind the `review_report` feature we shipped in [Stride](https://stridelikeaboss.com) v1.25 and the [Stride plugin](https://github.com/cheezy/stride) v1.4 this week. Here's the story of what we built, why it matters, and how all the pieces fit together.
+When AI agents review code, their findings shouldn't vanish into the ether. That was the driving insight behind the `review_report` feature we shipped in [Stride](https://www.stridelikeaboss.com) v1.25 and the [Stride plugin](https://github.com/cheezy/stride) v1.4 this week. Here's the story of what we built, why it matters, and how all the pieces fit together.
 
 ## The Problem
 

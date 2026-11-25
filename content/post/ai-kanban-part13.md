@@ -50,4 +50,4 @@ After I completed the video there were a couple of things I decided to change.
 
 4. When viewing a task one might decide they want to make a change. I asked TideWave to add an edit link on the top of the read only view to load the edit view for that task. Of course this link is not visible for read only users.
 
-[Continue on to part fourteen](/post/ai-kanban-part14)
+[Continue on to part fourteen](/post/ai-kanban-part14/)

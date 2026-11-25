@@ -18,7 +18,7 @@ The workflow that emerged from this is what is embodied in the Stride Workflow.
 
 ### See it in action
 
-This video picks up where the [Getting Started with Stride](/post/getting_started_with_stride) video left off. It shows the full workflow in action. It is kind of boring and I sped it up a lot so you can see it grabbing tasks and moving them across the board. Here are the _hooks_ from my `.stride.md` file so you can see what the Agent is doing as it works on the Tasks and moves them across the board:
+This video picks up where the [Getting Started with Stride](/post/getting_started_with_stride/) video left off. It shows the full workflow in action. It is kind of boring and I sped it up a lot so you can see it grabbing tasks and moving them across the board. Here are the _hooks_ from my `.stride.md` file so you can see what the Agent is doing as it works on the Tasks and moves them across the board:
 
 #### before_doing
 

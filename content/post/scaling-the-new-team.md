@@ -6,7 +6,7 @@ description: "How to scale a small AI-driven team of one SME and two engineers: 
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 
-In February of 2026 I wrote about [The New Team](/post/the-new-team): a very small team built for AI-driven development, with one person who knows what to build and one or two developers whose agents build it. At the time, the post was based on the successes of a few experiments at two different clients.
+In February of 2026 I wrote about [The New Team](/post/the-new-team/): a very small team built for AI-driven development, with one person who knows what to build and one or two developers whose agents build it. At the time, the post was based on the successes of a few experiments at two different clients.
 
 Since then I've used this structure on many teams. It works. The small team consistently delivers far more than the traditional Agile team it replaces, and it does so with less coordination, not more. If your delivery org is currently a single team then this is the right shape for you. So the question I get asked now isn't "does it work?" It's "what happens when we need more than one of these teams?"
 
@@ -95,7 +95,7 @@ The structure only delivers if five things are in place. Each one removes a kind
 
 1. **Vertical slices, even across political boundaries.** Each team owns a feature end to end, through every layer, even when the layers belong to different departments. That's the hard part, and it's political, not technical. In some cases this will not be possible, but know that creating dependencies between teams creates inaccuracies, waiting, and slows down delivery.
 2. **The agent can see everything.** All the code is in source control the agents can read, across every team and system. An agent can only build what it can see. I prefer a mono-repo or if that is not possible a meta-repo.
-3. **True continuous integration.** Most code [merges automatically](/post/code-reviews) once it passes the gates. When agents produce changes all day, a person merging each one is a queue.
+3. **True continuous integration.** Most code [merges automatically](/post/code-reviews/) once it passes the gates. When agents produce changes all day, a person merging each one is a queue.
 4. **Rapid design iterations.** Development starts before the UI/UX design is finished, and the design and the code evolve together. A working version is the fastest way to find out whether a design is right.
 5. **Streamlined production deployments.** Releasing to production is routine, not an event. If every release needs a change board and a weekend, all the speed upstream piles up at the end.
 

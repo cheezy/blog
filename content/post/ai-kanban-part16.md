@@ -66,7 +66,7 @@ Do not worry about this being the end of the series. See the What's Next section
 
 ### Version 1.0
 
-We are live. We named the application Stride and have the URL <https://StrideLikeABoss.com>. Please check out the application and let me know if you find any issues. There wil be a lot of updates to the application over the coming weeks.
+We are live. We named the application Stride and have the URL [https://StrideLikeABoss.com](https://www.stridelikeaboss.com). Please check out the application and let me know if you find any issues. There wil be a lot of updates to the application over the coming weeks.
 
 ## What's next?
 

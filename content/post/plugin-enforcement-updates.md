@@ -6,7 +6,7 @@ description: "An AI agent skipped nearly every mandatory workflow step. The root
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-During a recent session on a friends computer where an AI agent implemented 17 [Stride](https://StrideLikeABoss.com) tasks back-to-back,I discovered something uncomfortable: the agent skipped nearly every mandatory workflow step. The `task-explorer` was used once, then never again. The `task-reviewer` was never invoked. The `hook-diagnostician` was never called when hooks failed. The `stride-subagent-workflow` skill — labeled MANDATORY — was ignored entirely. This was shocking to me as I have not see this on my own computer. I realized that I had enough contained in my configuration to force the agent to do what I wanted but not everybody had that config.
+During a recent session on a friends computer where an AI agent implemented 17 [Stride](https://www.stridelikeaboss.com) tasks back-to-back,I discovered something uncomfortable: the agent skipped nearly every mandatory workflow step. The `task-explorer` was used once, then never again. The `task-reviewer` was never invoked. The `hook-diagnostician` was never called when hooks failed. The `stride-subagent-workflow` skill — labeled MANDATORY — was ignored entirely. This was shocking to me as I have not see this on my own computer. I realized that I had enough contained in my configuration to force the agent to do what I wanted but not everybody had that config.
 
 The agent wasn't malfunctioning. It was optimizing. Given competing instructions to "follow every step" and "work continuously without stopping," it resolved the tension by choosing speed over process. And every skill it skipped was one the system allowed it to skip.
 

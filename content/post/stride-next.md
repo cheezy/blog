@@ -584,7 +584,7 @@ I don't have all the answers yet. But I'm building a system flexible enough to e
 
 ## Want to Try It?
 
-Stride is live and is a usable kanban application. You can visit it at [stride.cheezy.dev](https://stridelikeaboss.com). Changes will show up every day or so. Be sure to check out the changelog which you can assess via the About page.
+Stride is live and is a usable kanban application. You can visit it at [stride.cheezy.dev](https://www.stridelikeaboss.com). Changes will show up every day or so. Be sure to check out the changelog which you can assess via the About page.
 
 If you're interested in AI-human collaboration for software development, stay tuned. This is going to be an interesting experiment.
 

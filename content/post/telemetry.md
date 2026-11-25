@@ -6,7 +6,7 @@ description: "Stride records private telemetry for tasks, reviews, agents and th
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-Your [Stride](https://StrideLikeABoss.com) board shows you where every card is right now. What it couldn't easily tell you was how the work has been *going*:
+Your [Stride](https://www.stridelikeaboss.com) board shows you where every card is right now. What it couldn't easily tell you was how the work has been *going*:
 - How many tasks did the agents finish this week?
 - How long does a task take from the moment an agent claims it to the moment it's done?
 - How often does work pass review the first time?

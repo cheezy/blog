@@ -64,9 +64,9 @@ precedes it.  ...  The logic is straightforward: if an AI generates code from a 
 
 I started seeing this last September. With my client, we went through several iterations of refining our specifications. We realized then that it was not possible to have our agent write accurate and complete code from a simple prompt. We tried to use traditional user stories, but they did not deliver the level of detail needed for the agent to understand the requirements.
 
-I spent the second half of December experimenting with different datasets and different approaches to deliver that data to an agent in order to drive accuracy. This was the genesis of [Stride](https://stridelikeaboss.com). I discovered that the agent needed a lot of context to be accurate, and that context needed to be delivered just-in-time. 
+I spent the second half of December experimenting with different datasets and different approaches to deliver that data to an agent in order to drive accuracy. This was the genesis of [Stride](https://www.stridelikeaboss.com). I discovered that the agent needed a lot of context to be accurate, and that context needed to be delivered just-in-time. 
 
-The outcome of this effort was the [Stride Task](https://cheezyworld.ca/post/what-is-a-task/). **This is my specification**. It contains all the context that the agent needs to be accurate. When these tasks are uploaded to [Stride](https://stridelikeaboss.com) via one of the [Skills](https://code.claude.com/docs/en/skills) that are a part of the [Stride Claude Code Plugin](https://github.com/cheezy/stride/tree/main), they are placed into a _Backlog_ column (my upstream). **This is where my review takes place**. The tasks are not available for agents to begin working until they are moved to the _Ready_ column, so this provides the developer and/or product manager with the opportunity to review and refine the task before it is worked on.
+The outcome of this effort was the [Stride Task](https://cheezyworld.ca/post/what-is-a-task/). **This is my specification**. It contains all the context that the agent needs to be accurate. When these tasks are uploaded to [Stride](https://www.stridelikeaboss.com) via one of the [Skills](https://code.claude.com/docs/en/skills) that are a part of the [Stride Claude Code Plugin](https://github.com/cheezy/stride/tree/main), they are placed into a _Backlog_ column (my upstream). **This is where my review takes place**. The tasks are not available for agents to begin working until they are moved to the _Ready_ column, so this provides the developer and/or product manager with the opportunity to review and refine the task before it is worked on.
 
 #### Into risk management
 
@@ -111,4 +111,4 @@ I have used [Claude](https://code.claude.com/docs/en/overview) to write code nea
 
 Stay tuned for future posts where I discuss the other seven categories presented in this article.
 
-[Continue on to part two](/post/tw-retreat-response2)
+[Continue on to part two](/post/tw-retreat-response2/)

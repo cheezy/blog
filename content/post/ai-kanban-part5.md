@@ -125,4 +125,4 @@ This video is short and sweet. We ask Claude to start on phase 3 and claude crea
 
 {{< youtube DSSFUCyfBrU >}}
 
-[Continue on to part six](/post/ai-kanban-part6)
+[Continue on to part six](/post/ai-kanban-part6/)

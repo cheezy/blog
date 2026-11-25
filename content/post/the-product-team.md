@@ -6,7 +6,7 @@ description: "How AI changes a larger product organization: fewer and smaller te
 tags: ["AI", "Continuous Delivery"]
 ---
 
-In [The New Team](/post/the-new-team) I described what a single AI-driven product team looks like: one Product Owner and one or two Developers, working in tight feedback loops that produce shippable software in hours rather than weeks. That post was about the atomic unit. This post is about what happens when you zoom out.
+In [The New Team](/post/the-new-team/) I described what a single AI-driven product team looks like: one Product Owner and one or two Developers, working in tight feedback loops that produce shippable software in hours rather than weeks. That post was about the atomic unit. This post is about what happens when you zoom out.
 
 Most product organizations were not designed around a single team. They were designed around the assumption that delivering software is slow, expensive, and risky. Every layer of the org chart - the directors, the program managers, the design ops leads, the release coordinators - exists to manage that slowness and risk. When the underlying work becomes fast and cheap, those layers do not automatically become useful. Many of them become friction.
 

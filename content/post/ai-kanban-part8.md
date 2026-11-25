@@ -26,4 +26,4 @@ Here's the video for building the UI to suppor the creation of tasks as well as 
 
 We have completed the first five phases of our plan. Phase six is focused on adding drag-and-drop functionality to the board to allow us to move tasks between columns. After we complete this next phase we will be doing a deep dive into the UI that has been created so far. Stay tuned!
 
-[Continue on to part nine](/post/ai-kanban-part9)
+[Continue on to part nine](/post/ai-kanban-part9/)

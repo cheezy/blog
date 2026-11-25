@@ -86,7 +86,7 @@ In order to demonstrate how this will work in practice, I will be building a new
 
 | Post | Duration | Involved Roles |
 |:--------:|:--------:|:-----------:|
-| [Creating the Requirements](/post/lms1) | ~ 30 Min | PO and Devs |
-| [Requirements to Backlog](/post/lms2) | < 15 Min | PO and Devs |
-| [Initial Development](/post/lms3) | < 4 Hours | Devs |
+| [Creating the Requirements](/post/lms1/) | ~ 30 Min | PO and Devs |
+| [Requirements to Backlog](/post/lms2/) | < 15 Min | PO and Devs |
+| [Initial Development](/post/lms3/) | < 4 Hours | Devs |
 

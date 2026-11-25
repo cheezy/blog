@@ -12,9 +12,9 @@ Stride 3.0.0 brings all of that, as a new **Organization** plan. Everything else
 
 This post covers the two plans and what changes for your boards. Three companion posts go deeper:
 
-- **[Workspaces](/post/workspaces)**: one workspace per team or product, each with its own people and boards.
-- **[Single sign-on](/post/single-sign-on)**: sign in through your identity provider, with OpenID Connect or SAML, and keep your people in step with SCIM.
-- **[Organizations](/post/organizations)**: the console org-admins use to run the Organization, its audit log and its security policy.
+- **[Workspaces](/post/workspaces/)**: one workspace per team or product, each with its own people and boards.
+- **[Single sign-on](/post/single-sign-on/)**: sign in through your identity provider, with OpenID Connect or SAML, and keep your people in step with SCIM.
+- **[Organizations](/post/organizations/)**: the console org-admins use to run the Organization, its audit log and its security policy.
 
 Stride started as a board for one developer and a handful of AI agents. It has grown into the place where whole teams plan work, hand it to agents and review what comes back. Teams have been asking for the things teams need: one place to manage their people, a way to keep each team's boards together, sign-in through the company's identity provider, and a record of who changed what.
 
@@ -22,9 +22,9 @@ Stride 3.0.0 brings all of that, as a new **Organization** plan. Everything else
 
 This post covers the two plans and what changes for your boards. Three companion posts go deeper:
 
-- **[Workspaces](/post/workspaces)**: one workspace per team or product, each with its own people and boards.
-- **[Single sign-on](/post/single-sign-on)**: sign in through your identity provider, with OpenID Connect or SAML, and keep your people in step with SCIM.
-- **[Organizations](/post/organizations)**: the console org-admins use to run the Organization, its audit log and its security policy.
+- **[Workspaces](/post/workspaces/)**: one workspace per team or product, each with its own people and boards.
+- **[Single sign-on](/post/single-sign-on/)**: sign in through your identity provider, with OpenID Connect or SAML, and keep your people in step with SCIM.
+- **[Organizations](/post/organizations/)**: the console org-admins use to run the Organization, its audit log and its security policy.
 
 ## Two plans
 
@@ -87,7 +87,7 @@ Nothing is ever deleted when a feature is locked:
 
 A board is paid when it lives in one of an Organization's workspaces. It doesn't matter who's looking at it. An Organization member's own personal boards stay free.
 
-To make a board paid, an org-admin who owns it moves it into a workspace with **Move a board here**. Everyone on the board must already belong to the Organization, and the move can't be undone. The moment it lands, the 3-person limit lifts and every Organization feature switches on. The [Workspaces](/post/workspaces) post shows how.
+To make a board paid, an org-admin who owns it moves it into a workspace with **Move a board here**. Everyone on the board must already belong to the Organization, and the move can't be undone. The moment it lands, the 3-person limit lifts and every Organization feature switches on. The [Workspaces](/post/workspaces/) post shows how.
 
 ## Getting an Organization
 
@@ -109,4 +109,4 @@ Non-profits and open-source projects can ask us about a discount at the same add
 - **Built for teams.** Workspaces, single sign-on, SCIM, an audit log and a two-factor policy give larger teams the control they need.
 - **Simple pricing.** One price per user, set up with a person rather than a checkout.
 
-Read on in [Workspaces](/post/workspaces), [Single sign-on](/post/single-sign-on) and [Organizations](/post/organizations), or [talk to us](https://www.stridelikeaboss.com/pricing#contact) about your team.
+Read on in [Workspaces](/post/workspaces/), [Single sign-on](/post/single-sign-on/) and [Organizations](/post/organizations/), or [talk to us](https://www.stridelikeaboss.com/pricing#contact) about your team.

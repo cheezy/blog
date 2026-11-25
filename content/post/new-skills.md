@@ -6,7 +6,7 @@ description: "Agents kept making the same API mistakes because they worked from 
 tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
-When you build an API designed for AI agents, you quickly discover something humbling: agents make the same mistakes over and over. Not because they're incapable, but because they're working from memory instead of reference material. I spent a few days experimenting and ultimately fixing this in [Stride](https://StrideLikeABoss.com), and the results surprised me.
+When you build an API designed for AI agents, you quickly discover something humbling: agents make the same mistakes over and over. Not because they're incapable, but because they're working from memory instead of reference material. I spent a few days experimenting and ultimately fixing this in [Stride](https://www.stridelikeaboss.com), and the results surprised me.
 
 ## The Problem
 

@@ -6,7 +6,7 @@ description: "Stride 3.1.0 lets you attach screenshots, logs and specs to tasks 
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
-*This post covers attachments, new in [Stride](https://StrideLikeABoss.com) 3.1.0. Attachments are part of the Organization plan.*
+*This post covers attachments, new in [Stride](https://www.stridelikeaboss.com) 3.1.0. Attachments are part of the Organization plan.*
 
 Some things are hard to describe in words. "The app crashes when the card has expired" could mean a dozen things. A screenshot of the crash, the device log and the spec it breaks leave no doubt. Until now those files lived somewhere else: a chat thread, a shared drive or someone's downloads folder. Whoever picked up the task had to go and find them.
 
@@ -162,4 +162,4 @@ If a free board already has files, they aren't deleted. They're kept, hidden, an
 - **Clear limits.** 25 MB a file, 20 files a task and 10 GB an Organization, and Stride tells you plainly when a file won't fit.
 - **Nothing gets lost.** Files stay with archived tasks, travel with workspace exports, and survive a move between plans.
 
-Attachments come with the Organization plan. The [Organizations](/post/organizations) post explains the plan and how to move a board into an Organization.
+Attachments come with the Organization plan. The [Organizations](/post/organizations/) post explains the plan and how to move a board into an Organization.
