@@ -2,7 +2,8 @@
 date: '2026-01-14T10:24:27-05:00'
 draft: false
 title: 'What is a task?'
-tags: ["AI", "Agile", "Continuous Delivery"]
+description: "What information does an AI agent need to build a feature well? How I arrived at the task structure Stride uses, with key files and testing strategy."
+tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
 In my pursuit of trying to get the most out of my AI Agents I have spent a lot of time exploring how one can deliver requirements in such a way that they can be understood by Humans and provide the details that will make the Agent implementation successful. Knowing that there is typically a pause between when the requirements is established / captured and when the Agent starts working on it, I wanted to make sure that much of the context and details the Agent had during the planning session was captured in a way that it can be use later during implementation.

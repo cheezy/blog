@@ -2,6 +2,7 @@
 date: '2026-03-01T12:15:00-05:00'
 draft: false
 title: 'Building the Learning Management System - First Coding Session'
+description: "Building a Learning Management System with the New Team process, step three: the first coding session, implementing the backlog from Stride."
 tags: ["AI", "Continuous Delivery"]
 ---
 

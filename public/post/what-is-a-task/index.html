@@ -5,40 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+    <title>What is a task? | Cheezy&#39;s Blog</title>
+    <meta name="description" content="What information does an AI agent need to build a feature well? How I arrived at the task structure Stride uses, with key files and testing strategy.">
+    <link rel="canonical" href="http://localhost:1313/post/what-is-a-task/">
+
     <meta property="og:site_name" content="Cheezy World">
     <meta property="og:type" content="article">
+    <meta property="og:title" content="What is a task?">
+    <meta property="og:description" content="What information does an AI agent need to build a feature well? How I arrived at the task structure Stride uses, with key files and testing strategy.">
+    <meta property="og:url" content="http://localhost:1313/post/what-is-a-task/">
+    <meta property="og:image" content="http://localhost:1313/img/social-card.png">
+    <meta property="article:published_time" content="2026-01-14T10:24:27-05:00">
+    <meta property="article:modified_time" content="2026-01-14T10:24:27-05:00">
+    <meta property="article:author" content="Jeff &#39;Cheezy&#39; Morgan">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Agile">
+    <meta property="article:tag" content="Continuous Delivery">
+    <meta property="article:tag" content="Stride">
 
-    
-    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
-    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What is a task?">
+    <meta name="twitter:description" content="What information does an AI agent need to build a feature well? How I arrived at the task structure Stride uses, with key files and testing strategy.">
+    <meta name="twitter:image" content="http://localhost:1313/img/social-card.png">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"http://localhost:1313/post/what-is-a-task/#post","@type":"BlogPosting","author":{"@id":"http://localhost:1313/#person"},"dateModified":"2026-01-14T10:24:27-05:00","datePublished":"2026-01-14T10:24:27-05:00","description":"What information does an AI agent need to build a feature well? How I arrived at the task structure Stride uses, with key files and testing strategy.","headline":"What is a task?","image":"http://localhost:1313/img/social-card.png","inLanguage":"en","isPartOf":{"@id":"http://localhost:1313/#website"},"keywords":["AI","Agile","Continuous Delivery","Stride"],"mainEntityOfPage":"http://localhost:1313/post/what-is-a-task/","publisher":{"@id":"http://localhost:1313/#person"},"url":"http://localhost:1313/post/what-is-a-task/"},{"@id":"http://localhost:1313/#website","@type":"WebSite","description":"Insights on AI-driven development, continuous delivery, and extreme programming from Jeff 'Cheezy' Morgan — 30+ years delivering software.","name":"Cheezy World","publisher":{"@id":"http://localhost:1313/#person"},"url":"http://localhost:1313/"},{"@id":"http://localhost:1313/#person","@type":"Person","image":"http://localhost:1313/img/CheezyOrange.jpg","jobTitle":"Software Developer, Continuous Delivery and AI Coach","name":"Jeff 'Cheezy' Morgan","sameAs":["https://www.linkedin.com/in/jeffmorgan5/","https://github.com/cheezy"],"url":"http://localhost:1313/about/"}]}</script>
 
-    
-    <meta name="title" content="What is a task?" />
-    <meta property="og:title" content="What is a task?" />
-    <meta property="twitter:title" content="What is a task?" />
-    
-
-    
-    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
-    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
-    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
-    
-
-    <meta property="og:url" content="http://localhost:1313/post/what-is-a-task/" />
-
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
 
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>What is a task? | Cheezy&#39;s Blog</title>
-
-    <link rel="canonical" href="/post/what-is-a-task/">
 
     
 
@@ -187,6 +180,9 @@
             col-xs-12
             post-container">
             <h1>What is a task?</h1>
+            
+            <p class="post-byline">By <a href="/about/" rel="author">Jeff &#39;Cheezy&#39; Morgan</a> on <time datetime="2026-01-14">Wednesday, January 14, 2026</time></p>
+            
 
             
                 <p>In my pursuit of trying to get the most out of my AI Agents I have spent a lot of time exploring how one can deliver requirements in such a way that they can be understood by Humans and provide the details that will make the Agent implementation successful. Knowing that there is typically a pause between when the requirements is established / captured and when the Agent starts working on it, I wanted to make sure that much of the context and details the Agent had during the planning session was captured in a way that it can be use later during implementation.</p>

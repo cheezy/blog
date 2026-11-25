@@ -2,6 +2,7 @@
 date: '2026-10-25T14:44:00-04:00'
 draft: false
 title: "One Place to Run Your Team's Stride"
+description: "Stride 3.0.0 adds Organizations: one console for your members, workspaces, security policy and audit log, run by your org-admins."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

@@ -2,7 +2,8 @@
 date: '2026-01-05T09:03:25-05:00'
 draft: false
 title: 'Getting Started with Stride'
-tags: ["AI", "Agile", "Continuous Delivery"]
+description: "Get started with Stride: create an AI Optimized board, add users, connect your AI agent, set up the API token and generate your first backlog."
+tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
 ## Stride - AI-Human Collaboration Platform

@@ -2,6 +2,7 @@
 date: '2026-05-12T10:43:42-04:00'
 draft: false
 title: 'The Security Review Plugin: My latest addition to the Stride plugin library'
+description: "A Claude Code security review plugin found 72 issues in Stride in about twelve minutes. What it is, why it works, what it costs and when to use it."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

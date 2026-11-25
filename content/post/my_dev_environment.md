@@ -2,6 +2,7 @@
 date: '2026-02-13T07:26:00-05:00'
 draft: false
 title: 'My AI Development Environment'
+description: "The AI development setup I use to produce high-quality, well-tested code: Windsurf, Tidewave, Claude Code, MCP servers and project configuration."
 tags: ["AI", "Agile", "Continuous Delivery", "elixir"]
 ---
 

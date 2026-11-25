@@ -2,6 +2,7 @@
 date: '2026-11-16T18:38:00-05:00'
 draft: false
 title: 'Scaling the New Team'
+description: "How to scale a small AI-driven team of one SME and two engineers: copy the team, and add a thin layer of Quality Lead, Developer Lead and Product Owner."
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 

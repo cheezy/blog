@@ -26,3 +26,10 @@ header.intro-header {
         padding: 40px 0 25px;
     }
 }
+
+/* Author and date under a post's title */
+.post-byline {
+    margin: 0 0 25px;
+    color: #666;
+    font-size: 16px;
+}

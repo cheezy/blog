@@ -2,7 +2,8 @@
 date: '2026-02-19T13:01:01-05:00'
 draft: false
 title: 'Stride Has New Skills'
-tags: ["AI", "Agile", "Continuous Delivery"]
+description: "Agents kept making the same API mistakes because they worked from memory. How better field references and versioned skills fixed it in Stride."
+tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
 When you build an API designed for AI agents, you quickly discover something humbling: agents make the same mistakes over and over. Not because they're incapable, but because they're working from memory instead of reference material. I spent a few days experimenting and ultimately fixing this in [Stride](https://StrideLikeABoss.com), and the results surprised me.

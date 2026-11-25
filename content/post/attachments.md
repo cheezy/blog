@@ -2,6 +2,7 @@
 date: '2026-11-09T06:04:00-04:00'
 draft: false
 title: "Attach the Screenshot, Not a Description of It"
+description: "Stride 3.1.0 lets you attach screenshots, logs and specs to tasks and comments, so people and agents have the evidence where the work happens."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

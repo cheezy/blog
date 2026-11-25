@@ -2,6 +2,7 @@
 date: '2026-10-05T19:25:00-04:00'
 draft: false
 title: 'The Stride Plugin Gets Leaner, Faster and Harder to Fool'
+description: "The Stride plugin for Claude Code gets leaner: smaller long sessions, reviews that settle in fewer rounds and agents that catch more of their own mistakes."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

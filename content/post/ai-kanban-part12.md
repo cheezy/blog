@@ -2,6 +2,7 @@
 date: '2025-11-12T15:22:47-05:00'
 draft: false
 title: 'Building a LiveView app using AI - Part 12'
+description: "Part 12 of building a LiveView Kanban app with AI: using Claude Code inside Tidewave to add users to boards and assign tasks to them."
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 

@@ -2,7 +2,8 @@
 date: '2026-01-06T08:05:52-05:00'
 draft: false
 title: 'The Stride Workflow'
-tags: ["AI", "Agile", "Continuous Delivery"]
+description: "How humans and AI agents collaborate in the Stride workflow: hooks, the needs-review flag, and how Stride decides which task an agent works on next."
+tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
 ## How do Humans collaborate with AI?

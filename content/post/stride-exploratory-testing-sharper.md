@@ -2,6 +2,7 @@
 date: '2026-10-06T06:22:00-04:00'
 draft: false
 title: 'Exploratory Testing Gets Sharper, Safer and Quicker'
+description: "The Stride exploratory-testing plugin gets clearer bug severities, more trustworthy findings, a stricter safety boundary and quicker sessions."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

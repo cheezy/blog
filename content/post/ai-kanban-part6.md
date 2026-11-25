@@ -2,6 +2,7 @@
 date: '2025-10-24T10:41:11-04:00'
 draft: false
 title: 'Building a LiveView app using AI - Part 6'
+description: "Part 6 of building a LiveView Kanban app with AI: a favicon, and the UI for creating, editing and viewing Kanban boards."
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 

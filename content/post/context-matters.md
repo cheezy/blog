@@ -2,6 +2,7 @@
 date: '2026-04-24T09:37:42-04:00'
 draft: false
 title: 'Context Matters'
+description: "Keep your agent focused on writing code by moving everything else into subagents, hooks and skills. A walk through each step of a task's lifecycle."
 tags: ["AI", "Continuous Delivery"]
 ---
 

@@ -2,6 +2,7 @@
 date: 2025-09-26T07:43:32-04:00
 draft: false
 title: "Hello world (again eh)!"
+description: "Cheezy World is back after more than 12 years. What to expect from this blog about software delivery, AI and Elixir."
 tags: ["AI", "Continuous Delivery", "Elixir"]
 ---
 

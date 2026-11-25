@@ -2,6 +2,7 @@
 date: '2026-10-25T14:17:00-04:00'
 draft: false
 title: "A Workspace for Every Team"
+description: "Stride 3.0.0 adds workspaces, so each team or product in an Organization has its own boards and its own people."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

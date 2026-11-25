@@ -2,6 +2,7 @@
 date: '2025-09-28T09:52:02-04:00'
 draft: false
 title: 'Building a LiveView app using AI - Part 1'
+description: "Part 1 of building a Phoenix LiveView Kanban app with AI: the tools, Claude Code, MCP servers, and a project set up for quality and security."
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 

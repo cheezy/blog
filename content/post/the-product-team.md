@@ -2,6 +2,7 @@
 date: '2026-05-31T10:37:00-04:00'
 draft: false
 title: 'The Product Team: How does AI change the structure of a larger product organization?'
+description: "How AI changes a larger product organization: fewer and smaller teams, specialists as platforms, lighter coordination and experiment-led leadership."
 tags: ["AI", "Continuous Delivery"]
 ---
 

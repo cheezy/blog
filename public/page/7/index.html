@@ -6,40 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
-    <meta property="og:site_name" content="Cheezy World">
-    <meta property="og:type" content="article">
-
-    
-    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
-    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
-    
-
-    
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
-    
-
-    
+    <title>Cheezy World - Page 7 | Cheezy&#39;s Blog</title>
     <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
-    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
-    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
-    
+    <link rel="canonical" href="http://localhost:1313/page/7/">
 
-    <meta property="og:url" content="http://localhost:1313/" />
+    <meta property="og:site_name" content="Cheezy World">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cheezy World">
+    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta property="og:url" content="http://localhost:1313/page/7/">
+    <meta property="og:image" content="http://localhost:1313/img/social-card.png">
 
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cheezy World">
+    <meta name="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
+    <meta name="twitter:image" content="http://localhost:1313/img/social-card.png">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"http://localhost:1313/#website","@type":"WebSite","description":"Insights on AI-driven development, continuous delivery, and extreme programming from Jeff 'Cheezy' Morgan — 30+ years delivering software.","name":"Cheezy World","publisher":{"@id":"http://localhost:1313/#person"},"url":"http://localhost:1313/"},{"@id":"http://localhost:1313/#person","@type":"Person","image":"http://localhost:1313/img/CheezyOrange.jpg","jobTitle":"Software Developer, Continuous Delivery and AI Coach","name":"Jeff 'Cheezy' Morgan","sameAs":["https://www.linkedin.com/in/jeffmorgan5/","https://github.com/cheezy"],"url":"http://localhost:1313/about/"}]}</script>
+
 
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>Cheezy World | Cheezy&#39;s Blog</title>
-
-    <link rel="canonical" href="/">
 
     
 
@@ -202,12 +188,11 @@
             <p>When AI agents review code, their findings shouldn&rsquo;t vanish into the ether. That was the driving insight behind the <code>review_report</code> feature we shipped in <a href="https://stridelikeaboss.com">Stride</a> v1.25 and the <a href="https://github.com/cheezy/stride">Stride plugin</a> v1.4 this week. Here&rsquo;s the story of what we built, why it matters, and how all the pieces fit together.</p>
 <h2 id="the-problem">The Problem</h2>
 <p>Stride&rsquo;s task-reviewer SubAgent already did excellent work — it checks code changes against <code>acceptance criteria</code>, verifies <code>pitfall</code> avoidance, validates <code>pattern compliance</code> and alignment of the <code>testing strategy</code>. But the review output lived only in the agent&rsquo;s conversation context. Once the agent completed the task, the structured findings were gone. Human reviewers opening a task in the <em>Review</em> or <em>Done</em> column had no visibility into what the AI had already checked.</p>
-       
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Tuesday, March 17, 2026
+        Posted by Jeff &#39;Cheezy&#39; Morgan on Tuesday, March 17, 2026
         
         
     
@@ -227,12 +212,11 @@
             <p>Over the past two weeks, a lot of enhancements have been made to the Stride Workflow. I wanted to take the time to detail them here as I think they are a good example of how one can direct an AI agent to perform specific tasks in a repeatable manner.</p>
 <h3 id="what-is-stride">What is Stride?</h3>
 <p>For those new here: <a href="https://www.stridelikeaboss.com">Stride</a> is a kanban-based task management platform built specifically for Human and AI agent collaboration. It is very different than the typical &ldquo;let the agents run through a lot of tasks and we&rsquo;ll check at the end&rdquo; mode of working with AI. Instead, Stride gives the human (team) multiple places where they can insert themselves into the workflow. Enough of that for now as I want this post to focus on the workflow enhancements.</p>
-       
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Friday, March 13, 2026
+        Posted by Jeff &#39;Cheezy&#39; Morgan on Friday, March 13, 2026
         
         
     
@@ -251,12 +235,11 @@
 	
             <p>The <a href="https://StrideLikeABoss.com">Stride</a> Claude Code plugin just shipped version 1.1, and the headline feature is <strong>subagent orchestration</strong> — the ability for an AI agent to dispatch specialized sub-agents at key points in the task lifecycle. Instead of one agent doing everything sequentially, the primary agent now coordinates a team: an explorer that reads the codebase before coding starts, and a reviewer that checks the work before tests run.</p>
 <p>This post covers what changed and how it works.</p>
-       
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Wednesday, March 11, 2026
+        Posted by Jeff &#39;Cheezy&#39; Morgan on Wednesday, March 11, 2026
         
         
     
@@ -276,12 +259,11 @@
             <p>I was in a conversation with a potential new client last Friday, and they told me that they still had some of their development outsourced to an offshore company. After the call I started to think about the outsourcing model. How will it be impacted by AI? It led me to a conclusion that might be uncomfortable for some.</p>
 <h3 id="why-did-companies-outsource">Why did companies outsource?</h3>
 <p>In my experience, there have been two primary reasons for companies to outsource development:</p>
-       
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Monday, March 2, 2026
+        Posted by Jeff &#39;Cheezy&#39; Morgan on Monday, March 2, 2026
         
         
     
@@ -300,12 +282,11 @@
 	
             <p>This post is a continuation of the implementation of the Learning Management System application demonstrating my concept for the new team structure and process in the age of AI-driven development.</p>
 <p>In the first post of the implementation series, we <a href="/post/lms1/">created a requirements document</a> with the whole team and Claude Code. In the second post, the whole team, using Claude Code, <a href="/post/lms2/">created a backlog of tasks from that requirements document</a> and uploaded it to <a href="https://stridelikeaboss.com">Stride</a>. The entire process and team structure is outlined in the post titled &ldquo;<a href="/post/the-new-team/">The New Team</a>.&rdquo; If you haven&rsquo;t read the initial post, I recommend you do so before reading this one and follow along with the implementation via the links at the bottom of that post.</p>
-       
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Sunday, March 1, 2026
+        Posted by Jeff &#39;Cheezy&#39; Morgan on Sunday, March 1, 2026
         
         
     

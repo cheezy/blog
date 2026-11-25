@@ -2,6 +2,7 @@
 date: '2026-03-02T10:47:00-05:00'
 draft: false
 title: 'What Impact Will AI Have On Outsourcing?'
+description: "Companies outsourced development for lower cost and available skills. Do those reasons still hold when AI agents can write the code?"
 tags: ["AI", "Continuous Delivery"]
 ---
 

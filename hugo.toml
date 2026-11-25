@@ -12,6 +12,8 @@ enableRobotsTXT = true
 [params]
   header_image = "img/cheese_banner.png"
   SEOTitle = "Cheezy's Blog"
+  author = "Jeff 'Cheezy' Morgan"
+  social_card = "img/social-card.png" # default preview image, 1200x630
   description = "Insights on AI-driven development, continuous delivery, and extreme programming from Jeff 'Cheezy' Morgan — 30+ years delivering software."
   keyword = "Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir"
   slogan = "Delivering software with discipline and joy"

@@ -2,6 +2,7 @@
 date: '2025-10-05T11:18:02-04:00'
 draft: false
 title: 'Building a LiveView app using AI - Part 3'
+description: "Part 3 of building a LiveView Kanban app with AI: Claude Code starts writing code, beginning with authentication, and why you need to pay attention."
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 

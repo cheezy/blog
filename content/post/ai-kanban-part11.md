@@ -2,6 +2,7 @@
 date: '2025-11-12T12:22:22-05:00'
 draft: false
 title: 'Building a LiveView app using AI - Part 11'
+description: "Part 11 of building a LiveView Kanban app with AI: richer tasks with new fields, history and comments, plus running Claude inside Tidewave."
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 

@@ -2,6 +2,7 @@
 date: '2026-10-25T14:33:00-04:00'
 draft: false
 title: "Sign In Through Your Identity Provider"
+description: "Stride 3.0.0 adds single sign-on and SCIM provisioning, so your people sign in through Okta, Microsoft Entra ID, Google Workspace or another provider."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

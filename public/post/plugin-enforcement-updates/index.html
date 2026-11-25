@@ -5,40 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+    <title>Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34; | Cheezy&#39;s Blog</title>
+    <meta name="description" content="An AI agent skipped nearly every mandatory workflow step. The root cause, and how the Stride plugins now guide agents to go right instead of fast.">
+    <link rel="canonical" href="http://localhost:1313/post/plugin-enforcement-updates/">
+
     <meta property="og:site_name" content="Cheezy World">
     <meta property="og:type" content="article">
+    <meta property="og:title" content="Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;">
+    <meta property="og:description" content="An AI agent skipped nearly every mandatory workflow step. The root cause, and how the Stride plugins now guide agents to go right instead of fast.">
+    <meta property="og:url" content="http://localhost:1313/post/plugin-enforcement-updates/">
+    <meta property="og:image" content="http://localhost:1313/img/social-card.png">
+    <meta property="article:published_time" content="2026-04-14T19:44:22-04:00">
+    <meta property="article:modified_time" content="2026-04-14T19:44:22-04:00">
+    <meta property="article:author" content="Jeff &#39;Cheezy&#39; Morgan">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Continuous Delivery">
+    <meta property="article:tag" content="Stride">
 
-    
-    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
-    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;">
+    <meta name="twitter:description" content="An AI agent skipped nearly every mandatory workflow step. The root cause, and how the Stride plugins now guide agents to go right instead of fast.">
+    <meta name="twitter:image" content="http://localhost:1313/img/social-card.png">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"http://localhost:1313/post/plugin-enforcement-updates/#post","@type":"BlogPosting","author":{"@id":"http://localhost:1313/#person"},"dateModified":"2026-04-14T19:44:22-04:00","datePublished":"2026-04-14T19:44:22-04:00","description":"An AI agent skipped nearly every mandatory workflow step. The root cause, and how the Stride plugins now guide agents to go right instead of fast.","headline":"Stride Plugin Updates: From \"Go Fast\" to \"Go Right\"","image":"http://localhost:1313/img/social-card.png","inLanguage":"en","isPartOf":{"@id":"http://localhost:1313/#website"},"keywords":["AI","Continuous Delivery","Stride"],"mainEntityOfPage":"http://localhost:1313/post/plugin-enforcement-updates/","publisher":{"@id":"http://localhost:1313/#person"},"url":"http://localhost:1313/post/plugin-enforcement-updates/"},{"@id":"http://localhost:1313/#website","@type":"WebSite","description":"Insights on AI-driven development, continuous delivery, and extreme programming from Jeff 'Cheezy' Morgan — 30+ years delivering software.","name":"Cheezy World","publisher":{"@id":"http://localhost:1313/#person"},"url":"http://localhost:1313/"},{"@id":"http://localhost:1313/#person","@type":"Person","image":"http://localhost:1313/img/CheezyOrange.jpg","jobTitle":"Software Developer, Continuous Delivery and AI Coach","name":"Jeff 'Cheezy' Morgan","sameAs":["https://www.linkedin.com/in/jeffmorgan5/","https://github.com/cheezy"],"url":"http://localhost:1313/about/"}]}</script>
 
-    
-    <meta name="title" content="Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;" />
-    <meta property="og:title" content="Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;" />
-    <meta property="twitter:title" content="Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;" />
-    
-
-    
-    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
-    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
-    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
-    
-
-    <meta property="og:url" content="http://localhost:1313/post/plugin-enforcement-updates/" />
-
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
 
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34; | Cheezy&#39;s Blog</title>
-
-    <link rel="canonical" href="/post/plugin-enforcement-updates/">
 
     
 
@@ -187,6 +179,9 @@
             col-xs-12
             post-container">
             <h1>Stride Plugin Updates: From &#34;Go Fast&#34; to &#34;Go Right&#34;</h1>
+            
+            <p class="post-byline">By <a href="/about/" rel="author">Jeff &#39;Cheezy&#39; Morgan</a> on <time datetime="2026-04-14">Tuesday, April 14, 2026</time></p>
+            
 
             
                 <p>During a recent session on a friends computer where an AI agent implemented 17 <a href="https://StrideLikeABoss.com">Stride</a> tasks back-to-back,I discovered something uncomfortable: the agent skipped nearly every mandatory workflow step. The <code>task-explorer</code> was used once, then never again. The <code>task-reviewer</code> was never invoked. The <code>hook-diagnostician</code> was never called when hooks failed. The <code>stride-subagent-workflow</code> skill — labeled MANDATORY — was ignored entirely. This was shocking to me as I have not see this on my own computer. I realized that I had enough contained in my configuration to force the agent to do what I wanted but not everybody had that config.</p>

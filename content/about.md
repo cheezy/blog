@@ -2,6 +2,7 @@
 date: 2025-09-26T12:41:47-04:00
 draft: false
 title: "About"
+description: "Jeff 'Cheezy' Morgan has worked with development teams and leaders for over 30 years, and writes here about AI, modern tools and rapid delivery."
 ---
 
 ## About Me

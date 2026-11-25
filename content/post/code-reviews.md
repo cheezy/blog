@@ -2,6 +2,7 @@
 date: '2026-06-24T10:37:00-04:00'
 draft: false
 title: 'Are Code Reviews and Pull Requests a Thing of the Past?'
+description: "With a well-tuned AI workflow, most pull requests and human code reviews are no longer necessary. Where review still matters, and what Stride does instead."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

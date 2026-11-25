@@ -5,40 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+    <title>Prose-Only Enforcement Is Unreliable. Mechanical Gating Works. | Cheezy&#39;s Blog</title>
+    <meta name="description" content="Agents skip instructions written in prose, however loudly you write them. How Stride uses mechanical gates to enforce its workflow, and when prose is enough.">
+    <link rel="canonical" href="http://localhost:1313/post/mechanical-gating-works/">
+
     <meta property="og:site_name" content="Cheezy World">
     <meta property="og:type" content="article">
+    <meta property="og:title" content="Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.">
+    <meta property="og:description" content="Agents skip instructions written in prose, however loudly you write them. How Stride uses mechanical gates to enforce its workflow, and when prose is enough.">
+    <meta property="og:url" content="http://localhost:1313/post/mechanical-gating-works/">
+    <meta property="og:image" content="http://localhost:1313/img/social-card.png">
+    <meta property="article:published_time" content="2026-05-01T09:37:42-04:00">
+    <meta property="article:modified_time" content="2026-05-01T09:37:42-04:00">
+    <meta property="article:author" content="Jeff &#39;Cheezy&#39; Morgan">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Continuous Delivery">
+    <meta property="article:tag" content="Stride">
 
-    
-    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
-    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.">
+    <meta name="twitter:description" content="Agents skip instructions written in prose, however loudly you write them. How Stride uses mechanical gates to enforce its workflow, and when prose is enough.">
+    <meta name="twitter:image" content="http://localhost:1313/img/social-card.png">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"http://localhost:1313/post/mechanical-gating-works/#post","@type":"BlogPosting","author":{"@id":"http://localhost:1313/#person"},"dateModified":"2026-05-01T09:37:42-04:00","datePublished":"2026-05-01T09:37:42-04:00","description":"Agents skip instructions written in prose, however loudly you write them. How Stride uses mechanical gates to enforce its workflow, and when prose is enough.","headline":"Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.","image":"http://localhost:1313/img/social-card.png","inLanguage":"en","isPartOf":{"@id":"http://localhost:1313/#website"},"keywords":["AI","Continuous Delivery","Stride"],"mainEntityOfPage":"http://localhost:1313/post/mechanical-gating-works/","publisher":{"@id":"http://localhost:1313/#person"},"url":"http://localhost:1313/post/mechanical-gating-works/"},{"@id":"http://localhost:1313/#website","@type":"WebSite","description":"Insights on AI-driven development, continuous delivery, and extreme programming from Jeff 'Cheezy' Morgan — 30+ years delivering software.","name":"Cheezy World","publisher":{"@id":"http://localhost:1313/#person"},"url":"http://localhost:1313/"},{"@id":"http://localhost:1313/#person","@type":"Person","image":"http://localhost:1313/img/CheezyOrange.jpg","jobTitle":"Software Developer, Continuous Delivery and AI Coach","name":"Jeff 'Cheezy' Morgan","sameAs":["https://www.linkedin.com/in/jeffmorgan5/","https://github.com/cheezy"],"url":"http://localhost:1313/about/"}]}</script>
 
-    
-    <meta name="title" content="Prose-Only Enforcement Is Unreliable. Mechanical Gating Works." />
-    <meta property="og:title" content="Prose-Only Enforcement Is Unreliable. Mechanical Gating Works." />
-    <meta property="twitter:title" content="Prose-Only Enforcement Is Unreliable. Mechanical Gating Works." />
-    
-
-    
-    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
-    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
-    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
-    
-
-    <meta property="og:url" content="http://localhost:1313/post/mechanical-gating-works/" />
-
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
 
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>Prose-Only Enforcement Is Unreliable. Mechanical Gating Works. | Cheezy&#39;s Blog</title>
-
-    <link rel="canonical" href="/post/mechanical-gating-works/">
 
     
 
@@ -187,6 +179,9 @@
             col-xs-12
             post-container">
             <h1>Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.</h1>
+            
+            <p class="post-byline">By <a href="/about/" rel="author">Jeff &#39;Cheezy&#39; Morgan</a> on <time datetime="2026-05-01">Friday, May 1, 2026</time></p>
+            
 
             
                 <p>As many of you know, I&rsquo;ve built a tool called <a href="https://stridelikeaboss.com">Stride</a>.  It is a human / AI collaboration tool that offers a robust workflow with many features to drive collaboration and predictability. It takes the form of a hosted kanban-like app that manages the detailed tasks and agent plugins for all of the major AI agents. Even though it has several thousand users now, I have struggled with forcing the agents to always follow the workflow defined in the plugins. The plugins define a lifecycle that is decomposed into seven skills — one orchestrator (<code>stride-workflow</code>) and six sub-skills that handle individual phases (<code>stride-claiming-tasks</code>, <code>stride-completing-tasks</code>, and so on). The sub-skills exist because each phase has a non-trivial API contract that the agent has to get exactly right. The plugins also contain four subagents and a hook designed to execute developer defined commands at specific times during the lifecycle of the work.</p>

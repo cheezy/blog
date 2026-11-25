@@ -2,6 +2,7 @@
 date: '2026-02-23T09:56:00-05:00'
 draft: false
 title: 'The New Team'
+description: "Traditional Agile teams are incompatible with AI-driven development. A smaller team structure and process built around the new constraints."
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 

@@ -2,6 +2,7 @@
 date: '2026-11-18T08:52:00-05:00'
 draft: false
 title: 'Why Your Agent Needs a Monorepo'
+description: "Split frontend and backend repositories make AI agents build features in pieces. Why a monorepo and vertical slices fix it, and what to do if you can't move."
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 

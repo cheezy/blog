@@ -2,6 +2,7 @@
 date: '2026-10-07T06:50:00-04:00'
 draft: false
 title: 'Stride Now Speaks MCP'
+description: "Stride now has a Model Context Protocol server, so agents such as Claude Code use a small set of documented tools instead of building HTTP requests."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

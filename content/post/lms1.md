@@ -2,6 +2,7 @@
 date: '2026-02-25T11:22:00-05:00'
 draft: false
 title: 'Building the Learning Management System - Initial Requirements'
+description: "Building a Learning Management System with the New Team process, step one: the Product Owner and Developers create the requirements with Claude Code."
 tags: ["AI", "Continuous Delivery"]
 ---
 

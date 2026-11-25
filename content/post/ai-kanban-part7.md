@@ -2,6 +2,7 @@
 date: '2025-10-26T14:53:21-04:00'
 draft: false
 title: 'Building a LiveView app using AI - Part 7'
+description: "Part 7 of building a LiveView Kanban app with AI: adding columns to the board, from the database to the UI, with WIP limits."
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 

@@ -2,6 +2,7 @@
 date: '2025-10-17T10:00:00-04:00'
 draft: false
 title: 'Building a LiveView app using AI - Part 4'
+description: "Part 4 of building a LiveView Kanban app with AI: a detour to let Claude design a responsive site and add French translations."
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 

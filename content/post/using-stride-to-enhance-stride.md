@@ -2,7 +2,8 @@
 date: '2026-01-14T10:24:27-05:00'
 draft: false
 title: 'Using Stride and Claude Code to Enhance Stride'
-tags: ["AI", "Agile", "Continuous Delivery"]
+description: "Watch a Stride feature go through its whole lifecycle with Claude Code: brainstorming, building the backlog, implementing it and looking at the results."
+tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
 In this post I will be using Stride and Claude Code to add a _Resources_ section to the Stride UI. Through a series of videos you will see me go through the entire lifecycle of adding this feature to Stride.

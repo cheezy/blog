@@ -2,6 +2,7 @@
 date: '2026-10-09T06:51:00-04:00'
 draft: false
 title: "Busy Boards, Made Manageable"
+description: "Labels, search and filters, a My Work page, bulk actions and keyboard shortcuts make a busy Stride board easy to manage."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

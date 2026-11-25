@@ -2,6 +2,7 @@
 date: '2026-10-08T07:26:00-04:00'
 draft: false
 title: "Comments That Know Who's Talking"
+description: "Stride comments now show who wrote them, human or agent. Edit or delete your own, @mention teammates, and let agents join the conversation."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

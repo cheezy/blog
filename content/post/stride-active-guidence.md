@@ -2,7 +2,8 @@
 date: '2026-01-09T10:41:00-05:00'
 draft: false
 title: 'Stride Active Guidence'
-tags: ["AI", "Agile", "Continuous Delivery"]
+description: "Stride adds always-active instruction files for GitHub Copilot, Cursor, Windsurf Cascade and Continue.dev to help agents avoid common API mistakes."
+tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
 ## Stride Now Supports Four AI Assistants with Always-Active Guidance

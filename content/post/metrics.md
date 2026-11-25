@@ -2,7 +2,8 @@
 date: '2026-02-10T13:16:09-05:00'
 draft: false
 title: 'Adding Metrics to Stride'
-tags: ["AI", "Agile", "Continuous Delivery"]
+description: "A video tour of the metrics in Stride: throughput, cycle time, lead time and wait time, with export to PDF and Excel."
+tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
 In this post we will simply show you a video of the new metrics feature in [Stride](https://StrideLikeABoss.com). Teams can use these metrics to understand how they are performing in order to find ways to improve. There are four metrics that are available:

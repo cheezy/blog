@@ -2,6 +2,7 @@
 date: '2026-01-13T10:11:02-05:00'
 draft: false
 title: 'Does Programming Language Matter?'
+description: "Does AI write better code in some programming languages than others? A look at the AutoCodeBench results, the IEEE view and my own experience."
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 

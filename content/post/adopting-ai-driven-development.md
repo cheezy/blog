@@ -2,6 +2,7 @@
 date: '2026-01-12T10:23:45-05:00'
 draft: false
 title: 'Adopting AI Driven Development'
+description: "How one organization adopted AI-driven development: the workshop, the first weeks of the experiment, and the testing and backlog constraints that followed."
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 

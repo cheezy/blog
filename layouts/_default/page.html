@@ -1,0 +1,47 @@
+
+{{ define "main" }}
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            <h1>{{ .Title }}</h1>
+            {{ if eq .Section "post" }}
+            <p class="post-byline">By <a href="{{ "about/" | relURL }}" rel="author">{{ .Params.author | default .Site.Params.author }}</a> on <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, January 2, 2006" }}</time></p>
+            {{ end }}
+
+            {{ if eq (.Param "multilingual") true }}
+                {{ partial "multilingual-sel.html" . }}
+
+                <!-- Chinese Version -->
+                <div class="zh post-container">
+                    {{$file :=  "/about/index-zh.md"}}
+                    {{ $file | readFile | markdownify}}
+                </div>
+
+                <!-- English Version -->
+                <div class="en post-container">
+                    {{ .Content }}
+                </div>
+            {{ else }}
+                {{ .Content }}
+            {{ end }}
+             
+            {{ partial "comments.html" . }}
+            
+            </div>
+            
+            {{ partial "sidebar.html" . }}
+        </div>
+    </div>
+</article>
+
+{{ end }}
+
+

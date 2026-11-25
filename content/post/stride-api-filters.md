@@ -2,6 +2,7 @@
 date: '2026-10-05T18:21:00-04:00'
 draft: false
 title: 'The Stride API Now Pages, Filters and Describes Itself'
+description: "The Stride API now pages and filters the task list and publishes a machine-readable description, so agents, scripts and dashboards are easier to build."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

@@ -2,6 +2,7 @@
 date: '2025-10-29T15:28:45-04:00'
 draft: false
 title: 'Is Agile compatible with AI?'
+description: "After two decades as an Agile coach, I look at whether Agile processes, team structures and values still make sense when AI agents write the code."
 tags: ["AI", "Agile", "Software Development"]
 ---
 

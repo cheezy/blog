@@ -2,6 +2,7 @@
 date: '2025-11-08T14:04:14-05:00'
 draft: false
 title: 'Building a LiveView app using AI - Part 9'
+description: "Part 9 of building a LiveView Kanban app with AI: small usability fixes after hands-on testing, and the app gets its name, Stride."
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 

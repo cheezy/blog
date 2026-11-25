@@ -2,6 +2,7 @@
 date: '2026-03-18T13:47:00-04:00'
 draft: false
 title: 'The future of software engineering: My Thoughts - Part 1'
+description: "My thoughts on Thoughtworks' The future of software engineering, part 1: where does the rigor go when AI writes the code?"
 tags: ["AI", "Continuous Delivery"]
 ---
 

@@ -2,6 +2,7 @@
 date: '2025-11-07T15:41:11-05:00'
 draft: false
 title: 'Upgrade Elixir and Fly.io to use Elixir 1.19'
+description: "How to upgrade an application to Elixir 1.19 and OTP 28 with asdf, and update its pipeline and Fly.io deployment."
 tags: ["Elixir", "Fly.io", "Pipeline"]
 ---
 

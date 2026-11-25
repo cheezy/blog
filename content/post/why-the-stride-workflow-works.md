@@ -2,6 +2,7 @@
 date: '2026-11-22T11:11:00-05:00'
 draft: false
 title: 'Why the Stride Workflow works so well'
+description: "Why the Stride workflow works for teams building software with AI agents: rich tasks, enforced quality gates, targeted human review and clear insight."
 tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 

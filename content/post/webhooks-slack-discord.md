@@ -2,6 +2,7 @@
 date: '2026-10-14T13:35:00-04:00'
 draft: false
 title: "Your Board, Wherever Your Team Talks"
+description: "Send Stride board activity to Slack, Discord or your own webhook. How to set up each integration and what your channel sees."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

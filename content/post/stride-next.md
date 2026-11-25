@@ -2,7 +2,8 @@
 date: '2025-12-19T08:32:51-05:00'
 draft: false
 title: 'Stride goes full AI'
-tags: ["AI", "Agile", "Continuous Delivery"]
+description: "The experiment that became Stride's AI workflow: a Kanban system designed for AI agents and humans to work together, with tasks as rich metadata."
+tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
 ## Building an AI-Optimized Kanban System: A Human-AI Collaboration Experiment

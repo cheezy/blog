@@ -1,7 +1,7 @@
 ---
 title:       "TDD With AI"
 subtitle:    "Is it possible?"
-description: ""
+description: "After about 25 years of Test Driven Development, how I found a workflow that makes TDD work with AI."
 date:        '2025-09-30T09:52:02-04:00'
 draft:       false
 author:      ""

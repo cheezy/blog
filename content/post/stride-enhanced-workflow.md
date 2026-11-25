@@ -2,7 +2,8 @@
 date: '2026-03-13T09:47:00-04:00'
 draft: false
 title: 'Strides New Enhanced Workflow'
-tags: ["AI", "Agile", "Continuous Delivery"]
+description: "A step-by-step look at the enhanced Stride workflow, from requirements and human review of tasks to how an agent claims and completes the work."
+tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
 Over the past two weeks, a lot of enhancements have been made to the Stride Workflow. I wanted to take the time to detail them here as I think they are a good example of how one can direct an AI agent to perform specific tasks in a repeatable manner.

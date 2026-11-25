@@ -2,7 +2,8 @@
 date: '2026-01-09T07:08:31-05:00'
 draft: false
 title: 'Stride Has Skills'
-tags: ["AI", "Agile", "Continuous Delivery"]
+description: "Stride adds Claude Code Skills for claiming, completing and creating tasks and goals. What they do, how to install them and the mistakes they prevent."
+tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 ---
 
 I am excited to announce a major enhancement to Stride's AI agent workflow: **Claude Code Skills**. These skills enforce best practices and prevent common mistakes that waste hours of development time.

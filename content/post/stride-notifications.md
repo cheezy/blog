@@ -2,6 +2,7 @@
 date: '2026-10-03T14:13:00-04:00'
 draft: false
 title: 'Stride Now Tells You When It Needs You'
+description: "Stride now tells you when something needs your attention, in the app and by email, and lets you choose exactly what reaches you and how."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

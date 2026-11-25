@@ -5,40 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+    <title>AI - Page 4 | Cheezy&#39;s Blog</title>
+    <meta name="description" content="Posts on building software with AI agents: workflows, team structure, tools, testing and what works in practice.">
+    <link rel="canonical" href="http://localhost:1313/tags/ai/page/4/">
+
     <meta property="og:site_name" content="Cheezy World">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI">
+    <meta property="og:description" content="Posts on building software with AI agents: workflows, team structure, tools, testing and what works in practice.">
+    <meta property="og:url" content="http://localhost:1313/tags/ai/page/4/">
+    <meta property="og:image" content="http://localhost:1313/img/social-card.png">
 
-    
-    <meta property="og:image" content="http://localhost:1313//img/cheese_banner.png">
-    <meta property="twitter:image" content="http://localhost:1313//img/cheese_banner.png" />
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI">
+    <meta name="twitter:description" content="Posts on building software with AI agents: workflows, team structure, tools, testing and what works in practice.">
+    <meta name="twitter:image" content="http://localhost:1313/img/social-card.png">
 
-    
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
-    
-
-    
-    <meta name="description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software.">
-    <meta property="og:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
-    <meta property="twitter:description" content="Insights on AI-driven development, continuous delivery, and extreme programming from Jeff &#39;Cheezy&#39; Morgan — 30&#43; years delivering software." />
-    
-
-    <meta property="og:url" content="http://localhost:1313/tags/ai/" />
-
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
 
     <meta name="keyword"  content="Cheezy Blog, AI, Extreme Programming, Continuous Delivery, Elixir">
     <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>AI | Cheezy&#39;s Blog</title>
-
-    <link rel="canonical" href="/tags/ai/">
 
     
 
@@ -200,12 +185,11 @@
 	
             <p>Coding agents are Stride&rsquo;s busiest users. They find the next task, claim it, do the work, run your quality checks and hand it back for review. Until now they did all of that by building HTTP requests by hand: shell commands with headers, JSON bodies and careful quoting, assembled fresh every time.</p>
 <p>Stride now has a <strong>Model Context Protocol (MCP) server</strong>. MCP is the open standard that AI tools such as Claude Code use to discover and call external tools. Point an MCP client at Stride and your agent sees a small set of named, documented tools with defined inputs. It no longer has to remember an API. The agent asks for what it needs, and Stride checks the request before acting on it.</p>
-       
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Wednesday, October 7, 2026
+        Posted by Jeff &#39;Cheezy&#39; Morgan on Wednesday, October 7, 2026
         
         
     
@@ -224,12 +208,11 @@
 	
             <p>When something unexpected happens on a <a href="https://StrideLikeABoss.com">Stride</a> instance, such as a run of failed sign-ins, an API token nobody remembers creating, or someone trying to reach a page they shouldn&rsquo;t, the first question is always the same: <em>what happened, and when?</em> Until now, Stride noted these events in its server logs, which come and go and which administrators can&rsquo;t search from Stride. Now it keeps them.</p>
 <p>Stride has a <strong>permanent, append-only audit log</strong> of important security events. Entries are only ever added. Once an event is recorded it can&rsquo;t be edited, and recent entries can&rsquo;t be deleted. Site administrators can search the log, filter it and export it.</p>
-       
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Tuesday, October 6, 2026
+        Posted by Jeff &#39;Cheezy&#39; Morgan on Tuesday, October 6, 2026
         
         
     
@@ -247,12 +230,11 @@
         <div class="post-content-preview">
 	
             <p>The <a href="https://StrideLikeABoss.com">Stride</a> exploratory-testing plugin teaches a coding agent to test software the way a good human tester does: give it a mission, let it probe the running app, judge what it sees, and come back with bugs, questions and an honest account of what it didn&rsquo;t get to. The latest version is the result of a close look at how the plugin actually behaved in real use. This post covers what changed, what that means for you, and how to use the plugin inside the Stride workflow or on its own.</p>
-       
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Tuesday, October 6, 2026
+        Posted by Jeff &#39;Cheezy&#39; Morgan on Tuesday, October 6, 2026
         
         
     
@@ -271,12 +253,11 @@
 	
             <p>The <a href="https://StrideLikeABoss.com">Stride</a> plugin for Claude Code is what turns a coding agent into a Stride teammate: it claims tasks, explores the code, implements, sends the work through review and completes it. Over the last few releases we went through that loop measuring where time and tokens actually went and why reviewers kept sending work back. Then we fixed what we found.</p>
 <p>None of this changes how you start. You still ask the agent to work a task, a goal or the queue. What changes is what happens next: long sessions stay small, reviews settle in fewer rounds, and the agent gets better at catching its own mistakes before a reviewer, or you, has to.</p>
-       
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Monday, October 5, 2026
+        Posted by Jeff &#39;Cheezy&#39; Morgan on Monday, October 5, 2026
         
         
     
@@ -294,12 +275,11 @@
         <div class="post-content-preview">
 	
             <p>Most of the work on a Stride board is done by things that talk to the API: coding agents claiming and completing tasks, scripts that build reports, dashboards that keep an eye on progress. Two changes make that API much easier to build on. You can now page through and filter the task list, and Stride publishes a complete, machine-readable description of its API that tools can read for themselves.</p>
-       
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Cheezy World on Monday, October 5, 2026
+        Posted by Jeff &#39;Cheezy&#39; Morgan on Monday, October 5, 2026
         
         
     

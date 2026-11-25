@@ -2,7 +2,8 @@
 date: '2026-03-17T14:52:00-04:00'
 draft: false
 title: 'Closing the Loop: How We Added Traceability to Stride'
-tags: ["AI", "Continuous Delivery"]
+description: "How Stride saves the AI reviewer's findings on the task, so people can see what was checked against the acceptance criteria and what was found."
+tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
 When AI agents review code, their findings shouldn't vanish into the ether. That was the driving insight behind the `review_report` feature we shipped in [Stride](https://stridelikeaboss.com) v1.25 and the [Stride plugin](https://github.com/cheezy/stride) v1.4 this week. Here's the story of what we built, why it matters, and how all the pieces fit together.

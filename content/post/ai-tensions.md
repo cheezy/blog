@@ -2,6 +2,7 @@
 date: '2025-12-15T06:38:22-05:00'
 draft: false
 title: 'Tensions with AI'
+description: "Bringing AI-driven development into a traditional Agile organization creates three tensions: testing, development and requirements. Can they be solved?"
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 

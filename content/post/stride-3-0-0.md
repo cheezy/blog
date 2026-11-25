@@ -2,6 +2,7 @@
 date: '2026-10-25T14:04:00-04:00'
 draft: false
 title: "Stride 3.0.0: Organizations and the Free Plan"
+description: "Stride 3.0.0 brings the Organization plan for teams alongside a Free plan for individuals and small teams. What each includes and how paid boards work."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

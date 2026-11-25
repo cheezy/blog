@@ -2,7 +2,8 @@
 date: '2026-03-24T12:37:00-04:00'
 draft: false
 title: 'Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution'
-tags: ["AI", "Continuous Delivery"]
+description: "Stride brings its full workflow to GitHub Copilot and Google Gemini CLI, and removes permission prompts with Claude Code hooks."
+tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 
 Prior to today, [Stride](https://StrideLikeABoss.com) had excellent support for Claude Code via six Skills and four SubAgents. All other agents were only provided with Skills without the enforcement and additional capabilities added by the SubAgents.

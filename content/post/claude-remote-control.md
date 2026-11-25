@@ -2,6 +2,7 @@
 date: '2026-02-28T13:47:00-05:00'
 draft: false
 title: 'Claude Remote Control'
+description: "Claude Remote Control lets you drive a Claude Code session from your phone. A look at the feature and where it is useful."
 tags: ["AI"]
 ---
 

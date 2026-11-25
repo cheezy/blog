@@ -2,6 +2,7 @@
 date: '2026-11-15T09:57:00-04:00'
 draft: false
 title: "Send Your Audit Log to Your Security Tools"
+description: "Stride streams your Organization's audit log to Splunk, Datadog or any HTTPS endpoint, and adds signed exports for your auditors."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

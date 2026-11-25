@@ -2,6 +2,7 @@
 date: '2025-11-21T07:05:12-05:00'
 draft: false
 title: 'Building a LiveView app using AI - Part 13'
+description: "Part 13 of building a LiveView Kanban app with AI: setting permissions so owners, editors and read-only users can do only what they should."
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 

@@ -2,6 +2,7 @@
 date: '2026-03-20T12:19:00-04:00'
 draft: false
 title: 'The future of software engineering: My Thoughts - Part 2'
+description: "My thoughts on Thoughtworks' The future of software engineering, part 2: the middle loop, agent topologies and enterprise architecture."
 tags: ["AI", "Continuous Delivery"]
 ---
 

@@ -2,6 +2,7 @@
 date: '2026-10-06T19:27:00-04:00'
 draft: false
 title: 'A Permanent Record of Who Did What'
+description: "Stride keeps a permanent, append-only audit log of security events that administrators can search, filter and export, and nobody can rewrite."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

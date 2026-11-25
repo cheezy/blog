@@ -2,6 +2,7 @@
 date: '2025-11-08T18:36:42-05:00'
 draft: false
 title: 'Building a LiveView app using AI - Part 10'
+description: "Part 10 of building a LiveView Kanban app with AI: adding drag and drop, the defects testing found, and why you should test everything AI creates."
 tags: ["AI", "Elixir", "Phoenix", "LiveView"]
 ---
 

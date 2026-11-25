@@ -2,6 +2,7 @@
 date: '2026-10-14T15:20:00-04:00'
 draft: false
 title: "See Everything Your Board Is Doing"
+description: "Stride records private telemetry for tasks, reviews, agents and the API. Use it to build dashboards, reports and alerts for your team."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

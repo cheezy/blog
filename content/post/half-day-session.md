@@ -2,6 +2,7 @@
 date: '2026-10-31T12:33:00-04:00'
 draft: false
 title: "From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session"
+description: "What to have in place before a half-day Stride session, why we start with ideation rather than code, and how your team carries on afterwards."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

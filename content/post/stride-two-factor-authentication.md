@@ -2,6 +2,7 @@
 date: '2026-10-08T16:57:00-04:00'
 draft: false
 title: "A Stolen Password Is No Longer Enough"
+description: "Stride now supports two-factor authentication with an authenticator app. How to turn it on, use recovery codes and sign in."
 tags: ["AI", "Continuous Delivery", "Stride"]
 ---
 

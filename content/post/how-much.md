@@ -2,6 +2,7 @@
 date: '2026-02-05T07:39:01-05:00'
 draft: false
 title: 'How Much Should I Spend?'
+description: "How much should you spend on AI coding tools? Recommendations for home learners, solo developers and companies."
 tags: ["AI", "Agile", "Continuous Delivery"]
 ---
 
