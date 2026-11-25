@@ -3,6 +3,7 @@ locale = 'en-us'
 title = 'Cheezy World'
 theme = 'cleanwhite'
 language = 'en-ca'
+enableRobotsTXT = true
 
 [pagination]
   pagerSize = 5 # frontpage pagination
