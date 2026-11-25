@@ -8,6 +8,16 @@ enableRobotsTXT = true
 [pagination]
   pagerSize = 5 # frontpage pagination
 
+# /llms.txt, from layouts/index.llms.txt
+[outputFormats.llms]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ["html", "rss", "llms"]
+
 
 [params]
   header_image = "img/cheese_banner.png"

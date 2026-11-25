@@ -184,7 +184,7 @@ Ready to boost your agent productivity? Install the skills and start experiencin
 3. Start a new Claude Code session
 4. Watch the skills activate automatically
 
-For detailed documentation on each skill, see the [onboarding endpoint](https://www.stridelikeaboss.com/api/agent/onboarding) or visit our [getting started guide](https://www.stridelikeaboss.com/docs/GETTING-STARTED-WITH-AI.md).
+For detailed documentation on each skill, see the [onboarding endpoint](https://www.stridelikeaboss.com/api/agent/onboarding) or visit our [getting started guide](https://www.stridelikeaboss.com/docs/getting-started-with-ai).
 
 ## Not using Claude Code?
 

@@ -1,0 +1,94 @@
+# Cheezy World
+
+> Insights on AI-driven development, continuous delivery, and extreme programming from Jeff 'Cheezy' Morgan — 30+ years delivering software.
+
+This is the blog of Jeff 'Cheezy' Morgan, who writes about building software with AI agents and created [Stride](https://www.stridelikeaboss.com), the Kanban board where people and AI agents plan, claim and ship work together.
+
+## Stride
+
+- [Why the Stride Workflow works so well](http://localhost:1313/post/why-the-stride-workflow-works/): Why the Stride workflow works for teams building software with AI agents: rich tasks, enforced quality gates, targeted human review and clear insight.
+- [Send Your Audit Log to Your Security Tools](http://localhost:1313/post/audit-log-streaming/): Stride streams your Organization's audit log to Splunk, Datadog or any HTTPS endpoint, and adds signed exports for your auditors.
+- [Attach the Screenshot, Not a Description of It](http://localhost:1313/post/attachments/): Stride 3.1.0 lets you attach screenshots, logs and specs to tasks and comments, so people and agents have the evidence where the work happens.
+- [From an Idea to a Team That Ships on Its Own: Getting Ready for a Half-Day Stride Session](http://localhost:1313/post/half-day-session/): What to have in place before a half-day Stride session, why we start with ideation rather than code, and how your team carries on afterwards.
+- [One Place to Run Your Team's Stride](http://localhost:1313/post/organizations/): Stride 3.0.0 adds Organizations: one console for your members, workspaces, security policy and audit log, run by your org-admins.
+- [Sign In Through Your Identity Provider](http://localhost:1313/post/single-sign-on/): Stride 3.0.0 adds single sign-on and SCIM provisioning, so your people sign in through Okta, Microsoft Entra ID, Google Workspace or another provider.
+- [A Workspace for Every Team](http://localhost:1313/post/workspaces/): Stride 3.0.0 adds workspaces, so each team or product in an Organization has its own boards and its own people.
+- [Stride 3.0.0: Organizations and the Free Plan](http://localhost:1313/post/stride-3-0-0/): Stride 3.0.0 brings the Organization plan for teams alongside a Free plan for individuals and small teams. What each includes and how paid boards work.
+- [See Everything Your Board Is Doing](http://localhost:1313/post/telemetry/): Stride records private telemetry for tasks, reviews, agents and the API. Use it to build dashboards, reports and alerts for your team.
+- [Your Board, Wherever Your Team Talks](http://localhost:1313/post/webhooks-slack-discord/): Send Stride board activity to Slack, Discord or your own webhook. How to set up each integration and what your channel sees.
+- [Busy Boards, Made Manageable](http://localhost:1313/post/busy-boards-made-manageable/): Labels, search and filters, a My Work page, bulk actions and keyboard shortcuts make a busy Stride board easy to manage.
+- [A Stolen Password Is No Longer Enough](http://localhost:1313/post/stride-two-factor-authentication/): Stride now supports two-factor authentication with an authenticator app. How to turn it on, use recovery codes and sign in.
+- [Comments That Know Who's Talking](http://localhost:1313/post/stride-comments-know-who/): Stride comments now show who wrote them, human or agent. Edit or delete your own, @mention teammates, and let agents join the conversation.
+- [Stride Now Speaks MCP](http://localhost:1313/post/stride-mcp/): Stride now has a Model Context Protocol server, so agents such as Claude Code use a small set of documented tools instead of building HTTP requests.
+- [A Permanent Record of Who Did What](http://localhost:1313/post/stride-audit-log/): Stride keeps a permanent, append-only audit log of security events that administrators can search, filter and export, and nobody can rewrite.
+- [Exploratory Testing Gets Sharper, Safer and Quicker](http://localhost:1313/post/stride-exploratory-testing-sharper/): The Stride exploratory-testing plugin gets clearer bug severities, more trustworthy findings, a stricter safety boundary and quicker sessions.
+- [The Stride Plugin Gets Leaner, Faster and Harder to Fool](http://localhost:1313/post/stride-plugin-leaner/): The Stride plugin for Claude Code gets leaner: smaller long sessions, reviews that settle in fewer rounds and agents that catch more of their own mistakes.
+- [The Stride API Now Pages, Filters and Describes Itself](http://localhost:1313/post/stride-api-filters/): The Stride API now pages and filters the task list and publishes a machine-readable description, so agents, scripts and dashboards are easier to build.
+- [Stride Now Tells You When It Needs You](http://localhost:1313/post/stride-notifications/): Stride now tells you when something needs your attention, in the app and by email, and lets you choose exactly what reaches you and how.
+- [Are Code Reviews and Pull Requests a Thing of the Past?](http://localhost:1313/post/code-reviews/): With a well-tuned AI workflow, most pull requests and human code reviews are no longer necessary. Where review still matters, and what Stride does instead.
+- [The Security Review Plugin: My latest addition to the Stride plugin library](http://localhost:1313/post/the-security-review-plugin/): A Claude Code security review plugin found 72 issues in Stride in about twelve minutes. What it is, why it works, what it costs and when to use it.
+- [Prose-Only Enforcement Is Unreliable. Mechanical Gating Works.](http://localhost:1313/post/mechanical-gating-works/): Agents skip instructions written in prose, however loudly you write them. How Stride uses mechanical gates to enforce its workflow, and when prose is enough.
+- [Stride Plugin Updates: From "Go Fast" to "Go Right"](http://localhost:1313/post/plugin-enforcement-updates/): An AI agent skipped nearly every mandatory workflow step. The root cause, and how the Stride plugins now guide agents to go right instead of fast.
+- [Stride Goes Multi-Platform: Copilot, Gemini, and Zero-Prompt Hook Execution](http://localhost:1313/post/stride-new-plugins/): Stride brings its full workflow to GitHub Copilot and Google Gemini CLI, and removes permission prompts with Claude Code hooks.
+- [Closing the Loop: How We Added Traceability to Stride](http://localhost:1313/post/review-report/): How Stride saves the AI reviewer's findings on the task, so people can see what was checked against the acceptance criteria and what was found.
+- [Strides New Enhanced Workflow](http://localhost:1313/post/stride-enhanced-workflow/): A step-by-step look at the enhanced Stride workflow, from requirements and human review of tasks to how an agent claims and completes the work.
+- [Teaching AI Agents to Look Before They Leap](http://localhost:1313/post/stride-plugin-update/): Stride plugin 1.1 adds subagents: an explorer that reads the codebase before coding starts and a reviewer that checks the work before tests run.
+- [Stride Has New Skills](http://localhost:1313/post/new-skills/): Agents kept making the same API mistakes because they worked from memory. How better field references and versioned skills fixed it in Stride.
+- [Adding Metrics to Stride](http://localhost:1313/post/metrics/): A video tour of the metrics in Stride: throughput, cycle time, lead time and wait time, with export to PDF and Excel.
+- [What is Stride?](http://localhost:1313/post/what-is-stride/): Stride is a smart Kanban board where teams and AI agents build software together. A walk through what people and agents do at each step.
+- [What is a task?](http://localhost:1313/post/what-is-a-task/): What information does an AI agent need to build a feature well? How I arrived at the task structure Stride uses, with key files and testing strategy.
+- [Using Stride and Claude Code to Enhance Stride](http://localhost:1313/post/using-stride-to-enhance-stride/): Watch a Stride feature go through its whole lifecycle with Claude Code: brainstorming, building the backlog, implementing it and looking at the results.
+- [Stride Active Guidence](http://localhost:1313/post/stride-active-guidence/): Stride adds always-active instruction files for GitHub Copilot, Cursor, Windsurf Cascade and Continue.dev to help agents avoid common API mistakes.
+- [Stride Has Skills](http://localhost:1313/post/stride-has-skills/): Stride adds Claude Code Skills for claiming, completing and creating tasks and goals. What they do, how to install them and the mistakes they prevent.
+- [The Stride Workflow](http://localhost:1313/post/stride_workflow/): How humans and AI agents collaborate in the Stride workflow: hooks, the needs-review flag, and how Stride decides which task an agent works on next.
+- [Getting Started with Stride](http://localhost:1313/post/getting_started_with_stride/): Get started with Stride: create an AI Optimized board, add users, connect your AI agent, set up the API token and generate your first backlog.
+- [Stride goes full AI](http://localhost:1313/post/stride-next/): The experiment that became Stride's AI workflow: a Kanban system designed for AI agents and humans to work together, with tasks as rich metadata.
+
+## AI-driven development
+
+- [Why Your Agent Needs a Monorepo](http://localhost:1313/post/monorepo-for-agents/): Split frontend and backend repositories make AI agents build features in pieces. Why a monorepo and vertical slices fix it, and what to do if you can't move.
+- [Scaling the New Team](http://localhost:1313/post/scaling-the-new-team/): How to scale a small AI-driven team of one SME and two engineers: copy the team, and add a thin layer of Quality Lead, Developer Lead and Product Owner.
+- [The Product Team: How does AI change the structure of a larger product organization?](http://localhost:1313/post/the-product-team/): How AI changes a larger product organization: fewer and smaller teams, specialists as platforms, lighter coordination and experiment-led leadership.
+- [Context Matters](http://localhost:1313/post/context-matters/): Keep your agent focused on writing code by moving everything else into subagents, hooks and skills. A walk through each step of a task's lifecycle.
+- [The future of software engineering: My Thoughts - Part 2](http://localhost:1313/post/tw-retreat-response2/): My thoughts on Thoughtworks' The future of software engineering, part 2: the middle loop, agent topologies and enterprise architecture.
+- [The future of software engineering: My Thoughts - Part 1](http://localhost:1313/post/tw-retreat-response/): My thoughts on Thoughtworks' The future of software engineering, part 1: where does the rigor go when AI writes the code?
+- [What Impact Will AI Have On Outsourcing?](http://localhost:1313/post/ai-impact-outsourcing/): Companies outsourced development for lower cost and available skills. Do those reasons still hold when AI agents can write the code?
+- [Building the Learning Management System - First Coding Session](http://localhost:1313/post/lms3/): Building a Learning Management System with the New Team process, step three: the first coding session, implementing the backlog from Stride.
+- [Claude Remote Control](http://localhost:1313/post/claude-remote-control/): Claude Remote Control lets you drive a Claude Code session from your phone. A look at the feature and where it is useful.
+- [Building the Learning Management System - Creating the Backlog](http://localhost:1313/post/lms2/): Building a Learning Management System with the New Team process, step two: turning requirements into a backlog of tasks with Claude Code and Stride.
+- [Building the Learning Management System - Initial Requirements](http://localhost:1313/post/lms1/): Building a Learning Management System with the New Team process, step one: the Product Owner and Developers create the requirements with Claude Code.
+- [The New Team](http://localhost:1313/post/the-new-team/): Traditional Agile teams are incompatible with AI-driven development. A smaller team structure and process built around the new constraints.
+- [My AI Development Environment](http://localhost:1313/post/my_dev_environment/): The AI development setup I use to produce high-quality, well-tested code: Windsurf, Tidewave, Claude Code, MCP servers and project configuration.
+- [How Much Should I Spend?](http://localhost:1313/post/how-much/): How much should you spend on AI coding tools? Recommendations for home learners, solo developers and companies.
+- [Does Programming Language Matter?](http://localhost:1313/post/does-programming-language-matter/): Does AI write better code in some programming languages than others? A look at the AutoCodeBench results, the IEEE view and my own experience.
+- [Adopting AI Driven Development](http://localhost:1313/post/adopting-ai-driven-development/): How one organization adopted AI-driven development: the workshop, the first weeks of the experiment, and the testing and backlog constraints that followed.
+- [Tensions with AI](http://localhost:1313/post/ai-tensions/): Bringing AI-driven development into a traditional Agile organization creates three tensions: testing, development and requirements. Can they be solved?
+- [Upgrade Elixir and Fly.io to use Elixir 1.19](http://localhost:1313/post/upgrade-elixir-and-fly/): How to upgrade an application to Elixir 1.19 and OTP 28 with asdf, and update its pipeline and Fly.io deployment.
+- [Is Agile compatible with AI?](http://localhost:1313/post/agile-and-ai/): After two decades as an Agile coach, I look at whether Agile processes, team structures and values still make sense when AI agents write the code.
+- [TDD With AI](http://localhost:1313/post/tdd-with-ai/): After about 25 years of Test Driven Development, how I found a workflow that makes TDD work with AI.
+- [Hello world (again eh)!](http://localhost:1313/post/hello-world-again/): Cheezy World is back after more than 12 years. What to expect from this blog about software delivery, AI and Elixir.
+
+## Building a Phoenix LiveView application with AI
+
+- [Building a LiveView app using AI - Part 1](http://localhost:1313/post/ai-kanban-part1/): Part 1 of building a Phoenix LiveView Kanban app with AI: the tools, Claude Code, MCP servers, and a project set up for quality and security.
+- [Building a LiveView app using AI - Part 2](http://localhost:1313/post/ai-kanban-part2/): Part 2 of building a LiveView Kanban app with AI: using Claude Code to write a plan of very small steps, with quality checks along the way.
+- [Building a LiveView app using AI - Part 3](http://localhost:1313/post/ai-kanban-part3/): Part 3 of building a LiveView Kanban app with AI: Claude Code starts writing code, beginning with authentication, and why you need to pay attention.
+- [Building a LiveView app using AI - Part 4](http://localhost:1313/post/ai-kanban-part4/): Part 4 of building a LiveView Kanban app with AI: a detour to let Claude design a responsive site and add French translations.
+- [Building a LiveView app using AI - Part 5](http://localhost:1313/post/ai-kanban-part5/): Part 5 of building a LiveView Kanban app with AI: fixing missed translations and design issues, a deployment pipeline, and the start of phase 3.
+- [Building a LiveView app using AI - Part 6](http://localhost:1313/post/ai-kanban-part6/): Part 6 of building a LiveView Kanban app with AI: a favicon, and the UI for creating, editing and viewing Kanban boards.
+- [Building a LiveView app using AI - Part 7](http://localhost:1313/post/ai-kanban-part7/): Part 7 of building a LiveView Kanban app with AI: adding columns to the board, from the database to the UI, with WIP limits.
+- [Building a LiveView app using AI - Part 8](http://localhost:1313/post/ai-kanban-part8/): Part 8 of building a LiveView Kanban app with AI: updating to Elixir 1.19 and adding tasks to the Kanban board.
+- [Building a LiveView app using AI - Part 9](http://localhost:1313/post/ai-kanban-part9/): Part 9 of building a LiveView Kanban app with AI: small usability fixes after hands-on testing, and the app gets its name, Stride.
+- [Building a LiveView app using AI - Part 10](http://localhost:1313/post/ai-kanban-part10/): Part 10 of building a LiveView Kanban app with AI: adding drag and drop, the defects testing found, and why you should test everything AI creates.
+- [Building a LiveView app using AI - Part 11](http://localhost:1313/post/ai-kanban-part11/): Part 11 of building a LiveView Kanban app with AI: richer tasks with new fields, history and comments, plus running Claude inside Tidewave.
+- [Building a LiveView app using AI - Part 12](http://localhost:1313/post/ai-kanban-part12/): Part 12 of building a LiveView Kanban app with AI: using Claude Code inside Tidewave to add users to boards and assign tasks to them.
+- [Building a LiveView app using AI - Part 13](http://localhost:1313/post/ai-kanban-part13/): Part 13 of building a LiveView Kanban app with AI: setting permissions so owners, editors and read-only users can do only what they should.
+- [Building a LiveView app using AI - Part 14](http://localhost:1313/post/ai-kanban-part14/): Part 14 of building a LiveView Kanban app with AI: cleaning up the authentication generated by phx.gen.auth, from login to settings and email.
+- [Building a LiveView app using AI - Part 15](http://localhost:1313/post/ai-kanban-part15/): Part 15 of building a LiveView Kanban app with AI: finishing the final phase with UI/UX improvements and fixing the task layout.
+- [Building a LiveView app using AI - Part 16](http://localhost:1313/post/ai-kanban-part16/): The final part of building a LiveView Kanban app with AI: the many small changes that led to version 1.0, and what comes next.
+
+## Optional
+
+- [About](http://localhost:1313/about/): Jeff 'Cheezy' Morgan has worked with development teams and leaders for over 30 years, and writes here about AI, modern tools and rapid delivery.
+- [RSS feed](http://localhost:1313/index.xml): The newest posts.
+- [Sitemap](http://localhost:1313/sitemap.xml): Every page on the site.

@@ -61,4 +61,4 @@ It also points to a few things that I have blogged about before:
 
 ## What happened Next?
 
-I deployed this change to production. You can go see it now at [Stride](https://StrideLikeABoss.ca). I am now in the process of going over everything created during the sessions. I'm adding images to some of the guides and enhancing the descriptions. I would expect a Product Owner would do this on a team.
+I deployed this change to production. You can go see it now at [Stride](https://StrideLikeABoss.com). I am now in the process of going over everything created during the sessions. I'm adding images to some of the guides and enhancing the descriptions. I would expect a Product Owner would do this on a team.

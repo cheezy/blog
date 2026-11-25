@@ -1,0 +1,32 @@
+# {{ .Site.Title }}
+
+> {{ .Site.Params.description }}
+
+This is the blog of {{ .Site.Params.author }}, who writes about building software with AI agents and created [Stride](https://www.stridelikeaboss.com), the Kanban board where people and AI agents plan, claim and ship work together.
+
+{{- $posts := where .Site.RegularPages "Section" "post" }}
+{{- $stride := where $posts "Params.tags" "intersect" (slice "Stride") }}
+{{- $liveview := where $posts "Params.tags" "intersect" (slice "LiveView") }}
+{{- $other := complement $stride $liveview $posts }}
+
+## Stride
+{{ range $stride.ByDate.Reverse }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{- end }}
+
+## AI-driven development
+{{ range $other.ByDate.Reverse }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{- end }}
+
+## Building a Phoenix LiveView application with AI
+{{ range $liveview.ByDate }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{- end }}
+
+## Optional
+{{ with .Site.GetPage "/about" }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{- end }}
+- [RSS feed]({{ "index.xml" | absURL }}): The newest posts.
+- [Sitemap]({{ "sitemap.xml" | absURL }}): Every page on the site.

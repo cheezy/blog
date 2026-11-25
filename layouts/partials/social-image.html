@@ -1,20 +1,15 @@
 {{- /* The absolute URL of a page's preview image: the front matter's image or thumbnail, else the
        first image in the post that is big enough for a large card, else the default card.
-       Most post images live only in public/img, so both folders are searched. */ -}}
+       Images must be in static/img: public/ is build output. */ -}}
 {{- $path := .Params.thumbnail | default .Params.image -}}
 {{- if and (not $path) .IsPage (eq .Section "post") -}}
   {{- range findRE `/img/[A-Za-z0-9_./-]+\.(?:png|jpe?g|webp)` .RawContent -}}
-    {{- if not $path -}}
-      {{- $candidate := . -}}
-      {{- range slice "static" "public" -}}
-        {{- $file := printf "%s%s" . $candidate -}}
-        {{- if and (not $path) (fileExists $file) -}}
-          {{- $size := imageConfig $file -}}
-          {{- $ratio := div (float $size.Width) $size.Height -}}
-          {{- if and (ge $size.Width 600) (ge $size.Height 300) (ge $ratio 1.0) (le $ratio 2.8) -}}
-            {{- $path = $candidate -}}
-          {{- end -}}
-        {{- end -}}
+    {{- $file := printf "static%s" . -}}
+    {{- if and (not $path) (fileExists $file) -}}
+      {{- $size := imageConfig $file -}}
+      {{- $ratio := div (float $size.Width) $size.Height -}}
+      {{- if and (ge $size.Width 600) (ge $size.Height 300) (ge $ratio 1.0) (le $ratio 2.8) -}}
+        {{- $path = . -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}

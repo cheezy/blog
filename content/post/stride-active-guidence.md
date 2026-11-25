@@ -8,11 +8,11 @@ tags: ["AI", "Agile", "Continuous Delivery", "Stride"]
 
 ## Stride Now Supports Four AI Assistants with Always-Active Guidance
 
-What a day. Earlier today I rolled out [Claude Code Skills for Stride](https://www.stridelikeaboss.com/blog/stride-has-skills). A couple of hours later I'm excited to announce that Stride now supports four popular AI coding assistants beyond Claude Code, with always-active instruction files that help developers avoid common mistakes and follow best practices when working with the Stride API.
+What a day. Earlier today I rolled out [Claude Code Skills for Stride](/post/stride-has-skills/). A couple of hours later I'm excited to announce that Stride now supports four popular AI coding assistants beyond Claude Code, with always-active instruction files that help developers avoid common mistakes and follow best practices when working with the Stride API.
 
 ## The Challenge: Supporting Multiple AI Assistants
 
-I know that not all developers use Claude Code. Many companies are invested in tools like Copilot, Windsurf, etc. Developers in these companies should not feel left out when it comes to Stride. Because of that need, I have just added enhanced instructions for [GitHub Copilot](https://github.com/features/copilot), [Cursor](https://www.cursor.com/), [Windsurf Cascade](https://www.windsurfrules.com/), and [Continue.dev](https://continue.dev/). These assistants are excellent tools, but they needed help understanding Stride's workflow requirements, especially around:
+I know that not all developers use Claude Code. Many companies are invested in tools like Copilot, Windsurf, etc. Developers in these companies should not feel left out when it comes to Stride. Because of that need, I have just added enhanced instructions for [GitHub Copilot](https://github.com/features/copilot), [Cursor](https://www.cursor.com/), [Windsurf Cascade](https://docs.devin.ai/desktop/cascade), and [Continue.dev](https://continue.dev/). These assistants are excellent tools, but they needed help understanding Stride's workflow requirements, especially around:
 
 - Hook execution at four lifecycle points
 - Proper task creation with complex nested structures
