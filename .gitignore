@@ -1,0 +1,6 @@
+# Hugo build output; Cloudflare builds its own
+/public/
+
+/node_modules/
+/.claude/settings.local.json
+.DS_Store

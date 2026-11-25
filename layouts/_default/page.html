@@ -10,10 +10,10 @@
             col-md-8 col-md-offset-1
             col-sm-12
             col-xs-12
-            post-container">
-            <h1>{{ .Title }}</h1>
+            post-container" data-pagefind-body>
+            <h1 data-pagefind-meta="title">{{ .Title }}</h1>
             {{ if eq .Section "post" }}
-            <p class="post-byline">By <a href="{{ "about/" | relURL }}" rel="author">{{ .Params.author | default .Site.Params.author }}</a> on <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, January 2, 2006" }}</time></p>
+            <p class="post-byline" data-pagefind-ignore>By <a href="{{ "about/" | relURL }}" rel="author">{{ .Params.author | default .Site.Params.author }}</a> on <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, January 2, 2006" }}</time></p>
             {{ end }}
 
             {{ if eq (.Param "multilingual") true }}
